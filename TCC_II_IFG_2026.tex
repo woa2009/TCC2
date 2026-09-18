@@ -1,0 +1,638 @@
+% 
+% Modelo para Trabalhos Acadêmicos (tese de doutorado, dissertação de mestrado) utilizando a classe abntex2
+%
+% Modificações: 07/02/2024: Wagner O. Araujo, adequação do template para a IFG - Campus: Anápolis
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+
+\documentclass[
+	% -- opções da classe memoir --
+	12pt,				% tamanho da fonte
+	%openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
+	oneside,			% para impressão no anverso. Oposto a twoside
+	a4paper,			% tamanho do papel. 
+	% -- opções da classe abntex2 --
+	chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
+	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
+	% -- opções do pacote babel --
+	english,			% idioma adicional para hifenização
+	%french,			% idioma adicional para hifenização
+	%spanish,			% idioma adicional para hifenização
+	brazil				% o último idioma é o principal do documento
+	]{abntex2}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{setup/ufscthesisA4-alf}
+\usepackage{multirow}
+\usepackage{enumitem}  % Para [label=\alph*)]
+\usepackage[table,xcdraw]{xcolor}
+\usepackage[htt]{hyphenat} %A opção [htt] avisa ao LaTeX que todos os comandos \texttt do documento passam a aceitar hifenização automática.
+%\usepackage[utf8]{inputenc}
+%\usepackage[latin1]{inputenc}
+%\usepackage[T1]{fontenc}
+%\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[brazil]{babel}
+%\usepackage[portuguese]{babel}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{threeparttable} % Adicione ao preâmbulo
+\usepackage{booktabs}
+\usepackage{siunitx}   % Para o comando \num e formatação de números
+\usepackage{blindtext}
+%-----------------------------------
+\usepackage{readarray} % Pacote para lidar com matrizes
+%-----------------------------------
+\usepackage{siunitx}
+\usepackage{amssymb}
+%\usepackage{subfigure}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{setspace}
+%\usepackage{geometry}
+\usepackage{verbatim}
+\usepackage{fancyvrb}
+\RequirePackage[vlined,titlenumbered,algo2e,ruled,portugues]{setup/algorithm2e}
+%--------------------------------------------
+
+%--------------------------------------------
+%\usepackage{algorithm}
+
+\usepackage{algpseudocode}
+%--------------------------
+%---Pacotes graficos
+\usepackage{pgfplots}
+
+%\usetikzlibrary{patterns}
+\usetikzlibrary{calc}
+%\usepackage{graphicx}
+\usepackage{tgheros}
+\usepackage{xcolor}
+%----------------------------
+%pacote para desenho
+\usepackage{pstricks}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, calc}
+\usepackage{pgfplots}%pacote para graficos
+\usepackage{pgfplotstable}
+\pgfplotsset{compat=1.18}
+\usepackage{times}%utilizando fonte times new roman
+\usepackage{filecontents}
+\usepackage{pdfpages}%Inserir arquivos em pdf
+\usepackage[bottom]{footmisc} % Garante que a nota fique sempre no pé da página
+
+\usepackage[brazilian,hyperpageref]{backref}% para citações aparecerem nas referencias ex.: Citado 4 vezes nas páginas 19, 20, 21 e 22.
+
+\usepackage{listings}
+\renewcommand{\lstlistingname}{Figura}
+%\usepackage{svg}
+
+% ---
+% Filtering and Mapping Bibliographies
+% ---
+% Pacotes de citações
+% ---
+%\usepackage{csquotes}
+
+%\usepackage[backend = biber, style = abnt]{biblatex}
+% FIXME Se desejar estilo numérico de citações,  comente a linha acima e descomente a linha a seguir.
+
+% \usepackage[backend = biber, style = numeric-comp]{biblatex}
+
+%Para alterar para o estilo alfabetico lembre-se alterar \bibliographystyle{abntex2-alf}
+%\usepackage[alf]{abntex2cite}
+
+%Para alterar para o estilo numerico lembre-se alterar \bibliographystyle{abntex2-num}
+%\usepackage[num]{abntex2cite}% Citações padrão ABNT (numerico) numerico
+%\usepackage[alf]{abntex2cite} % Citações padrão ABNT (alfa) autor ano
+\usepackage[num, abnt-doi=doi]{abntex2cite} %ou \usepackage[alf, abnt-doi=doi]{abntex2cite}%não funcionou o DOI
+%\usepackage[num, abnt-doi=expand]{abntex2cite}%não funcionou o DOI
+
+
+
+
+
+
+%\usepackage{abntex2}
+%\usepackage{abntex2-options}
+%-------------------------------------------------------
+% CÓDIGO PARA JUSTIFICAR AS REFERÊNCIAS
+%-------------------------------------------------------
+% Redefine o ambiente de lista de referências para usar justificação completa.
+%\renewcommand{\abntextwobibliography}{\justifying}
+%-------------------------------------------------------
+
+
+\setlength\bibitemsep{\baselineskip}
+%\DeclareFieldFormat{url}{Disponível~em:\addspace\url{#1}}
+%\NewBibliographyString{sineloco}
+%\NewBibliographyString{sinenomine}
+%\DefineBibliographyStrings{brazil}{%
+%	sineloco     = {\mkbibemph{S\adddot l\adddot}},
+%	sinenomine   = {\mkbibemph{s\adddot n\adddot}},
+%	andothers    = {\mkbibemph{et\addabbrvspace %al\adddot}},
+%	in			 = {\mkbibemph{In:}}
+%}
+
+%------- Pacote biblatex
+% Seus arquivos de referências para o pacote biblatex
+%\addbibresource{references} 
+
+%Alteração NBR 10520
+%\renewcommand*{\mkbibnamefamily}[1]{#1}%
+
+% ---
+%\DeclareSourcemap{
+%	\maps[datatype=bibtex]{
+%		% remove fields that are always useless
+%		\map{
+%			\step[fieldset=abstract, null]
+%			\step[fieldset=pagetotal, null]
+%		}
+% remove URLs for types that are primarily printed
+%		\map{
+%			\pernottype{software}
+%			\pernottype{online}
+%			\pernottype{report}
+%			\pernottype{techreport}
+%			\pernottype{standard}
+%			\pernottype{manual}
+%			\pernottype{misc}
+%			\step[fieldset=url, null]
+%			\step[fieldset=urldate, null]
+%		}
+%		\map{
+%			\pertype{inproceedings}
+%			% remove mostly redundant conference information
+%			\step[fieldset=venue, null]
+%			\step[fieldset=eventdate, null]
+%			\step[fieldset=eventtitle, null]
+%			% do not show ISBN for proceedings
+%			\step[fieldset=isbn, null]
+%			% Citavi bug
+%			\step[fieldset=volume, null]
+%		}
+%	}
+%}
+% ---
+\floatstyle{ruled}   %%% tipos: plain, boxed, ruled
+\newfloat{codigo}{tbp}{lop}%[section] %%% captions with section number
+\floatname{codigo}{C\'odigo}
+
+%---Para a folha de aprovação - consulte o arquivo /pre/pre.tex
+\def\avaliadorinterno{Luiz Fernando Loja}
+\def\tituloavaliadorinterno{Dr.}%Dr\textsuperscript{a}
+\def\avalinterno{Avaliador Interno}
+\def\siglainterno{IFG}
+\def\entidadeinterna{Instituto Federal de Goiás}
+
+\def\avaliadorexterno{Ermiliano Nelson}%
+\def\tituloavaliadorexterno{Dr.}%Dr\textsuperscript{a}.
+\def\avalexterno{Avaliador Externo}
+\def\siglaexterno{UFG}
+\def\entidadeexterna{Universidade Federal de Goiás}
+%---Fim para a folha de aprovação
+
+%Para fonte das figuras, tabelas e quadros
+\def\oautor{Wagner Oliveira de Araujo.}
+
+\def\tituloprincipal{Migração de sistemas legados de análise química: de Java desktop para python web}
+
+% ---
+% Informações de dados para CAPA e FOLHA DE ROSTO
+% ---
+\def\nome{Wagner Oliveira de}
+\def\sobrenome{Araujo}
+% FIXME Substituir 'Nome completo do autor' pelo seu nome.
+\autor{\nome~\sobrenome% \\ Nome completo do autor(a) 2 \\ Nome completo do autor(a) 3 \\ Nome completo do autor(a) 4}
+}
+% FIXME Substituir 'Título do trabalho' pelo título da trabalho.
+\titulo{\MakeUppercase{\tituloprincipal}}
+% FIXME Substituir 'Subtítulo (se houver)' pelo subtítulo da trabalho.  
+% Caso não tenha substítulo, comente a linha a seguir.
+%\subtitulo{Subtítulo (se houver)}%Retirado
+% FIXME Substituir 'XXXXXX' pelo nome do seu
+% orientador.
+\def\nomorient{Alexandre Bellezi}
+\def\sobrenomorient{Jose}
+\orientador{ Prof\textsuperscript{o}. \nomorient~\sobrenomorient, Me.}
+%\orientador{Kátia Cilene Costa Fernandes, Prof\textsuperscript{a}. Dr\textsuperscript{a}.}
+% FIXME Se for orientado por uma mulher, comente a linha acima e descomente a linha a seguir.
+% \orientador[Orientadora]{Nome da orientadora, Dra.}
+% FIXME Substituir 'XXXXXX' pelo nome do seu
+% coorientador. Caso não tenha coorientador, comente a linha a seguir.
+\def\nomcoorient{Eder Silva de}
+\def\sobrenomcoorient{Brito}
+\coorientador{Prof\textsuperscript{o}. \nomcoorient \sobrenomcoorient, Dr}
+% FIXME Se for coorientado por uma mulher, comente a linha acima e descomente a linha a seguir.
+% \coorientador[Coorientadora]{XXXXXX, Dra.}
+% FIXME Substituir 'XXXXXX' pelo nome do Coordenador do 
+% programa/curso.
+% \coordenador{Prof. Fulano de Tal, Me.}
+% FIXME Se for coordenadora mulher, comente a linha acima e descomente a linha a seguir.
+\coordenador[Coordenador]{Prof. Hugo Vinicius Leão e Silva, Dr.}
+% FIXME Substituir '[ano da entrega]' pelo ano (ano) em que seu trabalho foi defendido.
+\ano{2026}
+
+% FIXME Substituir '[dia] de [mês] de [ano]' pela data em que ocorreu sua defesa.
+\data{[dia] de [mês] de \imprimirano}
+% FIXME Substituir '[Cidade da defesa]' pela cidade em que ocorreu sua defesa.
+\local{Anápolis}
+\instituicaosigla{IFG}
+\instituicao{Instituto Federal de Educação, Ciência e Tecnologia de Goiás}
+\def\campus{Campus~\local}%Nao foi utilizada na ficha catalografica
+% FIXME Substituir 'Dissertação/Tese' pelo tipo de trabalho (Tese, Dissertação). 
+\def\numeroromano{II}%Numero I ou II para TCC
+\tipotrabalho{Trabalho de Conclusão de Curso \numeroromano}
+% FIXME Substituir '[licenciado/bacharel] em [nome do título obtido]' pela grau adequado.
+\def\disciplina{TCC~\numeroromano}
+\formacao{bacharel}
+% FIXME Substituir '[licenciado/bacharel]' pelo nivel adequado.
+\nivel{bacharel}
+% FIXME Substituir 'Curso de Graduação em [XXXXXXXX]' pela curso adequado.
+\programa{Bacharelado em Ciência da Computação}
+% FIXME Substituir 'Campus XXXXXX ou Centro de XXXXXX' pelo campus ou centro adequado.
+%\centro{Campus [XXXXXX] ou Centro de [XXXXXX]}
+\preambulo
+{%
+\imprimirtipotrabalho~do~\imprimirprograma~do~\imprimircentro~\imprimirinstituicao~--~\campus~para~a~aprovação~da~disciplina~de~\disciplina.
+}
+% ---
+
+% ---
+% Arquivos de definição
+% ---
+\input{setup/stylodefinicao}
+
+
+
+% ---
+% Configurações de aparência do PDF final
+% ---
+% alterando o aspecto da cor azul
+\definecolor{blue}{RGB}{41,5,195}
+% informações do PDF
+% --- CONFIGURAÇÃO ÚNICA DE HYPERREF E METADADOS ---
+\usepackage{hyperref} % Carrega o pacote sem opções primeiro para evitar conflitos
+\usepackage{hyperxmp} % Carrega o suporte a metadados avançados logo depois
+
+\expandafter\def\expandafter\UrlBreaks\expandafter{\UrlBreaks\do\-\do\/} % Força quebras no hífen e na barra
+
+
+
+% ----Metadados no pdf
+\makeatletter
+\hypersetup{
+    pdftitle={\@title}, 
+    pdfauthor={\@author},
+    pdfsubject={\imprimirpreambulo},
+    pdfkeywords={\palavrachaveum, \palavrachavedois, \palavrachavetres, \palavrachavequatro, \palavrachavecinco}, 
+    pdfcreator={LaTeX with abnTeX2},
+    pdfcaptionwriter={\@author},
+    pdfcopyright={Copyright (c) \ano, \@author},
+    pdflicenseurl={https://repositorio.ifg.edu.br/},
+    %pdfcontactaddress={\endereco},
+    %pdfcontactcity={\cidade},
+    %pdfcontactpostcode={\cep},
+    %pdfcontactphone={\telefone},
+    colorlinks=true,       		% false: boxed links; true: colored links
+    linkcolor=black,%blue,      % color of internal links
+    citecolor=black,%blue,      % color of links to bibliography
+    filecolor=black,%magenta,   % color of file links
+    urlcolor=black,%blue,
+}
+\makeatother
+% ---Fim Metadados no pdf
+
+% ---
+% compila a lista de abreviaturas e siglas e a lista de símbolos
+% Para habilitar utilize o diretorio (pre) e habilite 
+
+% Declaração das siglas
+% Para aparecer é necessário o comando \gls{RLM}
+% Observe que a sigla \gls{RLM} no texto escreve o {Regressão Linear Múltipla} e a {RLM} no texto com parenteses.
+\siglalista{LASSO}{\textit{Least Absolute Shrinkage and Selection Operator}}
+\siglalista{MAE}{\textit{Mean Absolute Error}}
+\siglalista{PLS}{\textit{Partial Least Squares}}
+\siglalista{RLM}{Regressão Linear Múltipla}
+\siglalista{RMSEP}{\textit{Root-Mean-Square Error of Prediction}}
+\siglalista{RMSEP-CV}{\textit{Root-Mean-Square Error of Prediction in Cross-Validation}}
+
+%----------------------------------------------------------------------------------------------------
+% Declaração dos símbolos % Para aparecer é necessário o comando \gls{chave} no texto % IMPORTANTE: Descrições devem ser simples, evitando fórmulas matemáticas complexas % IMPORTANTE: Use chaves duplas {{...}} quando a descrição contiver vírgulas 
+% ===== CONJUNTOS E ESTRUTURAS BÁSICAS =====
+\simbololista{R}{\ensuremath{\mathbb{R}}}{Conjunto dos números reais} 
+\simbololista{A}{\ensuremath{A}}{Subconjunto genérico da reta real} 
+% ===== VETORES E MATRIZES DE DADOS =====
+ \simbololista{x}{\ensuremath{\mathbf{x}}}{Vetor de dados de dimensão 1 por J} 
+\simbololista{x^{i}}{\ensuremath{\mathbf{x}^i}}{Vetor de dados para a i-ésima amostra} 
+\simbololista{x2}{\ensuremath{x}}{Variável independente (resposta instrumental em um canal analítico)} 
+\simbololista{x_n}{\ensuremath{x_n}}{n-ésima variável independente (resposta instrumental no n-ésimo canal analítico)} 
+\simbololista{x_i}{\ensuremath{x_i}}{Resposta instrumental em um canal analítico para a i-ésima amostra} 
+\simbololista{x_n^i}{\ensuremath{x_n^i}}{Resposta instrumental no n-ésimo canal analítico para a i-ésima amostra} 
+\simbololista{x_cal}{\ensuremath{\mathbf{x}_{cal}}}{Vetor de respostas instrumentais em um canal analítico para as M amostras de calibração}
+
+ % ===== VARIÁVEIS DEPENDENTES ===== 
+\simbololista{y}{\ensuremath{y}}{Variável dependente (concentração do analito)} 
+\simbololista{y^i}{\ensuremath{y^i}}{Concentração do analito para a i-ésima amostra} 
+\simbololista{Ycal}{\ensuremath{\mathbf{Y}_{cal}}}{Vetor de concentrações do analito para as M amostras de calibração} 
+
+
+% ===== MATRIZES DE CALIBRAÇÃO E TESTE ===== 
+\simbololista{Xcal}{\ensuremath{\mathbf{X}_{cal}}}{Matriz de respostas instrumentais em J canais analíticos para as M amostras de calibração} 
+\simbololista{X_cal^+}{\ensuremath{\mathbf{X}_{cal}^+}}{Pseudo-inversa da matriz de calibração} 
+\simbololista{Xteste}{\ensuremath{\mathbf{X}_{teste}}}{{Matriz de respostas instrumentais teste para os elementos Mn, Mo, Cr, Ni e Fe}} \simbololista{yteste}{\ensuremath{\mathbf{y}_{teste}}}{{Vetor de respostas instrumentais teste para os elementos Mn, Mo, Cr, Ni e Fe}} 
+
+% ===== ERROS ===== 
+\simbololista{e}{\ensuremath{e}}{Erro obtido com a predição} 
+
+% ===== AMOSTRAS BOOTSTRAP ===== 
+\simbololista{X^*n}{\ensuremath{\mathbf{X}^{*n}}}{n-ésima amostra \textit{bootstrap}} 
+\simbololista{x^*}{\ensuremath{x^*}}{Amostra \textit{bootstrap} individual} 
+\simbololista{gamma}{\ensuremath{\gamma}}{Função estatística aplicada às amostras \textit{bootstrap}} 
+\simbololista{s(gamma)}{\ensuremath{s(\gamma)}}{Aplicação da função gama às amostras \textit{bootstrap}} 
+\simbololista{m}{\ensuremath{m}}{Número de replicações \textit{bootstrap}} 
+
+% ===== POPULAÇÃO E AMOSTRAGEM ===== 
+\simbololista{j_n}{\ensuremath{j_n}}{n-ésimo índice da sequência de números inteiros selecionados aleatoriamente} 
+\simbololista{u}{\ensuremath{\mathbf{u}}}{Amostra aleatória formada por n unidades selecionadas} 
+\simbololista{u_n}{\ensuremath{u_n}}{n-ésima unidade da amostra aleatória} 
+\simbololista{u_i}{\ensuremath{u_i}}{i-ésima unidade da amostra aleatória} 
+\simbololista{v}{\ensuremath{\mathbf{v}}}{População finita de referência} 
+\simbololista{v_n}{\ensuremath{v_n}}{n-ésimo elemento da população \textbf{v}} 
+\simbololista{v_i}{\ensuremath{v_i}}{i-ésimo elemento da população \textbf{v}} 
+\simbololista{x_al}{\ensuremath{\mathbf{x}_{al}}}{Vetor de observações de uma amostra aleatória} 
+\simbololista{x_al_i}{\ensuremath{x_{al_i}}}{i-ésima observação da amostra aleatória} 
+\simbololista{x_al2}{\ensuremath{x_{al}}}{Variável aleatória escalar (resultado de um experimento aleatório)} 
+\simbololista{y_al}{\ensuremath{y_{al}}}{Variável aleatória y genérica} 
+\simbololista{z_al}{\ensuremath{z_{al}}}{Variável aleatória z genérica} 
+\simbololista{y_cal2}{\ensuremath{y_{cal}}}{Variável aleatória de calibração} 
+\simbololista{z_cal}{\ensuremath{z_{cal}}}{Variável aleatória auxiliar de calibração} 
+\simbololista{bar_x}{\ensuremath{\overline{x}}}{Média amostral de x} 
+
+% ===== VARIÁVEIS ALEATÓRIAS DA POPULAÇÃO ===== 
+\simbololista{X}{\ensuremath{\mathbf{X}}}{Vetor de variáveis aleatórias da população} 
+\simbololista{X_i}{\ensuremath{X_i}}{\textit{i-ésima} variável aleatória da população} 
+\simbololista{X_n}{\ensuremath{X_n}}{\textit{n-ésima} variável aleatória da população} 
+
+% ===== FREQUÊNCIAS E PROBABILIDADES ===== 
+\simbololista{f_k}{\ensuremath{f_k}}{k-ésima frequência probabilística} 
+\simbololista{f}{\ensuremath{\mathbf{f}}}{Vetor de frequências probabilísticas} 
+\simbololista{hat_f}{\ensuremath{\widehat{\mathbf{f}}}}{Estimativa do vetor de frequências probabilísticas} 
+\simbololista{d}{\ensuremath{\mathbf{d}}}{Função de distribuição de probabilidade} 
+\simbololista{hat_d}{\ensuremath{\widehat{\mathbf{d}}}}{Função de distribuição empírica} 
+
+% ===== DISTRIBUIÇÕES ===== 
+\simbololista{BI(n,p)}{\ensuremath{\text{BI}(n,p)}}{Distribuição binomial de tamanho n e probabilidade de sucesso p} 
+\simbololista{N(mu,sigma)}{\ensuremath{N(\mu,\sigma^2)}}{Distribuição normal com média $\mu$ e variância $\sigma$ ao quadrado} 
+\simbololista{Pr}{\ensuremath{\Pr}}{Operador de probabilidade} 
+\simbololista{binom}{\ensuremath{\binom{n}{k}}}{Coeficiente binomial (n escolhe k)} 
+
+% ===== PARÂMETROS ESTATÍSTICOS ===== 
+\simbololista{mu}{\ensuremath{\mu}}{Média populacional} 
+\simbololista{mu_x}{\ensuremath{\mu_x}}{Média da variável aleatória x} 
+\simbololista{sigma^2}{\ensuremath{\sigma^2}}{Variância populacional} 
+\simbololista{sigma_x^2}{\ensuremath{\sigma_x^2}}{Variância da variável aleatória x} 
+\simbololista{sigma}{\ensuremath{\sigma}}{Desvio padrão populacional} 
+\simbololista{p}{\ensuremath{p}}{Probabilidade de sucesso (parâmetro da distribuição binomial)} 
+\simbololista{n_param}{\ensuremath{n}}{Tamanho da amostra ou parâmetro de distribuição} 
+\simbololista{k}{\ensuremath{k}}{Índice ou contador em somatórios e distribuições} 
+
+% ===== EXPECTATIVAS ===== 
+\simbololista{E(x)}{\ensuremath{E(x)}}{Valor esperado (expectativa) de uma variável aleatória x} 
+\simbololista{E_f(x)}{\ensuremath{E_{\mathbf{f}}(x)}}{Expectativa de x sob o vetor de frequências f} 
+\simbololista{E_d(x)}{\ensuremath{E_{\mathbf{d}}(x)}}{Expectativa de x sob a função de distribuição de probabilidade d} 
+\simbololista{E_hat_d(x)}{\ensuremath{E_{\widehat{\mathbf{d}}}(x)}}{Expectativa de x sob a função de distribuição empírica} 
+
+% ===== FUNÇÕES EXEMPLARES ===== 
+\simbololista{g(y_cal)}{\ensuremath{g(y_{cal})}}{Função g aplicada sobre y de calibração} 
+\simbololista{h(z_cal)}{\ensuremath{h(z_{cal})}}{Função h aplicada sobre z de calibração} 
+\simbololista{t(d)}{\ensuremath{t(\mathbf{d})}}{Função ou método avaliativo aplicado à distribuição de probabilidade d} 
+
+% ===== PRINCÍPIO PLUG-IN E ESTIMATIVAS ===== 
+\simbololista{theta}{\ensuremath{\theta}}{Parâmetro de interesse a ser estimado} 
+\simbololista{theta_td}{\ensuremath{\theta = t(\mathbf{d})}}{Estimativa do parâmetro theta pelo princípio plug-in} 
+\simbololista{hat_theta}{\ensuremath{\widehat{\theta}}}{Estimativa do parâmetro $\theta$} 
+\simbololista{hat_theta^*}{\ensuremath{\widehat{\theta}^*}}{Estimativa \textit{bootstrap} do parâmetro $\theta$} 
+\simbololista{hat_theta_bag^*}{\ensuremath{\widehat{\theta}_{bag}^*}}{Estimativa \textit{plug-in} do método \textit{bagging}} 
+\simbololista{hat_theta_subag^*}{\ensuremath{\widehat{\theta}_{subag}^*}}{Estimativa \textit{plug-in} do método \textit{subagging}} 
+\simbololista{t(gamma)}{\ensuremath{t(\gamma)}}{Função avaliativa aplicada à função estatística $\gamma$}
+\simbololista{gamma_plug}{\ensuremath{\gamma}}{Função avaliativa no princípio \textit{plug-in}}
+
+% ===== ERROS PADRÃO ===== 
+\simbololista{se}{\ensuremath{se}}{Erro padrão (standard error)} 
+\simbololista{hat_se}{\ensuremath{\widehat{se}}}{Erro padrão estimado (\textit{estimated standard error})} 
+\simbololista{se_d}{\ensuremath{se_{\mathbf{d}}}}{Erro padrão sob a distribuição de probabilidade d} 
+\simbololista{se_hat_d}{\ensuremath{se_{\widehat{\mathbf{d}}}}}{Erro padrão sob a distribuição empírica} 
+\simbololista{se_m}{\ensuremath{se_m}}{Erro padrão calculado com m replicações \textit{bootstrap}} 
+\simbololista{hat_se_m}{\ensuremath{\widehat{se}_m}}{Estimativa do erro padrão com m replicações \textit{bootstrap}} 
+\simbololista{se_infty}{\ensuremath{se_\infty}}{Erro padrão ideal (limite quando m tende ao infinito)} 
+\simbololista{hat_se_infty}{\ensuremath{\widehat{se}_\infty}}{Estimativa do erro padrão ideal (com infinitas replicações \textit{bootstrap})} 
+
+% ===== COEFICIENTES DE VARIAÇÃO ===== 
+\simbololista{cv}{\ensuremath{cv}}{Coeficiente de variação} 
+\simbololista{cv(hat_se_m)}{\ensuremath{cv(\widehat{se}_{m})}}{Coeficiente de variação do erro padrão estimado com m replicações} \simbololista{cv(hat_se_infty)}{\ensuremath{cv(\widehat{se}_{\infty})}}{Coeficiente de variação do erro padrão ideal} 
+
+% ===== PARÂMETROS AUXILIARES ===== 
+\simbololista{Delta}{\ensuremath{\Delta}}{Parâmetro que mede o tamanho da distribuição empírica estimada usando amostras \textit{bootstrap}}
+
+
+% compila a lista de abreviaturas e siglas e a lista de símbolos
+\makenoidxglossaries 
+% ---
+
+% ---
+% compila o indice
+% ---
+\makeindex
+% ---
+%-----------------
+\usepackage{filecontents}
+
+%Definição de cores
+% Definir cores exatas da imagem
+\definecolor{verde}{RGB}{0,180,0}
+\definecolor{vermelho}{RGB}{255,0,0}
+\definecolor{azul}{RGB}{0,0,255}
+\definecolor{magenta}{RGB}{255,0,255}
+\definecolor{ciano}{RGB}{0,200,200}
+
+% --Dados para tabela em formato .cvs
+%-----------------------------------------
+% Configuração para usar vírgula como separador decimal
+\sisetup{output-decimal-marker = {,}}
+% 1. Configura o separador como ponto e vírgula
+\readarraysepchar{;}
+% 2. Carrega o arquivo para uma "matriz" chamada \dados
+% O [6] indica que seu arquivo tem 6 colunas
+\readdef{r_bagging.csv}\bagging
+\readarray\bagging\dados[-,6]
+
+%--------------------------
+\readdef{r_bagging2.csv}\rbagging
+\readarray\rbagging\rdados[-,6]
+
+%--------------------------
+\readdef{rmsep5080.csv}\rmsep
+\readarray\rmsep\rmsepdados[-,7]
+
+%--------------------------
+\readdef{rmsepsuperior.csv}\rmsepsup
+\readarray\rmsepsup\rmsepmaior[-,4]
+
+%R dados \num{\rdados[4,2]} até \num{\rdados[4,6]}
+% --Fim dados para tabela em formato .cvs
+
+% Configurações do texto do backref
+\renewcommand*{\backrefalt}[4]{
+	\ifcase #1 % Caso 0: Nenhuma citação
+		Nenhuma citação no texto.
+	\or % Caso 1: Citado apenas uma vez
+		Citado na página #2.
+	\else % Caso n: Citado mais de uma vez
+		Citado #1 vezes nas páginas #2.
+	\fi
+}
+
+%-------------------------------------------
+\makeatletter
+\@ifpackageloaded{url}{%
+  \def\UrlLeft{}
+  \def\UrlRight{}
+  \urlstyle{same}
+}{}
+\makeatother
+
+%-------------------------------------------
+
+% --------------------------------------------------------------------------
+% Início do documento
+% --------------------------------------------------------------------------
+\begin{document}
+
+% Seleciona o idioma do documento (conforme pacotes do babel)
+%\selectlanguage{english}
+\selectlanguage{brazil}
+
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing 
+
+% Espaçamento 1.5 entre linhas
+\OnehalfSpacing
+
+% Corrige justificação
+%\sloppy
+
+% ----------------------------------------------------------
+% ELEMENTOS PRÉ-TEXTUAIS
+% ----------------------------------------------------------
+\pretextual %a macro \pretextual é acionado automaticamente no início de \begin{document}
+% ---
+% Capa, folha de rosto, ficha catalográfica, errata, folha de aprovação
+% Dedicatória, agradecimentos, epígrafe, resumos, listas
+% ---
+\input{pre/pre}%------utilizado
+%\include{pre/pre}%Este include provoca erro de compilação
+% ---
+
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ----------------------------------------------------------
+\textual
+
+% ---
+% 1 - Introdução
+% ---
+\include{tex/1secao}
+% ---
+
+% ---
+% 2 - Seção 2(Desenvolvimento)
+% ---
+\include{tex/2secao}
+% ---
+
+% ---
+% 3 - Seção 3(Desenvolvimento)
+% ---
+\include{tex/3secao}%atualizado
+% ---
+
+% ---
+% 4 - Resultados e Discussões
+% ---
+%\phantompart
+\include{tex/4secao}
+
+
+\include{tex/6secao}
+
+%\include{tex/8secao_v2}%foi atualizado pelo tcc I
+
+\include{tex/7secao}
+\include{tex/8secao}
+\include{tex/9secao}
+
+\include{tex/10secao}
+
+% ---
+% 5 - Conclusão
+\include{tex/5secao}
+
+%\include{tex/10secao}
+
+
+% ----------------------------------------------------------
+% ELEMENTOS PÓS-TEXTUAIS
+% ----------------------------------------------------------
+\postextual
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Referências bibliográficas
+% ----------------------------------------------------------
+\begingroup
+   %\SingleSpacing\printbibliography[title=REFERÊNCIAS]
+\endgroup
+%Para utilizar o estilo numero alterar para abntex2-num
+\bibliographystyle{abntex2-num}%abntex2-alf
+\bibliography{pos/references}
+\thispagestyle{empty}%
+
+% ----------------------------------------------------------
+% Glossário
+% ----------------------------------------------------------
+% Consulte o manual da classe abntex2 para orientações sobre o glossário.
+%\glossary
+
+% ----------------------------------------------------------
+% Inicia os apêndices
+% ----------------------------------------------------------
+\begin{apendicesenv}
+\partapendices*%Para desabilitar colocoque o %
+%\input{pos/apendice_a}%Retirado
+\input{pos/apendice_d}%Retirado
+\input{pos/apendice_c}%Retirado
+%\input{pos/apendice_b}%Retirado
+
+\end{apendicesenv}
+% ---------------------------------------------------------
+
+% ---------------------------------------------------------
+% Inicia os anexos
+% ---------------------------------------------------------
+\begin{anexosenv}
+%\partanexos*%Para desabilitar colocoque o %
+%\input{pos/anexo_a}%Retirado
+\end{anexosenv}
+
+%---------------------------------------------------------------------
+% INDICE REMISSIVO
+%---------------------------------------------------------------------
+%\phantompart
+%\printindex
+%---------------------------------------------------------------------
+
+\end{document}

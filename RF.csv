@@ -1,0 +1,6 @@
+﻿ID,Descrição,Critérios de Aceite
+RF01.1,Upload de Xcal.txt (matriz de calibração X),Aceitar arquivos .txt ≤ 200MB
+RF01.2,Upload de Ycal.txt (vetor de calibração Y),Aceitar arquivos .txt ≤ 200MB
+RF01.3,Upload de Xteste.txt (matriz de teste X),Aceitar arquivos .txt ≤ 200MB
+RF01.4,Upload de Yteste.txt (vetor de teste Y),Aceitar arquivos .txt ≤ 200MB
+RF01.5,Validação de upload obrigatório,Botão de análise só habilita após os 4 arquivos serem enviados

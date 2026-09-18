@@ -1,0 +1,81 @@
+@startuml BaggingOptimized_Classe
+skinparam classAttributeIconSize 0
+hide circle
+
+class JFrame << (S,#ADD1B2) Swing >>
+class SimpleMatrix << (E,#F8D030) EJML >>
+class JFreeChart << (J,#F88379) JFreeChart >>
+
+class BaggingOptimized {
+  - txtXcal: JTextField
+  - txtYcal: JTextField
+  - txtXteste: JTextField
+  - txtYteste: JTextField
+  - txtResultados: JTextArea
+  - btnExecutar: JButton
+  - txtMValues: JTextField
+  - txtKValues: JTextField
+  - fileXcal: File
+  - fileYcal: File
+  - fileXteste: File
+  - fileYteste: File
+  --
+  + BaggingOptimized()
+  - initComponents(): void
+  - executarAnalise(): void
+  - findOptimalParameters(Xcal, Ycal, mValues, kValues): OptimalParams
+  - optimizeBaggingParameters(Xcal, Ycal, m): CVResult
+  - optimizeSubaggingParameters(Xcal, Ycal, m, k): CVResult
+  - performRLM(Xcal, Ycal, Xteste): SimpleMatrix
+  - performBagging(Xcal, Ycal, Xteste, m, bagging, k): SimpleMatrix
+  - calculateMetrics(actual, predicted, timeNanos): FinalMetrics
+  - calculateRMSE(actual, predicted): double
+  - calculateStdDev(values, mean): double
+  - extractRows(matrix, indices): SimpleMatrix
+  - salvarResultados(conteudo): String
+  - contarLinhas(file): int
+  - detectarDimensoes(file): int[]
+  - loadMatrixFromFile(file, linhas, colunas): SimpleMatrix
+  - loadVectorFromFile(file, linhas): SimpleMatrix
+  - plotComparison(actual, predicted, titulo): void
+  + {static} main(args): void
+}
+
+class CVResult {
+  + parameterValue: int
+  + meanRMSE: double
+  + stdRMSE: double
+  --
+  + CVResult(param, mean, std)
+}
+
+class OptimalParams {
+  + mBagging: int
+  + mSubagging: int
+  + kSubagging: double
+  + rmseCVBagging: double
+  + rmseCVSubagging: double
+  --
+  + OptimalParams(mBag, mSub, kSub, rmseBag, rmseSub)
+}
+
+class FinalMetrics {
+  + rmse: double
+  + mae: double
+  + r2: double
+  + timeMs: double
+  --
+  + FinalMetrics(rmse, mae, r2, time)
+}
+
+BaggingOptimized -up-|> JFrame
+BaggingOptimized +-- CVResult
+BaggingOptimized +-- OptimalParams
+BaggingOptimized +-- FinalMetrics
+BaggingOptimized ..> SimpleMatrix : usa
+BaggingOptimized ..> CVResult : cria
+BaggingOptimized ..> OptimalParams : cria
+BaggingOptimized ..> FinalMetrics : cria
+BaggingOptimized ..> JFreeChart : plota (plotComparison)
+
+@enduml

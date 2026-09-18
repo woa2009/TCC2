@@ -1,0 +1,890 @@
+%------------------------------------------------------------------------------------
+
+\chapter{Tabelas de Paridade Amostra-a-Amostra --- Java $\times$ Python}
+\label{cha:paridadeamostra}
+\index{Tabelas de Paridade Amostra-a-Amostra}
+% ----------------------------------------------------------
+
+Este apêndice reúne, para os cinco analitos avaliados (Manganês, Molibdênio,
+Cromo, Níquel e Ferro) e para as três técnicas de regressão implementadas
+(RLM, \textit{Bagging} e \textit{Subagging}), a comparação amostra-a-amostra
+entre o valor predito pelo sistema Java legado e o valor predito pelo sistema
+Python/Streamlit modernizado, frente ao valor de referência (Y real) do
+conjunto de teste. Essas tabelas complementam os testes de caixa-preta
+descritos na Seção~\ref{sec:testescaixapreta}, que verificam a equivalência
+por meio de métricas agregadas (RMSE, MAE, $R^2$): aqui, a equivalência é
+demonstrada em nível de cada predição individual, evidenciando que a migração
+de plataforma não introduziu perdas de acurácia amostra a amostra.
+% ----------------------------------------------------------
+
+%---------------------------------------------------
+\begin{comment}
+	
+\begin{table}[H]
+\centering
+\caption{Paridade \textit{Bagging} -- Cr}
+\label{tab:paridade_bagging_cr}
+\resizebox{0.6\textwidth}{!}{%
+\begin{tabular}{
+    S[table-format=2.0]
+    S[table-format=2.3]
+    S[table-format=2.4]
+    S[table-format=2.4]
+    S[table-format=1.1]
+}
+\toprule
+{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
+\midrule
+% ---- Dados das 34 amostras ----
+ 1  & 30.000  & 30.1484  & 30.1484  & 0.0 \\
+ 2  & 40.000  & 39.9788  & 39.9788  & 0.0 \\
+ 3  & 60.000  & 60.0579  & 60.0579  & 0.0 \\
+ 4  & 35.000  & 34.9336  & 34.9336  & 0.0 \\
+ 5  & 45.000  & 44.7089  & 44.7089  & 0.0 \\
+ 6  & 48.000  & 47.4377  & 47.4377  & 0.0 \\
+ 7  & 65.000  & 64.7815  & 64.7815  & 0.0 \\
+ 8  & 23.000  & 22.7322  & 22.7322  & 0.0 \\
+ 9  & 25.000  & 23.9380  & 23.9380  & 0.0 \\
+10  & 37.000  & 36.0721  & 36.0721  & 0.0 \\
+11  & 23.103  & 22.7884  & 22.7884  & 0.0 \\
+12  & 22.722  & 20.4495  & 20.4495  & 0.0 \\
+13  & 22.713  & 21.5452  & 21.5452  & 0.0 \\
+14  & 60.054  & 60.0535  & 60.0535  & 0.0 \\
+15  & 59.959  & 57.2886  & 57.2886  & 0.0 \\
+16  & 32.250  & 33.6880  & 33.6880  & 0.0 \\
+17  & 32.448  & 31.7185  & 31.7185  & 0.0 \\
+18  & 32.154  & 30.6143  & 30.6143  & 0.0 \\
+19  & 60.996  & 62.9324  & 62.9324  & 0.0 \\
+20  & 60.684  & 60.3428  & 60.3428  & 0.0 \\
+21  & 60.360  & 58.3135  & 58.3135  & 0.0 \\
+22  & 40.636  & 41.4952  & 41.4952  & 0.0 \\
+23  & 40.733  & 39.3944  & 39.3944  & 0.0 \\
+24  & 40.524  & 39.4233  & 39.4233  & 0.0 \\
+25  & 64.597  & 66.6126  & 66.6126  & 0.0 \\
+26  & 65.522  & 65.2090  & 65.2090  & 0.0 \\
+27  & 44.707  & 43.2840  & 43.2840  & 0.0 \\
+28  & 44.716  & 43.3947  & 43.3947  & 0.0 \\
+29  & 30.022  & 30.3226  & 30.3226  & 0.0 \\
+30  & 30.177  & 28.6635  & 28.6635  & 0.0 \\
+31  & 29.926  & 28.1745  & 28.1745  & 0.0 \\
+32  & 44.926  & 46.1783  & 46.1783  & 0.0 \\
+33  & 44.837  & 43.8530  & 43.8530  & 0.0 \\
+34  & 44.837  & 43.7524  & 43.7524  & 0.0 \\
+\bottomrule
+\end{tabular}%
+}
+\begin{tablenotes}%[flushleft]
+\footnotesize
+\item Fonte:~\oautor\\
+\textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$. 
+Todos os valores de $\Delta$ são iguais a zero, indicando paridade\\
+perfeita entre as implementações Java e Python para a técnica Bagging
+no analito Cromo (Cr).
+\end{tablenotes}
+\end{table}
+\end{comment}
+%---------------------------------------------------
+
+\begin{table}[H]
+\centering
+\caption{Paridade \textit{Bagging} -- Fe}
+\label{tab:paridade_bagging_fe}
+\resizebox{0.6\textwidth}{!}{%
+\begin{tabular}{
+    S[table-format=2.0]
+    S[table-format=3.3]
+    S[table-format=3.4]
+    S[table-format=3.4]
+    S[table-format=1.4]
+}
+\toprule
+{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
+\midrule
+% ---- Dados das 34 amostras ----
+  1 & 200.000 & 201.2347 & 201.2347 & 0.0000 \\
+  2 & 170.000 & 171.1741 & 171.1741 & 0.0000 \\
+  3 & 160.000 & 162.5467 & 162.5467 & 0.0000 \\
+  4 & 160.000 & 160.2073 & 160.2073 & 0.0000 \\
+  5 & 150.000 & 151.4182 & 151.4182 & 0.0000 \\
+  6 & 130.000 & 131.4313 & 131.4313 & 0.0000 \\
+  7 & 140.000 & 140.8831 & 140.8831 & 0.0000 \\
+  8 & 170.000 & 171.2164 & 171.2164 & 0.0000 \\
+  9 & 200.000 & 199.1764 & 199.1764 & 0.0000 \\
+ 10 & 160.000 & 159.3144 & 159.3144 & 0.0000 \\
+ 11 & 226.190 & 231.0960 & 231.0960 & 0.0000 \\
+ 12 & 222.460 & 222.6728 & 222.6728 & 0.0000 \\
+ 13 & 222.370 & 226.7032 & 226.7032 & 0.0000 \\
+ 14 & 187.090 & 188.5555 & 188.5555 & 0.0000 \\
+ 15 & 186.790 & 184.3893 & 184.3893 & 0.0000 \\
+ 16 & 185.180 & 191.2621 & 191.2621 & 0.0000 \\
+ 17 & 186.320 & 187.1853 & 187.1853 & 0.0000 \\
+ 18 & 184.630 & 182.3263 & 182.3263 & 0.0000 \\
+ 19 & 189.600 & 196.2627 & 196.2627 & 0.0000 \\
+ 20 & 188.630 & 192.6022 & 192.6022 & 0.0000 \\
+ 21 & 187.620 & 186.6603 & 186.6603 & 0.0000 \\
+ 22 & 201.920 & 204.7633 & 204.7633 & 0.0000 \\
+ 23 & 202.400 & 201.5573 & 201.5573 & 0.0000 \\
+ 24 & 201.360 & 201.6813 & 201.6813 & 0.0000 \\
+ 25 & 130.950 & 134.2735 & 134.2735 & 0.0000 \\
+ 26 & 132.830 & 133.0646 & 133.0646 & 0.0000 \\
+ 27 & 177.820 & 178.4886 & 178.4886 & 0.0000 \\
+ 28 & 177.850 & 178.7110 & 178.7110 & 0.0000 \\
+ 29 & 217.680 & 221.7617 & 221.7617 & 0.0000 \\
+ 30 & 218.800 & 221.0220 & 221.0220 & 0.0000 \\
+ 31 & 216.990 & 218.1427 & 218.1427 & 0.0000 \\
+ 32 & 170.520 & 175.7446 & 175.7446 & 0.0000 \\
+ 33 & 170.180 & 171.4528 & 171.4528 & 0.0000 \\
+ 34 & 170.180 & 171.6698 & 171.6698 & 0.0000 \\
+\bottomrule
+\end{tabular}%
+}
+\begin{tablenotes}%[flushleft]
+\footnotesize
+\item Fonte:~\oautor\\
+\textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$. 
+Todos os valores de $\Delta$ são iguais a zero, indicando paridade\\
+perfeita entre as implementações Java e Python para a técnica Bagging
+no analito Ferro (Fe).
+\end{tablenotes}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Paridade \textit{Bagging} -- Mn}
+\label{tab:paridade_bagging_mn}
+\resizebox{0.6\textwidth}{!}{%
+\begin{tabular}{
+    S[table-format=2.0]
+    S[table-format=2.3]
+    S[table-format=2.4]
+    S[table-format=2.4]
+    S[table-format=1.4]
+}
+\toprule
+{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
+\midrule
+% ---- Dados das 34 amostras ----
+  1 &   2.000 &   2.0153 &   2.0153 & 0.0000 \\
+  2 &   4.000 &   3.9981 &   3.9981 & 0.0000 \\
+  3 &   5.000 &   4.9809 &   4.9809 & 0.0000 \\
+  4 &   2.500 &   2.5041 &   2.5041 & 0.0000 \\
+  5 &   3.500 &   3.4813 &   3.4813 & 0.0000 \\
+  6 &   4.500 &   4.4478 &   4.4478 & 0.0000 \\
+  7 &   1.500 &   1.5056 &   1.5056 & 0.0000 \\
+  8 &   3.700 &   3.6941 &   3.6941 & 0.0000 \\
+  9 &   2.200 &   2.0499 &   2.0499 & 0.0000 \\
+ 10 &   3.200 &   3.1082 &   3.1082 & 0.0000 \\
+ 11 &   1.250 &   1.2605 &   1.2605 & 0.0000 \\
+ 12 &   1.229 &   1.0868 &   1.0868 & 0.0000 \\
+ 13 &   1.228 &   1.0790 &   1.0790 & 0.0000 \\
+ 14 &   1.050 &   1.1285 &   1.1285 & 0.0000 \\
+ 15 &   1.048 &   0.9638 &   0.9638 & 0.0000 \\
+ 16 &   2.016 &   2.1255 &   2.1255 & 0.0000 \\
+ 17 &   2.028 &   1.9454 &   1.9454 & 0.0000 \\
+ 18 &   2.010 &   1.8625 &   1.8625 & 0.0000 \\
+ 19 &   1.093 &   1.1769 &   1.1769 & 0.0000 \\
+ 20 &   1.087 &   1.0067 &   1.0067 & 0.0000 \\
+ 21 &   1.081 &   0.9659 &   0.9659 & 0.0000 \\
+ 22 &   2.297 &   2.3751 &   2.3751 & 0.0000 \\
+ 23 &   2.302 &   2.1683 &   2.1683 & 0.0000 \\
+ 24 &   2.290 &   2.1728 &   2.1728 & 0.0000 \\
+ 25 &   1.935 &   2.0812 &   2.0812 & 0.0000 \\
+ 26 &   1.963 &   1.9299 &   1.9299 & 0.0000 \\
+ 27 &   1.768 &   1.6882 &   1.6882 & 0.0000 \\
+ 28 &   1.768 &   1.6861 &   1.6861 & 0.0000 \\
+ 29 &   1.505 &   1.4854 &   1.4854 & 0.0000 \\
+ 30 &   1.513 &   1.3303 &   1.3303 & 0.0000 \\
+ 31 &   1.500 &   1.3175 &   1.3175 & 0.0000 \\
+ 32 &   3.783 &   3.9578 &   3.9578 & 0.0000 \\
+ 33 &   3.776 &   3.6993 &   3.6993 & 0.0000 \\
+ 34 &   3.776 &   3.6902 &   3.6902 & 0.0000 \\
+\bottomrule
+\end{tabular}%
+}
+\begin{tablenotes}%[flushleft]
+\footnotesize
+\item Fonte:~\oautor\\
+\textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$. 
+Todos os valores de $\Delta$ são iguais a zero, indicando paridade\\
+perfeita entre as implementações Java e Python para a técnica Bagging
+no analito Manganês (Mn).
+\end{tablenotes}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Paridade \textit{Bagging} -- Ni}
+\label{tab:paridade_bagging_ni}
+\resizebox{0.6\textwidth}{!}{%
+\begin{tabular}{
+    S[table-format=2.0]
+    S[table-format=2.3]
+    S[table-format=2.4]
+    S[table-format=2.4]
+    S[table-format=1.4]
+}
+\toprule
+{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
+\midrule
+% ---- Dados das 20 amostras ----
+  1 &  15.000 &  15.7904 &  15.7904 & 0.0000 \\
+  2 &  30.000 &  30.4864 &  30.4864 & 0.0000 \\
+  3 &  20.000 &  20.6410 &  20.6410 & 0.0000 \\
+  4 &  50.000 &  50.7132 &  50.7132 & 0.0000 \\
+  5 &  45.000 &  46.0191 &  46.0191 & 0.0000 \\
+  6 &  60.000 &  60.3324 &  60.3324 & 0.0000 \\
+  7 &  35.000 &  35.6279 &  35.6279 & 0.0000 \\
+  8 &  48.000 &  48.7008 &  48.7008 & 0.0000 \\
+  9 &  25.000 &  25.0248 &  25.0248 & 0.0000 \\
+ 10 &  38.000 &  38.1906 &  38.1906 & 0.0000 \\
+ 11 &  31.242 &  33.7431 &  33.7431 & 0.0000 \\
+ 12 &  31.434 &  33.4756 &  33.4756 & 0.0000 \\
+ 13 &  31.149 &  32.2768 &  32.2768 & 0.0000 \\
+ 14 &  52.029 &  55.5627 &  55.5627 & 0.0000 \\
+ 15 &  52.775 &  56.3382 &  56.3382 & 0.0000 \\
+ 16 &  21.809 &  23.4771 &  23.4771 & 0.0000 \\
+ 17 &  21.813 &  23.2773 &  23.2773 & 0.0000 \\
+ 18 &  25.048 &  27.0453 &  27.0453 & 0.0000 \\
+ 19 &  24.999 &  26.5735 &  26.5735 & 0.0000 \\
+ 20 &  24.999 &  26.5728 &  26.5728 & 0.0000 \\
+\bottomrule
+\end{tabular}%
+}
+\begin{tablenotes}%[flushleft]
+\footnotesize
+\item Fonte:~\oautor\\
+\textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$. 
+Todos os valores de $\Delta$ são iguais a zero, indicando paridade\\
+perfeita entre as implementações Java e Python para a técnica Bagging
+no analito Níquel (Ni).
+\end{tablenotes}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Paridade \textit{Bagging} -- Mo}
+\label{tab:paridade_bagging_mo}
+\resizebox{0.6\textwidth}{!}{%
+\begin{tabular}{
+    S[table-format=2.0]
+    S[table-format=2.3]
+    S[table-format=2.4]
+    S[table-format=2.4]
+    S[table-format=1.4]
+}
+\toprule
+{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
+\midrule
+% ---- Dados das 21 amostras ----
+  1 &   3.000 &   3.2844 &   3.2844 & 0.0000 \\
+  2 &   8.000 &   8.1148 &   8.1148 & 0.0000 \\
+  3 &   5.000 &   5.2699 &   5.2699 & 0.0000 \\
+  4 &   3.600 &   3.6603 &   3.6603 & 0.0000 \\
+  5 &   4.000 &   4.2607 &   4.2607 & 0.0000 \\
+  6 &   5.000 &   5.1603 &   5.1603 & 0.0000 \\
+  7 &   9.000 &   9.0995 &   9.0995 & 0.0000 \\
+  8 &   7.000 &   7.0161 &   7.0161 & 0.0000 \\
+  9 &   2.800 &   2.6208 &   2.6208 & 0.0000 \\
+ 10 &  10.000 &  10.0238 &  10.0238 & 0.0000 \\
+ 11 &   2.422 &   2.5660 &   2.5660 & 0.0000 \\
+ 12 &   2.383 &   2.1786 &   2.1786 & 0.0000 \\
+ 13 &   2.382 &   2.5483 &   2.5483 & 0.0000 \\
+ 14 &   1.742 &   2.1182 &   2.1182 & 0.0000 \\
+ 15 &   1.746 &   1.9412 &   1.9412 & 0.0000 \\
+ 16 &   1.737 &   2.0297 &   2.0297 & 0.0000 \\
+ 17 &   5.547 &   5.8904 &   5.8904 & 0.0000 \\
+ 18 &   5.548 &   6.0116 &   6.0116 & 0.0000 \\
+ 19 &   6.407 &   7.2260 &   7.2260 & 0.0000 \\
+ 20 &   6.394 &   6.9924 &   6.9924 & 0.0000 \\
+ 21 &   6.394 &   6.9658 &   6.9658 & 0.0000 \\
+\bottomrule
+\end{tabular}%
+}
+\begin{tablenotes}%[flushleft]
+\footnotesize
+\item Fonte:~\oautor\\
+\textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$. 
+Todos os valores de $\Delta$ são iguais a zero, indicando paridade\\
+perfeita entre as implementações Java e Python para a técnica Bagging
+no analito Molibdênio (Mo).
+\end{tablenotes}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Paridade \textit{RLM} -- Cr}
+\label{tab:paridade_rlm_cr}
+\resizebox{0.6\textwidth}{!}{%
+\begin{tabular}{
+    S[table-format=2.0]
+    S[table-format=2.3]
+    S[table-format=2.4]
+    S[table-format=2.4]
+    S[table-format=1.1]
+}
+\toprule
+{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
+\midrule
+% ---- Dados das 34 amostras ----
+ 1  & 30.000  & 30.4401  & 30.4401  & 0.0 \\
+ 2  & 40.000  & 40.6027  & 40.6027  & 0.0 \\
+ 3  & 60.000  & 60.5929  & 60.5929  & 0.0 \\
+ 4  & 35.000  & 35.2358  & 35.2358  & 0.0 \\
+ 5  & 45.000  & 45.2398  & 45.2398  & 0.0 \\
+ 6  & 48.000  & 47.8566  & 47.8566  & 0.0 \\
+ 7  & 65.000  & 65.1068  & 65.1068  & 0.0 \\
+ 8  & 23.000  & 22.9505  & 22.9505  & 0.0 \\
+ 9  & 25.000  & 24.1470  & 24.1470  & 0.0 \\
+10  & 37.000  & 36.5572  & 36.5572  & 0.0 \\
+11  & 23.103  & 22.9549  & 22.9549  & 0.0 \\
+12  & 22.722  & 20.7987  & 20.7987  & 0.0 \\
+13  & 22.713  & 22.0081  & 22.0081  & 0.0 \\
+14  & 60.054  & 60.4145  & 60.4145  & 0.0 \\
+15  & 59.959  & 57.6637  & 57.6637  & 0.0 \\
+16  & 32.250  & 33.9133  & 33.9133  & 0.0 \\
+17  & 32.448  & 31.8925  & 31.8925  & 0.0 \\
+18  & 32.154  & 30.9060  & 30.9060  & 0.0 \\
+19  & 60.996  & 63.0862  & 63.0862  & 0.0 \\
+20  & 60.684  & 60.5654  & 60.5654  & 0.0 \\
+21  & 60.360  & 58.6691  & 58.6691  & 0.0 \\
+22  & 40.636  & 41.9072  & 41.9072  & 0.0 \\
+23  & 40.733  & 39.7794  & 39.7794  & 0.0 \\
+24  & 40.524  & 39.8836  & 39.8836  & 0.0 \\
+25  & 64.597  & 66.6507  & 66.6507  & 0.0 \\
+26  & 65.522  & 65.1239  & 65.1239  & 0.0 \\
+27  & 44.707  & 43.7105  & 43.7105  & 0.0 \\
+28  & 44.716  & 43.8560  & 43.8560  & 0.0 \\
+29  & 30.022  & 30.5536  & 30.5536  & 0.0 \\
+30  & 30.177  & 29.0491  & 29.0491  & 0.0 \\
+31  & 29.926  & 28.6567  & 28.6567  & 0.0 \\
+32  & 44.926  & 46.8013  & 46.8013  & 0.0 \\
+33  & 44.837  & 44.3839  & 44.3839  & 0.0 \\
+34  & 44.837  & 44.3501  & 44.3501  & 0.0 \\
+\bottomrule
+\end{tabular}%
+}
+\begin{tablenotes}%[flushleft]
+\footnotesize
+\item Fonte:~\oautor\\
+\textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$. 
+Todos os valores de $\Delta$ são iguais a zero, indicando paridade\\
+perfeita entre as implementações Java e Python para a técnica RLM
+no analito Cromo (Cr).
+\end{tablenotes}
+\end{table}
+
+%----------------------------------------------
+\begin{table}[H]
+\centering
+\caption{Paridade \textit{RLM} -- Mo}
+\label{tab:paridade_rlm_mo}
+\resizebox{0.6\textwidth}{!}{%
+\begin{tabular}{
+    S[table-format=2.0]
+    S[table-format=2.3]
+    S[table-format=2.4]
+    S[table-format=2.4]
+    S[table-format=1.1]
+}
+\toprule
+{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
+\midrule
+% ---- Dados das 21 amostras ----
+ 1  &  3.000  &  3.2312  &  3.2312  & 0.0 \\
+ 2  &  8.000  &  8.0690  &  8.0690  & 0.0 \\
+ 3  &  5.000  &  5.2252  &  5.2252  & 0.0 \\
+ 4  &  3.600  &  3.6276  &  3.6276  & 0.0 \\
+ 5  &  4.000  &  4.1362  &  4.1362  & 0.0 \\
+ 6  &  5.000  &  5.0582  &  5.0582  & 0.0 \\
+ 7  &  9.000  &  9.0103  &  9.0103  & 0.0 \\
+ 8  &  7.000  &  7.0129  &  7.0129  & 0.0 \\
+ 9  &  2.800  &  2.6673  &  2.6673  & 0.0 \\
+10  & 10.000  &  9.9628  &  9.9628  & 0.0 \\
+11  &  2.422  &  2.4751  &  2.4751  & 0.0 \\
+12  &  2.383  &  2.1994  &  2.1994  & 0.0 \\
+13  &  2.382  &  2.4692  &  2.4692  & 0.0 \\
+14  &  1.742  &  2.0321  &  2.0321  & 0.0 \\
+15  &  1.746  &  1.8651  &  1.8651  & 0.0 \\
+16  &  1.737  &  1.9493  &  1.9493  & 0.0 \\
+17  &  5.547  &  5.7680  &  5.7680  & 0.0 \\
+18  &  5.548  &  5.9010  &  5.9010  & 0.0 \\
+19  &  6.407  &  7.1323  &  7.1323  & 0.0 \\
+20  &  6.394  &  6.8709  &  6.8709  & 0.0 \\
+21  &  6.394  &  6.8308  &  6.8308  & 0.0 \\
+\bottomrule
+\end{tabular}%
+}
+\begin{tablenotes}%[flushleft]
+\footnotesize
+\item Fonte:~\oautor\\
+\textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$. 
+Todos os valores de $\Delta$ são iguais a zero, indicando paridade\\
+perfeita entre as implementações Java e Python para a técnica RLM
+no analito Molibdênio (Mo).
+\end{tablenotes}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Paridade \textit{Subagging} -- Cr}
+\label{tab:paridade_subagging_cr}
+\resizebox{0.6\textwidth}{!}{%
+\begin{tabular}{
+    S[table-format=2.0]
+    S[table-format=2.3]
+    S[table-format=2.4]
+    S[table-format=2.4]
+    S[table-format=1.1]
+}
+\toprule
+{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
+\midrule
+% ---- Dados das 34 amostras ----
+ 1  & 30.000  & 30.1547  & 30.1547  & 0.0 \\
+ 2  & 40.000  & 39.9189  & 39.9189  & 0.0 \\
+ 3  & 60.000  & 59.9876  & 59.9876  & 0.0 \\
+ 4  & 35.000  & 34.8894  & 34.8894  & 0.0 \\
+ 5  & 45.000  & 44.6394  & 44.6394  & 0.0 \\
+ 6  & 48.000  & 47.3280  & 47.3280  & 0.0 \\
+ 7  & 65.000  & 64.7895  & 64.7895  & 0.0 \\
+ 8  & 23.000  & 22.7179  & 22.7179  & 0.0 \\
+ 9  & 25.000  & 23.9207  & 23.9207  & 0.0 \\
+10  & 37.000  & 36.0523  & 36.0523  & 0.0 \\
+11  & 23.103  & 22.8577  & 22.8577  & 0.0 \\
+12  & 22.722  & 20.5236  & 20.5236  & 0.0 \\
+13  & 22.713  & 21.6248  & 21.6248  & 0.0 \\
+14  & 60.054  & 60.0747  & 60.0747  & 0.0 \\
+15  & 59.959  & 57.2228  & 57.2228  & 0.0 \\
+16  & 32.250  & 33.6311  & 33.6311  & 0.0 \\
+17  & 32.448  & 31.6253  & 31.6253  & 0.0 \\
+18  & 32.154  & 30.5525  & 30.5525  & 0.0 \\
+19  & 60.996  & 62.9301  & 62.9301  & 0.0 \\
+20  & 60.684  & 60.3038  & 60.3038  & 0.0 \\
+21  & 60.360  & 58.2638  & 58.2638  & 0.0 \\
+22  & 40.636  & 41.4631  & 41.4631  & 0.0 \\
+23  & 40.733  & 39.3369  & 39.3369  & 0.0 \\
+24  & 40.524  & 39.3585  & 39.3585  & 0.0 \\
+25  & 64.597  & 66.5127  & 66.5127  & 0.0 \\
+26  & 65.522  & 65.1206  & 65.1206  & 0.0 \\
+27  & 44.707  & 43.1986  & 43.1986  & 0.0 \\
+28  & 44.716  & 43.3023  & 43.3023  & 0.0 \\
+29  & 30.022  & 30.3558  & 30.3558  & 0.0 \\
+30  & 30.177  & 28.6899  & 28.6899  & 0.0 \\
+31  & 29.926  & 28.1980  & 28.1980  & 0.0 \\
+32  & 44.926  & 46.1193  & 46.1193  & 0.0 \\
+33  & 44.837  & 43.7828  & 43.7828  & 0.0 \\
+34  & 44.837  & 43.6620  & 43.6620  & 0.0 \\
+\bottomrule
+\end{tabular}%
+}
+\begin{tablenotes}%[flushleft]
+\footnotesize
+\item Fonte:~\oautor\\
+\textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$. 
+Todos os valores de $\Delta$ são iguais a zero, indicando paridade\\
+perfeita entre as implementações Java e Python para a técnica Subagging
+no analito Cromo (Cr).
+\end{tablenotes}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Paridade \textit{RLM} -- Fe}
+\label{tab:paridade_rlm_fe}
+\resizebox{0.6\textwidth}{!}{%
+\begin{tabular}{
+    S[table-format=2.0]
+    S[table-format=3.3]
+    S[table-format=3.4]
+    S[table-format=3.4]
+    S[table-format=1.1]
+}
+\toprule
+{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
+\midrule
+% ---- Dados das 34 amostras ----
+ 1  & 200.000  & 201.3675  & 201.3675  & 0.0 \\
+ 2  & 170.000  & 171.6284  & 171.6284  & 0.0 \\
+ 3  & 160.000  & 162.8586  & 162.8586  & 0.0 \\
+ 4  & 160.000  & 160.3428  & 160.3428  & 0.0 \\
+ 5  & 150.000  & 151.4730  & 151.4730  & 0.0 \\
+ 6  & 130.000  & 131.2829  & 131.2829  & 0.0 \\
+ 7  & 140.000  & 140.9123  & 140.9123  & 0.0 \\
+ 8  & 170.000  & 172.1247  & 172.1247  & 0.0 \\
+ 9  & 200.000  & 200.0870  & 200.0870  & 0.0 \\
+10  & 160.000  & 159.7659  & 159.7659  & 0.0 \\
+11  & 226.190  & 230.8332  & 230.8332  & 0.0 \\
+12  & 222.460  & 223.5541  & 223.5541  & 0.0 \\
+13  & 222.370  & 227.3945  & 227.3945  & 0.0 \\
+14  & 187.090  & 188.8822  & 188.8822  & 0.0 \\
+15  & 186.790  & 184.4505  & 184.4505  & 0.0 \\
+16  & 185.180  & 190.9301  & 190.9301  & 0.0 \\
+17  & 186.320  & 187.3890  & 187.3890  & 0.0 \\
+18  & 184.630  & 182.9002  & 182.9002  & 0.0 \\
+19  & 189.600  & 196.1038  & 196.1038  & 0.0 \\
+20  & 188.630  & 192.7129  & 192.7129  & 0.0 \\
+21  & 187.620  & 186.7261  & 186.7261  & 0.0 \\
+22  & 201.920  & 204.5577  & 204.5577  & 0.0 \\
+23  & 202.400  & 201.9671  & 201.9671  & 0.0 \\
+24  & 201.360  & 202.1703  & 202.1703  & 0.0 \\
+25  & 130.950  & 134.1479  & 134.1479  & 0.0 \\
+26  & 132.830  & 132.1917  & 132.1917  & 0.0 \\
+27  & 177.820  & 178.5687  & 178.5687  & 0.0 \\
+28  & 177.850  & 178.9440  & 178.9440  & 0.0 \\
+29  & 217.680  & 221.3581  & 221.3581  & 0.0 \\
+30  & 218.800  & 221.6059  & 221.6059  & 0.0 \\
+31  & 216.990  & 219.0625  & 219.0625  & 0.0 \\
+32  & 170.520  & 175.9362  & 175.9362  & 0.0 \\
+33  & 170.180  & 171.7899  & 171.7899  & 0.0 \\
+34  & 170.180  & 172.1441  & 172.1441  & 0.0 \\
+\bottomrule
+\end{tabular}%
+}
+\begin{tablenotes}%[flushleft]
+\footnotesize
+\item Fonte:~\oautor\\
+\textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$. 
+Todos os valores de $\Delta$ são iguais a zero, indicando paridade\\
+perfeita entre as implementações Java e Python para a técnica RLM
+no analito Ferro (Fe).
+\end{tablenotes}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Paridade \textit{RLM} -- Ni}
+\label{tab:paridade_rlm_ni}
+\resizebox{0.6\textwidth}{!}{%
+\begin{tabular}{
+    S[table-format=2.0]
+    S[table-format=2.3]
+    S[table-format=2.4]
+    S[table-format=2.4]
+    S[table-format=1.1]
+}
+\toprule
+{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
+\midrule
+% ---- Dados das 20 amostras ----
+ 1  & 15.000  & 15.6181  & 15.6181  & 0.0 \\
+ 2  & 30.000  & 30.5664  & 30.5664  & 0.0 \\
+ 3  & 20.000  & 20.6828  & 20.6828  & 0.0 \\
+ 4  & 50.000  & 50.5499  & 50.5499  & 0.0 \\
+ 5  & 45.000  & 45.9700  & 45.9700  & 0.0 \\
+ 6  & 60.000  & 60.3713  & 60.3713  & 0.0 \\
+ 7  & 35.000  & 35.6232  & 35.6232  & 0.0 \\
+ 8  & 48.000  & 48.8117  & 48.8117  & 0.0 \\
+ 9  & 25.000  & 25.3044  & 25.3044  & 0.0 \\
+10  & 38.000  & 38.2514  & 38.2514  & 0.0 \\
+11  & 31.242  & 33.4020  & 33.4020  & 0.0 \\
+12  & 31.434  & 33.4244  & 33.4244  & 0.0 \\
+13  & 31.149  & 32.4378  & 32.4378  & 0.0 \\
+14  & 52.029  & 55.4537  & 55.4537  & 0.0 \\
+15  & 52.775  & 56.0699  & 56.0699  & 0.0 \\
+16  & 21.809  & 23.4975  & 23.4975  & 0.0 \\
+17  & 21.813  & 23.3956  & 23.3956  & 0.0 \\
+18  & 25.048  & 26.8478  & 26.8478  & 0.0 \\
+19  & 24.999  & 26.6769  & 26.6769  & 0.0 \\
+20  & 24.999  & 26.8538  & 26.8538  & 0.0 \\
+\bottomrule
+\end{tabular}%
+}
+\begin{tablenotes}%[flushleft]
+\footnotesize
+\item Fonte:~\oautor\\
+\textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$. 
+Todos os valores de $\Delta$ são iguais a zero, indicando paridade\\
+perfeita entre as implementações Java e Python para a técnica RLM
+no analito Níquel (Ni).
+\end{tablenotes}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Paridade \textit{RLM} -- Mn}
+\label{tab:paridade_rlm_mn}
+\resizebox{0.6\textwidth}{!}{%
+\begin{tabular}{
+    S[table-format=2.0]
+    S[table-format=2.3]
+    S[table-format=2.4]
+    S[table-format=2.4]
+    S[table-format=1.1]
+}
+\toprule
+{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
+\midrule
+% ---- Dados das 34 amostras ----
+ 1  &  2.000  &  2.0441  &  2.0441  & 0.0 \\
+ 2  &  4.000  &  4.0317  &  4.0317  & 0.0 \\
+ 3  &  5.000  &  4.9755  &  4.9755  & 0.0 \\
+ 4  &  2.500  &  2.5277  &  2.5277  & 0.0 \\
+ 5  &  3.500  &  3.5166  &  3.5166  & 0.0 \\
+ 6  &  4.500  &  4.4755  &  4.4755  & 0.0 \\
+ 7  &  1.500  &  1.5306  &  1.5306  & 0.0 \\
+ 8  &  3.700  &  3.7306  &  3.7306  & 0.0 \\
+ 9  &  2.200  &  2.0483  &  2.0483  & 0.0 \\
+10  &  3.200  &  3.1410  &  3.1410  & 0.0 \\
+11  &  1.250  &  1.3246  &  1.3246  & 0.0 \\
+12  &  1.229  &  1.1092  &  1.1092  & 0.0 \\
+13  &  1.228  &  1.1021  &  1.1021  & 0.0 \\
+14  &  1.050  &  1.1513  &  1.1513  & 0.0 \\
+15  &  1.048  &  0.9547  &  0.9547  & 0.0 \\
+16  &  2.016  &  2.1754  &  2.1754  & 0.0 \\
+17  &  2.028  &  1.9594  &  1.9594  & 0.0 \\
+18  &  2.010  &  1.8714  &  1.8714  & 0.0 \\
+19  &  1.093  &  1.1930  &  1.1930  & 0.0 \\
+20  &  1.087  &  0.9912  &  0.9912  & 0.0 \\
+21  &  1.081  &  0.9568  &  0.9568  & 0.0 \\
+22  &  2.297  &  2.4229  &  2.4229  & 0.0 \\
+23  &  2.302  &  2.1744  &  2.1744  & 0.0 \\
+24  &  2.290  &  2.1834  &  2.1834  & 0.0 \\
+25  &  1.935  &  2.1058  &  2.1058  & 0.0 \\
+26  &  1.963  &  1.9624  &  1.9624  & 0.0 \\
+27  &  1.768  &  1.7019  &  1.7019  & 0.0 \\
+28  &  1.768  &  1.6913  &  1.6913  & 0.0 \\
+29  &  1.505  &  1.5456  &  1.5456  & 0.0 \\
+30  &  1.513  &  1.3417  &  1.3417  & 0.0 \\
+31  &  1.500  &  1.3242  &  1.3242  & 0.0 \\
+32  &  3.783  &  4.0186  &  4.0186  & 0.0 \\
+33  &  3.776  &  3.7449  &  3.7449  & 0.0 \\
+34  &  3.776  &  3.7318  &  3.7318  & 0.0 \\
+\bottomrule
+\end{tabular}%
+}
+\begin{tablenotes}%[flushleft]
+\footnotesize
+\item Fonte:~\oautor\\
+\textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$. 
+Todos os valores de $\Delta$ são iguais a zero, indicando paridade\\
+perfeita entre as implementações Java e Python para a técnica RLM
+no analito Manganês (Mn).
+\end{tablenotes}
+\end{table}
+
+%---------------------------------------------------------------------
+\begin{table}[H]
+\centering
+\caption{Paridade \textit{Subagging} -- Fe}
+\label{tab:paridade_subagging_fe}
+\resizebox{0.6\textwidth}{!}{%
+\begin{tabular}{
+    S[table-format=2.0]
+    S[table-format=3.3]
+    S[table-format=3.4]
+    S[table-format=3.4]
+    S[table-format=1.1]
+}
+\toprule
+{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
+\midrule
+% ---- Dados das 34 amostras ----
+ 1  & 200.000  & 201.0091  & 201.0091  & 0.0 \\
+ 2  & 170.000  & 170.8332  & 170.8332  & 0.0 \\
+ 3  & 160.000  & 162.3268  & 162.3268  & 0.0 \\
+ 4  & 160.000  & 160.0403  & 160.0403  & 0.0 \\
+ 5  & 150.000  & 151.2045  & 151.2045  & 0.0 \\
+ 6  & 130.000  & 131.2211  & 131.2211  & 0.0 \\
+ 7  & 140.000  & 140.8559  & 140.8559  & 0.0 \\
+ 8  & 170.000  & 171.1367  & 171.1367  & 0.0 \\
+ 9  & 200.000  & 199.1951  & 199.1951  & 0.0 \\
+10  & 160.000  & 159.0988  & 159.0988  & 0.0 \\
+11  & 226.190  & 231.0943  & 231.0943  & 0.0 \\
+12  & 222.460  & 222.8628  & 222.8628  & 0.0 \\
+13  & 222.370  & 226.8653  & 226.8653  & 0.0 \\
+14  & 187.090  & 188.4710  & 188.4710  & 0.0 \\
+15  & 186.790  & 184.3402  & 184.3402  & 0.0 \\
+16  & 185.180  & 190.9941  & 190.9941  & 0.0 \\
+17  & 186.320  & 187.1093  & 187.1093  & 0.0 \\
+18  & 184.630  & 182.3256  & 182.3256  & 0.0 \\
+19  & 189.600  & 196.1556  & 196.1556  & 0.0 \\
+20  & 188.630  & 192.6410  & 192.6410  & 0.0 \\
+21  & 187.620  & 186.6622  & 186.6622  & 0.0 \\
+22  & 201.920  & 204.5022  & 204.5022  & 0.0 \\
+23  & 202.400  & 201.5124  & 201.5124  & 0.0 \\
+24  & 201.360  & 201.6347  & 201.6347  & 0.0 \\
+25  & 130.950  & 134.1539  & 134.1539  & 0.0 \\
+26  & 132.830  & 133.0960  & 133.0960  & 0.0 \\
+27  & 177.820  & 178.3030  & 178.3030  & 0.0 \\
+28  & 177.850  & 178.5385  & 178.5385  & 0.0 \\
+29  & 217.680  & 221.6976  & 221.6976  & 0.0 \\
+30  & 218.800  & 221.1559  & 221.1559  & 0.0 \\
+31  & 216.990  & 218.2779  & 218.2779  & 0.0 \\
+32  & 170.520  & 175.3388  & 175.3388  & 0.0 \\
+33  & 170.180  & 171.2162  & 171.2162  & 0.0 \\
+34  & 170.180  & 171.4580  & 171.4580  & 0.0 \\
+\bottomrule
+\end{tabular}%
+}
+\begin{tablenotes}%[flushleft]
+\footnotesize
+\item Fonte:~\oautor\\
+\textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$. 
+Todos os valores de $\Delta$ são iguais a zero, indicando paridade\\
+perfeita entre as implementações Java e Python para a técnica Subagging
+no analito Ferro (Fe).
+\end{tablenotes}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Paridade \textit{Subagging} -- Mo}
+\label{tab:paridade_subagging_mo}
+\resizebox{0.6\textwidth}{!}{%
+\begin{tabular}{
+    S[table-format=2.0]
+    S[table-format=2.3]
+    S[table-format=2.4]
+    S[table-format=2.4]
+    S[table-format=1.1]
+}
+\toprule
+{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
+\midrule
+% ---- Dados das 21 amostras ----
+ 1  &  3.000  &  3.2461  &  3.2461  & 0.0 \\
+ 2  &  8.000  &  8.0772  &  8.0772  & 0.0 \\
+ 3  &  5.000  &  5.2196  &  5.2196  & 0.0 \\
+ 4  &  3.600  &  3.6313  &  3.6313  & 0.0 \\
+ 5  &  4.000  &  4.1708  &  4.1708  & 0.0 \\
+ 6  &  5.000  &  5.0867  &  5.0867  & 0.0 \\
+ 7  &  9.000  &  9.0419  &  9.0419  & 0.0 \\
+ 8  &  7.000  &  7.0083  &  7.0083  & 0.0 \\
+ 9  &  2.800  &  2.6193  &  2.6193  & 0.0 \\
+10  & 10.000  &  9.9699  &  9.9699  & 0.0 \\
+11  &  2.422  &  2.5253  &  2.5253  & 0.0 \\
+12  &  2.383  &  2.1609  &  2.1609  & 0.0 \\
+13  &  2.382  &  2.4665  &  2.4665  & 0.0 \\
+14  &  1.742  &  2.0690  &  2.0690  & 0.0 \\
+15  &  1.746  &  1.8521  &  1.8521  & 0.0 \\
+16  &  1.737  &  1.9387  &  1.9387  & 0.0 \\
+17  &  5.547  &  5.7878  &  5.7878  & 0.0 \\
+18  &  5.548  &  5.9076  &  5.9076  & 0.0 \\
+19  &  6.407  &  7.1674  &  7.1674  & 0.0 \\
+20  &  6.394  &  6.8991  &  6.8991  & 0.0 \\
+21  &  6.394  &  6.8579  &  6.8579  & 0.0 \\
+\bottomrule
+\end{tabular}%
+}
+\begin{tablenotes}%[flushleft]
+\footnotesize
+\item Fonte:~\oautor\\
+\textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$. 
+Todos os valores de $\Delta$ são iguais a zero, indicando paridade\\
+perfeita entre as implementações Java e Python para a técnica Subagging
+no analito Molibdênio (Mo).
+\end{tablenotes}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Paridade \textit{Subagging} -- Mn}
+\label{tab:paridade_subagging_mn}
+\resizebox{0.6\textwidth}{!}{%
+\begin{tabular}{
+    S[table-format=2.0]
+    S[table-format=2.3]
+    S[table-format=2.4]
+    S[table-format=2.4]
+    S[table-format=1.1]
+}
+\toprule
+{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
+\midrule
+% ---- Dados das 34 amostras ----
+ 1  &  2.000  &  2.0088  &  2.0088  & 0.0 \\
+ 2  &  4.000  &  3.9880  &  3.9880  & 0.0 \\
+ 3  &  5.000  &  4.9797  &  4.9797  & 0.0 \\
+ 4  &  2.500  &  2.4954  &  2.4954  & 0.0 \\
+ 5  &  3.500  &  3.4684  &  3.4684  & 0.0 \\
+ 6  &  4.500  &  4.4303  &  4.4303  & 0.0 \\
+ 7  &  1.500  &  1.5007  &  1.5007  & 0.0 \\
+ 8  &  3.700  &  3.6739  &  3.6739  & 0.0 \\
+ 9  &  2.200  &  2.0319  &  2.0319  & 0.0 \\
+10  &  3.200  &  3.0903  &  3.0903  & 0.0 \\
+11  &  1.250  &  1.2602  &  1.2602  & 0.0 \\
+12  &  1.229  &  1.0783  &  1.0783  & 0.0 \\
+13  &  1.228  &  1.0738  &  1.0738  & 0.0 \\
+14  &  1.050  &  1.1324  &  1.1324  & 0.0 \\
+15  &  1.048  &  0.9554  &  0.9554  & 0.0 \\
+16  &  2.016  &  2.1216  &  2.1216  & 0.0 \\
+17  &  2.028  &  1.9282  &  1.9282  & 0.0 \\
+18  &  2.010  &  1.8453  &  1.8453  & 0.0 \\
+19  &  1.093  &  1.1846  &  1.1846  & 0.0 \\
+20  &  1.087  &  0.9996  &  0.9996  & 0.0 \\
+21  &  1.081  &  0.9579  &  0.9579  & 0.0 \\
+22  &  2.297  &  2.3711  &  2.3711  & 0.0 \\
+23  &  2.302  &  2.1490  &  2.1490  & 0.0 \\
+24  &  2.290  &  2.1537  &  2.1537  & 0.0 \\
+25  &  1.935  &  2.0800  &  2.0800  & 0.0 \\
+26  &  1.963  &  1.9192  &  1.9192  & 0.0 \\
+27  &  1.768  &  1.6718  &  1.6718  & 0.0 \\
+28  &  1.768  &  1.6675  &  1.6675  & 0.0 \\
+29  &  1.505  &  1.4858  &  1.4858  & 0.0 \\
+30  &  1.513  &  1.3205  &  1.3205  & 0.0 \\
+31  &  1.500  &  1.3057  &  1.3057  & 0.0 \\
+32  &  3.783  &  3.9483  &  3.9483  & 0.0 \\
+33  &  3.776  &  3.6782  &  3.6782  & 0.0 \\
+34  &  3.776  &  3.6669  &  3.6669  & 0.0 \\
+\bottomrule
+\end{tabular}%
+}
+\begin{tablenotes}%[flushleft]
+\footnotesize
+\item Fonte:~\oautor\\
+\textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$. 
+Todos os valores de $\Delta$ são iguais a zero, indicando paridade\\
+perfeita entre as implementações Java e Python para a técnica Subagging
+no analito Manganês (Mn).
+\end{tablenotes}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Paridade \textit{Subagging} -- Ni}
+\label{tab:paridade_subagging_ni}
+\resizebox{0.6\textwidth}{!}{%
+\begin{tabular}{
+    S[table-format=2.0]
+    S[table-format=2.3]
+    S[table-format=2.4]
+    S[table-format=2.4]
+    S[table-format=1.1]
+}
+\toprule
+{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
+\midrule
+% ---- Dados das 20 amostras ----
+ 1  & 15.000  & 15.7160  & 15.7160  & 0.0 \\
+ 2  & 30.000  & 30.4808  & 30.4808  & 0.0 \\
+ 3  & 20.000  & 20.5533  & 20.5533  & 0.0 \\
+ 4  & 50.000  & 50.6579  & 50.6579  & 0.0 \\
+ 5  & 45.000  & 45.9194  & 45.9194  & 0.0 \\
+ 6  & 60.000  & 60.2658  & 60.2658  & 0.0 \\
+ 7  & 35.000  & 35.6042  & 35.6042  & 0.0 \\
+ 8  & 48.000  & 48.6265  & 48.6265  & 0.0 \\
+ 9  & 25.000  & 24.9836  & 24.9836  & 0.0 \\
+10  & 38.000  & 38.1508  & 38.1508  & 0.0 \\
+11  & 31.242  & 33.6217  & 33.6217  & 0.0 \\
+12  & 31.434  & 33.2719  & 33.2719  & 0.0 \\
+13  & 31.149  & 32.1552  & 32.1552  & 0.0 \\
+14  & 52.029  & 55.5191  & 55.5191  & 0.0 \\
+15  & 52.775  & 56.1578  & 56.1578  & 0.0 \\
+16  & 21.809  & 23.3643  & 23.3643  & 0.0 \\
+17  & 21.813  & 23.1637  & 23.1637  & 0.0 \\
+18  & 25.048  & 26.9728  & 26.9728  & 0.0 \\
+19  & 24.999  & 26.4848  & 26.4848  & 0.0 \\
+20  & 24.999  & 26.4882  & 26.4882  & 0.0 \\
+\bottomrule
+\end{tabular}%
+}
+\begin{tablenotes}%[flushleft]
+\footnotesize
+\item Fonte:~\oautor\\
+\textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$. 
+Todos os valores de $\Delta$ são iguais a zero, indicando paridade\\
+perfeita entre as implementações Java e Python para a técnica Subagging
+no analito Níquel (Ni).
+\end{tablenotes}
+\end{table}
+

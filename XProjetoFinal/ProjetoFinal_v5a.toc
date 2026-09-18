@@ -1,0 +1,7 @@
+\babel@toc {brazil}{}\relax 
+\contentsline {section}{\numberline {1}Levantamento}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Classificação por Prioridade}{4}{subsection.1.1}%
+\contentsline {section}{\numberline {2}Projeto Lógico}{6}{section.2}%
+\contentsline {section}{\numberline {3}Projeto Físico}{7}{section.3}%
+\contentsline {section}{\numberline {4}Implementação}{7}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Destaques da Implementação (\texttt {app.py})}{8}{subsection.4.1}%

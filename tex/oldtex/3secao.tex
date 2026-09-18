@@ -1,0 +1,421 @@
+%------------------------------------------------------------------------------------------------------------
+%                     Métodos e Resultados
+%------------------------------------------------------------------------------------------------------------
+\chapter{Materiais e Métodos}
+\label{cha:metresult}
+\index{Materiais e Métodos}
+
+%Esta seção apresenta os dados utilizados na aplicação dos algoritmos de reamostragem, bem como as medidas estatísticas empregadas para comparação entre os métodos. O objetivo é determinar a concentração de Manganês (Mn), Molibdênio (Mo), Cromo (Cr), Níquel (Ni) e Ferro (Fe) a partir de espectros reamostrados pelos métodos \textit{bagging} e \textit{subagging}.
+
+%Para a implementação computacional, utilizou-se a linguagem de programação Java (JavaSE-17) em conjunto com o ambiente de desenvolvimento integrado Eclipse IDE (versão 2025-09, 4.37.0). As operações matriciais exigidas pelos algoritmos de calibração multivariada --- incluindo o cômputo da pseudo-inversa de Moore-Penrose, as reamostragens \textit{bootstrap} e a agregação dos modelos de \textit{ensemble} --- foram implementadas com o suporte da biblioteca EJML (\textit{Efficient Java Matrix Library}, \texttt{org.ejml.simple.SimpleMatrix}), especializada em operações de álgebra linear de alto desempenho para a plataforma Java. A visualização gráfica dos resultados foi realizada por meio da biblioteca JFreeChart\footnote{Versões utilizadas: EJML 0.43.1; JFreeChart 1.5.4. O código-fonte está disponível em: \url{https://github.com/...}}, que possibilitou a geração dos gráficos de predição e comparação de desempenho apresentados neste trabalho. A interface gráfica de usuário, utilizada para entrada de parâmetros e exibição dos resultados durante os experimentos, foi desenvolvida com os \textit{frameworks} nativos Java Swing e AWT. O gerenciamento dos arquivos de entrada e saída --- incluindo leitura das matrizes espectrométricas e exportação dos resultados --- foi realizado por meio das bibliotecas padrão de entrada e saída da plataforma (\texttt{java.io}).
+
+Esta seção apresenta os dados utilizados na aplicação dos algoritmos 
+de reamostragem, bem como as medidas estatísticas empregadas para 
+comparação entre os métodos. O objetivo é determinar a concentração 
+de Manganês (Mn), Molibdênio (Mo), Cromo (Cr), Níquel (Ni) e Ferro 
+(Fe) a partir de espectros reamostrados pelos métodos \textit{bagging} 
+e \textit{subagging}.
+
+Para a implementação computacional original, utilizou-se Java (JavaSE-17) com o
+ambiente Eclipse IDE, seguindo arquitetura MVC. As operações matriciais dos algoritmos
+de calibração --- pseudo-inversa de Moore-Penrose, reamostragens \textit{bootstrap} e
+agregação de modelos de \textit{ensemble} --- foram implementadas com a biblioteca
+\textit{Efficient Java Matrix Library}, \texttt{org.ejml.simple.SimpleMatrix}
+(EJML)\footnote{Versões utilizadas: EJML 0.43.1; JFreeChart 1.5.4. O código-fonte está
+disponível em: \url{https://github.com/...}}, de complexidade $O(np^2)$ por ajuste,
+sendo $n$ o número de amostras e $p$ o número de variáveis espectrais. A visualização
+utilizou JFreeChart e a interface, Swing/AWT.
+
+Essa arquitetura, embora funcional, acoplava fortemente lógica de negócio, persistência
+e interface gráfica, e não dispunha de suíte de testes automatizados, o que dificultava
+a verificação de regressões durante manutenções. Tais limitações motivaram sua adoção
+neste trabalho exclusivamente como \textit{baseline} comportamental --- não como
+arquitetura-alvo ---, servindo de referência para a suíte de 92 testes de caixa-preta
+que valida numericamente o sistema Python reescrito, descrita na
+Seção~\ref{sec:protocolo}.
+
+%---------------------------------------------------
+\begin{comment}
+%---------------------------------------------------
+%----------------------------------------------------------------------------------------------------------
+\section{Amostras de Aço-Ligas}
+\label{sec:amoacolig}
+\index{Métodos e Resultados!Introdução}
+
+Os dados foram obtidos por meio de um espectrômetro de emissão atômica em plasma com acoplamento indutivo sequencial convertido para um sistema de múltiplos canais de detecção baseado em um arranjo linear de 1024 fotodiodos. O aparelho instrumental faz uso das propriedades de absorção e emissão de plasma, como detalhado em~\cite{PIMENTEL:1998}.
+
+A espectroscopia de emissão atômica é responsável pela conversão dos componentes da amostra em átomos ou íons elementares, podendo excitá-los a vários estados eletrônicos. A rápida relaxação das espécies excitadas possibilita a produção de espectros visíveis que serão analisados quantitativamente e qualitativamente, com vantagens sobre outros métodos clássicos. Por exemplo, a baixa interferência entre elementos da mesma amostra, e o registro de espectros para vários elementos no mesmo conjunto de excitação~\cite{SKOOG:1997}.
+
+Os espectros obtidos por fontes de plasma são bastante complexos e constituem centenas ou até milhares de frequências (Figura~\ref{fig:espectros}). Logo, melhoram a análise qualitativa. Porém, dificulta a análise quantitativa pela grande quantidade de variáveis geradas por amostra motivando o emprego de calibração multivariada ~\cite{KRAMER:1998,MARTENS:1989}.
+
+
+\begin{figure}[htbp]
+\centering
+\caption{Espectros médios dos analitos analisados.}
+\label{fig:espectros}
+\resizebox{0.55\columnwidth}{!}{%
+\begin{tikzpicture}
+\begin{axis}[
+    width=12cm,
+    height=9cm,
+    %title={\textbf{Espectros Médios - 5 Elementos}},
+    title style={font=\large},
+    xlabel={Comprimento de Onda (nm)},
+    ylabel={Intensidades},
+    xlabel style={font=\normalsize},
+    ylabel style={font=\normalsize},
+    xmin=200, xmax=800,
+    ymin=0, ymax=3000,
+    grid=major,
+    grid style={line width=0.3pt, draw=gray!40},
+    legend pos=north east,
+    legend style={
+        font=\small,
+        cells={anchor=west},
+        draw=black,
+        fill=white,
+        line width=0.5pt
+    },
+    line width=1.5pt,
+    tick label style={font=\small},
+    axis background/.style={fill=white},
+    axis lines=left,
+    every axis plot/.append style={no marks}
+]
+
+% Espectro do Fe (verde)
+\addplot[verde, line width=1.5pt] table[
+    x expr=200+\coordindex*(600/722),
+    y index=0,
+    header=false
+] {./outros/prog/dados_Fe.txt};
+\addlegendentry{Fe}
+
+% Espectro do Cr (vermelho)
+\addplot[vermelho, line width=1.5pt] table[
+    x expr=200+\coordindex*(600/722),
+    y index=0,
+    header=false
+] {./outros/prog/dados_Cr.txt};
+\addlegendentry{Cr}
+
+% Espectro do Mn (azul)
+\addplot[azul, line width=1.5pt] table[
+    x expr=200+\coordindex*(600/722),
+    y index=0,
+    header=false
+] {./outros/prog/dados_Mn.txt};
+\addlegendentry{Mn}
+
+% Espectro do Ni (magenta)
+\addplot[magenta, line width=1.5pt] table[
+    x expr=200+\coordindex*(600/722),
+    y index=0,
+    header=false
+] {./outros/prog/dados_Ni.txt};
+\addlegendentry{Ni}
+
+% Espectro do Mo (ciano)
+\addplot[ciano, line width=1.5pt] table[
+    x expr=200+\coordindex*(600/722),
+    y index=0,
+    header=false
+] {./outros/prog/dados_Mo.txt};
+\addlegendentry{Mo}
+
+\end{axis}
+\end{tikzpicture}
+}%Fim raisebox
+%\legend{\footnotesize Fonte: \oautor.}
+\caption*{\footnotesize Fonte: \oautor.}
+\end{figure}
+
+\newpage
+
+As matrizes de respostas instrumentais e concentração das amostras de aço-ligas são organizadas em dois conjuntos de dados: calibração 
+(33,3 -- 45,9\%) e teste (54,1 -- 66,7\%), como segue~(Quadro~\ref{tab:conjuntos_subscritos}).
+
+\def\mna{(17 \times 723)}\def\mnb{(17 \times 1)}
+\def\mnc{(34 \times 723)}\def\mnd{(21 \times 1)}
+\def\mne{(21 \times 723)}\def\mnf{(34 \times 1)}
+\def\mng{(20 \times 1)}\def\mnh{(20 \times 1)}
+\def\mni{(20 \times 723)}\def\mnj{(17 \times 1)}
+%------------------------------------------------------------------
+\begin{quadro}[ht]
+%\begin{table}[ht]
+\centering
+\caption{Dimensões dos conjuntos de dados para diferentes elementos.}
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Elemento} & \textbf{Calibração} & \textbf{Teste} \\
+\hline
+Mn & $\textbf{Xcal}_{Mn_{\mna}}$, $\textbf{Ycal}_{Mn_{\mnb}}$ & $\textbf{Xteste}_{Mn_{\mnc}}$, $\textbf{yteste}_{Mn_{\mnf}}$ \\
+Mo & $\textbf{Xcal}_{Mo_{\mna}}$, $\textbf{Ycal}_{Mo_{\mnb}}$ & $\textbf{Xteste}_{Mo_{\mne}}$, $\textbf{yteste}_{Mo_{\mnd}}$ \\
+Cr & $\textbf{Xcal}_{Cr_{\mna}}$, $\textbf{Ycal}_{Cr_{\mnb}}$ & $\textbf{Xteste}_{Cr_{\mnc}}$, $\textbf{yteste}_{Cr_{\mnf}}$ \\
+Ni & $\textbf{Xcal}_{Ni_{\mna}}$, $\textbf{Ycal}_{Ni_{\mnb}}$ & $\textbf{Xteste}_{Ni_{\mni}}$, $\textbf{yteste}_{Ni_{\mnh}}$ \\
+Fe & $\textbf{\gls{Xcal}}_{Fe_{\mna}}$, $\textbf{\gls{Ycal}}_{Fe_{\mnb}}$ & $\textbf{\gls{Xteste}}_{Fe_{\mnc}}$, $\textbf{\gls{yteste}}_{Fe_{\mnf}}$ \\
+\hline
+\end{tabular}
+\label{tab:conjuntos_subscritos}
+\legend{Fonte:~\oautor}
+%\end{table}
+\end{quadro}
+\end{comment}
+%-----------------------------------------------------
+%----------------------------------------------------------------------------------------------------------
+\section{Amostras de Aço-Ligas}
+\label{sec:amoacolig}
+\index{Métodos e Resultados!Introdução}
+Os dados foram obtidos por meio de um espectrômetro de emissão atômica em plasma com acoplamento indutivo sequencial convertido para um sistema de múltiplos canais de detecção baseado em um arranjo linear de 1024 fotodiodos. O aparelho instrumental faz uso das propriedades de absorção e emissão de plasma, como detalhado em~\cite{PIMENTEL:1998}.
+
+A espectroscopia de emissão atômica é responsável pela conversão dos componentes da amostra em átomos ou íons elementares, podendo excitá-los a vários estados eletrônicos. A rápida relaxação das espécies excitadas possibilita a produção de espectros visíveis que serão analisados quantitativamente e qualitativamente, com vantagens sobre outros métodos clássicos. Por exemplo, a baixa interferência entre elementos da mesma amostra, e o registro de espectros para vários elementos no mesmo conjunto de excitação~\cite{SKOOG:1997}.
+
+Os espectros obtidos por fontes de plasma são bastante complexos e constituem centenas ou até milhares de frequências (Figura~\ref{fig:espectros}). Logo, melhoram a análise qualitativa. Porém, dificulta a análise quantitativa pela grande quantidade de variáveis geradas por amostra motivando o emprego de calibração multivariada~\cite{KRAMER:1998,MARTENS:1989}.
+
+\begin{figure}[htbp]
+\centering
+\caption{Espectros médios dos analitos analisados.}
+\label{fig:espectros}
+\resizebox{0.55\columnwidth}{!}{%
+\begin{tikzpicture}
+\begin{axis}[
+    width=12cm,
+    height=9cm,
+    title style={font=\large},
+    xlabel={Comprimento de Onda (nm)},
+    ylabel={Intensidades},
+    xlabel style={font=\normalsize},
+    ylabel style={font=\normalsize},
+    xmin=200, xmax=800,
+    ymin=0, ymax=3000,
+    grid=major,
+    grid style={line width=0.3pt, draw=gray!40},
+    legend pos=north east,
+    legend style={
+        font=\small,
+        cells={anchor=west},
+        draw=black,
+        fill=white,
+        line width=0.5pt
+    },
+    line width=1.5pt,
+    tick label style={font=\small},
+    axis background/.style={fill=white},
+    axis lines=left,
+    every axis plot/.append style={no marks}
+]
+
+% Espectro do Fe (verde)
+\addplot[verde, line width=1.5pt] table[
+    x expr=200+\coordindex*(600/722),
+    y index=0,
+    header=false
+] {./outros/prog/dados_Fe.txt};
+\addlegendentry{Fe}
+
+% Espectro do Cr (vermelho)
+\addplot[vermelho, line width=1.5pt] table[
+    x expr=200+\coordindex*(600/722),
+    y index=0,
+    header=false
+] {./outros/prog/dados_Cr.txt};
+\addlegendentry{Cr}
+
+% Espectro do Mn (azul)
+\addplot[azul, line width=1.5pt] table[
+    x expr=200+\coordindex*(600/722),
+    y index=0,
+    header=false
+] {./outros/prog/dados_Mn.txt};
+\addlegendentry{Mn}
+
+% Espectro do Ni (magenta)
+\addplot[magenta, line width=1.5pt] table[
+    x expr=200+\coordindex*(600/722),
+    y index=0,
+    header=false
+] {./outros/prog/dados_Ni.txt};
+\addlegendentry{Ni}
+
+% Espectro do Mo (ciano)
+\addplot[ciano, line width=1.5pt] table[
+    x expr=200+\coordindex*(600/722),
+    y index=0,
+    header=false
+] {./outros/prog/dados_Mo.txt};
+\addlegendentry{Mo}
+
+\end{axis}
+\end{tikzpicture}
+}%Fim raisebox
+\legend{\footnotesize Fonte: \oautor}
+\end{figure}
+
+\newpage
+
+As matrizes de respostas instrumentais e concentração das amostras de aço-ligas são organizadas em dois conjuntos de dados: calibração
+(33,3 -- 45,9\%) e teste (54,1 -- 66,7\%), como segue~(Quadro~\ref{tab:conjuntos_subscritos}). % ALTERADO: adicionado parágrafo abaixo
+Cada amostra é representada por 723 variáveis espectrais, resultando em uma razão de aproximadamente 42 preditores por observação no conjunto de calibração. Esse regime de alta dimensionalidade — inerente à natureza dos dados espectrométricos de plasma — é tratado pela pseudo-inversa de Moore-Penrose (Equação~\ref{eq:rlm-pseudo}), que fornece solução única mesmo em sistemas subdeterminados. 
+
+Ressalta-se, contudo, que conjuntos de calibração reduzidos são uma característica recorrente em análises de aço-ligas por espectrometria, como documentado na literatura~\cite{PIMENTEL:1998,KRAMER:1998}, e que os resultados obtidos neste estudo devem ser interpretados como evidências exploratórias do comportamento das técnicas investigadas nesse contexto específico, não sendo diretamente generalizáveis a outras composições ou regimes amostrais sem validação adicional.
+
+\def\mna{(17 \times 723)}\def\mnb{(17 \times 1)}
+\def\mnc{(34 \times 723)}\def\mnd{(21 \times 1)}
+\def\mne{(21 \times 723)}\def\mnf{(34 \times 1)}
+\def\mng{(20 \times 1)}\def\mnh{(20 \times 1)}
+\def\mni{(20 \times 723)}\def\mnj{(17 \times 1)}
+%------------------------------------------------------------------
+\begin{quadro}[ht]
+\centering
+\caption{Dimensões dos conjuntos de dados para diferentes elementos.}
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Elemento} & \textbf{Calibração} & \textbf{Teste} \\
+\hline
+Mn & $\textbf{Xcal}_{Mn_{\mna}}$, $\textbf{Ycal}_{Mn_{\mnb}}$ & $\textbf{Xteste}_{Mn_{\mnc}}$, $\textbf{yteste}_{Mn_{\mnf}}$ \\
+Mo & $\textbf{Xcal}_{Mo_{\mna}}$, $\textbf{Ycal}_{Mo_{\mnb}}$ & $\textbf{Xteste}_{Mo_{\mne}}$, $\textbf{yteste}_{Mo_{\mnd}}$ \\
+Cr & $\textbf{Xcal}_{Cr_{\mna}}$, $\textbf{Ycal}_{Cr_{\mnb}}$ & $\textbf{Xteste}_{Cr_{\mnc}}$, $\textbf{yteste}_{Cr_{\mnf}}$ \\
+Ni & $\textbf{Xcal}_{Ni_{\mna}}$, $\textbf{Ycal}_{Ni_{\mnb}}$ & $\textbf{Xteste}_{Ni_{\mni}}$, $\textbf{yteste}_{Ni_{\mnh}}$ \\
+Fe & $\textbf{\gls{Xcal}}_{Fe_{\mna}}$, $\textbf{\gls{Ycal}}_{Fe_{\mnb}}$ & $\textbf{\gls{Xteste}}_{Fe_{\mnc}}$, $\textbf{\gls{yteste}}_{Fe_{\mnf}}$ \\
+\hline
+\end{tabular}
+\label{tab:conjuntos_subscritos}
+\legend{\footnotesize Fonte:~\oautor}
+\end{quadro}
+
+%-----------------------------------------------------
+\section{Protocolo de Validação e Seleção de Hiperparâmetros}
+\label{sec:protocolo}
+
+A seleção dos hiperparâmetros dos algoritmos RLM-\textit{bagging} e 
+RLM-\textit{subagging} --- respectivamente, o número de replicações 
+bootstrap $m$ e a fração de subamostragem $k$ --- foi conduzida 
+mediante validação cruzada \textit{5-fold} aplicada exclusivamente 
+ao conjunto de calibração, garantindo que o conjunto de teste 
+permanecesse estritamente independente durante todo o processo de 
+otimização.
+
+O procedimento adotado seguiu as etapas descritas a seguir. 
+Primeiramente, o conjunto de calibração foi particionado em cinco 
+subconjuntos (\textit{folds}) de tamanho aproximadamente igual, 
+após embaralhamento aleatório com semente fixa (\texttt{seed} = 42) 
+para assegurar a reprodutibilidade dos resultados. Quando o número 
+de amostras de calibração não é divisível por cinco, o último 
+\textit{fold} absorve as amostras remanescentes, podendo conter uma 
+ou duas amostras adicionais em relação aos demais \textit{folds}.
+
+Em seguida, para cada combinação de hiperparâmetros avaliada, 
+realizou-se uma busca em grade (\textit{grid search}) sobre os 
+conjuntos de valores $m \in \{5, 10, 20, 30, 50\}$ e 
+$k \in \{0{,}50;\ 0{,}60;\ 0{,}70;\ 0{,}80\}$. A cada iteração, 
+o modelo foi treinado nos quatro \textit{folds} restantes e avaliado 
+no \textit{fold} de validação corrente, repetindo-se o procedimento 
+cinco vezes de modo que cada \textit{fold} atuasse exatamente uma vez 
+como conjunto de validação. O desempenho de cada configuração foi quantificado pelo RMSEP médio entre os cinco \textit{folds} (RMSEP\textsubscript{CV}), dado pela Equação~\ref{eq:rmsecv}:
+
+\begin{equation}
+\label{eq:rmsecv}
+\text{RMSEP}_{\text{CV}} = \frac{1}{K} \sum_{k=1}^{K}
+\sqrt{\frac{1}{n_k} \sum_{i=1}^{n_k}
+\left(\hat{y}_i^{(k)} - y_i^{(k)}\right)^2}
+\end{equation}
+
+\noindent onde $K = 5$ é o número de \textit{folds}, $n_k$ é o número 
+de amostras no \textit{fold} $k$, $y_i^{(k)}$ é o valor de referência 
+e $\hat{y}_i^{(k)}$ é o valor predito para a $i$-ésima amostra do 
+\textit{fold} $k$.
+
+Os hiperparâmetros ótimos $m^*$ e $k^*$ foram definidos como a 
+combinação que minimizou o RMSEP\textsubscript{CV}. Após a seleção, 
+os modelos finais foram retreinados utilizando a totalidade do 
+conjunto de calibração com os parâmetros ótimos identificados. 
+A avaliação final de desempenho foi realizada uma única vez sobre 
+o conjunto de teste independente, reportando-se as métricas RMSEP, 
+MAE e $R^2$, definidas nas Equações~\ref{eq:rmsep}, \ref{eq:mae} 
+e~\ref{eq:r2}, respectivamente.
+
+%-----------------------------------------------------
+
+\section{Medida do Erro Médio Quadrático de Predição}
+\label{sec:mederropre}
+\index{Métodos e Resultados!Medida do Erro Médio Quadrático de Predição}
+
+
+Para avaliar e comparar a acurácia preditiva dos modelos de regressão 
+linear múltipla (RLM) clássica, RLM com \textit{bagging} 
+(RLM-\textit{bagging}) e RLM com \textit{subagging} 
+(RLM-\textit{subagging}), utilizou-se um conjunto de três métricas 
+complementares: o \gls{RMSEP}\footnote{Erro Médio Quadrático de 
+Predição}, o \gls{MAE}\footnote{Erro Médio Absoluto} e o coeficiente 
+de determinação R$^2$. A adoção conjunta dessas métricas proporciona 
+uma caracterização mais abrangente do desempenho preditivo, uma vez 
+que cada uma captura aspectos distintos dos erros de 
+predição~\cite{Westad2024,kumari2024}.
+
+O \gls{RMSEP} fornece uma medida agregada da magnitude dos erros 
+entre os valores previstos por um modelo e os valores reais 
+observados em um conjunto de dados independente (geralmente um 
+conjunto de teste ou validação)~\cite{Westad2024,kumari2024}. Ao 
+elevar os erros ao quadrado antes de calcular a média e, 
+posteriormente, extrair a raiz quadrada, o \gls{RMSEP} atribui 
+maior peso aos erros maiores, penalizando modelos com grandes 
+discrepâncias entre as predições e a realidade. Essa característica 
+o torna particularmente útil em situações onde grandes erros são 
+mais indesejáveis, sendo adotado como critério primário de seleção 
+do melhor modelo neste 
+trabalho~\cite{liu2025,perisdiaz2021,jensen2024,Westad2024}.
+
+Obtidos os coeficientes de regressão para cada uma das técnicas 
+avaliadas, calculou-se a concentração do elemento de interesse. 
+O \gls{RMSEP} objetiva minimizar a soma quadrada da diferença entre a concentração predita e a concentração observada, como expresso na Equação~(\ref{eq:rmsep}):
+
+\begin{equation}
+   \textrm{RMSEP} = \sqrt{\dfrac{1}{n}\sum_{i=1}^{n}(\widehat{y}_i-y_i)^2}
+\label{eq:rmsep}
+\end{equation}
+
+\noindent onde $\widehat{y}_i$ é a $i$-ésima concentração predita 
+pelo modelo de regressão, $y_i$ é a concentração observada (real) 
+e $n$ é o número de amostras no conjunto de validação.
+
+O \gls{MAE} complementa o \gls{RMSEP} ao quantificar a magnitude 
+média dos erros de predição sem elevar os resíduos ao quadrado, 
+atribuindo peso igual a todos os desvios independentemente de sua 
+magnitude~\cite{hodson2022rmse}. Isso o torna mais robusto 
+à presença de valores discrepantes e permite verificar a 
+consistência dos erros: quando o \gls{RMSEP} supera 
+consideravelmente o \gls{MAE}, há indício de erros grandes e 
+isolados nas predições; quando ambos são próximos, os erros tendem 
+a ser homogeneamente distribuídos. O \gls{MAE} é dado pela Equação~(\ref{eq:mae}):
+
+\begin{equation}
+   \textrm{MAE} = \dfrac{1}{n}\sum_{i=1}^{n}|\widehat{y}_i - y_i|
+\label{eq:mae}
+\end{equation}
+
+\noindent onde $\widehat{y}_i$, $y_i$ e $n$ mantêm as mesmas 
+definições apresentadas na Equação~(\ref{eq:rmsep}). Assim como 
+o \gls{RMSEP}, o \gls{MAE} é expresso na mesma unidade da variável 
+resposta, com valores menores indicando maior acurácia preditiva.
+
+O coeficiente de determinação R$^2$ avalia a proporção da variância total da variável resposta que é explicada pelo modelo preditivo, sendo definido pela Equação~(\ref{eq:r2}):
+
+\begin{equation}
+   R^2 = 1 - \dfrac{\displaystyle\sum_{i=1}^{n}(\widehat{y}_i - y_i)^2}
+                   {\displaystyle\sum_{i=1}^{n}(\bar{y} - y_i)^2}
+\label{eq:r2}
+\end{equation}
+
+\noindent onde $\bar{y}$ representa a média dos valores de referência 
+no conjunto de teste. O R$^2$ assume valores no intervalo 
+$(-\infty,\, 1]$: R$^2 = 1$ indica ajuste perfeito; R$^2 = 0$ 
+equivale ao desempenho de um modelo que prediz apenas a média da 
+variável resposta; e valores negativos indicam desempenho inferior 
+a essa referência trivial~\cite{ezenarro2025chemometric}. Na 
+calibração multivariada de aço-ligas, valores de R$^2 > 0{,}99$ 
+são frequentemente reportados como indicativos de elevada capacidade 
+preditiva~\cite{Westad2024,kumari2024,perisdiaz2021}. Contudo, o R$^2$ 
+isoladamente pode ser enganoso em conjuntos de teste pequenos ou 
+com distribuição não uniforme de concentrações, razão pela qual 
+sua interpretação é sempre realizada em conjunto com o \gls{RMSEP} 
+e o \gls{MAE} neste trabalho.

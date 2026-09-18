@@ -1,0 +1,16 @@
+Elemento;Tecnica;RMSEP;MAE;R2;Tempo
+Mn;RLM;0,1051;0,0887;0,9907;2,4 ms
+Mn;RLM-bagging;0,1072;0,0908;0,9903;68,2 ms
+Mn;RLM-subagging;0,0966;0,0805;0,9922;17,1 ms
+Mo;RLM;0,2633;0,1952;0,9882;2,4 ms
+Mo;RLM-bagging;0,3388;0,2722;0,9805;67,5 ms
+Mo;RLM-subagging;0,2879;0,2201;0,9859;46,8 ms
+Cr;RLM;1,0798;0,8654;0,9938;2,5 ms
+Cr;RLM-bagging;1,2089;0,9830;0,9922;44,5 ms
+Cr;RLM-subagging;1,1294;0,9010;0,9932;46,8 ms
+Ni;RLM;1,6043;1,3256;0,9837;2,3 ms
+Ni;RLM-subagging;1,6003;1,2409;0,9838;10,6 ms
+Ni;RLM-bagging;1,7085;1,4122;0,9815;66,6 ms
+Fe;RLM;2,7513;2,1865;0,9892;13,5 ms
+Fe;RLM-bagging;2,6406;2,0246;0,9900;97,2 ms
+Fe;RLM-subagging;2,6509;2,0578;0,9900;41,2 ms

@@ -1,0 +1,541 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.7 }
+
+\bibitem{SKOOG:1997}
+\abntrefinfo{Skoog, Holler e Nieman}{SKOOG; HOLLER; NIEMAN}{1997}
+{SKOOG, D.~A.; HOLLER, F.~J.; NIEMAN, T.~A. \emph{Principles of Instrumental
+  Analysis}. 5. ed. USA: Brooks Cole, 1997. 960~p.}
+
+\bibitem{HARDLE:2007}
+\abntrefinfo{Hardle e Simar}{HARDLE; SIMAR}{2007}
+{HARDLE, W.; SIMAR, L. \emph{Applied Multivariate Statistical Analysis}. 2. ed.
+  Berlim, Germany: Springer-Verlag, 2007. 455~p.}
+
+\bibitem{TIMM:2002}
+\abntrefinfo{Timm}{TIMM}{2002}
+{TIMM, N.~H. \emph{Applied Multivariate Analysis}. Berlim, Germany:
+  Springer-Verlag, 2002. 693~p.  (Springer Texts in Statistics).}
+
+\bibitem{Canty2001}
+\abntrefinfo{Canty e Davison}{CANTY; DAVISON}{2001}
+{CANTY, A.~J.; DAVISON, A.~C. Resampling-based variance estimation for labour
+  force surveys.
+2001.
+DOI: \url{https://doi.org/10.1111/1467-9884.00196}.
+Dispon{\'\i}vel em:
+  \url{https://rss.onlinelibrary.wiley.com/doi/10.1111/1467-9884.00196}. Acesso
+  em: 29 mar. 2025.}
+
+\bibitem{rathnayake2022}
+\abntrefinfo{Rathnayake e Olive}{RATHNAYAKE; OLIVE}{2022}
+{RATHNAYAKE, S.; OLIVE, D. Bagged prediction accuracy in linear regression.
+\emph{DiVA Portal}, n. 1669623, 2022.
+Dispon{\'\i}vel em:
+  \url{https://www.diva-portal.org/smash/record.jsf?pid=diva2:1669623}. Acesso
+  em: 3 out. 2025.}
+
+\bibitem{reenskaug1979mvc}
+\abntrefinfo{Reenskaug}{REENSKAUG}{1979}
+{REENSKAUG, T. \emph{Models-Views-Controllers}.
+Palo Alto, California, 1979. Dispon{\'\i}vel em: \url{https://eril.net}. Acesso
+  em: 17 nov. 2026.}
+
+\bibitem{krasner1988description}
+\abntrefinfo{Krasner e Pope}{KRASNER; POPE}{1988}
+{KRASNER, G.~E.; POPE, S.~T. A description of the {M}odel-{V}iew-{C}ontroller
+  user interface paradigm in the {S}malltalk-80 system.
+\emph{Journal of Object-Oriented Programming}, SIGS Publications, v.~1, n.~3,
+  p. 26--49, 1988.
+Dispon{\'\i}vel em:
+  \url{https://iihm.imag.fr/blanch/ens/2006-2007/RICM3/IHM/documents/krasner-MVC.pdf}.
+  Acesso em: 17 nov. 2026.}
+
+\bibitem{DRAPER:1998}
+\abntrefinfo{Draper e Smith}{DRAPER; SMITH}{1998}
+{DRAPER, N.~R.; SMITH, H. \emph{Applied Regression Analysis}. 3. ed. USA: John
+  Willey \& Sons, Inc, 1998. 697~p.  (Wiley Series in Probability and
+  Statistics). Dispon{\'\i}vel em:
+  \url{https://onlinelibrary.wiley.com/doi/book/10.1002/9781118625590}. Acesso
+  em: 29 mar. 2025.}
+
+\bibitem{Alin2017}
+\abntrefinfo{Alin e Serneels}{ALIN; SERNEELS}{2017}
+{ALIN, A.; SERNEELS, S. Robust iteratively reweighted simpls.
+\emph{Journal of Chemometrics}, v.~31, n.~3, p. e2881, 2017.
+DOI: \url{https://doi.org/10.1002/cem.2881}.
+Dispon{\'\i}vel em:
+  \url{https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/abs/10.1002/cem.2881}.}
+
+\bibitem{Filzmoser2013}
+\abntrefinfo{Filzmoser e Nordhausen}{FILZMOSER; NORDHAUSEN}{2013}
+{FILZMOSER, P.; NORDHAUSEN, K. On robust testing for normality in chemometrics.
+\emph{Chemometrics and Intelligent Laboratory Systems}, v.~130, p. 98--100,
+  2013.
+DOI: \url{https://doi.org/10.1016/j.chemolab.2013.10.010}.
+Dispon{\'\i}vel em:
+  \url{https://www.sciencedirect.com/science/article/abs/pii/S0169743913001913}.}
+
+\bibitem{JOHNSON:2001}
+\abntrefinfo{Johnson e Wichern}{JOHNSON; WICHERN}{2001}
+{JOHNSON, R.~A.; WICHERN, D.~W. \emph{Applied Multivariate Statistical
+  Analysis}. 5. ed. USA: Prentice Hall, 2001. 767~p.}
+
+\bibitem{CHATTERJEE:2006}
+\abntrefinfo{Chatterjee e Hadi}{CHATTERJEE; HADI}{2006}
+{CHATTERJEE, S.; HADI, A.~S. \emph{Regression Analysis by Example}. 4. ed. USA:
+  John Willey \& Sons, Inc, 2006. 371~p. Dispon{\'\i}vel em:
+  \url{https://onlinelibrary.wiley.com/doi/book/10.1002/0470055464}. Acesso em:
+  29 mar. 2025.}
+
+\bibitem{yeon2023}
+\abntrefinfo{Yeon, Dai e Nordman}{YEON; DAI; NORDMAN}{2023}
+{YEON, H.; DAI, X.; NORDMAN, D.~J. Bootstrap inference in functional linear
+  regression models with scalar response.
+\emph{Bernoulli}, Bernoulli Society for Mathematical Statistics and
+  Probability, v.~29, n.~4, p. 2599--2626, 2023.
+DOI: \url{https://doi.org/10.3150/22-BEJ1554}.
+Dispon{\'\i}vel em:
+  \url{https://projecteuclid.org/journals/bernoulli/volume-29/issue-4/Bootstrap-inference-in-functional-linear-regression-models-with-scalar-response/10.3150/22-BEJ1554.short}.
+  Acesso em: 1 abr. 2025.}
+
+\bibitem{alfons2022}
+\abntrefinfo{Alfons, AteÅŸ e Groenen}{ALFONS; ATEÅŸ; GROENEN}{2022}
+{ALFONS, A.; ATEÅŸ, N.~Y.; GROENEN, P. J.~F. A robust bootstrap test for
+  mediation analysis.
+\emph{Organizational Research Methods}, v.~25, n.~3, p. 591--617, 2022.
+DOI: \url{https://doi.org/10.1177/1094428121999096}.
+Dispon{\'\i}vel em:
+  \url{https://journals.sagepub.com/doi/10.1177/1094428121999096}. Acesso em: 1
+  abr. 2025.}
+
+\bibitem{wan2023}
+\abntrefinfo{Wan et al.}{WAN et al.}{2023}
+{WAN, Y. et al. Multiplier bootstrap-based exploration.
+\emph{Proceedings of Machine Learning Research}, v.~202, p. 1--15, 2023.
+Dispon{\'\i}vel em: \url{https://openreview.net/forum?id=M6n9VdvThQ}. Acesso
+  em: 3 out. 2025.}
+
+\bibitem{du2024}
+\abntrefinfo{Du et al.}{DU et al.}{2024}
+{DU, J.-H. et al. {Extrapolated Cross-Validation for Randomized Ensembles}.
+\emph{Journal of Computational and Graphical Statistics}, v.~33, n.~3, p.
+  1061--1072, jul 2024.
+ISSN 1061-8600.
+DOI: \url{https://doi.org/10.1080/10618600.2023.2288194}.
+Dispon{\'\i}vel em:
+  \url{https://www.tandfonline.com/doi/full/10.1080/10618600.2023.2288194}.
+  Acesso em: 3 out. 2025.}
+
+\bibitem{jensen2024}
+\abntrefinfo{Jensen, Bianchi e Anfinsen}{JENSEN; BIANCHI; ANFINSEN}{2024}
+{JENSEN, V.; BIANCHI, F.~M.; ANFINSEN, S.~N. {Ensemble Conformalized Quantile
+  Regression for Probabilistic Time Series Forecasting}.
+\emph{IEEE Transactions on Neural Networks and Learning Systems}, v.~35, n.~7,
+  p. 9014--9025, jul 2024.
+ISSN 2162-237X.
+Dispon{\'\i}vel em: \url{https://arxiv.org/abs/2202.08756
+  https://ieeexplore.ieee.org/document/9940232/}. Acesso em: 3 out. 2025.}
+
+\bibitem{EFRON:1994}
+\abntrefinfo{Efron}{EFRON}{1994}
+{EFRON, B. \emph{The Jackknife, the Bootstrap and Other Resampling Plans}. USA:
+  Society for Industrial and Applied Mathematics, 1994. 91~p.  (CBMS-NSF
+  Regional Conference Series in Applied Mathematics). DOI:
+  \url{https://doi.org/10.1137/1.9781611970319}. Dispon{\'\i}vel em:
+  \url{https://epubs.siam.org/doi/book/10.1137/1.9781611970319}. Acesso em: 29
+  mar. 2025.}
+
+\bibitem{EFRON:1993}
+\abntrefinfo{Efron e Tibshirani}{EFRON; TIBSHIRANI}{1993}
+{EFRON, B.; TIBSHIRANI, R.~J. \emph{An Introduction to the Bootstrap}. USA:
+  Chapman \& Hall/CRC, 1993. 430~p. DOI: \url{https://doi.org/10.2307/2983304}.
+  Dispon{\'\i}vel em: \url{https://www.jstor.org/stable/2983304}. Acesso em: 29
+  mar. 2025.}
+
+\bibitem{EFRON:1997}
+\abntrefinfo{Efron e Tibshirani}{EFRON; TIBSHIRANI}{1997}
+{EFRON, B.; TIBSHIRANI, R.~J. Improvements on cross-validation: The .632+
+  bootstrap method.
+\emph{Journal of the American Statistical Association}, USA, v.~92, n.~438, p.
+  548--560, jul 1997.
+DOI: \url{https://doi.org/10.1080/01621459.1997.10474007}.
+Dispon{\'\i}vel em:
+  \url{https://www.tandfonline.com/doi/abs/10.1080/01621459.1997.10474007}.
+  Acesso em: 29 mar. 2025.}
+
+\bibitem{FERNANDEZ:1999}
+\abntrefinfo{Fernandez e Manteiga}{FERNANDEZ; MANTEIGA}{1999}
+{FERNANDEZ, J. M.~V.; MANTEIGA, W.~G. Resampling for checking linear regression
+  models via non-parametric regression estimation.
+\emph{Computational Statistics \& Data Analysis}, USA, v.~35, n.~2, p.
+  211--231, Dec 1999.
+DOI: \url{https://doi.org/10.1016/S0167-9473(99)00117-6}.
+Dispon{\'\i}vel em:
+  \url{https://www.sciencedirect.com/science/article/abs/pii/S0167947399001176?via\%3Dihub}.
+  Acesso em: 29 mar. 2025.}
+
+\bibitem{Opitz1999}
+\abntrefinfo{Opitz e Maclin}{OPITZ; MACLIN}{1999}
+{OPITZ, D.; MACLIN, R. Popular ensemble methods: an empirical study.
+\emph{Journal of Artificial Intelligence Research}, USA, v.~11, p. 169--198,
+  1999.
+DOI: \url{https://doi.org/10.1613/jair.614}.
+Dispon{\'\i}vel em: \url{https://jair.org/index.php/jair/article/view/10239}.
+  Acesso em: 29 mar. 2025.}
+
+\bibitem{GALVAO:2006}
+\abntrefinfo{GalvÃo et al.}{GALVÃO et al.}{2006}
+{GALVÃO, R. K.~H. et al. An application of subagging for the improvement of
+  prediction accuracy of multivariate calibration models.
+\emph{Chemometrics and Intelligent Laboratory Systems}, v.~81, n.~1, p. 60--67,
+  2006.
+ISSN 0169-7439.
+Dispon{\'\i}vel em:
+  \url{https://www.sciencedirect.com/science/article/pii/S0169743905001528}.
+  Acesso em: 29 set. 2025.}
+
+\bibitem{liu2025}
+\abntrefinfo{Liu et al.}{LIU et al.}{2025}
+{LIU, Y. et al. How are chemometric models validated? a systematic review of
+  linear regression models for nirs data in food analysis.
+\emph{Journal of Chemometrics}, v.~39, n.~5, p. e70036, 2025.
+DOI: \url{https://doi.org/10.1002/cem.70036}.
+Dispon{\'\i}vel em:
+  \url{https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/10.1002/cem.70036}.
+  Acesso em: 3 out. 2025.}
+
+\bibitem{iterative_mishra_2023}
+\abntrefinfo{Mishra e Liland}{MISHRA; LILAND}{2023}
+{MISHRA, P.; LILAND, K.~H. Iterative re-weighted multilinear partial least
+  squares modelling for robust predictive modelling.
+\emph{Journal of Chemometrics}, 2023.
+DOI: \url{https://doi.org/10.1002/cem.3527Digital Object Identifier (DOI)}.
+Dispon{\'\i}vel em:
+  \url{https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/10.1002/cem.3527}.
+  Acesso em: 3 out. 2025.}
+
+\bibitem{styawan2024}
+\abntrefinfo{Styawan et al.}{STYAWAN et al.}{2024}
+{STYAWAN et al. The use of chemometrics in combination with molecular
+  spectroscopy and chromatography methods for determining the levels of
+  gingerol compounds in ginger (zingiber officinale): a review.
+\emph{Food Research}, 2024.
+DOI: \url{https://doi.org/10.26656/fr.2017.8(3).165}.
+Dispon{\'\i}vel em:
+  \url{https://www.myfoodresearch.com/uploads/8/4/8/5/84855864/\_39\_\_fr-2022-165\_styawan.pdf}.
+  Acesso em: 3 out. 2025.}
+
+\bibitem{Breiman1996}
+\abntrefinfo{Breiman}{BREIMAN}{1996}
+{BREIMAN, L. Bagging predictors. In:  \emph{Machine Learning, 24}. Boston, USA:
+  Boston: Machine Learning, 1996. p. 123--140. Dispon{\'\i}vel em:
+  \url{https://link.springer.com/article/10.1007/BF00058655}. Acesso em: 2 out.
+  2025.}
+
+\bibitem{Shabbir2024}
+\abntrefinfo{Shabbir, Chand e Iqbal}{SHABBIR; CHAND; IQBAL}{2024}
+{SHABBIR, M.; CHAND, S.; IQBAL, F. Bagging-based ridge estimators for a linear
+  regression model with non-normal and heteroscedastic errors.
+\emph{Communications in Statistics - Simulation and Computation}, Taylor \&
+  Francis, v.~53, n.~8, p. 3653--3667, 2024.
+DOI: \url{https://doi.org/10.1080/03610918.2022.2109675}.
+Dispon{\'\i}vel em:
+  \url{https://www.tandfonline.com/doi/full/10.1080/03610918.2022.2109675}.
+  Acesso em: 1 abr. 2025.}
+
+\bibitem{HONG2020}
+\abntrefinfo{Hong, Liu e Zhu}{HONG; LIU; ZHU}{2020}
+{HONG, H.; LIU, J.; ZHU, A.-X. Modeling landslide susceptibility using
+  logitboost alternating decision trees and forest by penalizing attributes
+  with the bagging ensemble.
+\emph{Science of The Total Environment}, v.~718, p. 137231, 2020.
+ISSN 0048-9697.
+Dispon{\'\i}vel em:
+  \url{https://www.sciencedirect.com/science/article/pii/S0048969720307415}.
+  Acesso em: 1 abr. 2025.}
+
+\bibitem{nazhao2018}
+\abntrefinfo{Zhao et al.}{ZHAO et al.}{2018}
+{ZHAO, N. et al. Pharmaceutical analysis model robustness from bagging-pls and
+  pls using systematic tracking mapping.
+\emph{Frontiers in Chemistry}, v.~6, p.~262, 2018.
+DOI: \url{https://doi.org/10.3389/fchem.2018.00262}.
+Dispon{\'\i}vel em:
+  \url{https://www.frontiersin.org/journals/chemistry/articles/10.3389/fchem.2018.00262/full}.
+  Acesso em: 3 out. 2025.}
+
+\bibitem{kumari2024}
+\abntrefinfo{Kumari et al.}{KUMARI et al.}{2024}
+{KUMARI, M.~V. et al. A review on chemometric techniques.
+\emph{International Journal of Pharmacy and Pharmaceutical Sciences}, v.~9,
+  n.~4, 2024.
+Dispon{\'\i}vel em:
+  \url{https://www.pharmacyjournal.net/search?keyword=M\%20Venkata\%20Kumari}.
+  Acesso em: 3 out. 2025.}
+
+\bibitem{MARTINS:2006}
+\abntrefinfo{Martins}{MARTINS}{2006}
+{MARTINS, M. do N.
+\emph{Transferência de calibração de instrumentos para análise
+  espectrométrica empregando seleção de variáveis, reamostragem e
+  combinação de modelos}.
+114~p. Disserta\c{c}\~{a}o (Mestrado em Engenharia Eletrônica e Computação)
+  --- Programa de Pós-Graduação em Engenharia Eletrônica e Computação,
+  ITA, São José dos Campos, 2006.
+Dispon{\'\i}vel em:
+  \url{https://www.dominiopublico.gov.br/pesquisa/DetalheObraForm.do?select\_action=&co\_obra=151850}.
+  Acesso em: 23 set. 2025.}
+
+\bibitem{BAUER:1999}
+\abntrefinfo{Bauer e Kohavi}{BAUER; KOHAVI}{1999}
+{BAUER, E.; KOHAVI, R. An empirical comparison of voting classification
+  algorithms: Baggin, boosting e variants.
+\emph{Machine Learning}, Boston, USA, v.~36, p. 105--142, 1999.
+DOI: \url{https://doi.org/10.1023/A:1007515423169}.
+Dispon{\'\i}vel em:
+  \url{https://link.springer.com/article/10.1023/A:1007515423169}. Acesso em:
+  29 mar. 2025.}
+
+\bibitem{BREIMAN:2001}
+\abntrefinfo{Breiman}{BREIMAN}{2001}
+{BREIMAN, L. Using iterated bagging to debias regressions.
+\emph{Machine Learning}, Netherlands, v.~45, p. 261--277, 2001.
+DOI: \url{https://doi.org/10.1023/A:1017934522171}.
+Dispon{\'\i}vel em:
+  \url{https://link.springer.com/article/10.1023/A:1017934522171}. Acesso em:
+  29 mar. 2025.}
+
+\bibitem{Buhlmann2003}
+\abntrefinfo{Buhlmann}{BUHLMANN}{2003}
+{BUHLMANN, P. Bagging, subagging and bragging for improving some prediction
+  algorithms.
+2003.
+Dispon{\'\i}vel em:
+  \url{https://www.academia.edu/143294244/Bagging\_Subagging\_and\_Bragging\_for\_Improving\_some\_Prediction\_Algorithms}.
+  Acesso em: 31 mar. 2025.}
+
+\bibitem{revelas2024}
+\abntrefinfo{Revelas, Boldea e Werker}{REVELAS; BOLDEA; WERKER}{2024}
+{REVELAS, C.; BOLDEA, O.; WERKER, B. J.~M. \emph{When does Subagging Work?}
+  2024.
+Dispon{\'\i}vel em: \url{https://arxiv.org/abs/2404.01832}. Acesso em: 1 abr.
+  2025.}
+
+\bibitem{qin2023}
+\abntrefinfo{Qin e Huang}{QIN; HUANG}{2023}
+{QIN, T.; HUANG, W.-M. \emph{On Subagging Boosted Probit Model Trees}. 2023.
+Dispon{\'\i}vel em: \url{https://arxiv.org/abs/2311.02827}. Acesso em: 1 abr.
+  2025.}
+
+\bibitem{zhaoY2018}
+\abntrefinfo{Zhao, Amemiya e Hung}{ZHAO; AMEMIYA; HUNG}{2018}
+{ZHAO, Y.; AMEMIYA, Y.; HUNG, Y. Efficient gaussian process modeling using
+  experimental design-based subagging.
+\emph{Statistica Sinica}, v.~28, n.~3, p. 1459--1479, 2018.
+Dispon{\'\i}vel em: \url{https://www.jstor.org/stable/26492953}. Acesso em: 3
+  out. 2025.}
+
+\bibitem{shi2021}
+\abntrefinfo{Shi, Lu e Song}{SHI; LU; SONG}{2021}
+{SHI, C.; LU, W.; SONG, R. Breaking the curse of nonregularity with subagging:
+  Inference of the mean outcome under optimal treatment regimes.
+\emph{Journal of Machine Learning Research}, v.~22, n.~1, p. 1--35, 2021.
+Dispon{\'\i}vel em: \url{https://www.jmlr.org/papers/v21/20-066.html}. Acesso
+  em: 3 out. 2025.}
+
+\bibitem{zhang2017}
+\abntrefinfo{Zhang et al.}{ZHANG et al.}{2017}
+{ZHANG, C. et al. {Subagging for the improvement of predictive stability of
+  extreme learning machine for spectral quantitative analysis of complex
+  samples}.
+\emph{Chemometrics and Intelligent Laboratory Systems}, v.~161, p. 43--48, feb
+  2017.
+ISSN 01697439.
+Dispon{\'\i}vel em:
+  \url{https://linkinghub.elsevier.com/retrieve/pii/S0169743916302295}. Acesso
+  em: 3 out. 2025.}
+
+\bibitem{Tao2021}
+\abntrefinfo{Tao et al.}{TAO et al.}{2021}
+{TAO, X. et al. Gated recurrent unit-based parallel network traffic anomaly
+  detection using subagging.
+\emph{IEEE Transactions on Dependable and Secure Computing}, v.~19, n.~4, p.
+  2456--2468, 2021.
+DOI: \url{https://doi.org/10.1016/j.adhoc.2021.102465}.
+Dispon{\'\i}vel em:
+  \url{https://www.sciencedirect.com/science/article/abs/pii/S1570870521000342?via\%3Dihub}.
+  Acesso em: 3 out. 2025.}
+
+\bibitem{paleologo2020}
+\abntrefinfo{Paleologo, Elisseeff e Antonini}{PALEOLOGO; ELISSEEFF;
+  ANTONINI}{2020}
+{PALEOLOGO, G.; ELISSEEFF, A.; ANTONINI, G. Subagging for credit scoring models
+  [updated 2020].
+\emph{European Journal of Operational Research}, v.~201, n.~2, p. 490--499,
+  2020.
+DOI: \url{https://doi.org/10.1016/j.ejor.2009.03.008}.
+Dispon{\'\i}vel em:
+  \url{https://www.sciencedirect.com/science/article/abs/pii/S0377221709001532?via\%3Dihub}.
+  Acesso em: 3 out. 2025.}
+
+\bibitem{wei2021}
+\abntrefinfo{Wei}{WEI}{2021}
+{WEI, Y. Quantifying variation of subsampling-based ensemble methods under a
+  u-statistic framework.
+\emph{Wellesley College Thesis}, 2021.
+Dispon{\'\i}vel em: \url{https://repository.wellesley.edu/object/ir1637}.
+  Acesso em: 3 out. 2025.}
+
+\bibitem{Ing2016}
+\abntrefinfo{Ing e Lai}{ING; LAI}{2016}
+{ING, C.-K.; LAI, T.~L. Randomized maximum-contrast selection: Subagging for
+  large-scale regression.
+\emph{Electronic Journal of Statistics}, v.~10, n.~1, p. 121--170, 2016.
+DOI: \url{https://doi.org/10.1214/15-EJS1085}.
+Dispon{\'\i}vel em:
+  \url{https://projecteuclid.org/journals/electronic-journal-of-statistics/volume-10/issue-1/Randomized-maximum-contrast-selection-Subagging-for-large-scale-regression/10.1214/15-EJS1085.full}.}
+
+\bibitem{sommerville2011}
+\abntrefinfo{Sommerville}{SOMMERVILLE}{2011}
+{SOMMERVILLE, I. \emph{{Engenharia de Software}}. 9. ed. São Paulo: Pearson
+  Education Brasil, 2011. 504~p.
+ISBN 978-8581430157.}
+
+\bibitem{becker2020}
+\abntrefinfo{Sadangi}{SADANGI}{2026}
+{SADANGI, S. \emph{{Building Data Apps with Streamlit: Create Dynamic
+  Dashboards, Machine Learning Workflows, and AI Chatbots with Streamlit and
+  Python }}. Orange Education Pvt Ltd, 2026.
+ISBN 978-9349887848. Dispon{\'\i}vel em:
+  \url{https://bookshop.org/p/books/building-data-apps-with-streamlit-create-dynamic-dashboards-machine-learning-workflows-and-ai-chatbots-with-streamlit-and-python-english-edition-s/9861ec986aa21894}.
+  Acesso em: 28 maio. 2026.}
+
+\bibitem{pressman2016}
+\abntrefinfo{Pressman e Maxim}{PRESSMAN; MAXIM}{2016}
+{PRESSMAN, R.~S.; MAXIM, B.~R. \emph{{Engenharia de Software: Uma Abordagem
+  Profissional}}. 8. ed. Porto Alegre: Artmed, 2016.
+ISBN 978-8582603659.}
+
+\bibitem{alibaba2026qwen}
+\abntrefinfo{Cloud}{CLOUD}{2026}
+{CLOUD, A. \emph{{Qwen3.7-Plus}: Modelo de linguagem de inteligência
+  artificial}. Hangzhou, China: [s.n.], 2026. \url{https://chat.qwen.ai/}.
+Acesso em: 16 nov. 2026.}
+
+\bibitem{PIMENTEL:1998}
+\abntrefinfo{PIMENTEL et al.}{PIMENTEL et al.}{1998}
+{PIMENTEL, M.~F. et al. Convertion of a sequential inductively coupled plasma
+  emission spectrometer into a multichannel simultaneous system using a
+  photodiode array detector.
+\emph{Journal of Automatic Chemistry}, USA, v.~20, n.~3, p. 69--75, 1998.
+DOI: \url{https://doi.org/10.1155/S146392469800008X}.
+Dispon{\'\i}vel em:
+  \url{https://onlinelibrary.wiley.com/doi/10.1155/S146392469800008X}. Acesso
+  em: 29 mar. 2025.}
+
+\bibitem{KRAMER:1998}
+\abntrefinfo{Kramer}{KRAMER}{1998}
+{KRAMER, R. \emph{Chemometric Techniques for Quantitative Analysis}. USA: CRC
+  Press, 1998. 220~p.}
+
+\bibitem{MARTENS:1989}
+\abntrefinfo{Martens e Naes}{MARTENS; NAES}{1989}
+{MARTENS, H.; NAES, T. \emph{Multivariate Calibration}. USA: John Wiley \& Sons
+  Ltd, 1989. 399~p.}
+
+\bibitem{Westad2024}
+\abntrefinfo{Westad e FlÅten}{WESTAD; FLÅTEN}{2024}
+{WESTAD, F.; FLÅTEN, G.~R. A retrospective view on non-linear methods in
+  chemometrics, and future directions.
+\emph{Frontiers in Analytical Science}, v.~4, 2024.
+DOI: \url{https://doi.org/10.3389/frans.2024.1393222}.
+Dispon{\'\i}vel em:
+  \url{https://www.frontiersin.org/journals/analytical-science/articles/10.3389/frans.2024.1393222/full}.
+  Acesso em: 3 out. 2025.}
+
+\bibitem{perisdiaz2021}
+\abntrefinfo{Peris-Diaz e Krezel}{PERIS-DIAZ; KREZEL}{2021}
+{PERIS-DIAZ, M.~D.; KREZEL, A. A guide to good practice in chemometric methods
+  for vibrational spectroscopy, electrochemistry, and hyphenated mass
+  spectrometry.
+\emph{TrAC Trends in Analytical Chemistry}, v.~135, p. 116157, 2021.
+DOI: \url{https://doi.org/10.1016/j.trac.2020.116157}.
+Dispon{\'\i}vel em:
+  \url{https://www.sciencedirect.com/science/article/pii/S0165993620303861?via\%3Dihub}.
+  Acesso em: 3 out. 2025.}
+
+\bibitem{hodson2022rmse}
+\abntrefinfo{Hodson}{HODSON}{2022}
+{HODSON, T.~O. Root-mean-square error ({RMSE}) or mean absolute error ({MAE}):
+  when to use them or not.
+\emph{Geoscientific Model Development}, Copernicus Publications, v.~15, n.~14,
+  p. 5481--5487, 2022.
+DOI: \url{doi.org/10.5194/gmd-15-5481-2022}.
+Dispon{\'\i}vel em: \url{https://pubs.usgs.gov/publication/70236308}. Acesso
+  em: 3 mar. 2026.}
+
+\bibitem{ezenarro2025chemometric}
+\abntrefinfo{Ezenarro e Schorn-Garc{\'{i}}a}{EZENARRO;
+  SCHORN-GARC{\'{I}}A}{2025}
+{EZENARRO, J.; SCHORN-GARC{\'{I}}A, D. How are chemometric models validated?
+  {A} systematic review of linear regression models for {NIRS} data in food
+  analysis.
+\emph{Journal of Chemometrics}, Wiley, v.~39, n.~6, p. e70036, 2025.
+DOI: \url{https://doi.org/10.1002/cem.70036}.
+Dispon{\'\i}vel em:
+  \url{https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/10.1002/cem.70036}.
+  Acesso em: 5 mar. 2026.}
+
+\bibitem{rfc2616}
+\abntrefinfo{Fielding et al.}{FIELDING et al.}{1999}
+{FIELDING, R.~T. et al. \emph{Hypertext Transfer Protocol -- HTTP/1.1}.
+Reston, Virginia {USA}, 1999. Dispon{\'\i}vel em:
+  \url{https://www.rfc-editor.org/rfc/rfc2616}. Acesso em: 16 nov. 2026.}
+
+\bibitem{buschmann1996posa1}
+\abntrefinfo{Buschmann et al.}{BUSCHMANN et al.}{1996}
+{BUSCHMANN, F. et al. \emph{Pattern-Oriented Software Architecture, Volume 1: A
+  System of Patterns}. Chichester, UK: John Wiley \& Sons, 1996.
+ISBN 978-0471958697. Dispon{\'\i}vel em:
+  \url{https://dl.acm.org/doi/book/10.5555/249013\#cited-by-sec}. Acesso em: 17
+  nov. 2026.}
+
+\bibitem{vscode2024}
+\abntrefinfo{{Microsoft}}{{Microsoft}}{2024}
+{{Microsoft}. \emph{Visual Studio Code: Code Editing. Redefined}. 2024.
+Dispon{\'\i}vel em: \url{https://code.visualstudio.com}. Acesso em: 28 maio.
+  2026.}
+
+\bibitem{martin2008}
+\abntrefinfo{Martin}{MARTIN}{2008}
+{MARTIN, R.~C. \emph{Clean Code: A Handbook of Agile Software Craftsmanship}.
+  1. ed. Upper Saddle River, NJ: Prentice Hall PTR, 2008. 464~p.  (Robert C.
+  Martin Series).
+ISBN 978-0-13-235088-4. Dispon{\'\i}vel em:
+  \url{https://www.pearson.de/clean-code-a-handbook-of-agile-software-craftsmanship-9780132350884}.
+  Acesso em: 28 maio. 2026.}
+
+\bibitem{scrum2026}
+\abntrefinfo{Schwaber e Sutherland}{SCHWABER; SUTHERLAND}{2020}
+{SCHWABER, K.; SUTHERLAND, J. \emph{O Guia do Scrum}. 2020.
+Dispon{\'\i}vel em: \url{https://scrumguides.org/scrum-guide.html}. Acesso em:
+  20 jun. 2026.}
+
+\bibitem{pytest2024}
+\abntrefinfo{{Pytest Development Team}}{{Pytest Development Team}}{2024}
+{{Pytest Development Team}. \emph{pytest: helps you write better programs}.
+  2024.
+Disponível em: \url{https://docs.pytest.org/en/stable/}.
+Dispon{\'\i}vel em: \url{https://docs.pytest.org/en/stable/}. Acesso em: 20
+  jun. 2026.}
+
+\bibitem{jorgensen2014}
+\abntrefinfo{Jorgensen}{JORGENSEN}{2014}
+{JORGENSEN, P.~C. \emph{Software Testing: A Craftsman's Approach}. 4. ed. Boca
+  Raton: CRC Press, 2014.}
+
+\end{thebibliography}

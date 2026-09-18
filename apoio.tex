@@ -1,0 +1,24 @@
+\begin{figure}[ht]
+\centering
+\captionsetup{justification=centering, labelsep=endash, width=0.75\linewidth}
+\caption{Fluxo principal de execução da análise espectral}
+\label{fig:fluxo-principal}
+\fbox{%
+  \begin{minipage}{0.95\linewidth}
+  \centering\small\sffamily
+  \begin{tabular}{@{}c@{}}
+  [Início: Acessa a aplicação] \\ $\downarrow$ \\
+  [Upload: Xcal, Ycal, Xteste, Yteste] \\ $\downarrow$ \\
+  \{Sistema valida arquivos?\} \\ $\downarrow$ (Não) $\rightarrow$ [Alerta: ``Verifique formato''] $\rightarrow$ [Retorna] \\ $\downarrow$ (Sim) \\
+  [Habilita aba ``Configuração''] \\ $\downarrow$ \\
+  [Define $m$ e $k$ (se ensemble)] \\ $\downarrow$ \\
+  [Clica em ``Executar Análise com Otimização CV''] \\ $\downarrow$ \\
+  [Exibe indicador de processamento] \\ $\downarrow$ \\
+  [Processa: RLM $\rightarrow$ Bagging $\rightarrow$ Subagging+CV] \\ $\downarrow$ \\
+  [Exibe aba ``Resultados'' com métricas] \\ $\downarrow$ \\
+  [Navega para ``Gráficos''] \\ $\downarrow$ \\
+  [Fim: Interpretação técnica]
+  \end{tabular}
+  \end{minipage}
+}
+\end{figure}

@@ -1,0 +1,100 @@
+\chapter{Desenvolvimento Iterativo por Sprints e Validação por Testes Automatizados}
+
+\section{Metodologia Ágil: Desenvolvimento por Sprints}
+
+O desenvolvimento do sistema Python/Streamlit seguiu uma abordagem iterativa e
+incremental, organizada em quatro \textit{sprints} sucessivas, alinhada aos
+princípios do \textit{framework} Scrum~\cite{scrum2026}. Cada \textit{sprint}
+produziu um incremento funcional e testável do sistema, permitindo validação
+contínua da equivalência com o sistema Java legado antes do avanço para a
+etapa seguinte.
+
+\begin{description}
+
+\item[a)] \textbf{\textit{Sprint} 1 --- Motor de Dados (\textit{Core Backend})}:
+Esta etapa implementou as funções \texttt{parse\_matrix()} e
+\texttt{parse\_vector()}, responsáveis pela leitura unificada de arquivos
+\texttt{.txt}, \texttt{.csv} e \texttt{.xlsx}, com detecção automática de
+separador de coluna e normalização do decimal brasileiro. A validação ocorreu
+por meio de testes no console, sem envolvimento da interface Streamlit,
+utilizando os \textit{datasets} reais \textit{EthanolLevel} e
+\texttt{CGL\_nir}, confirmando as dimensões esperadas das matrizes.
+
+\item[b)] \textbf{\textit{Sprint} 2 --- Algoritmos Científicos}: O núcleo
+matemático foi codificado em \texttt{models.py} como funções puras,
+independentes de qualquer biblioteca de interface. Implementaram-se
+\texttt{perform\_rlm()} via \texttt{np.linalg.lstsq}, \texttt{perform\_bagging()}
+para \textit{bagging} e \textit{subagging} parametrizados, \texttt{calc\_metrics()}
+para RMSE, MAE e $R^2$, e \texttt{run\_cross\_validation()} para validação
+cruzada 5-\textit{fold}, culminando na função \texttt{find\_optimal\_parameters()}
+de \textit{grid search}.
+
+\item[c)] \textbf{\textit{Sprint} 3 --- Interface Reativa}: Conectou-se
+\texttt{models.py} ao orquestrador \texttt{app.py}, implementando os quatro
+componentes \texttt{st.file\_uploader}, a validação de parâmetros por meio de
+\texttt{parse\_int\_list()} e \texttt{parse\_float\_list()}, o \textit{callback}
+de progresso e a persistência do resultado em \texttt{st.session\_state}. Os
+quatro gráficos Plotly foram centralizados em \texttt{components.py}, garantindo
+que nenhuma lógica de negócio residisse na camada de apresentação.
+
+\item[d)] \textbf{\textit{Sprint} 4 --- Otimização com \textit{Cache}}: Avaliou-se
+a arquitetura resultante quanto à sua compatibilidade com os mecanismos de
+\textit{cache} do Streamlit. Como \texttt{parse\_matrix()}, \texttt{parse\_vector()}
+e \texttt{run\_full\_analysis()} são funções puras, determinísticas e com
+entradas serializáveis, o decorador \texttt{@st.cache\_data} pode ser aplicado
+diretamente, sem refatoração, reduzindo a latência em execuções repetidas.
+
+\end{description}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Suíte de Testes Automatizados com pytest}
+
+Conforme indicado no TCC~I, a suíte de testes automatizados constitui a principal
+entrega de validação deste TCC~II, fechando o ciclo entre a consolidação da base
+algorítmica em Java --- realizada na etapa anterior --- e a comprovação formal de
+sua equivalência comportamental na reescrita em Python/Streamlit apresentada a
+seguir.
+
+A correção do sistema Python foi validada por meio de uma suíte de 92 testes
+automatizados com \texttt{pytest}~\cite{pytest2024}, organizada em três classes
+complementares: testes unitários, testes de caixa-preta e testes de carga e
+\textit{stress}. Essa estratificação permitiu verificar, respectivamente, a
+corretude matemática isolada, a fidelidade em relação ao sistema Java legado e
+o comportamento sob volumes de dados realistas.
+
+\begin{description}
+
+\item[a)] \textbf{Testes Unitários (21 testes)}: Exercitaram cada função pura
+de \texttt{models.py} isoladamente, com matrizes de dimensão reduzida e valores
+determinísticos, por meio das \textit{fixtures} \texttt{dados\_simples}
+($20\times5$) e \texttt{dados\_medios}~($300\times50$). Cobriram-se oito testes
+de \textit{parsing} de arquivos e treze testes de modelos de regressão,
+incluindo a recuperação exata de $\boldsymbol{\beta}$ em sistemas determinados
+e a reprodutibilidade do \textit{bagging} sob a mesma semente aleatória.
+
+\item[b)] \textbf{Testes de Caixa-Preta (60 testes)}: Verificaram a equivalência
+numérica entre o sistema Python e o sistema Java original, sem acesso ao
+código-fonte legado, seguindo a estratégia de \textit{black-box
+testing}~\cite{pressman2016}. Doze testes parametrizados foram aplicados a
+cinco analitos (Mn, Mo, Cr, Ni, Fe), comparando RMSE, MAE e $R^2$ contra os
+arquivos de referência gerados pelo sistema Java, com tolerância de
+$5\times10^{-4}$ para o RLM determinístico e tolerâncias mais amplas para os
+métodos estocásticos de \textit{bagging} e \textit{subagging}.
+
+\item[c)] \textbf{Testes de Carga e \textit{Stress} (11 testes)}: Quantificaram
+os limites operacionais de tempo de execução e consumo de memória para
+matrizes espectrais de alta dimensionalidade~\cite{jorgensen2014}, empregando
+as \textit{fixtures} \texttt{matriz\_grande}~($5.000\times723$) e
+\texttt{matriz\_stress}~($15.000\times723$). O tempo foi medido com
+\texttt{time.perf\_counter()} e o pico de alocação de memória com
+\texttt{tracemalloc}, confirmando escalabilidade linear do \textit{bagging} em
+função do número de \textit{bags}.
+
+\item[d)] \textbf{Resultados Consolidados}: A suíte completa foi executada em
+ambiente Windows com Python~3.12.10 e pytest~9.1.0, totalizando 92 testes
+aprovados e nenhuma falha, em 81{,}63~segundos. Esse resultado evidencia três
+conclusões objetivas: correção matemática comprovada nos testes unitários,
+fidelidade numérica confirmada em relação ao sistema Java legado e capacidade
+de carga validada para matrizes de até $15.000\times723$ sem erro de memória.
+
+\end{description}

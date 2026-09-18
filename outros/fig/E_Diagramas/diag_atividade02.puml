@@ -1,0 +1,42 @@
+@startuml Etapa2_GridSearch_CV
+skinparam sequenceMessageAlign center
+
+participant ":BaggingOptimized" as UI
+participant "SimpleMatrix (EJML)" as EJML
+
+UI -> UI : findOptimalParameters(Xcal, Ycal, mValues, kValues)
+activate UI
+
+loop para cada m em mValues (Bagging)
+  UI -> UI : optimizeBaggingParameters(m)
+  activate UI
+  loop fold 1..5
+    UI -> UI : extractRows(treino/val)
+    UI -> UI : performBagging()
+    UI -> EJML : pseudoInverse().mult()
+    EJML --> UI : b_bag
+    UI -> UI : calculateRMSE()
+  end
+  UI -> UI : calculateStdDev() → CVResult
+  deactivate UI
+end
+
+loop k em kValues
+  loop m em mValues (Subagging)
+    UI -> UI : optimizeSubaggingParameters(m, k)
+    activate UI
+    loop fold 1..5
+      UI -> UI : extractRows(treino/val)
+      UI -> UI : performBagging()
+      UI -> EJML : pseudoInverse().mult()
+      EJML --> UI : b_bag
+      UI -> UI : calculateRMSE()
+    end
+    UI -> UI : calculateStdDev() → CVResult
+    deactivate UI
+  end
+end
+
+UI -> UI : monta OptimalParams(m*, k*)
+deactivate UI
+@enduml

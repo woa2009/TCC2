@@ -1,0 +1,48 @@
+\begin{theindex}
+
+  \item A Técnica de \textit{Bootstrap}
+    \subitem \textit{Bootstrap}, \hyperpage{19}
+    \subitem Estimativa \textit{Bootstrap}, \hyperpage{19}
+    \subitem Função de Distribuição Empírica, \hyperpage{24}
+    \subitem O Número de Replicações \textit{Bootstrap} $m$, 
+		\hyperpage{20}
+    \subitem Princípio \textit{Plug-in}, \hyperpage{24}
+
+  \indexspace
+
+  \item Conclusão, \hyperpage{70}
+
+  \indexspace
+
+  \item Introdução, \hyperpage{14}
+
+  \indexspace
+
+  \item Materiais e Métodos, \hyperpage{30}
+  \item Métodos e Resultados
+    \subitem \textit{Bagging}, \hyperpage{38}
+    \subitem \textit{Baggin} $\times$ \textit{Subagging}, 
+		\hyperpage{44}
+    \subitem \textit{Subagging}, \hyperpage{40}
+    \subitem Introdução, \hyperpage{33}
+    \subitem Medida do Erro Médio Quadrático de Predição, 
+		\hyperpage{35}
+    \subitem Resultados, \hyperpage{37}
+
+  \indexspace
+
+  \item Requisitos Funcionais, \hyperpage{49}
+  \item Revisão da literatura
+    \subitem Engenharia de Migração e Qualidade de Software, 
+		\hyperpage{28}
+
+  \indexspace
+
+  \item Tabelas de Paridade Amostra-a-Amostra, \hyperpage{88}
+  \item Testes de Gráficos, \hyperpage{80}
+  \item Técnicas Clássicas de Reamostragem, \hyperpage{25}
+    \subitem \textit{Bagging}, \hyperpage{26}
+    \subitem \textit{Subagging}, \hyperpage{27}
+    \subitem Comparação, \hyperpage{28}
+
+\end{theindex}

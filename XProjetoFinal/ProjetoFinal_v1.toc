@@ -1,0 +1,20 @@
+\babel@toc {brazil}{}\relax 
+\contentsline {section}{\numberline {1}Levantamento de Requisitos}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Requisitos Funcionais}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Entradas e Saídas}{4}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Classificação por Prioridade}{4}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Requisitos Não Funcionais}{5}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Fluxo Principal e Tratamento de Exceções}{5}{subsection.1.5}%
+\contentsline {section}{\numberline {2}Projeto Lógico}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Arquitetura em Camadas}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Fluxo de Dados e Lógica de Negócio}{6}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Estratégia de Otimização}{6}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Projeto Físico}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Estrutura de Diretórios e Responsabilidades}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Ambiente e Dependências}{6}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Persistência e Cache}{7}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Implementação}{7}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Destaques da Implementação (\texttt {app.py})}{7}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Interface e Fluxo de Execução}{7}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Testes, Validação e Rastreabilidade}{8}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Comparativo Vaadin $\rightarrow $ Streamlit}{8}{subsection.4.4}%

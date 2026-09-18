@@ -1,0 +1,6 @@
+Elemento;RMSEP;Tecnica;Proporcao
+Mn;0,1108;RLM-subagging;80
+Mo;0,2546;RLM;80
+Cr;0,7215;RLM;50
+Ni;1,3281;RLM-bagging;80
+Fe;2,4871;RLM-subagging;80

@@ -1,0 +1,355 @@
+% ---
+% Capa
+% ---
+\imprimircapa
+% ---
+
+% ---
+% Folha de rosto
+% (o * indica que haverá a ficha catalográfica)
+% ---
+\imprimirfolhaderosto
+% ---
+
+% ---
+% Ficha Catalografica em pdf e código
+% 
+% ---
+
+%\begin{fichacatalografica}
+%\includepdf{pre/Ficha_Catalografica.pdf}
+%\end{fichacatalografica}
+
+%Utilize este arquivo de ficha catalografica
+%\include{pre/fichaCatalografica}%Retirando ficha catalografica
+
+%----------------------------------------------
+
+
+% ---
+% Inserir folha de aprovação
+% ---
+%\includepdf[pages={1-2}]{arquivo.pdf}%utilizando duas paginas
+%\includepdf[pages={5}, fitpaper=true]{Flauberth__Duarte_TCC.pdf}.
+%\input{pre/folhaAprovacao}%Retirando 
+
+
+%---------------------------------------------------
+\begin{folhaaprovacao}
+    % As assinaturas dos avaliadores entram aqui (as outras já são automáticas)
+    \vspace*{\baselineskip}
+    \assinatura{Prof\textsuperscript{a}. \avaliadorinterno, \tituloavaliadorinterno\\
+    \avalinterno \\
+    \entidadeinterna~(\siglainterno)}
+
+    \vspace*{\baselineskip}
+    \assinatura{Prof. \avaliadorexterno, \tituloavaliadorexterno\\
+    \avalexterno \\
+    \entidadeexterna~(\siglaexterno)}
+\end{folhaaprovacao}
+
+
+%---------------------------------------------------
+
+% ---
+% Inserir folha de ata da seção pública de tcc
+% ---
+%\includepdf[pages={5}, fitpaper=true]{folhaDeAta.pdf}.
+%\input{pre/ata}%Retirando 
+
+%---------------------------------------------------
+\begin{comment}%Retire este comentario para aparecer a ata
+%---------------------------------------------------
+\begin{atareuniao}
+\noindent Aos~\diaata~dias do mês de~\mesata~do ano de dois mil e vinte e cinco, às~\hinicial~horas, por meio de webconferência utilizando Google Meet, foi realizada a sessão pública de apresentação do \imprimirtipotrabalho~do Graduando~\textbf{\alunonome~\alunosobre}~(matrícula~\matricula) do~\imprimirprograma. A banca foi composta pelos seguintes membros:~\orientadora,~\avaliadorinterno,~\avaliadorexterno, sob a presidência da primeira. O \imprimirtipotrabalho~tem como título ``\textbf{\titulo}'', sob orientação da Prof\textsuperscript{a}~\orientadora. Após a apresentação do \imprimirtipotrabalho, tendo sido o autor arguido pela Banca Examinadora, a nota obtida foi~\notanumerico~(\notaextenso).
+
+\vspace{0.5cm}
+\noindent Encerra-se a presente sessão às~\hfinal~horas~e~\mfinal~minutos. Eu Prof\textsuperscript{a}.~\orientadora, dato e assino a presente ata que segue assinada por todos os membros da Banca e pelo graduando.
+
+\vspace{0.1cm}
+\vspace{-0.1cm} % Espaço negativo para "puxar" a tabela para cima
+{\footnotesize 
+\begin{center}
+    % Ajusta o respiro global da tabela
+    \renewcommand{\arraystretch}{0.8} 
+    \begin{tabular}{c}
+        \asseletronica \\[0.2cm] % <--- Adiciona 0.2cm de espaço APENAS aqui
+        Prof\textsuperscript{a}~\orientadora \\[0.4cm] % Espaço maior entre pessoas
+        
+        \asseletronica \\[0.2cm]
+        Prof\textsuperscript{a}~\avaliadorinterno \\[0.4cm] 
+        
+        \asseletronica \\[0.2cm]
+        Prof\textsuperscript{a}~\avaliadorexterno \\[0.4cm] 
+        
+        \includegraphics[width=0.20\textwidth]{./outros/fig/minhaAssinatura2.png} \\[0.1cm]
+        \textbf{\alunonome~\alunosobre} \\
+        (Graduando) \\[0.3cm] 
+        
+        \includegraphics[width=0.79\textwidth]{./outros/fig/QR_CODE_V2.pdf}
+    \end{tabular}
+\end{center}
+}
+\end{atareuniao}
+%---------------------------------------------------
+\end{comment}
+%---------------------------------------------------
+
+% --------------------------------------------------
+% Inserir folha de autorização para disponibilização
+% --------------------------------------------------
+%\include{pre/termo}%Retirando 
+%\includepdf[pages={5}, fitpaper=true]{folhaTermo.pdf}.
+%---------------------------------------------------
+\begin{comment}% Descomente para aparecer O Termo de Autorização da biblioteca
+
+\linespread{0.87}\selectfont
+%--------Cabeçalho do documento
+\noindent\begin{minipage}[c][1.5cm][c]{3.5cm}
+\includegraphics[width=1.5 \textwidth]{./outros/fig/IFGAnapolisHor2.png}
+\end{minipage}\quad\quad\quad\qquad
+\begin{minipage}{12cm}%10cm
+\scriptsize\textbf{\ministerio}\\
+\textbf{\secretaria}\\
+\textbf{\instituto}\\
+\textbf{\MakeTextUppercase{\campus}}\\
+\textbf{\biblioteca}\\
+\end{minipage}
+%\vspace{-0.1cm}
+\small{
+\begin{center}
+	\termo
+\end{center}
+
+\termodois
+
+\noindent \textbf{Identifica\c{c}\~ao de Produ\c{c}\~ao T\'ecnico-Cient\'ifica}
+
+\begin{tabular}{lllll}
+\lbrack ~~\rbrack & Tese &  & \lbrack ~~\rbrack & Artigo Cient\'ifico \\ 
+\lbrack ~~\rbrack & Disserta\c{c}\~ao &  & \lbrack ~~\rbrack & Cap\'itulo de Livro \\ 
+\lbrack ~~\rbrack & Monografia -- Especializa\c{c}\~ao &  & \lbrack ~~\rbrack & Livro \\ 
+\lbrack X\rbrack & TCC -- Gradua\c{c}\~ao &  & \lbrack ~~\rbrack & Trabalho Apresentado em Evento \\ 
+\lbrack ~~\rbrack & Produto T\'ecnico e Educacional -- Tipo: & \multicolumn{3}{l}{\hrulefill} \\ 
+\end{tabular}
+
+\quad
+
+\noindent Nome Completo do Autor:~\textbf{\alunonome~\alunosobre}
+
+\noindent Matr\'icula:~\textbf{\matricula}
+
+\noindent T\'ituto do Trabalho:~\textbf{\tituloprincipal}
+
+\noindent \textbf{Autoriza\c{c}\~ao -- Marque uma das op\c{c}\~oes}
+
+\begin{enumerate}
+	\item (X) Autorizo disponibilizar meu trabalho no Reposit\'orio Digital do IFG (acesso aberto);
+	\item (~) Autorizo disponibilizar meu trabalho no Reposit\'orio Digital do IFG somente ap\'os a data 20/10/20 (Embargo);
+	\item (~) N\~ao autorizo disponibilizar meu trabalho no Reposit\'orio Digital do IFG (acesso restrito)
+\end{enumerate}
+
+\noindent Ao indicar a op\c{c}\~ao \textbf{2 ou 3}, marque a justificativa:
+\begin{description}
+	\item[(~~)] O documento est\'a sujeito a registro de patente.
+	\item[(~~)] O documento pode vir a ser publicado como livro, cap\'itulo de livro ou artigo.
+	\item[(~~)] Outra justificativa: \hrulefill
+\end{description}
+
+\begin{center}
+	\textbf{\declaracao}
+\end{center}
+
+\noindent O(A) referido(a) autor(a) declara que:
+
+\textbf{(i)}~o documento \'e seu trabalho original, det\'em os direitos autorais de produ\c{c}\~ao t\'ecnico-cient\'ifica e n\~ao infringe os direitos de qualquer outro pessoa ou entidade;
+
+\textbf{(ii)}~\termotres
+
+\textbf{(iii)}~cumpriu quaisquer obriga\c{c}\~oes exigidas por contrato ou acordo, caso o documento entregue seja baseado em trabalho finaciado ou apoiado por outra institui\c{c}\~ao que n\~ao o \entidade.
+
+%\todaydia
+\begin{flushright}
+An\'apolis, {\diaata~de~\mesata}~de~{\todayano}
+\end{flushright}
+
+\begin{center}
+\begin{tabular}{c}
+\includegraphics[width=0.19 \textwidth]{./outros/fig/minhaAssinatura2.png} \\ 
+\multicolumn{1}{c}{~\alunonome \alunosobre} \\ 
+%\multicolumn{1}{c}{\hrulefill} \\ 
+\end{tabular}
+\end{center}
+}%Fim \small
+
+\linespread{1.3}\selectfont
+
+\end{comment}
+%---------------------------------------------------
+
+
+% ---
+% Dedicatória
+% ---
+%\begin{dedicatoria}
+%	\vspace*{\fill}
+%	\noindent
+%	\begin{adjustwidth*}{}{5.5cm}     
+%		Este trabalho é dedicado aos meus colegas de %classe e aos meus queridos pais.
+%	\end{adjustwidth*}
+%\end{dedicatoria}
+% ---
+
+% ---
+% Agradecimentos
+% ---
+%\begin{agradecimentos}
+%	Inserir os agradecimentos aos colaboradores à %execução do trabalho. 
+%\end{agradecimentos}
+% ---
+
+% ---
+% Epígrafe
+% ---
+\begin{epigrafe}
+    \null\vfill % Cria o ponto no topo e empurra o conteúdo para baixo
+		\vspace{3cm}
+    \begin{flushright}
+        \textit{Se você for receptivo e humilde, a matemática o conduzirá pela mão. Repetidas vezes, quando estive perdido sem saber como prosseguir, bastou-me esperar até sentir que a matemática me guiava pela mão. Ela me conduziu por um caminho inesperado, um caminho onde novas perspectivas se abrem, um caminho que leva a um território novo, onde é possível estabelecer uma base de operações, a partir da qual se pode observar os arredores e planejar o progresso futuro.} \\
+        \vspace{0.3cm}
+        (Paul Dirac)
+    \end{flushright}
+    \vspace*{0.5cm} % Garante uma margem mínima do fim da folha (ajuste se quiser mais baixo)
+\end{epigrafe}
+
+
+
+% ---
+
+% ---
+% RESUMOS
+% ---
+
+% resumo em português
+\setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
+\begin{resumo}
+\SingleSpacing
+Os resultados revelam que não existe uma técnica universalmente 
+superior: o RLM-\textit{subagging} apresentou melhor desempenho 
+para Mn e Ni, o RLM-\textit{bagging} mostrou-se superior para Fe, 
+enquanto a RLM clássica demonstrou desempenho superior para Mo e Cr. 
+O comportamento diferenciado entre os analitos é atribuído à 
+complexidade espectral de cada elemento: o Fe, por apresentar maior 
+densidade de linhas espectrais com potencial de autoabsorção e 
+sobreposições com outros elementos da matriz, beneficia-se da 
+agregação de múltiplos modelos. Em contrapartida, Mn, Mo, Cr e Ni 
+têm sua relação espectral-concentração suficientemente capturada 
+pela RLM clássica ou pelo RLM-\textit{subagging}, sem ganho 
+adicional com o RLM-\textit{bagging}. Todos os modelos apresentaram 
+R$^2$ superior a 0,9815, evidenciando elevada capacidade preditiva. 
+Quanto à eficiência computacional, o RLM-\textit{subagging} 
+mostrou-se em média 3,0 vezes mais rápido que o RLM-\textit{bagging}, 
+configurando-se como alternativa equilibrada entre precisão e 
+eficiência em aplicações quimiométricas sujeitas a restrições 
+temporais.
+
+
+	
+\textbf{Palavras-chave}: \palavrachaveum. \palavrachavedois. \palavrachavetres. \palavrachavequatro. \palavrachavecinco.
+\end{resumo}
+
+% resumo em inglês
+\begin{resumo}[Abstract]
+\SingleSpacing
+\begin{otherlanguage*}{english}
+%---------------------------------------------------
+The results reveal that no universally superior technique exists: 
+RLM-\textit{subagging} achieved the best performance for Mn and Ni, 
+RLM-\textit{bagging} proved superior for Fe, while classical MLR 
+demonstrated superior performance for Mo and Cr. The differentiated 
+behavior among analytes is attributed to the spectral complexity of 
+each element: Fe, due to its higher density of spectral lines with 
+self-absorption potential and overlaps with other matrix elements, 
+benefits from the aggregation of multiple models. In contrast, Mn, 
+Mo, Cr and Ni have their spectral-concentration relationship 
+sufficiently captured by classical MLR or MLR-\textit{subagging}, 
+with no additional gain from MLR-\textit{bagging}. All models 
+presented R$^2$ values above 0.9815, evidencing high predictive 
+capacity. Regarding computational efficiency, MLR-\textit{subagging} 
+proved on average 3.0 times faster than MLR-\textit{bagging}, 
+establishing itself as a balanced alternative between accuracy and 
+efficiency in chemometric applications subject to time constraints.
+
+\textbf{Keywords}: Resampling. Multivariate Calibration. Bagging. Subagging. Chemometrics.
+\end{otherlanguage*}
+\end{resumo}
+
+%% resumo em francês 
+%\begin{resumo}[Résumé]
+% \begin{otherlanguage*}{french}
+%    Il s'agit d'un résumé en français.
+% 
+%   \textbf{Mots-clés}: latex. abntex. publication de textes.
+% \end{otherlanguage*}
+%\end{resumo}
+%
+%% resumo em espanhol
+%\begin{resumo}[Resumen]
+% \begin{otherlanguage*}{spanish}
+%   Este es el resumen en español.
+%  
+%   \textbf{Palabras clave}: latex. abntex. publicación de textos.
+% \end{otherlanguage*}
+%\end{resumo}
+%% ---
+
+{%hidelinks
+	\hypersetup{hidelinks}
+	% ---
+	% inserir lista de ilustrações
+	% ---
+	\pdfbookmark[0]{\listfigurename}{lof}
+	\listoffigures* %Retirado
+	\cleardoublepage
+	% ---
+	
+	% ---
+	% inserir lista de quadros
+	% ---
+	\pdfbookmark[0]{\listofquadrosname}{loq}
+	\listofquadros* %Retirado
+	\cleardoublepage
+	% ---
+	
+	% ---
+	% inserir lista de tabelas
+	% ---
+	\pdfbookmark[0]{\listtablename}{lot}
+	\listoftables* %Retirando
+	\cleardoublepage
+	% ---
+	
+	% ---
+	% inserir lista de abreviaturas e siglas (devem ser declarados no preambulo)
+	% ---
+
+\imprimirlistadesiglas %Retirando
+%\cleardoublepage
+	% ---
+	
+	% ---
+	% inserir lista de símbolos (devem ser declarados no preambulo)
+	% ---
+\imprimirlistadesimbolos %Retirando
+%\cleardoublepage
+	% ---
+	
+	% ---
+	% inserir o sumario
+	% ---
+	\pdfbookmark[0]{\contentsname}{toc}
+	\tableofcontents*
+	\cleardoublepage
+	
+}%hidelinks
+% ---

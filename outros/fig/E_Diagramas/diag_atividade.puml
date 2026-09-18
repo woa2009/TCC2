@@ -1,0 +1,55 @@
+@startuml BaggingOptimized_FluxoCompleto
+skinparam sequenceMessageAlign center
+skinparam maxMessageSize 160
+
+actor Usuario
+participant ":BaggingOptimized" as UI
+participant ":SwingWorker" as Worker
+participant ":Modelo" as Modelo << (static helpers) >>
+
+Usuario -> UI : clica "Executar Análise"
+activate UI
+
+UI -> UI : parseMValues()
+UI -> UI : parseKValues()
+
+UI -> Worker : new SwingWorker().execute()
+activate Worker
+deactivate UI
+
+Worker -> Modelo : detectarDimensoes(fileXcal/fileXteste)
+Worker -> Modelo : contarLinhas(fileYcal/fileYteste)
+Worker -> Modelo : loadMatrixFromFile(Xcal, Xteste)
+Worker -> Modelo : loadVectorFromFile(Ycal, Yteste)
+
+Worker -> Worker : findOptimalParameters(Xcal, Ycal, mValues, kValues)
+note right: detalhado no diagrama "Etapa 2 - Grid Search"
+Worker --> Worker : OptimalParams(m*, k*)
+
+Worker -> Modelo : performRLM(Xcal, Ycal, Xteste)
+Modelo --> Worker : YpredRLM
+Worker -> Worker : calculateMetrics(Yteste, YpredRLM, tempo)
+
+Worker -> Modelo : performBagging(Xcal, Ycal, Xteste, m*, true, 1.0)
+Modelo --> Worker : YpredBag
+Worker -> Worker : calculateMetrics(Yteste, YpredBag, tempo)
+
+Worker -> Modelo : performBagging(Xcal, Ycal, Xteste, m*, false, k*)
+Modelo --> Worker : YpredSub
+Worker -> Worker : calculateMetrics(Yteste, YpredSub, tempo)
+
+Worker -> Modelo : salvarResultados(resultado)
+Modelo --> Worker : nomeArquivo
+
+par Gráficos (SwingUtilities.invokeLater)
+  Worker -> Modelo : plotComparison(Yteste, YpredRLM, "RLM Simples")
+  Worker -> Modelo : plotComparison(Yteste, YpredBag, "RLM + Bagging")
+  Worker -> Modelo : plotComparison(Yteste, YpredSub, "RLM + Subagging")
+end
+
+Worker --> UI : done(): resultado
+deactivate Worker
+activate UI
+UI -> Usuario : exibe resultados e gráficos
+deactivate UI
+@enduml

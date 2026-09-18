@@ -1,0 +1,143 @@
+%\begin{minipage}{0.80\textwidth}
+%\begin{algorithm2e}[H]
+%    \dontprintsemicolon
+%    \linesnumbered
+%    \SetLine
+%    \BlankLine
+%    \Entrada{$X, Y, num\_samples$}
+%    \Saida{$bootstrap\_samples$}
+%    \BlankLine
+%    \Inicio{
+%        %Definir $n \gets \text{size}(X, 1)$\;
+%        %Criar uma célula $bootstrap\_samples$ de %dimensão $num\_samples$ por 2\;
+%				\ParaTodo{$i \gets 1$:$num\_samples$}
+%        %\Para{$i \gets 1$ \To $num\_samples$}
+%				{
+%            Gerar índices aleatórios: $indices \gets %\text{randi}([1, n], n, 1)$\;
+%            Criar amostras:\;
+%            $X\_bootstrap \gets X(indices, :)$\;
+%            $Y\_bootstrap \gets Y(indices)$\;
+%            Armazenar amostras:\;
+%            $bootstrap\_samples(i, 1) \gets %X\_bootstrap$\;
+%            $bootstrap\_samples(i, 2) \gets %Y\_bootstrap$\;
+%        }
+%        \Retorna{$bootstrap\_samples$}\;
+%    }
+%    \caption{Estimativa das replicações %\textit{bootstrap}.\label{alg:bootstrap2}}
+%\end{algorithm2e}
+%\end{minipage}
+
+%----------------------------------------------
+\begin{comment}
+
+\begin{minipage}{0.80\textwidth}
+\begin{algorithm2e}[H]
+    \dontprintsemicolon
+    \linesnumbered
+    \SetLine
+    \BlankLine
+    \Entrada{$X, Y, m$}
+    \Saida{$bootstrap\_samples$}
+    \BlankLine
+    \Inicio{
+        Definir $n \gets \text{size}(X, 1)$\;
+        Criar uma célula $bootstrap\_samples$ de dimensão $m$ por 2\;
+        Selecione a quantidade de amostras independentes $m$,~\{$x^{*1}, x^{*2}, \ldots, x^{*m}$\}, tendo tamanho $m$ e podendo haver repetições de $x$\;
+        \ParaTodo{$b \gets 1$:$m$}{
+            Gerar índices aleatórios: $indices \gets \text{randi}([1, n], n, 1)$\;
+            Criar amostras:\;
+            $X\_bootstrap \gets X(indices, :)$\;
+            $Y\_bootstrap \gets Y(indices)$\;
+            Avaliar a replicação \textit{bootstrap}: $\widehat{\theta}^*(b) \gets s(x^{*b})$\;
+            Armazenar amostras:\;
+            $bootstrap\_samples(b, 1) \gets X\_bootstrap$\;
+            $bootstrap\_samples(b, 2) \gets Y\_bootstrap$\;
+        }
+        \Retorna{$bootstrap\_samples$}\;
+    }
+    \caption{Estimativa das replicações \textit{bootstrap} combinada.\label{alg:bootstrap3}}
+\end{algorithm2e}
+\end{minipage}
+
+\end{comment}
+%-----------------------------------------------------
+
+\begin{comment}
+%--------------------------------------------------
+\begin{minipage}{0.80\textwidth}
+\begin{algorithm2e}[H]
+ \dontprintsemicolon
+ \linesnumbered
+ %%\nocaptionofalgo
+ \SetLine
+ \BlankLine
+ \Entrada{Amostra original $x = (x_1, x_2, \ldots, x_n)$, estatística de interesse $\theta = s(x)$, número de replicações bootstrap $m$}
+ \Saida{Estimativa bootstrap $\widehat{\theta}^*$, erro padrão bootstrap, intervalo de confiança bootstrap}
+ \BlankLine
+\Inicio{
+  Selecione a quantidade de amostras independentes ~$m$,~\{$x^{*1},x^{*2},\ldots,x^{*m}$\}, tendo tamanho
+ $m$ e podendo haver repetições de  $x$.\;
+Avaliar a replicação \textit{bootstrap} para amostra \textit{bootstrap}, $\widehat{\theta}^*(b)= s(x^{*b})$ $\quad$ $b = 1,2,\ldots ,m$. \;}
+\caption{Estimativa das replicações \textit{bootstrap}. \label{alg:bootstrap}}
+\end{algorithm2e}
+\end{minipage}
+%------------------------------------------------
+\end{comment}
+
+
+\begin{comment}
+%----------------------------------------------------
+\begin{minipage}{0.80\textwidth}
+\begin{algorithm2e}[H]
+ \dontprintsemicolon
+ \linesnumbered
+ %%\nocaptionofalgo
+ \SetLine
+ \BlankLine
+ \Entrada{Amostra original $x = (x_1, x_2, \ldots, x_n)$, estatística de interesse $\theta = s(x)$, número de amostras bootstrap $m$, tamanho das amostras bootstrap (opcional, padrão $n$)}
+ \Saida{Estimativa bagging $\widehat{\theta}^{*}_{bag}$, distribuição das estimativas bootstrap $\{\widehat{\theta}(1), \ldots, \widehat{\theta}(m)\}$}
+ \BlankLine
+\Inicio{
+Selecione a quantidade de amostras \textit{bootstrap} ~$m$,~\{$x^{*1},x^{*2},\ldots,x^{*m}$\}, podendo haver repetições de  $x$.\;
+Selecione o tamanho $n$ que cada amostra \textit{bootstrap} terá, no caso do \textit{bagging} tradicional, todas amostras \textit{bootstrap} tem o mesmo tamanho que a amostra original.\;
+\Repita{$(b=m)$\;}{Avaliar a replicação \textit{bootstrap }para cada amostra \textit{bootstrap},\;
+$\widehat{\theta}(b)= s(x^{*b}) ~~b = 1,2,\ldots,m.$\;}
+Agregar as replicações para amostra \textit{bootstrap} $\widehat{\theta}(b)$ em $\widehat{\theta}^{*}_{bag}$,\;
+$\widehat{\theta}^{*}_{bag} = \frac{1}{n}\sum_{i=1}^{n}s(x^{*b})~~b = 1,2,\ldots,m.$\; 
+}
+\caption{A Estimativa \textit{bagging}. \label{alg:bagging}}
+\end{algorithm2e}
+\end{minipage}
+%---------------------------------------------------
+\end{comment}
+
+\begin{comment}
+
+\begin{minipage}{0.80\textwidth}
+\scalebox{0.85}{
+\begin{algorithm2e}[H]
+ \dontprintsemicolon
+ \linesnumbered
+ \SetLine
+ \BlankLine
+ \Entrada{Amostra original $x = (x_1, x_2, \ldots, x_n)$, estatística de interesse $\theta = s(x)$, \\
+ \hspace{1.5em}número de amostras bootstrap $m$, \\
+ \hspace{1.5em}tamanho máximo das subamostras $N_{\text{Bootstrap}}$, \\
+ \hspace{1.5em}variação do tamanho das subamostras (opcional)}
+ \Saida{Estimativa subagging $\widehat{\theta}^{*}_{subag}$, \\
+ \hspace{1.5em}conjunto de estimativas parciais $\{\widehat{\theta}(1), \ldots, \widehat{\theta}(m)\}$, \\
+ \hspace{1.5em}erro padrão da estimativa}
+ \BlankLine
+Selecione o tamanho máximo que as amostras \textit{bootstrap} \textit{N.Bootstrap} poderão ter.\;
+Selecione a quantidade de amostras \textit{bootstrap} independentes $m$, $\{x^{*1}, x^{*2}, \ldots, x^{*m}\}$, não podendo haver repetições de $x$.\;
+Selecione a variação do tamanho \textit{N.Bootstrap} que cada amostra \textit{bootstrap} terá, no \textit{subagging }as amostras \textit{bootstrap} não necessitam ter o mesmo tamanho que a amostra original.\;
+ \BlankLine
+ \Repita{(\textit{N.Bootstrap})}{\Repita{($b=m$)}{Avaliar a replicação \textit{bootstrap} para cada amostra \textit{bootstrap}, $\widehat{\theta}(b)= s(x^{*b}) ~~b = 1,2,\ldots,m.$\;}}
+Agregar as replicações para cada amostra \textit{bootstrap} $\widehat{\theta}(b)$ em $\widehat{\theta}^{*}_{bag}$,\;
+$\widehat{\theta}^{*}_{subag} = \dfrac{1}{n}\sum_{i=1}^{n}s(x^{*b})~~b = 1,2,\ldots,m-1.$\;
+\caption{Estimativa \textit{subagging}. \label{alg:subagging}}
+\end{algorithm2e}
+}
+\end{minipage}
+
+\end{comment}

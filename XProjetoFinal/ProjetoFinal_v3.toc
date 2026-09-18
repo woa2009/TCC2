@@ -1,0 +1,8 @@
+\babel@toc {brazil}{}\relax 
+\contentsline {section}{\numberline {1}Levantamento}{3}{section.1}%
+\contentsline {section}{\numberline {2}Projeto Lógico}{3}{section.2}%
+\contentsline {section}{\numberline {3}Projeto Físico}{4}{section.3}%
+\contentsline {section}{\numberline {4}Implementação}{4}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Destaques da Implementação (\texttt {app.py})}{4}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Estratégia de Testes e Validação}{6}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Rastreabilidade de Requisitos}{6}{subsection.4.3}%

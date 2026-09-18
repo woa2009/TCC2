@@ -1,0 +1,34 @@
+@startuml BaggingOptimized_Atividade
+start
+
+:Clica "Executar Análise";
+
+if (Arquivos selecionados?) then (não)
+  :Exibe aviso;
+  stop
+endif
+
+:parseMValues();
+if (m válido?) then (não)
+  :Exibe erro (m);
+  stop
+endif
+
+:parseKValues();
+if (k válido?) then (não)
+  :Exibe erro (k);
+  stop
+endif
+
+:Dispara SwingWorker (thread);
+:Carrega dados\nXcal, Ycal, Xteste, Yteste;
+:Etapa 2: grid search CV\n5-fold, otimiza m e k;
+:Avalia RLM simples\nRMSE, MAE, R²;
+:Avalia RLM + Bagging (m*)\nRMSE, MAE, R²;
+:Avalia RLM + Subagging (k*, m*)\nRMSE, MAE, R²;
+:Salva resultados (.txt);
+:Plota 3 gráficos comparativos;
+:Exibe resultados na tela;
+
+stop
+@enduml
