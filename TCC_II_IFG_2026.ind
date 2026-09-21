@@ -10,7 +10,7 @@
 
   \indexspace
 
-  \item Conclusão, \hyperpage{70}
+  \item Conclusão, \hyperpage{71}
 
   \indexspace
 
@@ -38,8 +38,8 @@
 
   \indexspace
 
-  \item Tabelas de Paridade Amostra-a-Amostra, \hyperpage{88}
-  \item Testes de Gráficos, \hyperpage{80}
+  \item Tabelas de Paridade Amostra-a-Amostra, \hyperpage{90}
+  \item Testes de Gráficos, \hyperpage{82}
   \item Técnicas Clássicas de Reamostragem, \hyperpage{25}
     \subitem \textit{Bagging}, \hyperpage{26}
     \subitem \textit{Subagging}, \hyperpage{27}

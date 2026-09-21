@@ -14,7 +14,8 @@ dimensionalidade.
 
 \item[a)] \textbf{Processamento Vetorial com \texttt{NumPy}}: O \texttt{models.py}
 utiliza exclusivamente operações vetorizadas do NumPy:
-\texttt{np.linalg.pinv(Xcal)~@~Ycal} para a pseudoinversa, \texttt{np.random.default\_rng}
+\texttt{np.linalg.lstsq(Xcal, Ycal, rcond=None)} para a solução de mínimos
+quadrados de norma mínima (equivalente à pseudoinversa de Moore-Penrose), \texttt{np.random.default\_rng}
 para amostragem reprodutível com semente configurável, e \texttt{np.sqrt(np.mean(err**2))}
 para RMSEP. Essas operações substituem laços explícitos em Java, executando em tempo próximo
 a linguagens compiladas mesmo para matrizes espectrais com milhares de variáveis.

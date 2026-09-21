@@ -15,12 +15,12 @@
 \contentsline {figure}{\numberline {13}{\ignorespaces RMSEP para todas as técnicas.}}{45}{figure.caption.39}%
 \contentsline {figure}{\numberline {14}{\ignorespaces Tempo de execução dos algoritmos RLM-\textit {bagging} e RLM-\textit {subagging} com parâmetros otimizados por validação cruzada 5-\textit {fold}.}}{47}{figure.caption.41}%
 \contentsline {figure}{\numberline {15}{\ignorespaces Execução de Análise Completa.}}{51}{figure.caption.54}%
-\contentsline {figure}{\numberline {16}{\ignorespaces Arquitetura em camadas --- Sistema legado (Java Desktop)}}{80}{figure.caption.74}%
-\contentsline {figure}{\numberline {17}{\ignorespaces Arquitetura em camadas --- Sistema modernizado (Python/Streamlit)}}{80}{figure.caption.75}%
-\contentsline {figure}{\numberline {18}{\ignorespaces Diagrama de classes.}}{81}{figure.caption.76}%
-\contentsline {figure}{\numberline {19}{\ignorespaces Diagrama de atividades.}}{82}{figure.caption.77}%
-\contentsline {figure}{\numberline {20}{\ignorespaces Diagrama de sequência.}}{83}{figure.caption.78}%
-\contentsline {figure}{\numberline {21}{\ignorespaces Diagrama de atividade PlantUML.}}{84}{figure.caption.79}%
-\contentsline {figure}{\numberline {22}{\ignorespaces Diagrama de atividade PlantUML.}}{85}{figure.caption.80}%
-\contentsline {figure}{\numberline {23}{\ignorespaces Diagrama de classes (módulos) PlantUML.}}{86}{figure.caption.81}%
-\contentsline {figure}{\numberline {24}{\ignorespaces Diagrama de sequência PlantUML.}}{87}{figure.caption.82}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Arquitetura em camadas --- Sistema legado (Java Desktop)}}{82}{figure.caption.74}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Arquitetura em camadas --- Sistema modernizado (Python/Streamlit)}}{82}{figure.caption.75}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Diagrama de classes.}}{83}{figure.caption.76}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Diagrama de atividades.}}{84}{figure.caption.77}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Diagrama de sequência.}}{85}{figure.caption.78}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Diagrama de atividade PlantUML.}}{86}{figure.caption.79}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Diagrama de atividade PlantUML.}}{87}{figure.caption.80}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Diagrama de classes (módulos) PlantUML.}}{88}{figure.caption.81}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Diagrama de sequência PlantUML.}}{89}{figure.caption.82}%

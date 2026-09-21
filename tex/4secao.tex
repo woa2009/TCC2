@@ -952,9 +952,11 @@ configuração de melhor desempenho preditivo.
 
 Em quatro dos cinco elementos avaliados (Mn, Mo, Ni e Fe), o
 RLM-\textit{subagging} mostrou-se mais rápido que o
-RLM-\textit{bagging}. Em média, o RLM-\textit{subagging} é
-aproximadamente 3,0 vezes mais rápido, representando uma redução
-de 66,7\% no tempo de execução. As maiores diferenças ocorreram
+RLM-\textit{bagging}. Em média, considerando a razão entre os tempos em cada analito, o
+RLM-\textit{subagging} é aproximadamente 3,0 vezes mais rápido; somando os
+tempos dos cinco analitos, a redução é de cerca de 53\%.
+
+As maiores diferenças ocorreram
 para o Ni (6,3 vezes mais rápido, com $k^*=60\%$ e $m^*=10$) e
 para o Mn (4,0 vezes mais rápido, com $k^*=80\%$ e $m^*=10$).
 Para Mo e Fe, as reduções foram de 1,4 e 2,4 vezes,
@@ -992,14 +994,23 @@ espectral-concentração é suficientemente bem capturada pela RLM clássica.
 
 Em relação à RLM clássica, ambas as técnicas de
 \textit{ensemble} apresentam custo computacional significativamente
-superior, com o RLM-\textit{bagging} sendo em média 21,9 vezes
-mais lento e o RLM-\textit{subagging} até 19,4 vezes mais lento
+superior, com o RLM-\textit{bagging} sendo em média 22,1 vezes
+mais lento e o RLM-\textit{subagging} até 19,5 vezes mais lento
 (para o Mo). Ainda assim, para aplicações em que a acurácia
 preditiva justifica o custo computacional adicional --- como na
 determinação de Mn e Fe em aço-ligas --- o
 RLM-\textit{subagging} configura-se como alternativa equilibrada
 entre precisão e eficiência, sendo preferível ao
 RLM-\textit{bagging} na maioria dos cenários avaliados.
+
+
+Ressalta-se que as conclusões desta subseção referem-se ao protocolo com
+otimização por validação cruzada. No experimento anterior, com parâmetros
+fixados sem otimização formal (Tabelas~\ref{tab:comparacao_50_80} e
+\ref{tab:melhor_rmseep}), a técnica de menor RMSEP diferiu para alguns
+analitos (por exemplo, Ni e Fe), e o comportamento dos tempos com 80\% das
+amostras foi distinto. Isso indica que o desempenho relativo das técnicas
+depende do critério de seleção de $m$ e $k$.
 
 
 %R dados \num{\rdados[2,3]} até \num{\rdados[2,4]}

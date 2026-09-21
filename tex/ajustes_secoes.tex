@@ -1,0 +1,193 @@
+% =============================================================================
+% AJUSTES NAS DEMAIS SEÇÕES (consistentes com a nova Conclusão)
+% Cada bloco indica o arquivo, o trecho a localizar e o texto substituto.
+% =============================================================================
+
+
+% -----------------------------------------------------------------------------
+% 1secao.tex  —  Justificativa (2º parágrafo), trecho final
+% LOCALIZAR: "... e validação por 92 testes automatizados que comparam
+%             numericamente o sistema legado ao sistema reescrito."
+% SUBSTITUIR POR:
+% -----------------------------------------------------------------------------
+... e validação por 92 testes automatizados, que verificam a equivalência
+numérica do núcleo determinístico (RLM) e a consistência estatística dos
+métodos estocásticos entre o sistema legado e o sistema reescrito.
+
+
+% -----------------------------------------------------------------------------
+% 1secao.tex  —  parágrafo "A validação da lógica de negócio migrada..."
+% SUBSTITUIR O PARÁGRAFO INTEIRO POR:
+% -----------------------------------------------------------------------------
+A validação da lógica de negócio migrada é realizada, neste TCC~II, por
+meio de uma suíte de testes automatizados (\texttt{test\_suite\_5.py}),
+composta por 21 testes unitários, 60 testes de caixa-preta que comparam
+as métricas das implementações Java e Python para os cinco analitos (Mn,
+Mo, Cr, Ni, Fe) e 11 testes de estresse sobre matrizes de grande porte.
+Esse protocolo funciona como oráculo de equivalência entre o sistema
+legado e o sistema reescrito em dois níveis: equivalência numérica estrita
+para a RLM determinística e consistência estatística, dentro de
+tolerâncias explícitas, para o \textit{bagging} e o \textit{subagging},
+cujas sequências pseudoaleatórias diferem entre as duas linguagens.
+
+
+% -----------------------------------------------------------------------------
+% 7secao.tex  —  Quadro RNF03 (linha da tabela)
+% SUBSTITUIR A LINHA RNF03 POR:
+% -----------------------------------------------------------------------------
+RNF03 & \textbf{Confiabilidade}: os resultados numéricos do sistema Python
+devem ser equivalentes aos do sistema Java legado, verificados por testes de
+caixa-preta comparativos: equivalência estrita (tolerância de
+$5\times10^{-4}$) para a RLM determinística e consistência estatística
+(tolerâncias de 0,15 em RMSEP/MAE e $5\times10^{-3}$ em R$^2$) para os
+métodos estocásticos. \\ \hline
+
+
+% -----------------------------------------------------------------------------
+% 7secao.tex  —  parágrafo "Os requisitos não funcionais RNF01 a RNF03..."
+% SUBSTITUIR O PARÁGRAFO INTEIRO POR:
+% -----------------------------------------------------------------------------
+Os requisitos não funcionais RNF01 a RNF03, por sua vez, são verificados
+empiricamente pela suíte de 92 testes automatizados
+(\texttt{test\_suite\_5.py}) --- 21 unitários, 60 de caixa-preta e 11 de
+estresse ---, detalhada no capítulo de Testes e Validação deste TCC~II.
+
+
+% -----------------------------------------------------------------------------
+% 7secao.tex  —  item d) "Papel e Limites do Estágio Intermediário (Vaadin)"
+% LOCALIZAR: "... — os 92 testes de caixa-preta — apenas a partir da
+%             reescrita em Streamlit."
+% SUBSTITUIR POR:
+% -----------------------------------------------------------------------------
+... --- a suíte de 92 testes automatizados, dos quais 60 de caixa-preta ---
+apenas a partir da reescrita em Streamlit.
+
+
+% -----------------------------------------------------------------------------
+% 10secao.tex  —  item b) Testes de Caixa-Preta
+% SUBSTITUIR O ITEM INTEIRO POR:
+% -----------------------------------------------------------------------------
+\item[b)] \textbf{Testes de Caixa-Preta (60 testes)}: Compararam as métricas
+agregadas (RMSEP, MAE e $R^2$) calculadas pelo sistema Python com as
+registradas nos arquivos de saída do sistema Java original, sem acesso ao
+código-fonte legado, seguindo a estratégia de \textit{black-box
+testing}~\cite{pressman2016}. Doze testes parametrizados foram aplicados a
+cada um de cinco analitos (Mn, Mo, Cr, Ni, Fe). Para a RLM, que é
+determinística, adotou-se tolerância de $5\times10^{-4}$. Para o
+\textit{bagging} e o \textit{subagging}, que são estocásticos e utilizam
+geradores pseudoaleatórios distintos em Python e em Java, adotaram-se
+tolerâncias de 0,15 para RMSEP e MAE e de $5\times10^{-3}$ para $R^2$, além
+da verificação de que $m^*$ e $k^*$ pertencem à grade de busca. Esses testes
+atestam, portanto, equivalência numérica estrita para a RLM e consistência
+estatística para os métodos de \textit{ensemble}, sem exigir a identidade das
+reamostragens.
+
+
+% -----------------------------------------------------------------------------
+% 10secao.tex  —  item c) Testes de Carga e Stress, última frase
+% LOCALIZAR: "... confirmando escalabilidade linear do \textit{bagging} em
+%             função do número de \textit{bags}."
+% SUBSTITUIR POR:
+% -----------------------------------------------------------------------------
+... registrando o tempo do \textit{bagging} para 5, 10, 25 e 50 \textit{bags}
+e o pico de memória da RLM. Esses testes documentam o comportamento
+operacional do sistema; apenas alguns impõem limites (30~s para a RLM em
+$5.000\times723$; 2048~MB de memória), e a relação entre número de
+\textit{bags} e tempo é reportada, mas não verificada por asserção.
+
+
+% -----------------------------------------------------------------------------
+% 10secao.tex  —  item d) Resultados Consolidados
+% SUBSTITUIR O ITEM INTEIRO POR:
+% -----------------------------------------------------------------------------
+\item[d)] \textbf{Resultados Consolidados}: A suíte completa foi executada em
+ambiente Windows com Python~3.12.10 e pytest~9.1.0, totalizando 92 testes
+aprovados, nenhuma falha e nenhum teste ignorado, em 81{,}63~segundos.
+% >>> CONFIRME na saída do pytest que a linha final é "92 passed" (sem
+% >>> "skipped"): a fixture cfg_analito pula testes se algum arquivo faltar.
+Esse resultado evidencia três conclusões objetivas: correção matemática nos
+testes unitários, equivalência com o sistema Java legado nos níveis descritos
+no item (b) e execução sem erro de memória para matrizes de até
+$15.000\times723$ (cerca de 87~MB em precisão dupla).
+
+
+% -----------------------------------------------------------------------------
+% 10secao.tex  —  parágrafo "Como ilustração da fidelidade amostra-a-amostra..."
+% ATENÇÃO: a suíte NÃO compara predições amostra a amostra. Antes de manter
+% a Tabela de paridade (Bagging--Cr, Δ = 0,0), verifique como a coluna
+% "Python" foi gerada. Como Python (default_rng) e Java (Random) produzem
+% reamostras diferentes, Δ exatamente nulo em 34 amostras é implausível.
+%
+% OPÇÃO A — coluna Python gerada por execução real do models.py
+% (esperam-se diferenças não nulas; atualize a tabela e o texto):
+% -----------------------------------------------------------------------------
+Como ilustração, a Tabela~\ref{tab:paridade_bagging_cr} apresenta a
+comparação, amostra a amostra, entre as predições do sistema Java e do
+sistema Python para o \textit{Bagging} aplicado ao Cromo (Cr). Essa
+comparação é complementar à suíte de testes, que avalia métricas agregadas,
+e as diferenças observadas decorrem das sequências de reamostragem distintas
+das duas implementações.
+%
+% OPÇÃO B — se a tabela não puder ser reproduzida pelo Python, remova a
+% tabela, o parágrafo acima e a referência ao Apêndice~\ref{cha:paridadeamostra}
+% (\"catorze pares analito x técnica\").
+%
+% Na legenda/nota da tabela, substitua "indicando paridade perfeita" por
+% uma descrição fiel aos valores de Δ efetivamente obtidos.
+
+
+% =============================================================================
+% CORREÇÕES DE CONSISTÊNCIA (impactam a Conclusão)
+% =============================================================================
+
+% -----------------------------------------------------------------------------
+% 3secao.tex  —  Seção "Protocolo de Validação", grade de m
+% LOCALIZAR: $m \in \{5, 10, 20, 30, 50\}$
+% SUBSTITUIR POR (grade usada nos logs e em test_suite_5.py):
+% -----------------------------------------------------------------------------
+$m \in \{10, 20, 30, 40, 50\}$
+
+
+% -----------------------------------------------------------------------------
+% 4secao.tex  —  último parágrafo da seção, custo em relação à RLM
+% LOCALIZAR: "... 21,9 vezes mais lento e o RLM-\textit{subagging} até 19,4
+%             vezes mais lento"
+% SUBSTITUIR POR:
+% -----------------------------------------------------------------------------
+... 22,1 vezes mais lento e o RLM-\textit{subagging} até 19,5 vezes mais lento
+
+
+% -----------------------------------------------------------------------------
+% 4secao.tex  —  2º parágrafo após a Figura de tempos (tab:baggingsubba)
+% LOCALIZAR: "Em média, o RLM-\textit{subagging} é aproximadamente 3,0 vezes
+%             mais rápido, representando uma redução de 66,7\% no tempo de
+%             execução."
+% SUBSTITUIR POR:
+% -----------------------------------------------------------------------------
+Em média, considerando a razão entre os tempos em cada analito, o
+RLM-\textit{subagging} é aproximadamente 3,0 vezes mais rápido; somando os
+tempos dos cinco analitos, a redução é de cerca de 53\%.
+
+
+% -----------------------------------------------------------------------------
+% 4secao.tex  —  reconciliação com o experimento sem otimização
+% ACRESCENTAR, ao final da subseção "Bagging x Subagging":
+% -----------------------------------------------------------------------------
+Ressalta-se que as conclusões desta subseção referem-se ao protocolo com
+otimização por validação cruzada. No experimento anterior, com parâmetros
+fixados sem otimização formal (Tabelas~\ref{tab:comparacao_50_80} e
+\ref{tab:melhor_rmseep}), a técnica de menor RMSEP diferiu para alguns
+analitos (por exemplo, Ni e Fe), e o comportamento dos tempos com 80\% das
+amostras foi distinto. Isso indica que o desempenho relativo das técnicas
+depende do critério de seleção de $m$ e $k$.
+% >>> Na Tabela tab:melhor_rmseep, Mn está como "RLM", mas o texto seguinte
+% >>> atribui Mn ao RLM-subagging (0,1108). Corrija a tabela ou o texto.
+
+
+% -----------------------------------------------------------------------------
+% 8secao.tex  —  item a) Processamento Vetorial com NumPy
+% LOCALIZAR: \texttt{np.linalg.pinv(Xcal)~@~Ycal} para a pseudoinversa
+% SUBSTITUIR POR (o models.py usa lstsq):
+% -----------------------------------------------------------------------------
+\texttt{np.linalg.lstsq(Xcal, Ycal, rcond=None)} para a solução de mínimos
+quadrados de norma mínima (equivalente à pseudoinversa de Moore-Penrose)

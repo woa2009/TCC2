@@ -127,9 +127,12 @@ zero — \texttt{models.py} não importa \texttt{streamlit} nem \texttt{plotly};
 RNF02 & \textbf{Testabilidade}: a lógica de negócio deve ser testável de forma isolada,
 sem instanciar componentes de interface, permitindo o uso de \texttt{pytest} diretamente
 sobre \texttt{models.py}. \\ \hline
-RNF03 & \textbf{Confiabilidade}: os resultados numéricos produzidos pelo sistema Python
-devem ser equivalentes aos do sistema Java legado, verificados por testes de caixa-preta
-comparativos. \\ \hline
+RNF03 & \textbf{Confiabilidade}: os resultados numéricos do sistema Python
+devem ser equivalentes aos do sistema Java legado, verificados por testes de
+caixa-preta comparativos: equivalência estrita (tolerância de
+$5\times10^{-4}$) para a RLM determinística e consistência estatística
+(tolerâncias de 0,15 em RMSEP/MAE e $5\times10^{-3}$ em R$^2$) para os
+métodos estocásticos. \\ \hline
 RNF04 & \textbf{Portabilidade}: o sistema deve ser executável via navegador
 (\texttt{streamlit run app.py}), sem necessidade de JVM\tnote{a}, arquivos \texttt{.class} ou
 instalação local de dependências além do ambiente Python. \\ \hline
@@ -161,10 +164,10 @@ isoladas em \texttt{models.py}, ao passo que RF09 e RF11 correspondem a
 \texttt{app.py}. Essa correspondência unívoca entre requisito e módulo confirma, em nível
 de especificação, a separação de camadas discutida na Seção~\ref{sec:contratos}.
 
-Os requisitos não funcionais RNF01 a RNF03, por sua vez, são verificados empiricamente
-pela suíte de 92 testes automatizados (\texttt{test\_suite.py}) — 21 unitários, 60 de
-caixa-preta e 11 de estresse —, detalhada no capítulo de Testes e Validação deste TCC~II.
-
+Os requisitos não funcionais RNF01 a RNF03, por sua vez, são verificados
+empiricamente pela suíte de 92 testes automatizados
+(\texttt{test\_suite\_5.py}) --- 21 unitários, 60 de caixa-preta e 11 de
+estresse ---, detalhada no capítulo de Testes e Validação deste TCC~II.
 % ─────────────────────────────────────────────────────────────────────────────
 \section{Estratégias de Migração de Sistemas}
 
@@ -203,8 +206,8 @@ como prova de conceito de exposição web da lógica reaproveitada do Java, vali
 a viabilidade de servir o núcleo algorítmico via navegador antes da reescrita completa.
 Diferentemente do estágio final em Python, esse estágio não foi acompanhado por suíte
 de testes automatizados formal, lacuna reconhecida que motivou a decisão de formalizar
-o mecanismo de validação de equivalência — os 92 testes de caixa-preta — apenas a partir da reescrita em
-Streamlit.
+o mecanismo de validação de equivalência — a suíte de 92 testes automatizados, dos quais 60 de caixa-preta ---
+apenas a partir da reescrita em Streamlit.
 
 
 \end{description}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.12) (preloaded format=pdflatex 2026.5.18)  21 SEP 2026 00:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.12) (preloaded format=pdflatex 2026.5.18)  21 SEP 2026 01:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2796,7 +2796,7 @@ Underfull \hbox (badness 2318) in paragraph at lines 137--137
  []
 
 [50]
-<./outros/fig/fluxo.png, id=1034, 6564.525pt x 765.86125pt>
+<./outros/fig/fluxo.png, id=1041, 6564.525pt x 765.86125pt>
 File: ./outros/fig/fluxo.png Graphic file (type png)
 <use ./outros/fig/fluxo.png>
 Package pdftex.def Info: ./outros/fig/fluxo.png  used on input line 215.
@@ -2927,26 +2927,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--35
 \openout2 = `tex/8secao.aux'.
 
  (tex/8secao.tex
-Underfull \hbox (badness 1688) in paragraph at lines 28--34
+Underfull \hbox (badness 1688) in paragraph at lines 29--35
 \T1/ptm/m/n/12 (+10) per-mite ex-por-tar a ta-bela com-pa-ra-tiva de mé-tri-cas
  di-re-ta-mente em CSV (\T1/pcr/l/it/12 df_-
  []
 
 
-Underfull \hbox (badness 1292) in paragraph at lines 28--34
+Underfull \hbox (badness 1292) in paragraph at lines 29--35
 \T1/pcr/l/it/12 me-trics.to_-csv()\T1/ptm/m/n/12 (+10) ), man-tendo o fluxo de 
 tra-ba-lho tí-pico de la-bo-ra-tó-rios de
  []
 
 
-Underfull \hbox (badness 1533) in paragraph at lines 35--45
+Underfull \hbox (badness 1533) in paragraph at lines 36--46
 []\T1/ptm/b/n/12 (+10) Extensão Na-tu-ral para \T1/pcr/b/n/12 SciPy \T1/ptm/b/n
 /12 (+10) em Si-nais Es-pec-tro-mé-tri-cos\T1/ptm/m/n/12 (+10) : O \T1/pcr/l/it
 /12 SciPy \T1/ptm/m/n/12 (+10) é a ex-
  []
 
 
-Underfull \hbox (badness 1137) in paragraph at lines 35--45
+Underfull \hbox (badness 1137) in paragraph at lines 36--46
 \T1/ptm/m/n/12 (+10) ten-são na-tu-ral do ecos-sis-tema para o do-mí-nio de es-
 pec-tro-me-tria. Fun-ções como
  []
@@ -2957,32 +2957,32 @@ pec-tro-me-tria. Fun-ções como
 
 
 ]
-Underfull \hbox (badness 1533) in paragraph at lines 63--69
+Underfull \hbox (badness 1533) in paragraph at lines 64--70
 \T1/ptm/m/n/12 (+10) seja re-executado a cada re-run, o \T1/pcr/l/it/12 app.py 
 \T1/ptm/m/n/12 (+10) ar-ma-zena o re-sul-tado com-pleto em
  []
 
 
-Underfull \hbox (badness 4569) in paragraph at lines 94--101
+Underfull \hbox (badness 4569) in paragraph at lines 95--102
 \T1/pcr/l/it/12 parse_-ma-trix()\T1/ptm/m/n/12 (+10) , \T1/pcr/l/it/12 parse_-v
 ec-tor() \T1/ptm/m/n/12 (+10) e \T1/pcr/l/it/12 run_-full_-analy-sis() \T1/ptm/
 m/n/12 (+10) re-ce-bem
  []
 
 
-Underfull \hbox (badness 1383) in paragraph at lines 94--101
+Underfull \hbox (badness 1383) in paragraph at lines 95--102
 \T1/ptm/m/n/12 (+10) ape-nas da-dos se-ri-a-li-zá-veis e re-tor-nam re-sul-ta-d
 os de-ter-mi-nís-ti-cos ^^V o de-co-ra-dor
  []
 
 
-Underfull \hbox (badness 1097) in paragraph at lines 102--109
+Underfull \hbox (badness 1097) in paragraph at lines 103--110
 []\T1/ptm/b/n/12 (+10) Isolamento da Carga Com-pu-ta-ci-o-nal\T1/ptm/m/n/12 (+1
 0) : As fun-ções pe-sa-das (\T1/pcr/l/it/12 find_-op-ti-mal_-pa-
  []
 
 
-Underfull \hbox (badness 1838) in paragraph at lines 102--109
+Underfull \hbox (badness 1838) in paragraph at lines 103--110
 \T1/pcr/l/it/12 np.ndarray \T1/ptm/m/n/12 (+10) e re-tor-nam re-sul-ta-dos de-t
 er-mi-nís-ti-cos. Esse iso-la-mento evita que
  []
@@ -3028,34 +3028,34 @@ pcr/l/it/12 app.py\T1/ptm/m/n/12 (+10) , \T1/pcr/l/it/12 parse_-int_-list()
 
 
 
-]) [68] [69]
+] [68]) [69] [70]
 \openout2 = `tex/5secao.aux'.
 
- (tex/5secao.tex [70
+ (tex/5secao.tex [71
 
 
 
 
-]) [71]
-(TCC_II_IFG_2026.bbl (TCC_II_IFG_2026.brf)
+] [72])
+[73] (TCC_II_IFG_2026.bbl (TCC_II_IFG_2026.brf)
 \tf@brf=\write7
 \openout7 = `TCC_II_IFG_2026.brf'.
 
 
 bibitemlist
-[72
+[74
 
 
 
-] [73] [74] [75] [76] [77]) [78]
+] [75] [76] [77] [78] [79]) [80]
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <24.88> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 615.
- [79
+ [81
 
-] (pos/apendice_d.tex [80
+] (pos/apendice_d.tex [82
 
 ]
-<./outros/fig/E_Diagramas/out/diag_classe/BaggingOptimized_Classe.png, id=1489,
+<./outros/fig/E_Diagramas/out/diag_classe/BaggingOptimized_Classe.png, id=1506,
  1007.765pt x 953.5625pt>
 File: ./outros/fig/E_Diagramas/out/diag_classe/BaggingOptimized_Classe.png Grap
 hic file (type png)
@@ -3063,10 +3063,10 @@ hic file (type png)
 Package pdftex.def Info: ./outros/fig/E_Diagramas/out/diag_classe/BaggingOptimi
 zed_Classe.png  used on input line 71.
 (pdftex.def)             Requested size: 455.0pt x 430.52509pt.
- [81 <./outros/fig/E_Diagramas/out/diag_classe/BaggingOptimized_Classe.png (PNG
+ [83 <./outros/fig/E_Diagramas/out/diag_classe/BaggingOptimized_Classe.png (PNG
  copy)>]
 <./outros/fig/E_Diagramas/out/diag_sequencia/BaggingOptimized_Atividade.png, id
-=1494, 218.8175pt x 1351.0475pt>
+=1511, 218.8175pt x 1351.0475pt>
 File: ./outros/fig/E_Diagramas/out/diag_sequencia/BaggingOptimized_Atividade.pn
 g Graphic file (type png)
 <use ./outros/fig/E_Diagramas/out/diag_sequencia/BaggingOptimized_Atividade.png
@@ -3075,19 +3075,19 @@ Package pdftex.def Info: ./outros/fig/E_Diagramas/out/diag_sequencia/BaggingOpt
 imized_Atividade.png  used on input line 83.
 (pdftex.def)             Requested size: 90.99861pt x 561.84935pt.
 
-[82 <./outros/fig/E_Diagramas/out/diag_sequencia/BaggingOptimized_Atividade.png
+[84 <./outros/fig/E_Diagramas/out/diag_sequencia/BaggingOptimized_Atividade.png
  (PNG copy)>]
 <./outros/fig/E_Diagramas/out/diagrama/BaggingOptimized_FluxoCompleto.png, id=1
-499, 877.2775pt x 1392.20125pt>
+517, 877.2775pt x 1392.20125pt>
 File: ./outros/fig/E_Diagramas/out/diagrama/BaggingOptimized_FluxoCompleto.png 
 Graphic file (type png)
 <use ./outros/fig/E_Diagramas/out/diagrama/BaggingOptimized_FluxoCompleto.png>
 Package pdftex.def Info: ./outros/fig/E_Diagramas/out/diagrama/BaggingOptimized
 _FluxoCompleto.png  used on input line 95.
 (pdftex.def)             Requested size: 341.25pt x 541.55426pt.
- [83 <./outros/fig/E_Diagramas/out/diagrama/BaggingOptimized_FluxoCompleto.png 
+ [85 <./outros/fig/E_Diagramas/out/diagrama/BaggingOptimized_FluxoCompleto.png 
 (PNG copy)>]
-<./outros/fig/E_Diagramas/out/diagrama02/Etapa2_GridSearch_CV.png, id=1504, 539
+<./outros/fig/E_Diagramas/out/diagrama02/Etapa2_GridSearch_CV.png, id=1522, 539
 .01375pt x 899.36pt>
 File: ./outros/fig/E_Diagramas/out/diagrama02/Etapa2_GridSearch_CV.png Graphic 
 file (type png)
@@ -3095,9 +3095,9 @@ file (type png)
 Package pdftex.def Info: ./outros/fig/E_Diagramas/out/diagrama02/Etapa2_GridSea
 rch_CV.png  used on input line 107.
 (pdftex.def)             Requested size: 227.5pt x 379.59497pt.
- [84 <./outros/fig/E_Diagramas/out/diagrama02/Etapa2_GridSearch_CV.png (PNG cop
+ [86 <./outros/fig/E_Diagramas/out/diagrama02/Etapa2_GridSearch_CV.png (PNG cop
 y)>]
-<./outros/fig/E_Diagramas/streamlit/diagrama_atividades_streamlit.png, id=1510,
+<./outros/fig/E_Diagramas/streamlit/diagrama_atividades_streamlit.png, id=1527,
  876.27374pt x 3626.54875pt>
 File: ./outros/fig/E_Diagramas/streamlit/diagrama_atividades_streamlit.png Grap
 hic file (type png)
@@ -3105,9 +3105,9 @@ hic file (type png)
 Package pdftex.def Info: ./outros/fig/E_Diagramas/streamlit/diagrama_atividades
 _streamlit.png  used on input line 119.
 (pdftex.def)             Requested size: 136.50139pt x 564.87608pt.
- [85 <./outros/fig/E_Diagramas/streamlit/diagrama_atividades_streamlit.png (PNG
+ [87 <./outros/fig/E_Diagramas/streamlit/diagrama_atividades_streamlit.png (PNG
  copy)>]
-<./outros/fig/E_Diagramas/streamlit/diagrama_classes_streamlit.png, id=1515, 10
+<./outros/fig/E_Diagramas/streamlit/diagrama_classes_streamlit.png, id=1532, 10
 03.75pt x 1008.76875pt>
 File: ./outros/fig/E_Diagramas/streamlit/diagrama_classes_streamlit.png Graphic
  file (type png)
@@ -3115,9 +3115,9 @@ File: ./outros/fig/E_Diagramas/streamlit/diagrama_classes_streamlit.png Graphic
 Package pdftex.def Info: ./outros/fig/E_Diagramas/streamlit/diagrama_classes_st
 reamlit.png  used on input line 131.
 (pdftex.def)             Requested size: 386.75278pt x 388.69272pt.
- [86 <./outros/fig/E_Diagramas/streamlit/diagrama_classes_streamlit.png (PNG co
+ [88 <./outros/fig/E_Diagramas/streamlit/diagrama_classes_streamlit.png (PNG co
 py)>]
-<./outros/fig/E_Diagramas/streamlit/diagrama_sequencia_streamlit.png, id=1520, 
+<./outros/fig/E_Diagramas/streamlit/diagrama_sequencia_streamlit.png, id=1537, 
 911.405pt x 3480.00125pt>
 File: ./outros/fig/E_Diagramas/streamlit/diagrama_sequencia_streamlit.png Graph
 ic file (type png)
@@ -3125,7 +3125,7 @@ ic file (type png)
 Package pdftex.def Info: ./outros/fig/E_Diagramas/streamlit/diagrama_sequencia_
 streamlit.png  used on input line 143.
 (pdftex.def)             Requested size: 136.50139pt x 521.18117pt.
-) (pos/apendice_c.tex [87 <./outros/fig/E_Diagramas/streamlit/diagrama_sequenci
+) (pos/apendice_c.tex [89 <./outros/fig/E_Diagramas/streamlit/diagrama_sequenci
 a_streamlit.png (PNG copy)>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -3139,9 +3139,9 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 3.
 
-[88
+[90
 
-] [89] [90] [91] [92] [93] [94] [95] [96] [97] [98] [99])
+] [91] [92] [93] [94] [95] [96] [97] [98] [99] [100]
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\se-
 pdfdoc.def
 File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
@@ -3149,7 +3149,7 @@ File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\se-
 utf8.def
 File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
-) [100]
+) [101]) [102]
 \tf@lof=\write8
 \openout8 = `TCC_II_IFG_2026.lof'.
 
@@ -3164,6 +3164,10 @@ File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
 
  
 enddocument/afterlastpage: lastpage setting LastPage.
+
+LaTeX Warning: Hook 'shipout/lastpage' executed on wrong page (102 not 103).
+               Rerun to correct this.
+
 (TCC_II_IFG_2026.aux (tex/1secao.aux) (tex/2secao.aux) (tex/3secao.aux)
 (tex/4secao.aux) (tex/6secao.aux) (tex/7secao.aux) (tex/8secao.aux)
 (tex/9secao.aux) (tex/10secao.aux) (tex/5secao.aux))
@@ -3179,14 +3183,14 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `TCC_II_IFG_2026.brf' has not changed.
-(rerunfilecheck)             Checksum: A43A2A2E4BE96A29B09D98AA40DCDAEF;3501.
+(rerunfilecheck)             Checksum: 0672F149B246405A1F11292305D4D070;3501.
  ) 
 Here is how much of TeX's memory you used:
- 67777 strings out of 474485
- 1463530 string characters out of 5739958
- 2602160 words of memory out of 5000000
+ 67767 strings out of 474485
+ 1463450 string characters out of 5739958
+ 2602162 words of memory out of 5000000
  87858 multiletter control sequences out of 15000+600000
- 714390 words of font info for 436 fonts, out of 8000000 for 9000
+ 713882 words of font info for 428 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  109i,23n,117p,2358b,2654s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/wagner.araujo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
@@ -3226,9 +3230,9 @@ TeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/wagner.araujo/AppData/Local/Prog
 rams/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/wagner.araujo/AppData/L
 ocal/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/wagner.araujo/A
 ppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on TCC_II_IFG_2026.pdf (101 pages, 2733561 bytes).
+Output written on TCC_II_IFG_2026.pdf (103 pages, 2740446 bytes).
 PDF statistics:
- 2106 PDF objects out of 2487 (max. 8388607)
- 564 named destinations out of 1000 (max. 500000)
+ 2125 PDF objects out of 2487 (max. 8388607)
+ 566 named destinations out of 1000 (max. 500000)
  116486 words of extra memory for PDF output out of 128383 (max. 10000000)
 

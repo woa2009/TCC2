@@ -37,8 +37,8 @@ técnicas de \textit{bagging} e \textit{subagging}, ainda pouco exploradas na an
 aço-ligas. No eixo de engenharia de software, reside na condução de uma reescrita
 \textit{black-box} em três estágios (Desktop Java, Web Vaadin/Spring, Python/Streamlit),
 com arquitetura final desacoplada em três módulos de responsabilidade única e validação
-por 92 testes automatizados que comparam numericamente o sistema legado ao sistema
-reescrito.
+ por 92 testes automatizados, que verificam a equivalência numérica do núcleo determinístico (RLM)
+ e a consistência estatística dos métodos estocásticos entre o sistema legado e o sistema reescrito.
 
 Dado o conjunto amostral reduzido — característica inerente à aquisição dos dados
 espectrométricos utilizados —, os resultados devem ser interpretados como evidências
@@ -83,12 +83,16 @@ lógica de negócio. Cada etapa da migração permitiu verificar a equivalência
 do núcleo algorítmico antes de avançar para a seguinte, consolidando-se, neste TCC~II, na
 suíte de testes automatizados que compara as duas implementações.
 
-A validação da lógica de negócio migrada é realizada, neste TCC~II, por meio de uma suíte
-de testes automatizados (\texttt{test\_suite.py}), composta por 21 testes unitários, 60
-testes de caixa-preta que comparam as saídas das implementações Java e Python para os cinco
-analitos (Mn, Mo, Cr, Ni, Fe) e 11 testes de estresse sobre matrizes de grande porte. Esse
-protocolo funciona como oráculo de equivalência entre o sistema legado e o sistema
-reescrito.
+A validação da lógica de negócio migrada é realizada, neste TCC~II, por
+meio de uma suíte de testes automatizados (\texttt{test\_suite\_5.py}),
+composta por 21 testes unitários, 60 testes de caixa-preta que comparam
+as métricas das implementações Java e Python para os cinco analitos (Mn,
+Mo, Cr, Ni, Fe) e 11 testes de estresse sobre matrizes de grande porte.
+Esse protocolo funciona como oráculo de equivalência entre o sistema
+legado e o sistema reescrito em dois níveis: equivalência numérica estrita
+para a RLM determinística e consistência estatística, dentro de
+tolerâncias explícitas, para o \textit{bagging} e o \textit{subagging},
+cujas sequências pseudoaleatórias diferem entre as duas linguagens.
 
 Este trabalho está organizado da seguinte forma. A Seção~\ref{cha:tecboot} apresenta a
 revisão da literatura sobre a Regressão Linear Múltipla (RLM), a técnica de reamostragem

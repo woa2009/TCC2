@@ -68,14 +68,20 @@ de \textit{parsing} de arquivos e treze testes de modelos de regressão,
 incluindo a recuperação exata de $\boldsymbol{\beta}$ em sistemas determinados
 e a reprodutibilidade do \textit{bagging} sob a mesma semente aleatória.
 
-\item[b)] \textbf{Testes de Caixa-Preta (60 testes)}: Verificaram a equivalência
-numérica entre o sistema Python e o sistema Java original, sem acesso ao
+\item[b)] \textbf{Testes de Caixa-Preta (60 testes)}: Compararam as métricas
+agregadas (RMSEP, MAE e $R^2$) calculadas pelo sistema Python com as
+registradas nos arquivos de saída do sistema Java original, sem acesso ao
 código-fonte legado, seguindo a estratégia de \textit{black-box
 testing}~\cite{pressman2016}. Doze testes parametrizados foram aplicados a
-cinco analitos (Mn, Mo, Cr, Ni, Fe), comparando RMSEP, MAE e $R^2$ contra os
-arquivos de referência gerados pelo sistema Java, com tolerância de
-$5\times10^{-4}$ para o RLM determinístico e tolerâncias mais amplas para os
-métodos estocásticos de \textit{bagging} e \textit{subagging}.
+cada um de cinco analitos (Mn, Mo, Cr, Ni, Fe). Para a RLM, que é
+determinística, adotou-se tolerância de $5\times10^{-4}$. Para o
+\textit{bagging} e o \textit{subagging}, que são estocásticos e utilizam
+geradores pseudoaleatórios distintos em Python e em Java, adotaram-se
+tolerâncias de 0,15 para RMSEP e MAE e de $5\times10^{-3}$ para $R^2$, além
+da verificação de que $m^*$ e $k^*$ pertencem à grade de busca. Esses testes
+atestam, portanto, equivalência numérica estrita para a RLM e consistência
+estatística para os métodos de \textit{ensemble}, sem exigir a identidade das
+reamostragens.
 
 \item[c)] \textbf{Testes de Carga e \textit{Stress} (11 testes)}: Quantificaram
 os limites operacionais de tempo de execução e consumo de memória para
@@ -83,15 +89,21 @@ matrizes espectrais de alta dimensionalidade~\cite{jorgensen2014}, empregando
 as \textit{fixtures} \texttt{matriz\_grande}~($5.000\times723$) e
 \texttt{matriz\_stress}~($15.000\times723$). O tempo foi medido com
 \texttt{time.perf\_counter()} e o pico de alocação de memória com
-\texttt{tracemalloc}, confirmando escalabilidade linear do \textit{bagging} em
-função do número de \textit{bags}.
+\texttt{tracemalloc}, registrando o tempo do \textit{bagging} para 5, 10, 25 e 50 \textit{bags}
+e o pico de memória da RLM. Esses testes documentam o comportamento
+operacional do sistema; apenas alguns impõem limites (30~s para a RLM em
+$5.000\times723$; 2048~MB de memória), e a relação entre número de
+\textit{bags} e tempo é reportada, mas não verificada por asserção.
 
 \item[d)] \textbf{Resultados Consolidados}: A suíte completa foi executada em
 ambiente Windows com Python~3.12.10 e pytest~9.1.0, totalizando 92 testes
-aprovados e nenhuma falha, em 81{,}63~segundos. Esse resultado evidencia três
-conclusões objetivas: correção matemática comprovada nos testes unitários,
-fidelidade numérica confirmada em relação ao sistema Java legado e capacidade
-de carga validada para matrizes de até $15.000\times723$ sem erro de memória.
+aprovados, nenhuma falha e nenhum teste ignorado, em 81{,}63~segundos.
+% >>> CONFIRME na saída do pytest que a linha final é "92 passed" (sem
+% >>> "skipped"): a fixture cfg_analito pula testes se algum arquivo faltar.
+Esse resultado evidencia três conclusões objetivas: correção matemática nos
+testes unitários, equivalência com o sistema Java legado nos níveis descritos
+no item (b) e execução sem erro de memória para matrizes de até
+$15.000\times723$ (cerca de 87~MB em precisão dupla).
 
 \end{description}
 
