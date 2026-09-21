@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.12) (preloaded format=pdflatex 2026.5.18)  18 SEP 2026 23:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.12) (preloaded format=pdflatex 2026.5.18)  21 SEP 2026 00:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2090,6 +2090,14 @@ LaTeX Info: Redefining \cite on input line 862.
 \@float@every@codigo=\toks81
 \c@codigo=\count519
  (setup/stylodefinicao.tex)
+(C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/latex/tablefootnote\t
+ablefootnote.sty
+Package: tablefootnote 2014/01/26 v1.1c Table foot notes (HMM)
+
+(C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/latex/xifthen\xifthen
+.sty
+Package: xifthen 2015/11/05 v1.4.0 Extended ifthen features
+))
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/latex/hyperxmp\hyperx
 mp.sty
 Package: hyperxmp 2024/03/17 v5.13 Store hyperref metadata in XMP format
@@ -2121,7 +2129,7 @@ Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'brazil'.
 LaTeX Font Info:    Trying to load font information for T1+ptm on input line 51
-3.
+7.
 
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
@@ -2134,25 +2142,25 @@ LaTeX Warning: Label `sec:bagxsuagg' multiply defined.
 (tex/10secao.aux) (tex/5secao.aux))
 \openout1 = `TCC_II_IFG_2026.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 513.
-LaTeX Font Info:    ... okay on input line 513.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 513.
-LaTeX Font Info:    ... okay on input line 513.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 513.
-LaTeX Font Info:    ... okay on input line 513.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 513.
-LaTeX Font Info:    ... okay on input line 513.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 513.
-LaTeX Font Info:    ... okay on input line 513.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 513.
-LaTeX Font Info:    ... okay on input line 513.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 513.
-LaTeX Font Info:    ... okay on input line 513.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 513.
-LaTeX Font Info:    ... okay on input line 513.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 513.
-LaTeX Font Info:    ... okay on input line 513.
-Package hyperref Info: Link coloring ON on input line 513.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 517.
+LaTeX Font Info:    ... okay on input line 517.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 517.
+LaTeX Font Info:    ... okay on input line 517.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 517.
+LaTeX Font Info:    ... okay on input line 517.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 517.
+LaTeX Font Info:    ... okay on input line 517.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 517.
+LaTeX Font Info:    ... okay on input line 517.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 517.
+LaTeX Font Info:    ... okay on input line 517.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 517.
+LaTeX Font Info:    ... okay on input line 517.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 517.
+LaTeX Font Info:    ... okay on input line 517.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 517.
+LaTeX Font Info:    ... okay on input line 517.
+Package hyperref Info: Link coloring ON on input line 517.
 \myptabbox=\box103
 \myptabboxwidth=\skip303
 
@@ -2181,12 +2189,12 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 df-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-LaTeX Info: Redefining \microtypecontext on input line 513.
-Package microtype Info: Applying patch `item' on input line 513.
-Package microtype Info: Applying patch `toc' on input line 513.
-Package microtype Info: Applying patch `eqnum' on input line 513.
-Package microtype Info: Applying patch `footnote' on input line 513.
-Package microtype Info: Applying patch `verbatim' on input line 513.
+LaTeX Info: Redefining \microtypecontext on input line 517.
+Package microtype Info: Applying patch `item' on input line 517.
+Package microtype Info: Applying patch `toc' on input line 517.
+Package microtype Info: Applying patch `eqnum' on input line 517.
+Package microtype Info: Applying patch `footnote' on input line 517.
+Package microtype Info: Applying patch `verbatim' on input line 517.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2),
 (microtype)             factor: 1100.
@@ -2194,7 +2202,7 @@ Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 10, shrink: 10, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 513.
+LaTeX Info: Redefining \showhyphens on input line 517.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -2219,7 +2227,7 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
 LaTeX Font Info:    Trying to load font information for T1+pcr on input line 51
-3.
+7.
 
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
@@ -2229,115 +2237,115 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <12> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 513.
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 517.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/m/scsl' undefined
-(Font)              using `T1/pcr/m/sc' instead on input line 513.
+(Font)              using `T1/pcr/m/sc' instead on input line 517.
 
 LaTeX Font Info:    Font shape `T1/pcr/b/it' in size <12> not available
-(Font)              Font shape `T1/pcr/b/sl' tried instead on input line 513.
+(Font)              Font shape `T1/pcr/b/sl' tried instead on input line 517.
 
 LaTeX Font Warning: Font shape `T1/pcr/b/scsl' undefined
-(Font)              using `T1/pcr/b/sc' instead on input line 513.
+(Font)              using `T1/pcr/b/sc' instead on input line 517.
 
 LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <12> not available
-(Font)              Font shape `T1/pcr/b/n' tried instead on input line 513.
+(Font)              Font shape `T1/pcr/b/n' tried instead on input line 517.
 LaTeX Font Info:    Font shape `T1/pcr/bx/it' in size <12> not available
-(Font)              Font shape `T1/pcr/b/it' tried instead on input line 513.
+(Font)              Font shape `T1/pcr/b/it' tried instead on input line 517.
 LaTeX Font Info:    Font shape `T1/pcr/b/it' in size <12> not available
-(Font)              Font shape `T1/pcr/b/sl' tried instead on input line 513.
+(Font)              Font shape `T1/pcr/b/sl' tried instead on input line 517.
 LaTeX Font Info:    Font shape `T1/pcr/bx/sl' in size <12> not available
-(Font)              Font shape `T1/pcr/b/sl' tried instead on input line 513.
+(Font)              Font shape `T1/pcr/b/sl' tried instead on input line 517.
 
 LaTeX Font Warning: Font shape `T1/pcr/bx/scsl' undefined
-(Font)              using `T1/pcr/bx/sc' instead on input line 513.
+(Font)              using `T1/pcr/bx/sc' instead on input line 517.
 
 LaTeX Font Info:    Font shape `T1/pcr/bx/sc' in size <12> not available
-(Font)              Font shape `T1/pcr/b/sc' tried instead on input line 513.
+(Font)              Font shape `T1/pcr/b/sc' tried instead on input line 517.
 
 LaTeX Font Warning: Font shape `T1/pcr/sbx/sc' undefined
-(Font)              using `T1/pcr/sb/sc' instead on input line 513.
+(Font)              using `T1/pcr/sb/sc' instead on input line 517.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/sb/n' undefined
-(Font)              using `T1/pcr/m/n' instead on input line 513.
+(Font)              using `T1/pcr/m/n' instead on input line 517.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/sb/it' undefined
-(Font)              using `T1/pcr/sb/n' instead on input line 513.
+(Font)              using `T1/pcr/sb/n' instead on input line 517.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/sb/sl' undefined
-(Font)              using `T1/pcr/sb/it' instead on input line 513.
+(Font)              using `T1/pcr/sb/it' instead on input line 517.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/sb/scit' undefined
-(Font)              using `T1/pcr/sb/sc' instead on input line 513.
+(Font)              using `T1/pcr/sb/sc' instead on input line 517.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/sb/sc' undefined
-(Font)              using `T1/pcr/sb/n' instead on input line 513.
+(Font)              using `T1/pcr/sb/n' instead on input line 517.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/sbc/sc' undefined
-(Font)              using `T1/pcr/c/sc' instead on input line 513.
+(Font)              using `T1/pcr/c/sc' instead on input line 517.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/c/n' undefined
-(Font)              using `T1/pcr/m/n' instead on input line 513.
+(Font)              using `T1/pcr/m/n' instead on input line 517.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/c/it' undefined
-(Font)              using `T1/pcr/c/n' instead on input line 513.
+(Font)              using `T1/pcr/c/n' instead on input line 517.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/c/sl' undefined
-(Font)              using `T1/pcr/c/it' instead on input line 513.
+(Font)              using `T1/pcr/c/it' instead on input line 517.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/c/scit' undefined
-(Font)              using `T1/pcr/c/sc' instead on input line 513.
+(Font)              using `T1/pcr/c/sc' instead on input line 517.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/c/sc' undefined
-(Font)              using `T1/pcr/c/n' instead on input line 513.
+(Font)              using `T1/pcr/c/n' instead on input line 517.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/lc/sc' undefined
-(Font)              using `T1/pcr/l/sc' instead on input line 513.
+(Font)              using `T1/pcr/l/sc' instead on input line 517.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/l/n' undefined
-(Font)              using `T1/pcr/m/n' instead on input line 513.
+(Font)              using `T1/pcr/m/n' instead on input line 517.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/l/it' undefined
-(Font)              using `T1/pcr/l/n' instead on input line 513.
+(Font)              using `T1/pcr/l/n' instead on input line 517.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/l/sl' undefined
-(Font)              using `T1/pcr/l/it' instead on input line 513.
+(Font)              using `T1/pcr/l/it' instead on input line 517.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/l/scit' undefined
-(Font)              using `T1/pcr/l/sc' instead on input line 513.
+(Font)              using `T1/pcr/l/sc' instead on input line 517.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/l/sc' undefined
-(Font)              using `T1/pcr/l/n' instead on input line 513.
+(Font)              using `T1/pcr/l/n' instead on input line 517.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/m/ui' undefined
-(Font)              using `T1/pcr/m/n' instead on input line 513.
+(Font)              using `T1/pcr/m/n' instead on input line 517.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/bx/ui' undefined
-(Font)              using `T1/pcr/bx/n' instead on input line 513.
+(Font)              using `T1/pcr/bx/n' instead on input line 517.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/m/In' undefined
-(Font)              using `T1/pcr/m/n' instead on input line 513.
+(Font)              using `T1/pcr/m/n' instead on input line 517.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
@@ -2350,7 +2358,7 @@ File: translations-basic-dictionary-brazil.trsl (brazil translation file `trans
 lations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `brazil'. on input line 513.
+or `brazil'. on input line 517.
 
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/latex/translations/di
 cts\translations-basic-dictionary-english.trsl
@@ -2358,7 +2366,7 @@ File: translations-basic-dictionary-english.trsl (english translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `english'. on input line 513.
+or `english'. on input line 517.
 
 Package pgfplots notification 'compat/show suggested version=true': document ha
 s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
@@ -2536,7 +2544,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 108--108
 
 
 
-]) [15] [16]
+] [15]) [16]
 \openout2 = `tex/2secao.aux'.
 
  (tex/2secao.tex [17
@@ -2696,7 +2704,7 @@ File: lstlang1.sty 2023/02/27 1.9 listings language file
 
 ]
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <10> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 107.
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 76.
  [31] [32]
 PGFPlots: reading {./outros/prog/dados_Fe.txt}
 PGFPlots: reading {./outros/prog/dados_Cr.txt}
@@ -2709,7 +2717,7 @@ PGFPlots: reading {./outros/prog/dados_Mo.txt}
  (tex/4secao.tex
 PGFPlots: reading {tex/YtesteMn.txt}
 PGFPlots: reading {tex/CpredMn.txt}
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 8
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 6
 3.
 
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.f
@@ -2739,29 +2747,29 @@ PGFPlots: reading {tex/CpredMn.txt}
 PGFPlots: reading {tex/YtesteFe.txt}
 PGFPlots: reading {tex/CpredFe.txt}
  [40] [41]
-Underfull \hbox (badness 10000) in paragraph at lines 587--588
+Underfull \hbox (badness 10000) in paragraph at lines 471--472
 []|\T1/ptm/b/n/10.95 (+10) Proporção
  []
 
 [42]
-Package pgfplots info on input line 720: Using 'lua backend=false' for axis: x 
+Package pgfplots info on input line 573: Using 'lua backend=false' for axis: x 
 coord trafo unsupported.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 720.
-Package pgfplots info on input line 779: Using 'lua backend=false' for axis: x 
+(Font)              <9> on input line 573.
+Package pgfplots info on input line 632: Using 'lua backend=false' for axis: x 
 coord trafo unsupported.
  [43]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 817.
+(hyperref)                removing `math shift' on input line 670.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\times' on input line 817.
+(hyperref)                removing `\times' on input line 670.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 817.
+(hyperref)                removing `math shift' on input line 670.
 
 [44]
 PGFPlots: reading {tex/dados/subagging_mn.txt}
@@ -2771,8 +2779,8 @@ PGFPlots: reading {tex/dados/subagging_fe.txt}
 PGFPlots: reading {tex/dados/bagging_fe.txt}
 PGFPlots: reading {tex/dados/rlm_fe.txt}
  [45] [46]
-Package pgfplots info on input line 1082: Using 'lua backend=false' for axis: x
- coord trafo unsupported.
+Package pgfplots info on input line 935: Using 'lua backend=false' for axis: x 
+coord trafo unsupported.
  [47]) [48]
 \openout2 = `tex/6secao.aux'.
 
@@ -2788,7 +2796,7 @@ Underfull \hbox (badness 2318) in paragraph at lines 137--137
  []
 
 [50]
-<./outros/fig/fluxo.png, id=1023, 6564.525pt x 765.86125pt>
+<./outros/fig/fluxo.png, id=1034, 6564.525pt x 765.86125pt>
 File: ./outros/fig/fluxo.png Graphic file (type png)
 <use ./outros/fig/fluxo.png>
 Package pdftex.def Info: ./outros/fig/fluxo.png  used on input line 215.
@@ -2874,24 +2882,24 @@ Underfull \hbox (badness 1389) in paragraph at lines 329--329
  []
 
 [54]
-Underfull \hbox (badness 10000) in paragraph at lines 385--385
+Underfull \hbox (badness 10000) in paragraph at lines 387--387
 []|$\OMS/lmsy/m/n/10.95 ^^X$\T1/ptm/m/n/10.95 (+10) 10--20 (\T1/ptm/m/it/10.95 
 (+10) Stre-am-lit
  []
 
 
-Underfull \hbox (badness 1521) in paragraph at lines 385--385
+Underfull \hbox (badness 1521) in paragraph at lines 387--387
 []|\T1/ptm/m/n/10.95 (+10) 5k+ amos-tras $\OMS/lmsy/m/n/10.95 ^^B$ \T1/ptm/m/n/
 10.95 (+10) 10k
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 385--385
+Underfull \hbox (badness 10000) in paragraph at lines 387--387
 []|\T1/ptm/m/n/10.95 (+10) Processamento em
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 385--385
+Underfull \hbox (badness 10000) in paragraph at lines 387--387
 []|\T1/ptm/m/n/10.95 (+10) Módulos \T1/ptm/m/it/10.95 (+10) plug-and-
  []
 
@@ -2988,26 +2996,26 @@ er-mi-nís-ti-cos. Esse iso-la-mento evita que
 
 
 ]
-Underfull \hbox (badness 6775) in paragraph at lines 77--82
+Underfull \hbox (badness 6775) in paragraph at lines 83--88
 []\T1/ptm/b/n/12 (+10) Padrões de Pu-bli-ca-ção\T1/ptm/m/n/12 (+10) : Os ei-xos
  cus-to-mi-za-dos (\T1/pcr/l/it/12 showgrid=True\T1/ptm/m/n/12 (+10) , \T1/pcr/
 l/it/12 grid-co-
  []
 
 
-Underfull \hbox (badness 2626) in paragraph at lines 103--112
+Underfull \hbox (badness 2626) in paragraph at lines 109--118
 \T1/ptm/m/n/12 (+10) de en-trada e saída: \T1/pcr/l/it/12 per-form_-bag-ging(..
 .) -> np.ndarray\T1/ptm/m/n/12 (+10) , \T1/pcr/l/it/12 calc_-me-
  []
 
 
-Underfull \hbox (badness 1424) in paragraph at lines 103--112
+Underfull \hbox (badness 1424) in paragraph at lines 109--118
 \T1/pcr/l/it/12 trics(...) -> tu-ple[float, float, float]\T1/ptm/m/n/12 (+10) ,
  \T1/pcr/l/it/12 find_-op-ti-mal_-pa-ra-
  []
 
 
-Underfull \hbox (badness 2452) in paragraph at lines 103--112
+Underfull \hbox (badness 2452) in paragraph at lines 109--118
 \T1/pcr/l/it/12 me-ters(...) -> tu-ple[dict, str]\T1/ptm/m/n/12 (+10) . No \T1/
 pcr/l/it/12 app.py\T1/ptm/m/n/12 (+10) , \T1/pcr/l/it/12 parse_-int_-list()
  []
@@ -3041,13 +3049,13 @@ bibitemlist
 
 ] [73] [74] [75] [76] [77]) [78]
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 614.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 615.
  [79
 
 ] (pos/apendice_d.tex [80
 
 ]
-<./outros/fig/E_Diagramas/out/diag_classe/BaggingOptimized_Classe.png, id=1462,
+<./outros/fig/E_Diagramas/out/diag_classe/BaggingOptimized_Classe.png, id=1489,
  1007.765pt x 953.5625pt>
 File: ./outros/fig/E_Diagramas/out/diag_classe/BaggingOptimized_Classe.png Grap
 hic file (type png)
@@ -3058,7 +3066,7 @@ zed_Classe.png  used on input line 71.
  [81 <./outros/fig/E_Diagramas/out/diag_classe/BaggingOptimized_Classe.png (PNG
  copy)>]
 <./outros/fig/E_Diagramas/out/diag_sequencia/BaggingOptimized_Atividade.png, id
-=1467, 218.8175pt x 1351.0475pt>
+=1494, 218.8175pt x 1351.0475pt>
 File: ./outros/fig/E_Diagramas/out/diag_sequencia/BaggingOptimized_Atividade.pn
 g Graphic file (type png)
 <use ./outros/fig/E_Diagramas/out/diag_sequencia/BaggingOptimized_Atividade.png
@@ -3070,7 +3078,7 @@ imized_Atividade.png  used on input line 83.
 [82 <./outros/fig/E_Diagramas/out/diag_sequencia/BaggingOptimized_Atividade.png
  (PNG copy)>]
 <./outros/fig/E_Diagramas/out/diagrama/BaggingOptimized_FluxoCompleto.png, id=1
-472, 877.2775pt x 1392.20125pt>
+499, 877.2775pt x 1392.20125pt>
 File: ./outros/fig/E_Diagramas/out/diagrama/BaggingOptimized_FluxoCompleto.png 
 Graphic file (type png)
 <use ./outros/fig/E_Diagramas/out/diagrama/BaggingOptimized_FluxoCompleto.png>
@@ -3079,7 +3087,7 @@ _FluxoCompleto.png  used on input line 95.
 (pdftex.def)             Requested size: 341.25pt x 541.55426pt.
  [83 <./outros/fig/E_Diagramas/out/diagrama/BaggingOptimized_FluxoCompleto.png 
 (PNG copy)>]
-<./outros/fig/E_Diagramas/out/diagrama02/Etapa2_GridSearch_CV.png, id=1477, 539
+<./outros/fig/E_Diagramas/out/diagrama02/Etapa2_GridSearch_CV.png, id=1504, 539
 .01375pt x 899.36pt>
 File: ./outros/fig/E_Diagramas/out/diagrama02/Etapa2_GridSearch_CV.png Graphic 
 file (type png)
@@ -3089,7 +3097,7 @@ rch_CV.png  used on input line 107.
 (pdftex.def)             Requested size: 227.5pt x 379.59497pt.
  [84 <./outros/fig/E_Diagramas/out/diagrama02/Etapa2_GridSearch_CV.png (PNG cop
 y)>]
-<./outros/fig/E_Diagramas/streamlit/diagrama_atividades_streamlit.png, id=1483,
+<./outros/fig/E_Diagramas/streamlit/diagrama_atividades_streamlit.png, id=1510,
  876.27374pt x 3626.54875pt>
 File: ./outros/fig/E_Diagramas/streamlit/diagrama_atividades_streamlit.png Grap
 hic file (type png)
@@ -3099,7 +3107,7 @@ _streamlit.png  used on input line 119.
 (pdftex.def)             Requested size: 136.50139pt x 564.87608pt.
  [85 <./outros/fig/E_Diagramas/streamlit/diagrama_atividades_streamlit.png (PNG
  copy)>]
-<./outros/fig/E_Diagramas/streamlit/diagrama_classes_streamlit.png, id=1488, 10
+<./outros/fig/E_Diagramas/streamlit/diagrama_classes_streamlit.png, id=1515, 10
 03.75pt x 1008.76875pt>
 File: ./outros/fig/E_Diagramas/streamlit/diagrama_classes_streamlit.png Graphic
  file (type png)
@@ -3109,7 +3117,7 @@ reamlit.png  used on input line 131.
 (pdftex.def)             Requested size: 386.75278pt x 388.69272pt.
  [86 <./outros/fig/E_Diagramas/streamlit/diagrama_classes_streamlit.png (PNG co
 py)>]
-<./outros/fig/E_Diagramas/streamlit/diagrama_sequencia_streamlit.png, id=1493, 
+<./outros/fig/E_Diagramas/streamlit/diagrama_sequencia_streamlit.png, id=1520, 
 911.405pt x 3480.00125pt>
 File: ./outros/fig/E_Diagramas/streamlit/diagrama_sequencia_streamlit.png Graph
 ic file (type png)
@@ -3171,14 +3179,14 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `TCC_II_IFG_2026.brf' has not changed.
-(rerunfilecheck)             Checksum: 2028FE9F1F610FE8BB8FAA39B9B950E9;3460.
+(rerunfilecheck)             Checksum: A43A2A2E4BE96A29B09D98AA40DCDAEF;3501.
  ) 
 Here is how much of TeX's memory you used:
- 67625 strings out of 474485
- 1460647 string characters out of 5739958
- 2599488 words of memory out of 5000000
- 87757 multiletter control sequences out of 15000+600000
- 712522 words of font info for 415 fonts, out of 8000000 for 9000
+ 67777 strings out of 474485
+ 1463530 string characters out of 5739958
+ 2602160 words of memory out of 5000000
+ 87858 multiletter control sequences out of 15000+600000
+ 714390 words of font info for 436 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  109i,23n,117p,2358b,2654s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/wagner.araujo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
@@ -3195,31 +3203,32 @@ s/wagner.araujo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><
 C:/Users/wagner.araujo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr1
 2.pfb><C:/Users/wagner.araujo/AppData/Local/Programs/MiKTeX/fonts/type1/public/
 lm/lmr6.pfb><C:/Users/wagner.araujo/AppData/Local/Programs/MiKTeX/fonts/type1/p
-ublic/lm/lmr8.pfb><C:/Users/wagner.araujo/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/lm/lmr9.pfb><C:/Users/wagner.araujo/AppData/Local/Programs/MiKTeX/f
-onts/type1/public/lm/lmsy10.pfb><C:/Users/wagner.araujo/AppData/Local/Programs/
-MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/wagner.araujo/AppData/Local/Pr
-ograms/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/wagner.araujo/AppData/L
-ocal/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/wagner.araujo/Ap
-pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy9.pfb><C:/Users/wagner.ar
-aujo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.p
-fb><C:/Users/wagner.araujo/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/symbols/msbm10.pfb><C:/Users/wagner.araujo/AppData/Local/Programs/MiKTeX/
-fonts/type1/urw/courier/ucrb8a.pfb><C:/Users/wagner.araujo/AppData/Local/Progra
-ms/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/wagner.araujo/AppData/Lo
-cal/Programs/MiKTeX/fonts/type1/urw/courier/ucrro8a.pfb><C:/Users/wagner.araujo
-/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/wa
-gner.araujo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvbo8a.pfb>
-<C:/Users/wagner.araujo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/
-uhvr8a.pfb><C:/Users/wagner.araujo/AppData/Local/Programs/MiKTeX/fonts/type1/ur
-w/helvetic/uhvro8a.pfb><C:/Users/wagner.araujo/AppData/Local/Programs/MiKTeX/fo
-nts/type1/urw/times/utmb8a.pfb><C:/Users/wagner.araujo/AppData/Local/Programs/M
-iKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/wagner.araujo/AppData/Local/P
-rograms/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/wagner.araujo/AppData
-/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on TCC_II_IFG_2026.pdf (101 pages, 2708886 bytes).
+ublic/lm/lmr7.pfb><C:/Users/wagner.araujo/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/lm/lmr8.pfb><C:/Users/wagner.araujo/AppData/Local/Programs/MiKTeX/f
+onts/type1/public/lm/lmr9.pfb><C:/Users/wagner.araujo/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/wagner.araujo/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/wagner.araujo/AppData/Lo
+cal/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/wagner.araujo/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/wagner.ara
+ujo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy9.pfb><C:/Users/wag
+ner.araujo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/ms
+am10.pfb><C:/Users/wagner.araujo/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/amsfonts/symbols/msbm10.pfb><C:/Users/wagner.araujo/AppData/Local/Programs/M
+iKTeX/fonts/type1/urw/courier/ucrb8a.pfb><C:/Users/wagner.araujo/AppData/Local/
+Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/wagner.araujo/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrro8a.pfb><C:/Users/wagner.
+araujo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Us
+ers/wagner.araujo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvbo8
+a.pfb><C:/Users/wagner.araujo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/hel
+vetic/uhvr8a.pfb><C:/Users/wagner.araujo/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/urw/helvetic/uhvro8a.pfb><C:/Users/wagner.araujo/AppData/Local/Programs/MiK
+TeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/wagner.araujo/AppData/Local/Prog
+rams/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/wagner.araujo/AppData/L
+ocal/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/wagner.araujo/A
+ppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on TCC_II_IFG_2026.pdf (101 pages, 2733561 bytes).
 PDF statistics:
- 2073 PDF objects out of 2073 (max. 8388607)
- 552 named destinations out of 1000 (max. 500000)
+ 2106 PDF objects out of 2487 (max. 8388607)
+ 564 named destinations out of 1000 (max. 500000)
  116486 words of extra memory for PDF output out of 128383 (max. 10000000)
 

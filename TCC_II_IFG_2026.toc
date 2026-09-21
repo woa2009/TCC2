@@ -81,12 +81,12 @@
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \contentsline {chapter}{\chapternumberline {9}\MakeTextUppercase []{Desenvolvimento Iterativo por Sprints e Validação por Testes Automatizados}}{67}{chapter.9}%
 \contentsline {section}{\numberline {9.1}Metodologia Ágil: Desenvolvimento por Sprints}{67}{section.9.1}%
-\contentsline {section}{\numberline {9.2}Suíte de Testes Automatizados com pytest}{67}{section.9.2}%
+\contentsline {section}{\numberline {9.2}Suíte de Testes Automatizados com pytest}{68}{section.9.2}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \contentsline {chapter}{\chapternumberline {10}\MakeTextUppercase []{Conclusão}}{70}{chapter.10}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{\MakeTextUppercase []{Referências}}{72}{section*.72}%
+\contentsline {chapter}{\MakeTextUppercase []{Referências}}{72}{section*.73}%
 \renewcommand *{\cftappendixname }{AP\^ENDICE \space }
 \setlength {\cftpartindent }{\cftlastnumwidth } \setlength {\cftpartnumwidth }{2em}
 \cftinsert {A}

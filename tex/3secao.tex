@@ -5,10 +5,6 @@
 \label{cha:metresult}
 \index{Materiais e Métodos}
 
-%Esta seção apresenta os dados utilizados na aplicação dos algoritmos de reamostragem, bem como as medidas estatísticas empregadas para comparação entre os métodos. O objetivo é determinar a concentração de Manganês (Mn), Molibdênio (Mo), Cromo (Cr), Níquel (Ni) e Ferro (Fe) a partir de espectros reamostrados pelos métodos \textit{bagging} e \textit{subagging}.
-
-%Para a implementação computacional, utilizou-se a linguagem de programação Java (JavaSE-17) em conjunto com o ambiente de desenvolvimento integrado Eclipse IDE (versão 2025-09, 4.37.0). As operações matriciais exigidas pelos algoritmos de calibração multivariada --- incluindo o cômputo da pseudo-inversa de Moore-Penrose, as reamostragens \textit{bootstrap} e a agregação dos modelos de \textit{ensemble} --- foram implementadas com o suporte da biblioteca EJML (\textit{Efficient Java Matrix Library}, \texttt{org.ejml.simple.SimpleMatrix}), especializada em operações de álgebra linear de alto desempenho para a plataforma Java. A visualização gráfica dos resultados foi realizada por meio da biblioteca JFreeChart\footnote{Versões utilizadas: EJML 0.43.1; JFreeChart 1.5.4. O código-fonte está disponível em: \url{https://github.com/woa2009/MigracaoJava}}, que possibilitou a geração dos gráficos de predição e comparação de desempenho apresentados neste trabalho. A interface gráfica de usuário, utilizada para entrada de parâmetros e exibição dos resultados durante os experimentos, foi desenvolvida com os \textit{frameworks} nativos Java Swing e AWT. O gerenciamento dos arquivos de entrada e saída --- incluindo leitura das matrizes espectrométricas e exportação dos resultados --- foi realizado por meio das bibliotecas padrão de entrada e saída da plataforma (\texttt{java.io}).
-
 Esta seção apresenta os dados utilizados na aplicação dos algoritmos 
 de reamostragem, bem como as medidas estatísticas empregadas para 
 comparação entre os métodos. O objetivo é determinar a concentração 
@@ -16,33 +12,6 @@ de Manganês (Mn), Molibdênio (Mo), Cromo (Cr), Níquel (Ni) e Ferro
 (Fe) a partir de espectros reamostrados pelos métodos \textit{bagging} 
 e \textit{subagging}.
 
-%---------------------------------------------------
-\begin{comment}
-
-Para a implementação computacional, utilizou-se a linguagem de 
-programação Java (JavaSE-17) em conjunto com o ambiente de 
-desenvolvimento integrado Eclipse IDE (versão 2025-09, 4.37.0). 
-As operações matriciais exigidas pelos algoritmos de calibração 
-multivariada --- incluindo o cômputo da pseudo-inversa de 
-Moore-Penrose, as reamostragens \textit{bootstrap} e a agregação 
-dos modelos de \textit{ensemble} --- foram implementadas com o 
-suporte da biblioteca \textit{Efficient Java Matrix Library}, 
-\texttt{org.ejml.simple.SimpleMatrix} (EJML), especializada em operações 
-de álgebra linear de alto desempenho para a plataforma Java. 
-A visualização gráfica dos resultados foi realizada por meio da 
-biblioteca JFreeChart\footnote{Versões utilizadas: EJML 0.43.1; 
-JFreeChart 1.5.4. O código-fonte está disponível em: 
-\url{https://github.com/woa2009/MigracaoJava}}, que possibilitou a geração dos 
-gráficos de predição e comparação de desempenho apresentados neste 
-trabalho. A interface gráfica de usuário, utilizada para entrada de 
-parâmetros e exibição dos resultados durante os experimentos, foi 
-desenvolvida com os \textit{frameworks} nativos Java Swing e AWT. 
-O gerenciamento dos arquivos de entrada e saída --- incluindo leitura 
-das matrizes espectrométricas e exportação dos resultados --- foi 
-realizado por meio das bibliotecas padrão de entrada e saída da 
-plataforma (\texttt{java.io}).
-\end{comment}
-%---------------------------------------------------
 Para a implementação computacional, utilizou-se a linguagem de programação Java (JavaSE-17) em conjunto com o ambiente de desenvolvimento integrado Eclipse IDE (versão 2025-09). As operações matriciais exigidas pelos algoritmos de calibração multivariada, incluindo o cômputo da pseudo-inversa de Moore-Penrose, as reamostragens \textit{bootstrap} e a agregação dos modelos de \textit{ensemble}, foram implementadas com o suporte da biblioteca \textit{Efficient Java Matrix Library}, \texttt{org.ejml.simple.SimpleMatrix} (EJML). Esta é especializada em operações de álgebra linear de alto desempenho para a plataforma Java, garantindo eficiência no processamento.
 
 A visualização gráfica dos resultados foi realizada pela biblioteca JFreeChart\footnote{Versões: EJML 0.43.1; JFreeChart 1.5.4. Código em: \url{https://github.com/woa2009/MigracaoJava}}, que possibilitou a geração dos gráficos de predição e comparação de desempenho deste trabalho. A interface gráfica de usuário, para entrada de parâmetros e exibição de resultados durante os experimentos, foi desenvolvida com os \textit{frameworks} nativos Java Swing e AWT. O gerenciamento dos arquivos de entrada e saída, incluindo leitura das matrizes espectrométricas e exportação dos resultados, foi realizado pelas bibliotecas padrão \texttt{java.io}.
@@ -152,134 +121,7 @@ Essa mesma bifurcação --- reamostragem com ou sem reposição controlada por u
 verificação dos testes de caixa-preta descritos na
 Seção~\ref{sec:testescaixapreta}.
 
-%---------------------------------------------------
-\begin{comment}
-%---------------------------------------------------
-%----------------------------------------------------------------------------------------------------------
-\section{Amostras de Aço-Ligas}
-\label{sec:amoacolig}
-\index{Métodos e Resultados!Introdução}
 
-Os dados foram obtidos por meio de um espectrômetro de emissão atômica em plasma com acoplamento indutivo sequencial convertido para um sistema de múltiplos canais de detecção baseado em um arranjo linear de 1024 fotodiodos. O aparelho instrumental faz uso das propriedades de absorção e emissão de plasma, como detalhado em~\cite{PIMENTEL:1998}.
-
-A espectroscopia de emissão atômica é responsável pela conversão dos componentes da amostra em átomos ou íons elementares, podendo excitá-los a vários estados eletrônicos. A rápida relaxação das espécies excitadas possibilita a produção de espectros visíveis que serão analisados quantitativamente e qualitativamente, com vantagens sobre outros métodos clássicos. Por exemplo, a baixa interferência entre elementos da mesma amostra, e o registro de espectros para vários elementos no mesmo conjunto de excitação~\cite{SKOOG:1997}.
-
-Os espectros obtidos por fontes de plasma são bastante complexos e constituem centenas ou até milhares de frequências (Figura~\ref{fig:espectros}). Logo, melhoram a análise qualitativa. Porém, dificulta a análise quantitativa pela grande quantidade de variáveis geradas por amostra motivando o emprego de calibração multivariada ~\cite{KRAMER:1998,MARTENS:1989}.
-
-
-\begin{figure}[htbp]
-\centering
-\caption{Espectros médios dos analitos analisados.}
-\label{fig:espectros}
-\resizebox{0.55\columnwidth}{!}{%
-\begin{tikzpicture}
-\begin{axis}[
-    width=12cm,
-    height=9cm,
-    %title={\textbf{Espectros Médios - 5 Elementos}},
-    title style={font=\large},
-    xlabel={Comprimento de Onda (nm)},
-    ylabel={Intensidades},
-    xlabel style={font=\normalsize},
-    ylabel style={font=\normalsize},
-    xmin=200, xmax=800,
-    ymin=0, ymax=3000,
-    grid=major,
-    grid style={line width=0.3pt, draw=gray!40},
-    legend pos=north east,
-    legend style={
-        font=\small,
-        cells={anchor=west},
-        draw=black,
-        fill=white,
-        line width=0.5pt
-    },
-    line width=1.5pt,
-    tick label style={font=\small},
-    axis background/.style={fill=white},
-    axis lines=left,
-    every axis plot/.append style={no marks}
-]
-
-% Espectro do Fe (verde)
-\addplot[verde, line width=1.5pt] table[
-    x expr=200+\coordindex*(600/722),
-    y index=0,
-    header=false
-] {./outros/prog/dados_Fe.txt};
-\addlegendentry{Fe}
-
-% Espectro do Cr (vermelho)
-\addplot[vermelho, line width=1.5pt] table[
-    x expr=200+\coordindex*(600/722),
-    y index=0,
-    header=false
-] {./outros/prog/dados_Cr.txt};
-\addlegendentry{Cr}
-
-% Espectro do Mn (azul)
-\addplot[azul, line width=1.5pt] table[
-    x expr=200+\coordindex*(600/722),
-    y index=0,
-    header=false
-] {./outros/prog/dados_Mn.txt};
-\addlegendentry{Mn}
-
-% Espectro do Ni (magenta)
-\addplot[magenta, line width=1.5pt] table[
-    x expr=200+\coordindex*(600/722),
-    y index=0,
-    header=false
-] {./outros/prog/dados_Ni.txt};
-\addlegendentry{Ni}
-
-% Espectro do Mo (ciano)
-\addplot[ciano, line width=1.5pt] table[
-    x expr=200+\coordindex*(600/722),
-    y index=0,
-    header=false
-] {./outros/prog/dados_Mo.txt};
-\addlegendentry{Mo}
-
-\end{axis}
-\end{tikzpicture}
-}%Fim raisebox
-%\legend{\footnotesize Fonte: \oautor.}
-\caption*{\footnotesize Fonte: \oautor.}
-\end{figure}
-
-\newpage
-
-As matrizes de respostas instrumentais e concentração das amostras de aço-ligas são organizadas em dois conjuntos de dados: calibração 
-(33,3 -- 45,9\%) e teste (54,1 -- 66,7\%), como segue~(Quadro~\ref{tab:conjuntos_subscritos}).
-
-\def\mna{(17 \times 723)}\def\mnb{(17 \times 1)}
-\def\mnc{(34 \times 723)}\def\mnd{(21 \times 1)}
-\def\mne{(21 \times 723)}\def\mnf{(34 \times 1)}
-\def\mng{(20 \times 1)}\def\mnh{(20 \times 1)}
-\def\mni{(20 \times 723)}\def\mnj{(17 \times 1)}
-%------------------------------------------------------------------
-\begin{quadro}[ht]
-%\begin{table}[ht]
-\centering
-\caption{Dimensões dos conjuntos de dados para diferentes elementos.}
-\begin{tabular}{|l|c|c|}
-\hline
-\textbf{Elemento} & \textbf{Calibração} & \textbf{Teste} \\
-\hline
-Mn & $\textbf{Xcal}_{Mn_{\mna}}$, $\textbf{Ycal}_{Mn_{\mnb}}$ & $\textbf{Xteste}_{Mn_{\mnc}}$, $\textbf{yteste}_{Mn_{\mnf}}$ \\
-Mo & $\textbf{Xcal}_{Mo_{\mna}}$, $\textbf{Ycal}_{Mo_{\mnb}}$ & $\textbf{Xteste}_{Mo_{\mne}}$, $\textbf{yteste}_{Mo_{\mnd}}$ \\
-Cr & $\textbf{Xcal}_{Cr_{\mna}}$, $\textbf{Ycal}_{Cr_{\mnb}}$ & $\textbf{Xteste}_{Cr_{\mnc}}$, $\textbf{yteste}_{Cr_{\mnf}}$ \\
-Ni & $\textbf{Xcal}_{Ni_{\mna}}$, $\textbf{Ycal}_{Ni_{\mnb}}$ & $\textbf{Xteste}_{Ni_{\mni}}$, $\textbf{yteste}_{Ni_{\mnh}}$ \\
-Fe & $\textbf{\gls{Xcal}}_{Fe_{\mna}}$, $\textbf{\gls{Ycal}}_{Fe_{\mnb}}$ & $\textbf{\gls{Xteste}}_{Fe_{\mnc}}$, $\textbf{\gls{yteste}}_{Fe_{\mnf}}$ \\
-\hline
-\end{tabular}
-\label{tab:conjuntos_subscritos}
-\legend{Fonte:~\oautor}
-%\end{table}
-\end{quadro}
-\end{comment}
-%-----------------------------------------------------
 %----------------------------------------------------------------------------------------------------------
 \section{Amostras de Aço-Ligas}
 \label{sec:amoacolig}

@@ -24,7 +24,7 @@ sinalizando visualmente a paridade entre os conjuntos. A área central é reserv
 cards de métricas gerados por \texttt{components.metric\_card\_html()} e para a tabela
 comparativa em \texttt{pd.DataFrame}. O CSS centralizado em \texttt{components.APP\_CSS}
 — incluindo gradientes de fundo, bordas coloridas por modelo e estilo terminal para o
-log — replica dashboards técnicos e industriais sem poluir o \texttt{app.py} com
+log — replica \textit{dashboards} técnicos e industriais sem poluir o \texttt{app.py} com
 definições de estilo.
 
 \item[c)] \textbf{Feedback Progressivo}: O botão \textbf{Executar Análise} é
@@ -33,19 +33,25 @@ ausente, prevenindo execuções inválidas. A barra de progresso atualizada pelo
 a mensagem \texttt{st.success} ao término fornecem confirmação clara de conclusão,
 padrão recomendado pelas diretrizes de usabilidade para interfaces científicas.
 
+
 \item[d)] \textbf{Decisão Arquitetural: \texttt{st.tabs} vs.\ \texttt{st.sidebar}}: O
 Streamlit oferece dois paradigmas de organização de parâmetros técnicos e resultados:
 a \texttt{st.sidebar} (painel lateral persistente, visível em todas as telas) e o
 \texttt{st.tabs} (abas sequenciais que segmentam o fluxo). Para o perfil de usuário
-científico deste sistema — que opera em etapas ordenadas e não retorna aos parâmetros
-após a execução — o modelo de abas foi preferido por três razões: (1) impõe
-explicitamente a sequência \textit{Configuração $\rightarrow$ Resultados $\rightarrow$
-Gráficos}, prevenindo execuções prematuras; (2) preserva a área central integralmente
-para visualização de resultados e gráficos, sem que uma barra lateral compita com os
-gráficos do Plotly em largura de tela; e (3) alinha-se ao padrão de \textit{wizards}
-adotado em \textit{softwares} de análise científica (Origin, MATLAB App Designer), nos
-quais cada etapa revela seu conteúdo apenas quando os pré-requisitos anteriores foram
-cumpridos. A \texttt{st.sidebar} permanece como alternativa recomendada para versões
+científico deste sistema --- que opera em etapas ordenadas e não retorna aos parâmetros
+após a execução --- o modelo de abas foi preferido por três razões. A primeira é que
+impõe explicitamente a sequência \textit{Configuração $\rightarrow$ Resultados
+$\rightarrow$ Gráficos}, prevenindo execuções prematuras.
+
+A segunda razão é que o modelo de abas preserva a área central integralmente para
+visualização de resultados e gráficos, sem que uma barra lateral compita com os
+gráficos do Plotly em largura de tela. A terceira é que ele se alinha ao padrão de
+\textit{wizards} adotado em \textit{softwares} de análise científica (Origin\footnote{Disponível no site oficial da \textit{OriginLab}: \url{https://www.originlab.com/}.}
+, MATLAB App Designer\footnote{Disponível no site oficial da \textit{MathWorks} para o \textit{software} MATLAB: \url{https://www.mathworks.com/products/matlab.html}.}
+), nos quais cada etapa revela seu conteúdo apenas quando os
+pré-requisitos anteriores foram cumpridos.
+
+Ainda assim, a \texttt{st.sidebar} permanece como alternativa recomendada para versões
 futuras que implementem parâmetros globais persistentes, como configuração de idioma,
 normalização de dados ou seleção de paleta de cores para publicação.
 
@@ -72,7 +78,7 @@ gerados por \texttt{build\_chart()} e \texttt{build\_scatter\_chart()} habilitam
 \textit{pan}, \textit{hover} com coordenadas exatas e legendas interativas. A linha ideal
 \textit{y=x} (\texttt{mode="lines", dash="dot"}) no gráfico de dispersão
 (\texttt{build\_scatter\_chart}) permite validação visual imediata de viés e dispersão
-dos três modelos sobrepostos — RLM Simples, Bagging e Subagging — em uma única figura.
+dos três modelos sobrepostos — RLM Simples, \textit{Bagging} e \textit{Subagging} — em uma única figura.
 
 \item[c)] \textbf{Padrões de Publicação}: Os eixos customizados (\texttt{showgrid=True},
 \texttt{gridcolor="\#000000"}, fontes pretas explícitas via \texttt{\_AXIS\_STYLE})

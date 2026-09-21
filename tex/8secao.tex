@@ -16,19 +16,19 @@ dimensionalidade.
 utiliza exclusivamente operações vetorizadas do NumPy:
 \texttt{np.linalg.pinv(Xcal)~@~Ycal} para a pseudoinversa, \texttt{np.random.default\_rng}
 para amostragem reprodutível com semente configurável, e \texttt{np.sqrt(np.mean(err**2))}
-para RMSE. Essas operações substituem laços explícitos em Java, executando em tempo próximo
+para RMSEP. Essas operações substituem laços explícitos em Java, executando em tempo próximo
 a linguagens compiladas mesmo para matrizes espectrais com milhares de variáveis.
 
-\item[b)] \textbf{Parsing Robusto com \texttt{parse\_matrix()} e \texttt{parse\_vector()}}:
+\item[b)] \textbf{\textit{Parsing} Robusto com \texttt{parse\_matrix()} e \texttt{parse\_vector()}}:
 As funções de leitura em \texttt{models.py} utilizam decodificação UTF-8 com tolerância a
 erros, normalização de separador decimal (vírgula para ponto) e filtragem de linhas
-vazias. Esse parsing manual garante compatibilidade com arquivos \texttt{.txt} gerados
+vazias. Esse \textit{parsing} manual garante compatibilidade com arquivos \texttt{.txt} gerados
 por instrumentos espectrométricos sem dependência de formatação rígida.
 
 \item[c)] \textbf{Interoperabilidade Científica com \texttt{Pandas}}: A integração com
 \texttt{pandas} no \texttt{app.py} permite exportar a tabela comparativa de métricas
 diretamente em CSV (\texttt{df\_metrics.to\_csv()}), mantendo o fluxo de trabalho típico
-de laboratórios de quimiometria. O \texttt{pd.DataFrame} estrutura os resultados de RMSE,
+de laboratórios de quimiometria. O \texttt{pd.DataFrame} estrutura os resultados de RMSEP,
 MAE, R² e tempo de execução de forma tabular, viabilizando análise posterior em planilhas
 ou pipelines de dados sem conversões intermediárias.
 
@@ -68,11 +68,11 @@ renderizar, lendo os dados diretamente da memória de sessão sem acionar novame
 laços de otimização.
 
 \item[c)] \textbf{Feedback Assíncrono Simulado}: A barra de progresso
-(\texttt{st.progress}) é atualizada via callback \texttt{update\_progress} passado para
+(\texttt{st.progress}) é atualizada via \textit{callback} \texttt{update\_progress} passado para
 \texttt{run\_full\_analysis()}, que o propaga internamente a
 \texttt{find\_optimal\_parameters()}. Embora o Streamlit seja síncrono por natureza, essa
-estratégia de callback mitiga a percepção de travamento durante as 150 execuções do grid
-search (5 valores de \textit{m} + 5 $\times$ 5 combinações de \textit{k} $\times$
+estratégia de \textit{callback} mitiga a percepção de travamento durante as 150 execuções do \textit{grid}
+\textit{search} (5 valores de \textit{m} + 5 $\times$ 5 combinações de \textit{k} $\times$
 \textit{m}, cada uma com 5 folds).
 
 \end{description}
@@ -88,7 +88,7 @@ processamento de matrizes espectrais de alta dimensionalidade.
 \item[a)] \textbf{Uso Estratégico de \texttt{st.session\_state}}: Com a separação em
 \texttt{models.py} e \texttt{app.py}, o estado mantém o dicionário de saída de
 \texttt{run\_full\_analysis()} vivo entre reruns. Isso elimina a necessidade de
-reprocessar arquivos já carregados ou reexecutar o grid search ao navegar entre abas,
+reprocessar arquivos já carregados ou reexecutar o \textit{grid search} ao navegar entre abas,
 reduzindo a latência percebida pelo usuário a milissegundos após a primeira execução.
 
 \item[b)] \textbf{Oportunidade de \texttt{@st.cache\_data}}: Como \texttt{models.py}
@@ -119,12 +119,9 @@ como padrão da indústria para projetos Python científicos~\cite{vscode2024}.
 \begin{description}
 
 \item[a)] \textbf{Extensões Especializadas para o Projeto}: A extensão \texttt{Python}
-(Microsoft) provê IntelliSense e navegação entre os três módulos; \texttt{Pylance} realiza
-\textit{type checking} estático, detectando incompatibilidades de \texttt{np.ndarray}
-entre \texttt{models.py} e \texttt{app.py} antes da execução. A extensão
-\texttt{Jupyter} permite prototipar e validar funções matemáticas isoladamente em
-\textit{notebooks} antes de integrá-las ao \texttt{models.py}, acelerando o ciclo de
-desenvolvimento.
+(Microsoft) provê IntelliSense\footnote{\textit{IntelliSense} é um termo técnico para o mecanismo de completamento inteligente de código, que oferece sugestões contextuais de métodos, argumentos e documentação diretamente no editor durante a digitação.} e navegação entre os três módulos; \texttt{Pylance} realiza \textit{type checking} estático, detectando incompatibilidades de \texttt{np.ndarray}
+entre \texttt{models.py} e \texttt{app.py} antes da execução. A extensão \texttt{Jupyter} permite prototipar e validar funções matemáticas isoladamente em \textit{notebooks} antes de integrá-las ao \texttt{models.py}, acelerando o ciclo de desenvolvimento.
+
 
 \item[b)] \textbf{Qualidade e Padronização de Código}: A integração nativa com
 \texttt{black} (formatação automática), \texttt{ruff} ou \texttt{flake8} (linting de
@@ -133,8 +130,8 @@ arquivos. Os \textit{type hints} adotados em \texttt{models.py} e \texttt{compon
 são validados em tempo real, prevenindo chamadas com tipos incorretos a partir do
 \texttt{app.py}.
 
-\item[c)] \textbf{Depuração com Breakpoints Cirúrgicos}: O arquivo \texttt{launch.json}
-do VS~Code permite inserir breakpoints diretamente dentro de
+\item[c)] \textbf{Depuração com \textit{Breakpoints} Cirúrgicos}: O arquivo \texttt{launch.json}
+do VS~Code permite inserir \textit{breakpoints} diretamente dentro de
 \texttt{run\_cross\_validation()} ou \texttt{calc\_metrics()}, inspecionando o
 \textit{shape} dos arrays, os valores intermediários de \texttt{rmse\_list} e o índice
 do fold atual — informações impossíveis de obter com \texttt{st.write()} na interface.

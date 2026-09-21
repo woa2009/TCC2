@@ -266,7 +266,7 @@
 % ---
 \input{setup/stylodefinicao}
 
-
+\usepackage{tablefootnote} % Nota de rodape para tebelas
 
 % ---
 % Configurações de aparência do PDF final
@@ -506,6 +506,10 @@
 \makeatother
 
 %-------------------------------------------
+\interfootnotelinepenalty=10000 %Isso impede totalmente que qualquer nota de rodapé seja dividida entre duas páginas.
+
+
+
 
 % --------------------------------------------------------------------------
 % Início do documento
@@ -551,37 +555,34 @@
 % ---
 % 2 - Seção 2(Desenvolvimento)
 % ---
-\include{tex/2secao}
+\include{tex/2secao}%Revisao da literatura
 % ---
 
 % ---
 % 3 - Seção 3(Desenvolvimento)
 % ---
-\include{tex/3secao}%atualizado
+\include{tex/3secao}%Materiais de metodos
 % ---
 
 % ---
 % 4 - Resultados e Discussões
 % ---
 %\phantompart
-\include{tex/4secao}
+\include{tex/4secao}%Resultados e discussoes
 
+\include{tex/6secao}%Seção 5 - Requisitos Funcionais
 
-\include{tex/6secao}
+\include{tex/7secao}%Seção 6 - Engenharia de Software e Modernização
 
-%\include{tex/8secao_v2}%foi atualizado pelo tcc I
+\include{tex/8secao}%Seção 7 - Ecossistema de Desenvolvimento (Python e Streamlit)
 
-\include{tex/7secao}
-\include{tex/8secao}
-\include{tex/9secao}
+\include{tex/9secao}%Seção 8 - Interface e Experiência do Usuário (UI/UX) Científica
 
-\include{tex/10secao}
+\include{tex/10secao}%Seção 9 - Desenvolvimento Iterativo por Sprints e Validação por Testes Automatizados
 
 % ---
 % 5 - Conclusão
-\include{tex/5secao}
-
-%\include{tex/10secao}
+\include{tex/5secao}%Seção 10
 
 
 % ----------------------------------------------------------
@@ -612,10 +613,9 @@
 % ----------------------------------------------------------
 \begin{apendicesenv}
 \partapendices*%Para desabilitar colocoque o %
-%\input{pos/apendice_a}%Retirado
 \input{pos/apendice_d}%Retirado
 \input{pos/apendice_c}%Retirado
-%\input{pos/apendice_b}%Retirado
+
 
 \end{apendicesenv}
 % ---------------------------------------------------------

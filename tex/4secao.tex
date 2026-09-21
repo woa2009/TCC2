@@ -6,26 +6,6 @@ Esta seção apresenta os resultados e discute as técnicas de \textit{bootstrap
 
 \def\namostras{Nº de amostras}
 
-%---------------------------------------------------
-\begin{comment}
-	\begin{table}[!htbp]
-\centering
-\caption{RMSEP com RLM para as amostras de aço-ligas.}
-\resizebox{0.70\columnwidth}{!}{%
-\begin{tabular}{l| c| c| c| c |c}
-\hline
- RMSEP & Mn & Mo & Cr & Ni & Fe \\ 
-\hline
-RLM & \num{\dados[2,2]} & \num{\dados[2,3]} & \num{\dados[2,4]} & \num{\dados[2,5]} & \num{\dados[2,6]} \\ 
-\hline
-\end{tabular}
-}
-\legend{\footnotesize Fonte:~\oautor}
-\label{tab:rmseprlm}
-\end{table}
-\end{comment}
-%---------------------------------------------------
-
 
 \begin{table}[!htbp]
 \centering
@@ -116,36 +96,10 @@ A Tabela~\ref{tab:rmseprlm} mostra o RMSEP obtido com a RLM para todas as amostr
 \end{figure}
 %-----------------Subfigure
 
-%---------------------------------------------------
-\begin{comment}
-	
-A Figura~\ref{fig:Figura41} exibe o comportamento do RMSEP para os elementos Mn e Fe. A Figura~\ref{fig:Figura41a} detalha o RMSEP do manganês (Mn) e a Figura~\ref{fig:Figura41b}, o do ferro (Fe). O sinal azul representa a concentração esperada do Mn e do Fe e sinal vermelho a concentração predita obtida com a RLM. Pode ser visto na Tabela~\ref{tab:rmseprlm} que o Mn apresenta o menor RMSEP~(\num{\dados[2,2]}). Por outro lado, o Fe apresenta o maior RMSEP~(\num{\dados[2,6]}).
-
-A escolha dos elementos ferro e manganês para esta análise baseia-se em fundamentos científicos bem estabelecidos na metalurgia. O ferro é o elemento matriz que define a própria natureza do material, uma vez que sem ferro não existe aço. O manganês, por sua vez, é o único elemento de liga historicamente considerado essencial para a produção de qualquer aço comercial, atuando como desoxidante e modificador fundamental das propriedades mecânicas. Os demais elementos (Cr, Mo, Ni) são importantes para propriedades específicas, mas não são fundamentais para a definição básica e produção do aço como o ferro e o manganês. Acredita-se que o comportamento destas duas amostras são suficientes para ilustrar o comportamento geral esperado para as outras amostras.
-\end{comment}
-%---------------------------------------------------
-
 A Figura~\ref{fig:Figura41} exibe o comportamento do RMSEP para os elementos Mn e Fe. A Figura~\ref{fig:Figura41a} detalha o RMSEP do manganês (Mn) e a Figura~\ref{fig:Figura41b}, o do ferro (Fe). O sinal azul representa a concentração esperada do Mn e do Fe e sinal vermelho a concentração predita obtida com a RLM. Pode ser visto na Tabela~\ref{tab:rmseprlm} que o Mn apresenta o menor RMSEP entre os três métodos, com destaque para o RLM-\textit{subagging}~(\num{0,0974}). Por outro lado, o Fe apresenta o maior RMSEP, com o valor mais elevado obtido pela RLM~(\num{2,7513}). De forma geral, o RLM-\textit{subagging} apresentou desempenho superior ao RLM-\textit{bagging} na maioria dos elementos analisados, embora a RLM clássica tenha se mantido como método de menor RMSEP para Mo e Cr, indicando que a técnica mais adequada depende das características específicas de cada analito.
 
 A escolha dos elementos ferro e manganês para esta análise baseia-se em fundamentos científicos bem estabelecidos na metalurgia. O ferro é o elemento matriz que define a própria natureza do material, uma vez que sem ferro não existe aço. O manganês, por sua vez, é o único elemento de liga historicamente considerado essencial para a produção de qualquer aço comercial, atuando como desoxidante e modificador fundamental das propriedades mecânicas. Os demais elementos (Cr, Mo, Ni) são importantes para propriedades específicas, mas não são fundamentais para a definição básica e produção do aço como o ferro e o manganês. Acredita-se que o comportamento destas duas amostras são suficientes para ilustrar o comportamento geral esperado para as outras amostras.
 
-%----------------------------------------------------------------------------------------------------------
-%---------------------------------------------------
-\begin{comment}
-	
-\section{Aplicação da Técnica \textit{Bootstrap} na Calibração por RLM}
-\label{sec:bootstrap}
-\index{Métodos e Resultados!\textit{Bootstrap}}
-
-A técnica de reamostragem \textit{bootstrap} foi aplicada como abordagem independente na calibração multivariada dos dados espectrométricos das amostras de aço-liga, utilizando a Regressão Linear Múltipla (RLM) como modelo base. Diferentemente das estratégias \textit{ensemble}, como \textit{bagging} e \textit{subbagging}, o \textit{bootstrap} opera com reamostragens com reposição, permitindo a construção de múltiplos modelos calibrados sobre subconjuntos variados do conjunto de treinamento.
-
-Os resultados obtidos com o RLM-\textit{bootstrap} indicaram desempenho variável entre os diferentes analitos avaliados. Para os elementos Cromo (Cr) e Ferro (Fe), a abordagem apresentou melhorias na acurácia preditiva em comparação com a RLM clássica, demonstrando a eficácia da reamostragem na redução da variância do modelo. Para Manganês (Mn), Molibdênio (Mo) e Níquel (Ni), o RLM-\textit{bootstrap} apresentou desempenho semelhante ao da RLM clássica, sem ganhos expressivos de precisão.
-
-Em termos de eficiência computacional, o RLM-\textit{bootstrap} apresentou tempo de execução moderado, posicionando-se entre as abordagens mais complexas (\textit{bagging}) e as mais simples (RLM clássica e \textit{subbagging}). Essa característica reforça seu potencial como alternativa viável em cenários que demandam equilíbrio entre acurácia e custo computacional.
-
-A inclusão do RLM-\textit{bootstrap} no estudo contribui para uma compreensão mais ampla das técnicas de reamostragem aplicadas à calibração multivariada. Os resultados obtidos sugerem que, em contextos específicos, o \textit{bootstrap} pode oferecer vantagens na estabilização de predições, especialmente quando se busca maior robustez estatística na modelagem sem incorrer em alto custo computacional.
-\end{comment}
-%---------------------------------------------------
 
 %----------------------------------------------------------------------------------------------------------
 \section{\textit{Bagging}}
@@ -275,28 +229,9 @@ A Figura~\ref{fig:Figura43} mostra o comportamento do RMSEP com RLM-\textit{bagg
 
 Observa-se desempenho variável do RLM-\textit{bagging} em relação aos resultados da técnica RLM mostrados na Tabela~\ref{tab:rmseprlm}. O RLM-\textit{bagging} apresentou melhorias para Mn (redução de 5,4\%) e Fe (redução de 3,3\%), enquanto demonstrou desempenho inferior para Mo (aumento de 30,8\%), Cr (aumento de 12,4\%) e Ni (aumento de 4,3\%). Os valores de RMSEP obtidos com o RLM-\textit{bagging} foram (\num{\dados[3,2]}) para o Mn e~(\num{\dados[3,6]}) para o Fe, como apresentado na Tabela~\ref{tab:bagging}.
 %-------------------------------------------
-%---------------------------------------------------
-\begin{comment}
-	\begin{table}[!htbp]
-\centering
-\caption{RMSEP da RLM-\textit{bagging}, para cada elemento de aço-ligas.}
-\label{tab:bagging}
-\resizebox{0.80\columnwidth}{!}{%
-\begin{tabular}{l| c| c| c| c |c}
-\hline
-\multicolumn{1}{c|}{RMSEP} & Mn & Mo & Cr & Ni & Fe \\ \hline
-RLM & \num{\dados[2,2]} & \num{\dados[2,3]} & \num{\dados[2,4]} & \num{\dados[2,5]} & \num{\dados[2,6]} \\ 
-RLM-\textit{bagging} & \num{\dados[3,2]}\textsuperscript{*17} & \num{\dados[3,3]}\textsuperscript{*17} & \num{\dados[3,4]}\textsuperscript{*17} & \num{\dados[3,5]}\textsuperscript{*17} & \num{\dados[3,6]}\textsuperscript{*17} \\ \hline
-%\multicolumn{6}{l}{\textsuperscript{*} Números de \textit{bootstrap} utilizados.} \\ 
-\end{tabular}%
-}
-\caption*{\textsuperscript{*} Números de \textit{bootstrap} utilizados. Parâmetros definidos sem otimização formal; ver Tabela \ref{tab:baggingsubba} para resultados com validação cruzada 5-\textit{fold}.}
-\legend{\footnotesize Fonte:~\oautor}%
-\end{table}
-\end{comment}
-%---------------------------------------------------
 
-%-------------------------------------------
+
+
 
 %----------------------------------------------
 \begin{table}[!htbp]
@@ -327,15 +262,6 @@ Fe & \num{\dados[2,6]} & \num{\dados[3,6]} \\
 \end{threeparttable}
 \end{table}
 
-
-
-%-----------------------------------------------------------------------------------------------------
-%---------------------------------------------------
-\begin{comment}
-	
-Esta melhora pode ser confirmada quando o RMSEP é calculado para todos os elementos do aço-ligas. A Tabela~\ref{tab:bagging} mostra a comparação do erro do RLM-\textit{bagging} em relação ao erro da RLM. A maior diferença de resultados foi obtida na predição de concentração do Fe, onde o RLM-\textit{bagging} apresentou um erro 22,68\% menor do que o erro obtido com a RLM. Em média, o erro da RLM-\textit{bagging} foi 18,60\% menor do que a RLM sem reamostragem. Considerando o conjunto de analitos analisados, a técnica de RLM-\textit{bagging} demonstrou ser aproximadamente 18,60\% mais precisa (em termos de RMSEP menor) do que a técnica de RLM. Isso indica que a aplicação do \textit{bagging} resultou em uma melhoria significativa no desempenho preditivo do modelo de regressão linear múltipla.
-\end{comment}
-%---------------------------------------------------
 
 A Tabela~\ref{tab:bagging} mostra a comparação do erro do RLM-\textit{bagging} em relação ao erro da RLM. O RLM-\textit{bagging} apresentou melhorias apenas para Mn (redução de 5,42\%) e Fe (redução de 3,33\%), enquanto para Mo, Cr e Ni o erro aumentou em 30,76\%, 12,44\% e 4,32\%, respectivamente. Em média, o erro do RLM-\textit{bagging} foi 7,75\% maior do que o da RLM sem reamostragem. Esses resultados indicam que a aplicação do \textit{bagging} não resultou em uma melhoria consistente no desempenho preditivo do modelo de regressão linear múltipla para este conjunto de dados.
 
@@ -428,15 +354,6 @@ Fe & \num{\dados[2,6]} & \num{\dados[4,6]} (5) \\
 
 %---------------------------------------------------
 
-
-
-%---------------------------------------------------
-\begin{comment}
-
-A Tabela~\ref{tab:subagging} mostra o erro do RLM-\textit{subagging} comparado com o erro da RLM tradicional. O RLM-\textit{subagging} apresentou desempenho inferior à RLM clássica para quatro dos cinco analitos testados. Apenas para o Cr observou-se melhoria de 20,1\%, enquanto para os demais analitos houve aumento do erro: Mn (21,7\% maior), Mo (215,0\% maior), Ni (91,3\% maior) e Fe (17,4\% menor). Em média, considerando todos os analitos, o RLM-\textit{subagging} não apresentou vantagem sistemática sobre a RLM tradicional.
-\end{comment}
-%---------------------------------------------------
-
 A Tabela~\ref{tab:subagging} mostra o erro do RLM-\textit{subagging} comparado com o erro da RLM tradicional. O RLM-\textit{subagging} apresentou melhorias para três dos cinco analitos testados: Mn (redução de 7,33\%), Ni (redução de 0,25\%) e Fe (redução de 0,77\%). Para Mo e Cr, houve aumento do erro de 7,14\% e 7,58\%, respectivamente. Em média, considerando todos os analitos, o RLM-\textit{subagging} apresentou desempenho praticamente equivalente ao da RLM tradicional, com variação média de apenas 1,27\% no RMSEP.
 
 
@@ -506,32 +423,6 @@ Nas Figuras~\ref{fig:Figura45a} e~\ref{fig:Figura45b}, é possível observar as 
 %-------------------------------------------------------------------------------------------------------------------
 \newpage
 
-%---------------------------------------------------
-\begin{comment}
-	\begin{table}[!htbp]
-\centering
-\caption{Comparação do RMSEP das técnicas para 50\% e 80\% de calibração.}
-\label{tab:comparacao_50_80}
-\resizebox{0.95\columnwidth}{!}{%
-\begin{tabular}{l|l| c| c| c| c |c}
-\hline
-\multicolumn{2}{c|}{Técnica/Proporção} & Mn & Mo & Cr & Ni & Fe \\ \hline
-\multirow{2}{*}{RLM} 
-  & \rmsepdados[2,2] & \rmsepdados[2,3] & \rmsepdados[2,4] & \rmsepdados[2,5] & \rmsepdados[2,6] & \rmsepdados[2,7] \\
-  & \rmsepdados[3,2] & \rmsepdados[3,3] & \rmsepdados[3,4] & \rmsepdados[3,5] & \rmsepdados[3,6] & \rmsepdados[3,7] \\ \hline
-\multirow{2}{*}{RLM-\textit{bagging}} 
-  & \rmsepdados[4,2] & \rmsepdados[4,3] & \rmsepdados[4,4] & \rmsepdados[4,5] & \rmsepdados[4,6] & \rmsepdados[4,7]  \\
-  & \rmsepdados[5,2] & \rmsepdados[5,3] & \rmsepdados[5,4] & \rmsepdados[5,5] & \rmsepdados[5,6] & \rmsepdados[5,7]  \\ \hline
-\multirow{2}{*}{RLM-\textit{subagging}} 
-  & \rmsepdados[6,2] & \rmsepdados[6,3] & \rmsepdados[6,4] & \rmsepdados[6,5] & \rmsepdados[6,6] & \rmsepdados[6,7] \\
-  & \rmsepdados[7,2] & \rmsepdados[7,3] & \rmsepdados[7,4] & \rmsepdados[7,5] & \rmsepdados[7,6] & \rmsepdados[7,7]  \\ \hline
-\end{tabular}%
-}
-\legend{\footnotesize Fonte:~\oautor}
-\end{table}
-\end{comment}
-%---------------------------------------------------
-
 
 \begin{table}[!htbp]
 \centering
@@ -559,13 +450,6 @@ Fe & \rmsepdados[2,7] & \rmsepdados[3,7] & \rmsepdados[4,7] & \rmsepdados[5,7] &
 %\section{Análise do Desempenho Preditivo}
 
 %\subsection{Proporção de Calibração}
-%---------------------------------------------------
-\begin{comment}
-Em geral, a utilização da proporção de calibração de 80\% resultou em um desempenho superior (menor RMSEP) para quatro dos cinco elementos (Mn, Cr, Ni e Fe). Um conjunto de dados de treinamento maior, como esperado teoricamente, contribui para modelos mais robustos e com melhor capacidade de generalização.
-
-A exceção notável é o Molibdênio (Mo) e, de forma menos evidente, o Níquel (Ni), onde o menor RMSEP foi obtido com 50\% de calibração usando a técnica RLM clássica.
-\end{comment}
-%---------------------------------------------------
 
 Em geral, a utilização da proporção de calibração de 80\% resultou em desempenho superior (menor RMSEP) para a grande maioria dos casos analisados. Para RLM-\textit{bagging} e RLM-\textit{subagging}, a proporção de 80\% foi superior em todos os cinco elementos. Para a RLM clássica, a proporção de 80\% foi melhor em quatro dos cinco elementos (Mn, Mo, Ni e Fe), sendo a única exceção o Cr, onde 50\% de calibração produziu menor RMSEP (\num{0,7215} contra \num{1,0978}). Um conjunto de dados de treinamento maior, como esperado teoricamente, contribui para modelos mais robustos e com melhor capacidade de generalização.
 
@@ -603,17 +487,6 @@ Fe & RLM-\textit{subagging} & \textbf{\rmsepmaior[6,2]} & \rmsepmaior[6,4] \\
 \end{table}
 
 
-
-%---------------------------------------------------
-\begin{comment}
-	
-\begin{description}
-	\item[a)] \textbf{RLM (Clássico):} Obteve a melhor performance para Mn, Mo e Ni. Isso sugere que, para estes elementos, a relação preditiva é relativamente simples e linear, não requerendo a complexidade adicional dos métodos de ensemble.
-	\item[b)] \textbf{RLM-s\textit{ubagging}:} Demonstrou superioridade para Cr e Fe. Para o Cr, o RLM-\textit{subagging} com 80\% de calibração atingiu 0,6888, superando significativamente o RLM (1,0294). Da mesma forma, para o Fe, o RLM-\textit{subagging} com 80\% obteve 1,3865, sendo o melhor resultado. Estes resultados indicam que a relação para Cr e Fe é mais influenciada pela variância ou não-linearidade, e se beneficia da agregação de modelos.
-\end{description}
-\end{comment}
-%---------------------------------------------------
-
 \begin{description}
     \item[a)] \textbf{RLM (Clássico):} Obteve a melhor performance para Mo (\num{0,2546} com 80\% de calibração) e Cr (\num{0,7215} com 50\% de calibração). Para estes elementos, a relação preditiva é relativamente simples e linear, não requerendo a complexidade adicional dos métodos de \textit{ensemble}.
     \item[b)] \textbf{RLM-\textit{bagging}:} Demonstrou superioridade para Ni, atingindo \num{1,3281} com 80\% de calibração, superando a RLM (\num{1,5865}) e o RLM-\textit{subagging} (\num{1,3724}).
@@ -621,26 +494,6 @@ Fe & RLM-\textit{subagging} & \textbf{\rmsepmaior[6,2]} & \rmsepmaior[6,4] \\
 \end{description}
 %-----------------------------------------------atualizado
 %\section{O Impacto do Número de Replicações (m)}
-
-%---------------------------------------------------
-\begin{comment}
-	
-As técnicas de ensemble (RLM-\textit{bagging} e RLM-\textit{subagging}) são construídas através da agregação de $m$ modelos individuais, gerados por \textit{bootstrap}. O RMSEP final é determinado pela média das previsões desses $m$ modelos.
-
-O desafio na aplicação destas técnicas é otimizar o parâmetro $m \in \{5, 10, 20, 50\}$ para encontrar o ponto onde a redução da variância é maximizada sem desperdiçar recursos computacionais.
-
-%\subsection{Conclusões sobre a Otimização de m}
-
-Os menores RMSEP reportados na Tabela \ref{tab:comparacao_50_80} para as técnicas de \textit{ensemble} são resultados diretos da otimização de $m$ dentro do conjunto testado:
-
-\begin{description}
-\item[a)] Para Cr e Fe, onde o RLM-\textit{subagging} foi o vencedor absoluto, o número de replicações $m$ (provavelmente $m=20$ ou $m=50$) foi crucial para estabilizar e reduzir o erro preditivo, permitindo que a agregação superasse a performance do RLM clássico.
-\item[b)] O \textit{subagging} (que utiliza um subconjunto de variáveis, além de um subconjunto de amostras) mostrou-se particularmente eficaz para Cr e Fe, elementos que podem ter variáveis preditoras menos importantes ou ruído, que são mitigados ao considerar apenas um subconjunto aleatório em cada replicação $m$.
-\end{description}
-
-Em síntese, a análise demonstra que a escolha ideal do modelo não é apenas uma questão da técnica, mas também da proporção de calibração e, criticamente, da otimização do número de replicações ($m$) nas abordagens de \textit{ensemble} para cada elemento químico.
-\end{comment}
-%---------------------------------------------------
 
 As técnicas de ensemble (RLM-\textit{bagging} e RLM-\textit{subagging}) são construídas através da agregação de $m$ modelos individuais, gerados por \textit{bootstrap}. O RMSEP final é determinado pela média das previsões desses $m$ modelos.
 O desafio na aplicação destas técnicas é otimizar o parâmetro $m \in \{5, 10, 20, 50\}$ para encontrar o ponto onde a redução da variância é maximizada sem desperdiçar recursos computacionais.
@@ -1148,98 +1001,6 @@ RLM-\textit{subagging} configura-se como alternativa equilibrada
 entre precisão e eficiência, sendo preferível ao
 RLM-\textit{bagging} na maioria dos cenários avaliados.
 
-%---------------------------------------------------
-\begin{comment}
-	\begin{table}[!htbp]
-\centering
-\small
-\caption{RMSEP por analito obtido via RLM para amostras de aço-ligas.}
-\label{tab:rmseprlm_invertida}
-\begin{tabular}{lc} % Duas colunas apenas
-\toprule
-\textbf{Analito} & \textbf{RMSEP (RLM)} \\ 
-\midrule
-Mn & \num{\dados[2,2]} \\ 
-Mo & \num{\dados[2,3]} \\ 
-Cr & \num{\dados[2,4]} \\ 
-Ni & \num{\dados[2,5]} \\ 
-Fe & \num{\dados[2,6]} \\ 
-\bottomrule
-\end{tabular}
-\legend{\footnotesize Fonte:~\oautor}
-\end{table}
-\end{comment}
-%---------------------------------------------------
-
-
-%-------------------------------------------------------
-
-%---------------------------------------------------
-\begin{comment}
-\begin{table}[!htbp]
-\centering
-\small
-\caption{Comparação do RMSEP por analito para diferentes técnicas e proporções de calibração.}
-\label{tab:comparacao_analitos_vertical}
-\begin{tabular}{l cccccc} % Analitos na vertical (coluna indicadora)
-\toprule
- & \multicolumn{2}{c}{\textbf{RLM}} & \multicolumn{2}{c}{\textbf{RLM-\textit{bagging}}} & \multicolumn{2}{c}{\textbf{RLM-\textit{subagging}}} \\
-\cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7}
-\textbf{Analito} & \textbf{50\%} & \textbf{80\%} & \textbf{50\%} & \textbf{80\%} & \textbf{50\%} & \textbf{80\%} \\ 
-\midrule
-Mn & \rmsepdados[2,3] & \rmsepdados[3,3] & \rmsepdados[4,3] & \rmsepdados[5,3] & \rmsepdados[6,3] & \rmsepdados[7,3] \\
-Mo & \rmsepdados[2,4] & \rmsepdados[3,4] & \rmsepdados[4,4] & \rmsepdados[5,4] & \rmsepdados[6,4] & \rmsepdados[7,4] \\
-Cr & \rmsepdados[2,5] & \rmsepdados[3,5] & \rmsepdados[4,5] & \rmsepdados[5,5] & \rmsepdados[6,5] & \rmsepdados[7,5] \\
-Ni & \rmsepdados[2,6] & \rmsepdados[3,6] & \rmsepdados[4,6] & \rmsepdados[5,6] & \rmsepdados[6,6] & \rmsepdados[7,6] \\
-Fe & \rmsepdados[2,7] & \rmsepdados[3,7] & \rmsepdados[4,7] & \rmsepdados[5,7] & \rmsepdados[6,7] & \rmsepdados[7,7] \\
-\bottomrule
-\end{tabular}
-\legend{\footnotesize Fonte:~\oautor}
-\end{table}
-
-%------------------------------------------------------------------
-\begin{table}[!htbp]
-\centering
-\small
-\begin{threeparttable}
-\caption{RMSEP por analito de aço-ligas comparando RLM e RLM-\textit{subagging}.}
-\label{tab:bagging_vertical}
-\begin{tabular}{l cc} % Analitos na esquerda, métodos nas colunas
-\toprule
-\textbf{Analito} & \textbf{RLM} & \textbf{RLM-\textit{subagging}} \\ 
-\midrule
-Mn & \num{\dados[2,2]} & \num{\dados[4,2]} (1) \\ 
-Mo & \num{\dados[2,3]} & \num{\dados[4,3]} (2) \\ 
-Cr & \num{\dados[2,4]} & \num{\dados[4,4]} (3) \\ 
-Ni & \num{\dados[2,5]} & \num{\dados[4,5]} (4) \\ 
-Fe & \num{\dados[2,6]} & \num{\dados[4,6]} (5) \\ 
-\bottomrule
-\end{tabular}
-\begin{tablenotes}[flushleft]
-    \footnotesize
-    \item \footnotesize{Fonte:~\oautor}
-    \item (1) Cinco \textit{bootstrap} utilizados
-		\item (2) Dezesseis \textit{bootstrap} utilizados
-		\item (3) Doze \textit{bootstrap} utilizados
-		\item (4) Dez \textit{bootstrap} utilizados
-		\item (5) Oito \textit{bootstrap} utilizados
-\end{tablenotes}
-\end{threeparttable}
-\end{table}
-
-\end{comment}
-%---------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
 
 %R dados \num{\rdados[2,3]} até \num{\rdados[2,4]}
 
@@ -1255,11 +1016,3 @@ Fe & \num{\dados[2,6]} & \num{\dados[4,6]} (5) \\
 %R dados \num{\rmsepmaior[2,2]} até \rmsepmaior[2,3]
 
 %R dados \rmsepmaior[2,1] \rmsepmaior[2,2],\rmsepmaior[2,3], \rmsepmaior[2,4], \rmsepmaior[2,4]
-
-
-
-
-
-
-
-

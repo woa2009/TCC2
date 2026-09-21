@@ -66,8 +66,10 @@ Esta pesquisa tem como objetivos específicos:
 
     \item[c)] Reaproveitar, em Java (JavaSE-17), o sistema Desktop de calibração
     multivariada com RLM-\textit{bagging} e RLM-\textit{subagging} — desenvolvido na
-    disciplina de Programação Orientada a Objetos, com arquitetura \textit{Model-View-Controller} (MVC)~\cite{reenskaug1979mvc,krasner1988description}, biblioteca EJML e
-    interface Swing/AWT —, consolidando-o como base algorítmica validada do TCC~I.
+    disciplina de Programação Orientada a Objetos, com arquitetura \textit{Model-View-Controller} (MVC)~\cite{reenskaug1979mvc,krasner1988description}, biblioteca \textit{Efficient Java Matrix Library} (EJML)\footnote{A biblioteca \textit{Efficient Java Matrix Library} (EJML) é uma biblioteca de código aberto para a linguagem Java projetada para a manipulação e computação de matrizes lineares de forma extremamente rápida e com baixo uso de memória.}
+ e
+    interface Swing/\footnote{A \textit{Abstract Window Toolkit} (AWT) é a biblioteca nativa e original do Java criada para desenvolver interfaces gráficas de usuário (\textit{Graphical User Interface} - GUI), como janelas, botões e menus.}
+ —, consolidando-o como base algorítmica validada do TCC~I.
 
     \item[d)] Migrar a base algorítmica reaproveitada no TCC~I para uma interface web em
     Vaadin Flow, como estágio intermediário, e concluir, no TCC~II, a reescrita completa do
@@ -98,7 +100,10 @@ algoritmos.
 A Seção~\ref{cha:metresult} caracteriza o conjunto de dados espectrométricos de aço-ligas,
 descreve a arquitetura do sistema Python/Streamlit concluído — separado em \texttt{models.py},
 \texttt{components.py} e \texttt{app.py} — e o protocolo de validação cruzada adotado, além
-de apresentar as métricas RMSEP, MAE e R$^2$ empregadas na avaliação da acurácia preditiva
+de apresentar as métricas RMSEP\footnote{O \textit{Root Mean Squared Error of Prediction} (RMSEP), ou Raiz do Erro Quadrático Médio de Previsão, mede a acurácia de um modelo calculando a raiz quadrada da média dos erros elevados ao quadrado, penalizando de forma mais severa os grandes desvios.}
+, MAE\footnote{O \textit{Mean Absolute Error} (MAE), ou Erro Médio Absoluto, é uma métrica que calcula a média das magnitudes dos erros em um conjunto de previsões, sem considerar suas direções (sinais positivos ou negativos).}
+ e R$^2$\footnote{O Coeficiente de Determinação ($R^2$), também conhecido como \textit{R-squared}, é uma medida estatística que indica a proporção da variância da variável dependente que é explicável pelas variáveis independentes do modelo.}
+ empregadas na avaliação da acurácia preditiva
 e na verificação da equivalência comportamental do sistema.
 
 Na Seção~\ref{sec:result}, são analisados os resultados obtidos com os algoritmos RLM

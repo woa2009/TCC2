@@ -25,7 +25,7 @@ matemático foi codificado em \texttt{models.py} como funções puras,
 independentes de qualquer biblioteca de interface. Implementaram-se
 \texttt{perform\_rlm()} via \texttt{np.linalg.lstsq}, \texttt{perform\_bagging()}
 para \textit{bagging} e \textit{subagging} parametrizados, \texttt{calc\_metrics()}
-para RMSE, MAE e $R^2$, e \texttt{run\_cross\_validation()} para validação
+para RMSEP, MAE e $R^2$, e \texttt{run\_cross\_validation()} para validação
 cruzada 5-\textit{fold}, culminando na função \texttt{find\_optimal\_parameters()}
 de \textit{grid search}.
 
@@ -41,7 +41,8 @@ que nenhuma lógica de negócio residisse na camada de apresentação.
 a arquitetura resultante quanto à sua compatibilidade com os mecanismos de
 \textit{cache} do Streamlit. Como \texttt{parse\_matrix()}, \texttt{parse\_vector()}
 e \texttt{run\_full\_analysis()} são funções puras, determinísticas e com
-entradas serializáveis, o decorador \texttt{@st.cache\_data} pode ser aplicado
+entradas serializáveis, o decorador\footnote{Em Python, um decorador é uma sintaxe especial (indicada pelo caractere @) utilizada para estender ou modificar o comportamento de funções ou métodos de forma declarativa, sem a necessidade de alterar diretamente o seu código-fonte.}
+ \texttt{@st.cache\_data} pode ser aplicado
 diretamente, sem refatoração, reduzindo a latência em execuções repetidas.
 
 \end{description}
@@ -71,7 +72,7 @@ e a reprodutibilidade do \textit{bagging} sob a mesma semente aleatória.
 numérica entre o sistema Python e o sistema Java original, sem acesso ao
 código-fonte legado, seguindo a estratégia de \textit{black-box
 testing}~\cite{pressman2016}. Doze testes parametrizados foram aplicados a
-cinco analitos (Mn, Mo, Cr, Ni, Fe), comparando RMSE, MAE e $R^2$ contra os
+cinco analitos (Mn, Mo, Cr, Ni, Fe), comparando RMSEP, MAE e $R^2$ contra os
 arquivos de referência gerados pelo sistema Java, com tolerância de
 $5\times10^{-4}$ para o RLM determinístico e tolerâncias mais amplas para os
 métodos estocásticos de \textit{bagging} e \textit{subagging}.

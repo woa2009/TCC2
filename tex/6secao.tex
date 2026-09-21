@@ -321,7 +321,7 @@ Responsividade da UI & Interações (mudar aba, ajustar parâmetro) & $<$ 500\,m
 % O tabularx com \textwidth garante o respeito às margens e o | fecha as laterais
 \begin{tabularx}{\textwidth}{|l|X|X|} \hline
 \textbf{Requisito} & \textbf{Especificação} & \textbf{Critério de Aceite} \\ \hline
-Acessibilidade & Compatível com WCAG 2.1 Nível AA & Contraste adequado, \textit{labels}, navegação por teclado \\ \hline
+Acessibilidade & Compatível com WCAG 2.1 Nível AA\tnote{a} & Contraste adequado, \textit{labels}, navegação por teclado \\ \hline
 Responsividade & Funcional em desktop, tablet e mobile ($\geq$ 768\,px) & Layout adaptativo sem perda de funcionalidade crítica \\ \hline
 Clareza textual & Mensagens, rótulos e erros em português claro & Teste com 3 usuários: $\geq$ 90\% de acerto na interpretação \\ \hline
 Consistência & Padrões visuais alinhados ao Streamlit & Botões, cores e ícones seguem guia de estilo \\ \hline
@@ -329,6 +329,8 @@ Recuperação de erro & Mensagens orientam a correção & Ex: ``Ycal.txt tem 99 
 \end{tabularx}
 \begin{tablenotes}[flushleft]
 \footnotesize
+\item[a] A \textit{Web Content Accessibility Guidelines} (WCAG) 2.1 Nível AA é um padrão internacional de acessibilidade digital que estabelece critérios de desenvolvimento para garantir que softwares e sites sejam plenamente utilizáveis por pessoas com deficiências visuais, auditivas, motoras ou cognitivas.
+\item \textit{Nota:} Modificado para atender ao escopo do projeto.
 \item Fonte:~\oautor
 \end{tablenotes}
 \end{threeparttable}
@@ -404,6 +406,7 @@ O levantamento apresentado estabelece uma base estruturada para o desenvolviment
 	\item[d)] Inclusão de funcionalidade básica de exportação de resultados para viabilizar uso acadêmico e profissional.
 \end{description}
 
-Recomenda-se que os requisitos classificados como \textit{Essenciais} (Quadro~\ref{tab:essenciais}) sejam implementados na versão mínima viável (MVP), enquanto os itens \textit{Desejáveis} e \textit{Extras} compõem o \textit{backlog} para iterações futuras, sujeitos a validação com usuários finais e análise de custo-benefício.
+Recomenda-se que os requisitos classificados como \textit{Essenciais} (Quadro~\ref{tab:essenciais}) sejam implementados na versão mínima viável \textit{Minimum Viable Product} (MVP)\footnote{O \textit{Minimum Viable Product} (MVP), ou Produto Mínimo Viável, é a versão mais enxuta de um produto que contém apenas as funcionalidades essenciais para que ele possa ser lançado e testado no mercado.}
+, enquanto os itens \textit{Desejáveis} e \textit{Extras} compõem o \textit{backlog} para iterações futuras, sujeitos a validação com usuários finais e análise de custo-benefício.
 
 Os requisitos não funcionais definidos nas Seções~\ref{ssubsec:performance} a~\ref{ssubsec:escalabilidade} devem ser considerados como restrições de projeto em todas as fases de desenvolvimento, assegurando que a aplicação seja não apenas funcional, mas também performática, segura e adaptável a cenários de crescimento.
