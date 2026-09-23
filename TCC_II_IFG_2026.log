@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.12) (preloaded format=pdflatex 2026.5.18)  21 SEP 2026 01:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.12) (preloaded format=pdflatex 2026.5.18)  22 SEP 2026 16:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1406,6 +1406,75 @@ subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 \algocf@algoframe=\box84
 \algocf@algobox=\box85
 )
+(C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/latex/fvextra\fvextra
+.sty
+Package: fvextra 2026/02/25 v1.14.0 fvextra - extensions and patches for fancyv
+rb
+
+(C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/latex/upquote\upquote
+.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+
+(C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.s
+ty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+))
+(C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/latex/lineno\lineno.s
+ty
+Package: lineno 2026/03/08 line numbers on paragraphs v5.9
+\linenopenalty=\count451
+\output=\toks56
+\linenoprevgraf=\count452
+\linenumbersep=\dimen296
+\linenumberwidth=\dimen297
+\c@linenumber=\count453
+\c@pagewiselinenumber=\count454
+\c@LN@truepage=\count455
+\c@internallinenumber=\count456
+\c@internallinenumbers=\count457
+\quotelinenumbersep=\dimen298
+\bframerule=\dimen299
+\bframesep=\dimen300
+\bframebox=\box86
+\@LN@amsmath@ams@eqpen=\count458
+
+
+LaTeX Warning: Command \@parboxrestore  has changed.
+               Check if current package is valid.
+
+)
+
+Package fvextra Warning: csquotes should be loaded after fvextra, to avoid a wa
+rning from the lineno package on input line 36.
+
+\c@FancyVerbWriteLine=\count459
+\c@FancyVerbBufferLine=\count460
+\c@FV@TrueTabGroupLevel=\count461
+\c@FV@TrueTabCounter=\count462
+\FV@TabBox@Group=\box87
+\FV@bgcolorstructbox=\box88
+\FV@TmpLength=\skip297
+\c@FV@HighlightLinesStart=\count463
+\c@FV@HighlightLinesStop=\count464
+\FV@LoopCount=\count465
+\FV@NCharsBox=\box89
+\FV@BreakIndent=\dimen301
+\FV@BreakIndentNChars=\count466
+\FV@BreakSymbolSepLeft=\dimen302
+\FV@BreakSymbolSepLeftNChars=\count467
+\FV@BreakSymbolSepRight=\dimen303
+\FV@BreakSymbolSepRightNChars=\count468
+\FV@BreakSymbolIndentLeft=\dimen304
+\FV@BreakSymbolIndentLeftNChars=\count469
+\FV@BreakSymbolIndentRight=\dimen305
+\FV@BreakSymbolIndentRightNChars=\count470
+\c@FancyVerbLineBreakLast=\count471
+\FV@LineBox=\box90
+\FV@LineIndentBox=\box91
+\c@FV@BreakBufferDepth=\count472
+\FV@LineWidth=\dimen306
+)
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/latex/algorithmicx\al
 gpseudocode.sty
 Package: algpseudocode 
@@ -1415,16 +1484,16 @@ gorithmicx.sty
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count451
-\c@ALG@rem=\count452
-\c@ALG@nested=\count453
-\ALG@tlm=\skip297
-\ALG@thistlm=\skip298
-\c@ALG@Lnr=\count454
-\c@ALG@blocknr=\count455
-\c@ALG@storecount=\count456
-\c@ALG@tmpcounter=\count457
-\ALG@tmplength=\skip299
+\c@ALG@line=\count473
+\c@ALG@rem=\count474
+\c@ALG@nested=\count475
+\ALG@tlm=\skip298
+\ALG@thistlm=\skip299
+\c@ALG@Lnr=\count476
+\c@ALG@blocknr=\count477
+\c@ALG@storecount=\count478
+\c@ALG@tmpcounter=\count479
+\ALG@tmplength=\skip300
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
 )
@@ -1442,13 +1511,13 @@ pgf.sty
 gfrcs.sty
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities
 \pgfutil-common.tex
-\pgfutil@everybye=\toks56
-\pgfutil@tempdima=\dimen296
-\pgfutil@tempdimb=\dimen297
+\pgfutil@everybye=\toks57
+\pgfutil@tempdima=\dimen307
+\pgfutil@tempdimb=\dimen308
 )
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities
 \pgfutil-latex.def
-\pgfutil@abb=\box86
+\pgfutil@abb=\box92
 )
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities
 \pgfrcs.code.tex
@@ -1468,33 +1537,33 @@ Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
 
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities
 \pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks57
-\pgfkeys@temptoks=\toks58
+\pgfkeys@pathtoks=\toks58
+\pgfkeys@temptoks=\toks59
 
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities
 \pgfkeyslibraryfiltered.code.tex
-\pgfkeys@tmptoks=\toks59
+\pgfkeys@tmptoks=\toks60
 ))
-\pgf@x=\dimen298
-\pgf@y=\dimen299
-\pgf@xa=\dimen300
-\pgf@ya=\dimen301
-\pgf@xb=\dimen302
-\pgf@yb=\dimen303
-\pgf@xc=\dimen304
-\pgf@yc=\dimen305
-\pgf@xd=\dimen306
-\pgf@yd=\dimen307
+\pgf@x=\dimen309
+\pgf@y=\dimen310
+\pgf@xa=\dimen311
+\pgf@ya=\dimen312
+\pgf@xb=\dimen313
+\pgf@yb=\dimen314
+\pgf@xc=\dimen315
+\pgf@yc=\dimen316
+\pgf@xd=\dimen317
+\pgf@yd=\dimen318
 \w@pgf@writea=\write5
 \r@pgf@reada=\read6
-\c@pgf@counta=\count458
-\c@pgf@countb=\count459
-\c@pgf@countc=\count460
-\c@pgf@countd=\count461
-\t@pgf@toka=\toks60
-\t@pgf@tokb=\toks61
-\t@pgf@tokc=\toks62
-\pgf@sys@id@count=\count462
+\c@pgf@counta=\count480
+\c@pgf@countb=\count481
+\c@pgf@countc=\count482
+\c@pgf@countd=\count483
+\t@pgf@toka=\toks61
+\t@pgf@tokb=\toks62
+\t@pgf@tokc=\toks63
+\pgf@sys@id@count=\count484
 
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlay
 er\pgf.cfg
@@ -1513,8 +1582,8 @@ File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlay
 er\pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfsyssoftpath@smallbuffer@items=\count463
-\pgfsyssoftpath@bigbuffer@items=\count464
+\pgfsyssoftpath@smallbuffer@items=\count485
+\pgfsyssoftpath@bigbuffer@items=\count486
 )
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlay
 er\pgfsysprotocol.code.tex
@@ -1530,12 +1599,12 @@ ath.code.tex
 athutil.code.tex)
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfm
 athparser.code.tex
-\pgfmath@dimen=\dimen308
-\pgfmath@count=\count465
-\pgfmath@box=\box87
-\pgfmath@toks=\toks63
-\pgfmath@stack@operand=\toks64
-\pgfmath@stack@operation=\toks65
+\pgfmath@dimen=\dimen319
+\pgfmath@count=\count487
+\pgfmath@box=\box93
+\pgfmath@toks=\toks64
+\pgfmath@stack@operand=\toks65
+\pgfmath@stack@operation=\toks66
 )
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfm
 athfunctions.code.tex)
@@ -1559,59 +1628,59 @@ athfunctions.integerarithmetics.code.tex)
 athcalc.code.tex)
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfm
 athfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count466
+\c@pgfmathroundto@lastzeros=\count488
 ))
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfi
 nt.code.tex)
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclaye
 r\pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@picminx=\dimen309
-\pgf@picmaxx=\dimen310
-\pgf@picminy=\dimen311
-\pgf@picmaxy=\dimen312
-\pgf@pathminx=\dimen313
-\pgf@pathmaxx=\dimen314
-\pgf@pathminy=\dimen315
-\pgf@pathmaxy=\dimen316
-\pgf@xx=\dimen317
-\pgf@xy=\dimen318
-\pgf@yx=\dimen319
-\pgf@yy=\dimen320
-\pgf@zx=\dimen321
-\pgf@zy=\dimen322
+\pgf@picminx=\dimen320
+\pgf@picmaxx=\dimen321
+\pgf@picminy=\dimen322
+\pgf@picmaxy=\dimen323
+\pgf@pathminx=\dimen324
+\pgf@pathmaxx=\dimen325
+\pgf@pathminy=\dimen326
+\pgf@pathmaxy=\dimen327
+\pgf@xx=\dimen328
+\pgf@xy=\dimen329
+\pgf@yx=\dimen330
+\pgf@yy=\dimen331
+\pgf@zx=\dimen332
+\pgf@zy=\dimen333
 )
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclaye
 r\pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@path@lastx=\dimen323
-\pgf@path@lasty=\dimen324
+\pgf@path@lastx=\dimen334
+\pgf@path@lasty=\dimen335
 )
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclaye
 r\pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@shorten@end@additional=\dimen325
-\pgf@shorten@start@additional=\dimen326
+\pgf@shorten@end@additional=\dimen336
+\pgf@shorten@start@additional=\dimen337
 )
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclaye
 r\pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfpic=\box88
-\pgf@hbox=\box89
-\pgf@layerbox@main=\box90
-\pgf@picture@serial@count=\count467
+\pgfpic=\box94
+\pgf@hbox=\box95
+\pgf@layerbox@main=\box96
+\pgf@picture@serial@count=\count489
 )
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclaye
 r\pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgflinewidth=\dimen327
+\pgflinewidth=\dimen338
 )
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclaye
 r\pgfcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@pt@x=\dimen328
-\pgf@pt@y=\dimen329
-\pgf@pt@temp=\dimen330
+\pgf@pt@x=\dimen339
+\pgf@pt@y=\dimen340
+\pgf@pt@temp=\dimen341
 )
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclaye
 r\pgfcorequick.code.tex
@@ -1628,14 +1697,14 @@ File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclaye
 r\pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfarrowsep=\dimen331
+\pgfarrowsep=\dimen342
 )
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclaye
 r\pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@max=\dimen332
-\pgf@sys@shading@range@num=\count468
-\pgf@shadingcount=\count469
+\pgf@max=\dimen343
+\pgf@sys@shading@range@num=\count490
+\pgf@shadingcount=\count491
 )
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclaye
 r\pgfcoreimage.code.tex
@@ -1644,7 +1713,7 @@ File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclaye
 r\pgfcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfexternal@startupbox=\box91
+\pgfexternal@startupbox=\box97
 )
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclaye
 r\pgfcorelayers.code.tex
@@ -1665,7 +1734,7 @@ File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\p
 gfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfnodeparttextbox=\box92
+\pgfnodeparttextbox=\box98
 )
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\p
 gfmoduleplot.code.tex
@@ -1674,8 +1743,8 @@ File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibili
 ty\pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
-\pgf@nodesepstart=\dimen333
-\pgf@nodesepend=\dimen334
+\pgf@nodesepstart=\dimen344
+\pgf@nodesepend=\dimen345
 )
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibili
 ty\pgfcomp-version-1-18.sty
@@ -1694,10 +1763,10 @@ ath.code.tex))
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities
 \pgffor.code.tex
 Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
-\pgffor@iter=\dimen335
-\pgffor@skip=\dimen336
-\pgffor@stack=\toks66
-\pgffor@toks=\toks67
+\pgffor@iter=\dimen346
+\pgffor@skip=\dimen347
+\pgffor@stack=\toks67
+\pgffor@toks=\toks68
 ))
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendl
 ayer/tikz\tikz.code.tex
@@ -1706,34 +1775,34 @@ Package: tikz 2023-01-15 v3.1.10 (3.1.10)
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries
 \pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@plot@mark@count=\count470
-\pgfplotmarksize=\dimen337
+\pgf@plot@mark@count=\count492
+\pgfplotmarksize=\dimen348
 )
-\tikz@lastx=\dimen338
-\tikz@lasty=\dimen339
-\tikz@lastxsaved=\dimen340
-\tikz@lastysaved=\dimen341
-\tikz@lastmovetox=\dimen342
-\tikz@lastmovetoy=\dimen343
-\tikzleveldistance=\dimen344
-\tikzsiblingdistance=\dimen345
-\tikz@figbox=\box93
-\tikz@figbox@bg=\box94
-\tikz@tempbox=\box95
-\tikz@tempbox@bg=\box96
-\tikztreelevel=\count471
-\tikznumberofchildren=\count472
-\tikznumberofcurrentchild=\count473
-\tikz@fig@count=\count474
+\tikz@lastx=\dimen349
+\tikz@lasty=\dimen350
+\tikz@lastxsaved=\dimen351
+\tikz@lastysaved=\dimen352
+\tikz@lastmovetox=\dimen353
+\tikz@lastmovetoy=\dimen354
+\tikzleveldistance=\dimen355
+\tikzsiblingdistance=\dimen356
+\tikz@figbox=\box99
+\tikz@figbox@bg=\box100
+\tikz@tempbox=\box101
+\tikz@tempbox@bg=\box102
+\tikztreelevel=\count493
+\tikznumberofchildren=\count494
+\tikznumberofcurrentchild=\count495
+\tikz@fig@count=\count496
 
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\p
 gfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfmatrixcurrentrow=\count475
-\pgfmatrixcurrentcolumn=\count476
-\pgf@matrix@numberofcolumns=\count477
+\pgfmatrixcurrentrow=\count497
+\pgfmatrixcurrentcolumn=\count498
+\pgf@matrix@numberofcolumns=\count499
 )
-\tikz@expandcount=\count478
+\tikz@expandcount=\count500
 
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendl
 ayer/tikz/libraries\tikzlibrarytopaths.code.tex
@@ -1743,12 +1812,12 @@ File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
 lots.code.tex
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfp
 lotscore.code.tex
-\t@pgfplots@toka=\toks68
-\t@pgfplots@tokb=\toks69
-\t@pgfplots@tokc=\toks70
-\pgfplots@tmpa=\dimen346
-\c@pgfplots@coordindex=\count479
-\c@pgfplots@scanlineindex=\count480
+\t@pgfplots@toka=\toks69
+\t@pgfplots@tokb=\toks70
+\t@pgfplots@tokc=\toks71
+\pgfplots@tmpa=\dimen357
+\c@pgfplots@coordindex=\count501
+\c@pgfplots@scanlineindex=\count502
 
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/sys\
 pgfplotssysgeneric.code.tex))
@@ -1759,9 +1828,9 @@ gfcompatib\pgfplotsoldpgfsupp_loader.code.tex
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries
 \pgflibraryfpu.code.tex)
 Package pgfplots: loading complementary utilities for your pgf version...
-\t@pgf@toka=\toks71
-\t@pgf@tokb=\toks72
-\t@pgf@tokc=\toks73
+\t@pgf@toka=\toks72
+\t@pgf@tokb=\toks73
+\t@pgf@tokc=\toks74
 
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/oldp
 gfcompatib\pgfplotsoldpgfsupp_pgfutil-common-lists.tex))
@@ -1773,14 +1842,14 @@ structure\pgfplotsliststructure.code.tex)
 structure\pgfplotsliststructureext.code.tex)
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/list
 structure\pgfplotsarray.code.tex
-\c@pgfplotsarray@tmp=\count481
+\c@pgfplotsarray@tmp=\count503
 )
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/list
 structure\pgfplotsmatrix.code.tex)
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/numt
 able\pgfplotstableshared.code.tex
-\c@pgfplotstable@counta=\count482
-\t@pgfplotstable@a=\toks74
+\c@pgfplotstable@counta=\count504
+\t@pgfplotstable@a=\toks75
 )
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/list
 structure\pgfplotsdeque.code.tex)
@@ -1792,7 +1861,7 @@ structure\pgfplotsdeque.code.tex)
 \pgfplotsutil.verb.code.tex)
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs
 \pgflibrarypgfplots.surfshading.code.tex
-\c@pgfplotslibrarysurf@no=\count483
+\c@pgfplotslibrarysurf@no=\count505
 
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/sys\
 pgflibrarypgfplots.surfshading.pgfsys-pdftex.def)))
@@ -1824,16 +1893,16 @@ lots.paths.code.tex)
 ayer/tikz/libraries\tikzlibrarydecorations.code.tex
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\p
 gfmoduledecorations.code.tex
-\pgfdecoratedcompleteddistance=\dimen347
-\pgfdecoratedremainingdistance=\dimen348
-\pgfdecoratedinputsegmentcompleteddistance=\dimen349
-\pgfdecoratedinputsegmentremainingdistance=\dimen350
-\pgf@decorate@distancetomove=\dimen351
-\pgf@decorate@repeatstate=\count484
-\pgfdecorationsegmentamplitude=\dimen352
-\pgfdecorationsegmentlength=\dimen353
+\pgfdecoratedcompleteddistance=\dimen358
+\pgfdecoratedremainingdistance=\dimen359
+\pgfdecoratedinputsegmentcompleteddistance=\dimen360
+\pgfdecoratedinputsegmentremainingdistance=\dimen361
+\pgf@decorate@distancetomove=\dimen362
+\pgf@decorate@repeatstate=\count506
+\pgfdecorationsegmentamplitude=\dimen363
+\pgfdecorationsegmentlength=\dimen364
 )
-\tikz@lib@dec@box=\box97
+\tikz@lib@dec@box=\box103
 )
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendl
 ayer/tikz/libraries\tikzlibrarydecorations.pathmorphing.code.tex
@@ -1845,13 +1914,13 @@ ayer/tikz/libraries\tikzlibrarydecorations.pathreplacing.code.tex
 /decorations\pgflibrarydecorations.pathreplacing.code.tex))
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs
 \tikzlibrarypgfplots.contourlua.code.tex)
-\pgfplots@numplots=\count485
-\pgfplots@xmin@reg=\dimen354
-\pgfplots@xmax@reg=\dimen355
-\pgfplots@ymin@reg=\dimen356
-\pgfplots@ymax@reg=\dimen357
-\pgfplots@zmin@reg=\dimen358
-\pgfplots@zmax@reg=\dimen359
+\pgfplots@numplots=\count507
+\pgfplots@xmin@reg=\dimen365
+\pgfplots@xmax@reg=\dimen366
+\pgfplots@ymin@reg=\dimen367
+\pgfplots@ymax@reg=\dimen368
+\pgfplots@zmin@reg=\dimen369
+\pgfplots@zmax@reg=\dimen370
 )
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendl
 ayer/tikz/libraries\tikzlibraryplotmarks.code.tex
@@ -1881,78 +1950,78 @@ File: pst-xkey.tex 2005/11/25 v1.6 PSTricks specialization of xkeyval (HA)
 icks.tex
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pstricks\pst-
 fp.tex `pst-fp' v0.06, 2020/11/20 (hv)
-\pstFP@xs=\count486
-\pstFP@xia=\count487
-\pstFP@xib=\count488
-\pstFP@xfa=\count489
-\pstFP@xfb=\count490
-\pstFP@rega=\count491
-\pstFP@regb=\count492
-\pstFP@regs=\count493
-\pstFP@times=\count494
+\pstFP@xs=\count508
+\pstFP@xia=\count509
+\pstFP@xib=\count510
+\pstFP@xfa=\count511
+\pstFP@xfb=\count512
+\pstFP@rega=\count513
+\pstFP@regb=\count514
+\pstFP@regs=\count515
+\pstFP@times=\count516
 )
-\psLoopIndex=\count495
+\psLoopIndex=\count517
 
 `PSTricks' v3.19b  <2023/11/06> (tvz,hv)
-\pst@dima=\dimen360
-\pst@dimb=\dimen361
-\pst@dimc=\dimen362
-\pst@dimd=\dimen363
-\pst@dimg=\dimen364
-\pst@dimh=\dimen365
-\pst@dimm=\dimen366
-\pst@dimn=\dimen367
-\pst@dimo=\dimen368
-\pst@dimp=\dimen369
-\pst@hbox=\box98
-\pst@ibox=\box99
-\pst@boxg=\box100
-\pst@cnta=\count496
-\pst@cntb=\count497
-\pst@cntc=\count498
-\pst@cntd=\count499
-\pst@cntg=\count500
-\pst@cnth=\count501
-\pst@cntm=\count502
-\pst@cntn=\count503
-\pst@cnto=\count504
-\pst@cntp=\count505
-\@zero=\count506
-\pst@toks=\toks75
+\pst@dima=\dimen371
+\pst@dimb=\dimen372
+\pst@dimc=\dimen373
+\pst@dimd=\dimen374
+\pst@dimg=\dimen375
+\pst@dimh=\dimen376
+\pst@dimm=\dimen377
+\pst@dimn=\dimen378
+\pst@dimo=\dimen379
+\pst@dimp=\dimen380
+\pst@hbox=\box104
+\pst@ibox=\box105
+\pst@boxg=\box106
+\pst@cnta=\count518
+\pst@cntb=\count519
+\pst@cntc=\count520
+\pst@cntd=\count521
+\pst@cntg=\count522
+\pst@cnth=\count523
+\pst@cntm=\count524
+\pst@cntn=\count525
+\pst@cnto=\count526
+\pst@cntp=\count527
+\@zero=\count528
+\pst@toks=\toks76
 --- We are running latex or xelatex ---
 
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pstricks\pstr
 icks.con)
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pstricks\pstr
 icks-color.tex)
-\psunit=\dimen370
-\psxunit=\dimen371
-\psyunit=\dimen372
-\pst@C@@rType=\count507
-\pslinewidth=\dimen373
-\psk@startLW=\dimen374
-\psk@endLW=\dimen375
+\psunit=\dimen381
+\psxunit=\dimen382
+\psyunit=\dimen383
+\pst@C@@rType=\count529
+\pslinewidth=\dimen384
+\psk@startLW=\dimen385
+\psk@endLW=\dimen386
 
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pstricks\pstr
 icks-arrows.tex
-\pshooklength=\dimen376
-\pshookwidth=\dimen377
+\pshooklength=\dimen387
+\pshookwidth=\dimen388
 )
-\pst@customdefs=\toks76
+\pst@customdefs=\toks77
 
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pstricks\pstr
 icks-dots.tex)
-\pslinearc=\dimen378
-\pst@symbolStep=\dimen379
-\pst@symbolWidth=\dimen380
-\pst@symbolLinewidth=\dimen381
-\everypsbox=\toks77
-\psframesep=\dimen382
-\pslabelsep=\dimen383
-\sh@wgridXunit=\dimen384
-\sh@wgridYunit=\dimen385
-\pst@shift=\dimen386
-\ps@imagectr=\count508
+\pslinearc=\dimen389
+\pst@symbolStep=\dimen390
+\pst@symbolWidth=\dimen391
+\pst@symbolLinewidth=\dimen392
+\everypsbox=\toks78
+\psframesep=\dimen393
+\pslabelsep=\dimen394
+\sh@wgridXunit=\dimen395
+\sh@wgridYunit=\dimen396
+\pst@shift=\dimen397
+\ps@imagectr=\count530
 
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pstricks\pstr
 icks.con))
@@ -1973,10 +2042,10 @@ File: pgflibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries
 \pgflibraryarrows.meta.code.tex
 File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfarrowinset=\dimen387
-\pgfarrowlength=\dimen388
-\pgfarrowwidth=\dimen389
-\pgfarrowlinewidth=\dimen390
+\pgfarrowinset=\dimen398
+\pgfarrowlength=\dimen399
+\pgfarrowwidth=\dimen400
+\pgfarrowlinewidth=\dimen401
 )
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendl
 ayer/tikz/libraries\tikzlibrarypositioning.code.tex
@@ -2015,9 +2084,9 @@ Package: footmisc 2025/05/09 v7.0b a miscellany of footnote facilities
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/latex/footmisc\footmi
 sc-2022-02-14.sty
 Package: footmisc 2024/12/24 v6.0g a miscellany of footnote facilities
-\FN@temptoken=\toks78
-\footnotemargin=\dimen391
-\@outputbox@depth=\dimen392
+\FN@temptoken=\toks79
+\footnotemargin=\dimen402
+\@outputbox@depth=\dimen403
 Package footmisc Info: Declaring symbol style bringhurst on input line 699.
 Package footmisc Info: Declaring symbol style chicago on input line 707.
 Package footmisc Info: Declaring symbol style wiley on input line 716.
@@ -2033,25 +2102,25 @@ Package: backref 2023-11-26 v1.44 Bibliographical back referencing
 )
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/latex/listings\listin
 gs.sty
-\lst@mode=\count509
-\lst@gtempboxa=\box101
-\lst@token=\toks79
-\lst@length=\count510
-\lst@currlwidth=\dimen393
-\lst@column=\count511
-\lst@pos=\count512
-\lst@lostspace=\dimen394
-\lst@width=\dimen395
-\lst@newlines=\count513
-\lst@lineno=\count514
-\lst@maxwidth=\dimen396
+\lst@mode=\count531
+\lst@gtempboxa=\box107
+\lst@token=\toks80
+\lst@length=\count532
+\lst@currlwidth=\dimen404
+\lst@column=\count533
+\lst@pos=\count534
+\lst@lostspace=\dimen405
+\lst@width=\dimen406
+\lst@newlines=\count535
+\lst@lineno=\count536
+\lst@maxwidth=\dimen407
 
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmis
 c.sty
 File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
-\c@lstnumber=\count515
-\lst@skipnumbers=\count516
-\lst@framebox=\box102
+\c@lstnumber=\count537
+\lst@skipnumbers=\count538
+\lst@framebox=\box108
 )
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/latex/listings\listin
 gs.cfg
@@ -2065,10 +2134,10 @@ Package: abntex2cite 2018/11/24 v-1.9.7 abnTeX2
 
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/latex/abntex2\abntex2
 abrev.sty)
-\minimumbiblabelwidth=\skip300
-\ABCIauxlen=\skip301
-\c@ABCIaux=\count517
-\c@ABCImax=\count518
+\minimumbiblabelwidth=\skip301
+\ABCIauxlen=\skip302
+\c@ABCIaux=\count539
+\c@ABCImax=\count540
 
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifpdf.s
 ty
@@ -2082,13 +2151,13 @@ Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
 .sty
 Package: relsize 2013/03/29 ver 4.1
 )
-\biblabelsep=\skip302
+\biblabelsep=\skip303
 LaTeX Info: Redefining \newblock on input line 591.
 LaTeX Info: Redefining \cite on input line 862.
-\ABCItoken=\toks80
+\ABCItoken=\toks81
 )
-\@float@every@codigo=\toks81
-\c@codigo=\count519
+\@float@every@codigo=\toks82
+\c@codigo=\count541
  (setup/stylodefinicao.tex)
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/latex/tablefootnote\t
 ablefootnote.sty
@@ -2101,14 +2170,14 @@ Package: xifthen 2015/11/05 v1.4.0 Extended ifthen features
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/latex/hyperxmp\hyperx
 mp.sty
 Package: hyperxmp 2024/03/17 v5.13 Store hyperref metadata in XMP format
-\hyxmp@aep@toks=\toks82
+\hyxmp@aep@toks=\toks83
 
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\str
 ingenc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
-\@hyxmp@count=\count520
+\@hyxmp@count=\count542
 
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/latex/oberdiek\ifdraf
 t.sty
@@ -2161,23 +2230,23 @@ LaTeX Font Info:    ... okay on input line 517.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 517.
 LaTeX Font Info:    ... okay on input line 517.
 Package hyperref Info: Link coloring ON on input line 517.
-\myptabbox=\box103
-\myptabboxwidth=\skip303
+\myptabbox=\box109
+\myptabboxwidth=\skip304
 
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\sup
 p-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count521
-\scratchdimen=\dimen397
-\scratchbox=\box104
-\nofMPsegments=\count522
-\nofMParguments=\count523
-\everyMPshowfont=\toks83
-\MPscratchCnt=\count524
-\MPscratchDim=\dimen398
-\MPnumerator=\count525
-\makeMPintoPDFobject=\count526
-\everyMPtoPDFconversion=\toks84
+\scratchcounter=\count543
+\scratchdimen=\dimen408
+\scratchbox=\box110
+\nofMPsegments=\count544
+\nofMParguments=\count545
+\everyMPshowfont=\toks84
+\MPscratchCnt=\count546
+\MPscratchDim=\dimen409
+\MPnumerator=\count547
+\makeMPintoPDFobject=\count548
+\everyMPtoPDFconversion=\toks85
 )
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\ep
 stopdf-base.sty
@@ -2371,7 +2440,7 @@ or `english'. on input line 517.
 Package pgfplots notification 'compat/show suggested version=true': document ha
 s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
-\c@lstlisting=\count527
+\c@lstlisting=\count549
 (pre/pre.tex
 <outros/fig/IFGAnÃ¡polisH.jpg, id=6, 1760.5775pt x 593.21625pt>
 File: outros/fig/IFGAnÃ¡polisH.jpg Graphic file (type jpg)
@@ -2537,6 +2606,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 108--108
  [][] [][]\T1/phv/b/n/12 (+10) TABELAS DE PA-RI-DADE AMOSTRA-A- 
  []
 
+
+Overfull \hbox (1.41573pt too wide) detected at line 112
+ \T1/phv/b/n/12 103
+ []
+
 ) [13])
 \openout2 = `tex/1secao.aux'.
 
@@ -2559,63 +2633,63 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [18]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 211.
+(caption)                particular \caption on input line 222.
 See the caption package documentation for explanation.
 
 
-Underfull \hbox (badness 10000) detected at line 212
+Underfull \hbox (badness 10000) detected at line 223
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 198--213
+Underfull \hbox (badness 10000) in paragraph at lines 209--224
 
  []
 
 [19]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 220.
+(hyperref)                removing `math shift' on input line 231.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 220.
+(hyperref)                removing `math shift' on input line 231.
 
 [20] [21]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 319.
+(Font)              <10.95> on input line 338.
  [22] [23] [24] [25]
 pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine0.1})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.546 }
+l.565 }
        
 pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine0.2})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.546 }
+l.565 }
        
 pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine0.3})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.546 }
+l.565 }
        
 pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine0.4})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.546 }
+l.565 }
        
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 546.
+(caption)                particular \caption on input line 565.
 See the caption package documentation for explanation.
 
 
-Underfull \hbox (badness 10000) detected at line 546
+Underfull \hbox (badness 10000) detected at line 565
 [][]
  []
 
@@ -2624,69 +2698,69 @@ pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine0.1})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.591 }
+l.610 }
        
 pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine0.2})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.591 }
+l.610 }
        
 pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine0.3})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.591 }
+l.610 }
        
 pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine0.4})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.591 }
+l.610 }
        
 pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine0.5})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.591 }
+l.610 }
        
 pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine0.6})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.591 }
+l.610 }
        
 pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine0.7})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.591 }
+l.610 }
        
 pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine0.8})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.591 }
+l.610 }
        
 pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine0.9})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.591 }
+l.610 }
        
 pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine0.10}
 ) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.591 }
+l.610 }
        
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 591.
+(caption)                particular \caption on input line 610.
 See the caption package documentation for explanation.
 
 
-Underfull \hbox (badness 10000) detected at line 591
+Underfull \hbox (badness 10000) detected at line 610
 [][]
  []
 
@@ -2742,34 +2816,35 @@ PGFPlots: reading {tex/CpredFe.txt}
  [39]
 PGFPlots: reading {tex/bootstrap_mn.txt}
 PGFPlots: reading {tex/bootstrap_fe.txt}
+ [40]
 PGFPlots: reading {tex/YtesteMn.txt}
 PGFPlots: reading {tex/CpredMn.txt}
 PGFPlots: reading {tex/YtesteFe.txt}
 PGFPlots: reading {tex/CpredFe.txt}
- [40] [41]
-Underfull \hbox (badness 10000) in paragraph at lines 471--472
+ [41]
+Underfull \hbox (badness 10000) in paragraph at lines 489--490
 []|\T1/ptm/b/n/10.95 (+10) Proporção
  []
 
-[42]
-Package pgfplots info on input line 573: Using 'lua backend=false' for axis: x 
+[42] [43]
+Package pgfplots info on input line 591: Using 'lua backend=false' for axis: x 
 coord trafo unsupported.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 573.
-Package pgfplots info on input line 632: Using 'lua backend=false' for axis: x 
+(Font)              <9> on input line 591.
+Package pgfplots info on input line 650: Using 'lua backend=false' for axis: x 
 coord trafo unsupported.
- [43]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 670.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\times' on input line 670.
+(hyperref)                removing `math shift' on input line 688.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 670.
+(hyperref)                removing `\times' on input line 688.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 688.
 
 [44]
 PGFPlots: reading {tex/dados/subagging_mn.txt}
@@ -2779,7 +2854,7 @@ PGFPlots: reading {tex/dados/subagging_fe.txt}
 PGFPlots: reading {tex/dados/bagging_fe.txt}
 PGFPlots: reading {tex/dados/rlm_fe.txt}
  [45] [46]
-Package pgfplots info on input line 935: Using 'lua backend=false' for axis: x 
+Package pgfplots info on input line 959: Using 'lua backend=false' for axis: x 
 coord trafo unsupported.
  [47]) [48]
 \openout2 = `tex/6secao.aux'.
@@ -2795,115 +2870,112 @@ Underfull \hbox (badness 2318) in paragraph at lines 137--137
  (+10) ²\T1/ptm/m/n/10.95 (+10) , RMSE,
  []
 
-[50]
-<./outros/fig/fluxo.png, id=1041, 6564.525pt x 765.86125pt>
-File: ./outros/fig/fluxo.png Graphic file (type png)
-<use ./outros/fig/fluxo.png>
-Package pdftex.def Info: ./outros/fig/fluxo.png  used on input line 215.
-(pdftex.def)             Requested size: 455.0pt x 53.0782pt.
-
-Overfull \hbox (11.35075pt too wide) in paragraph at lines 238--238
+[50] [51]
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10.95> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 410.
+ [52]
+Overfull \hbox (11.35075pt too wide) in paragraph at lines 435--435
 []|\T1/ptm/b/n/10.95 (-10) Comportamento
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 238--238
+Underfull \hbox (badness 10000) in paragraph at lines 435--435
 []|\T1/ptm/m/n/10.95 (+10) Upload com
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 238--238
+Underfull \hbox (badness 10000) in paragraph at lines 435--435
 \T1/ptm/m/n/10.95 (+10) for-ma-to/-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 238--238
+Underfull \hbox (badness 10000) in paragraph at lines 435--435
 \T1/ptm/m/n/10.95 (+10) di-men-são
  []
 
 
-Underfull \hbox (badness 3930) in paragraph at lines 238--238
+Underfull \hbox (badness 3930) in paragraph at lines 435--435
 []|\T1/ptm/m/n/10.95 (+10) Alerta ver-me-
  []
 
 
-Underfull \hbox (badness 3250) in paragraph at lines 238--238
+Underfull \hbox (badness 3250) in paragraph at lines 435--435
 []|\T1/ptm/m/n/10.95 (+10) Validação em
  []
 
 
-Underfull \hbox (badness 3623) in paragraph at lines 238--238
+Underfull \hbox (badness 3623) in paragraph at lines 435--435
 \T1/ptm/m/n/10.95 (+10) tempo real +
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 238--238
+Underfull \hbox (badness 10000) in paragraph at lines 435--435
 []|\T1/ptm/m/n/10.95 (+10) Dados muito
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 238--238
+Underfull \hbox (badness 10000) in paragraph at lines 435--435
 \T1/ptm/m/n/10.95 (+10) gran-des ou
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 238--238
+Underfull \hbox (badness 10000) in paragraph at lines 435--435
 []|\T1/ptm/m/n/10.95 (+10) Mensagem:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 238--238
+Underfull \hbox (badness 10000) in paragraph at lines 435--435
 \T1/ptm/m/n/10.95 (+10) ``Pro-ces-sa-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 238--238
+Underfull \hbox (badness 10000) in paragraph at lines 435--435
 \T1/ptm/m/n/10.95 (+10) mento de-mo-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 238--238
+Underfull \hbox (badness 10000) in paragraph at lines 435--435
 []|\T1/ptm/m/n/10.95 (+10) Mantém
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 238--238
+Underfull \hbox (badness 10000) in paragraph at lines 435--435
 \T1/ptm/m/n/10.95 (+10) es-tado dos
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 238--238
+Underfull \hbox (badness 10000) in paragraph at lines 435--435
 \T1/ptm/m/n/10.95 (+10) uplo-ads (per-
  []
 
-[51 <./outros/fig/fluxo.png>] [52] [53]
-Underfull \hbox (badness 1389) in paragraph at lines 329--329
+[53]
+Underfull \hbox (badness 1389) in paragraph at lines 526--526
 []|\T1/ptm/m/n/10.95 (+10) Ex: ``Ycal.txt tem 99 li-nhas, mas
  []
 
 [54]
-Underfull \hbox (badness 10000) in paragraph at lines 387--387
+Underfull \hbox (badness 10000) in paragraph at lines 584--584
 []|$\OMS/lmsy/m/n/10.95 ^^X$\T1/ptm/m/n/10.95 (+10) 10--20 (\T1/ptm/m/it/10.95 
 (+10) Stre-am-lit
  []
 
 
-Underfull \hbox (badness 1521) in paragraph at lines 387--387
+Underfull \hbox (badness 1521) in paragraph at lines 584--584
 []|\T1/ptm/m/n/10.95 (+10) 5k+ amos-tras $\OMS/lmsy/m/n/10.95 ^^B$ \T1/ptm/m/n/
 10.95 (+10) 10k
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 387--387
+Underfull \hbox (badness 10000) in paragraph at lines 584--584
 []|\T1/ptm/m/n/10.95 (+10) Processamento em
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 387--387
+Underfull \hbox (badness 10000) in paragraph at lines 584--584
 []|\T1/ptm/m/n/10.95 (+10) Módulos \T1/ptm/m/it/10.95 (+10) plug-and-
  []
 
-) [55]
+[55]) [56]
 \openout2 = `tex/7secao.aux'.
 
  (tex/7secao.tex
@@ -2918,12 +2990,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--35
 (actual, pre-dic-ted) -> tu-ple[float,
  []
 
-[56
+[57
 
 
 
 
-] [57] [58] [59]) [60]
+] [58] [59] [60]) [61]
 \openout2 = `tex/8secao.aux'.
 
  (tex/8secao.tex
@@ -2951,7 +3023,7 @@ Underfull \hbox (badness 1137) in paragraph at lines 36--46
 pec-tro-me-tria. Fun-ções como
  []
 
-[61
+[62
 
 
 
@@ -2987,10 +3059,10 @@ Underfull \hbox (badness 1838) in paragraph at lines 103--110
 er-mi-nís-ti-cos. Esse iso-la-mento evita que
  []
 
-[62]) [63]
+[63]) [64]
 \openout2 = `tex/9secao.aux'.
 
- (tex/9secao.tex [64
+ (tex/9secao.tex [65
 
 
 
@@ -3020,15 +3092,15 @@ Underfull \hbox (badness 2452) in paragraph at lines 109--118
 pcr/l/it/12 app.py\T1/ptm/m/n/12 (+10) , \T1/pcr/l/it/12 parse_-int_-list()
  []
 
-[65]) [66]
+[66]) [67]
 \openout2 = `tex/10secao.aux'.
 
- (tex/10secao.tex [67
+ (tex/10secao.tex [68
 
 
 
 
-] [68]) [69] [70]
+] [69]) [70]
 \openout2 = `tex/5secao.aux'.
 
  (tex/5secao.tex [71
@@ -3036,8 +3108,8 @@ pcr/l/it/12 app.py\T1/ptm/m/n/12 (+10) , \T1/pcr/l/it/12 parse_-int_-list()
 
 
 
-] [72])
-[73] (TCC_II_IFG_2026.bbl (TCC_II_IFG_2026.brf)
+] [72]) [73]
+(TCC_II_IFG_2026.bbl (TCC_II_IFG_2026.brf)
 \tf@brf=\write7
 \openout7 = `TCC_II_IFG_2026.brf'.
 
@@ -3055,7 +3127,7 @@ LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <24.88> not available
 ] (pos/apendice_d.tex [82
 
 ]
-<./outros/fig/E_Diagramas/out/diag_classe/BaggingOptimized_Classe.png, id=1506,
+<./outros/fig/E_Diagramas/out/diag_classe/BaggingOptimized_Classe.png, id=1503,
  1007.765pt x 953.5625pt>
 File: ./outros/fig/E_Diagramas/out/diag_classe/BaggingOptimized_Classe.png Grap
 hic file (type png)
@@ -3066,7 +3138,7 @@ zed_Classe.png  used on input line 71.
  [83 <./outros/fig/E_Diagramas/out/diag_classe/BaggingOptimized_Classe.png (PNG
  copy)>]
 <./outros/fig/E_Diagramas/out/diag_sequencia/BaggingOptimized_Atividade.png, id
-=1511, 218.8175pt x 1351.0475pt>
+=1508, 218.8175pt x 1351.0475pt>
 File: ./outros/fig/E_Diagramas/out/diag_sequencia/BaggingOptimized_Atividade.pn
 g Graphic file (type png)
 <use ./outros/fig/E_Diagramas/out/diag_sequencia/BaggingOptimized_Atividade.png
@@ -3078,7 +3150,7 @@ imized_Atividade.png  used on input line 83.
 [84 <./outros/fig/E_Diagramas/out/diag_sequencia/BaggingOptimized_Atividade.png
  (PNG copy)>]
 <./outros/fig/E_Diagramas/out/diagrama/BaggingOptimized_FluxoCompleto.png, id=1
-517, 877.2775pt x 1392.20125pt>
+514, 877.2775pt x 1392.20125pt>
 File: ./outros/fig/E_Diagramas/out/diagrama/BaggingOptimized_FluxoCompleto.png 
 Graphic file (type png)
 <use ./outros/fig/E_Diagramas/out/diagrama/BaggingOptimized_FluxoCompleto.png>
@@ -3087,7 +3159,7 @@ _FluxoCompleto.png  used on input line 95.
 (pdftex.def)             Requested size: 341.25pt x 541.55426pt.
  [85 <./outros/fig/E_Diagramas/out/diagrama/BaggingOptimized_FluxoCompleto.png 
 (PNG copy)>]
-<./outros/fig/E_Diagramas/out/diagrama02/Etapa2_GridSearch_CV.png, id=1522, 539
+<./outros/fig/E_Diagramas/out/diagrama02/Etapa2_GridSearch_CV.png, id=1519, 539
 .01375pt x 899.36pt>
 File: ./outros/fig/E_Diagramas/out/diagrama02/Etapa2_GridSearch_CV.png Graphic 
 file (type png)
@@ -3097,7 +3169,7 @@ rch_CV.png  used on input line 107.
 (pdftex.def)             Requested size: 227.5pt x 379.59497pt.
  [86 <./outros/fig/E_Diagramas/out/diagrama02/Etapa2_GridSearch_CV.png (PNG cop
 y)>]
-<./outros/fig/E_Diagramas/streamlit/diagrama_atividades_streamlit.png, id=1527,
+<./outros/fig/E_Diagramas/streamlit/diagrama_atividades_streamlit.png, id=1524,
  876.27374pt x 3626.54875pt>
 File: ./outros/fig/E_Diagramas/streamlit/diagrama_atividades_streamlit.png Grap
 hic file (type png)
@@ -3107,7 +3179,7 @@ _streamlit.png  used on input line 119.
 (pdftex.def)             Requested size: 136.50139pt x 564.87608pt.
  [87 <./outros/fig/E_Diagramas/streamlit/diagrama_atividades_streamlit.png (PNG
  copy)>]
-<./outros/fig/E_Diagramas/streamlit/diagrama_classes_streamlit.png, id=1532, 10
+<./outros/fig/E_Diagramas/streamlit/diagrama_classes_streamlit.png, id=1529, 10
 03.75pt x 1008.76875pt>
 File: ./outros/fig/E_Diagramas/streamlit/diagrama_classes_streamlit.png Graphic
  file (type png)
@@ -3117,7 +3189,7 @@ reamlit.png  used on input line 131.
 (pdftex.def)             Requested size: 386.75278pt x 388.69272pt.
  [88 <./outros/fig/E_Diagramas/streamlit/diagrama_classes_streamlit.png (PNG co
 py)>]
-<./outros/fig/E_Diagramas/streamlit/diagrama_sequencia_streamlit.png, id=1537, 
+<./outros/fig/E_Diagramas/streamlit/diagrama_sequencia_streamlit.png, id=1534, 
 911.405pt x 3480.00125pt>
 File: ./outros/fig/E_Diagramas/streamlit/diagrama_sequencia_streamlit.png Graph
 ic file (type png)
@@ -3141,7 +3213,17 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 [90
 
-] [91] [92] [93] [94] [95] [96] [97] [98] [99] [100]
+] [91] [92] [93] [94] [95] [96] [97] [98] [99] [100] [101] [102]
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 954.
+See the caption package documentation for explanation.
+
+Package hyperref Info: bookmark level for unknown codigo defaults to 0 on input
+ line 954.
+[103
+
+])
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\se-
 pdfdoc.def
 File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
@@ -3149,7 +3231,7 @@ File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\se-
 utf8.def
 File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
-) [101]) [102]
+) [104]
 \tf@lof=\write8
 \openout8 = `TCC_II_IFG_2026.lof'.
 
@@ -3164,10 +3246,6 @@ File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
 
  
 enddocument/afterlastpage: lastpage setting LastPage.
-
-LaTeX Warning: Hook 'shipout/lastpage' executed on wrong page (102 not 103).
-               Rerun to correct this.
-
 (TCC_II_IFG_2026.aux (tex/1secao.aux) (tex/2secao.aux) (tex/3secao.aux)
 (tex/4secao.aux) (tex/6secao.aux) (tex/7secao.aux) (tex/8secao.aux)
 (tex/9secao.aux) (tex/10secao.aux) (tex/5secao.aux))
@@ -3183,14 +3261,14 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `TCC_II_IFG_2026.brf' has not changed.
-(rerunfilecheck)             Checksum: 0672F149B246405A1F11292305D4D070;3501.
+(rerunfilecheck)             Checksum: 219284E44F77FD8D6F2C839FBDFE5E87;3501.
  ) 
 Here is how much of TeX's memory you used:
- 67767 strings out of 474485
- 1463450 string characters out of 5739958
- 2602162 words of memory out of 5000000
- 87858 multiletter control sequences out of 15000+600000
- 713882 words of font info for 428 fonts, out of 8000000 for 9000
+ 69224 strings out of 474485
+ 1493204 string characters out of 5739958
+ 2630440 words of memory out of 5000000
+ 89267 multiletter control sequences out of 15000+600000
+ 724301 words of font info for 448 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  109i,23n,117p,2358b,2654s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/wagner.araujo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
@@ -3230,9 +3308,9 @@ TeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/wagner.araujo/AppData/Local/Prog
 rams/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/wagner.araujo/AppData/L
 ocal/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/wagner.araujo/A
 ppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on TCC_II_IFG_2026.pdf (103 pages, 2740446 bytes).
+Output written on TCC_II_IFG_2026.pdf (105 pages, 2646256 bytes).
 PDF statistics:
- 2125 PDF objects out of 2487 (max. 8388607)
- 566 named destinations out of 1000 (max. 500000)
- 116486 words of extra memory for PDF output out of 128383 (max. 10000000)
+ 2136 PDF objects out of 2487 (max. 8388607)
+ 570 named destinations out of 1000 (max. 500000)
+ 129289 words of extra memory for PDF output out of 154059 (max. 10000000)
 

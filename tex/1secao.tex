@@ -34,11 +34,13 @@ reescrita completa de uma arquitetura de software.
 
 A originalidade da pesquisa é dupla. No eixo quimiométrico, reside na aplicação de
 técnicas de \textit{bagging} e \textit{subagging}, ainda pouco exploradas na análise de
-aço-ligas. No eixo de engenharia de software, reside na condução de uma reescrita
+aço-ligas.
+
+No eixo de engenharia de software, reside na condução de uma reescrita
 \textit{black-box} em três estágios (Desktop Java, Web Vaadin/Spring, Python/Streamlit),
 com arquitetura final desacoplada em três módulos de responsabilidade única e validação
- por 92 testes automatizados, que verificam a equivalência numérica do núcleo determinístico (RLM)
- e a consistência estatística dos métodos estocásticos entre o sistema legado e o sistema reescrito.
+por 92 testes automatizados, que verificam a equivalência numérica do núcleo determinístico (RLM)
+e a consistência estatística dos métodos estocásticos entre o sistema legado e o sistema reescrito.
 
 Dado o conjunto amostral reduzido — característica inerente à aquisição dos dados
 espectrométricos utilizados —, os resultados devem ser interpretados como evidências
@@ -88,6 +90,7 @@ meio de uma suíte de testes automatizados (\texttt{test\_suite\_5.py}),
 composta por 21 testes unitários, 60 testes de caixa-preta que comparam
 as métricas das implementações Java e Python para os cinco analitos (Mn,
 Mo, Cr, Ni, Fe) e 11 testes de estresse sobre matrizes de grande porte.
+
 Esse protocolo funciona como oráculo de equivalência entre o sistema
 legado e o sistema reescrito em dois níveis: equivalência numérica estrita
 para a RLM determinística e consistência estatística, dentro de

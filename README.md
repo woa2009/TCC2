@@ -52,6 +52,11 @@ B_Projeto_Integrador_III_Final/
 │   ├── 3secao.tex               ← Capítulo 3: Materiais e Métodos (Amostras de Aço-Ligas)
 │   ├── 4secao.tex               ← Capítulo 4: Resultados e Discussões
 │   ├── 5secao.tex               ← Capítulo 5: Conclusão
+│   ├── 6secao.tex               ← Seção 5: Requisitos Funcionais
+│   ├── 7secao.tex               ← Seção 6: Engenharia de Software e Modernização
+│   ├── 8secao.tex               ← Seção 7: Ecossistema de Desenvolvimento (Python e Streamlit)
+│   ├── 9secao.tex               ← Seção 8: Interface e Experiência do Usuário (UI/UX) Científica
+│   ├── 10secao.tex              ← Seção 9: Desenvolvimento Iterativo por Sprints e Validação por Testes
 │   ├── algoritmos.tex           ← Algoritmos utilizados no trabalho
 │   ├── graficos.tex             ← Código TikZ/pgfplots para os gráficos
 │   ├── apoio_4secao.tex         ← Material de apoio para o Capítulo 4
@@ -124,6 +129,118 @@ B_Projeto_Integrador_III_Final/
 
 ---
 
+## Detalhamento das Seções Textuais
+
+### `1secao.tex` (Introdução)
+
+Arquivo textual responsável pela introdução do trabalho. Responsável por:
+
+- Apresentar o tema da calibração multivariada e a relevância da regressão linear múltipla
+- Contextualizar o uso de métodos de conjunto (*ensemble*) no escopo da pesquisa
+- Formular o problema de pesquisa, as hipóteses e as justificativas do estudo
+- Definir formalmente os objetivos gerais e específicos do trabalho
+
+---
+
+### `2secao.tex` (Revisão da Literatura)
+
+Arquivo textual dedicado à fundamentação teórica. Responsável por:
+
+- Revisar a literatura sobre quimiometria, calibração analítica e modelagem matemática
+- Detalhar os conceitos estatísticos da regressão linear múltipla e métricas de erro como o RMSEP
+- Explicar os fundamentos teóricos dos métodos de conjunto (*bagging*, *boosting* ou correlatos)
+- Referenciar trabalhos correlatos utilizando as normas de citação da ABNT
+
+---
+
+### `3secao.tex` (Materiais e Métodos)
+
+Arquivo textual focado nos procedimentos práticos da pesquisa. Responsável por:
+
+- Descrever a natureza dos dados e o processo de coleta ou simulação das amostras de aço-ligas
+- Apresentar a arquitetura computacional e o fluxo de implementação dos algoritmos
+- Detalhar a configuração dos experimentos, divisão dos conjuntos de treino/teste e validação
+- Especificar as ferramentas, bibliotecas e ambientes de desenvolvimento utilizados
+
+---
+
+### `4secao.tex` (Resultados e Discussões)
+
+Arquivo textual para apresentação dos achados experimentais. Responsável por:
+
+- Exibir as tabelas comparativas geradas a partir dos arquivos `.csv` mapeados no arquivo raiz
+- Analisar o desempenho dos métodos de conjunto frente aos modelos tradicionais através do RMSEP
+- Discutir as implicações estatísticas e computacionais dos resultados obtidos
+- Validar ou refutar as hipóteses propostas com base nas evidências empíricas
+
+---
+
+### `5secao.tex` (Conclusão)
+
+Arquivo textual de encerramento do trabalho acadêmico. Responsável por:
+
+- Sintetizar as principais conclusões alcançadas com a modelagem realizada
+- Retomar e responder diretamente se os objetivos específicos foram atendidos
+- Elencar as limitações encontradas ao longo do mapeamento e experimentos do projeto
+- Propor direcionamentos e sugestões para trabalhos futuros na área
+
+---
+
+### `6secao.tex` (Requisitos Funcionais)
+
+Arquivo textual voltado à especificação técnica da aplicação de software. Responsável por:
+
+- Levantar e descrever detalhadamente os requisitos funcionais do sistema computacional desenvolvido
+- Mapear as interações esperadas entre os usuários (pesquisadores/químicos) e o motor de calibração
+- Definir as regras de negócio associadas à carga de dados, execução de modelos e exportação de resultados
+- Apresentar diagramas de casos de uso ou documentação técnica que apoiem os requisitos de software
+
+---
+
+### `7secao.tex` (Engenharia de Software e Modernização)
+
+Arquivo textual que aborda a arquitetura de engenharia de software aplicada. Responsável por:
+
+- Justificar os padrões arquiteturais escolhidos para garantir a manutenibilidade do código do projeto
+- Discutir os processos de modernização de software aplicados para transicionar scripts legados para aplicações integradas
+- Detalhar as boas práticas de desenvolvimento de software adotadas no ciclo de vida do TCC
+- Descrever a modularização do código para os métodos estatísticos e computacionais implementados
+
+---
+
+### `8secao.tex` (Ecossistema de Desenvolvimento)
+
+Arquivo textual sobre o ecossistema tecnológico adotado. Responsável por:
+
+- Apresentar a linguagem de programação Python e as bibliotecas científicas utilizadas no ambiente
+- Justificar a escolha do ecossistema Streamlit para a criação rápida do MVP da aplicação web
+- Detalhar o fluxo de processamento de dados tabulares utilizando as ferramentas nativas do ecossistema
+- Descrever o gerenciamento de dependências e ambiente virtual do ambiente de produção/desenvolvimento
+
+---
+
+### `9secao.tex` (Interface e Experiência do Usuário Científica)
+
+Arquivo textual dedicado ao design de interface (*UI*) e experiência (*UX*). Responsável por:
+
+- Conceituar os princípios de UI/UX focados em aplicações e ferramentas de cunho científico
+- Apresentar as decisões de design adotadas nas telas de exibição de erros preditivos e gráficos (como RMSEP)
+- Descrever os fluxos de usabilidade pensados para simplificar tarefas complexas de calibração multivariada
+- Documentar os feedbacks visuais e elementos interativos criados para o monitoramento de execuções estatísticas
+
+---
+
+### `10secao.tex` (Desenvolvimento Iterativo e Validação)
+
+Arquivo textual com foco em metodologias ágeis de entrega e qualidade de software. Responsável por:
+
+- Explicar a divisão do desenvolvimento do projeto em Sprints iterativas e incrementais
+- Detalhar a estratégia de validação do código por meio de testes automatizados (unitários ou de integração)
+- Apresentar as métricas de qualidade obtidas que atestam a robustez do software de calibração construído
+- Relacionar o processo de feedback e refinamento contínuo dos modelos estatísticos durante o cronograma do TCC
+
+---
+
 ## Fluxo de Inclusão do Arquivo Raiz
 
 ```
@@ -143,8 +260,13 @@ TCC_II_IFG_2025.tex
 ├── \include{tex/3secao}                ← Cap. 3: Materiais e Métodos
 ├── \include{tex/4secao}                ← Cap. 4: Resultados e Discussões
 ├── \include{tex/5secao}                ← Cap. 5: Conclusão
+├── \include{tex/6secao}                ← Seção 5: Requisitos Funcionais
+├── \include{tex/7secao}                ← Seção 6: Engenharia de Software e Modernização
+├── \include{tex/8secao}                ← Seção 7: Ecossistema de Desenvolvimento (Python/Streamlit)
+├── \include{tex/9secao}                ← Seção 8: Interface e Experiência do Usuário (UI/UX)
+├── \include{tex/10secao}               ← Seção 9: Desenvolvimento Iterativo e Validação
 │
-└── \bibliography{pos/references}       ← Referências bibliográficas
+└── ibliography{pos/references}       ← Referências bibliográficas
 ```
 
 ---
@@ -166,4 +288,4 @@ Ou, usando `latexmk`:
 latexmk -pdf TCC_II_IFG_2025.tex
 ```
 
-> **Nota:** Os arquivos `.csv` (`r_bagging.csv`, `r_bagging2.csv`, `rmsep5080.csv`, `rmsepsuperior.csv`) devem estar presentes no diretório raiz, pois são lidos diretamente pelo pacote `readarray` durante a compilação.
+> **Nota:** Os arquivos `.csv` (`r_bagging.csv`, `r_bagging2.csv`, `rmsep5080.csv`, `rmsepsuperior.csv`) devem estar presentes no diretório raiz, pois são lidos diretamente pelo compilador LaTeX para a geração das tabelas automatizadas.

@@ -24,13 +24,13 @@
 \backcite {kumari2024,HARDLE:2007}{{26}{2.7.1}{subsection.2.7.1}}
 \backcite {MARTINS:2006}{{26}{2.7.1}{subsection.2.7.1}}
 \backcite {BAUER:1999}{{26}{2.7.1}{algocf.2}}
-\backcite {BREIMAN:2001}{{26}{2.7.1}{algocf.2}}
+\backcite {BREIMAN:2001}{{27}{2.7.1}{algocf.2}}
 \backcite {GALVAO:2006,Buhlmann2003,revelas2024,qin2023,zhaoY2018,shi2021,zhang2017,Tao2021,paleologo2020,wei2021}{{27}{2.7.2}{subsection.2.7.2}}
-\backcite {Buhlmann2003}{{27}{2.7.2}{algocf.3}}
-\backcite {Ing2016}{{27}{2.7.2}{algocf.3}}
-\backcite {shi2021,revelas2024}{{27}{2.7.2}{algocf.3}}
+\backcite {Buhlmann2003}{{28}{2.7.2}{algocf.3}}
+\backcite {Ing2016}{{28}{2.7.2}{algocf.3}}
+\backcite {shi2021,revelas2024}{{28}{2.7.2}{algocf.3}}
 \backcite {Buhlmann2003}{{28}{2.7.3}{quadro.caption.19}}
-\backcite {sommerville2011}{{28}{2.8}{section.2.8}}
+\backcite {sommerville2011}{{29}{2.8}{section.2.8}}
 \backcite {becker2020}{{29}{2.8}{section.2.8}}
 \backcite {pressman2016}{{29}{2.8}{section.2.8}}
 \backcite { alibaba2026qwen}{{30}{3}{chapter.3}}
@@ -44,16 +44,16 @@
 \backcite {hodson2022rmse}{{36}{3.4}{equation.3.4.26}}
 \backcite {ezenarro2025chemometric}{{36}{3.4}{equation.3.4.28}}
 \backcite {Westad2024,kumari2024,perisdiaz2021}{{36}{3.4}{equation.3.4.28}}
-\backcite {sommerville2011}{{56}{6.1}{section.6.1}}
-\backcite {sommerville2011}{{56}{6.2}{section.6.2}}
-\backcite {sommerville2011}{{58}{\caption@xref {qua:rnf}{ on input line 151}}{quadro.caption.69}}
-\backcite {becker2020}{{59}{6.3}{section.6.3}}
-\backcite {rfc2616}{{59}{6.3}{section.6.3}}
-\backcite {buschmann1996posa1}{{60}{6.4}{section.6.4}}
-\backcite {sommerville2011}{{60}{6.4}{section.6.4}}
-\backcite {vscode2024}{{63}{7.4}{section.7.4}}
-\backcite {martin2008}{{66}{8.3}{section.8.3}}
-\backcite {scrum2026}{{67}{9.1}{section.9.1}}
-\backcite {pytest2024}{{68}{9.2}{section.9.2}}
-\backcite {pressman2016}{{68}{9.2}{section.9.2}}
-\backcite {jorgensen2014}{{68}{9.2}{section.9.2}}
+\backcite {sommerville2011}{{57}{6.1}{section.6.1}}
+\backcite {sommerville2011}{{57}{6.2}{section.6.2}}
+\backcite {sommerville2011}{{59}{\caption@xref {qua:rnf}{ on input line 151}}{quadro.caption.69}}
+\backcite {becker2020}{{60}{6.3}{section.6.3}}
+\backcite {rfc2616}{{60}{6.3}{section.6.3}}
+\backcite {buschmann1996posa1}{{61}{6.4}{section.6.4}}
+\backcite {sommerville2011}{{61}{6.4}{section.6.4}}
+\backcite {vscode2024}{{64}{7.4}{section.7.4}}
+\backcite {martin2008}{{67}{8.3}{section.8.3}}
+\backcite {scrum2026}{{68}{9.1}{section.9.1}}
+\backcite {pytest2024}{{69}{9.2}{section.9.2}}
+\backcite {pressman2016}{{69}{9.2}{section.9.2}}
+\backcite {jorgensen2014}{{69}{9.2}{section.9.2}}

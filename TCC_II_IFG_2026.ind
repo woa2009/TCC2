@@ -22,7 +22,7 @@
   \item Métodos e Resultados
     \subitem \textit{Bagging}, \hyperpage{38}
     \subitem \textit{Baggin} $\times$ \textit{Subagging}, 
-		\hyperpage{44}
+		\hyperpage{45}
     \subitem \textit{Subagging}, \hyperpage{40}
     \subitem Introdução, \hyperpage{33}
     \subitem Medida do Erro Médio Quadrático de Predição, 
@@ -34,7 +34,7 @@
   \item Requisitos Funcionais, \hyperpage{49}
   \item Revisão da literatura
     \subitem Engenharia de Migração e Qualidade de Software, 
-		\hyperpage{28}
+		\hyperpage{29}
 
   \indexspace
 

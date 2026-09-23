@@ -1,0 +1,8 @@
+============================= test session starts =============================
+platform win32 -- Python 3.12.10, pytest-9.1.0, pluggy-1.6.0 -- C:\Users\wagner.araujo\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\python.exe
+cachedir: .pytest_cache
+rootdir: L:\TCCI\D_Programacao\streamlit-app\tests
+plugins: anyio-4.13.0
+collecting ... collected 92 items / 92 deselected / 0 selected
+
+=========================== 92 deselected in 0.99s ============================

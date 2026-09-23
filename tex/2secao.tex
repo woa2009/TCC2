@@ -98,8 +98,12 @@ Métodos robustos tornam-se indispensáveis quando há violação das premissas 
 % ----------------------------------------------------
 \section{A Técnica de \textit{Bootstrap}}
 % ----------------------------------------------------
+%A inferência estatística estabelece propriedades para a população \textbf{X} a partir da análise de uma amostra aleatória dessa população~\cite{DRAPER:1998,JOHNSON:2001,CHATTERJEE:2006}. O método \textit{bootstrap} é um procedimento computacional que fornece a medida do nível de precisão da inferência estatística, como por exemplo, média, desvio padrão e erro padrão~\cite{yeon2023,alfons2022,wan2023,du2024,jensen2024}. A ideia básica do \textit{bootstrap} é inferir estatisticamente as propriedades de interesse a partir da análise de amostras aleatórias extraídas da população original sem a necessidade de conhecer a distribuição de dados a priori, o que constitui significativa vantagem sobre outras técnicas~\cite{HARDLE:2007,TIMM:2002}.
+
 A inferência estatística estabelece propriedades para a população \textbf{X} a partir da análise
-de uma amostra aleatória dessa população~\cite{DRAPER:1998,JOHNSON:2001,CHATTERJEE:2006}. O método \textit{bootstrap} é um procedimento computacional que fornece a medida do nível de precisão da inferência estatística, como por exemplo, média, desvio padrão e erro padrão~\cite{yeon2023,alfons2022,wan2023,du2024,jensen2024}. A ideia básica do \textit{bootstrap} é inferir estatisticamente as propriedades de interesse a partir da análise de amostras aleatórias extraídas da população original sem a necessidade de conhecer a distribuição de dados a priori, o que constitui significativa vantagem sobre outras técnicas~\cite{HARDLE:2007,TIMM:2002}.
+de uma amostra aleatória dessa população~\cite{DRAPER:1998,JOHNSON:2001,CHATTERJEE:2006}. O método \textit{bootstrap} é um procedimento computacional que fornece a medida do nível de precisão da inferência estatística, como por exemplo, média, desvio padrão e erro padrão~\cite{yeon2023,alfons2022,wan2023,du2024,jensen2024}.
+
+A ideia básica do \textit{bootstrap} é inferir estatisticamente as propriedades de interesse a partir da análise de amostras aleatórias extraídas da população original sem a necessidade de conhecer a distribuição de dados a priori, o que constitui significativa vantagem sobre outras técnicas~\cite{HARDLE:2007,TIMM:2002}.
 
 Quando o parâmetro populacional de interesse é desconhecido, procura-se estimá-lo por
 reamostragem aleatória. Inicialmente, considera-se a \textbf{população} 
@@ -107,12 +111,15 @@ $\mathbf{x} = [x_1, x_2, \ldots, x_N]$. A partir dela, seleciona-se uma
 \textbf{amostra} $\mathbf{X} = [x_1, x_2, \ldots, x_n]$, formada por $n$ elementos 
 independentes retirados da população. 
 
+%Para avaliar a variabilidade das estimativas, aplica-se o método de \textbf{\textit{bootstrap}}, que consiste em gerar $m$ \textbf{reamostras} $\mathbf{X}^{*1}, \mathbf{X}^{*2}, \ldots, \mathbf{X}^{*m}$, obtidas por sorteio com reposição a partir da amostra original. Formalmente, cada reamostra é definida como \[ \mathbf{X}^{*i} \sim \text{\textit{Bootstrap}}(\mathbf{X}), \quad i = 1,2,\ldots,m,\] onde $\text{\textit{Bootstrap}}(\mathbf{X})$ denota a distribuição empírica gerada pela amostra. Em seguida, calcula-se uma estatística $s(\mathbf{X}^{*i})$ para cada reamostra, gerando uma distribuição empírica das estimativas. Esse processo é ilustrado na Figura~\ref{fig:bootstrap}.
+
 Para avaliar a variabilidade das estimativas, aplica-se o método de \textbf{\textit{bootstrap}}, que consiste em gerar $m$ \textbf{reamostras} 
 $\mathbf{X}^{*1}, \mathbf{X}^{*2}, \ldots, \mathbf{X}^{*m}$, obtidas por sorteio com reposição a partir da amostra original. Formalmente, cada reamostra é definida como
 \[
 \mathbf{X}^{*i} \sim \text{\textit{Bootstrap}}(\mathbf{X}), \quad i = 1,2,\ldots,m,
 \]
-onde $\text{\textit{Bootstrap}}(\mathbf{X})$ denota a distribuição empírica gerada pela amostra. 
+onde $\text{\textit{Bootstrap}}(\mathbf{X})$ denota a distribuição empírica gerada pela amostra.
+
 Em seguida, calcula-se uma estatística $s(\mathbf{X}^{*i})$ para cada reamostra, 
 gerando uma distribuição empírica das estimativas. Esse processo é ilustrado 
 na Figura~\ref{fig:bootstrap}.
@@ -165,7 +172,11 @@ na Figura~\ref{fig:bootstrap}.
 \legend{\footnotesize Fonte:~\oautor}
 \end{figure}
 
-A Figura~\ref{fig:bootstrap} ilustra o procedimento de \textit{bootstrap} em quatro etapas. O primeiro passo (primeiro retângulo) representa a população completa, denotada por $\mathbf{x} = [x_1, x_2, \dots, x_N]$, da qual é extraída uma amostra através do processo de amostragem. O segundo passo (segundo retângulo) corresponde ao conjunto de dados observados, denotado por $\mathbf{X} = [x_1, x_2, \dots, x_n]$. O terceiro passo (terceiro conjunto de retângulos) corresponde à extração de amostras \textit{bootstrap}, obtidas por reamostragem com reposição a partir de $\mathbf{X}$. O quarto passo (quarto conjunto de retângulos) mostra as replicações \textit{bootstrap}, nas quais uma função estatística $s(\gls{gamma})$ é recalculada $m$ vezes, sendo $m$ o número total de replicações.
+%A Figura~\ref{fig:bootstrap} ilustra o procedimento de \textit{bootstrap} em quatro etapas. O primeiro passo (primeiro retângulo) representa a população completa, denotada por $\mathbf{x} = [x_1, x_2, \dots, x_N]$, da qual é extraída uma amostra através do processo de amostragem. O segundo passo (segundo retângulo) corresponde ao conjunto de dados observados, denotado por $\mathbf{X} = [x_1, x_2, \dots, x_n]$. O terceiro passo (terceiro conjunto de retângulos) corresponde à extração de amostras \textit{bootstrap}, obtidas por reamostragem com reposição a partir de $\mathbf{X}$. O quarto passo (quarto conjunto de retângulos) mostra as replicações \textit{bootstrap}, nas quais uma função estatística $s(\gls{gamma})$ é recalculada $m$ vezes, sendo $m$ o número total de replicações.
+
+A Figura~\ref{fig:bootstrap} ilustra o procedimento de \textit{bootstrap} em quatro etapas. O primeiro passo (primeiro retângulo) representa a população completa, denotada por $\mathbf{x} = [x_1, x_2, \dots, x_N]$, da qual é extraída uma amostra através do processo de amostragem. O segundo passo (segundo retângulo) corresponde ao conjunto de dados observados, denotado por $\mathbf{X} = [x_1, x_2, \dots, x_n]$.
+
+O terceiro passo (terceiro conjunto de retângulos) corresponde à extração de amostras \textit{bootstrap}, obtidas por reamostragem com reposição a partir de $\mathbf{X}$. O quarto passo (quarto conjunto de retângulos) mostra as replicações \textit{bootstrap}, nas quais uma função estatística $s(\gls{gamma})$ é recalculada $m$ vezes, sendo $m$ o número total de replicações.
 
 Nas seções subsequentes, são discutidos conceitos fundamentais relacionados a amostras aleatórias e probabilísticas, bem como a distribuição empírica e o princípio \textit{plug-in}. A apresentação desses tópicos tem como objetivo fornecer a base teórica necessária para a compreensão dos procedimentos de inferência estatística realizados a partir de amostras \textit{bootstrap}.
 
@@ -229,7 +240,11 @@ complexa. Portanto, se não for possível obter infinitas replicações, deve-se
 
 %---------------------------------------------------------------------------------------------------------
 
-É necessário que estimadores apresentem bom comportamento: baixo erro de predição e pequeno desvio padrão. A estimativa \textit{bootstrap} para o erro padrão geralmente apresenta erro de predição relativamente pequeno. A estimativa \textit{bootstrap} ideal $\widehat{se}_{\infty}$ possui baixa variabilidade entre estimativas com erro de predição quase nulo de $se_{\widehat{\textbf{d}}}(\widehat{\theta^*})$, pelo menos em um sentido assintótico. Esta propriedade decorre do fato de que $\widehat{se}_m$ é a estimativa \textit{plug-in} de $se_{\widehat{\textbf{d}}}(\widehat{\theta^*})$. Não é difícil mostrar que $\widehat{se}_m$ sempre possui desvio padrão maior que $\widehat{se}_{\infty}$~\cite{EFRON:1993}. A questão que se coloca é: \textbf{o quanto maior}?
+%É necessário que estimadores apresentem bom comportamento: baixo erro de predição e pequeno desvio padrão. A estimativa \textit{bootstrap} para o erro padrão geralmente apresenta erro de predição relativamente pequeno. A estimativa \textit{bootstrap} ideal $\widehat{se}_{\infty}$ possui baixa variabilidade entre estimativas com erro de predição quase nulo de $se_{\widehat{\textbf{d}}}(\widehat{\theta^*})$, pelo menos em um sentido assintótico. Esta propriedade decorre do fato de que $\widehat{se}_m$ é a estimativa \textit{plug-in} de $se_{\widehat{\textbf{d}}}(\widehat{\theta^*})$. Não é difícil mostrar que $\widehat{se}_m$ sempre possui desvio padrão maior que $\widehat{se}_{\infty}$~\cite{EFRON:1993}. A questão que se coloca é: \textbf{o quanto maior}?
+
+É necessário que estimadores apresentem bom comportamento: baixo erro de predição e pequeno desvio padrão. A estimativa \textit{bootstrap} para o erro padrão geralmente apresenta erro de predição relativamente pequeno. A estimativa \textit{bootstrap} ideal $\widehat{se}_{\infty}$ possui baixa variabilidade entre estimativas com erro de predição quase nulo de $se_{\widehat{\textbf{d}}}(\widehat{\theta^*})$, pelo menos em um sentido assintótico.
+
+Esta propriedade decorre do fato de que $\widehat{se}_m$ é a estimativa \textit{plug-in} de $se_{\widehat{\textbf{d}}}(\widehat{\theta^*})$. Não é difícil mostrar que $\widehat{se}_m$ sempre possui desvio padrão maior que $\widehat{se}_{\infty}$~\cite{EFRON:1993}. A questão que se coloca é: \textbf{o quanto maior}?
 
 %--------------------------------------------------------------------------------------------------
 
@@ -241,7 +256,11 @@ Uma resposta aproximada, porém satisfatória, pode ser encontrada utilizando o 
 
 O parâmetro \gls{Delta} mede o tamanho da distribuição de $\widehat{\theta}^*$: $\Delta$ é zero para a distribuição normal; na prática, $\Delta$ geralmente é maior que 10. O coeficiente de variação na Equação~(\ref{eq:2.19}) incorpora tanto a variabilidade devida à reamostragem \textit{bootstrap} quanto a variabilidade devida à amostragem da população original.
 
-A estimativa ideal $\widehat{se}_\infty = se_{\widehat{\mathbf{d}}}(\widehat{\theta}^*)$ não é perfeita~\cite{EFRON:1993}. Pode haver variabilidade considerável na estimativa $se_{\mathbf{d}}(\widehat{\theta})$ devido à variabilidade de $\widehat{\mathbf{d}}$ em relação a $\mathbf{d}$. Por exemplo, se $\{x_1, x_2, \ldots, x_n\}$ for uma amostra aleatória de uma distribuição normal e $\widehat{\theta} = \overline{x}$, então $cv(\widehat{se}_\infty) = \frac{1}{\sqrt{2n}}$, resultando em $0,22$ para $n = 10$. A Equação~(\ref{eq:2.19}) tem uma consequência prática importante: dados os valores típicos de $cv(\widehat{se}_\infty)$ e $\Delta$ encontrados na prática, $cv(\widehat{se}_m)$ não será muito maior que $cv(\widehat{se}_\infty)$ quando $m \geq 200$.
+%A estimativa ideal $\widehat{se}_\infty = se_{\widehat{\mathbf{d}}}(\widehat{\theta}^*)$ não é perfeita~\cite{EFRON:1993}. Pode haver variabilidade considerável na estimativa $se_{\mathbf{d}}(\widehat{\theta})$ devido à variabilidade de $\widehat{\mathbf{d}}$ em relação a $\mathbf{d}$. Por exemplo, se $\{x_1, x_2, \ldots, x_n\}$ for uma amostra aleatória de uma distribuição normal e $\widehat{\theta} = \overline{x}$, então $cv(\widehat{se}_\infty) = \frac{1}{\sqrt{2n}}$, resultando em $0,22$ para $n = 10$. A Equação~(\ref{eq:2.19}) tem uma consequência prática importante: dados os valores típicos de $cv(\widehat{se}_\infty)$ e $\Delta$ encontrados na prática, $cv(\widehat{se}_m)$ não será muito maior que $cv(\widehat{se}_\infty)$ quando $m \geq 200$.
+
+A estimativa ideal $\widehat{se}_\infty = se_{\widehat{\mathbf{d}}}(\widehat{\theta}^*)$ não é perfeita~\cite{EFRON:1993}. Pode haver variabilidade considerável na estimativa $se_{\mathbf{d}}(\widehat{\theta})$ devido à variabilidade de $\widehat{\mathbf{d}}$ em relação a $\mathbf{d}$. Por exemplo, se $\{x_1, x_2, \ldots, x_n\}$ for uma amostra aleatória de uma distribuição normal e $\widehat{\theta} = \overline{x}$, então $cv(\widehat{se}_\infty) = \frac{1}{\sqrt{2n}}$, resultando em $0,22$ para $n = 10$.
+
+A Equação~(\ref{eq:2.19}) tem uma consequência prática importante: dados os valores típicos de $cv(\widehat{se}_\infty)$ e $\Delta$ encontrados na prática, $cv(\widehat{se}_m)$ não será muito maior que $cv(\widehat{se}_\infty)$ quando $m \geq 200$.
 
 %-----------------------------------------------------------------------------------
 \begin{table}[!htbp]

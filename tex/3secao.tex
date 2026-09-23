@@ -267,7 +267,9 @@ ou duas amostras adicionais em relação aos demais \textit{folds}.
 Em seguida, para cada combinação de hiperparâmetros avaliada, 
 realizou-se uma busca em grade (\textit{grid search}) sobre os 
 conjuntos de valores $m \in \{10, 20, 30, 40, 50\}$ e 
-$k \in \{0{,}50;\ 0{,}60;\ 0{,}70;\ 0{,}80\}$. A cada iteração, 
+$k \in \{0{,}50;\ 0{,}60;\ 0{,}70;\ 0{,}80\}$.
+
+A cada iteração, 
 o modelo foi treinado nos quatro \textit{folds} restantes e avaliado 
 no \textit{fold} de validação corrente, repetindo-se o procedimento 
 cinco vezes de modo que cada \textit{fold} atuasse exatamente uma vez 
@@ -319,7 +321,9 @@ conjunto de teste ou validação)~\cite{Westad2024,kumari2024}. Ao
 elevar os erros ao quadrado antes de calcular a média e, 
 posteriormente, extrair a raiz quadrada, o \gls{RMSEP} atribui 
 maior peso aos erros maiores, penalizando modelos com grandes 
-discrepâncias entre as predições e a realidade. Essa característica 
+discrepâncias entre as predições e a realidade.
+
+Essa característica 
 o torna particularmente útil em situações onde grandes erros são 
 mais indesejáveis, sendo adotado como critério primário de seleção 
 do melhor modelo neste 
@@ -371,7 +375,9 @@ no conjunto de teste. O R$^2$ assume valores no intervalo
 $(-\infty,\, 1]$: R$^2 = 1$ indica ajuste perfeito; R$^2 = 0$ 
 equivale ao desempenho de um modelo que prediz apenas a média da 
 variável resposta; e valores negativos indicam desempenho inferior 
-a essa referência trivial~\cite{ezenarro2025chemometric}. Na 
+a essa referência trivial~\cite{ezenarro2025chemometric}.
+
+Na 
 calibração multivariada de aço-ligas, valores de R$^2 > 0{,}99$ 
 são frequentemente reportados como indicativos de elevada capacidade 
 preditiva~\cite{Westad2024,kumari2024,perisdiaz2021}. Contudo, o R$^2$ 

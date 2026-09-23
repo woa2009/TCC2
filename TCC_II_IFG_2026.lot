@@ -4,8 +4,8 @@
 \contentsline {table}{\numberline {4}{\ignorespaces RMSEP por analito obtido via RLM para amostras de aço-ligas.}}{37}{table.caption.25}%
 \contentsline {table}{\numberline {5}{\ignorespaces RMSEP da RLM e RLM-\textit {bagging} para cada elemento de aço-ligas.}}{40}{table.caption.30}%
 \contentsline {table}{\numberline {6}{\ignorespaces RMSEP por elemento de aço-ligas comparando RLM e RLM-\textit {subagging}.}}{41}{table.caption.33}%
-\contentsline {table}{\numberline {7}{\ignorespaces Comparação do RMSEP por elemento para diferentes técnicas e proporções de calibração.}}{41}{table.caption.35}%
-\contentsline {table}{\numberline {8}{\ignorespaces Configuração de desempenho superior e RMSEP mínimo.}}{42}{table.caption.37}%
+\contentsline {table}{\numberline {7}{\ignorespaces Comparação do RMSEP por elemento para diferentes técnicas e proporções de calibração.}}{42}{table.caption.35}%
+\contentsline {table}{\numberline {8}{\ignorespaces Configuração de desempenho superior e RMSEP mínimo.}}{43}{table.caption.37}%
 \contentsline {table}{\numberline {9}{\ignorespaces Desempenho comparativo das técnicas de calibração multivariada para elementos químicos em aço-liga.}}{46}{table.caption.40}%
 \contentsline {table}{\numberline {10}{\ignorespaces Paridade Bagging -- Cr}}{70}{table.caption.70}%
 \contentsline {table}{\numberline {11}{\ignorespaces Paridade \textit {Bagging} -- Fe}}{90}{table.caption.83}%

@@ -64,13 +64,13 @@ Arquivo & \texttt{Xcal.txt} & \texttt{.txt} & Sim & Matriz de espectros de calib
 Arquivo & \texttt{Ycal.txt} & \texttt{.txt} & Sim & Vetor de valores de referência \\ \hline
 Arquivo & \texttt{Xteste.txt} & \texttt{.txt} & Sim & Matriz de espectros para predição \\ \hline
 Arquivo & \texttt{Yteste.txt} & \texttt{.txt} & Sim & Vetor de valores reais para validação \\ \hline
-Parâmetro & \textit{m} & Inteiro $\geq 1$ & Condic.\textsuperscript{1} & Usado apenas nos métodos de ensemble \\ \hline
-Parâmetro & \textit{k} & Inteiro $\geq 1$ & Condic.\textsuperscript{1} & Usado apenas no método Subagging \\ \hline
+Parâmetro & \textit{m} & Inteiro $\geq 1$ & Condic.\tnote{a} & Usado apenas nos métodos de ensemble \\ \hline
+Parâmetro & \textit{k} & Inteiro $\geq 1$ & Condic.\tnote{a} & Usado apenas no método Subagging \\ \hline
 Config. & Val. Cruzada & Fixo: 5-Fold & Auto. & Parâmetro interno de otimização \\ \hline
-\multicolumn{5}{|p{\dimexpr\textwidth-2\tabcolsep-2\arrayrulewidth\relax}|}{\footnotesize \textsuperscript{1}Condicional: habilitados apenas quando o usuário seleciona métodos de ensemble.} \\ \hline
 \end{tabularx}
 \begin{tablenotes}[flushleft]
 \footnotesize
+\item[a] Condicional: habilitados apenas quando o usuário seleciona métodos de ensemble.
 \item Fonte:~\oautor
 \end{tablenotes}
 \end{threeparttable}
@@ -202,22 +202,219 @@ X05 & Dashboard comparativo multi-rodada & Análise estatística de estabilidade
 \end{quadro}
 
 
-
+\newpage
 \subsection{Fluxos de Uso}
 \label{subsec:fluxos}
 
 \subsubsection{Fluxo Principal: Execução de Análise Completa}
 \label{ssubsec:fluxo-principal}
 
+%\begin{figure}[htbp]
+%	\caption{Execução de Análise Completa.}
+%	\centering
+%		\includegraphics[width=1.0\textwidth]{./outros/fig/fluxo.png}
+%	\caption*{Fonte: \oautor}
+%	\label{fig:figura00}
+%\end{figure}
+
+% ============================================================
+% FLUXOGRAMA DA EXECUÇÃO DA ANÁLISE
+% ============================================================
+
+% Definição dos estilos do fluxograma
+\tikzset{
+    iniciofim/.style={
+        ellipse,
+        draw=black,
+        fill=blue!15,
+        minimum width=3.0cm,
+        minimum height=0.9cm,
+        align=center,
+        line width=0.8pt
+    },
+    processo/.style={
+        rectangle,
+        draw=black,
+        fill=blue!8,
+        minimum width=4.0cm,
+        minimum height=1.0cm,
+        align=center,
+        line width=0.8pt
+    },
+    decisao/.style={
+        diamond,
+        draw=black,
+        fill=blue!12,
+        aspect=2.0,
+        minimum width=4.2cm,
+        minimum height=1.4cm,
+        align=center,
+        line width=0.8pt,
+        inner sep=2pt
+    },
+    alerta/.style={
+        rectangle,
+        draw=black,
+        fill=red!8,
+        minimum width=4.2cm,
+        minimum height=1.0cm,
+        align=center,
+        line width=0.8pt
+    },
+    resultado/.style={
+        rectangle,
+        draw=black,
+        fill=green!10,
+        minimum width=4.2cm,
+        minimum height=1.0cm,
+        align=center,
+        line width=0.8pt
+    },
+    seta/.style={
+        ->,
+        draw=black,
+        line width=0.8pt
+    },
+    rotulo/.style={
+        font=\sffamily\footnotesize,
+        fill=white,
+        inner sep=2pt
+    }
+}
+
 \begin{figure}[htbp]
-	\caption{Execução de Análise Completa.}
-	\centering
-		\includegraphics[width=1.0\textwidth]{./outros/fig/fluxo.png}
+    \centering
+    \caption{Fluxograma do processo de execução da análise.}
+    \label{fig:figura00}
+    \resizebox{0.45\textwidth}{!}{%
+    \begin{tikzpicture}[
+        >=Stealth,
+        node distance=1.25cm and 1.8cm,
+        font=\sffamily\small
+    ]
+
+    % ========================================================
+    % INÍCIO
+    % ========================================================
+
+    \node[iniciofim] (inicio)
+        {Início};
+
+    % ========================================================
+    % ENTRADA DOS DADOS
+    % ========================================================
+
+    \node[processo, below=of inicio] (upload)
+        {Usuário realiza o upload\\
+         dos quatro arquivos};
+
+    % ========================================================
+    % VALIDAÇÃO
+    % ========================================================
+
+    \node[decisao, below=of upload] (validacao)
+        {Todos os arquivos\\
+         são válidos?};
+
+    % ========================================================
+    % CAMINHO NÃO
+    % ========================================================
+
+    \node[alerta, right=3.8cm of validacao] (erro)
+        {Exibir alerta e\\
+         bloquear análise};
+
+    \node[iniciofim, below=of erro] (fimerro)
+        {Fim};
+
+    % ========================================================
+    % CAMINHO SIM
+    % ========================================================
+
+    \node[processo, below=of validacao] (habilitar)
+        {Habilitar parâmetros\\
+         e botão ``Executar''};
+
+    \node[processo, below=of habilitar] (configurar)
+        {Configurar $m$ e $k$};
+
+    \node[processo, below=of configurar] (executar)
+        {Executar análise\\
+         com otimização por CV};
+
+    % ========================================================
+    % PROCESSAMENTO
+    % ========================================================
+
+    \node[processo, below=of executar] (processamento)
+        {Processamento dos métodos:\\
+         RLM, \textit{bagging} e \textit{subagging}\\
+         com validação cruzada};
+
+    % ========================================================
+    % RESULTADOS
+    % ========================================================
+
+    \node[resultado, below=of processamento] (resultados)
+        {Exibir resultados\\
+         e gráficos};
+
+    % ========================================================
+    % FIM
+    % ========================================================
+
+    \node[iniciofim, below=of resultados] (fim)
+        {Fim};
+
+    % ========================================================
+    % FLUXO PRINCIPAL
+    % ========================================================
+
+    \draw[seta]
+        (inicio) -- (upload);
+
+    \draw[seta]
+        (upload) -- (validacao);
+
+    % Caminho SIM
+    \draw[seta]
+        (validacao)
+        -- node[rotulo, right] {Sim}
+        (habilitar);
+
+    \draw[seta]
+        (habilitar) -- (configurar);
+
+    \draw[seta]
+        (configurar) -- (executar);
+
+    \draw[seta]
+        (executar) -- (processamento);
+
+    \draw[seta]
+        (processamento) -- (resultados);
+
+    \draw[seta]
+        (resultados) -- (fim);
+
+    % Caminho NÃO
+    \draw[seta]
+        (validacao.east)
+        -- node[rotulo, above] {Não}
+        (erro.west);
+
+    \draw[seta]
+        (erro) -- (fimerro);
+
+    \end{tikzpicture}%
+    }
+
+%    \caption{Fluxograma do processo de execução da análise.}
+%    \label{fig:figura00}
 	\caption*{Fonte: \oautor}
-	\label{fig:figura00}
 \end{figure}
 
-
+\newpage
 \subsubsection{Fluxos Alternativos e Tratamento de Exceções}
 \label{ssubsec:fluxos-alternativos}
 
@@ -245,7 +442,7 @@ Navegação sem executar & Usuário muda de aba antes de clicar & Mantém estado
 \end{quadro}
 
 
-\newpage
+
 \subsubsection{Pontos Críticos de Usabilidade}
 \label{ssubsec:pontos-criticos}
 
@@ -274,7 +471,7 @@ Resultados não exportáveis & Impede documentação externa & Botão ``Baixar R
 \end{quadro}
 
 
-
+\newpage
 \subsection{Requisitos Não Funcionais}
 \label{subsec:nao-funcionais}
 
@@ -307,7 +504,7 @@ Responsividade da UI & Interações (mudar aba, ajustar parâmetro) & $<$ 500\,m
 \end{quadro}
 
 
-\newpage
+
 \subsubsection{Usabilidade}
 \label{ssubsec:usabilidade}
 
@@ -337,7 +534,7 @@ Recuperação de erro & Mensagens orientam a correção & Ex: ``Ycal.txt tem 99 
 \end{center}
 \end{quadro}
 
-
+\newpage
 \subsubsection{Segurança}
 \label{ssubsec:seguranca}
 
@@ -366,7 +563,7 @@ HTTPS obrigatório & Todas as comunicações criptografadas & Proteção de inte
 \end{quadro}
 
 
-\newpage
+
 \subsubsection{Escalabilidade}
 \label{ssubsec:escalabilidade}
 

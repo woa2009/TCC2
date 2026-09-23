@@ -14,7 +14,7 @@
 \contentsline {figure}{\numberline {12}{\ignorespaces Tempo de execução dos algoritmos RLM, RLM-\textit {bagging} e RLM-\textit {subagging}.}}{44}{figure.caption.38}%
 \contentsline {figure}{\numberline {13}{\ignorespaces RMSEP para todas as técnicas.}}{45}{figure.caption.39}%
 \contentsline {figure}{\numberline {14}{\ignorespaces Tempo de execução dos algoritmos RLM-\textit {bagging} e RLM-\textit {subagging} com parâmetros otimizados por validação cruzada 5-\textit {fold}.}}{47}{figure.caption.41}%
-\contentsline {figure}{\numberline {15}{\ignorespaces Execução de Análise Completa.}}{51}{figure.caption.54}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Fluxograma do processo de execução da análise.}}{52}{figure.caption.54}%
 \contentsline {figure}{\numberline {16}{\ignorespaces Arquitetura em camadas --- Sistema legado (Java Desktop)}}{82}{figure.caption.74}%
 \contentsline {figure}{\numberline {17}{\ignorespaces Arquitetura em camadas --- Sistema modernizado (Python/Streamlit)}}{82}{figure.caption.75}%
 \contentsline {figure}{\numberline {18}{\ignorespaces Diagrama de classes.}}{83}{figure.caption.76}%

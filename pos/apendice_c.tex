@@ -888,3 +888,71 @@ no analito Níquel (Ni).
 \end{tablenotes}
 \end{table}
 
+%------------------------------------
+
+\chapter{Resultado dos Testes}
+\label{cha:resultadotestes}
+
+%No Código \ref{code:codi5} é apresentada a saída bruta gerada pelo framework Pytest durante a execução das rotinas de validação da aplicação:
+
+O Código~\ref{code:codi5} apresenta a saída de uma sessão do \textit{pytest} 9.1.0 (Python 3.12.10, Windows) que executou o \texttt{test\_suite\_5.py}, com 92 testes: 21 unitários (leitura de matrizes TXT/CSV), 60 de caixa preta (RLM, \textit{Bagging} e \textit{Subagging}, com RMSE, MAE e $R^2$ para Cr, Ni e Fe) e 11 de estresse (tempo, RAM e escalabilidade). Conforme o Código~\ref{code:codi5}, todos os testes passaram, sem falhas, em 75,25 segundos.
+
+\begin{comment}
+\begin{codigo}[!htbp]
+\centering % Centraliza a legenda e o bloco de código na página
+\tiny
+% O fancyvrb usa V maiúsculo e aceita os parâmetros abaixo
+\VerbatimInput[xleftmargin=10mm,numbers=left,obeytabs=true]{pos/result_test_unitario.txt}
+\caption{\texttt{Teste Unitário}} 
+\label{code:codi1}
+\end{codigo}
+
+%---------------------------------------------------------------------
+\begin{codigo}[!htbp]
+\centering % Centraliza a legenda e o bloco de código na página
+\tiny
+% O fancyvrb usa V maiúsculo e aceita os parâmetros abaixo
+\VerbatimInput[xleftmargin=10mm,numbers=left,obeytabs=true]{pos/result_test_stress.txt}
+\caption{\texttt{Teste Stress}} 
+\label{code:codi2}
+\end{codigo}
+
+%---------------------------------------------------------------------
+\begin{codigo}[!htbp]
+\centering % Centraliza a legenda e o bloco de código na página
+\tiny
+% O fancyvrb usa V maiúsculo e aceita os parâmetros abaixo
+\VerbatimInput[xleftmargin=10mm,numbers=left,obeytabs=true]{pos/result_test_caixa.txt}
+\caption{\texttt{Teste Caixa Preta}} 
+\label{code:codi3}
+\end{codigo}
+
+%---------------------------------------------------
+
+
+%---------------------------------------------------------------------
+\begin{codigo}[!htbp]
+\centering % Centraliza a legenda e o bloco de código na página
+\tiny
+% O fancyvrb usa V maiúsculo e aceita os parâmetros abaixo
+\VerbatimInput[xleftmargin=10mm,numbers=left,obeytabs=true]{pos/result_test_consolidados.txt}
+\caption{\texttt{Teste Consolidado}} 
+\label{code:codi4}
+\end{codigo}
+\end{comment}
+%---------------------------------------------------
+
+%\begingroup
+%\centering
+%\captionof{codigo}{\texttt{Teste Consolidado}}\label{code:codi5}
+%\tiny
+%\VerbatimInput[xleftmargin=10mm,numbers=left,obeytabs=true]{pos/result_test_consolidados.txt}
+%\endgroup
+
+\begingroup
+\centering
+\captionof{codigo}{\texttt{Teste Consolidado}}\label{code:codi5}
+\tiny
+\VerbatimInput[xleftmargin=10mm,numbers=left,obeytabs=true,breaklines=true,breakanywhere=true]{pos/result_test_consolidados.txt}
+\endgroup
+

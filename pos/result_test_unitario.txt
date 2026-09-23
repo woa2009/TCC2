@@ -1,0 +1,32 @@
+============================= test session starts =============================
+platform win32 -- Python 3.12.10, pytest-9.1.0, pluggy-1.6.0 -- 
+C:\Users\wagner.araujo\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.
+Python.3.12_qbz5n2kfra8p0\python.exe
+cachedir: .pytest_cache
+rootdir: L:\TCCI\D_Programacao\streamlit-app\tests
+plugins: anyio-4.13.0
+collecting ... collected 92 items / 71 deselected / 21 selected
+
+test_suite_5.py::TestUnitario::test_parse_matrix_txt_tab PASSED          [  4%]
+test_suite_5.py::TestUnitario::test_parse_matrix_txt_virgula_br PASSED   [  9%]
+test_suite_5.py::TestUnitario::test_parse_matrix_csv_ponto_virgula PASSED [ 14%]
+test_suite_5.py::TestUnitario::test_parse_matrix_csv_virgula PASSED      [ 19%]
+test_suite_5.py::TestUnitario::test_parse_matrix_ignora_linhas_vazias PASSED [ 23%]
+test_suite_5.py::TestUnitario::test_parse_vector_txt PASSED              [ 28%]
+test_suite_5.py::TestUnitario::test_parse_vector_csv PASSED              [ 33%]
+test_suite_5.py::TestUnitario::test_parse_vector_virgula_br PASSED       [ 38%]
+test_suite_5.py::TestUnitario::test_perform_rlm_shape PASSED             [ 42%]
+test_suite_5.py::TestUnitario::test_perform_rlm_sistema_exato PASSED     [ 47%]
+test_suite_5.py::TestUnitario::test_perform_rlm_r2_alto PASSED           [ 52%]
+test_suite_5.py::TestUnitario::test_bagging_shape PASSED                 [ 57%]
+test_suite_5.py::TestUnitario::test_subagging_shape PASSED               [ 61%]
+test_suite_5.py::TestUnitario::test_bagging_reprodutivel PASSED          [ 66%]
+test_suite_5.py::TestUnitario::test_bagging_seeds_diferentes PASSED      [ 71%]
+test_suite_5.py::TestUnitario::test_calc_metrics_perfeito PASSED         [ 76%]
+test_suite_5.py::TestUnitario::test_calc_metrics_valores_conhecidos PASSED [ 80%]
+test_suite_5.py::TestUnitario::test_calc_metrics_r2_negativo PASSED      [ 85%]
+test_suite_5.py::TestUnitario::test_calc_metrics_retorna_floats PASSED   [ 90%]
+test_suite_5.py::TestUnitario::test_cv_retorna_media_e_std PASSED        [ 95%]
+test_suite_5.py::TestUnitario::test_cv_subagging_fracao PASSED           [100%]
+
+====================== 21 passed, 71 deselected in 1.31s ======================
