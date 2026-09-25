@@ -264,12 +264,12 @@ TCC_II_IFG_2025.tex
 ├── \include{tex/2secao}                ← Seção. 2: Revisão da Literatura
 ├── \include{tex/3secao}                ← Seção. 3: Materiais e Métodos
 ├── \include{tex/4secao}                ← Seção. 4: Resultados e Discussões
-├── \include{tex/5secao}                ← Seção. 5: Conclusão
 ├── \include{tex/6secao}                ← Seção 5: Requisitos Funcionais
 ├── \include{tex/7secao}                ← Seção 6: Engenharia de Software e Modernização
 ├── \include{tex/8secao}                ← Seção 7: Ecossistema de Desenvolvimento (Python/Streamlit)
 ├── \include{tex/9secao}                ← Seção 8: Interface e Experiência do Usuário (UI/UX)
 ├── \include{tex/10secao}               ← Seção 9: Desenvolvimento Iterativo e Validação
+├── \include{tex/5secao}                ← Seção. 10: Conclusão
 │
 └── ibliography{pos/references}       ← Referências bibliográficas
 ```
