@@ -56,12 +56,12 @@ B_Projeto_Integrador_III_Final/
 │   ├── 2secao.tex               ← Seção 2: Revisão da Literatura (RLM, Bootstrap)
 │   ├── 3secao.tex               ← Seção 3: Materiais e Métodos (Amostras de Aço-Ligas)
 │   ├── 4secao.tex               ← Seção 4: Resultados e Discussões
-│   ├── 5secao.tex               ← Seção 5: Conclusão
 │   ├── 6secao.tex               ← Seção 5: Requisitos Funcionais
 │   ├── 7secao.tex               ← Seção 6: Engenharia de Software e Modernização
 │   ├── 8secao.tex               ← Seção 7: Ecossistema de Desenvolvimento (Python e Streamlit)
 │   ├── 9secao.tex               ← Seção 8: Interface e Experiência do Usuário (UI/UX) Científica
 │   ├── 10secao.tex              ← Seção 9: Desenvolvimento Iterativo por Sprints e Validação por Testes
+│   ├── 5secao.tex               ← Seção 10: Conclusão
 │   ├── algoritmos.tex           ← Algoritmos utilizados no trabalho
 │   ├── graficos.tex             ← Código TikZ/pgfplots para os gráficos
 │   ├── apoio_4secao.tex         ← Material de apoio para o Seção 4
