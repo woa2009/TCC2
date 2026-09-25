@@ -1,12 +1,17 @@
 # TCC_II_IFG_2025 — Mapeamento do Projeto
 
-> **Título:** Modelagem de calibração multivariada: regressão linear múltipla com métodos de conjunto e avaliação pelo erro padrão de predição da raiz quadrada média
+> **Título:** Migração de Sistemas Legados de Análise Química: DE JAVA Desktop Para PYTHON WEB
 >
 > **Autor:** Wagner Oliveira de Araujo
+
 > **Instituição:** Instituto Federal de Educação, Ciência e Tecnologia de Goiás — Campus Anápolis
+
 > **Curso:** Bacharelado em Ciência da Computação
+
 > **Trabalho:** TCC II (2026)
+
 > **Orientador:** Prof. Alexandre Bellezi Jose, Me.
+
 > **Coorientador:** Prof. Eder Silva de Brito, Dr.
 
 ---
@@ -46,12 +51,12 @@ B_Projeto_Integrador_III_Final/
 │   ├── ata.tex                  ← Ata de defesa
 │   └── termo.tex                ← Termo de compromisso/autorização
 │
-├── tex/                         ← Capítulos e conteúdo textual
-│   ├── 1secao.tex               ← Capítulo 1: Introdução
-│   ├── 2secao.tex               ← Capítulo 2: Revisão da Literatura (RLM, Bootstrap)
-│   ├── 3secao.tex               ← Capítulo 3: Materiais e Métodos (Amostras de Aço-Ligas)
-│   ├── 4secao.tex               ← Capítulo 4: Resultados e Discussões
-│   ├── 5secao.tex               ← Capítulo 5: Conclusão
+├── tex/                         ← Seções e conteúdo textual
+│   ├── 1secao.tex               ← Seção 1: Introdução
+│   ├── 2secao.tex               ← Seção 2: Revisão da Literatura (RLM, Bootstrap)
+│   ├── 3secao.tex               ← Seção 3: Materiais e Métodos (Amostras de Aço-Ligas)
+│   ├── 4secao.tex               ← Seção 4: Resultados e Discussões
+│   ├── 5secao.tex               ← Seção 5: Conclusão
 │   ├── 6secao.tex               ← Seção 5: Requisitos Funcionais
 │   ├── 7secao.tex               ← Seção 6: Engenharia de Software e Modernização
 │   ├── 8secao.tex               ← Seção 7: Ecossistema de Desenvolvimento (Python e Streamlit)
@@ -59,7 +64,7 @@ B_Projeto_Integrador_III_Final/
 │   ├── 10secao.tex              ← Seção 9: Desenvolvimento Iterativo por Sprints e Validação por Testes
 │   ├── algoritmos.tex           ← Algoritmos utilizados no trabalho
 │   ├── graficos.tex             ← Código TikZ/pgfplots para os gráficos
-│   ├── apoio_4secao.tex         ← Material de apoio para o Capítulo 4
+│   ├── apoio_4secao.tex         ← Material de apoio para o Seção 4
 │   ├── apoio_subagging.tex      ← Material de apoio sobre subagging
 │   ├── discussao.tex            ← Texto auxiliar de discussão
 │   ├── pesquisa.tex             ← Texto de pesquisa/levantamento bibliográfico
@@ -104,7 +109,7 @@ B_Projeto_Integrador_III_Final/
 │
 ├── pdf_old/                     ← PDFs de versões anteriores do trabalho
 │   ├── introducao.pdf
-│   └── CAP4_TCC_II_IFG_2025.pdf
+│   └── 
 │
 ├── references.bib               ← Cópia de referências na raiz
 ├── r_bagging.csv                ← Dados CSV lidos diretamente pelo TCC_II_IFG_2025.tex
@@ -255,11 +260,11 @@ TCC_II_IFG_2025.tex
 │   ├── pre/ata.tex
 │   └── pre/termo.tex
 │
-├── \include{tex/1secao}                ← Cap. 1: Introdução
-├── \include{tex/2secao}                ← Cap. 2: Revisão da Literatura
-├── \include{tex/3secao}                ← Cap. 3: Materiais e Métodos
-├── \include{tex/4secao}                ← Cap. 4: Resultados e Discussões
-├── \include{tex/5secao}                ← Cap. 5: Conclusão
+├── \include{tex/1secao}                ← Seção. 1: Introdução
+├── \include{tex/2secao}                ← Seção. 2: Revisão da Literatura
+├── \include{tex/3secao}                ← Seção. 3: Materiais e Métodos
+├── \include{tex/4secao}                ← Seção. 4: Resultados e Discussões
+├── \include{tex/5secao}                ← Seção. 5: Conclusão
 ├── \include{tex/6secao}                ← Seção 5: Requisitos Funcionais
 ├── \include{tex/7secao}                ← Seção 6: Engenharia de Software e Modernização
 ├── \include{tex/8secao}                ← Seção 7: Ecossistema de Desenvolvimento (Python/Streamlit)
