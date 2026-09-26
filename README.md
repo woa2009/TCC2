@@ -1,18 +1,12 @@
 # TCC_II_IFG_2025 — Mapeamento do Projeto
 
-> **Título:** Migração de Sistemas Legados de Análise Química: DE JAVA Desktop Para PYTHON WEB
->
-> **Autor:** Wagner Oliveira de Araujo
-
-> **Instituição:** Instituto Federal de Educação, Ciência e Tecnologia de Goiás — Campus Anápolis
-
-> **Curso:** Bacharelado em Ciência da Computação
-
-> **Trabalho:** TCC II (2026)
-
-> **Orientador:** Prof. Alexandre Bellezi Jose, Me.
-
-> **Coorientador:** Prof. Eder Silva de Brito, Dr.
+* **Título:** Migração de Sistemas Legados de Análise Química: DE JAVA Desktop Para PYTHON WEB
+* **Autor:** Wagner Oliveira de Araujo
+* **Instituição:** Instituto Federal de Educação, Ciência e Tecnologia de Goiás — Campus Anápolis
+* **Curso:** Bacharelado em Ciência da Computação
+* **Trabalho:** TCC II (2026)
+* **Orientador:** Prof. Alexandre Bellezi Jose, Me.
+* **Coorientador:** Prof. Eder Silva de Brito, Dr.
 
 ---
 
