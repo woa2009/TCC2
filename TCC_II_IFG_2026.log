@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.12) (preloaded format=pdflatex 2026.5.18)  27 SEP 2026 00:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.12) (preloaded format=pdflatex 2026.5.18)  27 SEP 2026 20:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3218,7 +3218,7 @@ Package rerunfilecheck Info: File `TCC_II_IFG_2026.brf' has not changed.
 Here is how much of TeX's memory you used:
  69616 strings out of 474485
  1498697 string characters out of 5739958
- 2632298 words of memory out of 5000000
+ 2632300 words of memory out of 5000000
  89588 multiletter control sequences out of 15000+600000
  724105 words of font info for 449 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
