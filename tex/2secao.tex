@@ -269,10 +269,10 @@ A Equação~(\ref{eq:2.19}) tem uma consequência prática importante: dados os 
 \caption{O coeficiente de variação.}
 \begin{tabular}{lllllll}
 \hline
- &  & (1) $m \to$ &  &  &  &  \\ 
+ &  &  m\tnote{a} $\to$ &  &  &  &  \\ 
  &  & 25 & 50 & 100 & 200 & $\infty$ \\ 
 \hline
-(2) $cv(\widehat{se}_{\infty})$ & 0,25 & 0,29 & 0,27 & 0,26 & 0,25 & 0,25 \\ 
+ $cv(\widehat{se}_{\infty})$\tnote{b} & 0,25 & 0,29 & 0,27 & 0,26 & 0,25 & 0,25 \\ 
 \multicolumn{1}{c}{$\downarrow$} & 0,20 & 0,24 & 0,22 & 0,21 & 0,21 & 0,20 \\ 
  & 0,15 & 0,21 & 0,18 & 0,17 & 0,16 & 0,15 \\ 
  & 0,10 & 0,17 & 0,14 & 0,12 & 0,11 & 0,10 \\ 
@@ -283,9 +283,8 @@ A Equação~(\ref{eq:2.19}) tem uma consequência prática importante: dados os 
 \begin{tablenotes}[flushleft] % Garante o alinhamento exatamente abaixo do analito
     \footnotesize
     \item Fonte:~EFRON, B.; TIBSHIRANI, R. J. \textit{An Introduction to the Bootstrap}, USA: Chapman \& Hall/CRC, 1993, p.53.
-	\item ~
-	\item (1) Número de amostras \textit{bootstrap}.
-	\item (2) Coeficiente de variação.
+	\item[a] Número de amostras \textit{bootstrap}.
+	\item[b] Coeficiente de variação.
 \end{tablenotes}
 \label{tab:coefvaria}
 \end{threeparttable}
@@ -687,9 +686,7 @@ exclusivamente como especificação funcional, permitindo à equipe redesenhar a
 arquitetura livremente, desde que a equivalência comportamental do núcleo
 algorítmico seja formalmente demonstrada em cada etapa da migração.
 
-A verificação dessa equivalência comportamental exige um oráculo de teste
-independente da implementação~\cite{pressman2016}. Testes de caixa-preta comparam
-entradas e saídas entre o sistema original e o sistema reescrito sem inspecionar o
+A verificação dessa equivalência comportamental exige um critério de avaliação independente da implementação~\cite{pressman2016}. Testes de caixa-preta comparam entradas e saídas entre o sistema original e o sistema reescrito sem inspecionar o
 código-fonte legado, estratégia adequada quando o objetivo --- como neste trabalho
 --- é substituir integralmente a plataforma de execução preservando o comportamento
 matemático. Essa fundamentação sustenta a suíte de 92 testes automatizados que

@@ -28,7 +28,7 @@ Este estudo é significativo tanto pelo potencial de impacto prático na anális
 aço-ligas quanto pela contribuição metodológica em engenharia de software: a condução
 de uma migração de sistema legado (Java Desktop, Vaadin Flow e Python/Streamlit)
 validada, em cada etapa, por uma suíte de testes automatizados que funciona como
-oráculo de equivalência entre implementações. Essa estratégia evidencia, de forma
+validador de equivalência entre implementações. Essa estratégia evidencia, de forma
 reprodutível, como preservar a corretude de um núcleo algorítmico crítico durante a
 reescrita completa de uma arquitetura de software.
 
@@ -68,9 +68,9 @@ Esta pesquisa tem como objetivos específicos:
 
     \item[c)] Reaproveitar, em Java (JavaSE-17), o sistema Desktop de calibração
     multivariada com RLM-\textit{bagging} e RLM-\textit{subagging} — desenvolvido na
-    disciplina de Programação Orientada a Objetos, com arquitetura \textit{Model-View-Controller} (MVC)~\cite{reenskaug1979mvc,krasner1988description}, biblioteca \textit{Efficient Java Matrix Library} (EJML)\footnote{A biblioteca \textit{Efficient Java Matrix Library} (EJML) é uma biblioteca de código aberto para a linguagem Java projetada para a manipulação e computação de matrizes lineares de forma extremamente rápida e com baixo uso de memória.}
+    disciplina de Programação Orientada a Objetos, com arquitetura (\gls{MVC})~\cite{reenskaug1979mvc,krasner1988description}, biblioteca \gls{EJML}\footnote{A biblioteca \textit{Efficient Java Matrix Library} (EJML) é uma biblioteca de código aberto para a linguagem Java projetada para a manipulação e computação de matrizes lineares de forma extremamente rápida e com baixo uso de memória.}
  e
-    interface Swing/\footnote{A \textit{Abstract Window Toolkit} (AWT) é a biblioteca nativa e original do Java criada para desenvolver interfaces gráficas de usuário (\textit{Graphical User Interface} - GUI), como janelas, botões e menus.}
+    interface Swing \gls{AWT}\footnote{A \textit{Abstract Window Toolkit} é a biblioteca nativa e original do Java criada para desenvolver interfaces gráficas de usuário (\textit{Graphical User Interface} - GUI), como janelas, botões e menus.}
  —, consolidando-o como base algorítmica validada do TCC~I.
 
     \item[d)] Migrar a base algorítmica reaproveitada no TCC~I para uma interface web em
@@ -82,7 +82,7 @@ Esta pesquisa tem como objetivos específicos:
 Essa trajetória escalonada — sistema Desktop em Java, estágio intermediário em Vaadin Flow
 e reescrita final em Python/Streamlit — evitou a substituição simultânea de arquitetura e
 lógica de negócio. Cada etapa da migração permitiu verificar a equivalência comportamental
-do núcleo algorítmico antes de avançar para a seguinte, consolidando-se, neste TCC~II, na
+ da lógica matemática antes de avançar para a seguinte, consolidando-se, neste TCC~II, na 
 suíte de testes automatizados que compara as duas implementações.
 
 A validação da lógica de negócio migrada é realizada, neste TCC~II, por
@@ -91,7 +91,7 @@ composta por 21 testes unitários, 60 testes de caixa-preta que comparam
 as métricas das implementações Java e Python para os cinco analitos (Mn,
 Mo, Cr, Ni, Fe) e 11 testes de estresse sobre matrizes de grande porte.
 
-Esse protocolo funciona como oráculo de equivalência entre o sistema
+Esse protocolo funciona como validador de equivalência entre o sistema
 legado e o sistema reescrito em dois níveis: equivalência numérica estrita
 para a RLM determinística e consistência estatística, dentro de
 tolerâncias explícitas, para o \textit{bagging} e o \textit{subagging},

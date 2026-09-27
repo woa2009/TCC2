@@ -114,7 +114,7 @@ Status & Indicador de processamento & \textit{Spinner} ou barra de progresso & U
 \subsection{Classificação por Prioridade}
 \label{subsec:prioridade}
 
-Os requisitos foram classificados utilizando a técnica MoSCoW\footnote{MoSCoW é uma técnica de priorização de requisitos dividida em quatro categorias: \textit{Must have} (obrigatórios), \textit{Should have} (importantes, mas não críticos), \textit{Could have} (desejáveis) e \textit{Won’t have (this time)} (excluídos desta versão). A letra “o” é adicionada apenas para facilitar a pronúncia.} adaptada, conforme descrito nas seções seguintes.
+Os requisitos foram classificados utilizando a técnica \gls{MoSCoW}\footnote{MoSCoW é uma técnica de priorização de requisitos dividida em quatro categorias: \textit{Must have} (obrigatórios), \textit{Should have} (importantes, mas não críticos), \textit{Could have} (desejáveis) e \textit{Won’t have (this time)} (excluídos desta versão). A letra “o” é adicionada apenas para facilitar a pronúncia.} adaptada, conforme descrito nas seções seguintes.
 
 \subsubsection{Essenciais (\textit{Must Have})}
 \label{ssubsec:essenciais}
@@ -202,20 +202,32 @@ X05 & Dashboard comparativo multi-rodada & Análise estatística de estabilidade
 \end{quadro}
 
 
-%\newpage
+\newpage
 \subsection{Fluxos de Uso}
 \label{subsec:fluxos}
 
 \subsubsection{Fluxo Principal: Execução de Análise Completa}
 \label{ssubsec:fluxo-principal}
+A Figura~\ref{fig:figura00} apresenta o fluxograma do fluxo principal de
+interação do usuário com o sistema, ilustrando as etapas percorridas desde
+o acesso à aplicação Streamlit até a obtenção dos resultados finais. O
+fluxo tem início com o \textit{upload} dos quatro arquivos de entrada ---
+as matrizes \texttt{Xcal} e \texttt{Xteste} e os vetores \texttt{Ycal} e
+\texttt{Yteste} ---, seguido pela configuração dos hiperparâmetros $m$
+(número de \textit{bags}) e $k$ (fração de subamostragem) na aba
+\textbf{Configuração}. Uma vez validados os arquivos e os parâmetros
+informados, o usuário aciona o botão de execução, que dispara o
+processamento em \texttt{models.py}: primeiro a otimização por validação
+cruzada 5-\textit{fold} (\texttt{find\_optimal\_parameters()}) e, em
+seguida, a avaliação final dos três modelos --- RLM Simples, RLM~+~Bagging
+e RLM~+~Subagging --- sobre o conjunto de teste independente
+(\texttt{run\_full\_analysis()}). Ao término do processamento, os
+resultados numéricos (RMSE, MAE, R² e tempo de execução) tornam-se
+disponíveis na aba \textbf{Resultados}, enquanto os gráficos comparativos
+de valores reais \textit{versus} preditos e o gráfico de dispersão são
+renderizados na aba \textbf{Gráficos}, encerrando o ciclo de interação
+representado no fluxograma.
 
-%\begin{figure}[htbp]
-%	\caption{Execução de Análise Completa.}
-%	\centering
-%		\includegraphics[width=1.0\textwidth]{./outros/fig/fluxo.png}
-%	\caption*{Fonte: \oautor}
-%	\label{fig:figura00}
-%\end{figure}
 
 % ============================================================
 % FLUXOGRAMA DA EXECUÇÃO DA ANÁLISE
@@ -518,7 +530,7 @@ Responsividade da UI & Interações (mudar aba, ajustar parâmetro) & $<$ 500\,m
 % O tabularx com \textwidth garante o respeito às margens e o | fecha as laterais
 \begin{tabularx}{\textwidth}{|l|X|X|} \hline
 \textbf{Requisito} & \textbf{Especificação} & \textbf{Critério de Aceite} \\ \hline
-Acessibilidade & Compatível com WCAG 2.1 Nível AA\tnote{a} & Contraste adequado, \textit{labels}, navegação por teclado \\ \hline
+Acessibilidade & Compatível com \gls{WCAG} 2.1 Nível AA\tnote{a} & Contraste adequado, \textit{labels}, navegação por teclado \\ \hline
 Responsividade & Funcional em desktop, tablet e mobile ($\geq$ 768\,px) & Layout adaptativo sem perda de funcionalidade crítica \\ \hline
 Clareza textual & Mensagens, rótulos e erros em português claro & Teste com 3 usuários: $\geq$ 90\% de acerto na interpretação \\ \hline
 Consistência & Padrões visuais alinhados ao Streamlit & Botões, cores e ícones seguem guia de estilo \\ \hline
@@ -603,7 +615,7 @@ O levantamento apresentado estabelece uma base estruturada para o desenvolviment
 	\item[d)] Inclusão de funcionalidade básica de exportação de resultados para viabilizar uso acadêmico e profissional.
 \end{description}
 
-Recomenda-se que os requisitos classificados como \textit{Essenciais} (Quadro~\ref{tab:essenciais}) sejam implementados na versão mínima viável \textit{Minimum Viable Product} (MVP)\footnote{O \textit{Minimum Viable Product} (MVP), ou Produto Mínimo Viável, é a versão mais enxuta de um produto que contém apenas as funcionalidades essenciais para que ele possa ser lançado e testado no mercado.}
+Recomenda-se que os requisitos classificados como \textit{Essenciais} (Quadro~\ref{tab:essenciais}) sejam implementados na versão mínima viável \gls{MVP}\footnote{O \textit{Minimum Viable Product} (MVP), ou Produto Mínimo Viável, é a versão mais enxuta de um produto que contém apenas as funcionalidades essenciais para que ele possa ser lançado e testado no mercado.}
 , enquanto os itens \textit{Desejáveis} e \textit{Extras} compõem o \textit{backlog} para iterações futuras, sujeitos a validação com usuários finais e análise de custo-benefício.
 
 Os requisitos não funcionais definidos nas Seções~\ref{ssubsec:performance} a~\ref{ssubsec:escalabilidade} devem ser considerados como restrições de projeto em todas as fases de desenvolvimento, assegurando que a aplicação seja não apenas funcional, mas também performática, segura e adaptável a cenários de crescimento.

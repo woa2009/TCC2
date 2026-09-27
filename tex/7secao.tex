@@ -8,8 +8,44 @@ sistema em três módulos — \texttt{models.py}, \texttt{components.py} e \text
 — evidencia como cada fase foi aplicada para preservar as regras de negócio do legado
 Vaadin/Java sem reaproveitar seu código-fonte.
 
-\begin{description}
+\subsection{Elicitação}
+As entradas críticas do domínio de regressão espectral foram
+identificadas diretamente no sistema Java original: as matrizes \texttt{Xcal} e
+\texttt{Xteste}, os vetores \texttt{Ycal} e \texttt{Yteste}, e os hiperparâmetros
+\textit{m} (número de bags) e \textit{k} (fração de subagging). O \texttt{app.py}
+captura esses insumos por meio de \texttt{st.file\_uploader} e \texttt{st.text\_input},
+incluindo suporte a decimal com vírgula — particularidade do padrão brasileiro — tratada
+nas funções \texttt{parse\_matrix()} e \texttt{parse\_vector()} do \texttt{models.py}.
 
+\subsection{Análise}
+A análise revelou que a lógica do \texttt{RegressionService.java}
+podia ser decomposta em responsabilidades distintas: parse de arquivos, algoritmos de
+regressão, métricas de avaliação e otimização por validação cruzada. Essa decomposição
+originou a estrutura modular adotada, onde \texttt{models.py} concentra toda a
+inteligência matemática, sem qualquer dependência de interface.
+
+\subsection{Especificação}
+Os contratos de entrada e saída foram formalizados com
+\textit{type hints} explícitos em todas as funções do \texttt{models.py}:
+\texttt{parse\_matrix(content: bytes) -> np.ndarray},
+\texttt{perform\_rlm(Xcal, Ycal, Xteste: np.ndarray) -> np.ndarray},
+\texttt{calc\_metrics(actual, predicted) -> tuple[float, float, float]}.
+A função \texttt{run\_full\_analysis()} retorna um dicionário tipado com chaves
+\texttt{log}, \texttt{optimal}, \texttt{metrics} e \texttt{preds}, constituindo o
+contrato formal entre a camada de negócio e a camada de apresentação.
+
+\subsection{Validação}
+A validação cruzada 5-fold implementada em
+\texttt{run\_cross\_validation()} opera como mecanismo de validação de equivalência, permitindo comparar
+o desempenho do sistema Python com os resultados históricos do sistema Java. O log
+estruturado gerado por \texttt{run\_full\_analysis()} documenta cada etapa — dimensões
+detectadas, RMSE-CV por combinação de hiperparâmetros, métricas finais e tempo de
+execução — possibilitando auditoria científica e rastreabilidade completa.
+
+%---------------------------------------------------
+\begin{comment}
+%---------------------------------------------------
+\begin{description}
 \item[a)] \textbf{Elicitação}: As entradas críticas do domínio de regressão espectral foram
 identificadas diretamente no sistema Java original: as matrizes \texttt{Xcal} e
 \texttt{Xteste}, os vetores \texttt{Ycal} e \texttt{Yteste}, e os hiperparâmetros
@@ -39,9 +75,9 @@ o desempenho do sistema Python com os resultados históricos do sistema Java. O 
 estruturado gerado por \texttt{run\_full\_analysis()} documenta cada etapa — dimensões
 detectadas, RMSE-CV por combinação de hiperparâmetros, métricas finais e tempo de
 execução — possibilitando auditoria científica e rastreabilidade completa.
-
-
 \end{description}
+\end{comment}
+%---------------------------------------------------
 
 % ─────────────────────────────────────────────────────────────────────────────
 \section{Especificação de Requisitos Funcionais e Não Funcionais}
@@ -134,7 +170,7 @@ $5\times10^{-4}$) para a RLM determinística e consistência estatística
 (tolerâncias de 0,15 em RMSEP/MAE e $5\times10^{-3}$ em R$^2$) para os
 métodos estocásticos. \\ \hline
 RNF04 & \textbf{Portabilidade}: o sistema deve ser executável via navegador
-(\texttt{streamlit run app.py}), sem necessidade de JVM\tnote{a}, arquivos \texttt{.class} ou
+(\texttt{streamlit run app.py}), sem necessidade de \gls{JVM}\tnote{a}, arquivos \texttt{.class} ou
 instalação local de dependências além do ambiente Python. \\ \hline
 RNF05 & \textbf{Usabilidade}: a interface deve guiar o usuário em um fluxo sequencial e
 irreversível (Configuração~$\rightarrow$~Resultados~$\rightarrow$~Gráficos), impedindo
@@ -176,6 +212,46 @@ conduzida por \textbf{reescrita funcional} (\textit{black-box rewrite}), estrat�
 extrai os requisitos do comportamento observável do sistema legado sem reaproveitar o
 código-fonte~\cite{becker2020}.
 
+\subsection{Reescrita Black-Box}
+O comentário de cabeçalho do \texttt{app.py}
+(\textit{``Conversão do projeto Vaadin Flow (Java) para Streamlit (Python)''}) e as
+referências internas ao \texttt{RegressionService.java} indicam que a migração partiu do
+comportamento esperado, não do código herdado. Não há dependência de JVM, arquivos
+\texttt{.class} ou \texttt{.jar}. O núcleo matemático foi reimplementado diretamente em
+\texttt{models.py} com \texttt{numpy}, preservando a equivalência algébrica da
+pseudoinversa de Moore-Penrose e dos algoritmos de amostragem.
+
+\subsection{Extração Seletiva da Lógica de Negócio}
+A migração isolou apenas o
+que tinha valor científico reutilizável: a pseudoinversa (\texttt{perform\_rlm}), a
+amostragem com e sem reposição (\texttt{perform\_bagging}), o grid search por validação
+cruzada (\texttt{find\_optimal\_parameters}) e as métricas de erro
+(\texttt{calc\_metrics}). Camadas de UI do Java — componentes Vaadin, listeners de
+evento, gerenciamento de sessão HTTP — foram descartadas e substituídas pelos widgets
+declarativos do Streamlit no \texttt{app.py}.
+
+\subsection{Deploy Web Nativo}
+O modelo Desktop foi convertido para uma aplicação
+\textit{stateless\footnote{Significa que a aplicação não mantém memória de estado entre as interações por conta própria, exigindo que todo o script seja reprocessado a cada ação e que qualquer dado que precise ser preservado seja salvo manualmente em variáveis de sessão.}}, executável com \texttt{streamlit run app.py}, containerizável com
+Docker e acessível via navegador sem instalação local\footnote{Aplicação em produção
+disponível em: \url{https://app-app-rmn8qdzis5uqkfbmy5pjwr.streamlit.app/}.}. Isso reduz
+o atrito de distribuição em laboratórios e viabiliza uso colaborativo simultâneo,
+funcionalidade inexistente no sistema Vaadin original~\cite{rfc2616}.
+
+\subsection{Papel e Limites do Estágio Intermediário (Vaadin)}
+O estágio Vaadin Flow funcionou
+como prova de conceito de exposição web da lógica reaproveitada do Java, validando
+a viabilidade de servir o núcleo algorítmico via navegador antes da reescrita completa.
+Diferentemente do estágio final em Python, esse estágio não foi acompanhado por suíte
+de testes automatizados formal, lacuna reconhecida que motivou a decisão de formalizar
+o mecanismo de validação de equivalência — a suíte de 92 testes automatizados, dos quais 60 de caixa-preta ---
+apenas a partir da reescrita em Streamlit.
+
+
+
+%---------------------------------------------------
+\begin{comment}
+
 \begin{description}
 
 \item[a)] \textbf{Reescrita Black-Box}: O comentário de cabeçalho do \texttt{app.py}
@@ -209,8 +285,9 @@ de testes automatizados formal, lacuna reconhecida que motivou a decisão de for
 o mecanismo de validação de equivalência — a suíte de 92 testes automatizados, dos quais 60 de caixa-preta ---
 apenas a partir da reescrita em Streamlit.
 
-
 \end{description}
+\end{comment}
+%---------------------------------------------------
 
 % ─────────────────────────────────────────────────────────────────────────────
 \section{Mudança de Paradigma Arquitetural}
@@ -218,12 +295,42 @@ apenas a partir da reescrita em Streamlit.
 A reestruturação em três arquivos evidencia uma mudança profunda no paradigma de execução
 e no modelo de estado da aplicação.
 
+\subsection{MVC Tradicional (Java/Vaadin)}
+O sistema legado seguia a separação
+explícita entre \textit{Model} (dados e regressão), \textit{View} (componentes HTML
+gerados pelo Vaadin) e \textit{Controller} (listeners de evento Java). O estado vivia na
+sessão HTTP e as atualizações de interface eram parciais e assíncronas (\gls{AJAX}/\textit{push}),
+permitindo que apenas o componente afetado fosse re-renderizado.
+
+\subsection{Arquitetura em Camadas com Streamlit}
+A divisão em \texttt{models.py} (lógica pura), \texttt{components.py} (fábrica visual) e
+\texttt{app.py} (orquestrador) aplica o princípio de \textbf{separação de
+responsabilidades} de Sommerville~\cite{sommerville2011} dentro do paradigma Streamlit.
+O \texttt{app.py} é um script linear que reexecuta do início ao fim a cada interação do
+usuário — clique, upload ou navegação entre abas. Não há controlador permanente; o fluxo
+segue \textit{Entrada do Usuário $\rightarrow$ Rerun do Script $\rightarrow$ Renderização
+Declarativa}~\cite{buschmann1996posa1}.
+
+\subsection{Gerenciamento de Estado Explícito}
+No paradigma Streamlit, o estado
+não persiste automaticamente entre reruns\footnote{O termo \textit{rerun} refere-se ao ciclo de reexecução automática do script Python realizado pelo framework Streamlit a cada nova interação do usuário na interface gráfica.}
+. O dicionário \texttt{st.session\_state["result"]} armazena o output completo de
+\texttt{run\_full\_analysis()} — métricas, predições e log — garantindo que as abas
+\textbf{Resultados} e \textbf{Gráficos} leiam os dados sem reacionar a regressão. Essa
+explicitação do estado é uma diferença fundamental em relação ao modelo MVC com sessão
+HTTP implícita do Java.
+
+
+
+%---------------------------------------------------
+\begin{comment}
+	
 \begin{description}
 
 \item[a)] \textbf{MVC Tradicional (Java/Vaadin)}: O sistema legado seguia a separação
 explícita entre \textit{Model} (dados e regressão), \textit{View} (componentes HTML
 gerados pelo Vaadin) e \textit{Controller} (listeners de evento Java). O estado vivia na
-sessão HTTP e as atualizações de interface eram parciais e assíncronas (AJAX/push),
+sessão HTTP e as atualizações de interface eram parciais e assíncronas (\gls{AJAX}/\textit{push}),
 permitindo que apenas o componente afetado fosse re-renderizado.
 
 \item[b)] \textbf{Arquitetura em Camadas~\cite{buschmann1996posa1} com Streamlit}: A divisão em
@@ -245,5 +352,6 @@ explicitação do estado é uma diferença fundamental em relação ao modelo MV
 HTTP implícita do Java.
 
 \end{description}
-
+\end{comment}
+%---------------------------------------------------
 

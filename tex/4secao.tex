@@ -102,7 +102,7 @@ Por outro lado, o Fe apresenta o maior RMSEP, com o valor mais elevado obtido pe
 
 A escolha dos elementos ferro e manganês para esta análise baseia-se em fundamentos científicos bem estabelecidos na metalurgia. O ferro é o elemento matriz que define a própria natureza do material, uma vez que sem ferro não existe aço. O manganês, por sua vez, é o único elemento de liga historicamente considerado essencial para a produção de qualquer aço comercial, atuando como desoxidante e modificador fundamental das propriedades mecânicas.
 
-Os demais elementos (Cr, Mo, Ni) são importantes para propriedades específicas, mas não são fundamentais para a definição básica e produção do aço como o ferro e o manganês. Acredita-se que o comportamento destas duas amostras são suficientes para ilustrar o comportamento geral esperado para as outras amostras.
+Os demais elementos (Cr, Mo, Ni) são importantes para propriedades específicas, contudo, não são fundamentais para a definição básica e produção do aço como o ferro e o manganês. Acredita-se que o comportamento destas duas amostras são suficientes para ilustrar o comportamento geral esperado para as outras amostras.
 
 
 %----------------------------------------------------------------------------------------------------------
@@ -253,7 +253,7 @@ Os valores de RMSEP obtidos com o RLM-\textit{bagging} foram (\num{\dados[3,2]})
 \begin{tabular}{p{3cm} p{4cm} p{4cm}} % Define larguras fixas
 %\begin{tabular}{l cc} % Analitos na primeira coluna, métodos nas seguintes
 \toprule
-\textbf{Elementos} & \textbf{RLM} & \textbf{RLM-\textit{bagging}} (1) \\ 
+\textbf{Elementos} & \textbf{RLM} & \textbf{RLM-\textit{bagging}} \tnote{a} \\ 
 \midrule
 Mn & \num{\dados[2,2]} & \num{\dados[3,2]} \\ 
 Mo & \num{\dados[2,3]} & \num{\dados[3,3]} \\ 
@@ -266,8 +266,8 @@ Fe & \num{\dados[2,6]} & \num{\dados[3,6]} \\
 \begin{tablenotes}[flushleft] % Garante o alinhamento exatamente abaixo do analito
     \footnotesize
     \item \footnotesize{Fonte:~\oautor}
-		\item ~
-    \item (1) Dezessete \textit{bootstrap} utilizados. Parâmetros definidos sem otimização formal; ver Tabela \ref{tab:baggingsubba} para resultados com validação cruzada 5-\textit{fold}.
+%		\item ~
+    \item[a] Dezessete \textit{bootstrap} utilizados. Parâmetros definidos sem otimização formal; ver Tabela \ref{tab:baggingsubba} para resultados com validação cruzada 5-\textit{fold}.
 \end{tablenotes}
 \end{threeparttable}
 \end{table}
@@ -350,18 +350,22 @@ Observa-se nas Figuras~\ref{fig:Figura44a} e~\ref{fig:Figura44b} que o \textit{s
 \toprule
 \textbf{Elemento} & \textbf{RLM} & \textbf{RLM-\textit{subagging}} \\ 
 \midrule
-Mn & \num{\dados[2,2]} & \num{\dados[4,2]} (1) \\ 
-Mo & \num{\dados[2,3]} & \num{\dados[4,3]} (2) \\ 
-Cr & \num{\dados[2,4]} & \num{\dados[4,4]} (3) \\ 
-Ni & \num{\dados[2,5]} & \num{\dados[4,5]} (4) \\ 
-Fe & \num{\dados[2,6]} & \num{\dados[4,6]} (5) \\ 
+Mn & \num{\dados[2,2]} & \num{\dados[4,2]} \tnote{a} \\ 
+Mo & \num{\dados[2,3]} & \num{\dados[4,3]} \tnote{b} \\ 
+Cr & \num{\dados[2,4]} & \num{\dados[4,4]} \tnote{c} \\ 
+Ni & \num{\dados[2,5]} & \num{\dados[4,5]} \tnote{d} \\ 
+Fe & \num{\dados[2,6]} & \num{\dados[4,6]} \tnote{e} \\ 
 \bottomrule
 \end{tabular}
 \begin{tablenotes}[flushleft]
     \footnotesize
     \item \footnotesize{Fonte:~\oautor}
-		\item ~
-    \item (1) Cinco \textit{bootstrap} utilizados. (2) Dezesseis \textit{bootstrap} utilizados. (3) Doze \textit{bootstrap} utilizados. (4) Dez \textit{bootstrap} utilizados. (5) Oito \textit{bootstrap} utilizados.
+%		\item ~
+    \item[a] Cinco \textit{bootstrap} utilizados.
+		\item[b] Dezesseis \textit{bootstrap} utilizados. 
+		\item[c] Doze \textit{bootstrap} utilizados. 
+		\item[d] Dez \textit{bootstrap} utilizados. 
+		\item[e] Oito \textit{bootstrap} utilizados.
 \end{tablenotes}
 \end{threeparttable}
 \end{table}
@@ -498,8 +502,8 @@ Fe & RLM-\textit{subagging} & \textbf{\rmsepmaior[6,2]} & \rmsepmaior[6,4] \\
 \begin{tablenotes}[flushleft]
     \footnotesize
     \item \footnotesize{Fonte:~\oautor}
-	\item ~
-	\item Nota: Resultados baseados na Tabela \ref{tab:comparacao_50_80} (parâmetros sem otimização formal por validação cruzada). Para comparação com parâmetros otimizados, ver Tabela \ref{tab:baggingsubba}.
+%	\item ~
+	\item \textbf{Nota}:Resultados baseados na Tabela \ref{tab:comparacao_50_80} (parâmetros sem otimização formal por validação cruzada). Para comparação com parâmetros otimizados, ver Tabela \ref{tab:baggingsubba}.
 \end{tablenotes}
 \end{threeparttable}
 \end{table}

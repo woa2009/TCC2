@@ -24,7 +24,8 @@ de plataforma não introduziu perdas de acurácia amostra a amostra.
 \centering
 \caption{Paridade \textit{Bagging} -- Cr.}
 \label{tab:paridade_bagging_cr}
-\resizebox{0.6\textwidth}{!}{%
+\begin{threeparttable}
+\resizebox{0.55\textwidth}{!}{%
 \begin{tabular}{
     S[table-format=2.0]
     S[table-format=2.3]
@@ -33,7 +34,7 @@ de plataforma não introduziu perdas de acurácia amostra a amostra.
     S[table-format=1.1]
 }
 \toprule
-{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
+{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}\tnote{a}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
 \midrule
 % ---- Dados das 34 amostras ----
  1  & 30.000  & 30.1484  & 30.1484  & 0.0 \\
@@ -73,14 +74,23 @@ de plataforma não introduziu perdas de acurácia amostra a amostra.
 \bottomrule
 \end{tabular}%
 }
-\begin{tablenotes}%[flushleft]
+\begin{center}
+\begin{minipage}{0.40\linewidth}
+\begin{tablenotes}
 \footnotesize
-\item Fonte:~\oautor\\
-\textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$. 
-Todos os valores de $\Delta$ são iguais a zero, indicando paridade\\
+\item Fonte:~\oautor
+\item[a] Tipo de dado utilizado em Java foi o \textit{double}; no Python,
+o equivalente é o \textit{float64} do NumPy — ambos representações IEEE~754
+de precisão dupla (64 bits), o que garante paridade numérica exata entre as
+duas implementações.
+\item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
+Todos os valores de $\Delta$ são iguais a zero, indicando paridade
 perfeita entre as implementações Java e Python para a técnica \textit{Bagging}
 no analito Cromo (Cr).
 \end{tablenotes}
+\end{minipage}
+\end{center}
+\end{threeparttable}
 \end{table}
 \end{comment}
 %---------------------------------------------------
@@ -89,7 +99,8 @@ no analito Cromo (Cr).
 \centering
 \caption{Paridade \textit{Bagging} -- Fe.}
 \label{tab:paridade_bagging_fe}
-\resizebox{0.6\textwidth}{!}{%
+\begin{threeparttable}
+\resizebox{0.50\textwidth}{!}{%
 \begin{tabular}{
     S[table-format=2.0]
     S[table-format=3.3]
@@ -98,7 +109,7 @@ no analito Cromo (Cr).
     S[table-format=1.4]
 }
 \toprule
-{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
+{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}\tnote{a}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
 \midrule
 % ---- Dados das 34 amostras ----
   1 & 200.000 & 201.2347 & 201.2347 & 0.0000 \\
@@ -138,20 +149,31 @@ no analito Cromo (Cr).
 \bottomrule
 \end{tabular}%
 }
-\begin{tablenotes}%[flushleft]
+\begin{center}
+\begin{minipage}{0.85\linewidth}
+\begin{tablenotes}
 \footnotesize
-\item Fonte:~\oautor\\
-\textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$. 
-Todos os valores de $\Delta$ são iguais a zero, indicando paridade\\
+\item Fonte:~\oautor
+\item[a] Tipo de dado utilizado em Java foi o \textit{double}; no Python,
+o equivalente é o \textit{float64} do NumPy — ambos representações IEEE~754
+de precisão dupla (64 bits), o que garante paridade numérica exata entre as
+duas implementações.
+\item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
+Todos os valores de $\Delta$ são iguais a zero, indicando paridade
 perfeita entre as implementações Java e Python para a técnica \textit{Bagging}
-no analito Ferro (Fe).
+no analito Cromo (Fe).
 \end{tablenotes}
+\end{minipage}
+\end{center}
+\end{threeparttable}
 \end{table}
 
+%-------------------------------------------------------------
 \begin{table}[H]
 \centering
 \caption{Paridade \textit{Bagging} -- Mn.}
 \label{tab:paridade_bagging_mn}
+\begin{threeparttable}
 \resizebox{0.6\textwidth}{!}{%
 \begin{tabular}{
     S[table-format=2.0]
@@ -161,7 +183,7 @@ no analito Ferro (Fe).
     S[table-format=1.4]
 }
 \toprule
-{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
+{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}\tnote{a}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
 \midrule
 % ---- Dados das 34 amostras ----
   1 &   2.000 &   2.0153 &   2.0153 & 0.0000 \\
@@ -201,20 +223,30 @@ no analito Ferro (Fe).
 \bottomrule
 \end{tabular}%
 }
-\begin{tablenotes}%[flushleft]
+\begin{center}
+\begin{minipage}{0.85\linewidth}
+\begin{tablenotes}
 \footnotesize
-\item Fonte:~\oautor\\
-\textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$. 
-Todos os valores de $\Delta$ são iguais a zero, indicando paridade\\
+\item Fonte:~\oautor
+\item[a] Tipo de dado utilizado em Java foi o \textit{double}; no Python,
+o equivalente é o \textit{float64} do NumPy — ambos representações IEEE~754
+de precisão dupla (64 bits), o que garante paridade numérica exata entre as
+duas implementações.
+\item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
+Todos os valores de $\Delta$ são iguais a zero, indicando paridade
 perfeita entre as implementações Java e Python para a técnica \textit{Bagging}
-no analito Manganês (Mn).
+no analito Cromo (Mn).
 \end{tablenotes}
+\end{minipage}
+\end{center}
+\end{threeparttable}
 \end{table}
 
 \begin{table}[H]
 \centering
 \caption{Paridade \textit{Bagging} -- Ni.}
 \label{tab:paridade_bagging_ni}
+\begin{threeparttable}
 \resizebox{0.6\textwidth}{!}{%
 \begin{tabular}{
     S[table-format=2.0]
@@ -250,20 +282,30 @@ no analito Manganês (Mn).
 \bottomrule
 \end{tabular}%
 }
-\begin{tablenotes}%[flushleft]
+\begin{center}
+\begin{minipage}{0.85\linewidth}
+\begin{tablenotes}
 \footnotesize
-\item Fonte:~\oautor\\
-\textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$. 
-Todos os valores de $\Delta$ são iguais a zero, indicando paridade\\
+\item Fonte:~\oautor
+\item[a] Tipo de dado utilizado em Java foi o \textit{double}; no Python,
+o equivalente é o \textit{float64} do NumPy — ambos representações IEEE~754
+de precisão dupla (64 bits), o que garante paridade numérica exata entre as
+duas implementações.
+\item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
+Todos os valores de $\Delta$ são iguais a zero, indicando paridade
 perfeita entre as implementações Java e Python para a técnica \textit{Bagging}
-no analito Níquel (Ni).
+no analito Cromo (Ni).
 \end{tablenotes}
+\end{minipage}
+\end{center}
+\end{threeparttable}
 \end{table}
 
 \begin{table}[H]
 \centering
 \caption{Paridade \textit{Bagging} -- Mo.}
 \label{tab:paridade_bagging_mo}
+\begin{threeparttable}
 \resizebox{0.6\textwidth}{!}{%
 \begin{tabular}{
     S[table-format=2.0]
@@ -273,7 +315,7 @@ no analito Níquel (Ni).
     S[table-format=1.4]
 }
 \toprule
-{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
+{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}\tnote{a}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
 \midrule
 % ---- Dados das 21 amostras ----
   1 &   3.000 &   3.2844 &   3.2844 & 0.0000 \\
@@ -300,20 +342,30 @@ no analito Níquel (Ni).
 \bottomrule
 \end{tabular}%
 }
-\begin{tablenotes}%[flushleft]
+\begin{center}
+\begin{minipage}{0.85\linewidth}
+\begin{tablenotes}
 \footnotesize
-\item Fonte:~\oautor\\
-\textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$. 
-Todos os valores de $\Delta$ são iguais a zero, indicando paridade\\
+\item Fonte:~\oautor
+\item[a] Tipo de dado utilizado em Java foi o \textit{double}; no Python,
+o equivalente é o \textit{float64} do NumPy — ambos representações IEEE~754
+de precisão dupla (64 bits), o que garante paridade numérica exata entre as
+duas implementações.
+\item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
+Todos os valores de $\Delta$ são iguais a zero, indicando paridade
 perfeita entre as implementações Java e Python para a técnica \textit{Bagging}
-no analito Molibdênio (Mo).
+no analito Cromo (Mo).
 \end{tablenotes}
+\end{minipage}
+\end{center}
+\end{threeparttable}
 \end{table}
 
 \begin{table}[H]
 \centering
 \caption{Paridade \textit{RLM} -- Cr.}
 \label{tab:paridade_rlm_cr}
+\begin{threeparttable}
 \resizebox{0.6\textwidth}{!}{%
 \begin{tabular}{
     S[table-format=2.0]
@@ -323,7 +375,7 @@ no analito Molibdênio (Mo).
     S[table-format=1.1]
 }
 \toprule
-{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
+{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}\tnote{a}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
 \midrule
 % ---- Dados das 34 amostras ----
  1  & 30.000  & 30.4401  & 30.4401  & 0.0 \\
@@ -363,14 +415,23 @@ no analito Molibdênio (Mo).
 \bottomrule
 \end{tabular}%
 }
-\begin{tablenotes}%[flushleft]
+\begin{center}
+\begin{minipage}{0.85\linewidth}
+\begin{tablenotes}
 \footnotesize
-\item Fonte:~\oautor\\
-\textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$. 
-Todos os valores de $\Delta$ são iguais a zero, indicando paridade\\
-perfeita entre as implementações Java e Python para a técnica RLM
+\item Fonte:~\oautor
+\item[a] Tipo de dado utilizado em Java foi o \textit{double}; no Python,
+o equivalente é o \textit{float64} do NumPy — ambos representações IEEE~754
+de precisão dupla (64 bits), o que garante paridade numérica exata entre as
+duas implementações.
+\item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
+Todos os valores de $\Delta$ são iguais a zero, indicando paridade
+perfeita entre as implementações Java e Python para a técnica \textit{Bagging}
 no analito Cromo (Cr).
 \end{tablenotes}
+\end{minipage}
+\end{center}
+\end{threeparttable}
 \end{table}
 
 %----------------------------------------------
@@ -378,6 +439,7 @@ no analito Cromo (Cr).
 \centering
 \caption{Paridade \textit{RLM} -- Mo.}
 \label{tab:paridade_rlm_mo}
+\begin{threeparttable}
 \resizebox{0.6\textwidth}{!}{%
 \begin{tabular}{
     S[table-format=2.0]
@@ -387,7 +449,7 @@ no analito Cromo (Cr).
     S[table-format=1.1]
 }
 \toprule
-{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
+{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}\tnote{a}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
 \midrule
 % ---- Dados das 21 amostras ----
  1  &  3.000  &  3.2312  &  3.2312  & 0.0 \\
@@ -414,20 +476,30 @@ no analito Cromo (Cr).
 \bottomrule
 \end{tabular}%
 }
-\begin{tablenotes}%[flushleft]
+\begin{center}
+\begin{minipage}{0.85\linewidth}
+\begin{tablenotes}
 \footnotesize
-\item Fonte:~\oautor\\
-\textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$. 
-Todos os valores de $\Delta$ são iguais a zero, indicando paridade\\
-perfeita entre as implementações Java e Python para a técnica RLM
-no analito Molibdênio (Mo).
+\item Fonte:~\oautor
+\item[a] Tipo de dado utilizado em Java foi o \textit{double}; no Python,
+o equivalente é o \textit{float64} do NumPy — ambos representações IEEE~754
+de precisão dupla (64 bits), o que garante paridade numérica exata entre as
+duas implementações.
+\item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
+Todos os valores de $\Delta$ são iguais a zero, indicando paridade
+perfeita entre as implementações Java e Python para a técnica \textit{Bagging}
+no analito Cromo (Mo).
 \end{tablenotes}
+\end{minipage}
+\end{center}
+\end{threeparttable}
 \end{table}
 
 \begin{table}[H]
 \centering
 \caption{Paridade \textit{Subagging} -- Cr.}
 \label{tab:paridade_subagging_cr}
+\begin{threeparttable}
 \resizebox{0.6\textwidth}{!}{%
 \begin{tabular}{
     S[table-format=2.0]
@@ -437,7 +509,7 @@ no analito Molibdênio (Mo).
     S[table-format=1.1]
 }
 \toprule
-{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
+{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}\tnote{a}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
 \midrule
 % ---- Dados das 34 amostras ----
  1  & 30.000  & 30.1547  & 30.1547  & 0.0 \\
@@ -477,20 +549,30 @@ no analito Molibdênio (Mo).
 \bottomrule
 \end{tabular}%
 }
-\begin{tablenotes}%[flushleft]
+\begin{center}
+\begin{minipage}{0.85\linewidth}
+\begin{tablenotes}
 \footnotesize
-\item Fonte:~\oautor\\
-\textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$. 
-Todos os valores de $\Delta$ são iguais a zero, indicando paridade\\
-perfeita entre as implementações Java e Python para a técnica \textit{Subagging}
+\item Fonte:~\oautor
+\item[a] Tipo de dado utilizado em Java foi o \textit{double}; no Python,
+o equivalente é o \textit{float64} do NumPy — ambos representações IEEE~754
+de precisão dupla (64 bits), o que garante paridade numérica exata entre as
+duas implementações.
+\item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
+Todos os valores de $\Delta$ são iguais a zero, indicando paridade
+perfeita entre as implementações Java e Python para a técnica \textit{Bagging}
 no analito Cromo (Cr).
 \end{tablenotes}
+\end{minipage}
+\end{center}
+\end{threeparttable}
 \end{table}
 
 \begin{table}[H]
 \centering
 \caption{Paridade \textit{RLM} -- Fe.}
 \label{tab:paridade_rlm_fe}
+\begin{threeparttable}
 \resizebox{0.6\textwidth}{!}{%
 \begin{tabular}{
     S[table-format=2.0]
@@ -500,7 +582,7 @@ no analito Cromo (Cr).
     S[table-format=1.1]
 }
 \toprule
-{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
+{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}\tnote{a}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
 \midrule
 % ---- Dados das 34 amostras ----
  1  & 200.000  & 201.3675  & 201.3675  & 0.0 \\
@@ -540,20 +622,30 @@ no analito Cromo (Cr).
 \bottomrule
 \end{tabular}%
 }
-\begin{tablenotes}%[flushleft]
+\begin{center}
+\begin{minipage}{0.85\linewidth}
+\begin{tablenotes}
 \footnotesize
-\item Fonte:~\oautor\\
-\textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$. 
-Todos os valores de $\Delta$ são iguais a zero, indicando paridade\\
-perfeita entre as implementações Java e Python para a técnica RLM
-no analito Ferro (Fe).
+\item Fonte:~\oautor
+\item[a] Tipo de dado utilizado em Java foi o \textit{double}; no Python,
+o equivalente é o \textit{float64} do NumPy — ambos representações IEEE~754
+de precisão dupla (64 bits), o que garante paridade numérica exata entre as
+duas implementações.
+\item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
+Todos os valores de $\Delta$ são iguais a zero, indicando paridade
+perfeita entre as implementações Java e Python para a técnica \textit{Bagging}
+no analito Cromo (Fe).
 \end{tablenotes}
+\end{minipage}
+\end{center}
+\end{threeparttable}
 \end{table}
 
 \begin{table}[H]
 \centering
 \caption{Paridade \textit{RLM} -- Ni.}
 \label{tab:paridade_rlm_ni}
+\begin{threeparttable}
 \resizebox{0.6\textwidth}{!}{%
 \begin{tabular}{
     S[table-format=2.0]
@@ -563,7 +655,7 @@ no analito Ferro (Fe).
     S[table-format=1.1]
 }
 \toprule
-{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
+{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}\tnote{a}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
 \midrule
 % ---- Dados das 20 amostras ----
  1  & 15.000  & 15.6181  & 15.6181  & 0.0 \\
@@ -589,20 +681,30 @@ no analito Ferro (Fe).
 \bottomrule
 \end{tabular}%
 }
-\begin{tablenotes}%[flushleft]
+\begin{center}
+\begin{minipage}{0.85\linewidth}
+\begin{tablenotes}
 \footnotesize
-\item Fonte:~\oautor\\
-\textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$. 
-Todos os valores de $\Delta$ são iguais a zero, indicando paridade\\
-perfeita entre as implementações Java e Python para a técnica RLM
-no analito Níquel (Ni).
+\item Fonte:~\oautor
+\item[a] Tipo de dado utilizado em Java foi o \textit{double}; no Python,
+o equivalente é o \textit{float64} do NumPy — ambos representações IEEE~754
+de precisão dupla (64 bits), o que garante paridade numérica exata entre as
+duas implementações.
+\item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
+Todos os valores de $\Delta$ são iguais a zero, indicando paridade
+perfeita entre as implementações Java e Python para a técnica \textit{Bagging}
+no analito Cromo (Ni).
 \end{tablenotes}
+\end{minipage}
+\end{center}
+\end{threeparttable}
 \end{table}
 
 \begin{table}[H]
 \centering
 \caption{Paridade \textit{RLM} -- Mn.}
 \label{tab:paridade_rlm_mn}
+\begin{threeparttable}
 \resizebox{0.6\textwidth}{!}{%
 \begin{tabular}{
     S[table-format=2.0]
@@ -612,7 +714,7 @@ no analito Níquel (Ni).
     S[table-format=1.1]
 }
 \toprule
-{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
+{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}\tnote{a}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
 \midrule
 % ---- Dados das 34 amostras ----
  1  &  2.000  &  2.0441  &  2.0441  & 0.0 \\
@@ -652,14 +754,23 @@ no analito Níquel (Ni).
 \bottomrule
 \end{tabular}%
 }
-\begin{tablenotes}%[flushleft]
+\begin{center}
+\begin{minipage}{0.85\linewidth}
+\begin{tablenotes}
 \footnotesize
-\item Fonte:~\oautor\\
-\textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$. 
-Todos os valores de $\Delta$ são iguais a zero, indicando paridade\\
-perfeita entre as implementações Java e Python para a técnica RLM
-no analito Manganês (Mn).
+\item Fonte:~\oautor
+\item[a] Tipo de dado utilizado em Java foi o \textit{double}; no Python,
+o equivalente é o \textit{float64} do NumPy — ambos representações IEEE~754
+de precisão dupla (64 bits), o que garante paridade numérica exata entre as
+duas implementações.
+\item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
+Todos os valores de $\Delta$ são iguais a zero, indicando paridade
+perfeita entre as implementações Java e Python para a técnica \textit{Bagging}
+no analito Cromo (Mn).
 \end{tablenotes}
+\end{minipage}
+\end{center}
+\end{threeparttable}
 \end{table}
 
 %---------------------------------------------------------------------
@@ -667,6 +778,7 @@ no analito Manganês (Mn).
 \centering
 \caption{Paridade \textit{Subagging} -- Fe.}
 \label{tab:paridade_subagging_fe}
+\begin{threeparttable}
 \resizebox{0.6\textwidth}{!}{%
 \begin{tabular}{
     S[table-format=2.0]
@@ -676,7 +788,7 @@ no analito Manganês (Mn).
     S[table-format=1.1]
 }
 \toprule
-{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
+{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}\tnote{a}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
 \midrule
 % ---- Dados das 34 amostras ----
  1  & 200.000  & 201.0091  & 201.0091  & 0.0 \\
@@ -716,20 +828,30 @@ no analito Manganês (Mn).
 \bottomrule
 \end{tabular}%
 }
-\begin{tablenotes}%[flushleft]
+\begin{center}
+\begin{minipage}{0.85\linewidth}
+\begin{tablenotes}
 \footnotesize
-\item Fonte:~\oautor\\
-\textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$. 
-Todos os valores de $\Delta$ são iguais a zero, indicando paridade\\
-perfeita entre as implementações Java e Python para a técnica \textit{Subagging}
-no analito Ferro (Fe).
+\item Fonte:~\oautor
+\item[a] Tipo de dado utilizado em Java foi o \textit{double}; no Python,
+o equivalente é o \textit{float64} do NumPy — ambos representações IEEE~754
+de precisão dupla (64 bits), o que garante paridade numérica exata entre as
+duas implementações.
+\item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
+Todos os valores de $\Delta$ são iguais a zero, indicando paridade
+perfeita entre as implementações Java e Python para a técnica \textit{Bagging}
+no analito Cromo (Fe).
 \end{tablenotes}
+\end{minipage}
+\end{center}
+\end{threeparttable}
 \end{table}
 
 \begin{table}[H]
 \centering
 \caption{Paridade \textit{Subagging} -- Mo.}
 \label{tab:paridade_subagging_mo}
+\begin{threeparttable}
 \resizebox{0.6\textwidth}{!}{%
 \begin{tabular}{
     S[table-format=2.0]
@@ -739,7 +861,7 @@ no analito Ferro (Fe).
     S[table-format=1.1]
 }
 \toprule
-{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
+{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}\tnote{a}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
 \midrule
 % ---- Dados das 21 amostras ----
  1  &  3.000  &  3.2461  &  3.2461  & 0.0 \\
@@ -766,20 +888,30 @@ no analito Ferro (Fe).
 \bottomrule
 \end{tabular}%
 }
-\begin{tablenotes}%[flushleft]
+\begin{center}
+\begin{minipage}{0.85\linewidth}
+\begin{tablenotes}
 \footnotesize
-\item Fonte:~\oautor\\
-\textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$. 
-Todos os valores de $\Delta$ são iguais a zero, indicando paridade\\
-perfeita entre as implementações Java e Python para a técnica \textit{Subagging}
-no analito Molibdênio (Mo).
+\item Fonte:~\oautor
+\item[a] Tipo de dado utilizado em Java foi o \textit{double}; no Python,
+o equivalente é o \textit{float64} do NumPy — ambos representações IEEE~754
+de precisão dupla (64 bits), o que garante paridade numérica exata entre as
+duas implementações.
+\item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
+Todos os valores de $\Delta$ são iguais a zero, indicando paridade
+perfeita entre as implementações Java e Python para a técnica \textit{Bagging}
+no analito Cromo (Mo).
 \end{tablenotes}
+\end{minipage}
+\end{center}
+\end{threeparttable}
 \end{table}
 
 \begin{table}[H]
 \centering
 \caption{Paridade \textit{Subagging} -- Mn.}
 \label{tab:paridade_subagging_mn}
+\begin{threeparttable}
 \resizebox{0.6\textwidth}{!}{%
 \begin{tabular}{
     S[table-format=2.0]
@@ -789,7 +921,7 @@ no analito Molibdênio (Mo).
     S[table-format=1.1]
 }
 \toprule
-{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
+{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}\tnote{a}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
 \midrule
 % ---- Dados das 34 amostras ----
  1  &  2.000  &  2.0088  &  2.0088  & 0.0 \\
@@ -829,20 +961,30 @@ no analito Molibdênio (Mo).
 \bottomrule
 \end{tabular}%
 }
-\begin{tablenotes}%[flushleft]
+\begin{center}
+\begin{minipage}{0.85\linewidth}
+\begin{tablenotes}
 \footnotesize
-\item Fonte:~\oautor\\
-\textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$. 
-Todos os valores de $\Delta$ são iguais a zero, indicando paridade\\
-perfeita entre as implementações Java e Python para a técnica \textit{Subagging}
-no analito Manganês (Mn).
+\item Fonte:~\oautor
+\item[a] Tipo de dado utilizado em Java foi o \textit{double}; no Python,
+o equivalente é o \textit{float64} do NumPy — ambos representações IEEE~754
+de precisão dupla (64 bits), o que garante paridade numérica exata entre as
+duas implementações.
+\item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
+Todos os valores de $\Delta$ são iguais a zero, indicando paridade
+perfeita entre as implementações Java e Python para a técnica \textit{Bagging}
+no analito Cromo (Mn).
 \end{tablenotes}
+\end{minipage}
+\end{center}
+\end{threeparttable}
 \end{table}
 
 \begin{table}[H]
 \centering
 \caption{Paridade \textit{Subagging} -- Ni.}
 \label{tab:paridade_subagging_ni}
+\begin{threeparttable}
 \resizebox{0.6\textwidth}{!}{%
 \begin{tabular}{
     S[table-format=2.0]
@@ -852,7 +994,7 @@ no analito Manganês (Mn).
     S[table-format=1.1]
 }
 \toprule
-{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
+{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}\tnote{a}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
 \midrule
 % ---- Dados das 20 amostras ----
  1  & 15.000  & 15.7160  & 15.7160  & 0.0 \\
@@ -878,14 +1020,23 @@ no analito Manganês (Mn).
 \bottomrule
 \end{tabular}%
 }
-\begin{tablenotes}%[flushleft]
+\begin{center}
+\begin{minipage}{0.85\linewidth}
+\begin{tablenotes}
 \footnotesize
-\item Fonte:~\oautor\\
-\textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$. 
-Todos os valores de $\Delta$ são iguais a zero, indicando paridade\\
-perfeita entre as implementações Java e Python para a técnica \textit{Subagging}
-no analito Níquel (Ni).
+\item Fonte:~\oautor
+\item[a] Tipo de dado utilizado em Java foi o \textit{double}; no Python,
+o equivalente é o \textit{float64} do NumPy — ambos representações IEEE~754
+de precisão dupla (64 bits), o que garante paridade numérica exata entre as
+duas implementações.
+\item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
+Todos os valores de $\Delta$ são iguais a zero, indicando paridade
+perfeita entre as implementações Java e Python para a técnica \textit{Bagging}
+no analito Cromo (Ni).
 \end{tablenotes}
+\end{minipage}
+\end{center}
+\end{threeparttable}
 \end{table}
 
 %------------------------------------
