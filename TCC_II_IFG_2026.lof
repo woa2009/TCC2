@@ -9,18 +9,18 @@
 \contentsline {figure}{\numberline {7}{\ignorespaces RMSEP com RLM para Mn e Fe.}}{38}{figure.caption.26}%
 \contentsline {figure}{\numberline {8}{\ignorespaces RMSEP em função do número de replicações \textit {bootstrap} para RLM-\textit {bagging}.}}{39}{figure.caption.27}%
 \contentsline {figure}{\numberline {9}{\ignorespaces RMSEP para o Mn e Fe com RLM-\textit {bagging}.}}{40}{figure.caption.28}%
-\contentsline {figure}{\numberline {10}{\ignorespaces RMSEP em função das replicações \textit {bootstrap} para RLM-\textit {subagging}.}}{42}{figure.caption.31}%
-\contentsline {figure}{\numberline {11}{\ignorespaces RMSEP do Mn e Fe com \textit {subagging}.}}{43}{figure.caption.34}%
+\contentsline {figure}{\numberline {10}{\ignorespaces RMSEP em função das replicações \textit {bootstrap} para RLM-\textit {subagging}.}}{41}{figure.caption.31}%
+\contentsline {figure}{\numberline {11}{\ignorespaces RMSEP do Mn e Fe com \textit {subagging}.}}{42}{figure.caption.34}%
 \contentsline {figure}{\numberline {12}{\ignorespaces Tempo de execução dos algoritmos RLM, RLM-\textit {bagging} e RLM-\textit {subagging}.}}{45}{figure.caption.38}%
 \contentsline {figure}{\numberline {13}{\ignorespaces RMSEP para todas as técnicas.}}{46}{figure.caption.39}%
 \contentsline {figure}{\numberline {14}{\ignorespaces Tempo de execução dos algoritmos RLM-\textit {bagging} e RLM-\textit {subagging} com parâmetros otimizados por validação cruzada 5-\textit {fold}.}}{48}{figure.caption.41}%
 \contentsline {figure}{\numberline {15}{\ignorespaces Fluxograma do processo de execução da análise.}}{54}{figure.caption.54}%
-\contentsline {figure}{\numberline {16}{\ignorespaces Arquitetura em camadas --- Sistema legado (Java Desktop)}}{85}{figure.caption.75}%
-\contentsline {figure}{\numberline {17}{\ignorespaces Arquitetura em camadas --- Sistema modernizado (Python/Streamlit)}}{85}{figure.caption.76}%
-\contentsline {figure}{\numberline {18}{\ignorespaces Diagrama de classes.}}{86}{figure.caption.77}%
-\contentsline {figure}{\numberline {19}{\ignorespaces Diagrama de atividades.}}{87}{figure.caption.78}%
-\contentsline {figure}{\numberline {20}{\ignorespaces Diagrama de sequência.}}{88}{figure.caption.79}%
-\contentsline {figure}{\numberline {21}{\ignorespaces Diagrama de atividade PlantUML.}}{89}{figure.caption.80}%
-\contentsline {figure}{\numberline {22}{\ignorespaces Diagrama de atividade PlantUML.}}{90}{figure.caption.81}%
-\contentsline {figure}{\numberline {23}{\ignorespaces Diagrama de classes (módulos) PlantUML.}}{91}{figure.caption.82}%
-\contentsline {figure}{\numberline {24}{\ignorespaces Diagrama de sequência PlantUML.}}{92}{figure.caption.83}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Arquitetura em camadas --- Sistema legado (Java Desktop)}}{86}{figure.caption.75}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Arquitetura em camadas --- Sistema modernizado (Python/Streamlit)}}{86}{figure.caption.76}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Diagrama de classes.}}{87}{figure.caption.77}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Diagrama de atividades.}}{88}{figure.caption.78}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Diagrama de sequência.}}{89}{figure.caption.79}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Diagrama de atividade PlantUML.}}{90}{figure.caption.80}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Diagrama de atividade PlantUML.}}{91}{figure.caption.81}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Diagrama de classes (módulos) PlantUML.}}{92}{figure.caption.82}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Diagrama de sequência PlantUML.}}{93}{figure.caption.83}%

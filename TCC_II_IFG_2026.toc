@@ -37,7 +37,7 @@
 \contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{Resultados e Discussões}}{38}{chapter.4}%
 \contentsline {section}{\numberline {4.1}\textit {Bagging}}{39}{section.4.1}%
 \contentsline {section}{\numberline {4.2}\textit {Subagging}}{41}{section.4.2}%
-\contentsline {section}{\numberline {4.3}\textit {Bagging} $\times $ \textit {Subagging}}{46}{section.4.3}%
+\contentsline {section}{\numberline {4.3}\textit {Bagging} $\times $ \textit {Subagging}}{45}{section.4.3}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Requisitos Funcionais}}{50}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Levantamento de Requisitos Funcionais}{50}{section.5.1}%
@@ -135,22 +135,22 @@
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Testes de Gráficos}}{85}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Diagrama de Arquitetura em Camadas --- Java e Python}{85}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Diagrama de Classes --- Java}{86}{section.A.2}%
-\contentsline {section}{\numberline {A.3}Diagrama de Atividade --- Java}{87}{section.A.3}%
-\contentsline {section}{\numberline {A.4}Diagrama de Sequência --- Java}{88}{section.A.4}%
-\contentsline {section}{\numberline {A.5}Diagrama de Atividades --- Java (PlantUML)}{89}{section.A.5}%
-\contentsline {section}{\numberline {A.6}Diagrama de Atividades --- Streamlit}{90}{section.A.6}%
-\contentsline {section}{\numberline {A.7}Diagrama de Classes (Módulos) --- Streamlit}{91}{section.A.7}%
-\contentsline {section}{\numberline {A.8}Diagrama de Sequência --- Streamlit}{92}{section.A.8}%
+\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Testes de Gráficos}}{86}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Diagrama de Arquitetura em Camadas --- Java e Python}{86}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Diagrama de Classes --- Java}{87}{section.A.2}%
+\contentsline {section}{\numberline {A.3}Diagrama de Atividade --- Java}{88}{section.A.3}%
+\contentsline {section}{\numberline {A.4}Diagrama de Sequência --- Java}{89}{section.A.4}%
+\contentsline {section}{\numberline {A.5}Diagrama de Atividades --- Java (PlantUML)}{90}{section.A.5}%
+\contentsline {section}{\numberline {A.6}Diagrama de Atividades --- Streamlit}{91}{section.A.6}%
+\contentsline {section}{\numberline {A.7}Diagrama de Classes (Módulos) --- Streamlit}{92}{section.A.7}%
+\contentsline {section}{\numberline {A.8}Diagrama de Sequência --- Streamlit}{93}{section.A.8}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {B}\MakeTextUppercase []{Tabelas de Paridade Amostra-a-Amostra --- Java $\times $ Python}}{93}{appendix.B}%
+\contentsline {appendix}{\chapternumberline {B}\MakeTextUppercase []{Tabelas de Paridade Amostra-a-Amostra --- Java $\times $ Python}}{94}{appendix.B}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {C}\MakeTextUppercase []{Resultado dos Testes}}{107}{appendix.C}%
+\contentsline {appendix}{\chapternumberline {C}\MakeTextUppercase []{Resultado dos Testes}}{108}{appendix.C}%
 \cftinsert {AAA}
 \renewcommand *{\cftappendixname }{ANEXO \space }

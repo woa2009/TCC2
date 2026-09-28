@@ -1,164 +1,621 @@
-\chapter{Conclusão}
-\label{cha:conclusao}
-\index{Conclusão}
+\chapter{Requisitos Funcionais}
+\label{sec:reqfunc}
+\index{Requisitos Funcionais}
 
-Este estudo investiga, em caráter exploratório, as técnicas de
-reamostragem \textit{bootstrap}, \textit{bagging} e \textit{subagging}
-aplicadas à Regressão Linear Múltipla (RLM) na calibração multivariada
-de amostras de aço-ligas. O trabalho implementa as abordagens
-utilizando a RLM como modelo base e atende aos objetivos propostos,
-dentro das limitações discutidas ao final desta seção.
+Esta seção apresenta o levantamento estruturado dos requisitos funcionais da aplicação \textit{Regressão Espectral com Métodos de Ensemble (Bagging \& Subagging)}, desenvolvida na plataforma Streamlit. A análise segue a estrutura proposta em quatro seções: Inventário de funcionalidades, Classificação por prioridade, Fluxos de uso e Requisitos não funcionais.
 
-%Os experimentos seguem um protocolo controlado, com a otimização dos hiperparâmetros por validação cruzada 5-\textit{fold} aplicada exclusivamente ao conjunto de calibração. Esse protocolo busca assegurar comparações justas e reprodutíveis entre a \textit{RLM clássica}, o \textit{RLM-bagging} e o \textit{RLM-subagging}. Além do RMSEP, o estudo incorpora as métricas \gls{MAE} e R$^2$, ampliando acaracterização do desempenho preditivo de cada técnica. Ressalta-se que as conclusões a seguir se referem a esse protocolo com otimização por validação cruzada: nos experimentos anteriores, com parâmetros fixados sem otimização formal, a técnica vencedora em alguns analitos (Ni e Fe) foi outra. Isso reforça que o desempenho relativo depende da forma como $m$ e $k$ são selecionados.
+\section{Levantamento de Requisitos Funcionais}
+\label{sec:levantamento}
 
-Os experimentos seguem um protocolo controlado, com a otimização dos
-hiperparâmetros por validação cruzada 5-\textit{fold} aplicada
-exclusivamente ao conjunto de calibração. Esse protocolo busca
-assegurar comparações justas e reprodutíveis entre a \textit{RLM
-clássica}, o \textit{RLM-bagging} e o \textit{RLM-subagging}. Além do
-RMSEP, o estudo incorpora as métricas \gls{MAE} e R$^2$, ampliando a
-caracterização do desempenho preditivo de cada técnica.
+\subsection{Inventário das Funcionalidades Existentes}
+\label{subsec:inventário}
 
-Ressalta-se que as conclusões a seguir se referem a esse protocolo com 
-otimização por validação cruzada: nos experimentos anteriores, com 
-parâmetros fixados sem otimização formal, a técnica vencedora em alguns 
-analitos (Ni e Fe) foi outra. Isso reforça que o desempenho relativo 
-depende da forma como $m$ e $k$ são selecionados.
+\subsubsection{Funções do Sistema}
+\label{ssubsec:funcoes}
 
-%----------------------------------------------------------------------------
+A Quadro~\ref{tab:funcoes} resume as funcionalidades identificadas na aplicação, categorizadas por tipo de operação.
 
-A análise comparativa revela variações de desempenho dependentes do
-analito e indica, para este conjunto de dados específico, a
-inexistência de uma técnica universalmente superior. Para o Manganês
-(Mn), o RLM-\textit{subagging} ($k^* = 80\%$, $m^* = 10$) apresenta o
-menor RMSEP (0,0966), uma redução de 8,1\% em relação à RLM clássica.
-Para o Ferro (Fe), o RLM-\textit{bagging} ($m^* = 30$) obtém o melhor
-desempenho (RMSEP = 2,6406), com melhoria de 4,0\% sobre a RLM
-clássica.
-
-Para o Níquel (Ni), o RLM-\textit{subagging} ($k^* = 60\%$,
-$m^* = 10$) exibe resultado marginalmente superior (RMSEP = 1,6003),
-com diferença de 0,25\% em relação à RLM clássica. Dada a magnitude
-dessa diferença e o tamanho amostral disponível, o resultado deve ser
-interpretado com cautela. Em contrapartida, para o Molibdênio (Mo) e o
-Cromo (Cr), a RLM clássica apresenta desempenho superior (RMSEP de
-0,2633 e 1,0798, respectivamente), indicando que a complexidade
-adicional das estratégias de \textit{ensemble} não resulta em ganho de
-precisão para esses analitos neste contexto.
-
-%---------------------------------------------------------------------
-
-A avaliação por meio do RMSEP, complementada pelo \gls{MAE} e pelo
-R$^2$, permite uma caracterização abrangente do desempenho preditivo.
-Todos os modelos apresentam coeficiente de determinação superior a
-0,98 para todos os elementos, o que evidencia elevada capacidade
-preditiva para o conjunto de dados analisado.
-
-Para Mn e Ni, o RLM-\textit{subagging} apresenta dominância de Pareto
-sobre o RLM-\textit{bagging}, por ser simultaneamente superior em
-acurácia (RMSEP e \gls{MAE}) e mais eficiente computacionalmente, o
-que reforça sua indicação nesses dois casos. Para Mo e Cr, os
-resultados sustentam a adoção da RLM clássica, em razão de sua
-simplicidade e de sua eficiência computacional.
-
-%--------------------------------------------------------------------
-
-A análise da eficiência computacional mostra diferenças expressivas
-entre os métodos. A RLM clássica é a abordagem mais rápida em todos
-os analitos. O RLM-\textit{subagging} ocupa posição intermediária:
-tomando a razão entre os tempos do RLM-\textit{bagging} e do
-RLM-\textit{subagging} em cada analito, o subagging é, em média, 3,0
-vezes mais rápido, com variação entre 1,4 vez (Mo) e 6,3 vezes (Ni).
-Em termos agregados, a soma dos tempos dos cinco analitos é cerca de
-53\% menor no subagging.
-
-Em relação à RLM clássica, o RLM-\textit{subagging} apresenta custo de
-até 19,5 vezes superior, enquanto o RLM-\textit{bagging} é, em média,
-22,1 vezes mais lento. O Cromo (Cr) é o único caso em que o
-RLM-\textit{subagging} não apresenta vantagem temporal sobre o
-RLM-\textit{bagging}, comportamento explicado pelo maior número de
-replicações selecionado por validação cruzada ($m^* = 30$ contra
-$m^* = 20$).
-
-%-------------------------------------------------------------------------
-
-A investigação indica que o RLM-\textit{subagging} é a alternativa
-mais equilibrada entre precisão e eficiência para os dados analisados,
-sendo recomendado para Mn e Ni. Para Mo e Cr, os resultados sustentam
-a adoção da RLM clássica. O RLM-\textit{bagging} mostra-se preferível
-para Fe, embora o RLM-\textit{subagging} atinja desempenho preditivo
-equivalente (RMSEP de 2,6509 e R$^2$ idêntico, 0,9900) em menos da
-metade do tempo. A relação de compromisso entre acurácia e tempo atua
-como elemento decisivo na seleção da técnica.
-
-% Do ponto de vista da engenharia de software, o trabalho atinge seus objetivos específicos. A arquitetura modular em três camadas independentes (\texttt{models.py}, \texttt{components.py} e \texttt{app.py}) satisfaz o requisito de modularidade (RNF01). A suíte de 92 testes automatizados atesta a equivalência entre o sistema Python e o sistema Java legado (RNF03) em dois níveis distintos: para a RLM, que é determinística, a equivalência numérica é estrita (tolerância de $5\times10^{-4}$ em RMSEP, \gls{MAE} e R$^2$); para o \textit{bagging} e o \textit{subagging}, que são estocásticos e cujas sequências pseudoaleatórias diferem entre Python e Java, a suíte verifica consistência estatística dentro de tolerâncias mais amplas (0,15 em RMSEP e \gls{MAE}; $5\times10^{-3}$ em R$^2$). Assim, a migração incremental orientada por testes de caixa-preta constitui contribuição metodológica válida independentemente do domínio de aplicação, ainda que não demonstre identidade das reamostragens entre as duas implementações.
-
-Do ponto de vista da engenharia de software, o trabalho atinge seus
-objetivos específicos. A arquitetura modular em três camadas
-independentes (\texttt{models.py}, \texttt{components.py} e
-\texttt{app.py}) satisfaz o requisito de modularidade (RNF01). A suíte
-de 92 testes automatizados atesta a equivalência entre o sistema
-Python e o sistema Java legado (RNF03) em dois níveis distintos.
-
-Para a RLM, que é determinística, a equivalência numérica é estrita,
-com tolerância de $5\times10^{-4}$ em RMSEP, \gls{MAE} e R$^2$. Para o
-\textit{bagging} e o \textit{subagging}, que são estocásticos e cujas
-sequências pseudoaleatórias diferem entre Python e Java, a suíte
-verifica consistência estatística dentro de tolerâncias mais amplas:
-0,15 em RMSEP e \gls{MAE}; $5\times10^{-3}$ em R$^2$.
-
-Assim, a migração incremental orientada por testes de caixa-preta
-constitui contribuição metodológica válida independentemente do
-domínio de aplicação. Entretanto, essa abordagem não demonstra
-identidade das reamostragens entre as duas implementações.
-
-%Este estudo apresenta limitações pertinentes. O conjunto de dados corresponde a uma composição específica de aço-liga, analisada sob condições instrumentais particulares, o que restringe a extrapolação dos achados para outras composições, regimes amostrais ou configurações espectrométricas. A razão de aproximadamente 42 preditores por observação no conjunto de calibração (723 variáveis para 17 amostras) caracteriza um regime de alta dimensionalidade que, embora tratável pela pseudo-inversa de Moore-Penrose, amplifica a sensibilidade dos resultados à composição das amostras disponíveis. Os \textit{folds} da validação cruzada contêm apenas três ou quatro amostras, o que limita a estabilidade da seleção de $m^*$ e $k^*$.
-
-Este estudo apresenta limitações pertinentes. O conjunto de dados
-corresponde a uma composição específica de aço-liga, analisada sob
-condições instrumentais particulares, o que restringe a extrapolação
-dos achados para outras composições, regimes amostrais ou
-configurações espectrométricas.
-
-A razão de aproximadamente 42 preditores por observação no conjunto
-de calibração (723 variáveis para 17 amostras) caracteriza um regime
-de alta dimensionalidade. Embora tratável pela pseudo-inversa de
-Moore-Penrose, esse cenário amplifica a sensibilidade dos resultados
-à composição das amostras disponíveis.
-
-Além disso, os \textit{folds} da validação cruzada contêm apenas três
-ou quatro amostras, o que limita a estabilidade da seleção de $m^*$ e
-$k^*$.
-
-% Outras limitações são de natureza metodológica. O valor $k^* = 80\%$ coincide com o limite superior da grade avaliada ($k \in \{0{,}50;\ 0{,}60;\ 0{,}70;\ 0{,}80\}$) em quatro dos cinco analitos, de modo que o ótimo real pode situar-se em frações maiores. As tolerâncias adotadas nos testes de caixa-preta dos métodos estocásticos são amplas em relação às diferenças de desempenho entre as técnicas, de modo que a suíte assegura consistência estatística, mas não discrimina implementações com desempenhos próximos. Por fim, a análise adota exclusivamente a RLM como modelo base.
-
-Outras limitações são de natureza metodológica. O valor $k^* = 80\%$
-coincide com o limite superior da grade avaliada
-($k \in \{0{,}50;\ 0{,}60;\ 0{,}70;\ 0{,}80\}$) em quatro dos cinco
-analitos, de modo que o ótimo real pode situar-se em frações maiores.
-
-As tolerâncias adotadas nos testes de caixa-preta dos métodos
-estocásticos são amplas em relação às diferenças de desempenho entre
-as técnicas. Desse modo, a suíte assegura consistência estatística,
-mas não discrimina implementações com desempenhos próximos.
-
-Por fim, a análise adota exclusivamente a RLM como modelo base.
+\begin{quadro}[ht]
+\begin{center}
+\small
+\captionsetup{justification=centering, labelsep=endash, width=0.75\linewidth}
+\caption{Inventário das funções do sistema.}
+\label{tab:funcoes}
+\begin{threeparttable}
+% O tabularx garante que a largura total seja exatamente \textwidth
+\begin{tabularx}{\textwidth}{|l|l|X|} \hline
+\textbf{Categoria} & \textbf{Funcionalidade} & \textbf{Descrição Técnica} \\ \hline
+Cálculos & RLM Simples (Baseline) & Regressão Linear Múltipla padrão sem técnicas de ensemble \\ \hline
+Cálculos & RLM + Bagging & Ensemble com amostragem \textit{com} reposição (bootstrap) \\ \hline
+Cálculos & RLM + Subagging + CV & Ensemble com amostragem \textit{sem} reposição + otimização por validação cruzada 5-Fold \\ \hline
+Configuração & Parâmetro \textit{m} (Bags) & Define número de amostras/ensembles para o método Bagging \\ \hline
+Configuração & Parâmetro \textit{k} (Subagging) & Define fração ou quantidade para amostragem no Subagging \\ \hline
+Visualização & Métricas de Desempenho & Exibição de R², RMSE, MAE calculados no conjunto de teste \\ \hline
+Visualização & Gráficos Comparativos & \textit{Scatter plots} (previsto $\times$ real), resíduos e comparação entre modelos \\ \hline
+Organização & Abas de Navegação & Separação lógica: ``Arquivos'', ``Configuração'', ``Resultados'', ``Gráficos'' \\ \hline
+Exportação & \textit{Não identificada} & \textbf{Obs.:} sistema não apresenta botões de download de resultados \\ \hline
+\end{tabularx}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item Fonte:~\oautor
+\end{tablenotes}
+\end{threeparttable}
+\end{center}
+\end{quadro}
 
 
-% Como direcionamento para investigações futuras, este estudo recomenda a expansão do escopo para conjuntos amostrais maiores e diferentes classes de materiais, a ampliação da grade de $k$ além de 80\% e a comparação com modelos preditivos alternativos, como \gls{PLS}, \gls{LASSO} e redes neurais, que permitirão avaliar se os padrões observados se sustentam em regimes mais generalizáveis. Recomenda-se ainda o uso de uma mesma sequência de reamostragens (por exemplo, índices exportados pelo Java e lidos pelo Python) para permitir a comparação amostra a amostra dos métodos estocásticos, e a avaliação de técnicas de \textit{ensemble} mais sofisticadas, como \textit{boosting} e \textit{stacking}.
+\newpage
+\subsubsection{Entradas Necessárias (Inputs)}
+\label{ssubsec:entradas}
 
-Como direcionamento para investigações futuras, este estudo recomenda
-a expansão do escopo para conjuntos amostrais maiores e diferentes
-classes de materiais, a ampliação da grade de $k$ além de 80\% e a
-comparação com modelos preditivos alternativos, como \gls{PLS},
-\gls{LASSO} e redes neurais. Essas abordagens permitirão avaliar se os
-padrões observados se sustentam em regimes mais generalizáveis.
+A Quadro~\ref{tab:entradas} detalha os dados e parâmetros exigidos para execução da aplicação.
 
-Recomenda-se ainda o uso de uma mesma sequência de reamostragens
-(por exemplo, índices exportados pelo Java e lidos pelo Python) para
-permitir a comparação amostra a amostra dos métodos estocásticos.
-Sugere-se também a avaliação de técnicas de \textit{ensemble} mais
-sofisticadas, como \textit{boosting} e \textit{stacking}.
+\begin{quadro}[ht]
+\begin{center}
+\small
+\captionsetup{justification=centering, labelsep=endash, width=0.75\linewidth}
+\caption{Entradas necessárias para execução do sistema.}
+\label{tab:entradas}
+\begin{threeparttable}
+% O tabularx ajusta a largura total para \textwidth
+\begin{tabularx}{\textwidth}{|l|l|l|c|X|} \hline
+\textbf{Tipo} & \textbf{Nome} & \textbf{Formato} & \textbf{Obrig.} & \textbf{Descrição} \\ \hline
+Arquivo & \texttt{Xcal.txt} & \texttt{.txt} & Sim & Matriz de espectros de calibração \\ \hline
+Arquivo & \texttt{Ycal.txt} & \texttt{.txt} & Sim & Vetor de valores de referência \\ \hline
+Arquivo & \texttt{Xteste.txt} & \texttt{.txt} & Sim & Matriz de espectros para predição \\ \hline
+Arquivo & \texttt{Yteste.txt} & \texttt{.txt} & Sim & Vetor de valores reais para validação \\ \hline
+Parâmetro & \textit{m} & Inteiro $\geq 1$ & Condic.\tnote{a} & Usado apenas nos métodos de ensemble \\ \hline
+Parâmetro & \textit{k} & Inteiro $\geq 1$ & Condic.\tnote{a} & Usado apenas no método Subagging \\ \hline
+Config. & Val. Cruzada & Fixo: 5-Fold & Auto. & Parâmetro interno de otimização \\ \hline
+\end{tabularx}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item[a] Condicional: habilitados apenas quando o usuário seleciona métodos de ensemble.
+\item Fonte:~\oautor
+\end{tablenotes}
+\end{threeparttable}
+\end{center}
+\end{quadro}
+
+
+%\newpage
+\subsubsection{Saídas Esperadas (Outputs)}
+\label{ssubsec:saidas}
+
+A Quadro~\ref{tab:saidas} apresenta os resultados gerados pelo sistema após processamento.
+
+
+\begin{quadro}[ht]
+\begin{center}
+\small
+\captionsetup{justification=centering, labelsep=endash, width=0.75\linewidth}
+\caption{Saídas esperadas do sistema.}
+\label{tab:saidas}
+\begin{threeparttable}
+% O tabularx força a largura para \textwidth e as barras | fecham o quadro
+\begin{tabularx}{\textwidth}{|l|X|l|l|} \hline
+\textbf{Tipo} & \textbf{Conteúdo} & \textbf{Formato de Exibição} & \textbf{Destinatário} \\ \hline
+Numérico & R², RMSE, MAE (conjunto de teste) & Quadro ou \textit{cards} destacados & Usuário analista \\ \hline
+Gráfico & Previsto vs. Real & \textit{Scatter plot} com reta de ajuste & Usuário analista \\ \hline
+Gráfico & Resíduos da Predição & Gráfico de dispersão ou histograma & Usuário analista \\ \hline
+Comparativo & Desempenho: RLM $\times$ Bagging $\times$ Subagging & Quadro comparativa ou gráfico de barras & Usuário analista \\ \hline
+Feedback & Mensagens de erro/validação & Alertas em destaque & Usuário final \\ \hline
+Status & Indicador de processamento & \textit{Spinner} ou barra de progresso & Usuário final \\ \hline
+\end{tabularx}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item Fonte:~\oautor
+\end{tablenotes}
+\end{threeparttable}
+\end{center}
+\end{quadro}
+
+
+\subsection{Classificação por Prioridade}
+\label{subsec:prioridade}
+
+Os requisitos foram classificados utilizando a técnica \gls{MoSCoW}\footnote{MoSCoW é uma técnica de priorização de requisitos dividida em quatro categorias: \textit{Must have} (obrigatórios), \textit{Should have} (importantes, mas não críticos), \textit{Could have} (desejáveis) e \textit{Won’t have (this time)} (excluídos desta versão). A letra “o” é adicionada apenas para facilitar a pronúncia.} adaptada, conforme descrito nas seções seguintes.
+
+\subsubsection{Essenciais (\textit{Must Have})}
+\label{ssubsec:essenciais}
+
+\begin{quadro}[ht]
+\begin{center}
+\small
+\captionsetup{justification=centering, labelsep=endash, width=0.75\linewidth}
+\caption{Requisitos essenciais do sistema.}
+\label{tab:essenciais}
+\begin{threeparttable}
+% O tabularx ajusta a largura total para \textwidth (entre as margens 2,5 e 2,0)
+\begin{tabularx}{\textwidth}{|l|X|X|} \hline
+\textbf{ID} & \textbf{Requisito} & \textbf{Justificativa} \\ \hline
+E01 & Upload e validação dos 4 arquivos de entrada & Dados são pré-requisito para qualquer cálculo estatístico \\ \hline
+E02 & Execução da RLM Simples (baseline) & Referência obrigatória para comparação de desempenho dos ensembles \\ \hline
+E03 & Cálculo de métricas básicas (R², RMSE, MAE) & Mínimo necessário para avaliação quantitativa da qualidade do modelo \\ \hline
+E04 & Validação de consistência dimensional (X vs Y) & Previne erros de execução e geração de resultados inválidos \\ \hline
+E05 & Exibição clara dos resultados numéricos & Permite decisão técnica fundamentada em evidências quantitativas \\ \hline
+\end{tabularx}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item Fonte:~\oautor
+\end{tablenotes}
+\end{threeparttable}
+\end{center}
+\end{quadro}
+
+
+\newpage
+\subsubsection{Desejáveis (\textit{Should Have})}
+\label{ssubsec:desejaveis}
+
+\begin{quadro}[ht]
+\begin{center}
+\small
+\captionsetup{justification=centering, labelsep=endash, width=0.75\linewidth}
+\caption{Requisitos desejáveis do sistema.}
+\label{tab:desejaveis}
+\begin{threeparttable}
+% Tabularx ajustado para a largura total do texto com bordas laterais
+\begin{tabularx}{\textwidth}{|l|X|X|} \hline
+\textbf{ID} & \textbf{Requisito} & \textbf{Benefício} \\ \hline
+D01 & Gráficos interativos (zoom, \textit{tooltip}, download) & Facilita exploração visual detalhada e apresentação de resultados \\ \hline
+D02 & Exportação de resultados (CSV, PDF, PNG) & Permite documentação, compartilhamento e reprodutibilidade \\ \hline
+D03 & \textit{Tooltips} explicativos para \textit{m}, \textit{k}, Bagging/Subagging & Reduz curva de aprendizado para usuários não especialistas \\ \hline
+D04 & Pré-processamento básico (normalização, escalonamento) & Melhora robustez dos modelos com dados espectrais reais \\ \hline
+D05 & Histórico de execuções na sessão & Permite comparar configurações sem reenviar arquivos \\ \hline
+\end{tabularx}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item Fonte:~\oautor
+\end{tablenotes}
+\end{threeparttable}
+\end{center}
+\end{quadro}
+
+
+\newpage
+\subsubsection{Extras (\textit{Could Have})}
+\label{ssubsec:extras}
+
+\begin{quadro}[ht]
+\begin{center}
+\small
+\captionsetup{justification=centering, labelsep=endash, width=0.75\linewidth}%0.75
+\caption{Requisitos extras para fases futuras.}
+\label{tab:extras}
+\begin{threeparttable}
+% O tabularx com \textwidth garante que o quadro respeite as margens da página
+\begin{tabularx}{\textwidth}{|l|X|X|} \hline
+\textbf{ID} & \textbf{Requisito} & \textbf{Cenário de Uso} \\ \hline
+X01 & Autenticação de usuários e projetos privados & Ambientes corporativos ou de pesquisa colaborativa \\ \hline
+X02 & Integração com APIs externas (ex: KNIME, scripts Python) & Pipelines automatizadas de quimiometria \\ \hline
+X03 & Suporte a formatos adicionais (.csv, .xlsx, .mat) & Flexibilidade para ingestão de dados de diferentes fontes \\ \hline
+X04 & Otimização automática de hiperparâmetros & Reduz necessidade de conhecimento técnico avançado \\ \hline
+X05 & Dashboard comparativo multi-rodada & Análise estatística de estabilidade dos modelos ensemble \\ \hline
+\end{tabularx}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item Fonte:~\oautor
+\end{tablenotes}
+\end{threeparttable}
+\end{center}
+\end{quadro}
+
+
+\newpage
+\subsection{Fluxos de Uso}
+\label{subsec:fluxos}
+
+\subsubsection{Fluxo Principal: Execução de Análise Completa}
+\label{ssubsec:fluxo-principal}
+A Figura~\ref{fig:figura00} apresenta o fluxograma do fluxo principal de
+interação do usuário com o sistema, ilustrando as etapas percorridas desde
+o acesso à aplicação Streamlit até a obtenção dos resultados finais. O
+fluxo tem início com o \textit{upload} dos quatro arquivos de entrada ---
+as matrizes \texttt{Xcal} e \texttt{Xteste} e os vetores \texttt{Ycal} e
+\texttt{Yteste} ---, seguido pela configuração dos hiperparâmetros $m$
+(número de \textit{bags}) e $k$ (fração de subamostragem) na aba
+\textbf{Configuração}. Uma vez validados os arquivos e os parâmetros
+informados, o usuário aciona o botão de execução, que dispara o
+processamento em \texttt{models.py}: primeiro a otimização por validação
+cruzada 5-\textit{fold} (\texttt{find\_optimal\_parameters()}) e, em
+seguida, a avaliação final dos três modelos --- RLM Simples, RLM~+~Bagging
+e RLM~+~Subagging --- sobre o conjunto de teste independente
+(\texttt{run\_full\_analysis()}). Ao término do processamento, os
+resultados numéricos (RMSE, MAE, R² e tempo de execução) tornam-se
+disponíveis na aba \textbf{Resultados}, enquanto os gráficos comparativos
+de valores reais \textit{versus} preditos e o gráfico de dispersão são
+renderizados na aba \textbf{Gráficos}, encerrando o ciclo de interação
+representado no fluxograma.
+
+
+% ============================================================
+% FLUXOGRAMA DA EXECUÇÃO DA ANÁLISE
+% ============================================================
+
+% Definição dos estilos do fluxograma
+\tikzset{
+    iniciofim/.style={
+        ellipse,
+        draw=black,
+        fill=blue!15,
+        minimum width=3.0cm,
+        minimum height=0.9cm,
+        align=center,
+        line width=0.8pt
+    },
+    processo/.style={
+        rectangle,
+        draw=black,
+        fill=blue!8,
+        minimum width=4.0cm,
+        minimum height=1.0cm,
+        align=center,
+        line width=0.8pt
+    },
+    decisao/.style={
+        diamond,
+        draw=black,
+        fill=blue!12,
+        aspect=2.0,
+        minimum width=4.2cm,
+        minimum height=1.4cm,
+        align=center,
+        line width=0.8pt,
+        inner sep=2pt
+    },
+    alerta/.style={
+        rectangle,
+        draw=black,
+        fill=red!8,
+        minimum width=4.2cm,
+        minimum height=1.0cm,
+        align=center,
+        line width=0.8pt
+    },
+    resultado/.style={
+        rectangle,
+        draw=black,
+        fill=green!10,
+        minimum width=4.2cm,
+        minimum height=1.0cm,
+        align=center,
+        line width=0.8pt
+    },
+    seta/.style={
+        ->,
+        draw=black,
+        line width=0.8pt
+    },
+    rotulo/.style={
+        font=\sffamily\footnotesize,
+        fill=white,
+        inner sep=2pt
+    }
+}
+
+\begin{figure}[htbp]
+    \centering
+    \caption{Fluxograma do processo de execução da análise.}
+    \label{fig:figura00}
+    \resizebox{0.40\textwidth}{!}{%45
+    \begin{tikzpicture}[
+        >=Stealth,
+        node distance=1.25cm and 1.8cm,
+        font=\sffamily\small
+    ]
+
+    % ========================================================
+    % INÍCIO
+    % ========================================================
+
+    \node[iniciofim] (inicio)
+        {Início};
+
+    % ========================================================
+    % ENTRADA DOS DADOS
+    % ========================================================
+
+    \node[processo, below=of inicio] (upload)
+        {Usuário realiza o upload\\
+         dos quatro arquivos};
+
+    % ========================================================
+    % VALIDAÇÃO
+    % ========================================================
+
+    \node[decisao, below=of upload] (validacao)
+        {Todos os arquivos\\
+         são válidos?};
+
+    % ========================================================
+    % CAMINHO NÃO
+    % ========================================================
+
+    \node[alerta, right=3.8cm of validacao] (erro)
+        {Exibir alerta e\\
+         bloquear análise};
+
+    \node[iniciofim, below=of erro] (fimerro)
+        {Fim};
+
+    % ========================================================
+    % CAMINHO SIM
+    % ========================================================
+
+    \node[processo, below=of validacao] (habilitar)
+        {Habilitar parâmetros\\
+         e botão ``Executar''};
+
+    \node[processo, below=of habilitar] (configurar)
+        {Configurar $m$ e $k$};
+
+    \node[processo, below=of configurar] (executar)
+        {Executar análise\\
+         com otimização por CV};
+
+    % ========================================================
+    % PROCESSAMENTO
+    % ========================================================
+
+    \node[processo, below=of executar] (processamento)
+        {Processamento dos métodos:\\
+         RLM, \textit{bagging} e \textit{subagging}\\
+         com validação cruzada};
+
+    % ========================================================
+    % RESULTADOS
+    % ========================================================
+
+    \node[resultado, below=of processamento] (resultados)
+        {Exibir resultados\\
+         e gráficos};
+
+    % ========================================================
+    % FIM
+    % ========================================================
+
+    \node[iniciofim, below=of resultados] (fim)
+        {Fim};
+
+    % ========================================================
+    % FLUXO PRINCIPAL
+    % ========================================================
+
+    \draw[seta]
+        (inicio) -- (upload);
+
+    \draw[seta]
+        (upload) -- (validacao);
+
+    % Caminho SIM
+    \draw[seta]
+        (validacao)
+        -- node[rotulo, right] {Sim}
+        (habilitar);
+
+    \draw[seta]
+        (habilitar) -- (configurar);
+
+    \draw[seta]
+        (configurar) -- (executar);
+
+    \draw[seta]
+        (executar) -- (processamento);
+
+    \draw[seta]
+        (processamento) -- (resultados);
+
+    \draw[seta]
+        (resultados) -- (fim);
+
+    % Caminho NÃO
+    \draw[seta]
+        (validacao.east)
+        -- node[rotulo, above] {Não}
+        (erro.west);
+
+    \draw[seta]
+        (erro) -- (fimerro);
+
+    \end{tikzpicture}%
+    }
+
+%    \caption{Fluxograma do processo de execução da análise.}
+%    \label{fig:figura00}
+	\caption*{Fonte: \oautor}
+\end{figure}
+
+\newpage
+\subsubsection{Fluxos Alternativos e Tratamento de Exceções}
+\label{ssubsec:fluxos-alternativos}
+
+\begin{quadro}[ht]
+\begin{center}
+\small
+\captionsetup{justification=centering, labelsep=endash, width=0.75\linewidth}
+\caption{Fluxos alternativos e tratamento de exceções.}
+\label{tab:fluxos-alternativos}
+\begin{threeparttable}
+% O tabularx com \textwidth garante o respeito às margens e o | fecha as laterais
+\begin{tabularx}{\textwidth}{|l|X|X|l|} \hline
+\textbf{Cenário} & \textbf{Gatilho} & \textbf{Comportamento do Sistema} & \textbf{Ação do Usuário} \\ \hline
+Arquivo inválido & Upload com formato/dimensão incorreta & Alerta vermelho + destaque no campo problemático & Corrigir arquivo e reenviar \\ \hline
+Parâmetros fora do intervalo & Inserir \textit{m} ou \textit{k} $\leq 0$ ou excessivamente alto & Validação em tempo real + mensagem orientativa & Ajustar para valores válidos \\ \hline
+\textit{Timeout} de processamento & Dados muito grandes ou carga elevada & Mensagem: ``Processamento demorado...'' & Otimizar entrada ou repetir depois \\ \hline
+Navegação sem executar & Usuário muda de aba antes de clicar & Mantém estado dos uploads (persistência) & Retornar e concluir análise \\ \hline
+\end{tabularx}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item Fonte:~\oautor
+\end{tablenotes}
+\end{threeparttable}
+\end{center}
+\end{quadro}
 
 
 
+\subsubsection{Pontos Críticos de Usabilidade}
+\label{ssubsec:pontos-criticos}
+
+\begin{quadro}[ht]
+\begin{center}
+\small
+\captionsetup{justification=centering, labelsep=endash, width=0.75\linewidth}
+\caption{Pontos críticos de usabilidade e estratégias de mitigação.}
+\label{tab:pontos-criticos}
+\begin{threeparttable}
+% O tabularx com \textwidth garante o respeito às margens e o | fecha as laterais
+\begin{tabularx}{\textwidth}{|l|X|X|} \hline
+\textbf{Ponto} & \textbf{Risco} & \textbf{Sugestão de Mitigação} \\ \hline
+Upload múltiplo obrigatório & Esquecer um dos 4 arquivos e travar o fluxo & Checklist visual + botão habilitado apenas quando todos estiverem OK \\ \hline
+Parâmetros \textit{m} e \textit{k} abstratos & Inserir valores inadequados e obter resultados ruins & \textit{Sliders} com valores recomendados + \textit{tooltip} prático \\ \hline
+Processamento sem feedback claro & Achar que a aplicação travou & Barra de progresso com etapas descritivas \\ \hline
+Gráficos sem legenda ou escala & Dificulta interpretação em telas menores & Legendas fixas, eixos nomeados, opção de ampliar \\ \hline
+Resultados não exportáveis & Impede documentação externa & Botão ``Baixar Relatório'' com métricas + gráficos \\ \hline
+\end{tabularx}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item Fonte:~\oautor
+\end{tablenotes}
+\end{threeparttable}
+\end{center}
+\end{quadro}
+
+
+\newpage
+\subsection{Requisitos Não Funcionais}
+\label{subsec:nao-funcionais}
+
+\subsubsection{Performance}
+\label{ssubsec:performance}
+
+
+\begin{quadro}[ht]
+\begin{center}
+\small
+\captionsetup{justification=centering, labelsep=endash, width=0.75\linewidth}
+\caption{Requisitos de performance do sistema.}
+\label{tab:performance}
+\begin{threeparttable}
+% O tabularx com \textwidth garante o respeito às margens e o | fecha as laterais
+\begin{tabularx}{\textwidth}{|X|X|l|} \hline
+\textbf{Requisito} & \textbf{Especificação} & \textbf{Critério de Aceite} \\ \hline
+Tempo de upload & Arquivos $\leq$ 200\,MB & $<$ 30\,s em conexão 10\,Mbps \\ \hline
+Tempo de cálculo (RLM) & Dataset típico ($n \leq 500$, $p \leq 1000$) & $<$ 10\,s \\ \hline
+Tempo de cálculo (Ensemble) & Bagging/Subagging com $m \leq 100$ & $<$ 2\,min com CV 5-Fold \\ \hline
+Renderização de gráficos & Após conclusão do cálculo & $<$ 3\,s \\ \hline
+Responsividade da UI & Interações (mudar aba, ajustar parâmetro) & $<$ 500\,ms de feedback visual \\ \hline
+\end{tabularx}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item Fonte:~\oautor
+\end{tablenotes}
+\end{threeparttable}
+\end{center}
+\end{quadro}
+
+
+
+\subsubsection{Usabilidade}
+\label{ssubsec:usabilidade}
+
+\begin{quadro}[ht]
+\begin{center}
+\small
+\captionsetup{justification=centering, labelsep=endash, width=0.75\linewidth}
+\caption{Requisitos de usabilidade do sistema.}
+\label{tab:usabilidade}
+\begin{threeparttable}
+% O tabularx com \textwidth garante o respeito às margens e o | fecha as laterais
+\begin{tabularx}{\textwidth}{|l|X|X|} \hline
+\textbf{Requisito} & \textbf{Especificação} & \textbf{Critério de Aceite} \\ \hline
+Acessibilidade & Compatível com \gls{WCAG} 2.1 Nível AA\tnote{a} & Contraste adequado, \textit{labels}, navegação por teclado \\ \hline
+Responsividade & Funcional em desktop, tablet e mobile ($\geq$ 768\,px) & Layout adaptativo sem perda de funcionalidade crítica \\ \hline
+Clareza textual & Mensagens, rótulos e erros em português claro & Teste com 3 usuários: $\geq$ 90\% de acerto na interpretação \\ \hline
+Consistência & Padrões visuais alinhados ao Streamlit & Botões, cores e ícones seguem guia de estilo \\ \hline
+Recuperação de erro & Mensagens orientam a correção & Ex: ``Ycal.txt tem 99 linhas, mas Xcal.txt tem 100...'' \\ \hline
+\end{tabularx}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item[a] A \textit{Web Content Accessibility Guidelines} (WCAG) 2.1 Nível AA é um padrão internacional de acessibilidade digital que estabelece critérios de desenvolvimento para garantir que softwares e sites sejam plenamente utilizáveis por pessoas com deficiências visuais, auditivas, motoras ou cognitivas.
+\item \textit{Nota:} Modificado para atender ao escopo do projeto.
+\item Fonte:~\oautor
+\end{tablenotes}
+\end{threeparttable}
+\end{center}
+\end{quadro}
+
+\newpage
+\subsubsection{Segurança}
+\label{ssubsec:seguranca}
+
+\begin{quadro}[ht]
+\begin{center}
+\small
+\captionsetup{justification=centering, labelsep=endash, width=0.75\linewidth}
+\caption{Requisitos de segurança do sistema.}
+\label{tab:seguranca}
+\begin{threeparttable}
+% O tabularx com \textwidth garante o respeito às margens e o | fecha as laterais
+\begin{tabularx}{\textwidth}{|l|X|X|} \hline
+\textbf{Requisito} & \textbf{Especificação} & \textbf{Justificativa} \\ \hline
+Isolamento de sessão & Dados não vazam entre usuários & Aplicação pública; dados podem ser propriedade intelectual \\ \hline
+Sanitização de arquivos & Validar extensão, cabeçalho e conteúdo & Prevenção contra upload malicioso \\ \hline
+Limite de tamanho & Máximo 200\,MB por arquivo & Evita abuso de recursos computacionais \\ \hline
+Logs de auditoria (opc.) & Registrar uploads/execuções (sem dados) & Rastreabilidade para suporte técnico \\ \hline
+HTTPS obrigatório & Todas as comunicações criptografadas & Proteção de integridade e confidencialidade \\ \hline
+\end{tabularx}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item Fonte:~\oautor
+\end{tablenotes}
+\end{threeparttable}
+\end{center}
+\end{quadro}
+
+
+
+\subsubsection{Escalabilidade}
+\label{ssubsec:escalabilidade}
+
+\begin{quadro}[ht]
+\begin{center}
+\small
+\captionsetup{justification=centering, labelsep=endash, width=0.75\linewidth}
+\caption{Requisitos de escalabilidade do sistema.}
+\label{tab:escalabilidade}
+\begin{threeparttable}
+% O tabularx garante que a largura total seja exatamente \textwidth
+\begin{tabularx}{\textwidth}{|l|X|X|X|} \hline
+\textbf{Cenário} & \textbf{Capacidade Atual} & \textbf{Meta} & \textbf{Estratégia} \\ \hline
+Usuários simultâneos & $\sim$10--20 (\textit{Streamlit Cloud free}) & 100+ usuários/h & Container com \textit{load balancer} \\ \hline
+Volume de dados & $\sim$500 amostras $\times$ 2k variáveis & 5k+ amostras $\times$ 10k var. & Processamento em \textit{batch} / Dask \\ \hline
+Crescimento funcional & Script único & Módulos \textit{plug-and-play} & Arquitetura de plugins \\ \hline
+Internacionalização & Português & Inglês + Espanhol & Arquivos \textit{i18n} \\ \hline
+\end{tabularx}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item Fonte:~\oautor
+\end{tablenotes}
+\end{threeparttable}
+\end{center}
+\end{quadro}
+
+
+\section{Considerações Finais do Levantamento}
+\label{sec:consideracoes-levantamento}
+
+O levantamento apresentado estabelece uma base estruturada para o desenvolvimento e evolução da aplicação de regressão espectral. Destacam-se como prioridades imediatas:
+
+\begin{description}
+	\item[a)] Validação rigorosa das entradas (arquivos e parâmetros) para garantir integridade dos cálculos;
+	\item[b)] Implementação de mecanismos de \textit{feedback} visual durante processamentos demorados;
+	\item[c)] Documentação clara do contrato de dados (formato, delimitador, codificação dos arquivos \texttt{.txt});
+	\item[d)] Inclusão de funcionalidade básica de exportação de resultados para viabilizar uso acadêmico e profissional.
+\end{description}
+
+Recomenda-se que os requisitos classificados como \textit{Essenciais} (Quadro~\ref{tab:essenciais}) sejam implementados na versão mínima viável \gls{MVP}\footnote{O \textit{Minimum Viable Product} (MVP), ou Produto Mínimo Viável, é a versão mais enxuta de um produto que contém apenas as funcionalidades essenciais para que ele possa ser lançado e testado no mercado.}
+, enquanto os itens \textit{Desejáveis} e \textit{Extras} compõem o \textit{backlog} para iterações futuras, sujeitos a validação com usuários finais e análise de custo-benefício.
+
+Os requisitos não funcionais definidos nas Seções~\ref{ssubsec:performance} a~\ref{ssubsec:escalabilidade} devem ser considerados como restrições de projeto em todas as fases de desenvolvimento, assegurando que a aplicação seja não apenas funcional, mas também performática, segura e adaptável a cenários de crescimento.

@@ -1,342 +1,164 @@
-\chapter{Desenvolvimento Iterativo por Sprints e Validação por Testes Automatizados}
+\chapter{Conclusão}
+\label{cha:conclusao}
+\index{Conclusão}
 
-\section{Metodologia Ágil: Desenvolvimento por Sprints}
+Este estudo investiga, em caráter exploratório, as técnicas de
+reamostragem \textit{bootstrap}, \textit{bagging} e \textit{subagging}
+aplicadas à Regressão Linear Múltipla (RLM) na calibração multivariada
+de amostras de aço-ligas. O trabalho implementa as abordagens
+utilizando a RLM como modelo base e atende aos objetivos propostos,
+dentro das limitações discutidas ao final desta seção.
 
-O desenvolvimento do sistema Python/Streamlit seguiu uma abordagem iterativa e
-incremental, organizada em quatro \textit{sprints} sucessivas, alinhada aos
-princípios do \textit{framework} Scrum~\cite{scrum2026}. Cada \textit{sprint}
-produziu um incremento funcional e testável do sistema, permitindo validação
-contínua da equivalência com o sistema Java legado antes do avanço para a
-etapa seguinte.
+%Os experimentos seguem um protocolo controlado, com a otimização dos hiperparâmetros por validação cruzada 5-\textit{fold} aplicada exclusivamente ao conjunto de calibração. Esse protocolo busca assegurar comparações justas e reprodutíveis entre a \textit{RLM clássica}, o \textit{RLM-bagging} e o \textit{RLM-subagging}. Além do RMSEP, o estudo incorpora as métricas \gls{MAE} e R$^2$, ampliando acaracterização do desempenho preditivo de cada técnica. Ressalta-se que as conclusões a seguir se referem a esse protocolo com otimização por validação cruzada: nos experimentos anteriores, com parâmetros fixados sem otimização formal, a técnica vencedora em alguns analitos (Ni e Fe) foi outra. Isso reforça que o desempenho relativo depende da forma como $m$ e $k$ são selecionados.
 
-\subsection{\textit{Sprint} 1 --- Motor de Dados (\textit{Core Backend})}
-Esta etapa implementou as funções \texttt{parse\_matrix()} e
-\texttt{parse\_vector()}, responsáveis pela leitura unificada de arquivos
-\texttt{.txt}, \texttt{.csv} e \texttt{.xlsx}, com detecção automática de
-separador de coluna e normalização do decimal brasileiro. A validação ocorreu
-por meio de testes no console, sem envolvimento da interface Streamlit,
-utilizando os \textit{datasets} reais \textit{EthanolLevel} e
-\texttt{CGL\_nir}, confirmando as dimensões esperadas das matrizes.
+Os experimentos seguem um protocolo controlado, com a otimização dos
+hiperparâmetros por validação cruzada 5-\textit{fold} aplicada
+exclusivamente ao conjunto de calibração. Esse protocolo busca
+assegurar comparações justas e reprodutíveis entre a \textit{RLM
+clássica}, o \textit{RLM-bagging} e o \textit{RLM-subagging}. Além do
+RMSEP, o estudo incorpora as métricas \gls{MAE} e R$^2$, ampliando a
+caracterização do desempenho preditivo de cada técnica.
 
-\subsection{\textit{Sprint} 2 --- Algoritmos Científicos}
-O núcleo matemático foi codificado em \texttt{models.py} como funções puras,
-independentes de qualquer biblioteca de interface. Implementaram-se
-\texttt{perform\_rlm()} via \texttt{np.linalg.lstsq}, \texttt{perform\_bagging()}
-para \textit{bagging} e \textit{subagging} parametrizados, \texttt{calc\_metrics()}
-para RMSEP, MAE e $R^2$, e \texttt{run\_cross\_validation()} para validação
-cruzada 5-\textit{fold}, culminando na função \texttt{find\_optimal\_parameters()}
-de \textit{grid search}.
+Ressalta-se que as conclusões a seguir se referem a esse protocolo com 
+otimização por validação cruzada: nos experimentos anteriores, com 
+parâmetros fixados sem otimização formal, a técnica vencedora em alguns 
+analitos (Ni e Fe) foi outra. Isso reforça que o desempenho relativo 
+depende da forma como $m$ e $k$ são selecionados.
 
-\subsection{\textit{Sprint} 3 --- Interface Reativa}
-Conectou-se \texttt{models.py} ao orquestrador \texttt{app.py}, implementando os quatro
-componentes \texttt{st.file\_uploader}, a validação de parâmetros por meio de
-\texttt{parse\_int\_list()} e \texttt{parse\_float\_list()}, o \textit{callback}
-de progresso e a persistência do resultado em \texttt{st.session\_state}. Os
-quatro gráficos Plotly foram centralizados em \texttt{components.py}, garantindo
-que nenhuma lógica de negócio residisse na camada de apresentação.
+%----------------------------------------------------------------------------
 
-\subsection{\textit{Sprint} 4 --- Otimização com \textit{Cache}}
-Avaliou-se a arquitetura resultante quanto à sua compatibilidade com os mecanismos de
-\textit{cache} do Streamlit. Como \texttt{parse\_matrix()}, \texttt{parse\_vector()}
-e \texttt{run\_full\_analysis()} são funções puras, determinísticas e com
-entradas serializáveis, o decorador\footnote{Em Python, um decorador é uma sintaxe especial (indicada pelo caractere @) utilizada para estender ou modificar o comportamento de funções ou métodos de forma declarativa, sem a necessidade de alterar diretamente o seu código-fonte.} \texttt{@st.cache\_data} pode ser aplicado diretamente, sem refatoração, reduzindo a latência em execuções repetidas.
+A análise comparativa revela variações de desempenho dependentes do
+analito e indica, para este conjunto de dados específico, a
+inexistência de uma técnica universalmente superior. Para o Manganês
+(Mn), o RLM-\textit{subagging} ($k^* = 80\%$, $m^* = 10$) apresenta o
+menor RMSEP (0,0966), uma redução de 8,1\% em relação à RLM clássica.
+Para o Ferro (Fe), o RLM-\textit{bagging} ($m^* = 30$) obtém o melhor
+desempenho (RMSEP = 2,6406), com melhoria de 4,0\% sobre a RLM
+clássica.
 
-%---------------------------------------------------
-\begin{comment}
+Para o Níquel (Ni), o RLM-\textit{subagging} ($k^* = 60\%$,
+$m^* = 10$) exibe resultado marginalmente superior (RMSEP = 1,6003),
+com diferença de 0,25\% em relação à RLM clássica. Dada a magnitude
+dessa diferença e o tamanho amostral disponível, o resultado deve ser
+interpretado com cautela. Em contrapartida, para o Molibdênio (Mo) e o
+Cromo (Cr), a RLM clássica apresenta desempenho superior (RMSEP de
+0,2633 e 1,0798, respectivamente), indicando que a complexidade
+adicional das estratégias de \textit{ensemble} não resulta em ganho de
+precisão para esses analitos neste contexto.
 
-\begin{description}
+%---------------------------------------------------------------------
 
-\item[a)] \textbf{\textit{Sprint} 1 --- Motor de Dados (\textit{Core Backend})}:
-Esta etapa implementou as funções \texttt{parse\_matrix()} e
-\texttt{parse\_vector()}, responsáveis pela leitura unificada de arquivos
-\texttt{.txt}, \texttt{.csv} e \texttt{.xlsx}, com detecção automática de
-separador de coluna e normalização do decimal brasileiro. A validação ocorreu
-por meio de testes no console, sem envolvimento da interface Streamlit,
-utilizando os \textit{datasets} reais \textit{EthanolLevel} e
-\texttt{CGL\_nir}, confirmando as dimensões esperadas das matrizes.
+A avaliação por meio do RMSEP, complementada pelo \gls{MAE} e pelo
+R$^2$, permite uma caracterização abrangente do desempenho preditivo.
+Todos os modelos apresentam coeficiente de determinação superior a
+0,98 para todos os elementos, o que evidencia elevada capacidade
+preditiva para o conjunto de dados analisado.
 
-\item[b)] \textbf{\textit{Sprint} 2 --- Algoritmos Científicos}: O núcleo
-matemático foi codificado em \texttt{models.py} como funções puras,
-independentes de qualquer biblioteca de interface. Implementaram-se
-\texttt{perform\_rlm()} via \texttt{np.linalg.lstsq}, \texttt{perform\_bagging()}
-para \textit{bagging} e \textit{subagging} parametrizados, \texttt{calc\_metrics()}
-para RMSEP, MAE e $R^2$, e \texttt{run\_cross\_validation()} para validação
-cruzada 5-\textit{fold}, culminando na função \texttt{find\_optimal\_parameters()}
-de \textit{grid search}.
+Para Mn e Ni, o RLM-\textit{subagging} apresenta dominância de Pareto
+sobre o RLM-\textit{bagging}, por ser simultaneamente superior em
+acurácia (RMSEP e \gls{MAE}) e mais eficiente computacionalmente, o
+que reforça sua indicação nesses dois casos. Para Mo e Cr, os
+resultados sustentam a adoção da RLM clássica, em razão de sua
+simplicidade e de sua eficiência computacional.
 
-\item[c)] \textbf{\textit{Sprint} 3 --- Interface Reativa}: Conectou-se
-\texttt{models.py} ao orquestrador \texttt{app.py}, implementando os quatro
-componentes \texttt{st.file\_uploader}, a validação de parâmetros por meio de
-\texttt{parse\_int\_list()} e \texttt{parse\_float\_list()}, o \textit{callback}
-de progresso e a persistência do resultado em \texttt{st.session\_state}. Os
-quatro gráficos Plotly foram centralizados em \texttt{components.py}, garantindo
-que nenhuma lógica de negócio residisse na camada de apresentação.
+%--------------------------------------------------------------------
 
-\item[d)] \textbf{\textit{Sprint} 4 --- Otimização com \textit{Cache}}: Avaliou-se
-a arquitetura resultante quanto à sua compatibilidade com os mecanismos de
-\textit{cache} do Streamlit. Como \texttt{parse\_matrix()}, \texttt{parse\_vector()}
-e \texttt{run\_full\_analysis()} são funções puras, determinísticas e com
-entradas serializáveis, o decorador\footnote{Em Python, um decorador é uma sintaxe especial (indicada pelo caractere @) utilizada para estender ou modificar o comportamento de funções ou métodos de forma declarativa, sem a necessidade de alterar diretamente o seu código-fonte.}
- \texttt{@st.cache\_data} pode ser aplicado
-diretamente, sem refatoração, reduzindo a latência em execuções repetidas.
+A análise da eficiência computacional mostra diferenças expressivas
+entre os métodos. A RLM clássica é a abordagem mais rápida em todos
+os analitos. O RLM-\textit{subagging} ocupa posição intermediária:
+tomando a razão entre os tempos do RLM-\textit{bagging} e do
+RLM-\textit{subagging} em cada analito, o subagging é, em média, 3,0
+vezes mais rápido, com variação entre 1,4 vez (Mo) e 6,3 vezes (Ni).
+Em termos agregados, a soma dos tempos dos cinco analitos é cerca de
+53\% menor no subagging.
 
-\end{description}
-\end{comment}
-%---------------------------------------------------
+Em relação à RLM clássica, o RLM-\textit{subagging} apresenta custo de
+até 19,5 vezes superior, enquanto o RLM-\textit{bagging} é, em média,
+22,1 vezes mais lento. O Cromo (Cr) é o único caso em que o
+RLM-\textit{subagging} não apresenta vantagem temporal sobre o
+RLM-\textit{bagging}, comportamento explicado pelo maior número de
+replicações selecionado por validação cruzada ($m^* = 30$ contra
+$m^* = 20$).
 
-% ─────────────────────────────────────────────────────────────────────────────
-\section{Suíte de Testes Automatizados com pytest}
-\label{sec:testescaixapreta}
+%-------------------------------------------------------------------------
 
-A correção do sistema Python foi validada por meio de uma suíte de 92 testes
-automatizados com \texttt{pytest}~\cite{pytest2024}, organizada em três classes
-complementares: testes unitários, testes de caixa-preta e testes de carga e
-\textit{stress}. Essa estratificação permitiu verificar, respectivamente, a
-corretude matemática isolada, a fidelidade em relação ao sistema Java legado e
-o comportamento sob volumes de dados realistas. A saída da execução da suíte de testes automatizados, desenvolvida especificamente para este trabalho com \texttt{pytest} e executada no VS~Code, é apresentada no Apêndice~\ref{cha:resultadotestes}.
+A investigação indica que o RLM-\textit{subagging} é a alternativa
+mais equilibrada entre precisão e eficiência para os dados analisados,
+sendo recomendado para Mn e Ni. Para Mo e Cr, os resultados sustentam
+a adoção da RLM clássica. O RLM-\textit{bagging} mostra-se preferível
+para Fe, embora o RLM-\textit{subagging} atinja desempenho preditivo
+equivalente (RMSEP de 2,6509 e R$^2$ idêntico, 0,9900) em menos da
+metade do tempo. A relação de compromisso entre acurácia e tempo atua
+como elemento decisivo na seleção da técnica.
 
-\subsection{Testes Unitários (21 testes)}
-Exercitaram cada função pura de \texttt{models.py} isoladamente, com matrizes de dimensão reduzida e valores
-determinísticos, por meio das \textit{fixtures} \texttt{dados\_simples}
-($20\times5$) e \texttt{dados\_medios}~($300\times50$). Cobriram-se oito testes
-de \textit{parsing} de arquivos e treze testes de modelos de regressão,
-incluindo a recuperação exata de $\boldsymbol{\beta}$ em sistemas determinados
-e a reprodutibilidade do \textit{bagging} sob a mesma semente aleatória.
+% Do ponto de vista da engenharia de software, o trabalho atinge seus objetivos específicos. A arquitetura modular em três camadas independentes (\texttt{models.py}, \texttt{components.py} e \texttt{app.py}) satisfaz o requisito de modularidade (RNF01). A suíte de 92 testes automatizados atesta a equivalência entre o sistema Python e o sistema Java legado (RNF03) em dois níveis distintos: para a RLM, que é determinística, a equivalência numérica é estrita (tolerância de $5\times10^{-4}$ em RMSEP, \gls{MAE} e R$^2$); para o \textit{bagging} e o \textit{subagging}, que são estocásticos e cujas sequências pseudoaleatórias diferem entre Python e Java, a suíte verifica consistência estatística dentro de tolerâncias mais amplas (0,15 em RMSEP e \gls{MAE}; $5\times10^{-3}$ em R$^2$). Assim, a migração incremental orientada por testes de caixa-preta constitui contribuição metodológica válida independentemente do domínio de aplicação, ainda que não demonstre identidade das reamostragens entre as duas implementações.
 
-\subsection{Testes de Caixa-Preta (60 testes)}
-Compararam as métricas agregadas (RMSEP, MAE e $R^2$) calculadas pelo sistema Python com as
-registradas nos arquivos de saída do sistema Java original, sem acesso ao
-código-fonte legado, seguindo a estratégia de \textit{black-box
-testing}~\cite{pressman2016}. Doze testes parametrizados foram aplicados a
-cada um de cinco analitos (Mn, Mo, Cr, Ni, Fe). Para a RLM, que é
-determinística, adotou-se tolerância de $5\times10^{-4}$. Para o
-\textit{bagging} e o \textit{subagging}, que são estocásticos e utilizam
-geradores pseudoaleatórios distintos em Python e em Java, adotaram-se
-tolerâncias de 0,15 para RMSEP e MAE e de $5\times10^{-3}$ para $R^2$, além
-da verificação de que $m^*$ e $k^*$ pertencem à grade de busca. Esses testes
-atestam, portanto, equivalência numérica estrita para a RLM e consistência
-estatística para os métodos de \textit{ensemble}, sem exigir a identidade das
-reamostragens.
+Do ponto de vista da engenharia de software, o trabalho atinge seus
+objetivos específicos. A arquitetura modular em três camadas
+independentes (\texttt{models.py}, \texttt{components.py} e
+\texttt{app.py}) satisfaz o requisito de modularidade (RNF01). A suíte
+de 92 testes automatizados atesta a equivalência entre o sistema
+Python e o sistema Java legado (RNF03) em dois níveis distintos.
 
-\subsection{Testes de Carga e \textit{Stress} (11 testes)}
-Quantificaram os limites operacionais de tempo de execução e consumo de memória para
-matrizes espectrais de alta dimensionalidade~\cite{jorgensen2014}, empregando
-as \textit{fixtures} \texttt{matriz\_grande}~($5.000\times723$) e
-\texttt{matriz\_stress}~($15.000\times723$). O tempo foi medido com
-\texttt{time.perf\_counter()} e o pico de alocação de memória com
-\texttt{tracemalloc}, registrando o tempo do \textit{bagging} para 5, 10, 25 e 50 \textit{bags}
-e o pico de memória da RLM. Esses testes documentam o comportamento
-operacional do sistema; apenas alguns impõem limites (30~s para a RLM em
-$5.000\times723$; 2048~MB de memória), e a relação entre número de
-\textit{bags} e tempo é reportada, mas não verificada por asserção.
+Para a RLM, que é determinística, a equivalência numérica é estrita,
+com tolerância de $5\times10^{-4}$ em RMSEP, \gls{MAE} e R$^2$. Para o
+\textit{bagging} e o \textit{subagging}, que são estocásticos e cujas
+sequências pseudoaleatórias diferem entre Python e Java, a suíte
+verifica consistência estatística dentro de tolerâncias mais amplas:
+0,15 em RMSEP e \gls{MAE}; $5\times10^{-3}$ em R$^2$.
 
-\subsection{Resultados Consolidados}
-A suíte completa foi executada em
-ambiente Windows com Python~3.12.10 e pytest~9.1.0, totalizando 92 testes
-aprovados, nenhuma falha e nenhum teste ignorado, em 81{,}63~segundos.
-% >>> CONFIRME na saída do pytest que a linha final é "92 passed" (sem
-% >>> "skipped"): a fixture cfg_analito pula testes se algum arquivo faltar.
-Esse resultado evidencia três conclusões objetivas: correção matemática nos
-testes unitários, equivalência com o sistema Java legado nos níveis descritos
-no item (b) e execução sem erro de memória para matrizes de até
-$15.000\times723$ (cerca de 87~MB em precisão dupla).
+Assim, a migração incremental orientada por testes de caixa-preta
+constitui contribuição metodológica válida independentemente do
+domínio de aplicação. Entretanto, essa abordagem não demonstra
+identidade das reamostragens entre as duas implementações.
 
-%---------------------------------------------------
-\begin{comment}
+%Este estudo apresenta limitações pertinentes. O conjunto de dados corresponde a uma composição específica de aço-liga, analisada sob condições instrumentais particulares, o que restringe a extrapolação dos achados para outras composições, regimes amostrais ou configurações espectrométricas. A razão de aproximadamente 42 preditores por observação no conjunto de calibração (723 variáveis para 17 amostras) caracteriza um regime de alta dimensionalidade que, embora tratável pela pseudo-inversa de Moore-Penrose, amplifica a sensibilidade dos resultados à composição das amostras disponíveis. Os \textit{folds} da validação cruzada contêm apenas três ou quatro amostras, o que limita a estabilidade da seleção de $m^*$ e $k^*$.
 
-\begin{description}
+Este estudo apresenta limitações pertinentes. O conjunto de dados
+corresponde a uma composição específica de aço-liga, analisada sob
+condições instrumentais particulares, o que restringe a extrapolação
+dos achados para outras composições, regimes amostrais ou
+configurações espectrométricas.
 
-\item[a)] \textbf{Testes Unitários (21 testes)}: Exercitaram cada função pura
-de \texttt{models.py} isoladamente, com matrizes de dimensão reduzida e valores
-determinísticos, por meio das \textit{fixtures} \texttt{dados\_simples}
-($20\times5$) e \texttt{dados\_medios}~($300\times50$). Cobriram-se oito testes
-de \textit{parsing} de arquivos e treze testes de modelos de regressão,
-incluindo a recuperação exata de $\boldsymbol{\beta}$ em sistemas determinados
-e a reprodutibilidade do \textit{bagging} sob a mesma semente aleatória.
+A razão de aproximadamente 42 preditores por observação no conjunto
+de calibração (723 variáveis para 17 amostras) caracteriza um regime
+de alta dimensionalidade. Embora tratável pela pseudo-inversa de
+Moore-Penrose, esse cenário amplifica a sensibilidade dos resultados
+à composição das amostras disponíveis.
 
-\item[b)] \textbf{Testes de Caixa-Preta (60 testes)}: Compararam as métricas
-agregadas (RMSEP, MAE e $R^2$) calculadas pelo sistema Python com as
-registradas nos arquivos de saída do sistema Java original, sem acesso ao
-código-fonte legado, seguindo a estratégia de \textit{black-box
-testing}~\cite{pressman2016}. Doze testes parametrizados foram aplicados a
-cada um de cinco analitos (Mn, Mo, Cr, Ni, Fe). Para a RLM, que é
-determinística, adotou-se tolerância de $5\times10^{-4}$. Para o
-\textit{bagging} e o \textit{subagging}, que são estocásticos e utilizam
-geradores pseudoaleatórios distintos em Python e em Java, adotaram-se
-tolerâncias de 0,15 para RMSEP e MAE e de $5\times10^{-3}$ para $R^2$, além
-da verificação de que $m^*$ e $k^*$ pertencem à grade de busca. Esses testes
-atestam, portanto, equivalência numérica estrita para a RLM e consistência
-estatística para os métodos de \textit{ensemble}, sem exigir a identidade das
-reamostragens.
+Além disso, os \textit{folds} da validação cruzada contêm apenas três
+ou quatro amostras, o que limita a estabilidade da seleção de $m^*$ e
+$k^*$.
 
-\item[c)] \textbf{Testes de Carga e \textit{Stress} (11 testes)}: Quantificaram
-os limites operacionais de tempo de execução e consumo de memória para
-matrizes espectrais de alta dimensionalidade~\cite{jorgensen2014}, empregando
-as \textit{fixtures} \texttt{matriz\_grande}~($5.000\times723$) e
-\texttt{matriz\_stress}~($15.000\times723$). O tempo foi medido com
-\texttt{time.perf\_counter()} e o pico de alocação de memória com
-\texttt{tracemalloc}, registrando o tempo do \textit{bagging} para 5, 10, 25 e 50 \textit{bags}
-e o pico de memória da RLM. Esses testes documentam o comportamento
-operacional do sistema; apenas alguns impõem limites (30~s para a RLM em
-$5.000\times723$; 2048~MB de memória), e a relação entre número de
-\textit{bags} e tempo é reportada, mas não verificada por asserção.
+% Outras limitações são de natureza metodológica. O valor $k^* = 80\%$ coincide com o limite superior da grade avaliada ($k \in \{0{,}50;\ 0{,}60;\ 0{,}70;\ 0{,}80\}$) em quatro dos cinco analitos, de modo que o ótimo real pode situar-se em frações maiores. As tolerâncias adotadas nos testes de caixa-preta dos métodos estocásticos são amplas em relação às diferenças de desempenho entre as técnicas, de modo que a suíte assegura consistência estatística, mas não discrimina implementações com desempenhos próximos. Por fim, a análise adota exclusivamente a RLM como modelo base.
 
-\item[d)] \textbf{Resultados Consolidados}: A suíte completa foi executada em
-ambiente Windows com Python~3.12.10 e pytest~9.1.0, totalizando 92 testes
-aprovados, nenhuma falha e nenhum teste ignorado, em 81{,}63~segundos.
-% >>> CONFIRME na saída do pytest que a linha final é "92 passed" (sem
-% >>> "skipped"): a fixture cfg_analito pula testes se algum arquivo faltar.
-Esse resultado evidencia três conclusões objetivas: correção matemática nos
-testes unitários, equivalência com o sistema Java legado nos níveis descritos
-no item (b) e execução sem erro de memória para matrizes de até
-$15.000\times723$ (cerca de 87~MB em precisão dupla).
+Outras limitações são de natureza metodológica. O valor $k^* = 80\%$
+coincide com o limite superior da grade avaliada
+($k \in \{0{,}50;\ 0{,}60;\ 0{,}70;\ 0{,}80\}$) em quatro dos cinco
+analitos, de modo que o ótimo real pode situar-se em frações maiores.
 
-\end{description}
-\end{comment}
-%---------------------------------------------------
+As tolerâncias adotadas nos testes de caixa-preta dos métodos
+estocásticos são amplas em relação às diferenças de desempenho entre
+as técnicas. Desse modo, a suíte assegura consistência estatística,
+mas não discrimina implementações com desempenhos próximos.
 
-Como ilustração da fidelidade amostra-a-amostra subjacente a esses testes
-agregados, a Tabela~\ref{tab:paridade_bagging_cr} apresenta a comparação
-completa entre Java e Python para o caso do \textit{Bagging} aplicado ao
-Cromo (Cr); as tabelas equivalentes para os demais catorze pares
-analito$\times$técnica encontram-se no Apêndice~\ref{cha:paridadeamostra}.
+Por fim, a análise adota exclusivamente a RLM como modelo base.
 
-%---------------------------------------------------
-\begin{comment}
-	
 
-\begin{table}[H]
-\centering
-\caption{Paridade Bagging -- Cr.}
-\label{tab:paridade_bagging_cr}
-\resizebox{0.7\textwidth}{!}{%
-\begin{tabular}{
-    S[table-format=2.0]
-    S[table-format=2.3]
-    S[table-format=2.4]
-    S[table-format=2.4]
-    S[table-format=1.1]
-}
-\toprule
-{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
-\midrule
- 1  & 30.000  & 30.1484  & 30.1484  & 0.0 \\
- 2  & 40.000  & 39.9788  & 39.9788  & 0.0 \\
- 3  & 60.000  & 60.0579  & 60.0579  & 0.0 \\
- 4  & 35.000  & 34.9336  & 34.9336  & 0.0 \\
- 5  & 45.000  & 44.7089  & 44.7089  & 0.0 \\
- 6  & 48.000  & 47.4377  & 47.4377  & 0.0 \\
- 7  & 65.000  & 64.7815  & 64.7815  & 0.0 \\
- 8  & 23.000  & 22.7322  & 22.7322  & 0.0 \\
- 9  & 25.000  & 23.9380  & 23.9380  & 0.0 \\
-10  & 37.000  & 36.0721  & 36.0721  & 0.0 \\
-11  & 23.103  & 22.7884  & 22.7884  & 0.0 \\
-12  & 22.722  & 20.4495  & 20.4495  & 0.0 \\
-13  & 22.713  & 21.5452  & 21.5452  & 0.0 \\
-14  & 60.054  & 60.0535  & 60.0535  & 0.0 \\
-15  & 59.959  & 57.2886  & 57.2886  & 0.0 \\
-16  & 32.250  & 33.6880  & 33.6880  & 0.0 \\
-17  & 32.448  & 31.7185  & 31.7185  & 0.0 \\
-18  & 32.154  & 30.6143  & 30.6143  & 0.0 \\
-19  & 60.996  & 62.9324  & 62.9324  & 0.0 \\
-20  & 60.684  & 60.3428  & 60.3428  & 0.0 \\
-21  & 60.360  & 58.3135  & 58.3135  & 0.0 \\
-22  & 40.636  & 41.4952  & 41.4952  & 0.0 \\
-23  & 40.733  & 39.3944  & 39.3944  & 0.0 \\
-24  & 40.524  & 39.4233  & 39.4233  & 0.0 \\
-25  & 64.597  & 66.6126  & 66.6126  & 0.0 \\
-26  & 65.522  & 65.2090  & 65.2090  & 0.0 \\
-27  & 44.707  & 43.2840  & 43.2840  & 0.0 \\
-28  & 44.716  & 43.3947  & 43.3947  & 0.0 \\
-29  & 30.022  & 30.3226  & 30.3226  & 0.0 \\
-30  & 30.177  & 28.6635  & 28.6635  & 0.0 \\
-31  & 29.926  & 28.1745  & 28.1745  & 0.0 \\
-32  & 44.926  & 46.1783  & 46.1783  & 0.0 \\
-33  & 44.837  & 43.8530  & 43.8530  & 0.0 \\
-34  & 44.837  & 43.7524  & 43.7524  & 0.0 \\
-\bottomrule
-\end{tabular}%
-}
-\begin{tablenotes}%[flushleft]
-\footnotesize
-\item Fonte:~\oautor\\
-\textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
-Todos os valores de $\Delta$ são iguais a zero, indicando paridade\\
-perfeita entre as implementações Java e Python para a técnica Bagging
-no analito Cromo (Cr).
-\end{tablenotes}
-\end{table}
-\end{comment}
-%---------------------------------------------------
+% Como direcionamento para investigações futuras, este estudo recomenda a expansão do escopo para conjuntos amostrais maiores e diferentes classes de materiais, a ampliação da grade de $k$ além de 80\% e a comparação com modelos preditivos alternativos, como \gls{PLS}, \gls{LASSO} e redes neurais, que permitirão avaliar se os padrões observados se sustentam em regimes mais generalizáveis. Recomenda-se ainda o uso de uma mesma sequência de reamostragens (por exemplo, índices exportados pelo Java e lidos pelo Python) para permitir a comparação amostra a amostra dos métodos estocásticos, e a avaliação de técnicas de \textit{ensemble} mais sofisticadas, como \textit{boosting} e \textit{stacking}.
 
-\begin{table}[H]
-\centering
-\caption{Paridade Bagging -- Cr.}
-\label{tab:paridade_bagging_cr}
-\begin{threeparttable}
-\resizebox{0.40\textwidth}{!}{%
-\begin{tabular}{
-    S[table-format=2.0]
-    S[table-format=2.3]
-    S[table-format=2.4]
-    S[table-format=2.4]
-    S[table-format=1.1]
-}
-\toprule
-{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}\tnote{a}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
-\midrule
- 1  & 30.000  & 30.1484  & 30.1484  & 0.0 \\
- 2  & 40.000  & 39.9788  & 39.9788  & 0.0 \\
- 3  & 60.000  & 60.0579  & 60.0579  & 0.0 \\
- 4  & 35.000  & 34.9336  & 34.9336  & 0.0 \\
- 5  & 45.000  & 44.7089  & 44.7089  & 0.0 \\
- 6  & 48.000  & 47.4377  & 47.4377  & 0.0 \\
- 7  & 65.000  & 64.7815  & 64.7815  & 0.0 \\
- 8  & 23.000  & 22.7322  & 22.7322  & 0.0 \\
- 9  & 25.000  & 23.9380  & 23.9380  & 0.0 \\
-10  & 37.000  & 36.0721  & 36.0721  & 0.0 \\
-11  & 23.103  & 22.7884  & 22.7884  & 0.0 \\
-12  & 22.722  & 20.4495  & 20.4495  & 0.0 \\
-13  & 22.713  & 21.5452  & 21.5452  & 0.0 \\
-14  & 60.054  & 60.0535  & 60.0535  & 0.0 \\
-15  & 59.959  & 57.2886  & 57.2886  & 0.0 \\
-16  & 32.250  & 33.6880  & 33.6880  & 0.0 \\
-17  & 32.448  & 31.7185  & 31.7185  & 0.0 \\
-18  & 32.154  & 30.6143  & 30.6143  & 0.0 \\
-19  & 60.996  & 62.9324  & 62.9324  & 0.0 \\
-20  & 60.684  & 60.3428  & 60.3428  & 0.0 \\
-21  & 60.360  & 58.3135  & 58.3135  & 0.0 \\
-22  & 40.636  & 41.4952  & 41.4952  & 0.0 \\
-23  & 40.733  & 39.3944  & 39.3944  & 0.0 \\
-24  & 40.524  & 39.4233  & 39.4233  & 0.0 \\
-25  & 64.597  & 66.6126  & 66.6126  & 0.0 \\
-26  & 65.522  & 65.2090  & 65.2090  & 0.0 \\
-27  & 44.707  & 43.2840  & 43.2840  & 0.0 \\
-28  & 44.716  & 43.3947  & 43.3947  & 0.0 \\
-29  & 30.022  & 30.3226  & 30.3226  & 0.0 \\
-30  & 30.177  & 28.6635  & 28.6635  & 0.0 \\
-31  & 29.926  & 28.1745  & 28.1745  & 0.0 \\
-32  & 44.926  & 46.1783  & 46.1783  & 0.0 \\
-33  & 44.837  & 43.8530  & 43.8530  & 0.0 \\
-34  & 44.837  & 43.7524  & 43.7524  & 0.0 \\
-\bottomrule
-\end{tabular}%
-}
-\begin{center}
-\begin{minipage}{0.85\linewidth}
-\begin{tablenotes}
-\footnotesize
-\item Fonte:~\oautor
-\item[a] Tipo de dado utilizado em Java foi o \textit{double}; no Python,
-o equivalente é o \textit{float64} do NumPy — ambos representações IEEE~754
-de precisão dupla (64 bits), o que garante paridade numérica exata entre as
-duas implementações.
-\item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
-Todos os valores de $\Delta$ são iguais a zero, indicando paridade
-perfeita entre as implementações Java e Python para a técnica \textit{Bagging}
-no analito Cromo (Cr).
-\end{tablenotes}
-\end{minipage}
-\end{center}
-\end{threeparttable}
-\end{table}
+Como direcionamento para investigações futuras, este estudo recomenda
+a expansão do escopo para conjuntos amostrais maiores e diferentes
+classes de materiais, a ampliação da grade de $k$ além de 80\% e a
+comparação com modelos preditivos alternativos, como \gls{PLS},
+\gls{LASSO} e redes neurais. Essas abordagens permitirão avaliar se os
+padrões observados se sustentam em regimes mais generalizáveis.
+
+Recomenda-se ainda o uso de uma mesma sequência de reamostragens
+(por exemplo, índices exportados pelo Java e lidos pelo Python) para
+permitir a comparação amostra a amostra dos métodos estocásticos.
+Sugere-se também a avaliação de técnicas de \textit{ensemble} mais
+sofisticadas, como \textit{boosting} e \textit{stacking}.
+
+
+

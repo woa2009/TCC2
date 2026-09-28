@@ -1,235 +1,342 @@
-% =============================================================================
-\chapter{Interface e Experiência do Usuário (UI/UX) Científica}
+\chapter{Desenvolvimento Iterativo por Sprints e Validação por Testes Automatizados}
 
-\section{Design Centrado em Dados}
+\section{Metodologia Ágil: Desenvolvimento por Sprints}
 
-A interface do \texttt{app.py} organiza o fluxo analítico de forma hierárquica,
-priorizando a clareza e a produtividade do cientista em detrimento de elementos
-decorativos. A distribuição dos elementos entre abas, colunas e área central segue
-princípios de design centrado no usuário, com decisões arquiteturais explícitas sobre
-onde cada tipo de conteúdo deve residir.
+O desenvolvimento do sistema Python/Streamlit seguiu uma abordagem iterativa e
+incremental, organizada em quatro \textit{sprints} sucessivas, alinhada aos
+princípios do \textit{framework} Scrum~\cite{scrum2026}. Cada \textit{sprint}
+produziu um incremento funcional e testável do sistema, permitindo validação
+contínua da equivalência com o sistema Java legado antes do avanço para a
+etapa seguinte.
 
-\subsection{Navegação por Etapas (\texttt{st.tabs})}
-As três abas — \textbf{Configuração}, \textbf{Resultados} e \textbf{Gráficos} — guiam o usuário em um
-fluxo linear e irreversível: entrada de dados $\rightarrow$ execução $\rightarrow$
-inspeção de resultados. Essa estrutura espelha o \textit{workflow} típico de validação de
-modelos quimiométricos e reduz a sobrecarga cognitiva ao esconder informações irrelevantes
-para a etapa atual.
+\subsection{\textit{Sprint} 1 --- Motor de Dados (\textit{Core Backend})}
+Esta etapa implementou as funções \texttt{parse\_matrix()} e
+\texttt{parse\_vector()}, responsáveis pela leitura unificada de arquivos
+\texttt{.txt}, \texttt{.csv} e \texttt{.xlsx}, com detecção automática de
+separador de coluna e normalização do decimal brasileiro. A validação ocorreu
+por meio de testes no console, sem envolvimento da interface Streamlit,
+utilizando os \textit{datasets} reais \textit{EthanolLevel} e
+\texttt{CGL\_nir}, confirmando as dimensões esperadas das matrizes.
 
-\subsection{Layout em Colunas e Hierarquia Visual}
-O \texttt{app.py} utiliza \texttt{st.columns(2)} para agrupar uploads de calibração e teste lado a lado,
-sinalizando visualmente a paridade entre os conjuntos. A área central é reservada para
-cards de métricas gerados por \texttt{components.metric\_card\_html()} e para a tabela
-comparativa em \texttt{pd.DataFrame}. O CSS centralizado em \texttt{components.APP\_CSS}
-— incluindo gradientes de fundo, bordas coloridas por modelo e estilo terminal para o
-log — replica \textit{dashboards} técnicos e industriais sem poluir o \texttt{app.py} com
-definições de estilo.
+\subsection{\textit{Sprint} 2 --- Algoritmos Científicos}
+O núcleo matemático foi codificado em \texttt{models.py} como funções puras,
+independentes de qualquer biblioteca de interface. Implementaram-se
+\texttt{perform\_rlm()} via \texttt{np.linalg.lstsq}, \texttt{perform\_bagging()}
+para \textit{bagging} e \textit{subagging} parametrizados, \texttt{calc\_metrics()}
+para RMSEP, MAE e $R^2$, e \texttt{run\_cross\_validation()} para validação
+cruzada 5-\textit{fold}, culminando na função \texttt{find\_optimal\_parameters()}
+de \textit{grid search}.
 
-\subsection{Feedback Progressivo}
-O botão \textbf{Executar Análise} é desabilitado (\texttt{disabled=not files\_ok}) enquanto algum dos quatro arquivos estiver
-ausente, prevenindo execuções inválidas. A barra de progresso atualizada pelo callback e
-a mensagem \texttt{st.success} ao término fornecem confirmação clara de conclusão,
-padrão recomendado pelas diretrizes de usabilidade para interfaces científicas.
+\subsection{\textit{Sprint} 3 --- Interface Reativa}
+Conectou-se \texttt{models.py} ao orquestrador \texttt{app.py}, implementando os quatro
+componentes \texttt{st.file\_uploader}, a validação de parâmetros por meio de
+\texttt{parse\_int\_list()} e \texttt{parse\_float\_list()}, o \textit{callback}
+de progresso e a persistência do resultado em \texttt{st.session\_state}. Os
+quatro gráficos Plotly foram centralizados em \texttt{components.py}, garantindo
+que nenhuma lógica de negócio residisse na camada de apresentação.
 
-\subsection{Decisão Arquitetural: \texttt{st.tabs} vs.\ \texttt{st.sidebar}}
-O Streamlit oferece dois paradigmas de organização de parâmetros técnicos e resultados:
-a \texttt{st.sidebar} (painel lateral persistente, visível em todas as telas) e o
-\texttt{st.tabs} (abas sequenciais que segmentam o fluxo). Para o perfil de usuário
-científico deste sistema --- que opera em etapas ordenadas e não retorna aos parâmetros
-após a execução --- o modelo de abas foi preferido por três razões. A primeira é que
-impõe explicitamente a sequência \textit{Configuração $\rightarrow$ Resultados
-$\rightarrow$ Gráficos}, prevenindo execuções prematuras.
+\subsection{\textit{Sprint} 4 --- Otimização com \textit{Cache}}
+Avaliou-se a arquitetura resultante quanto à sua compatibilidade com os mecanismos de
+\textit{cache} do Streamlit. Como \texttt{parse\_matrix()}, \texttt{parse\_vector()}
+e \texttt{run\_full\_analysis()} são funções puras, determinísticas e com
+entradas serializáveis, o decorador\footnote{Em Python, um decorador é uma sintaxe especial (indicada pelo caractere @) utilizada para estender ou modificar o comportamento de funções ou métodos de forma declarativa, sem a necessidade de alterar diretamente o seu código-fonte.} \texttt{@st.cache\_data} pode ser aplicado diretamente, sem refatoração, reduzindo a latência em execuções repetidas.
 
-A segunda razão é que o modelo de abas preserva a área central integralmente para
-visualização de resultados e gráficos, sem que uma barra lateral compita com os
-gráficos do Plotly em largura de tela. A terceira é que ele se alinha ao padrão de
-\textit{wizards} adotado em \textit{softwares} de análise científica (Origin\footnote{Disponível no site oficial da \textit{OriginLab}: \url{https://www.originlab.com/}.}, MATLAB App Designer\footnote{Disponível no site oficial da \textit{MathWorks} para o \textit{software} MATLAB: \url{https://www.mathworks.com/products/matlab.html}.}), nos quais cada etapa revela seu conteúdo apenas quando os
-pré-requisitos anteriores foram cumpridos.
+%---------------------------------------------------
+\begin{comment}
 
-Ainda assim, a \texttt{st.sidebar} permanece como alternativa recomendada para versões
-futuras que implementem parâmetros globais persistentes, como configuração de idioma,
-normalização de dados ou seleção de paleta de cores para publicação.
+\begin{description}
+
+\item[a)] \textbf{\textit{Sprint} 1 --- Motor de Dados (\textit{Core Backend})}:
+Esta etapa implementou as funções \texttt{parse\_matrix()} e
+\texttt{parse\_vector()}, responsáveis pela leitura unificada de arquivos
+\texttt{.txt}, \texttt{.csv} e \texttt{.xlsx}, com detecção automática de
+separador de coluna e normalização do decimal brasileiro. A validação ocorreu
+por meio de testes no console, sem envolvimento da interface Streamlit,
+utilizando os \textit{datasets} reais \textit{EthanolLevel} e
+\texttt{CGL\_nir}, confirmando as dimensões esperadas das matrizes.
+
+\item[b)] \textbf{\textit{Sprint} 2 --- Algoritmos Científicos}: O núcleo
+matemático foi codificado em \texttt{models.py} como funções puras,
+independentes de qualquer biblioteca de interface. Implementaram-se
+\texttt{perform\_rlm()} via \texttt{np.linalg.lstsq}, \texttt{perform\_bagging()}
+para \textit{bagging} e \textit{subagging} parametrizados, \texttt{calc\_metrics()}
+para RMSEP, MAE e $R^2$, e \texttt{run\_cross\_validation()} para validação
+cruzada 5-\textit{fold}, culminando na função \texttt{find\_optimal\_parameters()}
+de \textit{grid search}.
+
+\item[c)] \textbf{\textit{Sprint} 3 --- Interface Reativa}: Conectou-se
+\texttt{models.py} ao orquestrador \texttt{app.py}, implementando os quatro
+componentes \texttt{st.file\_uploader}, a validação de parâmetros por meio de
+\texttt{parse\_int\_list()} e \texttt{parse\_float\_list()}, o \textit{callback}
+de progresso e a persistência do resultado em \texttt{st.session\_state}. Os
+quatro gráficos Plotly foram centralizados em \texttt{components.py}, garantindo
+que nenhuma lógica de negócio residisse na camada de apresentação.
+
+\item[d)] \textbf{\textit{Sprint} 4 --- Otimização com \textit{Cache}}: Avaliou-se
+a arquitetura resultante quanto à sua compatibilidade com os mecanismos de
+\textit{cache} do Streamlit. Como \texttt{parse\_matrix()}, \texttt{parse\_vector()}
+e \texttt{run\_full\_analysis()} são funções puras, determinísticas e com
+entradas serializáveis, o decorador\footnote{Em Python, um decorador é uma sintaxe especial (indicada pelo caractere @) utilizada para estender ou modificar o comportamento de funções ou métodos de forma declarativa, sem a necessidade de alterar diretamente o seu código-fonte.}
+ \texttt{@st.cache\_data} pode ser aplicado
+diretamente, sem refatoração, reduzindo a latência em execuções repetidas.
+
+\end{description}
+\end{comment}
+%---------------------------------------------------
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Suíte de Testes Automatizados com pytest}
+\label{sec:testescaixapreta}
+
+A correção do sistema Python foi validada por meio de uma suíte de 92 testes
+automatizados com \texttt{pytest}~\cite{pytest2024}, organizada em três classes
+complementares: testes unitários, testes de caixa-preta e testes de carga e
+\textit{stress}. Essa estratificação permitiu verificar, respectivamente, a
+corretude matemática isolada, a fidelidade em relação ao sistema Java legado e
+o comportamento sob volumes de dados realistas. A saída da execução da suíte de testes automatizados, desenvolvida especificamente para este trabalho com \texttt{pytest} e executada no VS~Code, é apresentada no Apêndice~\ref{cha:resultadotestes}.
+
+\subsection{Testes Unitários (21 testes)}
+Exercitaram cada função pura de \texttt{models.py} isoladamente, com matrizes de dimensão reduzida e valores
+determinísticos, por meio das \textit{fixtures} \texttt{dados\_simples}
+($20\times5$) e \texttt{dados\_medios}~($300\times50$). Cobriram-se oito testes
+de \textit{parsing} de arquivos e treze testes de modelos de regressão,
+incluindo a recuperação exata de $\boldsymbol{\beta}$ em sistemas determinados
+e a reprodutibilidade do \textit{bagging} sob a mesma semente aleatória.
+
+\subsection{Testes de Caixa-Preta (60 testes)}
+Compararam as métricas agregadas (RMSEP, MAE e $R^2$) calculadas pelo sistema Python com as
+registradas nos arquivos de saída do sistema Java original, sem acesso ao
+código-fonte legado, seguindo a estratégia de \textit{black-box
+testing}~\cite{pressman2016}. Doze testes parametrizados foram aplicados a
+cada um de cinco analitos (Mn, Mo, Cr, Ni, Fe). Para a RLM, que é
+determinística, adotou-se tolerância de $5\times10^{-4}$. Para o
+\textit{bagging} e o \textit{subagging}, que são estocásticos e utilizam
+geradores pseudoaleatórios distintos em Python e em Java, adotaram-se
+tolerâncias de 0,15 para RMSEP e MAE e de $5\times10^{-3}$ para $R^2$, além
+da verificação de que $m^*$ e $k^*$ pertencem à grade de busca. Esses testes
+atestam, portanto, equivalência numérica estrita para a RLM e consistência
+estatística para os métodos de \textit{ensemble}, sem exigir a identidade das
+reamostragens.
+
+\subsection{Testes de Carga e \textit{Stress} (11 testes)}
+Quantificaram os limites operacionais de tempo de execução e consumo de memória para
+matrizes espectrais de alta dimensionalidade~\cite{jorgensen2014}, empregando
+as \textit{fixtures} \texttt{matriz\_grande}~($5.000\times723$) e
+\texttt{matriz\_stress}~($15.000\times723$). O tempo foi medido com
+\texttt{time.perf\_counter()} e o pico de alocação de memória com
+\texttt{tracemalloc}, registrando o tempo do \textit{bagging} para 5, 10, 25 e 50 \textit{bags}
+e o pico de memória da RLM. Esses testes documentam o comportamento
+operacional do sistema; apenas alguns impõem limites (30~s para a RLM em
+$5.000\times723$; 2048~MB de memória), e a relação entre número de
+\textit{bags} e tempo é reportada, mas não verificada por asserção.
+
+\subsection{Resultados Consolidados}
+A suíte completa foi executada em
+ambiente Windows com Python~3.12.10 e pytest~9.1.0, totalizando 92 testes
+aprovados, nenhuma falha e nenhum teste ignorado, em 81{,}63~segundos.
+% >>> CONFIRME na saída do pytest que a linha final é "92 passed" (sem
+% >>> "skipped"): a fixture cfg_analito pula testes se algum arquivo faltar.
+Esse resultado evidencia três conclusões objetivas: correção matemática nos
+testes unitários, equivalência com o sistema Java legado nos níveis descritos
+no item (b) e execução sem erro de memória para matrizes de até
+$15.000\times723$ (cerca de 87~MB em precisão dupla).
+
+%---------------------------------------------------
+\begin{comment}
+
+\begin{description}
+
+\item[a)] \textbf{Testes Unitários (21 testes)}: Exercitaram cada função pura
+de \texttt{models.py} isoladamente, com matrizes de dimensão reduzida e valores
+determinísticos, por meio das \textit{fixtures} \texttt{dados\_simples}
+($20\times5$) e \texttt{dados\_medios}~($300\times50$). Cobriram-se oito testes
+de \textit{parsing} de arquivos e treze testes de modelos de regressão,
+incluindo a recuperação exata de $\boldsymbol{\beta}$ em sistemas determinados
+e a reprodutibilidade do \textit{bagging} sob a mesma semente aleatória.
+
+\item[b)] \textbf{Testes de Caixa-Preta (60 testes)}: Compararam as métricas
+agregadas (RMSEP, MAE e $R^2$) calculadas pelo sistema Python com as
+registradas nos arquivos de saída do sistema Java original, sem acesso ao
+código-fonte legado, seguindo a estratégia de \textit{black-box
+testing}~\cite{pressman2016}. Doze testes parametrizados foram aplicados a
+cada um de cinco analitos (Mn, Mo, Cr, Ni, Fe). Para a RLM, que é
+determinística, adotou-se tolerância de $5\times10^{-4}$. Para o
+\textit{bagging} e o \textit{subagging}, que são estocásticos e utilizam
+geradores pseudoaleatórios distintos em Python e em Java, adotaram-se
+tolerâncias de 0,15 para RMSEP e MAE e de $5\times10^{-3}$ para $R^2$, além
+da verificação de que $m^*$ e $k^*$ pertencem à grade de busca. Esses testes
+atestam, portanto, equivalência numérica estrita para a RLM e consistência
+estatística para os métodos de \textit{ensemble}, sem exigir a identidade das
+reamostragens.
+
+\item[c)] \textbf{Testes de Carga e \textit{Stress} (11 testes)}: Quantificaram
+os limites operacionais de tempo de execução e consumo de memória para
+matrizes espectrais de alta dimensionalidade~\cite{jorgensen2014}, empregando
+as \textit{fixtures} \texttt{matriz\_grande}~($5.000\times723$) e
+\texttt{matriz\_stress}~($15.000\times723$). O tempo foi medido com
+\texttt{time.perf\_counter()} e o pico de alocação de memória com
+\texttt{tracemalloc}, registrando o tempo do \textit{bagging} para 5, 10, 25 e 50 \textit{bags}
+e o pico de memória da RLM. Esses testes documentam o comportamento
+operacional do sistema; apenas alguns impõem limites (30~s para a RLM em
+$5.000\times723$; 2048~MB de memória), e a relação entre número de
+\textit{bags} e tempo é reportada, mas não verificada por asserção.
+
+\item[d)] \textbf{Resultados Consolidados}: A suíte completa foi executada em
+ambiente Windows com Python~3.12.10 e pytest~9.1.0, totalizando 92 testes
+aprovados, nenhuma falha e nenhum teste ignorado, em 81{,}63~segundos.
+% >>> CONFIRME na saída do pytest que a linha final é "92 passed" (sem
+% >>> "skipped"): a fixture cfg_analito pula testes se algum arquivo faltar.
+Esse resultado evidencia três conclusões objetivas: correção matemática nos
+testes unitários, equivalência com o sistema Java legado nos níveis descritos
+no item (b) e execução sem erro de memória para matrizes de até
+$15.000\times723$ (cerca de 87~MB em precisão dupla).
+
+\end{description}
+\end{comment}
+%---------------------------------------------------
+
+Como ilustração da fidelidade amostra-a-amostra subjacente a esses testes
+agregados, a Tabela~\ref{tab:paridade_bagging_cr} apresenta a comparação
+completa entre Java e Python para o caso do \textit{Bagging} aplicado ao
+Cromo (Cr); as tabelas equivalentes para os demais catorze pares
+analito$\times$técnica encontram-se no Apêndice~\ref{cha:paridadeamostra}.
 
 %---------------------------------------------------
 \begin{comment}
 	
-\begin{description}
 
-\item[a)] \textbf{Navegação por Etapas (\texttt{st.tabs})}: As três abas —
-\textbf{Configuração}, \textbf{Resultados} e \textbf{Gráficos} — guiam o usuário em um
-fluxo linear e irreversível: entrada de dados $\rightarrow$ execução $\rightarrow$
-inspeção de resultados. Essa estrutura espelha o \textit{workflow} típico de validação de
-modelos quimiométricos e reduz a sobrecarga cognitiva ao esconder informações irrelevantes
-para a etapa atual.
-
-\item[b)] \textbf{Layout em Colunas e Hierarquia Visual}: O \texttt{app.py} utiliza
-\texttt{st.columns(2)} para agrupar uploads de calibração e teste lado a lado,
-sinalizando visualmente a paridade entre os conjuntos. A área central é reservada para
-cards de métricas gerados por \texttt{components.metric\_card\_html()} e para a tabela
-comparativa em \texttt{pd.DataFrame}. O CSS centralizado em \texttt{components.APP\_CSS}
-— incluindo gradientes de fundo, bordas coloridas por modelo e estilo terminal para o
-log — replica \textit{dashboards} técnicos e industriais sem poluir o \texttt{app.py} com
-definições de estilo.
-
-\item[c)] \textbf{Feedback Progressivo}: O botão \textbf{Executar Análise} é
-desabilitado (\texttt{disabled=not files\_ok}) enquanto algum dos quatro arquivos estiver
-ausente, prevenindo execuções inválidas. A barra de progresso atualizada pelo callback e
-a mensagem \texttt{st.success} ao término fornecem confirmação clara de conclusão,
-padrão recomendado pelas diretrizes de usabilidade para interfaces científicas.
-
-
-\item[d)] \textbf{Decisão Arquitetural: \texttt{st.tabs} vs.\ \texttt{st.sidebar}}: O
-Streamlit oferece dois paradigmas de organização de parâmetros técnicos e resultados:
-a \texttt{st.sidebar} (painel lateral persistente, visível em todas as telas) e o
-\texttt{st.tabs} (abas sequenciais que segmentam o fluxo). Para o perfil de usuário
-científico deste sistema --- que opera em etapas ordenadas e não retorna aos parâmetros
-após a execução --- o modelo de abas foi preferido por três razões. A primeira é que
-impõe explicitamente a sequência \textit{Configuração $\rightarrow$ Resultados
-$\rightarrow$ Gráficos}, prevenindo execuções prematuras.
-
-A segunda razão é que o modelo de abas preserva a área central integralmente para
-visualização de resultados e gráficos, sem que uma barra lateral compita com os
-gráficos do Plotly em largura de tela. A terceira é que ele se alinha ao padrão de
-\textit{wizards} adotado em \textit{softwares} de análise científica (Origin\footnote{Disponível no site oficial da \textit{OriginLab}: \url{https://www.originlab.com/}.}
-, MATLAB App Designer\footnote{Disponível no site oficial da \textit{MathWorks} para o \textit{software} MATLAB: \url{https://www.mathworks.com/products/matlab.html}.}
-), nos quais cada etapa revela seu conteúdo apenas quando os
-pré-requisitos anteriores foram cumpridos.
-
-Ainda assim, a \texttt{st.sidebar} permanece como alternativa recomendada para versões
-futuras que implementem parâmetros globais persistentes, como configuração de idioma,
-normalização de dados ou seleção de paleta de cores para publicação.
-
-\end{description}
+\begin{table}[H]
+\centering
+\caption{Paridade Bagging -- Cr.}
+\label{tab:paridade_bagging_cr}
+\resizebox{0.7\textwidth}{!}{%
+\begin{tabular}{
+    S[table-format=2.0]
+    S[table-format=2.3]
+    S[table-format=2.4]
+    S[table-format=2.4]
+    S[table-format=1.1]
+}
+\toprule
+{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
+\midrule
+ 1  & 30.000  & 30.1484  & 30.1484  & 0.0 \\
+ 2  & 40.000  & 39.9788  & 39.9788  & 0.0 \\
+ 3  & 60.000  & 60.0579  & 60.0579  & 0.0 \\
+ 4  & 35.000  & 34.9336  & 34.9336  & 0.0 \\
+ 5  & 45.000  & 44.7089  & 44.7089  & 0.0 \\
+ 6  & 48.000  & 47.4377  & 47.4377  & 0.0 \\
+ 7  & 65.000  & 64.7815  & 64.7815  & 0.0 \\
+ 8  & 23.000  & 22.7322  & 22.7322  & 0.0 \\
+ 9  & 25.000  & 23.9380  & 23.9380  & 0.0 \\
+10  & 37.000  & 36.0721  & 36.0721  & 0.0 \\
+11  & 23.103  & 22.7884  & 22.7884  & 0.0 \\
+12  & 22.722  & 20.4495  & 20.4495  & 0.0 \\
+13  & 22.713  & 21.5452  & 21.5452  & 0.0 \\
+14  & 60.054  & 60.0535  & 60.0535  & 0.0 \\
+15  & 59.959  & 57.2886  & 57.2886  & 0.0 \\
+16  & 32.250  & 33.6880  & 33.6880  & 0.0 \\
+17  & 32.448  & 31.7185  & 31.7185  & 0.0 \\
+18  & 32.154  & 30.6143  & 30.6143  & 0.0 \\
+19  & 60.996  & 62.9324  & 62.9324  & 0.0 \\
+20  & 60.684  & 60.3428  & 60.3428  & 0.0 \\
+21  & 60.360  & 58.3135  & 58.3135  & 0.0 \\
+22  & 40.636  & 41.4952  & 41.4952  & 0.0 \\
+23  & 40.733  & 39.3944  & 39.3944  & 0.0 \\
+24  & 40.524  & 39.4233  & 39.4233  & 0.0 \\
+25  & 64.597  & 66.6126  & 66.6126  & 0.0 \\
+26  & 65.522  & 65.2090  & 65.2090  & 0.0 \\
+27  & 44.707  & 43.2840  & 43.2840  & 0.0 \\
+28  & 44.716  & 43.3947  & 43.3947  & 0.0 \\
+29  & 30.022  & 30.3226  & 30.3226  & 0.0 \\
+30  & 30.177  & 28.6635  & 28.6635  & 0.0 \\
+31  & 29.926  & 28.1745  & 28.1745  & 0.0 \\
+32  & 44.926  & 46.1783  & 46.1783  & 0.0 \\
+33  & 44.837  & 43.8530  & 43.8530  & 0.0 \\
+34  & 44.837  & 43.7524  & 43.7524  & 0.0 \\
+\bottomrule
+\end{tabular}%
+}
+\begin{tablenotes}%[flushleft]
+\footnotesize
+\item Fonte:~\oautor\\
+\textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
+Todos os valores de $\Delta$ são iguais a zero, indicando paridade\\
+perfeita entre as implementações Java e Python para a técnica Bagging
+no analito Cromo (Cr).
+\end{tablenotes}
+\end{table}
 \end{comment}
 %---------------------------------------------------
 
-% ─────────────────────────────────────────────────────────────────────────────
-\section{Visualização Interativa com Plotly}
-
-A escolha do Plotly no \texttt{components.py} é fundamentada pela necessidade de
-inspeção técnica precisa em espectrometria e regressão multimodelo.
-
-\subsection{Integração Nativa e Centralizada}
-Com a separação em \texttt{components.py}, todas as configurações visuais — cores por modelo
-(\texttt{COR\_RLM}, \texttt{COR\_BAGGING}, \texttt{COR\_SUBAGGING}), estilos de eixo
-(\texttt{\_AXIS\_STYLE}), cores de fundo (\texttt{\_PLOT\_BG}) — estão definidas em um
-único arquivo. Alterar a paleta de cores ou o estilo de grade para padrões de publicação
-científica requer modificação em um só lugar, sem tocar no \texttt{app.py} ou no
-\texttt{models.py}.
-
-\subsection{Ferramentas de Inspeção Científica}
-Os gráficos \texttt{go.Scatter} gerados por \texttt{build\_chart()} e \texttt{build\_scatter\_chart()} habilitam zoom,
-\textit{pan}, \textit{hover} com coordenadas exatas e legendas interativas. A linha ideal
-\textit{y=x} (\texttt{mode="lines", dash="dot"}) no gráfico de dispersão
-(\texttt{build\_scatter\_chart}) permite validação visual imediata de viés e dispersão
-dos três modelos sobrepostos — RLM Simples, \textit{Bagging} e \textit{Subagging} — em uma única figura.
-
-\subsection{Padrões de Publicação}
-Os eixos customizados (\texttt{showgrid=True}, \texttt{gridcolor="\#000000"}, fontes pretas explícitas via \texttt{\_AXIS\_STYLE})
-garantem legibilidade para relatórios técnicos, apresentações e submissão a periódicos,
-alinhando-se às normas de visualização de dados científicos sem exigir pós-processamento
-externo das figuras.
-
-%---------------------------------------------------
-\begin{comment}
-
-\begin{description}
-
-\item[a)] \textbf{Integração Nativa e Centralizada}: Com a separação em
-\texttt{components.py}, todas as configurações visuais — cores por modelo
-(\texttt{COR\_RLM}, \texttt{COR\_BAGGING}, \texttt{COR\_SUBAGGING}), estilos de eixo
-(\texttt{\_AXIS\_STYLE}), cores de fundo (\texttt{\_PLOT\_BG}) — estão definidas em um
-único arquivo. Alterar a paleta de cores ou o estilo de grade para padrões de publicação
-científica requer modificação em um só lugar, sem tocar no \texttt{app.py} ou no
-\texttt{models.py}.
-
-\item[b)] \textbf{Ferramentas de Inspeção Científica}: Os gráficos \texttt{go.Scatter}
-gerados por \texttt{build\_chart()} e \texttt{build\_scatter\_chart()} habilitam zoom,
-\textit{pan}, \textit{hover} com coordenadas exatas e legendas interativas. A linha ideal
-\textit{y=x} (\texttt{mode="lines", dash="dot"}) no gráfico de dispersão
-(\texttt{build\_scatter\_chart}) permite validação visual imediata de viés e dispersão
-dos três modelos sobrepostos — RLM Simples, \textit{Bagging} e \textit{Subagging} — em uma única figura.
-
-\item[c)] \textbf{Padrões de Publicação}: Os eixos customizados (\texttt{showgrid=True},
-\texttt{gridcolor="\#000000"}, fontes pretas explícitas via \texttt{\_AXIS\_STYLE})
-garantem legibilidade para relatórios técnicos, apresentações e submissão a periódicos,
-alinhando-se às normas de visualização de dados científicos sem exigir pós-processamento
-externo das figuras.
-
-\end{description}
-\end{comment}
-%---------------------------------------------------
-
-% ─────────────────────────────────────────────────────────────────────────────
-\section{Contratos de Interface e Funções}
-\label{sec:contratos}
-
-A separação em três módulos aplica rigorosamente o princípio de separação de
-responsabilidades, tornando o sistema testável, manutenível e extensível
-independentemente em cada camada.
-
-\subsection{Separação de Camadas}
- O \texttt{models.py} não importa \texttt{streamlit} nem \texttt{plotly}. O \texttt{components.py} não importa
-\texttt{streamlit} nem \texttt{numpy}. O \texttt{app.py} não contém nenhuma função
-matemática — a instrução mais complexa é a chamada \texttt{result =
-run\_full\_analysis(...)}. Essa separação permite testar o \texttt{models.py}
-isoladamente com \texttt{pytest} e dados sintéticos, sem instanciar nenhum componente de
-interface.
-
-\subsection{Contratos Explícitos via \textit{Type Hints}}
-Todas as funções do
-\texttt{models.py} declaram tipos de entrada e saída:
-\texttt{perform\_bagging(...) -> np.ndarray},
-\texttt{calc\_metrics(...) -> tuple[float, float, float]},
-\texttt{find\_optimal\_parameters(...) -> tuple[dict, str]}.
-No \texttt{app.py}, \texttt{parse\_int\_list()} e \texttt{parse\_float\_list()} lançam
-\texttt{ValueError} com mensagens orientativas para entradas fora do domínio válido —
-inteiros positivos para \textit{m} e decimais em $(0,1]$ para \textit{k} — prevenindo
-falhas silenciosas na camada de negócio.
-
-\subsection{Manutenibilidade e Escalabilidade}
-Adicionar um novo modelo preditivo
-(como \textit{Ridge Regression} ou \textit{Random Forest}) requer apenas uma nova função em
-\texttt{models.py} e um novo bloco de exibição em \texttt{app.py}. Modificar a paleta de
-cores ou o layout dos gráficos requer apenas alterações em \texttt{components.py}.
-Nenhuma dessas mudanças impacta as outras camadas, confirmando que a arquitetura modular
-adotada atende ao critério de \textbf{abertura para extensão, fechamento para
-modificação} (\textit{Open/Closed Principle}) proposto por Robert C.
-Martin~\cite{martin2008}.
-
-
-%---------------------------------------------------
-\begin{comment}
-
-\begin{description}
-
-\item[a)] \textbf{Separação de Camadas}: O \texttt{models.py} não importa
-\texttt{streamlit} nem \texttt{plotly}. O \texttt{components.py} não importa
-\texttt{streamlit} nem \texttt{numpy}. O \texttt{app.py} não contém nenhuma função
-matemática — a instrução mais complexa é a chamada \texttt{result =
-run\_full\_analysis(...)}. Essa separação permite testar o \texttt{models.py}
-isoladamente com \texttt{pytest} e dados sintéticos, sem instanciar nenhum componente de
-interface.
-
-\item[b)] \textbf{Contratos Explícitos via \textit{Type Hints}}: Todas as funções do
-\texttt{models.py} declaram tipos de entrada e saída:
-\texttt{perform\_bagging(...) -> np.ndarray},
-\texttt{calc\_metrics(...) -> tuple[float, float, float]},
-\texttt{find\_optimal\_parameters(...) -> tuple[dict, str]}.
-No \texttt{app.py}, \texttt{parse\_int\_list()} e \texttt{parse\_float\_list()} lançam
-\texttt{ValueError} com mensagens orientativas para entradas fora do domínio válido —
-inteiros positivos para \textit{m} e decimais em $(0,1]$ para \textit{k} — prevenindo
-falhas silenciosas na camada de negócio.
-
-\item[c)] \textbf{Manutenibilidade e Escalabilidade}: Adicionar um novo modelo preditivo
-(como \textit{Ridge Regression} ou \textit{Random Forest}) requer apenas uma nova função em
-\texttt{models.py} e um novo bloco de exibição em \texttt{app.py}. Modificar a paleta de
-cores ou o layout dos gráficos requer apenas alterações em \texttt{components.py}.
-Nenhuma dessas mudanças impacta as outras camadas, confirmando que a arquitetura modular
-adotada atende ao critério de \textbf{abertura para extensão, fechamento para
-modificação} (\textit{Open/Closed Principle}) proposto por Robert C.
-Martin~\cite{martin2008}.
-
-\end{description}
-\end{comment}
-%---------------------------------------------------
+\begin{table}[H]
+\centering
+\caption{Paridade Bagging -- Cr.}
+\label{tab:paridade_bagging_cr}
+\begin{threeparttable}
+\resizebox{0.40\textwidth}{!}{%
+\begin{tabular}{
+    S[table-format=2.0]
+    S[table-format=2.3]
+    S[table-format=2.4]
+    S[table-format=2.4]
+    S[table-format=1.1]
+}
+\toprule
+{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}\tnote{a}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
+\midrule
+ 1  & 30.000  & 30.1484  & 30.1484  & 0.0 \\
+ 2  & 40.000  & 39.9788  & 39.9788  & 0.0 \\
+ 3  & 60.000  & 60.0579  & 60.0579  & 0.0 \\
+ 4  & 35.000  & 34.9336  & 34.9336  & 0.0 \\
+ 5  & 45.000  & 44.7089  & 44.7089  & 0.0 \\
+ 6  & 48.000  & 47.4377  & 47.4377  & 0.0 \\
+ 7  & 65.000  & 64.7815  & 64.7815  & 0.0 \\
+ 8  & 23.000  & 22.7322  & 22.7322  & 0.0 \\
+ 9  & 25.000  & 23.9380  & 23.9380  & 0.0 \\
+10  & 37.000  & 36.0721  & 36.0721  & 0.0 \\
+11  & 23.103  & 22.7884  & 22.7884  & 0.0 \\
+12  & 22.722  & 20.4495  & 20.4495  & 0.0 \\
+13  & 22.713  & 21.5452  & 21.5452  & 0.0 \\
+14  & 60.054  & 60.0535  & 60.0535  & 0.0 \\
+15  & 59.959  & 57.2886  & 57.2886  & 0.0 \\
+16  & 32.250  & 33.6880  & 33.6880  & 0.0 \\
+17  & 32.448  & 31.7185  & 31.7185  & 0.0 \\
+18  & 32.154  & 30.6143  & 30.6143  & 0.0 \\
+19  & 60.996  & 62.9324  & 62.9324  & 0.0 \\
+20  & 60.684  & 60.3428  & 60.3428  & 0.0 \\
+21  & 60.360  & 58.3135  & 58.3135  & 0.0 \\
+22  & 40.636  & 41.4952  & 41.4952  & 0.0 \\
+23  & 40.733  & 39.3944  & 39.3944  & 0.0 \\
+24  & 40.524  & 39.4233  & 39.4233  & 0.0 \\
+25  & 64.597  & 66.6126  & 66.6126  & 0.0 \\
+26  & 65.522  & 65.2090  & 65.2090  & 0.0 \\
+27  & 44.707  & 43.2840  & 43.2840  & 0.0 \\
+28  & 44.716  & 43.3947  & 43.3947  & 0.0 \\
+29  & 30.022  & 30.3226  & 30.3226  & 0.0 \\
+30  & 30.177  & 28.6635  & 28.6635  & 0.0 \\
+31  & 29.926  & 28.1745  & 28.1745  & 0.0 \\
+32  & 44.926  & 46.1783  & 46.1783  & 0.0 \\
+33  & 44.837  & 43.8530  & 43.8530  & 0.0 \\
+34  & 44.837  & 43.7524  & 43.7524  & 0.0 \\
+\bottomrule
+\end{tabular}%
+}
+\begin{center}
+\begin{minipage}{0.85\linewidth}
+\begin{tablenotes}
+\footnotesize
+\item Fonte:~\oautor
+\item[a] Tipo de dado utilizado em Java foi o \textit{double}; no Python,
+o equivalente é o \textit{float64} do NumPy — ambos representações IEEE~754
+de precisão dupla (64 bits), o que garante paridade numérica exata entre as
+duas implementações.
+\item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
+Todos os valores de $\Delta$ são iguais a zero, indicando paridade
+perfeita entre as implementações Java e Python para a técnica \textit{Bagging}
+no analito Cromo (Cr).
+\end{tablenotes}
+\end{minipage}
+\end{center}
+\end{threeparttable}
+\end{table}

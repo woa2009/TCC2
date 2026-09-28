@@ -1,357 +1,264 @@
-\chapter{Engenharia de Software e Modernização}
+% =============================================================================
+\chapter{Ecossistema de Desenvolvimento (Python e Streamlit)}
 
-\section{Engenharia de Requisitos com Sommerville}
+\section{Python na Computação Científica}
 
-Sommerville~\cite{sommerville2011} estrutura a engenharia de requisitos em quatro fases
-interdependentes: elicitação, análise, especificação e validação. A reestruturação do
-sistema em três módulos — \texttt{models.py}, \texttt{components.py} e \texttt{app.py}
-— evidencia como cada fase foi aplicada para preservar as regras de negócio do legado
-Vaadin/Java sem reaproveitar seu código-fonte.
+A escolha do Python como linguagem base é justificada pelo ecossistema maduro voltado à
+álgebra linear, ao processamento de sinais espectrais e à quimiometria computacional.
+Bibliotecas como \texttt{NumPy}, \texttt{Pandas} e \texttt{SciPy} formam a base
+científica sobre a qual o sistema foi construído e pode evoluir, tornando Python a
+escolha natural para domínios que lidam com dados espectrométricos de alta
+dimensionalidade.
 
-\subsection{Elicitação}
-As entradas críticas do domínio de regressão espectral foram
-identificadas diretamente no sistema Java original: as matrizes \texttt{Xcal} e
-\texttt{Xteste}, os vetores \texttt{Ycal} e \texttt{Yteste}, e os hiperparâmetros
-\textit{m} (número de bags) e \textit{k} (fração de subagging). O \texttt{app.py}
-captura esses insumos por meio de \texttt{st.file\_uploader} e \texttt{st.text\_input},
-incluindo suporte a decimal com vírgula — particularidade do padrão brasileiro — tratada
-nas funções \texttt{parse\_matrix()} e \texttt{parse\_vector()} do \texttt{models.py}.
+\subsection{Processamento Vetorial com \texttt{NumPy}}
+O \texttt{models.py} utiliza exclusivamente operações vetorizadas do NumPy:
+\texttt{np.linalg.lstsq(Xcal, Ycal, rcond=None)} para a solução de mínimos
+quadrados de norma mínima (equivalente à pseudoinversa de Moore-Penrose), \texttt{np.random.default\_rng}
+para amostragem reprodutível com semente configurável, e \texttt{np.sqrt(np.mean(err**2))}
+para RMSEP. Essas operações substituem laços explícitos em Java, executando em tempo próximo
+a linguagens compiladas mesmo para matrizes espectrais com milhares de variáveis.
 
-\subsection{Análise}
-A análise revelou que a lógica do \texttt{RegressionService.java}
-podia ser decomposta em responsabilidades distintas: parse de arquivos, algoritmos de
-regressão, métricas de avaliação e otimização por validação cruzada. Essa decomposição
-originou a estrutura modular adotada, onde \texttt{models.py} concentra toda a
-inteligência matemática, sem qualquer dependência de interface.
+\subsection{\textit{Parsing} Robusto com \texttt{parse\_matrix()} e \texttt{parse\_vector()}}
+As funções de leitura em \texttt{models.py} utilizam decodificação UTF-8 com tolerância a
+erros, normalização de separador decimal (vírgula para ponto) e filtragem de linhas
+vazias. Esse \textit{parsing} manual garante compatibilidade com arquivos \texttt{.txt} gerados
+por instrumentos espectrométricos sem dependência de formatação rígida.
 
-\subsection{Especificação}
-Os contratos de entrada e saída foram formalizados com
-\textit{type hints} explícitos em todas as funções do \texttt{models.py}:
-\texttt{parse\_matrix(content: bytes) -> np.ndarray},
-\texttt{perform\_rlm(Xcal, Ycal, Xteste: np.ndarray) -> np.ndarray},
-\texttt{calc\_metrics(actual, predicted) -> tuple[float, float, float]}.
-A função \texttt{run\_full\_analysis()} retorna um dicionário tipado com chaves
-\texttt{log}, \texttt{optimal}, \texttt{metrics} e \texttt{preds}, constituindo o
-contrato formal entre a camada de negócio e a camada de apresentação.
+\subsection{Interoperabilidade Científica com \texttt{Pandas}}
+A integração com \texttt{pandas} no \texttt{app.py} permite exportar a tabela comparativa de métricas
+diretamente em CSV (\texttt{df\_metrics.to\_csv()}), mantendo o fluxo de trabalho típico
+de laboratórios de quimiometria. O \texttt{pd.DataFrame} estrutura os resultados de RMSEP,
+MAE, R² e tempo de execução de forma tabular, viabilizando análise posterior em planilhas
+ou pipelines de dados sem conversões intermediárias.
 
-\subsection{Validação}
-A validação cruzada 5-fold implementada em
-\texttt{run\_cross\_validation()} opera como mecanismo de validação de equivalência, permitindo comparar
-o desempenho do sistema Python com os resultados históricos do sistema Java. O log
-estruturado gerado por \texttt{run\_full\_analysis()} documenta cada etapa — dimensões
-detectadas, RMSE-CV por combinação de hiperparâmetros, métricas finais e tempo de
-execução — possibilitando auditoria científica e rastreabilidade completa.
-
-%---------------------------------------------------
-\begin{comment}
-%---------------------------------------------------
-\begin{description}
-\item[a)] \textbf{Elicitação}: As entradas críticas do domínio de regressão espectral foram
-identificadas diretamente no sistema Java original: as matrizes \texttt{Xcal} e
-\texttt{Xteste}, os vetores \texttt{Ycal} e \texttt{Yteste}, e os hiperparâmetros
-\textit{m} (número de bags) e \textit{k} (fração de subagging). O \texttt{app.py}
-captura esses insumos por meio de \texttt{st.file\_uploader} e \texttt{st.text\_input},
-incluindo suporte a decimal com vírgula — particularidade do padrão brasileiro — tratada
-nas funções \texttt{parse\_matrix()} e \texttt{parse\_vector()} do \texttt{models.py}.
-
-\item[b)] \textbf{Análise}: A análise revelou que a lógica do \texttt{RegressionService.java}
-podia ser decomposta em responsabilidades distintas: parse de arquivos, algoritmos de
-regressão, métricas de avaliação e otimização por validação cruzada. Essa decomposição
-originou a estrutura modular adotada, onde \texttt{models.py} concentra toda a
-inteligência matemática, sem qualquer dependência de interface.
-
-\item[c)] \textbf{Especificação}: Os contratos de entrada e saída foram formalizados com
-\textit{type hints} explícitos em todas as funções do \texttt{models.py}:
-\texttt{parse\_matrix(content: bytes) -> np.ndarray},
-\texttt{perform\_rlm(Xcal, Ycal, Xteste: np.ndarray) -> np.ndarray},
-\texttt{calc\_metrics(actual, predicted) -> tuple[float, float, float]}.
-A função \texttt{run\_full\_analysis()} retorna um dicionário tipado com chaves
-\texttt{log}, \texttt{optimal}, \texttt{metrics} e \texttt{preds}, constituindo o
-contrato formal entre a camada de negócio e a camada de apresentação.
-
-\item[d)] \textbf{Validação}: A validação cruzada 5-fold implementada em
-\texttt{run\_cross\_validation()} opera como mecanismo de validação de equivalência, permitindo comparar
-o desempenho do sistema Python com os resultados históricos do sistema Java. O log
-estruturado gerado por \texttt{run\_full\_analysis()} documenta cada etapa — dimensões
-detectadas, RMSE-CV por combinação de hiperparâmetros, métricas finais e tempo de
-execução — possibilitando auditoria científica e rastreabilidade completa.
-\end{description}
-\end{comment}
-%---------------------------------------------------
-
-% ─────────────────────────────────────────────────────────────────────────────
-\section{Especificação de Requisitos Funcionais e Não Funcionais}
-\label{sec:requisitos}
-
-A fase de Especificação de Sommerville~\cite{sommerville2011}, descrita no item (c) da
-seção anterior, é formalizada nesta seção por meio da enumeração dos requisitos
-funcionais (RF) e não funcionais (RNF) efetivamente implementados no sistema
-Python/Streamlit. Os requisitos foram extraídos diretamente do código-fonte de
-\texttt{models.py}, \texttt{components.py} e \texttt{app.py}, e não de funcionalidades
-planejadas ou não concluídas, de modo a refletir com precisão o estado real do sistema
-entregue neste TCC~II.
-
-\subsection{Requisitos Funcionais}
-
-O Quadro~\ref{qua:rf} apresenta os requisitos funcionais do sistema, isto é, as
-funcionalidades que o usuário pode efetivamente executar por meio da interface
-Streamlit.
-
-\begin{quadro}[H]
-\centering
-\caption{Requisitos funcionais do sistema.}
-\label{qua:rf}
-\begin{tabularx}{\textwidth}{|l|X|}
-\hline
-\textbf{ID} & \textbf{Descrição} \\ \hline
-RF01 & Permitir o \textit{upload} das matrizes \texttt{Xcal}, \texttt{Xteste} e dos
-vetores \texttt{Ycal}, \texttt{Yteste} nos formatos \texttt{.txt}, \texttt{.csv} e
-\texttt{.xlsx}. \\ \hline
-RF02 & Interpretar arquivos com separador decimal brasileiro (vírgula) e separador de
-coluna \texttt{;} ou \texttt{,}, normalizando-os para o formato numérico do NumPy. \\
-\hline
-RF03 & Executar a Regressão Linear Múltipla (RLM) simples via \texttt{np.linalg.lstsq}.
-\\ \hline
-RF04 & Executar RLM com \textit{Bagging} (reamostragem \textit{bootstrap} com reposição)
-para um conjunto de valores de $m$ informados pelo usuário. \\ \hline
-RF05 & Executar RLM com \textit{Subagging} (reamostragem sem reposição) para conjuntos de
-valores de $m$ e $k$ informados pelo usuário. \\ \hline
-RF06 & Otimizar os hiperparâmetros $m$ (\textit{Bagging}) e $k$, $m$ (\textit{Subagging})
-por \textit{grid search} com validação cruzada de 5 \textit{folds}. \\ \hline
-RF07 & Calcular as métricas RMSE, MAE e R$^2$ para os três modelos (RLM, \textit{Bagging}
-e \textit{Subagging}) sobre o conjunto de teste. \\ \hline
-RF08 & Exibir um log estruturado de execução, contendo dimensões detectadas, RMSE-CV por
-combinação de hiperparâmetros e tempo de execução por modelo. \\ \hline
-RF09 & Gerar gráficos interativos (Plotly) de valores reais \textit{versus} preditos por
-modelo e de dispersão real \textit{versus} predito com os três modelos sobrepostos. \\
-\hline
-RF10 & Exportar a tabela comparativa de métricas em \texttt{.csv} e o log de execução em
-\texttt{.txt}. \\ \hline
-RF11 & Exibir a interface e os rótulos dos gráficos em português ou inglês, conforme
-seleção do usuário. \\ \hline
-RF12 & Exibir barra de progresso durante a execução do \textit{grid search}, atualizada
-por \textit{callback} a cada combinação de hiperparâmetros avaliada. \\ \hline
-\end{tabularx}
-\begin{tablenotes}[flushleft]
-\footnotesize
-\item Fonte:~\oautor
-\end{tablenotes}
-\end{quadro}
-
-\subsection{Requisitos Não Funcionais}
-
-O Quadro~\ref{qua:rnf} apresenta os requisitos não funcionais, relativos a atributos de
-qualidade do sistema — desempenho, manutenibilidade, testabilidade e confiabilidade —
-verificáveis independentemente das funcionalidades de negócio listadas no
-Quadro~\ref{qua:rf}.
-
-%---------------------------------------------------
-
-
-\begin{quadro}[H]
-\centering
-\captionsetup{justification=centering, labelsep=endash, width=0.75\linewidth} % Opcional: mantém o padrão do quadro anterior
-\caption{Requisitos não funcionais do sistema.}
-\label{qua:rnf}
-\begin{threeparttable}
-\begin{tabularx}{\textwidth}{|l|X|}
-\hline
-\textbf{ID} & \textbf{Descrição} \\ \hline
-RNF01 & \textbf{Modularidade}: o sistema deve ser estruturado em módulos com acoplamento~\cite{sommerville2011}
-zero — \texttt{models.py} não importa \texttt{streamlit} nem \texttt{plotly};
-\texttt{components.py} não importa \texttt{streamlit} nem \texttt{numpy}. \\ \hline
-RNF02 & \textbf{Testabilidade}: a lógica de negócio deve ser testável de forma isolada,
-sem instanciar componentes de interface, permitindo o uso de \texttt{pytest} diretamente
-sobre \texttt{models.py}. \\ \hline
-RNF03 & \textbf{Confiabilidade}: os resultados numéricos do sistema Python
-devem ser equivalentes aos do sistema Java legado, verificados por testes de
-caixa-preta comparativos: equivalência estrita (tolerância de
-$5\times10^{-4}$) para a RLM determinística e consistência estatística
-(tolerâncias de 0,15 em RMSEP/MAE e $5\times10^{-3}$ em R$^2$) para os
-métodos estocásticos. \\ \hline
-RNF04 & \textbf{Portabilidade}: o sistema deve ser executável via navegador
-(\texttt{streamlit run app.py}), sem necessidade de \gls{JVM}\tnote{a}, arquivos \texttt{.class} ou
-instalação local de dependências além do ambiente Python. \\ \hline
-RNF05 & \textbf{Usabilidade}: a interface deve guiar o usuário em um fluxo sequencial e
-irreversível (Configuração~$\rightarrow$~Resultados~$\rightarrow$~Gráficos), impedindo
-execuções com arquivos incompletos. \\ \hline
-RNF06 & \textbf{Desempenho}: o tempo de execução de cada modelo (RLM, \textit{Bagging},
-\textit{Subagging}) deve ser medido em milissegundos e reportado como métrica
-independente das métricas de acurácia. \\ \hline
-RNF07 & \textbf{Escalabilidade}: o sistema deve manter corretude numérica ao processar
-matrizes espectrais de grande porte, verificada por testes de estresse sobre matrizes de
-grandes dimensões. \\ \hline
-RNF08 & \textbf{Internacionalização}: a interface e os componentes visuais devem suportar
-múltiplos idiomas (português e inglês) sem duplicação de código, por meio de dicionários
-de tradução centralizados. \\ \hline
-\end{tabularx}
-\begin{tablenotes}[flushleft]
-\footnotesize
-\item[a] A \textit{Java Virtual Machine} (JVM), ou Máquina Virtual Java, é um ambiente de execução que atua como uma camada de abstração entre o código Java compilado (bytecodes) e o sistema operacional do hardware.
-\item Fonte:~\oautor
-\end{tablenotes}
-\end{threeparttable}
-\end{quadro}
-
-
-Os requisitos funcionais RF03 a RF07 correspondem diretamente às responsabilidades
-isoladas em \texttt{models.py}, ao passo que RF09 e RF11 correspondem a
-\texttt{components.py}; RF01, RF08, RF10 e RF12 são responsabilidade exclusiva de
-\texttt{app.py}. Essa correspondência unívoca entre requisito e módulo confirma, em nível
-de especificação, a separação de camadas discutida na Seção~\ref{sec:contratos}.
-
-Os requisitos não funcionais RNF01 a RNF03, por sua vez, são verificados
-empiricamente pela suíte de 92 testes automatizados
-(\texttt{test\_suite\_5.py}) --- 21 unitários, 60 de caixa-preta e 11 de
-estresse ---, detalhada no capítulo de Testes e Validação deste TCC~II.
-% ─────────────────────────────────────────────────────────────────────────────
-\section{Estratégias de Migração de Sistemas}
-
-A transição do modelo Desktop (Java/Vaadin) para o modelo Web (Python/Streamlit) foi
-conduzida por \textbf{reescrita funcional} (\textit{black-box rewrite}), estratégia que
-extrai os requisitos do comportamento observável do sistema legado sem reaproveitar o
-código-fonte~\cite{becker2020}.
-
-\subsection{Reescrita Black-Box}
-O comentário de cabeçalho do \texttt{app.py}
-(\textit{``Conversão do projeto Vaadin Flow (Java) para Streamlit (Python)''}) e as
-referências internas ao \texttt{RegressionService.java} indicam que a migração partiu do
-comportamento esperado, não do código herdado. Não há dependência de JVM, arquivos
-\texttt{.class} ou \texttt{.jar}. O núcleo matemático foi reimplementado diretamente em
-\texttt{models.py} com \texttt{numpy}, preservando a equivalência algébrica da
-pseudoinversa de Moore-Penrose e dos algoritmos de amostragem.
-
-\subsection{Extração Seletiva da Lógica de Negócio}
-A migração isolou apenas o
-que tinha valor científico reutilizável: a pseudoinversa (\texttt{perform\_rlm}), a
-amostragem com e sem reposição (\texttt{perform\_bagging}), o grid search por validação
-cruzada (\texttt{find\_optimal\_parameters}) e as métricas de erro
-(\texttt{calc\_metrics}). Camadas de UI do Java — componentes Vaadin, listeners de
-evento, gerenciamento de sessão HTTP — foram descartadas e substituídas pelos widgets
-declarativos do Streamlit no \texttt{app.py}.
-
-\subsection{Deploy Web Nativo}
-O modelo Desktop foi convertido para uma aplicação
-\textit{stateless\footnote{Significa que a aplicação não mantém memória de estado entre as interações por conta própria, exigindo que todo o script seja reprocessado a cada ação e que qualquer dado que precise ser preservado seja salvo manualmente em variáveis de sessão.}}, executável com \texttt{streamlit run app.py}, containerizável com
-Docker e acessível via navegador sem instalação local\footnote{Aplicação em produção
-disponível em: \url{https://app-app-rmn8qdzis5uqkfbmy5pjwr.streamlit.app/}.}. Isso reduz
-o atrito de distribuição em laboratórios e viabiliza uso colaborativo simultâneo,
-funcionalidade inexistente no sistema Vaadin original~\cite{rfc2616}.
-
-\subsection{Papel e Limites do Estágio Intermediário (Vaadin)}
-O estágio Vaadin Flow funcionou
-como prova de conceito de exposição web da lógica reaproveitada do Java, validando
-a viabilidade de servir o núcleo algorítmico via navegador antes da reescrita completa.
-Diferentemente do estágio final em Python, esse estágio não foi acompanhado por suíte
-de testes automatizados formal, lacuna reconhecida que motivou a decisão de formalizar
-o mecanismo de validação de equivalência — a suíte de 92 testes automatizados, dos quais 60 de caixa-preta ---
-apenas a partir da reescrita em Streamlit.
-
-
+\subsection{Extensão Natural para \texttt{SciPy} em Sinais Espectrométricos}
+O \texttt{SciPy} é a extensão natural do ecossistema para o domínio de espectrometria.
+Funções como \texttt{scipy.signal.savgol\_filter()} realizam suavização de Savitzky--Golay
+sobre espectros ruidosos; \texttt{scipy.fft} calcula transformadas para análise no domínio
+da frequência; e \texttt{scipy.signal.find\_peaks()} identifica automaticamente picos em
+espectros de massa (eixo $m/z$ vs.\ Intensidade). A arquitetura modular do
+\texttt{models.py} — funções puras recebendo e retornando \texttt{np.ndarray} — permite
+incorporar essas rotinas de pré-processamento espectral sem alterações na camada de
+apresentação, tornando a adoção de \texttt{SciPy} uma evolução natural e de baixo risco
+para versões futuras do sistema.
 
 %---------------------------------------------------
 \begin{comment}
 
 \begin{description}
 
-\item[a)] \textbf{Reescrita Black-Box}: O comentário de cabeçalho do \texttt{app.py}
-(\textit{``Conversão do projeto Vaadin Flow (Java) para Streamlit (Python)''}) e as
-referências internas ao \texttt{RegressionService.java} indicam que a migração partiu do
-comportamento esperado, não do código herdado. Não há dependência de JVM, arquivos
-\texttt{.class} ou \texttt{.jar}. O núcleo matemático foi reimplementado diretamente em
-\texttt{models.py} com \texttt{numpy}, preservando a equivalência algébrica da
-pseudoinversa de Moore-Penrose e dos algoritmos de amostragem.
+\item[a)] \textbf{Processamento Vetorial com \texttt{NumPy}}: O \texttt{models.py}
+utiliza exclusivamente operações vetorizadas do NumPy:
+\texttt{np.linalg.lstsq(Xcal, Ycal, rcond=None)} para a solução de mínimos
+quadrados de norma mínima (equivalente à pseudoinversa de Moore-Penrose), \texttt{np.random.default\_rng}
+para amostragem reprodutível com semente configurável, e \texttt{np.sqrt(np.mean(err**2))}
+para RMSEP. Essas operações substituem laços explícitos em Java, executando em tempo próximo
+a linguagens compiladas mesmo para matrizes espectrais com milhares de variáveis.
 
-\item[b)] \textbf{Extração Seletiva da Lógica de Negócio}: A migração isolou apenas o
-que tinha valor científico reutilizável: a pseudoinversa (\texttt{perform\_rlm}), a
-amostragem com e sem reposição (\texttt{perform\_bagging}), o grid search por validação
-cruzada (\texttt{find\_optimal\_parameters}) e as métricas de erro
-(\texttt{calc\_metrics}). Camadas de UI do Java — componentes Vaadin, listeners de
-evento, gerenciamento de sessão HTTP — foram descartadas e substituídas pelos widgets
-declarativos do Streamlit no \texttt{app.py}.
+\item[b)] \textbf{\textit{Parsing} Robusto com \texttt{parse\_matrix()} e \texttt{parse\_vector()}}:
+As funções de leitura em \texttt{models.py} utilizam decodificação UTF-8 com tolerância a
+erros, normalização de separador decimal (vírgula para ponto) e filtragem de linhas
+vazias. Esse \textit{parsing} manual garante compatibilidade com arquivos \texttt{.txt} gerados
+por instrumentos espectrométricos sem dependência de formatação rígida.
 
-\item[c)] \textbf{Deploy Web Nativo}: O modelo Desktop foi convertido para uma aplicação
-\textit{stateless\footnote{Significa que a aplicação não mantém memória de estado entre as interações por conta própria, exigindo que todo o script seja reprocessado a cada ação e que qualquer dado que precise ser preservado seja salvo manualmente em variáveis de sessão.}}, executável com \texttt{streamlit run app.py}, containerizável com
-Docker e acessível via navegador sem instalação local\footnote{Aplicação em produção
-disponível em: \url{https://app-app-rmn8qdzis5uqkfbmy5pjwr.streamlit.app/}.}. Isso reduz
-o atrito de distribuição em laboratórios e viabiliza uso colaborativo simultâneo,
-funcionalidade inexistente no sistema Vaadin original~\cite{rfc2616}.
+\item[c)] \textbf{Interoperabilidade Científica com \texttt{Pandas}}: A integração com
+\texttt{pandas} no \texttt{app.py} permite exportar a tabela comparativa de métricas
+diretamente em CSV (\texttt{df\_metrics.to\_csv()}), mantendo o fluxo de trabalho típico
+de laboratórios de quimiometria. O \texttt{pd.DataFrame} estrutura os resultados de RMSEP,
+MAE, R² e tempo de execução de forma tabular, viabilizando análise posterior em planilhas
+ou pipelines de dados sem conversões intermediárias.
 
-\item[d)] \textbf{Papel e Limites do Estágio Intermediário (Vaadin)}: O estágio Vaadin Flow funcionou
-como prova de conceito de exposição web da lógica reaproveitada do Java, validando
-a viabilidade de servir o núcleo algorítmico via navegador antes da reescrita completa.
-Diferentemente do estágio final em Python, esse estágio não foi acompanhado por suíte
-de testes automatizados formal, lacuna reconhecida que motivou a decisão de formalizar
-o mecanismo de validação de equivalência — a suíte de 92 testes automatizados, dos quais 60 de caixa-preta ---
-apenas a partir da reescrita em Streamlit.
+\item[d)] \textbf{Extensão Natural para \texttt{SciPy} em Sinais Espectrométricos}: O
+\texttt{SciPy} é a extensão natural do ecossistema para o domínio de espectrometria.
+Funções como \texttt{scipy.signal.savgol\_filter()} realizam suavização de Savitzky--Golay
+sobre espectros ruidosos; \texttt{scipy.fft} calcula transformadas para análise no domínio
+da frequência; e \texttt{scipy.signal.find\_peaks()} identifica automaticamente picos em
+espectros de massa (eixo $m/z$ vs.\ Intensidade). A arquitetura modular do
+\texttt{models.py} — funções puras recebendo e retornando \texttt{np.ndarray} — permite
+incorporar essas rotinas de pré-processamento espectral sem alterações na camada de
+apresentação, tornando a adoção de \texttt{SciPy} uma evolução natural e de baixo risco
+para versões futuras do sistema.
 
 \end{description}
 \end{comment}
 %---------------------------------------------------
 
 % ─────────────────────────────────────────────────────────────────────────────
-\section{Mudança de Paradigma Arquitetural}
+\section{Ciclo de Vida do Streamlit}
 
-A reestruturação em três arquivos evidencia uma mudança profunda no paradigma de execução
-e no modelo de estado da aplicação.
+O Streamlit opera sob um modelo de execução declarativo e \textit{stateless} por padrão,
+com implicações diretas no tempo de resposta e na arquitetura do \texttt{app.py}.
 
-\subsection{MVC Tradicional (Java/Vaadin)}
-O sistema legado seguia a separação
-explícita entre \textit{Model} (dados e regressão), \textit{View} (componentes HTML
-gerados pelo Vaadin) e \textit{Controller} (listeners de evento Java). O estado vivia na
-sessão HTTP e as atualizações de interface eram parciais e assíncronas (\gls{AJAX}/\textit{push}),
-permitindo que apenas o componente afetado fosse re-renderizado.
+\subsection{Execução Top-Down Unidirecional}
+A cada interação do usuário — clique
+em botão, alteração de campo de texto ou navegação entre abas — o interpretador Python
+relê o \texttt{app.py} do início ao fim. Não há um controller permanente em memória.
+O fluxo segue estritamente \textit{Entrada $\rightarrow$ Rerun $\rightarrow$ Renderização},
+tornando o comportamento da aplicação previsível e auditável, mas exigindo atenção ao
+custo computacional de cada instrução no nível superior do script.
 
-\subsection{Arquitetura em Camadas com Streamlit}
-A divisão em \texttt{models.py} (lógica pura), \texttt{components.py} (fábrica visual) e
-\texttt{app.py} (orquestrador) aplica o princípio de \textbf{separação de
-responsabilidades} de Sommerville~\cite{sommerville2011} dentro do paradigma Streamlit.
-O \texttt{app.py} é um script linear que reexecuta do início ao fim a cada interação do
-usuário — clique, upload ou navegação entre abas. Não há controlador permanente; o fluxo
-segue \textit{Entrada do Usuário $\rightarrow$ Rerun do Script $\rightarrow$ Renderização
-Declarativa}~\cite{buschmann1996posa1}.
-
-\subsection{Gerenciamento de Estado Explícito}
-No paradigma Streamlit, o estado
-não persiste automaticamente entre reruns\footnote{O termo \textit{rerun} refere-se ao ciclo de reexecução automática do script Python realizado pelo framework Streamlit a cada nova interação do usuário na interface gráfica.}
-. O dicionário \texttt{st.session\_state["result"]} armazena o output completo de
-\texttt{run\_full\_analysis()} — métricas, predições e log — garantindo que as abas
-\textbf{Resultados} e \textbf{Gráficos} leiam os dados sem reacionar a regressão. Essa
-explicitação do estado é uma diferença fundamental em relação ao modelo MVC com sessão
-HTTP implícita do Java.
+\subsection{Persistência via \texttt{st.session\_state}}
+Para evitar que o \texttt{run\_full\_analysis()} seja re-executado a cada rerun, o \texttt{app.py}
+armazena o resultado completo em \texttt{st.session\_state["result"]}. As abas
+\textbf{Resultados} e \textbf{Gráficos} verificam a existência dessa chave antes de
+renderizar, lendo os dados diretamente da memória de sessão sem acionar novamente os
+laços de otimização.
 
 
+\subsection{Feedback Assíncrono Simulado}
+A barra de progresso (\texttt{st.progress}) é atualizada via \textit{callback} \texttt{update\_progress} passado para
+\texttt{run\_full\_analysis()}, que o propaga internamente a
+\texttt{find\_optimal\_parameters()}. Embora o Streamlit seja síncrono por natureza, essa
+estratégia de \textit{callback} mitiga a percepção de travamento durante as 150 execuções do \textit{grid}
+\textit{search} (5 valores de \textit{m} + 5 $\times$ 5 combinações de \textit{k} $\times$
+\textit{m}, cada uma com 5 folds).
+
+
+%---------------------------------------------------
+\begin{comment}
+	
+
+\begin{description}
+
+\item[a)] \textbf{Execução Top-Down Unidirecional}: A cada interação do usuário — clique
+em botão, alteração de campo de texto ou navegação entre abas — o interpretador Python
+relê o \texttt{app.py} do início ao fim. Não há um controller permanente em memória.
+O fluxo segue estritamente \textit{Entrada $\rightarrow$ Rerun $\rightarrow$ Renderização},
+tornando o comportamento da aplicação previsível e auditável, mas exigindo atenção ao
+custo computacional de cada instrução no nível superior do script.
+
+\item[b)] \textbf{Persistência via \texttt{st.session\_state}}: Para evitar que o
+\texttt{run\_full\_analysis()} seja re-executado a cada rerun, o \texttt{app.py}
+armazena o resultado completo em \texttt{st.session\_state["result"]}. As abas
+\textbf{Resultados} e \textbf{Gráficos} verificam a existência dessa chave antes de
+renderizar, lendo os dados diretamente da memória de sessão sem acionar novamente os
+laços de otimização.
+
+\item[c)] \textbf{Feedback Assíncrono Simulado}: A barra de progresso
+(\texttt{st.progress}) é atualizada via \textit{callback} \texttt{update\_progress} passado para
+\texttt{run\_full\_analysis()}, que o propaga internamente a
+\texttt{find\_optimal\_parameters()}. Embora o Streamlit seja síncrono por natureza, essa
+estratégia de \textit{callback} mitiga a percepção de travamento durante as 150 execuções do \textit{grid}
+\textit{search} (5 valores de \textit{m} + 5 $\times$ 5 combinações de \textit{k} $\times$
+\textit{m}, cada uma com 5 folds).
+
+\end{description}
+\end{comment}
+%---------------------------------------------------
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Gerenciamento de Memória e Performance}
+
+A gestão eficiente de recursos é crítica para manter a responsividade durante o
+processamento de matrizes espectrais de alta dimensionalidade.
+
+\subsection{Uso Estratégico de \texttt{st.session\_state}}
+Com a separação em \texttt{models.py} e \texttt{app.py}, o estado mantém o dicionário de saída de
+\texttt{run\_full\_analysis()} vivo entre reruns. Isso elimina a necessidade de
+reprocessar arquivos já carregados ou reexecutar o \textit{grid search} ao navegar entre abas,
+reduzindo a latência percebida pelo usuário a milissegundos após a primeira execução.
+
+\subsection{Oportunidade de \texttt{@st.cache\_data}}
+Como \texttt{models.py} contém funções puras — \texttt{parse\_matrix()}, \texttt{parse\_vector()} e
+\texttt{run\_full\_analysis()} recebem apenas dados serializáveis e retornam resultados
+determinísticos — o decorador \texttt{@st.cache\_data} pode ser aplicado diretamente,
+sem modificações na lógica. Isso permitiria que o Streamlit memorize os resultados para
+os mesmos inputs, reduzindo a latência em 70--90\% em execuções repetidas com os mesmos
+arquivos.
+
+\subsection{Isolamento da Carga Computacional}
+As funções pesadas (\texttt{find\_optimal\_parameters}, \texttt{perform\_bagging}) estão encapsuladas em
+\texttt{models.py}, recebem \texttt{np.ndarray} e retornam resultados determinísticos.
+Esse isolamento evita que operações de UI do \texttt{app.py} interfiram nos cálculos e
+facilita a futura migração para processamento assíncrono em background via
+\texttt{concurrent.futures} ou \texttt{asyncio}, sem alterações na camada de
+apresentação.
 
 %---------------------------------------------------
 \begin{comment}
 	
 \begin{description}
 
-\item[a)] \textbf{MVC Tradicional (Java/Vaadin)}: O sistema legado seguia a separação
-explícita entre \textit{Model} (dados e regressão), \textit{View} (componentes HTML
-gerados pelo Vaadin) e \textit{Controller} (listeners de evento Java). O estado vivia na
-sessão HTTP e as atualizações de interface eram parciais e assíncronas (\gls{AJAX}/\textit{push}),
-permitindo que apenas o componente afetado fosse re-renderizado.
+\item[a)] \textbf{Uso Estratégico de \texttt{st.session\_state}}: Com a separação em
+\texttt{models.py} e \texttt{app.py}, o estado mantém o dicionário de saída de
+\texttt{run\_full\_analysis()} vivo entre reruns. Isso elimina a necessidade de
+reprocessar arquivos já carregados ou reexecutar o \textit{grid search} ao navegar entre abas,
+reduzindo a latência percebida pelo usuário a milissegundos após a primeira execução.
 
-\item[b)] \textbf{Arquitetura em Camadas~\cite{buschmann1996posa1} com Streamlit}: A divisão em
-\texttt{models.py} (lógica pura), \texttt{components.py} (fábrica visual) e
-\texttt{app.py} (orquestrador) aplica o princípio de \textbf{separação de
-responsabilidades} de Sommerville~\cite{sommerville2011} dentro do paradigma Streamlit.
-O \texttt{app.py} é um script linear que reexecuta do início ao fim a cada interação do
-usuário — clique, upload ou navegação entre abas. Não há controlador permanente; o fluxo
-segue \textit{Entrada do Usuário $\rightarrow$ Rerun do Script $\rightarrow$ Renderização
-Declarativa}.
+\item[b)] \textbf{Oportunidade de \texttt{@st.cache\_data}}: Como \texttt{models.py}
+contém funções puras — \texttt{parse\_matrix()}, \texttt{parse\_vector()} e
+\texttt{run\_full\_analysis()} recebem apenas dados serializáveis e retornam resultados
+determinísticos — o decorador \texttt{@st.cache\_data} pode ser aplicado diretamente,
+sem modificações na lógica. Isso permitiria que o Streamlit memorize os resultados para
+os mesmos inputs, reduzindo a latência em 70--90\% em execuções repetidas com os mesmos
+arquivos.
 
-\item[c)] \textbf{Gerenciamento de Estado Explícito}: No paradigma Streamlit, o estado
-não persiste automaticamente entre reruns\footnote{O termo \textit{rerun} refere-se ao ciclo de reexecução automática do script Python realizado pelo framework Streamlit a cada nova interação do usuário na interface gráfica.}
-. O dicionário
-\texttt{st.session\_state["result"]} armazena o output completo de
-\texttt{run\_full\_analysis()} — métricas, predições e log — garantindo que as abas
-\textbf{Resultados} e \textbf{Gráficos} leiam os dados sem reacionar a regressão. Essa
-explicitação do estado é uma diferença fundamental em relação ao modelo MVC com sessão
-HTTP implícita do Java.
+\item[c)] \textbf{Isolamento da Carga Computacional}: As funções pesadas
+(\texttt{find\_optimal\_parameters}, \texttt{perform\_bagging}) estão encapsuladas em
+\texttt{models.py}, recebem \texttt{np.ndarray} e retornam resultados determinísticos.
+Esse isolamento evita que operações de UI do \texttt{app.py} interfiram nos cálculos e
+facilita a futura migração para processamento assíncrono em background via
+\texttt{concurrent.futures} ou \texttt{asyncio}, sem alterações na camada de
+apresentação.
 
 \end{description}
 \end{comment}
 %---------------------------------------------------
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{IDEs e Ambiente de Desenvolvimento}
+
+O desenvolvimento e a manutenção dos três módulos são potencializados pelo VS~Code
+(\textit{Visual Studio Code}), editor de código aberto da Microsoft que se consolidou
+como padrão da indústria para projetos Python científicos~\cite{vscode2024}.
+
+\subsection{Extensões Especializadas para o Projeto}
+A extensão \texttt{Python} (Microsoft) provê IntelliSense\footnote{\textit{IntelliSense} é um termo técnico para o mecanismo de completamento inteligente de código, que oferece sugestões contextuais de métodos, argumentos e documentação diretamente no editor durante a digitação.} e navegação entre os três módulos; \texttt{Pylance} realiza \textit{type checking} estático, detectando incompatibilidades de \texttt{np.ndarray} entre \texttt{models.py} e \texttt{app.py} antes da execução. A extensão \texttt{Jupyter} permite prototipar e validar funções matemáticas isoladamente em \textit{notebooks} antes de integrá-las ao \texttt{models.py}, acelerando o ciclo de desenvolvimento.
+
+\subsection{Qualidade e Padronização de Código}
+A integração nativa com \texttt{black} (formatação automática), \texttt{ruff} ou \texttt{flake8} (linting de
+estilo e erros) e \texttt{mypy} (validação de tipos) garante consistência entre os três
+arquivos. Os \textit{type hints} adotados em \texttt{models.py} e \texttt{components.py}
+são validados em tempo real, prevenindo chamadas com tipos incorretos a partir do
+\texttt{app.py}.
+
+\subsection{Depuração com \textit{Breakpoints}}
+O arquivo \texttt{launch.json} do VS~Code permite inserir \textit{breakpoints} diretamente dentro de
+\texttt{run\_cross\_validation()} ou \texttt{calc\_metrics()}, inspecionando o
+\textit{shape} dos arrays, os valores intermediários de \texttt{rmse\_list} e o índice
+do fold atual — informações impossíveis de obter com \texttt{st.write()} na interface.
+O terminal integrado gerencia ambientes isolados via \texttt{venv} ou \texttt{conda},
+garantindo que as dependências (\texttt{streamlit}, \texttt{numpy}, \texttt{plotly},
+\texttt{pandas}) não conflitem com outros projetos do sistema operacional.
+
+%---------------------------------------------------
+\begin{comment}
+	
+\begin{description}
+
+\item[a)] \textbf{Extensões Especializadas para o Projeto}: A extensão \texttt{Python}
+(Microsoft) provê IntelliSense\footnote{\textit{IntelliSense} é um termo técnico para o mecanismo de completamento inteligente de código, que oferece sugestões contextuais de métodos, argumentos e documentação diretamente no editor durante a digitação.} e navegação entre os três módulos; \texttt{Pylance} realiza \textit{type checking} estático, detectando incompatibilidades de \texttt{np.ndarray}
+entre \texttt{models.py} e \texttt{app.py} antes da execução. A extensão \texttt{Jupyter} permite prototipar e validar funções matemáticas isoladamente em \textit{notebooks} antes de integrá-las ao \texttt{models.py}, acelerando o ciclo de desenvolvimento.
+
+
+\item[b)] \textbf{Qualidade e Padronização de Código}: A integração nativa com
+\texttt{black} (formatação automática), \texttt{ruff} ou \texttt{flake8} (linting de
+estilo e erros) e \texttt{mypy} (validação de tipos) garante consistência entre os três
+arquivos. Os \textit{type hints} adotados em \texttt{models.py} e \texttt{components.py}
+são validados em tempo real, prevenindo chamadas com tipos incorretos a partir do
+\texttt{app.py}.
+
+\item[c)] \textbf{Depuração com \textit{Breakpoints}}: O arquivo \texttt{launch.json}
+do VS~Code permite inserir \textit{breakpoints} diretamente dentro de
+\texttt{run\_cross\_validation()} ou \texttt{calc\_metrics()}, inspecionando o
+\textit{shape} dos arrays, os valores intermediários de \texttt{rmse\_list} e o índice
+do fold atual — informações impossíveis de obter com \texttt{st.write()} na interface.
+O terminal integrado gerencia ambientes isolados via \texttt{venv} ou \texttt{conda},
+garantindo que as dependências (\texttt{streamlit}, \texttt{numpy}, \texttt{plotly},
+\texttt{pandas}) não conflitem com outros projetos do sistema operacional.
+
+\end{description}
+\end{comment}
+%---------------------------------------------------
+
 

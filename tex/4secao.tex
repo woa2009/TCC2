@@ -58,8 +58,8 @@ A Tabela~\ref{tab:rmseprlm} mostra o RMSEP obtido com a RLM para todas as amostr
         width=\textwidth
     ]
     \addplot[mark=none, color=red] table[x index=0, y index=1, col sep=space] {tex/YtesteMn.txt};
-    \addplot[mark=none, color=blue] table[x index=0, y index=1, col sep=space] {tex/CpredMn.txt};
-    \legend{Conc. pred., Conc. ref.}
+    \addplot[mark=none, color=blue] table[x index=0, y index=1, col sep=space] {tex/CpredMn.txt};%1
+    \legend{Conc. ref., Conc. pred.}
     \end{axis}
 \end{tikzpicture}
 \caption{RMSEP com RLM para Mn.}
@@ -85,7 +85,7 @@ A Tabela~\ref{tab:rmseprlm} mostra o RMSEP obtido com a RLM para todas as amostr
     ]
     \addplot[mark=none, color=red] table[x index=0, y index=1, col sep=space] {tex/YtesteFe.txt};
     \addplot[mark=none, color=blue] table[x index=0, y index=1, col sep=space] {tex/CpredFe.txt};
-    \legend{Conc. pred., Conc. ref.}
+    \legend{Conc. ref., Conc. pred.}
     \end{axis}
 \end{tikzpicture}
 \caption{RMSEP com RLM para Fe.}
@@ -96,13 +96,9 @@ A Tabela~\ref{tab:rmseprlm} mostra o RMSEP obtido com a RLM para todas as amostr
 \end{figure}
 %-----------------Subfigure
 
-A Figura~\ref{fig:Figura41} exibe o comportamento do RMSEP para os elementos Mn e Fe. A Figura~\ref{fig:Figura41a} detalha o RMSEP do manganês (Mn) e a Figura~\ref{fig:Figura41b}, o do ferro (Fe). O sinal azul representa a concentração esperada do Mn e do Fe e sinal vermelho a concentração predita obtida com a RLM. Pode ser visto na Tabela~\ref{tab:rmseprlm} que o Mn apresenta o menor RMSEP entre os três métodos, com destaque para o RLM-\textit{subagging}~(\num{0,0974}).
+A Figura~\ref{fig:Figura41} exibe o comportamento do RMSEP para os elementos Mn e Fe. A Figura~\ref{fig:Figura41a} detalha o RMSEP do manganês (Mn) e a Figura~\ref{fig:Figura41b}, o do ferro (Fe). O sinal vermelho representa a concentração de referência do Mn e do Fe e o sinal azul a concentração predita obtida com a RLM. A Tabela~\ref{tab:rmseprlm} mostra que, para a RLM, o Mn apresenta o menor RMSEP (\num{\dados[2,2]}) e o Fe o maior (\num{\dados[2,6]}). Na comparação com parâmetros otimizados (Tabela~\ref{tab:baggingsubba}), o RLM-\textit{subagging} obteve RMSEP menor que o RLM-\textit{bagging} em quatro dos cinco analitos (Mn, Mo, Cr e Ni), e a RLM clássica obteve o menor RMSEP entre as três técnicas em dois analitos (Mo e Cr). Isso indica que a técnica mais adequada depende do analito.
 
-Por outro lado, o Fe apresenta o maior RMSEP, com o valor mais elevado obtido pela RLM~(\num{2,7513}). De forma geral, o RLM-\textit{subagging} apresentou desempenho superior ao RLM-\textit{bagging} na maioria dos elementos analisados, embora a RLM clássica tenha se mantido como método de menor RMSEP para Mo e Cr, indicando que a técnica mais adequada depende das características específicas de cada analito.
-
-A escolha dos elementos ferro e manganês para esta análise baseia-se em fundamentos científicos bem estabelecidos na metalurgia. O ferro é o elemento matriz que define a própria natureza do material, uma vez que sem ferro não existe aço. O manganês, por sua vez, é o único elemento de liga historicamente considerado essencial para a produção de qualquer aço comercial, atuando como desoxidante e modificador fundamental das propriedades mecânicas.
-
-Os demais elementos (Cr, Mo, Ni) são importantes para propriedades específicas, contudo, não são fundamentais para a definição básica e produção do aço como o ferro e o manganês. Acredita-se que o comportamento destas duas amostras são suficientes para ilustrar o comportamento geral esperado para as outras amostras.
+A escolha dos elementos ferro e manganês para esta análise baseia-se em fundamentos científicos bem estabelecidos na metalurgia. O ferro é o elemento matriz que define a própria natureza do material, uma vez que sem ferro não existe aço. O manganês, por sua vez, é o único elemento de liga historicamente considerado essencial para a produção de qualquer aço comercial, atuando como desoxidante e modificador fundamental das propriedades mecânicas. Os demais elementos (Cr, Mo, Ni) são importantes para propriedades específicas, mas não são fundamentais para a definição básica e produção do aço como o ferro e o manganês. Mn e Fe foram escolhidos como analitos ilustrativos nas figuras desta seção; os resultados dos cinco analitos são apresentados na Tabela~\ref{tab:baggingsubba}.
 
 
 %----------------------------------------------------------------------------------------------------------
@@ -168,11 +164,7 @@ Foi conduzido um experimento para avaliar a sensibilidade do \textit{bagging} em
 
 %-------------------------------------------------------------------------------------------------------
 A Figura~\ref{fig:Figura42} mostra o RMSEP da RLM em função das replicações \textit{bootstrap}. A Figura~\ref{fig:Figura42a} mostra o comportamento do RLM-\textit{bagging} para o Mn e a Figura~\ref{fig:Figura42b} mostra o RMSEP do RLM-\textit{bagging} para o Fe.
-Para o Manganês, observa-se comportamento mais estável após $(15-20)$ replicações, os valores do RMSEP tendem a se estabilizar em torno de $(0,026-0,030)$ e apresenta menor variabilidade absoluta.
-
-Para o Ferro, verifica-se maior oscilação ao longo de todas as replicações, os valores oscilam entre $(1,3-2,2)$ sem clara estabilização, apresentando maior variabilidade tanto absoluta quanto relativa. Existe considerável variabilidade para ambos os elementos, mas: o Ferro evidenciou a maior amplitude de variação entre os métodos, com desempenho variando de $34\%$ a $41\%$, indicando sensibilidade elevada à técnica utilizada.
-
-O Manganês apresenta tendência de estabilização após aproximadamente 20 replicações. O Ferro mantém oscilações mesmo com 50 replicações. Isso sugere que o \textit{bagging} para Fe pode precisar de mais replicações ou que a predição do Fe é inerentemente mais difícil que a do Mn. Os valores apresentados na Figura 6 foram obtidos com o conjunto de calibração completo utilizado internamente para análise de sensibilidade, podendo diferir dos valores do conjunto de teste independente reportados nas Tabelas 5 e 9.
+Para o Mn, o RMSEP tende a se estabilizar entre \num{0,026} e \num{0,030} a partir de 15--20 replicações. Para o Fe, o RMSEP oscila entre \num{1,3} e \num{2,2} em todo o intervalo de 1 a 50 replicações, sem estabilização observável. Duas hipóteses são compatíveis com esse comportamento: o Fe pode exigir mais de 50 replicações, ou sua predição pode ser mais difícil que a do Mn; o experimento não permite distingui-las. Os valores da Figura~\ref{fig:Figura42} foram obtidos com o conjunto de calibração completo, em análise de sensibilidade interna, e podem diferir dos valores do conjunto de teste independente reportados nas Tabelas~\ref{tab:bagging} e~\ref{tab:baggingsubba}.
 
 \begin{figure}[!htbp]
 \centering
@@ -197,8 +189,8 @@ O Manganês apresenta tendência de estabilização após aproximadamente 20 rep
         width=\textwidth
     ]
     \addplot[mark=none, color=red] table[x index=0, y index=1, col sep=space] {tex/YtesteMn.txt};
-    \addplot[mark=none, color=blue] table[x index=0, y index=1, col sep=space] {tex/CpredMn.txt};
-    \legend{Conc. pred., Conc. ref.}
+    \addplot[mark=none, color=blue] table[x index=0, y index=1, col sep=space] {tex/CpredMn.txt};%2
+    \legend{Conc. ref., Conc. pred.}
     \end{axis}
 \end{tikzpicture}
 \caption{Predição do Mn com RLM-\textit{bagging}.}
@@ -224,7 +216,7 @@ O Manganês apresenta tendência de estabilização após aproximadamente 20 rep
     ]
     \addplot[mark=none, color=red] table[x index=0, y index=1, col sep=space] {tex/YtesteFe.txt};
     \addplot[mark=none, color=blue] table[x index=0, y index=1, col sep=space] {tex/CpredFe.txt};
-    \legend{Conc. pred., Conc. ref.}
+    \legend{Conc. ref., Conc. pred.}
     \end{axis}
 \end{tikzpicture}
 \caption{Predição do Fe com RLM-\textit{bagging}.}
@@ -235,9 +227,7 @@ O Manganês apresenta tendência de estabilização após aproximadamente 20 rep
 
 A Figura~\ref{fig:Figura43} mostra o comportamento do RMSEP com RLM-\textit{bagging}. A Figura~\ref{fig:Figura43a} mostra o RMSEP com RLM-\textit{bagging} do Mn e a Figura~\ref{fig:Figura43b} mostra o RMSEP com RLM-\textit{bagging} do Fe.
 
-Observa-se desempenho variável do RLM-\textit{bagging} em relação aos resultados da técnica RLM mostrados na Tabela~\ref{tab:rmseprlm}. O RLM-\textit{bagging} apresentou melhorias para Mn (redução de 5,4\%) e Fe (redução de 3,3\%), enquanto demonstrou desempenho inferior para Mo (aumento de 30,8\%), Cr (aumento de 12,4\%) e Ni (aumento de 4,3\%).
-
-Os valores de RMSEP obtidos com o RLM-\textit{bagging} foram (\num{\dados[3,2]}) para o Mn e~(\num{\dados[3,6]}) para o Fe, como apresentado na Tabela~\ref{tab:bagging}.
+Observa-se desempenho variável do RLM-\textit{bagging} em relação aos resultados da técnica RLM mostrados na Tabela~\ref{tab:rmseprlm}. O RLM-\textit{bagging} apresentou melhorias para Mn (redução de 5,4\%) e Fe (redução de 3,3\%), enquanto demonstrou desempenho inferior para Mo (aumento de 30,8\%), Cr (aumento de 12,4\%) e Ni (aumento de 4,3\%). Os valores de RMSEP obtidos com o RLM-\textit{bagging} foram (\num{\dados[3,2]}) para o Mn e~(\num{\dados[3,6]}) para o Fe, como apresentado na Tabela~\ref{tab:bagging}.
 %-------------------------------------------
 
 
@@ -253,7 +243,7 @@ Os valores de RMSEP obtidos com o RLM-\textit{bagging} foram (\num{\dados[3,2]})
 \begin{tabular}{p{3cm} p{4cm} p{4cm}} % Define larguras fixas
 %\begin{tabular}{l cc} % Analitos na primeira coluna, métodos nas seguintes
 \toprule
-\textbf{Elementos} & \textbf{RLM} & \textbf{RLM-\textit{bagging}} \tnote{a} \\ 
+\textbf{Elementos} & \textbf{RLM} & \textbf{RLM-\textit{bagging}} (1) \\ 
 \midrule
 Mn & \num{\dados[2,2]} & \num{\dados[3,2]} \\ 
 Mo & \num{\dados[2,3]} & \num{\dados[3,3]} \\ 
@@ -266,25 +256,21 @@ Fe & \num{\dados[2,6]} & \num{\dados[3,6]} \\
 \begin{tablenotes}[flushleft] % Garante o alinhamento exatamente abaixo do analito
     \footnotesize
     \item \footnotesize{Fonte:~\oautor}
-%		\item ~
-    \item[a] Dezessete \textit{bootstrap} utilizados. Parâmetros definidos sem otimização formal; ver Tabela \ref{tab:baggingsubba} para resultados com validação cruzada 5-\textit{fold}.
+		\item ~
+    \item (1) Dezessete \textit{bootstrap} utilizados. Parâmetros definidos sem otimização formal; ver Tabela \ref{tab:baggingsubba} para resultados com validação cruzada 5-\textit{fold}.
 \end{tablenotes}
 \end{threeparttable}
 \end{table}
 
 
-A Tabela~\ref{tab:bagging} mostra a comparação do erro do RLM-\textit{bagging} em relação ao erro da RLM. O RLM-\textit{bagging} apresentou melhorias apenas para Mn (redução de 5,42\%) e Fe (redução de 3,33\%), enquanto para Mo, Cr e Ni o erro aumentou em 30,76\%, 12,44\% e 4,32\%, respectivamente. Em média, o erro do RLM-\textit{bagging} foi 7,75\% maior do que o da RLM sem reamostragem.
-
-Esses resultados indicam que a aplicação do \textit{bagging} não resultou em uma melhoria consistente no desempenho preditivo do modelo de regressão linear múltipla para este conjunto de dados.
+A Tabela~\ref{tab:bagging} mostra a comparação do erro do RLM-\textit{bagging} em relação ao erro da RLM. O RLM-\textit{bagging} apresentou melhorias apenas para Mn (redução de 5,42\%) e Fe (redução de 3,33\%), enquanto para Mo, Cr e Ni o erro aumentou em 30,76\%, 12,44\% e 4,32\%, respectivamente. Em média, o erro do RLM-\textit{bagging} foi 7,75\% maior do que o da RLM sem reamostragem. Esses resultados indicam que a aplicação do \textit{bagging} não resultou em uma melhoria consistente no desempenho preditivo do modelo de regressão linear múltipla para este conjunto de dados.
 
 %----------------------------------------------------------------------------------------------------------
 \section{\textit{Subagging}}
 \label{sec:subagging2}
 \index{Métodos e Resultados!\textit{Subagging}}
 
-A seção \textit{Subagging} apresenta os resultados obtidos por meio da aplicação da Regressão Linear Múltipla (RLM) sobre subconjuntos gerados via \textit{bootstrap}, de forma semelhante ao \textit{bagging}, porém sem reposição de amostras. O algoritmo \textit{subagging} exige a definição de um parâmetro adicional, além do número de replicações.
-
-Enquanto no \textit{bagging} o tamanho das amostras \textit{bootstrap} permanece constante e igual ao conjunto original, no \textit{subagging} esse tamanho é variável. Para analisar a sensibilidade do \textit{subagging}, o estudo conduz um experimento com 16 amostras \textit{bootstrap}, cujos resultados são apresentados na Figura~\ref{fig:Figura45}.
+A seção \textit{Subagging} apresenta os resultados obtidos por meio da aplicação da Regressão Linear Múltipla (RLM) sobre subconjuntos gerados via \textit{bootstrap}, de forma semelhante ao \textit{bagging}, porém sem reposição de amostras. O algoritmo \textit{subagging} exige a definição de um parâmetro adicional, além do número de replicações. Enquanto no \textit{bagging} o tamanho das amostras \textit{bootstrap} permanece constante e igual ao conjunto original, no \textit{subagging} esse tamanho é variável. Para analisar a sensibilidade do \textit{subagging}, o estudo conduz um experimento com 16 amostras \textit{bootstrap}, cujos resultados são apresentados na Figura~\ref{fig:Figura45}.
 
 %------------------------------------------------------------------------------------------------
 % Gráfico da esquerda (Mn)
@@ -350,31 +336,25 @@ Observa-se nas Figuras~\ref{fig:Figura44a} e~\ref{fig:Figura44b} que o \textit{s
 \toprule
 \textbf{Elemento} & \textbf{RLM} & \textbf{RLM-\textit{subagging}} \\ 
 \midrule
-Mn & \num{\dados[2,2]} & \num{\dados[4,2]} \tnote{a} \\ 
-Mo & \num{\dados[2,3]} & \num{\dados[4,3]} \tnote{b} \\ 
-Cr & \num{\dados[2,4]} & \num{\dados[4,4]} \tnote{c} \\ 
-Ni & \num{\dados[2,5]} & \num{\dados[4,5]} \tnote{d} \\ 
-Fe & \num{\dados[2,6]} & \num{\dados[4,6]} \tnote{e} \\ 
+Mn & \num{\dados[2,2]} & \num{\dados[4,2]} (1) \\ 
+Mo & \num{\dados[2,3]} & \num{\dados[4,3]} (2) \\ 
+Cr & \num{\dados[2,4]} & \num{\dados[4,4]} (3) \\ 
+Ni & \num{\dados[2,5]} & \num{\dados[4,5]} (4) \\ 
+Fe & \num{\dados[2,6]} & \num{\dados[4,6]} (5) \\ 
 \bottomrule
 \end{tabular}
 \begin{tablenotes}[flushleft]
     \footnotesize
     \item \footnotesize{Fonte:~\oautor}
-%		\item ~
-    \item[a] Cinco \textit{bootstrap} utilizados.
-		\item[b] Dezesseis \textit{bootstrap} utilizados. 
-		\item[c] Doze \textit{bootstrap} utilizados. 
-		\item[d] Dez \textit{bootstrap} utilizados. 
-		\item[e] Oito \textit{bootstrap} utilizados.
+		\item ~
+    \item (1) Cinco \textit{bootstrap} utilizados. (2) Dezesseis \textit{bootstrap} utilizados. (3) Doze \textit{bootstrap} utilizados. (4) Dez \textit{bootstrap} utilizados. (5) Oito \textit{bootstrap} utilizados.
 \end{tablenotes}
 \end{threeparttable}
 \end{table}
 
 %---------------------------------------------------
 
-A Tabela~\ref{tab:subagging} mostra o erro do RLM-\textit{subagging} comparado com o erro da RLM tradicional. O RLM-\textit{subagging} apresentou melhorias para três dos cinco analitos testados: Mn (redução de 7,33\%), Ni (redução de 0,25\%) e Fe (redução de 0,77\%). Para Mo e Cr, houve aumento do erro de 7,14\% e 7,58\%, respectivamente.
-
-Em média, considerando todos os analitos, o RLM-\textit{subagging} apresentou desempenho praticamente equivalente ao da RLM tradicional, com variação média de apenas 1,27\% no RMSEP.
+A Tabela~\ref{tab:subagging} mostra o erro do RLM-\textit{subagging} comparado com o erro da RLM tradicional. O RLM-\textit{subagging} apresentou melhorias para três dos cinco analitos testados: Mn (redução de 7,33\%), Ni (redução de 0,25\%) e Fe (redução de 0,77\%). Para Mo e Cr, houve aumento do erro de 7,14\% e 7,58\%, respectivamente. Em média, considerando todos os analitos, o RLM-\textit{subagging} apresentou desempenho praticamente equivalente ao da RLM tradicional, com variação média de apenas 1,27\% no RMSEP.
 
 
 
@@ -401,8 +381,8 @@ Em média, considerando todos os analitos, o RLM-\textit{subagging} apresentou d
         width=\textwidth
     ]
     \addplot[mark=none, color=red] table[x index=0, y index=1, col sep=space] {tex/YtesteMn.txt};
-    \addplot[mark=none, color=blue] table[x index=0, y index=1, col sep=space] {tex/CpredMn.txt};
-    \legend{Conc. pred., Conc. ref.}
+    \addplot[mark=none, color=blue] table[x index=0, y index=1, col sep=space] {tex/CpredMn.txt};%3
+    \legend{Conc. ref., Conc. pred.}
     \end{axis}
 \end{tikzpicture}
 \caption{RMSEP do Mn com RLM-\textit{subagging}.}
@@ -428,7 +408,7 @@ Em média, considerando todos os analitos, o RLM-\textit{subagging} apresentou d
     ]
     \addplot[mark=none, color=red] table[x index=0, y index=1, col sep=space] {tex/YtesteFe.txt};
     \addplot[mark=none, color=blue] table[x index=0, y index=1, col sep=space] {tex/CpredFe.txt};
-    \legend{Conc. pred., Conc. ref.}
+    \legend{Conc. ref., Conc. pred.}
     \end{axis}
 \end{tikzpicture}
 \caption{RMSEP do Fe com RLM-\textit{subagging}.}
@@ -471,9 +451,7 @@ Fe & \rmsepdados[2,7] & \rmsepdados[3,7] & \rmsepdados[4,7] & \rmsepdados[5,7] &
 
 %\subsection{Proporção de Calibração}
 
-Em geral, a utilização da proporção de calibração de 80\% resultou em desempenho superior (menor RMSEP) para a grande maioria dos casos analisados. Para RLM-\textit{bagging} e RLM-\textit{subagging}, a proporção de 80\% foi superior em todos os cinco elementos.
-
-Para a RLM clássica, a proporção de 80\% foi melhor em quatro dos cinco elementos (Mn, Mo, Ni e Fe), sendo a única exceção o Cr, onde 50\% de calibração produziu menor RMSEP (\num{0,7215} contra \num{1,0978}). Um conjunto de dados de treinamento maior, como esperado teoricamente, contribui para modelos mais robustos e com melhor capacidade de generalização.
+Em geral, a utilização da proporção de calibração de 80\% resultou em menor RMSEP em 14 das 15 combinações analito~$\times$~técnica. Para RLM-\textit{bagging} e RLM-\textit{subagging}, a proporção de 80\% foi superior em todos os cinco elementos. Para a RLM clássica, a proporção de 80\% foi melhor em quatro dos cinco elementos (Mn, Mo, Ni e Fe), sendo a única exceção o Cr, onde 50\% de calibração produziu menor RMSEP (\num{0,7215} contra \num{1,0978}). Um conjunto de dados de treinamento maior, como esperado teoricamente, é compatível com a expectativa teórica de que conjuntos de calibração maiores favoreçam a generalização do modelo.
 
 Quanto ao melhor desempenho absoluto por elemento, o RLM-\textit{subagging} com 80\% de calibração obteve o menor RMSEP para Mn (\num{0,1108}) e Fe (\num{2,4871}), a RLM com 80\% obteve o menor erro para Mo (\num{0,2546}), o RLM-\textit{bagging} com 80\% para Ni (\num{1,3281}), e a RLM com 50\% para Cr (\num{0,7215}).
 
@@ -502,8 +480,8 @@ Fe & RLM-\textit{subagging} & \textbf{\rmsepmaior[6,2]} & \rmsepmaior[6,4] \\
 \begin{tablenotes}[flushleft]
     \footnotesize
     \item \footnotesize{Fonte:~\oautor}
-%	\item ~
-	\item \textbf{Nota}:Resultados baseados na Tabela \ref{tab:comparacao_50_80} (parâmetros sem otimização formal por validação cruzada). Para comparação com parâmetros otimizados, ver Tabela \ref{tab:baggingsubba}.
+	\item ~
+	\item Nota: Resultados baseados na Tabela \ref{tab:comparacao_50_80} (parâmetros sem otimização formal por validação cruzada). Para comparação com parâmetros otimizados, ver Tabela \ref{tab:baggingsubba}.
 \end{tablenotes}
 \end{threeparttable}
 \end{table}
@@ -662,31 +640,13 @@ Em síntese, a análise demonstra que a escolha ideal do modelo não é apenas u
 %Subfigura 80\%: \ref{fig:tempo_80}
 
 
-A análise dos tempos de execução apresentados na Figura~\ref{fig:tempo_comparacao} 
-revela diferenças significativas entre os três algoritmos avaliados: RLM clássico, 
-RLM-\textit{bagging} e RLM-\textit{subagging}. Os experimentos foram conduzidos 
-utilizando 50\% e 80\% das amostras disponíveis para cada elemento químico 
-analisado (Mn, Mo, Cr, Ni e Fe).
+A Figura~\ref{fig:tempo_comparacao} apresenta os tempos de execução dos três algoritmos avaliados --- RLM clássica, RLM-\textit{bagging} e RLM-\textit{subagging} --- para cada elemento químico (Mn, Mo, Cr, Ni e Fe), com 50\% e 80\% das amostras disponíveis.
 
-A comparação entre os dois cenários revela comportamentos distintos de crescimento temporal em função do aumento do tamanho do conjunto de treinamento. Para o RLM clássico, o aumento médio foi de aproximadamente 2,0 vezes, com variação 
-considerável entre elementos (1,1 $\times$ para Ni até 3,1 $\times$ para Fe). O 
-RLM-\textit{bagging} apresentou um aumento médio de cerca de 2,2 vezes, com 
-comportamento igualmente heterogêneo entre os analitos.
+A comparação entre os dois cenários mostra o crescimento do tempo de execução com o aumento do conjunto de treinamento. Para a RLM clássica, o aumento médio foi de aproximadamente 2,0 vezes, variando de 1,1 $\times$ (Ni) a 3,1 $\times$ (Fe). O RLM-\textit{bagging} apresentou aumento médio de cerca de 2,2 vezes, variando de 1,1 $\times$ (Cr) a 4,5 $\times$ (Ni).
 
-O comportamento mais acentuado foi observado no RLM-\textit{subagging}, que 
-apresentou um aumento médio de aproximadamente 13,0 vezes no tempo de execução 
-ao passar de 50\% para 80\% das amostras, com variações entre 8,5 $\times$ (Mn) e 
-21,7 $\times$ (Cr). Este crescimento expressivo reflete a sensibilidade do algoritmo 
-de subamostragem ao tamanho do conjunto de treinamento, uma vez que os 
-parâmetros ótimos $m^*$ e $k^*$ requerem um número substancialmente maior de 
-iterações para conjuntos maiores.
+O maior aumento foi observado no RLM-\textit{subagging}, com média de aproximadamente 13,0 vezes ao passar de 50\% para 80\% das amostras, variando de 8,5 $\times$ (Mn) a 21,7 $\times$ (Cr). Esse aumento é compatível com a sensibilidade do algoritmo de subamostragem ao tamanho do conjunto de treinamento e com a possível seleção de valores maiores de $m^*$ e $k^*$ nos conjuntos maiores; os valores selecionados em cada cenário não são reportados nesta seção.
 
-Em termos absolutos, com 80\% das amostras, o RLM-\textit{bagging} mostrou-se 
-em média 1,7 vezes mais rápido que o RLM-\textit{subagging}, invertendo a 
-relação de eficiência computacional observada no cenário com 50\% das amostras. 
-Esse resultado indica que a vantagem temporal do RLM-\textit{subagging} não se 
-mantém com o aumento do tamanho amostral, devendo ser considerada na escolha 
-da técnica em aplicações com conjuntos de dados maiores.
+Em termos absolutos, com 80\% das amostras, o RLM-\textit{bagging} foi mais rápido que o RLM-\textit{subagging} em quatro dos cinco elementos (Mn, Mo, Cr e Fe); a soma dos tempos do RLM-\textit{subagging} (\num{0,201} s) é 1,85 vez a do RLM-\textit{bagging} (\num{0,109} s). Com 50\% das amostras, o RLM-\textit{subagging} foi mais rápido nos cinco elementos. Esse resultado indica que, neste conjunto de dados, a vantagem temporal do RLM-\textit{subagging} não se manteve com o aumento do tamanho amostral, o que deve ser considerado na escolha da técnica em aplicações com conjuntos de dados maiores.
 
 %-------------------------------------------------------------------------------------------------------------------
 \section{\textit{Bagging} $\times$ \textit{Subagging}}
@@ -695,13 +655,11 @@ da técnica em aplicações com conjuntos de dados maiores.
 
 Os valores de RMSEP apresentados na (Tabela~\ref{tab:baggingsubba}) diferem dos reportados na (Tabela~\ref{tab:bagging}) porque esta última apresenta resultados com número fixo de \textit{bootstraps} sem otimização, enquanto a (Tabela~\ref{tab:baggingsubba}) adota parâmetros otimizados por validação cruzada 5-\textit{fold} e incorpora as três técnicas comparativamente com métricas ampliadas.
 
-Com a implementação do \textit{bagging} e do \textit{subagging}, observou-se melhora das predições obtidas com a RLM para alguns analitos específicos. O RLM-\textit{bagging} apresentou melhor desempenho para Fe, enquanto o RLM-\textit{subagging} foi superior para Mn e Ni.
-
-Para Cr e Mo, a RLM clássica manteve o menor RMSEP; entre as técnicas \textit{ensemble}, o RLM-\textit{subagging} superou o RLM-\textit{bagging} no Cr, mas nenhum dos dois superou a RLM clássica nesse elemento, indicando que as técnicas \textit{ensemble} nem sempre garantem melhoria. Dessa forma, é importante comparar o desempenho do RLM-\textit{bagging} e RLM-\textit{subagging} considerando as características específicas de cada analito.
+Com a implementação do \textit{bagging} e do \textit{subagging}, observou-se melhora das predições obtidas com a RLM para alguns analitos específicos. O RLM-\textit{bagging} apresentou melhor desempenho para Fe, enquanto o RLM-\textit{subagging} foi superior para Mn e Ni. Para Cr e Mo, a RLM clássica manteve o menor RMSEP; entre as técnicas \textit{ensemble}, o RLM-\textit{subagging} superou o RLM-\textit{bagging} no Cr, mas nenhum dos dois superou a RLM clássica nesse elemento, indicando que as técnicas \textit{ensemble} nem sempre garantem melhoria. Dessa forma, é importante comparar o desempenho do RLM-\textit{bagging} e RLM-\textit{subagging} considerando as características específicas de cada analito.
 
 %Análises específicas da técnica RLM-\textit{bagging} demonstraram melhorias significativas para determinados analitos, particularmente Mo e Fe, enquanto o RLM-\textit{subagging} apresentou desempenho superior apenas para Cr.
 
-Os percentuais de melhoria variam consideravelmente entre analitos, como evidenciado nas Tabelas~\ref{tab:bagging} e~\ref{tab:subagging}.
+A variação do RMSEP em relação à RLM difere entre os analitos: de $-5{,}4\%$ (Mn) a $+30{,}8\%$ (Mo) para o RLM-\textit{bagging} (Tabela~\ref{tab:bagging}) e de $-7{,}3\%$ (Mn) a $+7{,}6\%$ (Cr) para o RLM-\textit{subagging} (Tabela~\ref{tab:subagging}).
 Para avaliar comparativamente o desempenho dessas técnicas, foi feita uma predição com o RLM-\textit{bagging} e RLM-\textit{subagging}, utilizando o mesmo conjunto de amostras \textit{bootstrap}, no intuito de comparar os erros de predição das duas técnicas apresentadas na Figura~\ref{fig:Figura47}.
 
 %--------------------------------------------------
@@ -854,13 +812,9 @@ superior para todos os analitos. Para o Manganês (Mn), o
 RLM-\textit{subagging} ($k^* = 80\%$, $m^* = 10$) apresentou o 
 menor RMSEP (0,0966), representando uma redução de 8,1\% em relação 
 à RLM clássica, além de ser 4,0 vezes mais rápido que o 
-RLM-\textit{bagging}.
-
-Para o Ferro (Fe), o RLM-\textit{bagging} 
+RLM-\textit{bagging}. Para o Ferro (Fe), o RLM-\textit{bagging} 
 ($m^* = 30$) obteve o melhor desempenho (RMSEP = 2,6406), com melhoria 
-de 4,0\% sobre a RLM clássica.
-
-Para o Níquel (Ni), o 
+de 4,0\% sobre a RLM clássica. Para o Níquel (Ni), o 
 RLM-\textit{subagging} ($k^* = 60\%$, $m^* = 10$) apresentou 
 resultado marginalmente superior (RMSEP = 1,6003), com diferença de 
 0,25\% em relação à RLM clássica e tempo de execução 6,3 vezes menor 
@@ -869,10 +823,10 @@ que o RLM-\textit{bagging}.
 Em contrapartida, para o Molibdênio (Mo) e o Cromo (Cr), a RLM 
 clássica demonstrou desempenho superior (RMSEP de 0,2633 e 1,0798, 
 respectivamente), indicando que a complexidade adicional introduzida 
-pelas estratégias de \textit{ensemble} não resultou em melhorias 
-significativas de precisão para esses analitos. Esses resultados 
-sugerem que a relação preditiva para Mo e Cr é suficientemente linear, 
-não se beneficiando da agregação de modelos.
+pelas estratégias de \textit{ensemble} não resultou em menor RMSEP 
+para esses analitos. Esses resultados são compatíveis com uma relação 
+preditiva aproximadamente linear para Mo e Cr, hipótese não testada 
+diretamente neste trabalho, em que a agregação de modelos não trouxe ganho de RMSEP.
 
 A análise do custo computacional evidencia que o 
 RLM-\textit{subagging} configura-se como alternativa balanceada entre 
@@ -974,79 +928,49 @@ algoritmos RLM-\textit{bagging} e RLM-\textit{subagging} para
 cada elemento, utilizando os parâmetros $m^*$ e $k^*$
 determinados por validação cruzada 5-\textit{fold}. Diferentemente
 da análise anterior, os parâmetros agora variam por elemento —
-refletindo configurações objetivamente otimizadas —, o que torna
+refletindo configurações otimizadas por validação cruzada —, o que torna
 a comparação de tempos diretamente atrelada ao custo real de cada
 configuração de melhor desempenho preditivo.
 
 Em quatro dos cinco elementos avaliados (Mn, Mo, Ni e Fe), o
-RLM-\textit{subagging} mostrou-se mais rápido que o
-RLM-\textit{bagging}. Em média, considerando a razão entre os tempos em cada analito, o
-RLM-\textit{subagging} é aproximadamente 3,0 vezes mais rápido; somando os
-tempos dos cinco analitos, a redução é de cerca de 53\%.
+RLM-\textit{subagging} foi mais rápido que o RLM-\textit{bagging}. A razão
+média entre os tempos (\textit{bagging}/\textit{subagging}) foi 3,0, variando
+de 0,95 (Cr) a 6,3 (Ni); a soma dos tempos dos cinco elementos é 52,8\% menor
+no \textit{subagging} (162,5\,ms contra 344,0\,ms). As maiores diferenças
+ocorreram para o Ni (6,3 vezes mais rápido, com $k^*=60\%$ e $m^*=10$) e para o
+Mn (4,0 vezes mais rápido, com $k^*=80\%$ e $m^*=10$). Para Mo e Fe, as razões
+foram de 1,4 e 2,4, respectivamente. A menor duração do \textit{subagging} é
+compatível com o uso de subconjuntos menores ($k^* \leq 80\%$ das amostras), que
+reduzem a dimensão de cada problema de mínimos quadrados; este trabalho não
+isolou esse efeito experimentalmente.
 
-As maiores diferenças ocorreram
-para o Ni (6,3 vezes mais rápido, com $k^*=60\%$ e $m^*=10$) e
-para o Mn (4,0 vezes mais rápido, com $k^*=80\%$ e $m^*=10$).
-Para Mo e Fe, as reduções foram de 1,4 e 2,4 vezes,
-respectivamente. Essa eficiência decorre da amostragem sem
-reposição, que emprega subconjuntos de tamanho reduzido
-($k^* \leq 80\%$), resultando em operações matriciais mais ágeis
-e menor redundância nos dados processados a cada iteração.
-
-O Cromo (Cr) constitui o único caso em que o
-RLM-\textit{subagging} apresentou tempo marginalmente superior ao
-RLM-\textit{bagging} (46,8\,ms contra 44,5\,ms, diferença de
-apenas 2,3\,ms). Esse comportamento é explicado pelos parâmetros
-ótimos obtidos pela validação cruzada: o RLM-\textit{bagging}
-utilizou $m^* = 20$ replicações, enquanto o RLM-\textit{subagging}
-requereu $m^* = 30$ replicações com $k^* = 80\%$ para atingir o
-menor \gls{RMSEP-CV}.
-
-O maior número de iterações compensou o benefício
-da subamostragem, resultando em custo computacional equivalente
-para este analito específico.
+O Cromo (Cr) é o único elemento em que o RLM-\textit{subagging} foi mais lento
+que o RLM-\textit{bagging} (46,8\,ms contra 44,5\,ms; diferença de 2,3\,ms, ou
+5,2\%). Esse resultado é consistente com os parâmetros selecionados por
+validação cruzada (menor \gls{RMSEP-CV}): $m^*=20$ para o \textit{bagging} e
+$m^*=30$ com $k^*=80\%$ para o \textit{subagging}.
 
 %O desempenho superior das técnicas de ensemble para Fe e Cr pode ser atribuído à complexidade espectral desses elementos. O Fe, como elemento matriz, apresenta espectro de alta densidade com potencial de autoabsorção, enquanto o Cr sofre sobreposições com linhas do Fe e Ni. Essas características introduzem não-linearidades e instabilidade no modelo base, condições nas quais a agregação de múltiplos modelos é teoricamente vantajosa. Para Mn e Mo, cujas linhas analíticas apresentam menor interferência matricial, a relação espectral-concentração é suficientemente bem capturada pela RLM clássica.
-O desempenho superior das técnicas de \textit{ensemble} para Fe pode ser 
-atribuído à complexidade espectral desse elemento. O Fe, como elemento 
-matriz, apresenta espectro de alta densidade com potencial de autoabsorção, 
-características que introduzem não-linearidades e instabilidade no modelo 
-base, condições nas quais a agregação de múltiplos modelos é teoricamente 
-vantajosa.
+Para o Fe, o RLM-\textit{bagging} obteve o menor RMSEP (\num{2,6406}). Uma
+hipótese para esse resultado é que o Fe, por ser o elemento matriz, apresente
+espectro de alta densidade e possível autoabsorção, o que tornaria o modelo base
+mais instável e favoreceria a agregação; este trabalho não testou essa
+hipótese~\cite{TAKAHASHI201731}. % TODO: citar fonte sobre autoabsorção do Fe
+Para o Cr, apesar da sobreposição espectral com linhas do Fe e do Ni, % TODO: citar fonte
+nenhuma técnica de \textit{ensemble} superou a RLM clássica
+(RMSEP = \num{1,0798}). Uma interpretação possível é que, com 17 amostras de
+calibração, a redução de variância do \textit{ensemble} não compensou o viés
+introduzido pela reamostragem; essa interpretação também carece de verificação
+direta (por exemplo, decomposição viés--variância). Para o Mo, a RLM clássica
+obteve o menor RMSEP (\num{0,2633}); para o Mn, o RLM-\textit{subagging} obteve
+o menor RMSEP (\num{0,0966}), 8,1\% abaixo da RLM.
 
-O Cr, embora sofra sobreposições espectrais com linhas do Fe e 
-Ni — o que tornaria a agregação de modelos teoricamente promissora —, não 
-apresentou ganho preditivo com as técnicas \textit{ensemble}, mantendo a 
-RLM clássica como método de menor RMSEP (1,0798). Esse resultado sugere 
-que, para o Cr, a complexidade espectral não foi suficiente para que a 
-redução de variância promovida pelo \textit{ensemble} superasse o custo 
-de viés introduzido pela reamostragem.
-
-Para Mn e Mo, cujas linhas 
-analíticas apresentam menor interferência matricial, a relação 
-espectral-concentração é suficientemente bem capturada pela RLM clássica.
-
-Em relação à RLM clássica, ambas as técnicas de
-\textit{ensemble} apresentam custo computacional significativamente
-superior, com o RLM-\textit{bagging} sendo em média 22,1 vezes
-mais lento e o RLM-\textit{subagging} até 19,5 vezes mais lento
-(para o Mo).
-
-Ainda assim, para aplicações em que a acurácia
-preditiva justifica o custo computacional adicional --- como na
-determinação de Mn e Fe em aço-ligas --- o
-RLM-\textit{subagging} configura-se como alternativa equilibrada
-entre precisão e eficiência, sendo preferível ao
-RLM-\textit{bagging} na maioria dos cenários avaliados.
-
-
-Ressalta-se que as conclusões desta subseção referem-se ao protocolo com
-otimização por validação cruzada. No experimento anterior, com parâmetros
-fixados sem otimização formal (Tabelas~\ref{tab:comparacao_50_80} e
-\ref{tab:melhor_rmseep}), a técnica de menor RMSEP diferiu para alguns
-analitos (por exemplo, Ni e Fe), e o comportamento dos tempos com 80\% das
-amostras foi distinto. Isso indica que o desempenho relativo das técnicas
-depende do critério de seleção de $m$ e $k$.
+Em relação à RLM clássica, o custo computacional dos \textit{ensembles} é
+maior: o RLM-\textit{bagging} foi, em média, 22,1 vezes mais lento e o
+RLM-\textit{subagging} até 19,5 vezes mais lento (Mo). Comparado ao
+RLM-\textit{bagging}, o RLM-\textit{subagging} obteve menor RMSEP em quatro
+elementos (Mn, Mo, Cr e Ni) e menor tempo em quatro (Mn, Mo, Ni e Fe),
+superando-o simultaneamente nos dois critérios em Mn, Mo e Ni.
 
 
 %R dados \num{\rdados[2,3]} até \num{\rdados[2,4]}

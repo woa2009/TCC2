@@ -10,6 +10,8 @@ A level-1 auxiliary file: tex/3secao.aux
 Reallocating 'name_of_file' (item size: 1) to 15 items.
 A level-1 auxiliary file: tex/4secao.aux
 Reallocating 'name_of_file' (item size: 1) to 15 items.
+A level-1 auxiliary file: tex/5secao.aux
+Reallocating 'name_of_file' (item size: 1) to 15 items.
 A level-1 auxiliary file: tex/6secao.aux
 Reallocating 'name_of_file' (item size: 1) to 15 items.
 A level-1 auxiliary file: tex/7secao.aux
@@ -19,8 +21,6 @@ Reallocating 'name_of_file' (item size: 1) to 15 items.
 A level-1 auxiliary file: tex/9secao.aux
 Reallocating 'name_of_file' (item size: 1) to 16 items.
 A level-1 auxiliary file: tex/10secao.aux
-Reallocating 'name_of_file' (item size: 1) to 15 items.
-A level-1 auxiliary file: tex/5secao.aux
 Reallocating 'name_of_file' (item size: 1) to 12 items.
 The style file: abntex2-num.bst
 Reallocating 'name_of_file' (item size: 1) to 16 items.
@@ -45,44 +45,44 @@ Reallocating 'global_strs' (item size: 1) to 4000000 items.
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://www.abntex.net.br/                               |
 +---------------------------------------------------------+
-You've used 64 entries,
+You've used 65 entries,
             6714 wiz_defined-function locations,
-            1690 strings with 24749 characters,
-and the built_in function-call counts, 120321 in all, are:
-= -- 15268
-> -- 1635
-< -- 3752
-+ -- 4304
-- -- 486
-* -- 7372
-:= -- 13980
-add.period$ -- 354
-call.type$ -- 64
-change.case$ -- 699
-chr.to.int$ -- 180
-cite$ -- 62
-duplicate$ -- 13519
-empty$ -- 3730
-format.name$ -- 2511
-if$ -- 23330
+            1700 strings with 25092 characters,
+and the built_in function-call counts, 122462 in all, are:
+= -- 15542
+> -- 1662
+< -- 3823
++ -- 4382
+- -- 494
+* -- 7503
+:= -- 14226
+add.period$ -- 360
+call.type$ -- 65
+change.case$ -- 710
+chr.to.int$ -- 184
+cite$ -- 63
+duplicate$ -- 13767
+empty$ -- 3789
+format.name$ -- 2552
+if$ -- 23740
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 1182
-newline$ -- 374
-num.names$ -- 248
-pop$ -- 1475
+missing$ -- 1200
+newline$ -- 381
+num.names$ -- 252
+pop$ -- 1496
 preamble$ -- 1
-purify$ -- 256
+purify$ -- 260
 quote$ -- 0
-skip$ -- 13305
+skip$ -- 13547
 stack$ -- 1
-substring$ -- 5627
-swap$ -- 5032
-text.length$ -- 132
+substring$ -- 5734
+swap$ -- 5126
+text.length$ -- 135
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 4
 warning$ -- 0
-while$ -- 433
+while$ -- 441
 width$ -- 0
-write$ -- 1004
+write$ -- 1021

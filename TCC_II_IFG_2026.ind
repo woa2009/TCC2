@@ -22,7 +22,7 @@
   \item Métodos e Resultados
     \subitem \textit{Bagging}, \hyperpage{39}
     \subitem \textit{Baggin} $\times$ \textit{Subagging}, 
-		\hyperpage{46}
+		\hyperpage{45}
     \subitem \textit{Subagging}, \hyperpage{41}
     \subitem Introdução, \hyperpage{34}
     \subitem Medida do Erro Médio Quadrático de Predição, 
@@ -38,8 +38,8 @@
 
   \indexspace
 
-  \item Tabelas de Paridade Amostra-a-Amostra, \hyperpage{93}
-  \item Testes de Gráficos, \hyperpage{85}
+  \item Tabelas de Paridade Amostra-a-Amostra, \hyperpage{94}
+  \item Testes de Gráficos, \hyperpage{86}
   \item Técnicas Clássicas de Reamostragem, \hyperpage{26}
     \subitem \textit{Bagging}, \hyperpage{27}
     \subitem \textit{Subagging}, \hyperpage{28}
