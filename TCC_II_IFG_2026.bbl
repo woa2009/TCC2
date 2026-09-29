@@ -522,6 +522,27 @@ ISBN 978-0471958697. Dispon{\'\i}vel em:
 Dispon{\'\i}vel em: \url{https://code.visualstudio.com}. Acesso em: 28 maio.
   2026.}
 
+\bibitem{nielsen1994}
+\abntrefinfo{Nielsen}{NIELSEN}{1994}
+{NIELSEN, J. Enhancing the explanatory power of usability heuristics. In:
+  \emph{Proceedings of the SIGCHI Conference on Human Factors in Computing
+  Systems (CHI '94)}. [S.l.]: ACM, 1994. p. 152--158.}
+
+\bibitem{rougier2014ten}
+\abntrefinfo{Rougier, Droettboom e Bourne}{ROUGIER; DROETTBOOM; BOURNE}{2014}
+{ROUGIER, N.~P.; DROETTBOOM, M.; BOURNE, P.~E. Ten simple rules for better
+  figures.
+\emph{PLOS Computational Biology}, Public Library of Science San Francisco, CA
+  USA, v.~10, n.~9, p. e1003833, 2014.
+Dispon{\'\i}vel em: \url{https://doi.org/10.1371/journal.pcbi.1003833}. Acesso
+  em: 28 set. 2026.}
+
+\bibitem{plotly2015}
+\abntrefinfo{{Plotly Technologies Inc.}}{{Plotly Technologies Inc.}}{2015}
+{{Plotly Technologies Inc.} \emph{Collaborative data science}. Montr{\'e}al,
+  QC: Plotly Technologies Inc., 2015. Dispon{\'\i}vel em:
+  \url{https://plot.ly}. Acesso em: 28 set. 2026.}
+
 \bibitem{martin2008}
 \abntrefinfo{Martin}{MARTIN}{2008}
 {MARTIN, R.~C. \emph{Clean Code: A Handbook of Agile Software Craftsmanship}.

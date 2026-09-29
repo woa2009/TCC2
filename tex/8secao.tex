@@ -3,9 +3,7 @@
 
 \section{Design Centrado em Dados}
 
-A interface do \texttt{app.py} organiza o fluxo analítico de forma hierárquica,
-priorizando a clareza e a produtividade do cientista em detrimento de elementos
-decorativos. A distribuição dos elementos entre abas, colunas e área central segue
+A interface do \texttt{app.py} organiza o fluxo analítico de forma hierárquica, organizando o fluxo em três etapas sequenciais (Configuração, Resultados e Gráficos). A distribuição dos elementos entre abas, colunas e área central segue
 princípios de design centrado no usuário, com decisões arquiteturais explícitas sobre
 onde cada tipo de conteúdo deve residir.
 
@@ -13,8 +11,7 @@ onde cada tipo de conteúdo deve residir.
 As três abas — \textbf{Configuração}, \textbf{Resultados} e \textbf{Gráficos} — guiam o usuário em um
 fluxo linear e irreversível: entrada de dados $\rightarrow$ execução $\rightarrow$
 inspeção de resultados. Essa estrutura espelha o \textit{workflow} típico de validação de
-modelos quimiométricos e reduz a sobrecarga cognitiva ao esconder informações irrelevantes
-para a etapa atual.
+modelos quimiométricos e exibe, em cada aba, apenas o conteúdo da etapa correspondente; o efeito sobre a carga cognitiva não foi avaliado empiricamente.
 
 \subsection{Layout em Colunas e Hierarquia Visual}
 O \texttt{app.py} utiliza \texttt{st.columns(2)} para agrupar uploads de calibração e teste lado a lado,
@@ -22,14 +19,14 @@ sinalizando visualmente a paridade entre os conjuntos. A área central é reserv
 cards de métricas gerados por \texttt{components.metric\_card\_html()} e para a tabela
 comparativa em \texttt{pd.DataFrame}. O CSS centralizado em \texttt{components.APP\_CSS}
 — incluindo gradientes de fundo, bordas coloridas por modelo e estilo terminal para o
-log — replica \textit{dashboards} técnicos e industriais sem poluir o \texttt{app.py} com
-definições de estilo.
+log — concentra os estilos em \texttt{components.APP\_CSS}, mantendo \texttt{app.py} sem definições de estilo.
+
 
 \subsection{Feedback Progressivo}
 O botão \textbf{Executar Análise} é desabilitado (\texttt{disabled=not files\_ok}) enquanto algum dos quatro arquivos estiver
 ausente, prevenindo execuções inválidas. A barra de progresso atualizada pelo callback e
 a mensagem \texttt{st.success} ao término fornecem confirmação clara de conclusão,
-padrão recomendado pelas diretrizes de usabilidade para interfaces científicas.
+atende à heurística de visibilidade do estado do sistema \cite{nielsen1994} para interfaces científicas.
 
 \subsection{Decisão Arquitetural: \texttt{st.tabs} vs.\ \texttt{st.sidebar}}
 O Streamlit oferece dois paradigmas de organização de parâmetros técnicos e resultados:
@@ -50,58 +47,8 @@ Ainda assim, a \texttt{st.sidebar} permanece como alternativa recomendada para v
 futuras que implementem parâmetros globais persistentes, como configuração de idioma,
 normalização de dados ou seleção de paleta de cores para publicação.
 
-%---------------------------------------------------
-\begin{comment}
-	
-\begin{description}
-
-\item[a)] \textbf{Navegação por Etapas (\texttt{st.tabs})}: As três abas —
-\textbf{Configuração}, \textbf{Resultados} e \textbf{Gráficos} — guiam o usuário em um
-fluxo linear e irreversível: entrada de dados $\rightarrow$ execução $\rightarrow$
-inspeção de resultados. Essa estrutura espelha o \textit{workflow} típico de validação de
-modelos quimiométricos e reduz a sobrecarga cognitiva ao esconder informações irrelevantes
-para a etapa atual.
-
-\item[b)] \textbf{Layout em Colunas e Hierarquia Visual}: O \texttt{app.py} utiliza
-\texttt{st.columns(2)} para agrupar uploads de calibração e teste lado a lado,
-sinalizando visualmente a paridade entre os conjuntos. A área central é reservada para
-cards de métricas gerados por \texttt{components.metric\_card\_html()} e para a tabela
-comparativa em \texttt{pd.DataFrame}. O CSS centralizado em \texttt{components.APP\_CSS}
-— incluindo gradientes de fundo, bordas coloridas por modelo e estilo terminal para o
-log — replica \textit{dashboards} técnicos e industriais sem poluir o \texttt{app.py} com
-definições de estilo.
-
-\item[c)] \textbf{Feedback Progressivo}: O botão \textbf{Executar Análise} é
-desabilitado (\texttt{disabled=not files\_ok}) enquanto algum dos quatro arquivos estiver
-ausente, prevenindo execuções inválidas. A barra de progresso atualizada pelo callback e
-a mensagem \texttt{st.success} ao término fornecem confirmação clara de conclusão,
-padrão recomendado pelas diretrizes de usabilidade para interfaces científicas.
 
 
-\item[d)] \textbf{Decisão Arquitetural: \texttt{st.tabs} vs.\ \texttt{st.sidebar}}: O
-Streamlit oferece dois paradigmas de organização de parâmetros técnicos e resultados:
-a \texttt{st.sidebar} (painel lateral persistente, visível em todas as telas) e o
-\texttt{st.tabs} (abas sequenciais que segmentam o fluxo). Para o perfil de usuário
-científico deste sistema --- que opera em etapas ordenadas e não retorna aos parâmetros
-após a execução --- o modelo de abas foi preferido por três razões. A primeira é que
-impõe explicitamente a sequência \textit{Configuração $\rightarrow$ Resultados
-$\rightarrow$ Gráficos}, prevenindo execuções prematuras.
-
-A segunda razão é que o modelo de abas preserva a área central integralmente para
-visualização de resultados e gráficos, sem que uma barra lateral compita com os
-gráficos do Plotly em largura de tela. A terceira é que ele se alinha ao padrão de
-\textit{wizards} adotado em \textit{softwares} de análise científica (Origin\footnote{Disponível no site oficial da \textit{OriginLab}: \url{https://www.originlab.com/}.}
-, MATLAB App Designer\footnote{Disponível no site oficial da \textit{MathWorks} para o \textit{software} MATLAB: \url{https://www.mathworks.com/products/matlab.html}.}
-), nos quais cada etapa revela seu conteúdo apenas quando os
-pré-requisitos anteriores foram cumpridos.
-
-Ainda assim, a \texttt{st.sidebar} permanece como alternativa recomendada para versões
-futuras que implementem parâmetros globais persistentes, como configuração de idioma,
-normalização de dados ou seleção de paleta de cores para publicação.
-
-\end{description}
-\end{comment}
-%---------------------------------------------------
 
 % ─────────────────────────────────────────────────────────────────────────────
 \section{Visualização Interativa com Plotly}
@@ -127,38 +74,9 @@ dos três modelos sobrepostos — RLM Simples, \textit{Bagging} e \textit{Subagg
 \subsection{Padrões de Publicação}
 Os eixos customizados (\texttt{showgrid=True}, \texttt{gridcolor="\#000000"}, fontes pretas explícitas via \texttt{\_AXIS\_STYLE})
 garantem legibilidade para relatórios técnicos, apresentações e submissão a periódicos,
-alinhando-se às normas de visualização de dados científicos sem exigir pós-processamento
+alinhando-se às normas de visualização de dados científicos \cite{rougier2014ten, plotly2015} sem exigir pós-processamento
 externo das figuras.
 
-%---------------------------------------------------
-\begin{comment}
-
-\begin{description}
-
-\item[a)] \textbf{Integração Nativa e Centralizada}: Com a separação em
-\texttt{components.py}, todas as configurações visuais — cores por modelo
-(\texttt{COR\_RLM}, \texttt{COR\_BAGGING}, \texttt{COR\_SUBAGGING}), estilos de eixo
-(\texttt{\_AXIS\_STYLE}), cores de fundo (\texttt{\_PLOT\_BG}) — estão definidas em um
-único arquivo. Alterar a paleta de cores ou o estilo de grade para padrões de publicação
-científica requer modificação em um só lugar, sem tocar no \texttt{app.py} ou no
-\texttt{models.py}.
-
-\item[b)] \textbf{Ferramentas de Inspeção Científica}: Os gráficos \texttt{go.Scatter}
-gerados por \texttt{build\_chart()} e \texttt{build\_scatter\_chart()} habilitam zoom,
-\textit{pan}, \textit{hover} com coordenadas exatas e legendas interativas. A linha ideal
-\textit{y=x} (\texttt{mode="lines", dash="dot"}) no gráfico de dispersão
-(\texttt{build\_scatter\_chart}) permite validação visual imediata de viés e dispersão
-dos três modelos sobrepostos — RLM Simples, \textit{Bagging} e \textit{Subagging} — em uma única figura.
-
-\item[c)] \textbf{Padrões de Publicação}: Os eixos customizados (\texttt{showgrid=True},
-\texttt{gridcolor="\#000000"}, fontes pretas explícitas via \texttt{\_AXIS\_STYLE})
-garantem legibilidade para relatórios técnicos, apresentações e submissão a periódicos,
-alinhando-se às normas de visualização de dados científicos sem exigir pós-processamento
-externo das figuras.
-
-\end{description}
-\end{comment}
-%---------------------------------------------------
 
 % ─────────────────────────────────────────────────────────────────────────────
 \section{Contratos de Interface e Funções}
@@ -196,40 +114,3 @@ Nenhuma dessas mudanças impacta as outras camadas, confirmando que a arquitetur
 adotada atende ao critério de \textbf{abertura para extensão, fechamento para
 modificação} (\textit{Open/Closed Principle}) proposto por Robert C.
 Martin~\cite{martin2008}.
-
-
-%---------------------------------------------------
-\begin{comment}
-
-\begin{description}
-
-\item[a)] \textbf{Separação de Camadas}: O \texttt{models.py} não importa
-\texttt{streamlit} nem \texttt{plotly}. O \texttt{components.py} não importa
-\texttt{streamlit} nem \texttt{numpy}. O \texttt{app.py} não contém nenhuma função
-matemática — a instrução mais complexa é a chamada \texttt{result =
-run\_full\_analysis(...)}. Essa separação permite testar o \texttt{models.py}
-isoladamente com \texttt{pytest} e dados sintéticos, sem instanciar nenhum componente de
-interface.
-
-\item[b)] \textbf{Contratos Explícitos via \textit{Type Hints}}: Todas as funções do
-\texttt{models.py} declaram tipos de entrada e saída:
-\texttt{perform\_bagging(...) -> np.ndarray},
-\texttt{calc\_metrics(...) -> tuple[float, float, float]},
-\texttt{find\_optimal\_parameters(...) -> tuple[dict, str]}.
-No \texttt{app.py}, \texttt{parse\_int\_list()} e \texttt{parse\_float\_list()} lançam
-\texttt{ValueError} com mensagens orientativas para entradas fora do domínio válido —
-inteiros positivos para \textit{m} e decimais em $(0,1]$ para \textit{k} — prevenindo
-falhas silenciosas na camada de negócio.
-
-\item[c)] \textbf{Manutenibilidade e Escalabilidade}: Adicionar um novo modelo preditivo
-(como \textit{Ridge Regression} ou \textit{Random Forest}) requer apenas uma nova função em
-\texttt{models.py} e um novo bloco de exibição em \texttt{app.py}. Modificar a paleta de
-cores ou o layout dos gráficos requer apenas alterações em \texttt{components.py}.
-Nenhuma dessas mudanças impacta as outras camadas, confirmando que a arquitetura modular
-adotada atende ao critério de \textbf{abertura para extensão, fechamento para
-modificação} (\textit{Open/Closed Principle}) proposto por Robert C.
-Martin~\cite{martin2008}.
-
-\end{description}
-\end{comment}
-%---------------------------------------------------

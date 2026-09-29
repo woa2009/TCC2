@@ -17,83 +17,6 @@ demonstrada em nível de cada predição individual, evidenciando que a migraç�
 de plataforma não introduziu perdas de acurácia amostra a amostra.
 % ----------------------------------------------------------
 
-%---------------------------------------------------
-\begin{comment}
-	
-\begin{table}[H]
-\centering
-\caption{Paridade \textit{Bagging} -- Cr.}
-\label{tab:paridade_bagging_cr}
-\begin{threeparttable}
-\resizebox{0.55\textwidth}{!}{%
-\begin{tabular}{
-    S[table-format=2.0]
-    S[table-format=2.3]
-    S[table-format=2.4]
-    S[table-format=2.4]
-    S[table-format=1.1]
-}
-\toprule
-{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}\tnote{a}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
-\midrule
-% ---- Dados das 34 amostras ----
- 1  & 30.000  & 30.1484  & 30.1484  & 0.0 \\
- 2  & 40.000  & 39.9788  & 39.9788  & 0.0 \\
- 3  & 60.000  & 60.0579  & 60.0579  & 0.0 \\
- 4  & 35.000  & 34.9336  & 34.9336  & 0.0 \\
- 5  & 45.000  & 44.7089  & 44.7089  & 0.0 \\
- 6  & 48.000  & 47.4377  & 47.4377  & 0.0 \\
- 7  & 65.000  & 64.7815  & 64.7815  & 0.0 \\
- 8  & 23.000  & 22.7322  & 22.7322  & 0.0 \\
- 9  & 25.000  & 23.9380  & 23.9380  & 0.0 \\
-10  & 37.000  & 36.0721  & 36.0721  & 0.0 \\
-11  & 23.103  & 22.7884  & 22.7884  & 0.0 \\
-12  & 22.722  & 20.4495  & 20.4495  & 0.0 \\
-13  & 22.713  & 21.5452  & 21.5452  & 0.0 \\
-14  & 60.054  & 60.0535  & 60.0535  & 0.0 \\
-15  & 59.959  & 57.2886  & 57.2886  & 0.0 \\
-16  & 32.250  & 33.6880  & 33.6880  & 0.0 \\
-17  & 32.448  & 31.7185  & 31.7185  & 0.0 \\
-18  & 32.154  & 30.6143  & 30.6143  & 0.0 \\
-19  & 60.996  & 62.9324  & 62.9324  & 0.0 \\
-20  & 60.684  & 60.3428  & 60.3428  & 0.0 \\
-21  & 60.360  & 58.3135  & 58.3135  & 0.0 \\
-22  & 40.636  & 41.4952  & 41.4952  & 0.0 \\
-23  & 40.733  & 39.3944  & 39.3944  & 0.0 \\
-24  & 40.524  & 39.4233  & 39.4233  & 0.0 \\
-25  & 64.597  & 66.6126  & 66.6126  & 0.0 \\
-26  & 65.522  & 65.2090  & 65.2090  & 0.0 \\
-27  & 44.707  & 43.2840  & 43.2840  & 0.0 \\
-28  & 44.716  & 43.3947  & 43.3947  & 0.0 \\
-29  & 30.022  & 30.3226  & 30.3226  & 0.0 \\
-30  & 30.177  & 28.6635  & 28.6635  & 0.0 \\
-31  & 29.926  & 28.1745  & 28.1745  & 0.0 \\
-32  & 44.926  & 46.1783  & 46.1783  & 0.0 \\
-33  & 44.837  & 43.8530  & 43.8530  & 0.0 \\
-34  & 44.837  & 43.7524  & 43.7524  & 0.0 \\
-\bottomrule
-\end{tabular}%
-}
-\begin{center}
-\begin{minipage}{0.40\linewidth}
-\begin{tablenotes}
-\footnotesize
-\item Fonte:~\oautor
-\item[a] Tipo de dado utilizado em Java foi o \textit{double}; no Python,
-o equivalente é o \textit{float64} do NumPy — ambos representações IEEE~754
-de precisão dupla (64 bits), o que garante paridade numérica exata entre as
-duas implementações.
-\item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
-Todos os valores de $\Delta$ são iguais a zero, indicando paridade
-perfeita entre as implementações Java e Python para a técnica \textit{Bagging}
-no analito Cromo (Cr).
-\end{tablenotes}
-\end{minipage}
-\end{center}
-\end{threeparttable}
-\end{table}
-\end{comment}
-%---------------------------------------------------
 
 \begin{table}[H]
 \centering
@@ -161,7 +84,7 @@ duas implementações.
 \item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
 Todos os valores de $\Delta$ são iguais a zero, indicando paridade
 perfeita entre as implementações Java e Python para a técnica \textit{Bagging}
-no analito Cromo (Fe).
+no analito Ferro (Fe).
 \end{tablenotes}
 \end{minipage}
 \end{center}
@@ -235,13 +158,13 @@ duas implementações.
 \item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
 Todos os valores de $\Delta$ são iguais a zero, indicando paridade
 perfeita entre as implementações Java e Python para a técnica \textit{Bagging}
-no analito Cromo (Mn).
+no analito Mangânes (Mn).
 \end{tablenotes}
 \end{minipage}
 \end{center}
 \end{threeparttable}
 \end{table}
-
+%---------------------------------------------------------
 \begin{table}[H]
 \centering
 \caption{Paridade \textit{Bagging} -- Ni.}
@@ -294,13 +217,14 @@ duas implementações.
 \item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
 Todos os valores de $\Delta$ são iguais a zero, indicando paridade
 perfeita entre as implementações Java e Python para a técnica \textit{Bagging}
-no analito Cromo (Ni).
+no analito Níquel (Ni).
 \end{tablenotes}
 \end{minipage}
 \end{center}
 \end{threeparttable}
 \end{table}
 
+%--------------------------------------------
 \begin{table}[H]
 \centering
 \caption{Paridade \textit{Bagging} -- Mo.}
@@ -354,7 +278,7 @@ duas implementações.
 \item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
 Todos os valores de $\Delta$ são iguais a zero, indicando paridade
 perfeita entre as implementações Java e Python para a técnica \textit{Bagging}
-no analito Cromo (Mo).
+no analito Molibdênio (Mo).
 \end{tablenotes}
 \end{minipage}
 \end{center}
@@ -426,7 +350,7 @@ de precisão dupla (64 bits), o que garante paridade numérica exata entre as
 duas implementações.
 \item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
 Todos os valores de $\Delta$ são iguais a zero, indicando paridade
-perfeita entre as implementações Java e Python para a técnica \textit{Bagging}
+perfeita entre as implementações Java e Python para a técnica \textit{RLM}
 no analito Cromo (Cr).
 \end{tablenotes}
 \end{minipage}
@@ -487,8 +411,8 @@ de precisão dupla (64 bits), o que garante paridade numérica exata entre as
 duas implementações.
 \item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
 Todos os valores de $\Delta$ são iguais a zero, indicando paridade
-perfeita entre as implementações Java e Python para a técnica \textit{Bagging}
-no analito Cromo (Mo).
+perfeita entre as implementações Java e Python para a técnica \textit{RLM}
+no analito Molibdênio (Mo).
 \end{tablenotes}
 \end{minipage}
 \end{center}
@@ -560,7 +484,7 @@ de precisão dupla (64 bits), o que garante paridade numérica exata entre as
 duas implementações.
 \item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
 Todos os valores de $\Delta$ são iguais a zero, indicando paridade
-perfeita entre as implementações Java e Python para a técnica \textit{Bagging}
+perfeita entre as implementações Java e Python para a técnica \textit{Subagging}
 no analito Cromo (Cr).
 \end{tablenotes}
 \end{minipage}
@@ -568,6 +492,7 @@ no analito Cromo (Cr).
 \end{threeparttable}
 \end{table}
 
+%-------------------------------------------------------
 \begin{table}[H]
 \centering
 \caption{Paridade \textit{RLM} -- Fe.}
@@ -633,14 +558,15 @@ de precisão dupla (64 bits), o que garante paridade numérica exata entre as
 duas implementações.
 \item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
 Todos os valores de $\Delta$ são iguais a zero, indicando paridade
-perfeita entre as implementações Java e Python para a técnica \textit{Bagging}
-no analito Cromo (Fe).
+perfeita entre as implementações Java e Python para a técnica \textit{RLM}
+no analito Ferro (Fe).
 \end{tablenotes}
 \end{minipage}
 \end{center}
 \end{threeparttable}
 \end{table}
 
+%---------------------------------------------------
 \begin{table}[H]
 \centering
 \caption{Paridade \textit{RLM} -- Ni.}
@@ -692,8 +618,8 @@ de precisão dupla (64 bits), o que garante paridade numérica exata entre as
 duas implementações.
 \item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
 Todos os valores de $\Delta$ são iguais a zero, indicando paridade
-perfeita entre as implementações Java e Python para a técnica \textit{Bagging}
-no analito Cromo (Ni).
+perfeita entre as implementações Java e Python para a técnica \textit{RLM}
+no analito Níquel (Ni).
 \end{tablenotes}
 \end{minipage}
 \end{center}
@@ -765,8 +691,8 @@ de precisão dupla (64 bits), o que garante paridade numérica exata entre as
 duas implementações.
 \item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
 Todos os valores de $\Delta$ são iguais a zero, indicando paridade
-perfeita entre as implementações Java e Python para a técnica \textit{Bagging}
-no analito Cromo (Mn).
+perfeita entre as implementações Java e Python para a técnica \textit{RLM}
+no analito Mangânes (Mn).
 \end{tablenotes}
 \end{minipage}
 \end{center}
@@ -839,8 +765,8 @@ de precisão dupla (64 bits), o que garante paridade numérica exata entre as
 duas implementações.
 \item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
 Todos os valores de $\Delta$ são iguais a zero, indicando paridade
-perfeita entre as implementações Java e Python para a técnica \textit{Bagging}
-no analito Cromo (Fe).
+perfeita entre as implementações Java e Python para a técnica \textit{Subagging}
+no analito Ferro (Fe).
 \end{tablenotes}
 \end{minipage}
 \end{center}
@@ -899,14 +825,15 @@ de precisão dupla (64 bits), o que garante paridade numérica exata entre as
 duas implementações.
 \item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
 Todos os valores de $\Delta$ são iguais a zero, indicando paridade
-perfeita entre as implementações Java e Python para a técnica \textit{Bagging}
-no analito Cromo (Mo).
+perfeita entre as implementações Java e Python para a técnica \textit{Subagging}
+no analito Molibdênio (Mo).
 \end{tablenotes}
 \end{minipage}
 \end{center}
 \end{threeparttable}
 \end{table}
 
+%---------------------------------------------------------------------------------
 \begin{table}[H]
 \centering
 \caption{Paridade \textit{Subagging} -- Mn.}
@@ -972,14 +899,15 @@ de precisão dupla (64 bits), o que garante paridade numérica exata entre as
 duas implementações.
 \item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
 Todos os valores de $\Delta$ são iguais a zero, indicando paridade
-perfeita entre as implementações Java e Python para a técnica \textit{Bagging}
-no analito Cromo (Mn).
+perfeita entre as implementações Java e Python para a técnica \textit{Subagging}
+no analito Mangânes (Mn).
 \end{tablenotes}
 \end{minipage}
 \end{center}
 \end{threeparttable}
 \end{table}
 
+%---------------------------------------------------------------------------------
 \begin{table}[H]
 \centering
 \caption{Paridade \textit{Subagging} -- Ni.}
@@ -1031,8 +959,8 @@ de precisão dupla (64 bits), o que garante paridade numérica exata entre as
 duas implementações.
 \item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
 Todos os valores de $\Delta$ são iguais a zero, indicando paridade
-perfeita entre as implementações Java e Python para a técnica \textit{Bagging}
-no analito Cromo (Ni).
+perfeita entre as implementações Java e Python para a técnica \textit{Subagging}
+no analito Níquel (Ni).
 \end{tablenotes}
 \end{minipage}
 \end{center}
@@ -1046,7 +974,7 @@ no analito Cromo (Ni).
 
 %No Código \ref{code:codi5} é apresentada a saída bruta gerada pelo framework Pytest durante a execução das rotinas de validação da aplicação:
 
-O Código~\ref{code:codi5} apresenta a saída de uma sessão do \textit{pytest} 9.1.0 (Python 3.12.10, Windows) que executou o \texttt{test\_suite\_5.py}, com 92 testes: 21 unitários (leitura de matrizes TXT/CSV), 60 de caixa preta (RLM, \textit{Bagging} e \textit{Subagging}, com RMSE, MAE e $R^2$ para Cr, Ni e Fe) e 11 de estresse (tempo, RAM e escalabilidade). Conforme o Código~\ref{code:codi5}, todos os testes passaram, sem falhas, em 75,25 segundos.
+O Código~\ref{code:codi5} apresenta a saída de uma sessão do \textit{pytest} 9.1.0 (Python 3.12.10, Windows) que executou o \texttt{test\_suite\_5.py}, com 92 testes: 21 unitários (leitura de matrizes TXT/CSV), 60 de caixa preta (RLM, \textit{Bagging} e \textit{Subagging}, com RMSE, MAE e $R^2$ para Cr, Ni e Fe) e 11 de estresse (tempo, RAM e escalabilidade). Conforme o Código~\ref{code:codi5}, todos os testes passaram, sem falhas, em \testes~segundos.
 
 \begin{comment}
 \begin{codigo}[!htbp]

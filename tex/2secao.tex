@@ -89,8 +89,7 @@ onde $\mathbf{X}^{+}$ é a pseudo-inversa da matriz $\mathbf{X}$.
 
 
 \subsection{Premissas e Métodos Robustos}
-A validade das estimativas obtidas pelo MQO depende do cumprimento das premissas clássicas da regressão linear. Em dados que apresentam estruturas complexas (como é comum em Quimiometria), a violação de pressupostos como a normalidade e a homocedasticidade \footnote{Refere-se à variância constante dos resíduos para todas as observações. É um pressuposto crucial para a validade dos testes de significância e eficiência dos estimadores MQO. O cenário oposto é a \textit{heterocedasticidade}.} é frequente.
-
+A validade das estimativas obtidas pelo MQO depende do cumprimento das premissas clássicas da regressão linear. Em dados espectrais, a colinearidade entre variáveis e a presença de outliers violam com frequência esses pressupostos~\cite{Alin2017,Filzmoser2013}.
 
 Métodos robustos tornam-se indispensáveis quando há violação das premissas da regressão linear múltipla, especialmente na presença de \textit{outliers} \cite{Alin2017,Filzmoser2013}. A verificação da normalidade dos resíduos, em particular, é crucial e discutida em detalhes em estudos anteriores \cite{Alin2017,Filzmoser2013}.
 
@@ -103,7 +102,7 @@ Métodos robustos tornam-se indispensáveis quando há violação das premissas 
 A inferência estatística estabelece propriedades para a população \textbf{X} a partir da análise
 de uma amostra aleatória dessa população~\cite{DRAPER:1998,JOHNSON:2001,CHATTERJEE:2006}. O método \textit{bootstrap} é um procedimento computacional que fornece a medida do nível de precisão da inferência estatística, como por exemplo, média, desvio padrão e erro padrão~\cite{yeon2023,alfons2022,wan2023,du2024,jensen2024}.
 
-A ideia básica do \textit{bootstrap} é inferir estatisticamente as propriedades de interesse a partir da análise de amostras aleatórias extraídas da população original sem a necessidade de conhecer a distribuição de dados a priori, o que constitui significativa vantagem sobre outras técnicas~\cite{HARDLE:2007,TIMM:2002}.
+A ideia básica do \textit{bootstrap} é inferir estatisticamente as propriedades de interesse a partir da análise de amostras aleatórias extraídas da população original sem a necessidade de conhecer a distribuição de dados a priori, o que dispensa a suposição prévia de uma distribuição paramétrica dos dados~\cite{HARDLE:2007,TIMM:2002}.
 
 Quando o parâmetro populacional de interesse é desconhecido, procura-se estimá-lo por
 reamostragem aleatória. Inicialmente, considera-se a \textbf{população} 
@@ -291,11 +290,11 @@ A Equação~(\ref{eq:2.19}) tem uma consequência prática importante: dados os 
 \end{table}
 %-----------------------------------------------------------------------------------
 
-A Tabela~\ref{tab:coefvaria} compara $cv(\widehat{se}_m)$ com $cv(\widehat{se}_{\infty})$ para várias escolhas de $m$, assumindo $\Delta = 0$. Observa-se frequentemente que $cv(\widehat{se}_{\infty})$ não será menor que $0,10$; neste caso, com $m = 100$ obtêm-se resultados bem satisfatórios. Efron~\cite{EFRON:1993} sugere duas regras práticas através da sua experiência:
+A Tabela~\ref{tab:coefvaria} compara $cv(\widehat{se}_m)$ com $cv(\widehat{se}_{\infty})$ para várias escolhas de $m$, assumindo $\Delta = 0$. Para $cv(\widehat{se}_\infty)\geq 0{,}10$, com $m=100$ o $cv(\widehat{se}_m)$ excede o ideal em no máximo \num{0,02} (Tabela~\ref{tab:coefvaria}). Efron~\cite{EFRON:1993} sugere duas regras práticas através da sua experiência:
 
 \begin{enumerate}[label=\alph*)]
     \item Mesmo um número pequeno de replicações \textit{bootstrap}, como $m = 25$, é geralmente informativo; $m = 50$ é frequentemente suficiente para uma boa estimativa de $se_{\mathbf{d}}(\widehat{\theta})$.
-    \item Muito raramente serão necessárias mais que $m = 200$ replicações para estimar o erro padrão. Valores muito maiores de $m$ são requeridos para construção de intervalos de confiança.
+    \item Segundo Efron e Tibshirani~\cite{EFRON:1993}, raramente são necessárias mais de 200 replicações para o erro padrão; para intervalos de confiança.
 \end{enumerate}
 
 A Tabela~\ref{tab:coefvaria} mostra a variação de $\widehat{se}_m$ em função do coeficiente de variação da estimativa ideal $\widehat{se}_{\infty}$ e do número de amostras \textit{bootstrap} $m$, obtidos da Equação~(\ref{eq:2.19}) assumindo $\Delta = 0$.

@@ -172,9 +172,7 @@ métodos estocásticos. \\ \hline
 RNF04 & \textbf{Portabilidade}: o sistema deve ser executável via navegador
 (\texttt{streamlit run app.py}), sem necessidade de \gls{JVM}\tnote{a}, arquivos \texttt{.class} ou
 instalação local de dependências além do ambiente Python. \\ \hline
-RNF05 & \textbf{Usabilidade}: a interface deve guiar o usuário em um fluxo sequencial e
-irreversível (Configuração~$\rightarrow$~Resultados~$\rightarrow$~Gráficos), impedindo
-execuções com arquivos incompletos. \\ \hline
+RNF05 & \textbf{Usabilidade}: a interface deve guiar o usuário em um fluxo sequencial sugerido pelas abas; o único bloqueio implementado é o botão desabilitado até que os quatro arquivos sejam carregados (\texttt{st.tabs} permite navegar livremente entre abas) \\ \hline
 RNF06 & \textbf{Desempenho}: o tempo de execução de cada modelo (RLM, \textit{Bagging},
 \textit{Subagging}) deve ser medido em milissegundos e reportado como métrica
 independente das métricas de acurácia. \\ \hline
@@ -197,13 +195,12 @@ de tradução centralizados. \\ \hline
 Os requisitos funcionais RF03 a RF07 correspondem diretamente às responsabilidades
 isoladas em \texttt{models.py}, ao passo que RF09 e RF11 correspondem a
 \texttt{components.py}; RF01, RF08, RF10 e RF12 são responsabilidade exclusiva de
-\texttt{app.py}. Essa correspondência unívoca entre requisito e módulo confirma, em nível
-de especificação, a separação de camadas discutida na Seção~\ref{sec:contratos}.
+\texttt{app.py}. Essa correspondência ilustra, em nível de especificação, a separação de camadas discutida na Seção~\ref{sec:contratos}.
 
 Os requisitos não funcionais RNF01 a RNF03, por sua vez, são verificados
 empiricamente pela suíte de 92 testes automatizados
 (\texttt{test\_suite\_5.py}) --- 21 unitários, 60 de caixa-preta e 11 de
-estresse ---, detalhada no capítulo de Testes e Validação deste TCC~II.
+estresse ---, detalhada na Seção~\ref{sec:testescaixapreta}.
 % ─────────────────────────────────────────────────────────────────────────────
 \section{Estratégias de Migração de Sistemas}
 
@@ -234,8 +231,7 @@ declarativos do Streamlit no \texttt{app.py}.
 O modelo Desktop foi convertido para uma aplicação
 \textit{stateless\footnote{Significa que a aplicação não mantém memória de estado entre as interações por conta própria, exigindo que todo o script seja reprocessado a cada ação e que qualquer dado que precise ser preservado seja salvo manualmente em variáveis de sessão.}}, executável com \texttt{streamlit run app.py}, containerizável com
 Docker e acessível via navegador sem instalação local\footnote{Aplicação em produção
-disponível em: \url{https://app-app-rmn8qdzis5uqkfbmy5pjwr.streamlit.app/}.}. Isso reduz
-o atrito de distribuição em laboratórios e viabiliza uso colaborativo simultâneo,
+disponível em: \url{https://app-app-rmn8qdzis5uqkfbmy5pjwr.streamlit.app/}.}. Isso dispensa a instalação local de JVM e viabiliza o acesso simultâneo de múltiplos usuários por navegador (capacidade estimada de 10–20 usuários no plano gratuito, (Quadro~\ref{tab:escalabilidade})
 funcionalidade inexistente no sistema Vaadin original~\cite{rfc2616}.
 
 \subsection{Papel e Limites do Estágio Intermediário (Vaadin)}

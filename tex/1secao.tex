@@ -2,9 +2,10 @@
 \chapter{Introdução}
 \label{cha:introducao}
 \index{Introdução}
-%A calibração multivariada desempenha um papel fundamental em diversas áreas da análise química e industrial, permitindo a extração de informações valiosas de dados complexos. No contexto específico da análise de aço-ligas, a determinação precisa da composição elementar (Mn, Cr, Mo, Ni, Fe) é crucial para garantir a qualidade e as propriedades desejadas do material. No entanto, a complexidade dos dados multivariados provenientes de métodos instrumentais de análise exige o uso de técnicas estatísticas avançadas para obter resultados confiáveis.
+A calibração multivariada desempenha um papel fundamental em diversas áreas da análise química e industrial, permitindo a 
+estimação de concentrações a partir de dados instrumentais multivariados. No contexto específico da análise de aço-ligas, a determinação precisa da composição elementar (Mn, Cr, Mo, Ni, Fe) é crucial para garantir a qualidade e as propriedades desejadas do material. No entanto, a complexidade dos dados multivariados provenientes de métodos instrumentais de análise exige o uso de técnicas de calibração multivariada para obter estimativas com erro de predição quantificável (RMSEP, MAE, R$^2$).
 
-A calibração multivariada viabiliza a interpretação de dados analíticos complexos na indústria. No contexto das ligações de aço, o controle quantitativo de $\text{Mn, Cr, Mo, Ni}$ e $\text{Fe}$ assegura as especificações técnicas do produto. Contudo, devido à sobreposição de sinais e ao ruído de métodos instrumentais, faz-se necessário o emprego de métodos quimiométricos para a estimação precisa das concentrações.
+%A calibração multivariada viabiliza a interpretação de dados analíticos complexos na indústria. No contexto das ligações de aço, o controle quantitativo de $\text{Mn, Cr, Mo, Ni}$ e $\text{Fe}$ assegura as especificações técnicas do produto. Contudo, devido à sobreposição de sinais e ao ruído de métodos instrumentais, faz-se necessário o emprego de métodos quimiométricos para a estimação precisa das concentrações.
 
 Este estudo investiga, em caráter exploratório, a aplicação de técnicas de reamostragem
 (\textit{bootstrap}), \textit{bagging} e \textit{subagging} na~\gls{RLM} para a calibração
@@ -16,15 +17,10 @@ computacionais de apoio à análise de aço-ligas~\cite{SKOOG:1997,HARDLE:2007,T
 %\section{Problema da Pesquisa}
 Como otimizar a calibração multivariada de amostras de aço-ligas para obter previsões mais
 precisas dos elementos Mn, Cr, Mo, Ni e Fe, considerando a complexidade inerente à análise
-de dados multivariados, a necessidade de alta precisão e a exigência de uma arquitetura de
-software confiável e testável para sustentar essa análise?
+de dados multivariados, a necessidade de alta precisão e a exigência de uma arquitetura de software modular e verificável por testes automatizados para sustentar essa análise?
 
 %\section{Justificativa}
-Este estudo é significativo tanto pelo potencial de impacto prático na análise de
-aço-ligas quanto pela contribuição metodológica em engenharia de software: a condução
-de uma migração de sistema legado (Java Desktop, Vaadin Flow e Python/Streamlit)
-validada, em cada etapa, por uma suíte de testes automatizados que funciona como
-validador de equivalência entre implementações. Essa estratégia evidencia, de forma
+Este estudo contribui em dois eixos: (i) a aplicação de bagging e subagging à calibração de aço-ligas; (ii) a migração de um sistema legado verificada por testes automatizados. Essa estratégia evidencia, de forma
 reprodutível, como preservar a corretude de um núcleo algorítmico crítico durante a
 reescrita completa de uma arquitetura de software.
 

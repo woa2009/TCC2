@@ -10,7 +10,7 @@
 
   \indexspace
 
-  \item Conclusão, \hyperpage{74}
+  \item Conclusão, \hyperpage{73}
 
   \indexspace
 
@@ -34,12 +34,12 @@
   \item Requisitos Funcionais, \hyperpage{50}
   \item Revisão da literatura
     \subitem Engenharia de Migração e Qualidade de Software, 
-		\hyperpage{30}
+		\hyperpage{29}
 
   \indexspace
 
-  \item Tabelas de Paridade Amostra-a-Amostra, \hyperpage{94}
-  \item Testes de Gráficos, \hyperpage{86}
+  \item Tabelas de Paridade Amostra-a-Amostra, \hyperpage{93}
+  \item Testes de Gráficos, \hyperpage{85}
   \item Técnicas Clássicas de Reamostragem, \hyperpage{26}
     \subitem \textit{Bagging}, \hyperpage{27}
     \subitem \textit{Subagging}, \hyperpage{28}

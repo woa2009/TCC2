@@ -33,7 +33,7 @@ Configuração & Parâmetro \textit{k} (Subagging) & Define fração ou quantida
 Visualização & Métricas de Desempenho & Exibição de R², RMSE, MAE calculados no conjunto de teste \\ \hline
 Visualização & Gráficos Comparativos & \textit{Scatter plots} (previsto $\times$ real), resíduos e comparação entre modelos \\ \hline
 Organização & Abas de Navegação & Separação lógica: ``Arquivos'', ``Configuração'', ``Resultados'', ``Gráficos'' \\ \hline
-Exportação & \textit{Não identificada} & \textbf{Obs.:} sistema não apresenta botões de download de resultados \\ \hline
+Exportação & Métricas (.csv) e log (.txt) & \texttt{st.download\_button} na aba Resultados \\ \hline
 \end{tabularx}
 \begin{tablenotes}[flushleft]
 \footnotesize
@@ -116,6 +116,7 @@ Status & Indicador de processamento & \textit{Spinner} ou barra de progresso & U
 
 Os requisitos foram classificados utilizando a técnica \gls{MoSCoW}\footnote{MoSCoW é uma técnica de priorização de requisitos dividida em quatro categorias: \textit{Must have} (obrigatórios), \textit{Should have} (importantes, mas não críticos), \textit{Could have} (desejáveis) e \textit{Won’t have (this time)} (excluídos desta versão). A letra “o” é adicionada apenas para facilitar a pronúncia.} adaptada, conforme descrito nas seções seguintes.
 
+\newpage
 \subsubsection{Essenciais (\textit{Must Have})}
 \label{ssubsec:essenciais}
 
@@ -144,7 +145,6 @@ E05 & Exibição clara dos resultados numéricos & Permite decisão técnica fun
 \end{quadro}
 
 
-\newpage
 \subsubsection{Desejáveis (\textit{Should Have})}
 \label{ssubsec:desejaveis}
 
@@ -159,7 +159,7 @@ E05 & Exibição clara dos resultados numéricos & Permite decisão técnica fun
 \begin{tabularx}{\textwidth}{|l|X|X|} \hline
 \textbf{ID} & \textbf{Requisito} & \textbf{Benefício} \\ \hline
 D01 & Gráficos interativos (zoom, \textit{tooltip}, download) & Facilita exploração visual detalhada e apresentação de resultados \\ \hline
-D02 & Exportação de resultados (CSV, PDF, PNG) & Permite documentação, compartilhamento e reprodutibilidade \\ \hline
+D02 & Exportação em PDF e PNG (CSV e TXT já implementados) & Permite documentação, compartilhamento e reprodutibilidade \\ \hline
 D03 & \textit{Tooltips} explicativos para \textit{m}, \textit{k}, Bagging/Subagging & Reduz curva de aprendizado para usuários não especialistas \\ \hline
 D04 & Pré-processamento básico (normalização, escalonamento) & Melhora robustez dos modelos com dados espectrais reais \\ \hline
 D05 & Histórico de execuções na sessão & Permite comparar configurações sem reenviar arquivos \\ \hline
@@ -190,7 +190,7 @@ D05 & Histórico de execuções na sessão & Permite comparar configurações se
 X01 & Autenticação de usuários e projetos privados & Ambientes corporativos ou de pesquisa colaborativa \\ \hline
 X02 & Integração com APIs externas (ex: KNIME, scripts Python) & Pipelines automatizadas de quimiometria \\ \hline
 X03 & Suporte a formatos adicionais (.csv, .xlsx, .mat) & Flexibilidade para ingestão de dados de diferentes fontes \\ \hline
-X04 & Otimização automática de hiperparâmetros & Reduz necessidade de conhecimento técnico avançado \\ \hline
+X04 & Otimização automática de hiperparâmetros & Dispensa o usuário de informar m e k manualmente \\ \hline
 X05 & Dashboard comparativo multi-rodada & Análise estatística de estabilidade dos modelos ensemble \\ \hline
 \end{tabularx}
 \begin{tablenotes}[flushleft]
@@ -202,7 +202,7 @@ X05 & Dashboard comparativo multi-rodada & Análise estatística de estabilidade
 \end{quadro}
 
 
-\newpage
+
 \subsection{Fluxos de Uso}
 \label{subsec:fluxos}
 
@@ -432,7 +432,8 @@ representado no fluxograma.
 
 \begin{quadro}[ht]
 \begin{center}
-\small
+%\small
+\footnotesize
 \captionsetup{justification=centering, labelsep=endash, width=0.75\linewidth}
 \caption{Fluxos alternativos e tratamento de exceções.}
 \label{tab:fluxos-alternativos}
@@ -454,7 +455,7 @@ Navegação sem executar & Usuário muda de aba antes de clicar & Mantém estado
 \end{quadro}
 
 
-
+\newpage
 \subsubsection{Pontos Críticos de Usabilidade}
 \label{ssubsec:pontos-criticos}
 
@@ -483,7 +484,7 @@ Resultados não exportáveis & Impede documentação externa & Botão ``Baixar R
 \end{quadro}
 
 
-\newpage
+
 \subsection{Requisitos Não Funcionais}
 \label{subsec:nao-funcionais}
 
@@ -516,7 +517,7 @@ Responsividade da UI & Interações (mudar aba, ajustar parâmetro) & $<$ 500\,m
 \end{quadro}
 
 
-
+\newpage
 \subsubsection{Usabilidade}
 \label{ssubsec:usabilidade}
 
@@ -546,7 +547,7 @@ Recuperação de erro & Mensagens orientam a correção & Ex: ``Ycal.txt tem 99 
 \end{center}
 \end{quadro}
 
-\newpage
+
 \subsubsection{Segurança}
 \label{ssubsec:seguranca}
 

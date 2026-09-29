@@ -176,9 +176,9 @@ tempo em quatro (Mn, Mo, Ni e Fe), superando-o simultaneamente nos dois critéri
 Mn, Mo e Ni.
 ```
 
-### 1.10 Figuras 4.1, 4.3 e 4.6 (verificar)
+### 1.10 Figuras 7, 9 e 11 (verificar)
 
-- Cada subfigura (a) lê `tex/YtesteMn.txt` e `tex/CpredMn.txt` (e as (b) os de Fe). Os **mesmos arquivos** aparecem nas figuras da RLM, do *bagging* e do *subagging*, ou seja, três figuras com dados idênticos. Se as predições de cada método estão em arquivos diferentes, os caminhos precisam ser corrigidos.
+- Cada subfigura (a) lê `tex/YtesteMn.txt` e `tex/CpredMn.txt` (e as (b) os de Fe). Os **mesmos arquivos** aparecem nas Figuras 7 (RLM), 9 (*bagging*) e 11 (*subagging*), ou seja, três figuras com dados idênticos. Se as predições de cada método estão em arquivos diferentes, os caminhos precisam ser corrigidos.
 - O texto diz "azul = esperada, vermelho = predita", mas o código plota `Yteste` em **vermelho** e a legenda `{Conc. pred., Conc. ref.}` rotula a primeira série (vermelha, `Yteste`) como "pred.". Texto, cor e legenda precisam concordar.
 
 ---

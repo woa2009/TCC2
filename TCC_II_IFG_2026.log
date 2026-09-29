@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.12) (preloaded format=pdflatex 2026.5.18)  27 SEP 2026 23:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.12) (preloaded format=pdflatex 2026.5.18)  29 SEP 2026 17:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2608,7 +2608,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 150--150
 
 
 Overfull \hbox (1.41573pt too wide) detected at line 154
- \T1/phv/b/n/12 108
+ \T1/phv/b/n/12 107
  []
 
 ) [14])
@@ -2633,63 +2633,63 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [19]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 222.
+(caption)                particular \caption on input line 221.
 See the caption package documentation for explanation.
 
 
-Underfull \hbox (badness 10000) detected at line 223
+Underfull \hbox (badness 10000) detected at line 222
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 209--224
+Underfull \hbox (badness 10000) in paragraph at lines 208--223
 
  []
 
 [20]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 231.
+(hyperref)                removing `math shift' on input line 230.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 231.
+(hyperref)                removing `math shift' on input line 230.
 
 [21] [22]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 337.
+(Font)              <10.95> on input line 336.
  [23] [24] [25] [26]
 pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine0.1})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.564 }
+l.563 }
        
 pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine0.2})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.564 }
+l.563 }
        
 pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine0.3})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.564 }
+l.563 }
        
 pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine0.4})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.564 }
+l.563 }
        
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 564.
+(caption)                particular \caption on input line 563.
 See the caption package documentation for explanation.
 
 
-Underfull \hbox (badness 10000) detected at line 564
+Underfull \hbox (badness 10000) detected at line 563
 [][]
  []
 
@@ -2698,69 +2698,69 @@ pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine0.1})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.609 }
+l.608 }
        
 pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine0.2})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.609 }
+l.608 }
        
 pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine0.3})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.609 }
+l.608 }
        
 pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine0.4})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.609 }
+l.608 }
        
 pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine0.5})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.609 }
+l.608 }
        
 pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine0.6})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.609 }
+l.608 }
        
 pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine0.7})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.609 }
+l.608 }
        
 pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine0.8})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.609 }
+l.608 }
        
 pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine0.9})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.609 }
+l.608 }
        
 pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine0.10}
 ) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.609 }
+l.608 }
        
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 609.
+(caption)                particular \caption on input line 608.
 See the caption package documentation for explanation.
 
 
-Underfull \hbox (badness 10000) detected at line 609
+Underfull \hbox (badness 10000) detected at line 608
 [][]
  []
 
@@ -2810,41 +2810,41 @@ PGFPlots: reading {tex/bagging_mn.txt}
 PGFPlots: reading {tex/bagging_fe.txt}
  [39]
 PGFPlots: reading {tex/YtesteMn.txt}
-PGFPlots: reading {tex/CpredMn.txt}
+PGFPlots: reading {tex/baggingCpredMn.txt}
 PGFPlots: reading {tex/YtesteFe.txt}
-PGFPlots: reading {tex/CpredFe.txt}
+PGFPlots: reading {tex/BaggingCpredFe.txt}
  [40]
 PGFPlots: reading {tex/bootstrap_mn.txt}
 PGFPlots: reading {tex/bootstrap_fe.txt}
  [41]
 PGFPlots: reading {tex/YtesteMn.txt}
-PGFPlots: reading {tex/CpredMn.txt}
+PGFPlots: reading {tex/SubaggingCpredMn.txt}
 PGFPlots: reading {tex/YtesteFe.txt}
-PGFPlots: reading {tex/CpredFe.txt}
+PGFPlots: reading {tex/SubaggingCpredFe.txt}
  [42]
-Underfull \hbox (badness 10000) in paragraph at lines 471--472
+Underfull \hbox (badness 10000) in paragraph at lines 475--476
 []|\T1/ptm/b/n/10.95 (+10) Proporção
  []
 
 [43]
-Package pgfplots info on input line 573: Using 'lua backend=false' for axis: x 
+Package pgfplots info on input line 576: Using 'lua backend=false' for axis: x 
 coord trafo unsupported.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 573.
-Package pgfplots info on input line 632: Using 'lua backend=false' for axis: x 
+(Font)              <9> on input line 576.
+Package pgfplots info on input line 635: Using 'lua backend=false' for axis: x 
 coord trafo unsupported.
  [44]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 652.
+(hyperref)                removing `math shift' on input line 655.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\times' on input line 652.
+(hyperref)                removing `\times' on input line 655.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 652.
+(hyperref)                removing `math shift' on input line 655.
 
 [45]
 PGFPlots: reading {tex/dados/subagging_mn.txt}
@@ -2854,7 +2854,7 @@ PGFPlots: reading {tex/dados/subagging_fe.txt}
 PGFPlots: reading {tex/dados/bagging_fe.txt}
 PGFPlots: reading {tex/dados/rlm_fe.txt}
  [46]
-Package pgfplots info on input line 917: Using 'lua backend=false' for axis: x 
+Package pgfplots info on input line 920: Using 'lua backend=false' for axis: x 
 coord trafo unsupported.
  [47] [48]) [49]
 \openout2 = `tex/5secao.aux'.
@@ -2864,118 +2864,73 @@ coord trafo unsupported.
 
 
 
-]
-Underfull \hbox (badness 2318) in paragraph at lines 137--137
+] [51]
+Underfull \hbox (badness 2318) in paragraph at lines 138--138
 []|\T1/ptm/m/n/10.95 (+10) Cálculo de mé-tri-cas bá-si-cas (R\TS1/ptm/m/n/10.95
  (+10) ²\T1/ptm/m/n/10.95 (+10) , RMSE,
  []
 
-[51] [52] [53]
+[52]
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10.95> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 422.
- [54]
-Overfull \hbox (11.35075pt too wide) in paragraph at lines 447--447
-[]|\T1/ptm/b/n/10.95 (-10) Comportamento
+ [53]
+Underfull \hbox (badness 10000) in paragraph at lines 448--448
+[]|\T1/ptm/b/n/10 (+10) Comportamento
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 447--447
-[]|\T1/ptm/m/n/10.95 (+10) Upload com
+Underfull \hbox (badness 10000) in paragraph at lines 448--448
+[]|\T1/ptm/m/n/10 (+10) Validação em
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 447--447
-\T1/ptm/m/n/10.95 (+10) for-ma-to/-
+Underfull \hbox (badness 1466) in paragraph at lines 448--448
+\T1/ptm/m/n/10 (+10) des ou carga ele-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 447--447
-\T1/ptm/m/n/10.95 (+10) di-men-são
+Underfull \hbox (badness 10000) in paragraph at lines 448--448
+[]|\T1/ptm/m/n/10 (+10) Mensagem: ``Pro-
  []
 
 
-Underfull \hbox (badness 3930) in paragraph at lines 447--447
-[]|\T1/ptm/m/n/10.95 (+10) Alerta ver-me-
+Underfull \hbox (badness 1895) in paragraph at lines 448--448
+\T1/ptm/m/n/10 (+10) ces-sa-mento de-mo-
  []
 
 
-Underfull \hbox (badness 3250) in paragraph at lines 447--447
-[]|\T1/ptm/m/n/10.95 (+10) Validação em
+Underfull \hbox (badness 1953) in paragraph at lines 448--448
+[]|\T1/ptm/m/n/10 (+10) Usuário muda de
  []
 
-
-Underfull \hbox (badness 3623) in paragraph at lines 447--447
-\T1/ptm/m/n/10.95 (+10) tempo real +
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 447--447
-[]|\T1/ptm/m/n/10.95 (+10) Dados muito
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 447--447
-\T1/ptm/m/n/10.95 (+10) gran-des ou
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 447--447
-[]|\T1/ptm/m/n/10.95 (+10) Mensagem:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 447--447
-\T1/ptm/m/n/10.95 (+10) ``Pro-ces-sa-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 447--447
-\T1/ptm/m/n/10.95 (+10) mento de-mo-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 447--447
-[]|\T1/ptm/m/n/10.95 (+10) Mantém
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 447--447
-\T1/ptm/m/n/10.95 (+10) es-tado dos
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 447--447
-\T1/ptm/m/n/10.95 (+10) uplo-ads (per-
- []
-
-[55]
-Underfull \hbox (badness 1389) in paragraph at lines 538--538
+[54] [55]
+Underfull \hbox (badness 1389) in paragraph at lines 539--539
 []|\T1/ptm/m/n/10.95 (+10) Ex: ``Ycal.txt tem 99 li-nhas, mas
  []
 
-[56]
-Underfull \hbox (badness 10000) in paragraph at lines 596--596
+
+Underfull \hbox (badness 10000) in paragraph at lines 597--597
 []|$\OMS/lmsy/m/n/10.95 ^^X$\T1/ptm/m/n/10.95 (+10) 10--20 (\T1/ptm/m/it/10.95 
 (+10) Stre-am-lit
  []
 
 
-Underfull \hbox (badness 1521) in paragraph at lines 596--596
+Underfull \hbox (badness 1521) in paragraph at lines 597--597
 []|\T1/ptm/m/n/10.95 (+10) 5k+ amos-tras $\OMS/lmsy/m/n/10.95 ^^B$ \T1/ptm/m/n/
 10.95 (+10) 10k
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 596--596
+Underfull \hbox (badness 10000) in paragraph at lines 597--597
 []|\T1/ptm/m/n/10.95 (+10) Processamento em
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 596--596
+Underfull \hbox (badness 10000) in paragraph at lines 597--597
 []|\T1/ptm/m/n/10.95 (+10) Módulos \T1/ptm/m/it/10.95 (+10) plug-and-
  []
 
-[57]) [58]
+[56]) [57]
 \openout2 = `tex/6secao.aux'.
 
  (tex/6secao.tex
@@ -2991,54 +2946,47 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--36
 ptm/m/n/12 (+10) ,
  []
 
-[59
+[58
 
 
 
 
-] [60] [61] [62]) [63]
+] [59] [60] [61]) [62]
 \openout2 = `tex/7secao.aux'.
 
- (tex/7secao.tex
-Overfull \hbox (75.15309pt too wide) in paragraph at lines 14--20
-[]\T1/ptm/m/n/12 (-10) O \T1/pcr/l/it/12 mo-dels.py \T1/ptm/m/n/12 (-10) uti-li
-za ex-clu-si-va-mente ope-ra-ções ve-to-ri-za-das do NumPy: \T1/pcr/l/it/12 np.
-linalg.lstsq(Xcal,
- []
-
-[64
+ (tex/7secao.tex [63
 
 
 
 
 ]
-Underfull \hbox (badness 2418) in paragraph at lines 162--168
+Underfull \hbox (badness 2418) in paragraph at lines 87--92
 \T1/pcr/l/it/12 tor() \T1/ptm/m/n/12 (+10) e \T1/pcr/l/it/12 run_-full_-analy-s
 is() \T1/ptm/m/n/12 (+10) re-ce-bem ape-nas da-dos se-ri-a-li-zá-veis e re-tor-
 nam
  []
 
-[65] [66]) [67]
+[64] [65]) [66]
 \openout2 = `tex/8secao.aux'.
 
- (tex/8secao.tex [68
+ (tex/8secao.tex [67
 
 
 
 
-] [69]
-Underfull \hbox (badness 10000) in paragraph at lines 180--189
+] [68]
+Underfull \hbox (badness 10000) in paragraph at lines 98--107
 \T1/pcr/l/it/12 bag-ging(...) -> np.ndarray\T1/ptm/m/n/12 (+10) , \T1/pcr/l/it/
 12 calc_-me-trics(...) -> tu-ple[float,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 180--189
+Underfull \hbox (badness 10000) in paragraph at lines 98--107
 \T1/pcr/l/it/12 float, float]\T1/ptm/m/n/12 (+10) , \T1/pcr/l/it/12 find_-op-ti
 -mal_-pa-ra-me-ters(...) -> tu-ple[dict, str]\T1/ptm/m/n/12 (+10) .
  []
 
-) [70]
+) [69]
 \openout2 = `tex/9secao.aux'.
 
  (tex/9secao.tex
@@ -3048,39 +2996,46 @@ lmm/m/it/12 R[]$\T1/ptm/m/n/12 (+10) , e \T1/pcr/l/it/12 run_-cross_-va-li-da-t
 ion() \T1/ptm/m/n/12 (+10) para
  []
 
-[71
+[70
 
 
 
 
-] [72]) [73]
+] [71]) [72]
 \openout2 = `tex/10secao.aux'.
 
- (tex/10secao.tex [74
+ (tex/10secao.tex
+Underfull \hbox (badness 2932) in paragraph at lines 59--64
+[]\T1/ptm/m/n/12 (+10) Os tem-pos me-di-dos fo-ram de $\OT1/lmr/m/n/12 2[]3$\T1
+/ptm/m/n/12 (+10) ^^U$\OT1/lmr/m/n/12 13[]5$$[]$ \T1/ptm/m/n/12 (+10) (RLM), $\
+OT1/lmr/m/n/12 44[]5$\T1/ptm/m/n/12 (+10) ^^U$\OT1/lmr/m/n/12 97[]2$$[]$ \T1/pt
+m/m/n/12 (+10) (bag-ging) e
+ []
+
+[73
 
 
 
 
-] [75]) [76] (TCC_II_IFG_2026.bbl
-(TCC_II_IFG_2026.brf)
+] [74]) [75] (TCC_II_IFG_2026.bbl (TCC_II_IFG_2026.brf)
 \tf@brf=\write7
 \openout7 = `TCC_II_IFG_2026.brf'.
 
 
 bibitemlist
-[77
+[76
 
 
 
-] [78] [79] [80] [81] [82] [83]) [84]
+] [77] [78] [79] [80] [81] [82]) [83]
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <24.88> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 626.
- [85
+ [84
 
-] (pos/apendice_d.tex [86
+] (pos/apendice_d.tex [85
 
 ]
-<./outros/fig/E_Diagramas/out/diag_classe/BaggingOptimized_Classe.png, id=1641,
+<./outros/fig/E_Diagramas/out/diag_classe/BaggingOptimized_Classe.png, id=1649,
  1007.765pt x 953.5625pt>
 File: ./outros/fig/E_Diagramas/out/diag_classe/BaggingOptimized_Classe.png Grap
 hic file (type png)
@@ -3088,10 +3043,10 @@ hic file (type png)
 Package pdftex.def Info: ./outros/fig/E_Diagramas/out/diag_classe/BaggingOptimi
 zed_Classe.png  used on input line 71.
 (pdftex.def)             Requested size: 455.0pt x 430.52509pt.
- [87 <./outros/fig/E_Diagramas/out/diag_classe/BaggingOptimized_Classe.png (PNG
+ [86 <./outros/fig/E_Diagramas/out/diag_classe/BaggingOptimized_Classe.png (PNG
  copy)>]
 <./outros/fig/E_Diagramas/out/diag_sequencia/BaggingOptimized_Atividade.png, id
-=1646, 218.8175pt x 1351.0475pt>
+=1654, 218.8175pt x 1351.0475pt>
 File: ./outros/fig/E_Diagramas/out/diag_sequencia/BaggingOptimized_Atividade.pn
 g Graphic file (type png)
 <use ./outros/fig/E_Diagramas/out/diag_sequencia/BaggingOptimized_Atividade.png
@@ -3100,19 +3055,19 @@ Package pdftex.def Info: ./outros/fig/E_Diagramas/out/diag_sequencia/BaggingOpt
 imized_Atividade.png  used on input line 83.
 (pdftex.def)             Requested size: 90.99861pt x 561.84935pt.
 
-[88 <./outros/fig/E_Diagramas/out/diag_sequencia/BaggingOptimized_Atividade.png
+[87 <./outros/fig/E_Diagramas/out/diag_sequencia/BaggingOptimized_Atividade.png
  (PNG copy)>]
 <./outros/fig/E_Diagramas/out/diagrama/BaggingOptimized_FluxoCompleto.png, id=1
-651, 877.2775pt x 1392.20125pt>
+659, 877.2775pt x 1392.20125pt>
 File: ./outros/fig/E_Diagramas/out/diagrama/BaggingOptimized_FluxoCompleto.png 
 Graphic file (type png)
 <use ./outros/fig/E_Diagramas/out/diagrama/BaggingOptimized_FluxoCompleto.png>
 Package pdftex.def Info: ./outros/fig/E_Diagramas/out/diagrama/BaggingOptimized
 _FluxoCompleto.png  used on input line 95.
 (pdftex.def)             Requested size: 341.25pt x 541.55426pt.
- [89 <./outros/fig/E_Diagramas/out/diagrama/BaggingOptimized_FluxoCompleto.png 
+ [88 <./outros/fig/E_Diagramas/out/diagrama/BaggingOptimized_FluxoCompleto.png 
 (PNG copy)>]
-<./outros/fig/E_Diagramas/out/diagrama02/Etapa2_GridSearch_CV.png, id=1656, 539
+<./outros/fig/E_Diagramas/out/diagrama02/Etapa2_GridSearch_CV.png, id=1664, 539
 .01375pt x 899.36pt>
 File: ./outros/fig/E_Diagramas/out/diagrama02/Etapa2_GridSearch_CV.png Graphic 
 file (type png)
@@ -3120,9 +3075,9 @@ file (type png)
 Package pdftex.def Info: ./outros/fig/E_Diagramas/out/diagrama02/Etapa2_GridSea
 rch_CV.png  used on input line 107.
 (pdftex.def)             Requested size: 227.5pt x 379.59497pt.
- [90 <./outros/fig/E_Diagramas/out/diagrama02/Etapa2_GridSearch_CV.png (PNG cop
+ [89 <./outros/fig/E_Diagramas/out/diagrama02/Etapa2_GridSearch_CV.png (PNG cop
 y)>]
-<./outros/fig/E_Diagramas/streamlit/diagrama_atividades_streamlit.png, id=1662,
+<./outros/fig/E_Diagramas/streamlit/diagrama_atividades_streamlit.png, id=1669,
  876.27374pt x 3626.54875pt>
 File: ./outros/fig/E_Diagramas/streamlit/diagrama_atividades_streamlit.png Grap
 hic file (type png)
@@ -3130,9 +3085,9 @@ hic file (type png)
 Package pdftex.def Info: ./outros/fig/E_Diagramas/streamlit/diagrama_atividades
 _streamlit.png  used on input line 119.
 (pdftex.def)             Requested size: 136.50139pt x 564.87608pt.
- [91 <./outros/fig/E_Diagramas/streamlit/diagrama_atividades_streamlit.png (PNG
+ [90 <./outros/fig/E_Diagramas/streamlit/diagrama_atividades_streamlit.png (PNG
  copy)>]
-<./outros/fig/E_Diagramas/streamlit/diagrama_classes_streamlit.png, id=1667, 10
+<./outros/fig/E_Diagramas/streamlit/diagrama_classes_streamlit.png, id=1675, 10
 03.75pt x 1008.76875pt>
 File: ./outros/fig/E_Diagramas/streamlit/diagrama_classes_streamlit.png Graphic
  file (type png)
@@ -3140,9 +3095,9 @@ File: ./outros/fig/E_Diagramas/streamlit/diagrama_classes_streamlit.png Graphic
 Package pdftex.def Info: ./outros/fig/E_Diagramas/streamlit/diagrama_classes_st
 reamlit.png  used on input line 131.
 (pdftex.def)             Requested size: 386.75278pt x 388.69272pt.
- [92 <./outros/fig/E_Diagramas/streamlit/diagrama_classes_streamlit.png (PNG co
+ [91 <./outros/fig/E_Diagramas/streamlit/diagrama_classes_streamlit.png (PNG co
 py)>]
-<./outros/fig/E_Diagramas/streamlit/diagrama_sequencia_streamlit.png, id=1672, 
+<./outros/fig/E_Diagramas/streamlit/diagrama_sequencia_streamlit.png, id=1680, 
 911.405pt x 3480.00125pt>
 File: ./outros/fig/E_Diagramas/streamlit/diagrama_sequencia_streamlit.png Graph
 ic file (type png)
@@ -3150,7 +3105,7 @@ ic file (type png)
 Package pdftex.def Info: ./outros/fig/E_Diagramas/streamlit/diagrama_sequencia_
 streamlit.png  used on input line 143.
 (pdftex.def)             Requested size: 136.50139pt x 521.18117pt.
-) (pos/apendice_c.tex [93 <./outros/fig/E_Diagramas/streamlit/diagrama_sequenci
+) (pos/apendice_c.tex [92 <./outros/fig/E_Diagramas/streamlit/diagrama_sequenci
 a_streamlit.png (PNG copy)>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -3164,18 +3119,17 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 3.
 
-[94
+[93
 
-] [95] [96] [97] [98] [99] [100] [101] [102] [103] [104] [105] [106]
-[107]
+] [94] [95] [96] [97] [98] [99] [100] [101] [102] [103] [104] [105] [106]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1105.
+(caption)                particular \caption on input line 1033.
 See the caption package documentation for explanation.
 
 Package hyperref Info: bookmark level for unknown codigo defaults to 0 on input
- line 1105.
-[108
+ line 1033.
+[107
 
 ])
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\se-
@@ -3185,7 +3139,7 @@ File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\se-
 utf8.def
 File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
-) [109]
+) [108]
 \tf@lof=\write8
 \openout8 = `TCC_II_IFG_2026.lof'.
 
@@ -3215,14 +3169,14 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `TCC_II_IFG_2026.brf' has not changed.
-(rerunfilecheck)             Checksum: FA17E860487FB53B867E21BAFBD93A74;3601.
+(rerunfilecheck)             Checksum: 47DCA9A5DE96D49CEE9B4520B3FF1F9C;3837.
  ) 
 Here is how much of TeX's memory you used:
- 69631 strings out of 474485
- 1498941 string characters out of 5739958
- 2632487 words of memory out of 5000000
- 89597 multiletter control sequences out of 15000+600000
- 724330 words of font info for 451 fonts, out of 8000000 for 9000
+ 69673 strings out of 474485
+ 1499590 string characters out of 5739958
+ 2645830 words of memory out of 5000000
+ 89623 multiletter control sequences out of 15000+600000
+ 724593 words of font info for 455 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  109i,23n,117p,2358b,2654s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/wagner.araujo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
@@ -3262,9 +3216,9 @@ TeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/wagner.araujo/AppData/Local/Prog
 rams/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/wagner.araujo/AppData/L
 ocal/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/wagner.araujo/A
 ppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on TCC_II_IFG_2026.pdf (110 pages, 2694202 bytes).
+Output written on TCC_II_IFG_2026.pdf (109 pages, 2696949 bytes).
 PDF statistics:
- 2434 PDF objects out of 2487 (max. 8388607)
- 643 named destinations out of 1000 (max. 500000)
+ 2442 PDF objects out of 2487 (max. 8388607)
+ 645 named destinations out of 1000 (max. 500000)
  129625 words of extra memory for PDF output out of 154059 (max. 10000000)
 
