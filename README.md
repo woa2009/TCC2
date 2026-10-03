@@ -329,14 +329,14 @@ latexmk -pdf TCC_II_IFG_2025.tex
 
 ## Pontos de Atenção Identificados nos `.tex`
 
-1. **Rótulo duplicado:** `sec:bagxsuagg` é definido tanto em `2secao.tex` (subseção "Comparação entre *Bagging* e *Subagging*") quanto em `4secao.tex` — gera aviso *multiply defined* e referências ambíguas.
+1. **Rótulo duplicado:** `sec:bagxsuagg` é definido tanto em `2secao.tex` (subseção "Comparação entre *Bagging* e *Subagging*") quanto em `4secao.tex` — gera aviso *multiply defined* e referências ambíguas. (OK)
 2. **Erro de digitação em `4secao.tex`:** na Figura `fig:Figura46b`, `mark=nome` deve ser `mark=none`. (OK)
 3. **Pendências marcadas:** `% TODO: citar fonte` (autoabsorção do Fe e sobreposição espectral do Cr) em `4secao.tex`.
-4. **Resumo de organização desatualizado:** o último parágrafo de `1secao.tex` descreve só as Seções 2.x; vale listar os 10 capítulos atuais.
+4. **Resumo de organização desatualizado:** o último parágrafo de `1secao.tex` descreve só as Seções 2.x; vale listar os 10 capítulos atuais.(OK)
 5. **Inconsistências entre texto e código:**
    - `5secao.tex` cita quatro abas ("Arquivos", "Configuração", "Resultados", "Gráficos"); `8secao.tex` e `app.py` têm três;
-   - `5secao.tex` lista apenas `.txt` nas entradas, enquanto `.csv` e `.xlsx` já estão implementados (X03 consta como *Could Have*);
+   - `5secao.tex` lista apenas `.txt` nas entradas, enquanto `.csv` e `.xlsx` já estão implementados (X03 consta como *Could Have*);(OK)
    - `6secao.tex` mostra `parse_matrix(content: bytes)`, mas o código recebe `file_obj`;
    - `8secao.tex` menciona "superfícies de erro" na aba de gráficos, que não existem em `components.py`.
-6. **Grafia:** "Mangânes" (deveria ser "Manganês") nas notas das tabelas de Mn em `apendice_c.tex`.
+6. **Grafia:** "Mangânes" (deveria ser "Manganês") nas notas das tabelas de Mn em `apendice_c.tex`.(OK)
 7. **Dependência entre arquivos:** `\testes` é definido em `9secao.tex` e usado em `apendice_c.tex`; a ordem de inclusão deve ser preservada.
