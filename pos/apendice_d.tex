@@ -15,12 +15,15 @@ referência cruzada em seções posteriores.
 
 Complementando os diagramas de classes, atividade e sequência das seções
 seguintes, as Figuras~\ref{fig:arquitetura_java} e~\ref{fig:arquitetura_python}
-apresentam a organização em camadas de cada sistema, permitindo comparar
-diretamente como a mesma separação de responsabilidades (interface,
-orquestração/controle e núcleo algorítmico) foi realizada em cada plataforma.
+apresentam a organização de cada sistema. No sistema legado (Java Desktop),
+monolítico e contido em um único arquivo, as camadas (interface,
+controle e núcleo algorítmico) são apenas lógicas, isto é, coexistem na mesma
+classe. No sistema modernizado (Python/Streamlit), essas responsabilidades são
+separadas fisicamente em três módulos. O par de figuras permite comparar
+as duas organizações.
 
 \begin{figure}[H]
-    \caption{Arquitetura em camadas --- Sistema legado (Java Desktop)}
+    \caption{Organização lógica em camadas dentro de um único arquivo --- Sistema legado monolítico (Java Desktop).}
     \centering
     \begin{tikzpicture}[
         layer/.style={draw, rounded corners, minimum width=8cm,
@@ -39,7 +42,7 @@ orquestração/controle e núcleo algorítmico) foi realizada em cada plataforma
 \end{figure}
 
 \begin{figure}[H]
-    \caption{Arquitetura em camadas --- Sistema modernizado (Python/Streamlit)}
+    \caption{Arquitetura em camadas --- Sistema modernizado (Python/Streamlit).}
     \centering
     \begin{tikzpicture}[
         layer/.style={draw, rounded corners, minimum width=8cm,
@@ -57,10 +60,12 @@ orquestração/controle e núcleo algorítmico) foi realizada em cada plataforma
     \label{fig:arquitetura_python}
 \end{figure}
 
-Observa-se que a camada de núcleo algorítmico, isolada de qualquer dependência
-de interface em ambos os sistemas, é justamente onde reside a lógica validada
-pelos testes de paridade amostra-a-amostra (Apêndice~\ref{cha:paridadeamostra})
-e pelos testes de caixa-preta (Seção~\ref{sec:testescaixapreta}).
+Observa-se que, no sistema Java, o núcleo algorítmico coexiste com a interface
+na mesma classe, ao passo que no sistema Python ele está isolado em
+\texttt{models.py}, sem dependência de interface. Em ambos os sistemas, é no
+núcleo algorítmico que reside a lógica validada pelos testes de paridade
+amostra-a-amostra (Apêndice~\ref{cha:paridadeamostra}) e pelos testes de
+caixa-preta (Seção~\ref{sec:testescaixapreta}).
 
 \section{Diagrama de Classes --- Java}
 \label{sec:diagclassejava}

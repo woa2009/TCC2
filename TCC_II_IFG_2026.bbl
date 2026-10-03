@@ -38,22 +38,6 @@ Dispon{\'\i}vel em:
   \url{https://www.diva-portal.org/smash/record.jsf?pid=diva2:1669623}. Acesso
   em: 3 out. 2025.}
 
-\bibitem{reenskaug1979mvc}
-\abntrefinfo{Reenskaug}{REENSKAUG}{1979}
-{REENSKAUG, T. \emph{Models-Views-Controllers}.
-Palo Alto, California, 1979. Dispon{\'\i}vel em: \url{https://eril.net}. Acesso
-  em: 17 nov. 2026.}
-
-\bibitem{krasner1988description}
-\abntrefinfo{Krasner e Pope}{KRASNER; POPE}{1988}
-{KRASNER, G.~E.; POPE, S.~T. A description of the {M}odel-{V}iew-{C}ontroller
-  user interface paradigm in the {S}malltalk-80 system.
-\emph{Journal of Object-Oriented Programming}, SIGS Publications, v.~1, n.~3,
-  p. 26--49, 1988.
-Dispon{\'\i}vel em:
-  \url{https://iihm.imag.fr/blanch/ens/2006-2007/RICM3/IHM/documents/krasner-MVC.pdf}.
-  Acesso em: 17 nov. 2026.}
-
 \bibitem{DRAPER:1998}
 \abntrefinfo{Draper e Smith}{DRAPER; SMITH}{1998}
 {DRAPER, N.~R.; SMITH, H. \emph{Applied Regression Analysis}. 3. ed. USA: John
@@ -502,55 +486,14 @@ Dispon{\'\i}vel em:
   \url{https://www.sciencedirect.com/science/article/pii/S0584854716303299}.
   Acesso em: 27 set. 2026.}
 
-\bibitem{rfc2616}
-\abntrefinfo{Fielding et al.}{FIELDING et al.}{1999}
-{FIELDING, R.~T. et al. \emph{Hypertext Transfer Protocol -- HTTP/1.1}.
-Reston, Virginia {USA}, 1999. Dispon{\'\i}vel em:
-  \url{https://www.rfc-editor.org/rfc/rfc2616}. Acesso em: 16 nov. 2026.}
-
-\bibitem{buschmann1996posa1}
-\abntrefinfo{Buschmann et al.}{BUSCHMANN et al.}{1996}
-{BUSCHMANN, F. et al. \emph{Pattern-Oriented Software Architecture, Volume 1: A
-  System of Patterns}. Chichester, UK: John Wiley \& Sons, 1996.
-ISBN 978-0471958697. Dispon{\'\i}vel em:
-  \url{https://dl.acm.org/doi/book/10.5555/249013\#cited-by-sec}. Acesso em: 17
-  nov. 2026.}
-
-\bibitem{vscode2024}
-\abntrefinfo{{Microsoft}}{{Microsoft}}{2024}
-{{Microsoft}. \emph{Visual Studio Code: Code Editing. Redefined}. 2024.
-Dispon{\'\i}vel em: \url{https://code.visualstudio.com}. Acesso em: 28 maio.
-  2026.}
-
-\bibitem{nielsen1994}
-\abntrefinfo{Nielsen}{NIELSEN}{1994}
-{NIELSEN, J. Enhancing the explanatory power of usability heuristics. In:
-  \emph{Proceedings of the SIGCHI Conference on Human Factors in Computing
-  Systems (CHI '94)}. [S.l.]: ACM, 1994. p. 152--158.}
-
-\bibitem{rougier2014ten}
-\abntrefinfo{Rougier, Droettboom e Bourne}{ROUGIER; DROETTBOOM; BOURNE}{2014}
-{ROUGIER, N.~P.; DROETTBOOM, M.; BOURNE, P.~E. Ten simple rules for better
-  figures.
-\emph{PLOS Computational Biology}, Public Library of Science San Francisco, CA
-  USA, v.~10, n.~9, p. e1003833, 2014.
-Dispon{\'\i}vel em: \url{https://doi.org/10.1371/journal.pcbi.1003833}. Acesso
-  em: 28 set. 2026.}
-
-\bibitem{plotly2015}
-\abntrefinfo{{Plotly Technologies Inc.}}{{Plotly Technologies Inc.}}{2015}
-{{Plotly Technologies Inc.} \emph{Collaborative data science}. Montr{\'e}al,
-  QC: Plotly Technologies Inc., 2015. Dispon{\'\i}vel em:
-  \url{https://plot.ly}. Acesso em: 28 set. 2026.}
-
-\bibitem{martin2008}
-\abntrefinfo{Martin}{MARTIN}{2008}
-{MARTIN, R.~C. \emph{Clean Code: A Handbook of Agile Software Craftsmanship}.
-  1. ed. Upper Saddle River, NJ: Prentice Hall PTR, 2008. 464~p.  (Robert C.
-  Martin Series).
-ISBN 978-0-13-235088-4. Dispon{\'\i}vel em:
-  \url{https://www.pearson.de/clean-code-a-handbook-of-agile-software-craftsmanship-9780132350884}.
-  Acesso em: 28 maio. 2026.}
+\bibitem{clegg1994moscow}
+\abntrefinfo{Clegg}{CLEGG}{1994}
+{CLEGG, D. \emph{{MoSCoW} Method: {M}ust, {S}hould, {C}ould, {W}on't have}.
+  1994. Developed at Oracle UK.
+Subsequently formalized and hosted by the Agile Business Consortium.
+Dispon{\'\i}vel em:
+  \url{https://www.agilebusiness.org/resource/what-is-moscow-prioritization/}.
+  Acesso em: 2 out. 2026.}
 
 \bibitem{scrum2026}
 \abntrefinfo{Schwaber e Sutherland}{SCHWABER; SUTHERLAND}{2020}

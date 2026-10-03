@@ -1,141 +1,22 @@
 \chapter{Conclusão}
-\label{cha:conclusao}
-\index{Conclusão}
+\label{sec:conclusao}
 
-Este estudo investiga, em caráter exploratório, as técnicas de
-reamostragem \textit{bootstrap}, \textit{bagging} e \textit{subagging}
-aplicadas à Regressão Linear Múltipla (RLM) na calibração multivariada
-de amostras de aço-ligas. O trabalho implementa as abordagens
-utilizando a RLM como modelo base e aborda os objetivos específicos (a)–(d) da Seção~\ref{cha:introducao}, dentro das limitações discutidas ao final desta seção.
+Este trabalho apresentou a migração e a modernização de um sistema legado de análise química multivariada, transicionando de uma arquitetura \textit{Desktop} monolítica em Java para uma aplicação \textit{Web} modular em Python e Streamlit. A reescrita foi conduzida sob o rigor da engenharia de \textit{software}, com arquitetura desacoplada em três camadas e validação por meio de uma suíte de 92 testes automatizados.
 
-Os experimentos seguem um protocolo controlado, com a otimização dos
-hiperparâmetros por validação cruzada 5-\textit{fold} aplicada
-exclusivamente ao conjunto de calibração. Esse protocolo busca
-assegurar comparações justas e reprodutíveis entre a \textit{RLM
-clássica}, o \textit{RLM-bagging} e o \textit{RLM-subagging}. Além do
-RMSEP, o estudo incorpora as métricas \gls{MAE} e R$^2$, ampliando a
-caracterização do desempenho preditivo de cada técnica.
+No eixo quimiométrico, investigou-se a aplicação das técnicas de \textit{bagging} e \textit{subagging} incorporadas à Regressão Linear Múltipla (RLM) na calibração de cinco analitos (Mn, Mo, Cr, Ni e Fe) em amostras de aço-ligas. Os resultados demonstraram que o comportamento das técnicas de reamostragem varia conforme o analito considerado. A RLM clássica obteve menor RMSEP para o Molibdênio e o Cromo, enquanto o RLM-\textit{bagging} destacou-se para o Ferro.
 
-Ressalta-se que as conclusões a seguir se referem a esse protocolo com 
-otimização por validação cruzada: nos experimentos anteriores, com 
-parâmetros fixados sem otimização formal, a técnica vencedora em alguns 
-analitos (Ni e Fe) foi outra. Isso reforça que o desempenho relativo 
-depende da forma como $m$ e $k$ são selecionados.
+Para o Níquel (Ni), o RLM-\textit{subagging} superou o RLM-\textit{bagging}, porém apresentou desempenho numericamente equivalente ao da RLM clássica (diferença de 0,25\% no RMSEP), não se atribuindo superioridade estatística ao método frente ao conjunto de teste avaliado. Além disso, o RLM-\textit{subagging} comprovou maior eficiência computacional em relação ao RLM-\textit{bagging}, reduzindo o tempo de processamento devido ao menor tamanho das subamostras.
 
-%----------------------------------------------------------------------------
+No eixo de engenharia de \textit{software}, a suíte com 21 testes unitários, 60 testes de caixa-preta e 11 testes de estresse assegurou a equivalência numérica estrita para os métodos determinísticos e a estabilidade da aplicação sob volumes de dados sintetizados de alta dimensão, comprovando a viabilidade do fluxo de reescrita sem degradação das regras de negócio.
 
-A análise comparativa revela variações de desempenho dependentes do
-analito e indica, para este conjunto de dados específico, a
-inexistência de uma técnica universalmente superior. Para o Manganês
-(Mn), o RLM-\textit{subagging} ($k^* = 80\%$, $m^* = 10$) apresenta o
-menor RMSEP (0,0966), uma redução de 8,1\% em relação à RLM clássica.
-Para o Ferro (Fe), o RLM-\textit{bagging} ($m^* = 30$) obtém o melhor
-desempenho (RMSEP = 2,6406), com melhoria de 4,0\% sobre a RLM
-clássica.
+\section{Limitações e Trabalhos Futuros}
+\label{sec:limitacoes}
 
-Para o Níquel (Ni), o RLM-\textit{subagging} ($k^* = 60\%$,
-$m^* = 10$) exibe resultado marginalmente superior (RMSEP = 1,6003),
-com diferença de 0,25\% em relação à RLM clássica. Dada a magnitude
-dessa diferença e o tamanho amostral disponível, o resultado deve ser
-interpretado com cautela. Em contrapartida, para o Molibdênio (Mo) e o
-Cromo (Cr), a RLM clássica apresenta desempenho superior (RMSEP de
-0,2633 e 1,0798, respectivamente), indicando que a complexidade
-adicional das estratégias de \textit{ensemble} não resulta em ganho de
-precisão para esses analitos neste contexto.
+Este trabalho possui escopo focado na migração de plataforma e avaliação experimental inicial. Constituem limitações desta pesquisa:
+\begin{enumerate}[label=\alph*)]
+    \item A não realização de testes estatísticos formais de hipótese para a decomposição rigorosa de viés e variância nos espectros;
+    \item A ausência de medição quantitativa da taxa de latência economizada pelo uso do decorador de \textit{cache} em ambiente multiusuário de produção;
+    \item A limitação do conjunto de calibração ao número de amostras reais de aço-ligas disponibilizadas no protocolo de referência.
+\end{enumerate}
 
-%---------------------------------------------------------------------
-
-A avaliação por meio do RMSEP, complementada pelo \gls{MAE} e pelo
-R$^2$, permite uma caracterização abrangente do desempenho preditivo.
-Os valores de R$^2$ variaram de \num{0,9805} (RLM-bagging, Mo) a \num{0,9938} (RLM, Cr) no conjunto de teste.
-Para Mn e Ni, o RLM-\textit{subagging} apresenta dominância de Pareto
-sobre o RLM-\textit{bagging} em Mn, Mo e Ni (o Mo também cumpre: RMSEP 0,2879 < 0,3388, MAE 0,2201 < 0,2722, tempo 46,8 < 67,5 ms)
-por ser simultaneamente superior em acurácia (RMSEP e \gls{MAE}) e mais eficiente computacionalmente, o
-que reforça sua indicação nesses dois casos. Para Mo e Cr, os resultados sustentam a adoção da RLM clássica, em razão de sua
-simplicidade e de sua eficiência computacional.
-
-%--------------------------------------------------------------------
-
-Os tempos medidos foram de \SI{2,3}{}–\SI{13,5}{ms} (RLM), \SI{44,5}{}–\SI{97,2}{ms} (bagging) e \SI{10,6}{}–\SI{46,8}{ms} (subagging).
-A RLM clássica é a abordagem mais rápida em todos
-os analitos. A razão média entre os tempos do bagging e do subagging foi 3,0, de 0,95 (Cr) a 6,3 (Ni).
-Em termos agregados, a soma dos tempos dos cinco analitos é cerca de
-53\% menor no subagging.
-
-Em relação à RLM clássica, o RLM-\textit{subagging} apresenta custo de
-até 19,5 vezes superior, enquanto o RLM-\textit{bagging} é, em média,
-22,1 vezes mais lento. O Cromo (Cr) é o único caso em que o
-RLM-\textit{subagging} não apresenta vantagem temporal sobre o
-RLM-\textit{bagging}, comportamento explicado pelo maior número de
-replicações selecionado por validação cruzada ($m^* = 30$ contra
-$m^* = 20$).
-
-%-------------------------------------------------------------------------
-
-A investigação indica que o  RLM-\textit{subagging} obteve menor RMSEP que o \textit{bagging} em quatro analitos e menor tempo em quatro; supera o bagging nos dois critérios em Mn, Mo e Ni para os dados analisados,
-sendo recomendado para Mn e Ni. Para Mo e Cr, os resultados sustentam
-a adoção da RLM clássica. O RLM-\textit{bagging} mostra-se preferível
-para Fe, embora o RLM-\textit{subagging} atinja desempenho preditivo
-equivalente (RMSEP de 2,6509 e R$^2$ idêntico, 0,9900) em menos da
-metade do tempo. A relação de compromisso entre acurácia e tempo atua
-como elemento decisivo na seleção da técnica.
-
-
-Do ponto de vista da engenharia de software, o trabalho atinge seus
-objetivos específicos. A arquitetura modular em três camadas
-independentes (\texttt{models.py}, \texttt{components.py} e
-\texttt{app.py}) satisfaz o requisito de modularidade (RNF01). A suíte
-de 92 testes automatizados atesta a equivalência entre o sistema
-Python e o sistema Java legado (RNF03) em dois níveis distintos.
-
-Para a RLM, que é determinística, a equivalência numérica é estrita,
-com tolerância de $5\times10^{-4}$ em RMSEP, \gls{MAE} e R$^2$. Para o
-\textit{bagging} e o \textit{subagging}, que são estocásticos e cujas
-sequências pseudoaleatórias diferem entre Python e Java, a suíte
-verifica consistência estatística dentro de tolerâncias mais amplas:
-0,15 em RMSEP e \gls{MAE}; $5\times10^{-3}$ em R$^2$.
-
-Assim, a migração incremental orientada por testes de caixa-preta descreve um procedimento reprodutível de migração incremental, verificado por testes de caixa-preta independentemente do
-domínio de aplicação. Entretanto, essa abordagem não demonstra
-identidade das reamostragens entre as duas implementações.
-
-Este estudo apresenta limitações pertinentes. O conjunto de dados
-corresponde a uma composição específica de aço-liga, analisada sob
-condições instrumentais particulares, o que restringe a extrapolação
-dos achados para outras composições, regimes amostrais ou
-configurações espectrométricas.
-
-A razão de aproximadamente 42 preditores por observação no conjunto
-de calibração (723 variáveis para 17 amostras) caracteriza um regime
-de alta dimensionalidade. Embora tratável pela pseudo-inversa de
-Moore-Penrose, com 723 variáveis para 17 amostras (razão $\approx$ 42:1), o resultado é sensível à composição das amostras de calibração
-à composição das amostras disponíveis.
-
-Além disso, os \textit{folds} da validação cruzada contêm apenas três
-ou quatro amostras, o que limita a estabilidade da seleção de $m^*$ e
-$k^*$.
-
-Outras limitações são de natureza metodológica. O valor $k^* = 80\%$
-coincide com o limite superior da grade avaliada
-($k \in \{0{,}50;\ 0{,}60;\ 0{,}70;\ 0{,}80\}$) em quatro dos cinco
-analitos, de modo que o ótimo real pode situar-se em frações maiores.
-
-As tolerâncias adotadas nos testes de caixa-preta dos métodos
-estocásticos são amplas em relação às diferenças de desempenho entre
-as técnicas. Desse modo, a suíte assegura consistência estatística,
-mas não discrimina implementações com desempenhos próximos.
-
-Por fim, a análise adota exclusivamente a RLM como modelo base.
-
-Como trabalho futuro, propõe-se a integração de um agente de inteligência artificial especializado na interpretação automatizada dos gráficos gerados. Essa ferramenta auxiliará na análise dos resultados visuais em modelos estatísticos como RLM, bagging e subagging, garantindo maior precisão na síntese dos dados científicos.
-
-%Como direcionamento para investigações futuras, este estudo recomenda a expansão do escopo para conjuntos amostrais maiores e diferentes classes de materiais, a ampliação da grade de $k$ além de 80\% e a comparação com modelos preditivos alternativos, como \gls{PLS}, \gls{LASSO} e redes neurais. Essas abordagens permitirão avaliar se os padrões observados se sustentam em regimes mais generalizáveis.
-
-Recomenda-se ainda o uso de uma mesma sequência de reamostragens
-(por exemplo, índices exportados pelo Java e lidos pelo Python) para
-permitir a comparação amostra a amostra dos métodos estocásticos.
-Sugere-se também a avaliação de técnicas de \textit{ensemble} mais
-sofisticadas, como \textit{boosting} e \textit{stacking}.
-
-
-
+Como trabalhos futuros, propõe-se a integração de um agente de inteligência artificial especializado na interpretação automatizada dos gráficos gerados. Essa ferramenta auxiliará na análise dos resultados visuais em modelos estatísticos como RLM, \textit{bagging} e \textit{subagging}, cuja precisão na síntese dos dados científicos deverá ser avaliada por comparação com a interpretação de especialistas. Adicionalmente, recomenda-se a expansão do conjunto amostral com novos padrões de aço-ligas e a realização de testes de carga em ambiente de nuvem sob acessos concorrentes simultâneos.

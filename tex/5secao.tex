@@ -114,7 +114,7 @@ Status & Indicador de processamento & \textit{Spinner} ou barra de progresso & U
 \subsection{Classificação por Prioridade}
 \label{subsec:prioridade}
 
-Os requisitos foram classificados utilizando a técnica \gls{MoSCoW}\footnote{MoSCoW é uma técnica de priorização de requisitos dividida em quatro categorias: \textit{Must have} (obrigatórios), \textit{Should have} (importantes, mas não críticos), \textit{Could have} (desejáveis) e \textit{Won’t have (this time)} (excluídos desta versão). A letra “o” é adicionada apenas para facilitar a pronúncia.} adaptada, conforme descrito nas seções seguintes.
+Os requisitos foram classificados utilizando a técnica \gls{MoSCoW}\footnote{MoSCoW é uma técnica de priorização de requisitos dividida em quatro categorias: \textit{Must have} (obrigatórios), \textit{Should have} (importantes, mas não críticos), \textit{Could have} (desejáveis) e \textit{Won’t have (this time)} (excluídos desta versão). A letra “o” é adicionada apenas para facilitar a pronúncia.}\cite{clegg1994moscow} adaptada, conforme descrito nas seções seguintes.
 
 \newpage
 \subsubsection{Essenciais (\textit{Must Have})}
@@ -148,6 +148,8 @@ E05 & Exibição clara dos resultados numéricos & Permite decisão técnica fun
 \subsubsection{Desejáveis (\textit{Should Have})}
 \label{ssubsec:desejaveis}
 
+O Quadro~\ref{tab:desejaveis} lista os requisitos desejáveis, que ampliam usabilidade e reprodutibilidade, mas não são indispensáveis à versão mínima.
+
 \begin{quadro}[ht]
 \begin{center}
 \small
@@ -176,6 +178,7 @@ D05 & Histórico de execuções na sessão & Permite comparar configurações se
 \newpage
 \subsubsection{Extras (\textit{Could Have})}
 \label{ssubsec:extras}
+O Quadro~\ref{tab:extras} apresenta os requisitos extras, destinados a fases futuras, como autenticação, integrações externas e \textit{dashboards}, condicionados à validação.
 
 \begin{quadro}[ht]
 \begin{center}
@@ -219,8 +222,8 @@ as matrizes \texttt{Xcal} e \texttt{Xteste} e os vetores \texttt{Ycal} e
 informados, o usuário aciona o botão de execução, que dispara o
 processamento em \texttt{models.py}: primeiro a otimização por validação
 cruzada 5-\textit{fold} (\texttt{find\_optimal\_parameters()}) e, em
-seguida, a avaliação final dos três modelos --- RLM Simples, RLM~+~Bagging
-e RLM~+~Subagging --- sobre o conjunto de teste independente
+seguida, a avaliação final dos três modelos --- RLM Simples, RLM~+~\textit{Bagging}
+e RLM~+~\textit{Subagging} --- sobre o conjunto de teste independente
 (\texttt{run\_full\_analysis()}). Ao término do processamento, os
 resultados numéricos (RMSE, MAE, R² e tempo de execução) tornam-se
 disponíveis na aba \textbf{Resultados}, enquanto os gráficos comparativos
@@ -430,6 +433,8 @@ representado no fluxograma.
 \subsubsection{Fluxos Alternativos e Tratamento de Exceções}
 \label{ssubsec:fluxos-alternativos}
 
+O Quadro~\ref{tab:fluxos-alternativos} apresenta exceções, como arquivo inválido ou parâmetros incorretos, detalhando a resposta do sistema e a ação esperada.
+
 \begin{quadro}[ht]
 \begin{center}
 %\small
@@ -458,6 +463,8 @@ Navegação sem executar & Usuário muda de aba antes de clicar & Mantém estado
 \newpage
 \subsubsection{Pontos Críticos de Usabilidade}
 \label{ssubsec:pontos-criticos}
+
+O Quadro~\ref{tab:pontos-criticos} identifica pontos críticos de usabilidade, como upload múltiplo e parâmetros abstratos, associando riscos a estratégias de mitigação.
 
 \begin{quadro}[ht]
 \begin{center}
@@ -490,7 +497,7 @@ Resultados não exportáveis & Impede documentação externa & Botão ``Baixar R
 
 \subsubsection{Performance}
 \label{ssubsec:performance}
-
+O Quadro~\ref{tab:performance} define requisitos de performance, com limites de tempo para upload, cálculo, renderização gráfica e resposta da interface.
 
 \begin{quadro}[ht]
 \begin{center}
@@ -520,6 +527,8 @@ Responsividade da UI & Interações (mudar aba, ajustar parâmetro) & $<$ 500\,m
 \newpage
 \subsubsection{Usabilidade}
 \label{ssubsec:usabilidade}
+
+O Quadro~\ref{tab:usabilidade} define requisitos de usabilidade, abrangendo acessibilidade, responsividade, clareza textual, consistência visual e orientação para recuperação de erros.
 
 \begin{quadro}[ht]
 \begin{center}
@@ -551,6 +560,8 @@ Recuperação de erro & Mensagens orientam a correção & Ex: ``Ycal.txt tem 99 
 \subsubsection{Segurança}
 \label{ssubsec:seguranca}
 
+O Quadro~\ref{tab:seguranca} define requisitos de segurança, como isolamento de sessão, sanitização de arquivos, limite de tamanho e comunicação criptografada.
+
 \begin{quadro}[ht]
 \begin{center}
 \small
@@ -579,6 +590,8 @@ HTTPS obrigatório & Todas as comunicações criptografadas & Proteção de inte
 
 \subsubsection{Escalabilidade}
 \label{ssubsec:escalabilidade}
+
+O Quadro~\ref{tab:escalabilidade} define requisitos de escalabilidade, como usuários simultâneos, volume de dados, crescimento funcional e internacionalização, com metas definidas.
 
 \begin{quadro}[ht]
 \begin{center}

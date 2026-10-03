@@ -1,112 +1,36 @@
-
 \chapter{Introdução}
 \label{cha:introducao}
 \index{Introdução}
-A calibração multivariada desempenha um papel fundamental em diversas áreas da análise química e industrial, permitindo a 
-estimação de concentrações a partir de dados instrumentais multivariados. No contexto específico da análise de aço-ligas, a determinação precisa da composição elementar (Mn, Cr, Mo, Ni, Fe) é crucial para garantir a qualidade e as propriedades desejadas do material. No entanto, a complexidade dos dados multivariados provenientes de métodos instrumentais de análise exige o uso de técnicas de calibração multivariada para obter estimativas com erro de predição quantificável (RMSEP, MAE, R$^2$).
 
-%A calibração multivariada viabiliza a interpretação de dados analíticos complexos na indústria. No contexto das ligações de aço, o controle quantitativo de $\text{Mn, Cr, Mo, Ni}$ e $\text{Fe}$ assegura as especificações técnicas do produto. Contudo, devido à sobreposição de sinais e ao ruído de métodos instrumentais, faz-se necessário o emprego de métodos quimiométricos para a estimação precisa das concentrações.
+A calibração multivariada desempenha um papel fundamental em diversas áreas da análise química e industrial, permitindo a estimação de concentrações a partir de dados instrumentais multivariados. No contexto específico da análise de aço-ligas, a determinação precisa da composição elementar (Mn, Cr, Mo, Ni, Fe) é crucial para garantir a qualidade e as propriedades desejadas do material. No entanto, a complexidade dos dados multivariados provenientes de métodos instrumentais de análise exige o uso de técnicas de calibração multivariada para obter estimativas com erro de predição quantificável (RMSEP, MAE, R$^2$).
 
-Este estudo investiga, em caráter exploratório, a aplicação de técnicas de reamostragem
-(\textit{bootstrap}), \textit{bagging} e \textit{subagging} na~\gls{RLM} para a calibração
-multivariada de amostras de aço-ligas. A pesquisa busca preencher a lacuna de conhecimento
-sobre a aplicação dessas técnicas de \textit{ensemble} nesse contexto específico,
-contribuindo tanto para o avanço da quimiometria quanto para a modernização de sistemas
-computacionais de apoio à análise de aço-ligas~\cite{SKOOG:1997,HARDLE:2007,TIMM:2002}.
+Este estudo investiga, em caráter exploratório, a aplicação de técnicas de reamostragem (\textit{bootstrap}), \textit{bagging} e \textit{subagging} na Regressão Linear Múltipla (RLM) para a calibração multivariada de amostras de aço-ligas. A pesquisa busca preencher a lacuna de conhecimento sobre a aplicação dessas técnicas de \textit{ensemble} nesse contexto específico, fornecendo subsídios empíricos exploratórios para a quimiometria e exemplificando a modernização de sistemas computacionais de apoio à análise de aço-ligas~\cite{SKOOG:1997,HARDLE:2007,TIMM:2002}.
 
-%\section{Problema da Pesquisa}
-Como otimizar a calibração multivariada de amostras de aço-ligas para obter previsões mais
-precisas dos elementos Mn, Cr, Mo, Ni e Fe, considerando a complexidade inerente à análise
-de dados multivariados, a necessidade de alta precisão e a exigência de uma arquitetura de software modular e verificável por testes automatizados para sustentar essa análise?
+Como otimizar a calibração multivariada de amostras de aço-ligas para obter previsões mais precisas dos elementos Mn, Cr, Mo, Ni e Fe, considerando a complexidade inerente à análise de dados multivariados, a necessidade de alta precisão e a exigência de uma arquitetura de \textit{software} modular e verificável por testes automatizados para sustentar essa análise?
 
-%\section{Justificativa}
-Este estudo contribui em dois eixos: (i) a aplicação de bagging e subagging à calibração de aço-ligas; (ii) a migração de um sistema legado verificada por testes automatizados. Essa estratégia evidencia, de forma
-reprodutível, como preservar a corretude de um núcleo algorítmico crítico durante a
-reescrita completa de uma arquitetura de software.
+Este estudo contribui em dois eixos: (a) a aplicação de \textit{bagging} e \textit{subagging} à calibração de aço-ligas; (b) a migração de um sistema legado verificada por testes automatizados. Essa estratégia evidencia, de forma reprodutível, como preservar a corretude de um núcleo algorítmico crítico durante a reescrita completa de uma arquitetura de \textit{software}.
 
-A originalidade da pesquisa é dupla. No eixo quimiométrico, reside na aplicação de
-técnicas de \textit{bagging} e \textit{subagging}, ainda pouco exploradas na análise de
-aço-ligas.
+A originalidade da pesquisa é dupla. No eixo quimiométrico, reside na aplicação de técnicas de \textit{bagging} e \textit{subagging}, ainda pouco exploradas na análise de aço-ligas.
 
-No eixo de engenharia de software, reside na condução de uma reescrita
-\textit{black-box} em três estágios (Desktop Java, Web Vaadin/Spring, Python/Streamlit),
-com arquitetura final desacoplada em três módulos de responsabilidade única e validação
-por 92 testes automatizados, que verificam a equivalência numérica do núcleo determinístico (RLM)
-e a consistência estatística dos métodos estocásticos entre o sistema legado e o sistema reescrito.
+No eixo de engenharia de \textit{software}, reside na condução de uma reescrita \textit{black-box} em três estágios (\textit{Desktop} Java, \textit{Web} Vaadin/Spring, Python/Streamlit), com arquitetura final desacoplada em três módulos de responsabilidade única e validação por 92 testes automatizados, que verificam a equivalência numérica do núcleo determinístico (RLM) e a consistência estatística dos métodos estocásticos entre o sistema legado e o sistema reescrito.
 
-Dado o conjunto amostral reduzido — característica inerente à aquisição dos dados
-espectrométricos utilizados —, os resultados devem ser interpretados como evidências
-preliminares do comportamento dessas técnicas nesse domínio, e não como afirmações
-definitivas de superioridade geral de um método sobre outro.
+Dado o conjunto amostral reduzido — característica inerente à aquisição dos dados espectrométricos utilizados —, os resultados devem ser interpretados como evidências preliminares do comportamento dessas técnicas nesse domínio, e não como afirmações definitivas de superioridade geral de um método sobre outro.
 
-%\section{Objetivo Geral}
-Analisar e comparar o desempenho das técnicas de \textit{bagging} e \textit{subagging}
-aplicadas à Regressão Linear Múltipla (RLM) na calibração multivariada de dados de amostras
-de aço-ligas, investigando, em caráter exploratório, tanto o comportamento preditivo quanto
-a eficiência computacional de cada abordagem, a partir de uma arquitetura de software
-desenvolvida de forma incremental e validada a cada etapa da migração.
+Analisar e comparar o desempenho das técnicas de \textit{bagging} e \textit{subagging} aplicadas à Regressão Linear Múltipla (RLM) na calibração multivariada de dados de amostras de aço-ligas, investigando, em caráter exploratório, tanto o comportamento preditivo quanto a eficiência computacional de cada abordagem, a partir de uma arquitetura de \textit{software} desenvolvida de forma incremental e validada a cada etapa da migração.
 
 Esta pesquisa tem como objetivos específicos:
 \begin{description}
-    \item[a)] Aplicar as técnicas de reamostragem \textit{bootstrap}, \textit{bagging} e
-    \textit{subagging} na calibração de dados espectrométricos de amostras de aço-ligas,
-    empregando a Regressão Linear Múltipla (RLM) como modelo base, com vistas ao
-    desenvolvimento de uma metodologia analítica robusta~\cite{Canty2001,rathnayake2022}.
+ \item[a)] Aplicar as técnicas de reamostragem \textit{bootstrap}, \textit{bagging} e \textit{subagging} na calibração de dados espectrométricos de amostras de aço-ligas, empregando a Regressão Linear Múltipla (RLM) como modelo base, visando a estruturação de um fluxo analítico reprodutível e padronizado~\cite{Canty2001,rathnayake2022}.
 
-    \item[b)] Realizar uma comparação sistemática entre os algoritmos RLM clássica,
-    RLM-\textit{bagging} e RLM-\textit{subagging}, por meio da avaliação criteriosa da
-    acurácia preditiva e da eficiência computacional de cada abordagem na análise
-    quantitativa dos elementos Mn, Cr, Mo, Ni e Fe.
+ \item[b)] Realizar uma comparação sistemática entre os algoritmos RLM clássica, RLM-\textit{bagging} e RLM-\textit{subagging}, por meio da avaliação criteriosa da acurácia preditiva e da eficiência computacional de cada abordagem na análise quantitativa dos elementos Mn, Cr, Mo, Ni e Fe.
 
-    \item[c)] Reaproveitar, em Java (JavaSE-17), o sistema Desktop de calibração
-    multivariada com RLM-\textit{bagging} e RLM-\textit{subagging} — desenvolvido na
-    disciplina de Programação Orientada a Objetos, com arquitetura (\gls{MVC})~\cite{reenskaug1979mvc,krasner1988description}, biblioteca \gls{EJML}\footnote{A biblioteca \textit{Efficient Java Matrix Library} (EJML) é uma biblioteca de código aberto para a linguagem Java projetada para a manipulação e computação de matrizes lineares de forma extremamente rápida e com baixo uso de memória.}
- e
-    interface Swing \gls{AWT}\footnote{A \textit{Abstract Window Toolkit} é a biblioteca nativa e original do Java criada para desenvolver interfaces gráficas de usuário (\textit{Graphical User Interface} - GUI), como janelas, botões e menus.}
- —, consolidando-o como base algorítmica validada do TCC~I.
+ \item[c)] Reaproveitar, em Java (JavaSE-17), o sistema \textit{Desktop} de calibração multivariada com RLM-\textit{bagging} e RLM-\textit{subagging} — desenvolvido na disciplina de Programação Orientada a Objetos, com arquitetura monolítica (em um único arquivo), biblioteca \gls{EJML}\footnote{A biblioteca \textit{Efficient Java Matrix Library} (EJML) é uma biblioteca de álgebra linear de alto desempenho para Java, projetada para manipulação eficiente de matrizes densas e esparsas.} e interface gráfica Swing/AWT —, refinando suas estruturas de dados e tratando inconsistências nas métricas de avaliação do algoritmo para servir como referência de validação e base de código legada.
 
-    \item[d)] Migrar a base algorítmica reaproveitada no TCC~I para uma interface web em
-    Vaadin Flow, como estágio intermediário, e concluir, no TCC~II, a reescrita completa do
-    sistema em Python/Streamlit, com arquitetura modular em três camadas e validação por
-    suíte de testes automatizados.
+ \item[d)] Desenvolver e disponibilizar um protótipo \textit{Web} reescrito em Python 3.12 e Streamlit, adotando arquitetura modular desacoplada em três módulos de responsabilidade única (\texttt{app.py}, \texttt{components.py} e \texttt{models.py}), que automatize o fluxo analítico de calibração multivariada por RLM, RLM-\textit{bagging} e RLM-\textit{subagging}, permitindo o carregamento de matrizes de calibração e teste, a configuração de hiperparâmetros, a execução de validação cruzada 5-\textit{fold} por \textit{grid search} e a geração automática de relatórios com métricas preditivas (RMSEP, MAE, R$^2$) e gráficos interativos Plotly.
+
+ \item[e)] Garantir a equivalência comportamental e a qualidade do \textit{software} reescrito por meio da especificação de requisitos formais e da implementação de uma suíte de 92 testes automatizados com \texttt{pytest}, abrangendo testes unitários, testes de caixa-preta baseados em saídas do sistema legado e testes de estresse com matrizes sintetizadas de alta dimensão.
 \end{description}
 
-Essa trajetória escalonada — sistema Desktop em Java, estágio intermediário em Vaadin Flow
-e reescrita final em Python/Streamlit — evitou a substituição simultânea de arquitetura e
-lógica de negócio. Cada etapa da migração permitiu verificar a equivalência comportamental
- da lógica matemática antes de avançar para a seguinte, consolidando-se, neste TCC~II, na 
-suíte de testes automatizados que compara as duas implementações.
+Esse protocolo funciona como validador de equivalência entre o sistema legado e o sistema reescrito em dois níveis: equivalência numérica estrita para a RLM determinística e consistência estatística, dentro de tolerâncias explícitas, para o \textit{bagging} e o \textit{subagging}, cujas sequências pseudoaleatórias diferem entre as duas linguagens.
 
-A validação da lógica de negócio migrada é realizada, neste TCC~II, por
-meio de uma suíte de testes automatizados (\texttt{test\_suite\_5.py}),
-composta por 21 testes unitários, 60 testes de caixa-preta que comparam
-as métricas das implementações Java e Python para os cinco analitos (Mn,
-Mo, Cr, Ni, Fe) e 11 testes de estresse sobre matrizes de grande porte.
-
-Esse protocolo funciona como validador de equivalência entre o sistema
-legado e o sistema reescrito em dois níveis: equivalência numérica estrita
-para a RLM determinística e consistência estatística, dentro de
-tolerâncias explícitas, para o \textit{bagging} e o \textit{subagging},
-cujas sequências pseudoaleatórias diferem entre as duas linguagens.
-
-Este trabalho está organizado da seguinte forma. A Seção~\ref{cha:tecboot} apresenta a
-revisão da literatura sobre a Regressão Linear Múltipla (RLM), a técnica de reamostragem
-\textit{bootstrap} e os conceitos de distribuição empírica e princípio \textit{plug-in},
-essenciais à compreensão das abordagens investigadas. A Seção~\ref{sec:teclarea} descreve
-as técnicas de \textit{bagging} e \textit{subagging}, incluindo fundamentos teóricos e
-algoritmos.
-
-A Seção~\ref{cha:metresult} caracteriza o conjunto de dados espectrométricos de aço-ligas,
-descreve a arquitetura do sistema Python/Streamlit concluído — separado em \texttt{models.py},
-\texttt{components.py} e \texttt{app.py} — e o protocolo de validação cruzada adotado, além
-de apresentar as métricas RMSEP\footnote{O \textit{Root Mean Squared Error of Prediction} (RMSEP), ou Raiz do Erro Quadrático Médio de Previsão, mede a acurácia de um modelo calculando a raiz quadrada da média dos erros elevados ao quadrado, penalizando de forma mais severa os grandes desvios.}
-, MAE\footnote{O \textit{Mean Absolute Error} (MAE), ou Erro Médio Absoluto, é uma métrica que calcula a média das magnitudes dos erros em um conjunto de previsões, sem considerar suas direções (sinais positivos ou negativos).}
- e R$^2$\footnote{O Coeficiente de Determinação ($R^2$), também conhecido como \textit{R-squared}, é uma medida estatística que indica a proporção da variância da variável dependente que é explicável pelas variáveis independentes do modelo.}
- empregadas na avaliação da acurácia preditiva
-e na verificação da equivalência comportamental do sistema.
-
-Na Seção~\ref{sec:result}, são analisados os resultados obtidos com os algoritmos RLM
-clássica, RLM-\textit{bagging} e RLM-\textit{subagging}, com base nos valores de RMSEP,
-MAE e R$^2$ e nos tempos de execução computacional, além dos resultados da suíte de testes
-automatizados. Por fim, a Seção~\ref{cha:conclusao} sintetiza as principais conclusões do
-estudo e discute limitações e extensões futuras do sistema.
+Este trabalho está organizado da seguinte forma. A Seção~\ref{cha:tecboot} apresenta a revisão da literatura sobre a Regressão Linear Múltipla (RLM), a técnica de reamostragem \textit{bootstrap} e os conceitos de distribuição empírica e princípio \textit{plug-in}, essenciais à compreensão das abordagens investigadas. A Seção~\ref{sec:teclarea} descreve as técnicas de \textit{bagging} e \textit{subagging}, incluindo fundamentos teóricos e algoritmos.

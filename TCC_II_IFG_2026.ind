@@ -1,48 +1,44 @@
 \begin{theindex}
 
   \item A Técnica de \textit{Bootstrap}
-    \subitem \textit{Bootstrap}, \hyperpage{20}
-    \subitem Estimativa \textit{Bootstrap}, \hyperpage{20}
-    \subitem Função de Distribuição Empírica, \hyperpage{25}
+    \subitem \textit{Bootstrap}, \hyperpage{18}
+    \subitem Estimativa \textit{Bootstrap}, \hyperpage{18}
+    \subitem Função de Distribuição Empírica, \hyperpage{23}
     \subitem O Número de Replicações \textit{Bootstrap} $m$, 
-		\hyperpage{21}
-    \subitem Princípio \textit{Plug-in}, \hyperpage{25}
+		\hyperpage{19}
+    \subitem Princípio \textit{Plug-in}, \hyperpage{23}
 
   \indexspace
 
-  \item Conclusão, \hyperpage{73}
+  \item Introdução, \hyperpage{14}
 
   \indexspace
 
-  \item Introdução, \hyperpage{15}
-
-  \indexspace
-
-  \item Materiais e Métodos, \hyperpage{31}
+  \item Materiais e Métodos, \hyperpage{29}
   \item Métodos e Resultados
-    \subitem \textit{Bagging}, \hyperpage{39}
+    \subitem \textit{Bagging}, \hyperpage{37}
     \subitem \textit{Baggin} $\times$ \textit{Subagging}, 
-		\hyperpage{45}
-    \subitem \textit{Subagging}, \hyperpage{41}
-    \subitem Introdução, \hyperpage{34}
+		\hyperpage{43}
+    \subitem \textit{Subagging}, \hyperpage{39}
+    \subitem Introdução, \hyperpage{32}
     \subitem Medida do Erro Médio Quadrático de Predição, 
-		\hyperpage{36}
-    \subitem Resultados, \hyperpage{38}
+		\hyperpage{34}
+    \subitem Resultados, \hyperpage{36}
 
   \indexspace
 
-  \item Requisitos Funcionais, \hyperpage{50}
+  \item Requisitos Funcionais, \hyperpage{48}
   \item Revisão da literatura
     \subitem Engenharia de Migração e Qualidade de Software, 
-		\hyperpage{29}
+		\hyperpage{27}
 
   \indexspace
 
-  \item Tabelas de Paridade Amostra-a-Amostra, \hyperpage{93}
-  \item Testes de Gráficos, \hyperpage{85}
-  \item Técnicas Clássicas de Reamostragem, \hyperpage{26}
-    \subitem \textit{Bagging}, \hyperpage{27}
-    \subitem \textit{Subagging}, \hyperpage{28}
-    \subitem Comparação, \hyperpage{29}
+  \item Tabelas de Paridade Amostra-a-Amostra, \hyperpage{81}
+  \item Testes de Gráficos, \hyperpage{73}
+  \item Técnicas Clássicas de Reamostragem, \hyperpage{24}
+    \subitem \textit{Bagging}, \hyperpage{25}
+    \subitem \textit{Subagging}, \hyperpage{26}
+    \subitem Comparação, \hyperpage{27}
 
 \end{theindex}
