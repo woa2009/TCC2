@@ -123,7 +123,7 @@ Em seguida, calcula-se uma estatística $s(\mathbf{X}^{*i})$ para cada reamostra
 gerando uma distribuição empírica das estimativas. Esse processo é ilustrado 
 na Figura~\ref{fig:bootstrap}.
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
 		\caption{Exemplo do método \textit{bootstrap}.}
 		\resizebox{0.70\textwidth}{!}{
@@ -227,7 +227,7 @@ O Algoritmo~\ref{alg:bootstrap} \cite{EFRON:1993} mostra a descrição do proced
 utilizar a estimativa \textit{bootstrap}, replicando o estimador $\widehat{\theta} = s(x)$ a partir dos dados $x$ observados.
 
 %-------------------------------------------------
-\subsection{O Número de Replicações \textit{Bootstrap} $m$}
+\subsection{O Número de Replicações \textit{Bootstrap} \textit{m}}
 \label{sec:numreplboot}
 \index{A Técnica de \textit{Bootstrap}!O Número de Replicações \textit{Bootstrap} $m$}
 %-------------------------------------------------
@@ -314,7 +314,7 @@ Sendo \gls{x_i} uma medida da unidade $u_i$ para $i = 1, 2, \ldots, n$, o conjun
     \gls{x} = \{x_1, x_2, \ldots, x_n\}.
 \end{equation}
 %----------------------------------------------------------------------
-\begin{figure}[ht!]
+\begin{figure}[H]%ht!
 \centering
 \caption{Processo de amostragem aleatória.}
 \resizebox{0.25\textwidth}{!}{
@@ -465,7 +465,7 @@ Nesta seção, revisam-se duas técnicas fundamentais de reamostragem: \textit{b
 
 As técnicas de reamostragem são particularmente úteis em cenários com limitação amostral ou quando os dados são contaminados por ruídos instrumentais. A ideia central consiste em combinar as predições de múltiplos modelos de regressão em um único preditor agregado, processo conhecido como \textit{ensemble}~\cite{Opitz1999,GALVAO:2006}.
 
-\begin{figure}[ht]
+\begin{figure}[H]
 \centering
 \caption{Reamostragem com agregação de modelos de regressão.}
 \label{fig:reaagremodreg}

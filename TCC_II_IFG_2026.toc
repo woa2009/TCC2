@@ -10,109 +10,109 @@
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase []{Introdução}}{14}{chapter.1}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase []{Revisão da literatura}}{16}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Regressão Linear Múltipla}{16}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Estimação dos Coeficientes}{16}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Premissas e Métodos Robustos}{17}{subsection.2.1.2}%
-\contentsline {section}{\numberline {2.2}A Técnica de \textit {Bootstrap}}{17}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}\textit {Bootstrap}}{18}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Estimativa \textit {Bootstrap}}{18}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}O Número de Replicações \textit {Bootstrap} $m$}{19}{subsection.2.2.3}%
-\contentsline {section}{\numberline {2.3}Reamostragem Aleatória}{20}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Teoria da Probabilidade}{21}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Função de Distribuição Empírica}{23}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Princípio \textit {Plug-in}}{23}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Técnicas Clássicas de Reamostragem}{24}{section.2.7}%
-\contentsline {subsection}{\numberline {2.7.1}\textit {Bagging}}{25}{subsection.2.7.1}%
-\contentsline {subsection}{\numberline {2.7.2}\textit {Subagging}}{26}{subsection.2.7.2}%
-\contentsline {subsection}{\numberline {2.7.3}Comparação entre \textit {Bagging} e \textit {Subagging}}{27}{subsection.2.7.3}%
-\contentsline {section}{\numberline {2.8}Fundamentos de Engenharia de Migração e Qualidade de Software}{27}{section.2.8}%
+\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase []{Revisão da literatura}}{17}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Regressão Linear Múltipla}{17}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Estimação dos Coeficientes}{17}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Premissas e Métodos Robustos}{18}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}A Técnica de \textit {Bootstrap}}{18}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}\textit {Bootstrap}}{19}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Estimativa \textit {Bootstrap}}{19}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}O Número de Replicações \textit {Bootstrap} \textit {m}}{20}{subsection.2.2.3}%
+\contentsline {section}{\numberline {2.3}Reamostragem Aleatória}{22}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Teoria da Probabilidade}{22}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Função de Distribuição Empírica}{24}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Princípio \textit {Plug-in}}{25}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Técnicas Clássicas de Reamostragem}{25}{section.2.7}%
+\contentsline {subsection}{\numberline {2.7.1}\textit {Bagging}}{26}{subsection.2.7.1}%
+\contentsline {subsection}{\numberline {2.7.2}\textit {Subagging}}{27}{subsection.2.7.2}%
+\contentsline {subsection}{\numberline {2.7.3}Comparação entre \textit {Bagging} e \textit {Subagging}}{28}{subsection.2.7.3}%
+\contentsline {section}{\numberline {2.8}Fundamentos de Engenharia de Migração e Qualidade de Software}{29}{section.2.8}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{Materiais e Métodos}}{29}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Fragmento do Código-Fonte Java --- Núcleo Algorítmico}{29}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Amostras de Aço-Ligas}{32}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Protocolo de Validação e Seleção de Hiperparâmetros}{33}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Medida do Erro Médio Quadrático de Predição}{34}{section.3.4}%
+\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{Materiais e Métodos}}{30}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Fragmento do Código-Fonte Java --- Núcleo Algorítmico}{30}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Amostras de Aço-Ligas}{33}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Protocolo de Validação e Seleção de Hiperparâmetros}{34}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Medida do Erro Médio Quadrático de Predição}{35}{section.3.4}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{Análise Experimental dos Algoritmos Quimiométricos}}{36}{chapter.4}%
-\contentsline {section}{\numberline {4.1}\textit {Bagging}}{37}{section.4.1}%
-\contentsline {section}{\numberline {4.2}\textit {Subagging}}{39}{section.4.2}%
-\contentsline {section}{\numberline {4.3}\textit {Bagging} $\times $ \textit {Subagging}}{43}{section.4.3}%
+\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{Análise Experimental dos Algoritmos Quimiométricos}}{37}{chapter.4}%
+\contentsline {section}{\numberline {4.1}\textit {Bagging}}{38}{section.4.1}%
+\contentsline {section}{\numberline {4.2}\textit {Subagging}}{40}{section.4.2}%
+\contentsline {section}{\numberline {4.3}\textit {Bagging} $\times $ \textit {Subagging}}{44}{section.4.3}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Requisitos Funcionais}}{48}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Levantamento de Requisitos Funcionais}{48}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Inventário das Funcionalidades Existentes}{48}{subsection.5.1.1}%
-\contentsline {subsubsection}{\numberline {5.1.1.1}Funções do Sistema}{48}{subsubsection.5.1.1.1}%
-\contentsline {subsubsection}{\numberline {5.1.1.2}Entradas Necessárias (Inputs)}{49}{subsubsection.5.1.1.2}%
-\contentsline {subsubsection}{\numberline {5.1.1.3}Saídas Esperadas (Outputs)}{49}{subsubsection.5.1.1.3}%
-\contentsline {subsection}{\numberline {5.1.2}Classificação por Prioridade}{49}{subsection.5.1.2}%
-\contentsline {subsubsection}{\numberline {5.1.2.1}Essenciais (\textit {Must Have})}{50}{subsubsection.5.1.2.1}%
-\contentsline {subsubsection}{\numberline {5.1.2.2}Desejáveis (\textit {Should Have})}{50}{subsubsection.5.1.2.2}%
-\contentsline {subsubsection}{\numberline {5.1.2.3}Extras (\textit {Could Have})}{51}{subsubsection.5.1.2.3}%
-\contentsline {subsection}{\numberline {5.1.3}Fluxos de Uso}{51}{subsection.5.1.3}%
-\contentsline {subsubsection}{\numberline {5.1.3.1}Fluxo Principal: Execução de Análise Completa}{51}{subsubsection.5.1.3.1}%
-\contentsline {subsubsection}{\numberline {5.1.3.2}Fluxos Alternativos e Tratamento de Exceções}{52}{subsubsection.5.1.3.2}%
-\contentsline {subsubsection}{\numberline {5.1.3.3}Pontos Críticos de Usabilidade}{53}{subsubsection.5.1.3.3}%
-\contentsline {subsection}{\numberline {5.1.4}Requisitos Não Funcionais}{53}{subsection.5.1.4}%
-\contentsline {subsubsection}{\numberline {5.1.4.1}Performance}{53}{subsubsection.5.1.4.1}%
-\contentsline {subsubsection}{\numberline {5.1.4.2}Usabilidade}{54}{subsubsection.5.1.4.2}%
-\contentsline {subsubsection}{\numberline {5.1.4.3}Segurança}{54}{subsubsection.5.1.4.3}%
-\contentsline {subsubsection}{\numberline {5.1.4.4}Escalabilidade}{54}{subsubsection.5.1.4.4}%
-\contentsline {section}{\numberline {5.2}Considerações Finais do Levantamento}{55}{section.5.2}%
+\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Requisitos Funcionais}}{49}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Levantamento de Requisitos Funcionais}{49}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Inventário das Funcionalidades Existentes}{49}{subsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.1.1}Funções do Sistema}{49}{subsubsection.5.1.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.1.2}Entradas Necessárias (Inputs)}{50}{subsubsection.5.1.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.1.3}Saídas Esperadas (Outputs)}{50}{subsubsection.5.1.1.3}%
+\contentsline {subsection}{\numberline {5.1.2}Classificação por Prioridade}{50}{subsection.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.2.1}Essenciais (\textit {Must Have})}{51}{subsubsection.5.1.2.1}%
+\contentsline {subsubsection}{\numberline {5.1.2.2}Desejáveis (\textit {Should Have})}{51}{subsubsection.5.1.2.2}%
+\contentsline {subsubsection}{\numberline {5.1.2.3}Extras (\textit {Could Have})}{52}{subsubsection.5.1.2.3}%
+\contentsline {subsection}{\numberline {5.1.3}Fluxos de Uso}{52}{subsection.5.1.3}%
+\contentsline {subsubsection}{\numberline {5.1.3.1}Fluxo Principal: Execução de Análise Completa}{52}{subsubsection.5.1.3.1}%
+\contentsline {subsubsection}{\numberline {5.1.3.2}Fluxos Alternativos e Tratamento de Exceções}{53}{subsubsection.5.1.3.2}%
+\contentsline {subsubsection}{\numberline {5.1.3.3}Pontos Críticos de Usabilidade}{54}{subsubsection.5.1.3.3}%
+\contentsline {subsection}{\numberline {5.1.4}Requisitos Não Funcionais}{54}{subsection.5.1.4}%
+\contentsline {subsubsection}{\numberline {5.1.4.1}Performance}{54}{subsubsection.5.1.4.1}%
+\contentsline {subsubsection}{\numberline {5.1.4.2}Usabilidade}{55}{subsubsection.5.1.4.2}%
+\contentsline {subsubsection}{\numberline {5.1.4.3}Segurança}{55}{subsubsection.5.1.4.3}%
+\contentsline {subsubsection}{\numberline {5.1.4.4}Escalabilidade}{55}{subsubsection.5.1.4.4}%
+\contentsline {section}{\numberline {5.2}Considerações Finais do Levantamento}{56}{section.5.2}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase []{Engenharia de Software e Modernização}}{56}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Engenharia de Requisitos com Sommerville}{56}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Elicitação}{56}{subsection.6.1.1}%
-\contentsline {subsection}{\numberline {6.1.2}Análise}{56}{subsection.6.1.2}%
-\contentsline {subsection}{\numberline {6.1.3}Especificação}{56}{subsection.6.1.3}%
-\contentsline {subsection}{\numberline {6.1.4}Validação}{56}{subsection.6.1.4}%
-\contentsline {section}{\numberline {6.2}Arquitetura Modular em Python/Streamlit}{57}{section.6.2}%
+\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase []{Engenharia de Software e Modernização}}{57}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Engenharia de Requisitos com Sommerville}{57}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Elicitação}{57}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Análise}{57}{subsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.1.3}Especificação}{57}{subsection.6.1.3}%
+\contentsline {subsection}{\numberline {6.1.4}Validação}{57}{subsection.6.1.4}%
+\contentsline {section}{\numberline {6.2}Arquitetura Modular em Python/Streamlit}{58}{section.6.2}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {7}\MakeTextUppercase []{Resultados e Discussões}}{58}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Avaliação Preditiva e Eficiência Computacional}{58}{section.7.1}%
+\contentsline {chapter}{\chapternumberline {7}\MakeTextUppercase []{Resultados e Discussões}}{59}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Avaliação Preditiva e Eficiência Computacional}{59}{section.7.1}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {8}\MakeTextUppercase []{Interface e Experiência do Usuário (UI/UX) Científica}}{59}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Design da Interface e Fluxo de Trabalho}{59}{section.8.1}%
+\contentsline {chapter}{\chapternumberline {8}\MakeTextUppercase []{Interface e Experiência do Usuário (UI/UX) Científica}}{60}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Design da Interface e Fluxo de Trabalho}{60}{section.8.1}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {9}\MakeTextUppercase []{Desenvolvimento Iterativo por Sprints e Validação por Testes Automatizados}}{60}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Metodologia Ágil: Desenvolvimento por Sprints}{60}{section.9.1}%
-\contentsline {subsection}{\numberline {9.1.1}\textit {Sprint} 1 --- Camada de Leitura e Tratamento de Dados (\textit {Core Backend})}{60}{subsection.9.1.1}%
-\contentsline {subsection}{\numberline {9.1.2}\textit {Sprint} 2 --- Algoritmos Científicos}{60}{subsection.9.1.2}%
-\contentsline {subsection}{\numberline {9.1.3}\textit {Sprint} 3 --- Interface Reativa}{60}{subsection.9.1.3}%
-\contentsline {subsection}{\numberline {9.1.4}\textit {Sprint} 4 --- Otimização com \textit {Cache}}{60}{subsection.9.1.4}%
-\contentsline {section}{\numberline {9.2}Suíte de Testes Automatizados com pytest}{61}{section.9.2}%
-\contentsline {subsection}{\numberline {9.2.1}Testes Unitários (21 testes)}{61}{subsection.9.2.1}%
-\contentsline {subsection}{\numberline {9.2.2}Testes de Caixa-Preta (60 testes)}{61}{subsection.9.2.2}%
-\contentsline {subsection}{\numberline {9.2.3}Testes de Carga e \textit {Stress} (11 testes)}{61}{subsection.9.2.3}%
-\contentsline {subsection}{\numberline {9.2.4}Resultados Consolidados}{62}{subsection.9.2.4}%
+\contentsline {chapter}{\chapternumberline {9}\MakeTextUppercase []{Desenvolvimento Iterativo por Sprints e Validação por Testes Automatizados}}{61}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Metodologia Ágil: Desenvolvimento por Sprints}{61}{section.9.1}%
+\contentsline {subsection}{\numberline {9.1.1}\textit {Sprint} 1 --- Camada de Leitura e Tratamento de Dados (\textit {Core Backend})}{61}{subsection.9.1.1}%
+\contentsline {subsection}{\numberline {9.1.2}\textit {Sprint} 2 --- Algoritmos Científicos}{61}{subsection.9.1.2}%
+\contentsline {subsection}{\numberline {9.1.3}\textit {Sprint} 3 --- Interface Reativa}{61}{subsection.9.1.3}%
+\contentsline {subsection}{\numberline {9.1.4}\textit {Sprint} 4 --- Otimização com \textit {Cache}}{61}{subsection.9.1.4}%
+\contentsline {section}{\numberline {9.2}Suíte de Testes Automatizados com pytest}{62}{section.9.2}%
+\contentsline {subsection}{\numberline {9.2.1}Testes Unitários (21 testes)}{62}{subsection.9.2.1}%
+\contentsline {subsection}{\numberline {9.2.2}Testes de Caixa-Preta (60 testes)}{62}{subsection.9.2.2}%
+\contentsline {subsection}{\numberline {9.2.3}Testes de Carga e \textit {Stress} (11 testes)}{62}{subsection.9.2.3}%
+\contentsline {subsection}{\numberline {9.2.4}Resultados Consolidados}{63}{subsection.9.2.4}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {10}\MakeTextUppercase []{Conclusão}}{63}{chapter.10}%
-\contentsline {section}{\numberline {10.1}Limitações e Trabalhos Futuros}{63}{section.10.1}%
+\contentsline {chapter}{\chapternumberline {10}\MakeTextUppercase []{Conclusão}}{64}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Limitações e Trabalhos Futuros}{64}{section.10.1}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{\MakeTextUppercase []{Referências}}{65}{section*.71}%
+\contentsline {chapter}{\MakeTextUppercase []{Referências}}{66}{section*.71}%
 \renewcommand *{\cftappendixname }{AP\^ENDICE \space }
 \setlength {\cftpartindent }{\cftlastnumwidth } \setlength {\cftpartnumwidth }{2em}
 \cftinsert {A}
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Testes de Gráficos}}{73}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Diagrama de Arquitetura em Camadas --- Java e Python}{73}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Diagrama de Classes --- Java}{74}{section.A.2}%
-\contentsline {section}{\numberline {A.3}Diagrama de Atividade --- Java}{75}{section.A.3}%
-\contentsline {section}{\numberline {A.4}Diagrama de Sequência --- Java}{76}{section.A.4}%
-\contentsline {section}{\numberline {A.5}Diagrama de Atividades --- Java (PlantUML)}{77}{section.A.5}%
-\contentsline {section}{\numberline {A.6}Diagrama de Atividades --- Streamlit}{78}{section.A.6}%
-\contentsline {section}{\numberline {A.7}Diagrama de Classes (Módulos) --- Streamlit}{79}{section.A.7}%
-\contentsline {section}{\numberline {A.8}Diagrama de Sequência --- Streamlit}{80}{section.A.8}%
+\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Testes de Gráficos}}{74}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Diagrama de Arquitetura em Camadas --- Java e Python}{74}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Diagrama de Classes --- Java}{75}{section.A.2}%
+\contentsline {section}{\numberline {A.3}Diagrama de Atividade --- Java}{76}{section.A.3}%
+\contentsline {section}{\numberline {A.4}Diagrama de Sequência --- Java}{77}{section.A.4}%
+\contentsline {section}{\numberline {A.5}Diagrama de Atividades --- Java (PlantUML)}{78}{section.A.5}%
+\contentsline {section}{\numberline {A.6}Diagrama de Atividades --- Streamlit}{79}{section.A.6}%
+\contentsline {section}{\numberline {A.7}Diagrama de Classes (Módulos) --- Streamlit}{80}{section.A.7}%
+\contentsline {section}{\numberline {A.8}Diagrama de Sequência --- Streamlit}{81}{section.A.8}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {B}\MakeTextUppercase []{Tabelas de Paridade Amostra-a-Amostra --- Java $\times $ Python}}{81}{appendix.B}%
+\contentsline {appendix}{\chapternumberline {B}\MakeTextUppercase []{Tabelas de Paridade Amostra-a-Amostra --- Java $\times $ Python}}{82}{appendix.B}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {C}\MakeTextUppercase []{Resultado dos Testes}}{95}{appendix.C}%
+\contentsline {appendix}{\chapternumberline {C}\MakeTextUppercase []{Resultado dos Testes}}{96}{appendix.C}%
 \cftinsert {AAA}
 \renewcommand *{\cftappendixname }{ANEXO \space }

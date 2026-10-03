@@ -32,7 +32,7 @@ Configuração & Parâmetro \textit{m} (Bags) & Define número de amostras/ensem
 Configuração & Parâmetro \textit{k} (Subagging) & Define fração ou quantidade para amostragem no Subagging \\ \hline
 Visualização & Métricas de Desempenho & Exibição de R², RMSE, MAE calculados no conjunto de teste \\ \hline
 Visualização & Gráficos Comparativos & \textit{Scatter plots} (previsto $\times$ real), resíduos e comparação entre modelos \\ \hline
-Organização & Abas de Navegação & Separação lógica: ``Arquivos'', ``Configuração'', ``Resultados'', ``Gráficos'' \\ \hline
+Organização & Abas de Navegação & Separação lógica: ``Arquivos'', ``Resultados'', ``Gráficos'' \\ \hline
 Exportação & Métricas (.csv) e log (.txt) & \texttt{st.download\_button} na aba Resultados \\ \hline
 \end{tabularx}
 \begin{tablenotes}[flushleft]
@@ -60,12 +60,12 @@ A Quadro~\ref{tab:entradas} detalha os dados e parâmetros exigidos para execuç
 % O tabularx ajusta a largura total para \textwidth
 \begin{tabularx}{\textwidth}{|l|l|l|c|X|} \hline
 \textbf{Tipo} & \textbf{Nome} & \textbf{Formato} & \textbf{Obrig.} & \textbf{Descrição} \\ \hline
-Arquivo & \texttt{Xcal.txt} & \texttt{.txt} & Sim & Matriz de espectros de calibração \\ \hline
-Arquivo & \texttt{Ycal.txt} & \texttt{.txt} & Sim & Vetor de valores de referência \\ \hline
-Arquivo & \texttt{Xteste.txt} & \texttt{.txt} & Sim & Matriz de espectros para predição \\ \hline
-Arquivo & \texttt{Yteste.txt} & \texttt{.txt} & Sim & Vetor de valores reais para validação \\ \hline
-Parâmetro & \textit{m} & Inteiro $\geq 1$ & Condic.\tnote{a} & Usado apenas nos métodos de ensemble \\ \hline
-Parâmetro & \textit{k} & Inteiro $\geq 1$ & Condic.\tnote{a} & Usado apenas no método Subagging \\ \hline
+Arquivo & \texttt{Xcal} & \texttt{.txt, .csv, .xlsx} & Sim & Matriz de espectros de calibração \\ \hline
+Arquivo & \texttt{Ycal} & \texttt{.txt, .csv, .xlsx} & Sim & Vetor de valores de referência \\ \hline
+Arquivo & \texttt{Xteste} & \texttt{.txt, .csv, .xlsx} & Sim & Matriz de espectros para predição \\ \hline
+Arquivo & \texttt{Yteste} & \texttt{.txt, .csv, .xlsx} & Sim & Vetor de valores reais para validação \\ \hline
+Parâmetro & \textit{m} & Inteiro $\geq 1$ & Condic.\tnote{a} & Usado apenas nos métodos de \textit{ensemble} \\ \hline
+Parâmetro & \textit{k} & Inteiro $\geq 1$ & Condic.\tnote{a} & Usado apenas no método \textit{Subagging} \\ \hline
 Config. & Val. Cruzada & Fixo: 5-Fold & Auto. & Parâmetro interno de otimização \\ \hline
 \end{tabularx}
 \begin{tablenotes}[flushleft]
@@ -119,6 +119,8 @@ Os requisitos foram classificados utilizando a técnica \gls{MoSCoW}\footnote{Mo
 \newpage
 \subsubsection{Essenciais (\textit{Must Have})}
 \label{ssubsec:essenciais}
+
+O Quadro~\ref{tab:essenciais} lista os requisitos essenciais, indispensáveis à versão mínima, pois garantem a validação dos dados e avaliação dos modelos.
 
 \begin{quadro}[ht]
 \begin{center}

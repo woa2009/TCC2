@@ -12,11 +12,18 @@ As entradas críticas do domínio de regressão espectral foram identificadas di
 A análise revelou que a lógica do \texttt{RegressionService.java} podia ser decomposta em responsabilidades distintas: \textit{parse} de arquivos, algoritmos de regressão, métricas de avaliação e otimização por validação cruzada. Essa decomposição originou a estrutura modular adotada, onde \texttt{models.py} concentra toda a inteligência matemática, sem qualquer dependência de interface.
 
 \subsection{Especificação}
-Os contratos de entrada e saída foram formalizados com \textit{type hints} explícitos em todas as funções do \texttt{models.py}:
-\texttt{parse\_matrix(content: bytes) -> np.ndarray},
-\texttt{perform\_rlm(Xcal, Ycal, Xteste: np.ndarray) -> np.ndarray},
+Os contratos de entrada e saída foram formalizados com \textit{type hints} nas
+principais funções do \texttt{models.py}:
+\texttt{parse\_matrix(file\_obj) -> np.ndarray} e
+\texttt{parse\_vector(file\_obj) -> np.ndarray}, em que \texttt{file\_obj} é um
+objeto de arquivo (\textit{file-like}) que expõe \texttt{.name} e \texttt{.read()},
+sendo a extensão (\texttt{.txt}, \texttt{.csv} ou \texttt{.xlsx}) usada para
+escolher o \textit{parser};
+\texttt{perform\_rlm(Xcal, Ycal, Xteste: np.ndarray) -> np.ndarray};
 \texttt{calc\_metrics(actual, predicted) -> tuple[float, float, float]}.
-A função \texttt{run\_full\_analysis()} retorna um dicionário tipado com chaves \texttt{log}, \texttt{optimal}, \texttt{metrics} e \texttt{preds}, constituindo o contrato formal entre a camada de negócio e a camada de apresentação.
+A função \texttt{run\_full\_analysis()} retorna um dicionário (\texttt{dict})
+com as chaves \texttt{log}, \texttt{optimal}, \texttt{metrics} e \texttt{preds},
+constituindo o contrato entre a camada de negócio e a camada de apresentação.
 
 \subsection{Validação}
 A validação cruzada 5-\textit{fold} implementada em \texttt{run\_cross\_validation()} opera como mecanismo de validação de equivalência, permitindo comparar o desempenho do sistema Python com os resultados históricos do sistema Java. O \textit{log} estruturado gerado por \texttt{run\_full\_analysis()} documenta cada etapa — dimensões detectadas, RMSE-CV por combinação de hiperparâmetros, métricas finais e tempo de execução — possibilitando auditoria científica e rastreabilidade completa. Para assegurar a estabilidade dessa arquitetura, construiu-se uma suíte com 92 testes automatizados, composta por 21 testes unitários, 60 testes de caixa-preta e 11 testes de carga e estresse.

@@ -1,26 +1,26 @@
 \babel@toc {brazil}{}\relax 
 \babel@toc {brazil}{}\relax 
-\contentsline {figure}{\numberline {1}{\ignorespaces Exemplo do método \textit {bootstrap}.}}{18}{figure.caption.14}%
-\contentsline {figure}{\numberline {2}{\ignorespaces Processo de amostragem aleatória.}}{21}{figure.caption.17}%
-\contentsline {figure}{\numberline {3}{\ignorespaces Reamostragem com agregação de modelos de regressão.}}{24}{figure.caption.18}%
-\contentsline {figure}{\numberline {4}{\ignorespaces Regressão Linear Múltipla via pseudoinversa (\texttt {BaggingOptimized.java}).}}{30}{figure.caption.20}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Ensemble de Bagging/Subagging (\texttt {BaggingOptimized.java}).}}{31}{figure.caption.21}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Espectros médios dos analitos analisados.}}{32}{figure.caption.22}%
-\contentsline {figure}{\numberline {7}{\ignorespaces RMSEP com RLM para Mn e Fe.}}{36}{figure.caption.26}%
-\contentsline {figure}{\numberline {8}{\ignorespaces RMSEP em função do número de replicações \textit {bootstrap} para RLM-\textit {bagging}.}}{37}{figure.caption.27}%
-\contentsline {figure}{\numberline {9}{\ignorespaces RMSEP para o Mn e Fe com RLM-\textit {bagging}.}}{38}{figure.caption.28}%
-\contentsline {figure}{\numberline {10}{\ignorespaces RMSEP em função das replicações \textit {bootstrap} para RLM-\textit {subagging}.}}{39}{figure.caption.31}%
-\contentsline {figure}{\numberline {11}{\ignorespaces RMSEP do Mn e Fe com \textit {subagging}.}}{40}{figure.caption.34}%
-\contentsline {figure}{\numberline {12}{\ignorespaces Tempo de execução dos algoritmos RLM, RLM-\textit {bagging} e RLM-\textit {subagging}.}}{43}{figure.caption.38}%
-\contentsline {figure}{\numberline {13}{\ignorespaces RMSEP para todas as técnicas.}}{44}{figure.caption.39}%
-\contentsline {figure}{\numberline {14}{\ignorespaces Tempo de execução dos algoritmos RLM-\textit {bagging} e RLM-\textit {subagging} com parâmetros otimizados por validação cruzada 5-\textit {fold}.}}{46}{figure.caption.41}%
-\contentsline {figure}{\numberline {15}{\ignorespaces Fluxograma do processo de execução da análise.}}{52}{figure.caption.54}%
-\contentsline {figure}{\numberline {16}{\ignorespaces Organização lógica em camadas dentro de um único arquivo --- Sistema legado monolítico (Java Desktop).}}{73}{figure.caption.72}%
-\contentsline {figure}{\numberline {17}{\ignorespaces Arquitetura em camadas --- Sistema modernizado (Python/Streamlit).}}{73}{figure.caption.73}%
-\contentsline {figure}{\numberline {18}{\ignorespaces Diagrama de classes.}}{74}{figure.caption.74}%
-\contentsline {figure}{\numberline {19}{\ignorespaces Diagrama de atividades.}}{75}{figure.caption.75}%
-\contentsline {figure}{\numberline {20}{\ignorespaces Diagrama de sequência.}}{76}{figure.caption.76}%
-\contentsline {figure}{\numberline {21}{\ignorespaces Diagrama de atividade PlantUML.}}{77}{figure.caption.77}%
-\contentsline {figure}{\numberline {22}{\ignorespaces Diagrama de atividade PlantUML.}}{78}{figure.caption.78}%
-\contentsline {figure}{\numberline {23}{\ignorespaces Diagrama de classes (módulos) PlantUML.}}{79}{figure.caption.79}%
-\contentsline {figure}{\numberline {24}{\ignorespaces Diagrama de sequência PlantUML.}}{80}{figure.caption.80}%
+\contentsline {figure}{\numberline {1}{\ignorespaces Exemplo do método \textit {bootstrap}.}}{19}{figure.caption.14}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Processo de amostragem aleatória.}}{22}{figure.caption.17}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Reamostragem com agregação de modelos de regressão.}}{25}{figure.caption.18}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Regressão Linear Múltipla via pseudoinversa (\texttt {BaggingOptimized.java}).}}{31}{figure.caption.20}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Ensemble de Bagging/Subagging (\texttt {BaggingOptimized.java}).}}{32}{figure.caption.21}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Espectros médios dos analitos analisados.}}{33}{figure.caption.22}%
+\contentsline {figure}{\numberline {7}{\ignorespaces RMSEP com RLM para Mn e Fe.}}{37}{figure.caption.26}%
+\contentsline {figure}{\numberline {8}{\ignorespaces RMSEP em função do número de replicações \textit {bootstrap} para RLM-\textit {bagging}.}}{38}{figure.caption.27}%
+\contentsline {figure}{\numberline {9}{\ignorespaces RMSEP para o Mn e Fe com RLM-\textit {bagging}.}}{39}{figure.caption.28}%
+\contentsline {figure}{\numberline {10}{\ignorespaces RMSEP em função das replicações \textit {bootstrap} para RLM-\textit {subagging}.}}{40}{figure.caption.31}%
+\contentsline {figure}{\numberline {11}{\ignorespaces RMSEP do Mn e Fe com \textit {subagging}.}}{41}{figure.caption.34}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Tempo de execução dos algoritmos RLM, RLM-\textit {bagging} e RLM-\textit {subagging}.}}{44}{figure.caption.38}%
+\contentsline {figure}{\numberline {13}{\ignorespaces RMSEP para todas as técnicas.}}{45}{figure.caption.39}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Tempo de execução dos algoritmos RLM-\textit {bagging} e RLM-\textit {subagging} com parâmetros otimizados por validação cruzada 5-\textit {fold}.}}{47}{figure.caption.41}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Fluxograma do processo de execução da análise.}}{53}{figure.caption.54}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Organização lógica em camadas dentro de um único arquivo --- Sistema legado monolítico (Java Desktop).}}{74}{figure.caption.72}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Arquitetura em camadas --- Sistema modernizado (Python/Streamlit).}}{74}{figure.caption.73}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Diagrama de classes.}}{75}{figure.caption.74}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Diagrama de atividades.}}{76}{figure.caption.75}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Diagrama de sequência.}}{77}{figure.caption.76}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Diagrama de atividade PlantUML.}}{78}{figure.caption.77}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Diagrama de atividade PlantUML.}}{79}{figure.caption.78}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Diagrama de classes (módulos) PlantUML.}}{80}{figure.caption.79}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Diagrama de sequência PlantUML.}}{81}{figure.caption.80}%

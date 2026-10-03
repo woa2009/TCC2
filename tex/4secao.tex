@@ -653,7 +653,7 @@ Em termos absolutos, com 80\% das amostras, o RLM-\textit{bagging} foi mais ráp
 
 %-------------------------------------------------------------------------------------------------------------------
 \section{\textit{Bagging} $\times$ \textit{Subagging}}
-\label{sec:bagxsuagg}
+\label{bagxsuagg_result}
 \index{Métodos e Resultados!\textit{Baggin} $\times$ \textit{Subagging}}
 
 Os valores de RMSEP apresentados na (Tabela~\ref{tab:baggingsubba}) diferem dos reportados na (Tabela~\ref{tab:bagging}) porque esta última apresenta resultados com número fixo de \textit{bootstraps} sem otimização, enquanto a (Tabela~\ref{tab:baggingsubba}) adota parâmetros otimizados por validação cruzada 5-\textit{fold} e incorpora as três técnicas comparativamente com métricas ampliadas.
@@ -709,7 +709,7 @@ legend style={at={(0.5,1.05)}, anchor=south},
     \addplot[mark=none,line width=1.0pt,color=red] table[x index=0, y index=1, col sep=space] {tex/dados/subagging_fe.txt};
     \addplot[mark=none,line width=1.0pt,color=blue] table[x index=0, y index=1, col sep=space] {tex/dados/bagging_fe.txt};
     %\addplot[only marks, mark=*, mark size=2pt, color=red] coordinates {(20, 0.010291)};
-    \addplot[mark=nome,line width=1.0pt,color=black] table[x index=0, y index=1, col sep=space] {tex/dados/rlm_fe.txt};
+    \addplot[mark=none,line width=1.0pt,color=black] table[x index=0, y index=1, col sep=space] {tex/dados/rlm_fe.txt};
     \legend{RLM-Subagging, RLM-Bagging, RLM}
     \end{axis}
 \end{tikzpicture}
@@ -953,13 +953,12 @@ que o RLM-\textit{bagging} (46,8\,ms contra 44,5\,ms; diferença de 2,3\,ms, ou
 validação cruzada (menor \gls{RMSEP-CV}): $m^*=20$ para o \textit{bagging} e
 $m^*=30$ com $k^*=80\%$ para o \textit{subagging}.
 
-%O desempenho superior das técnicas de ensemble para Fe e Cr pode ser atribuído à complexidade espectral desses elementos. O Fe, como elemento matriz, apresenta espectro de alta densidade com potencial de autoabsorção, enquanto o Cr sofre sobreposições com linhas do Fe e Ni. Essas características introduzem não-linearidades e instabilidade no modelo base, condições nas quais a agregação de múltiplos modelos é teoricamente vantajosa. Para Mn e Mo, cujas linhas analíticas apresentam menor interferência matricial, a relação espectral-concentração é suficientemente bem capturada pela RLM clássica.
 Para o Fe, o RLM-\textit{bagging} obteve o menor RMSEP (\num{2,6406}). Uma
 hipótese para esse resultado é que o Fe, por ser o elemento matriz, apresente
 espectro de alta densidade e possível autoabsorção, o que tornaria o modelo base
 mais instável e favoreceria a agregação; este trabalho não testou essa
-hipótese~\cite{TAKAHASHI201731}. % TODO: citar fonte sobre autoabsorção do Fe
-Para o Cr, apesar da sobreposição espectral com linhas do Fe e do Ni, % TODO: citar fonte
+hipótese~\cite{TAKAHASHI201731}.
+Para o Cr, apesar da sobreposição espectral com linhas do Fe e do Ni, 
 nenhuma técnica de \textit{ensemble} superou a RLM clássica
 (RMSEP = \num{1,0798}). Uma interpretação possível é que, com 17 amostras de
 calibração, a redução de variância do \textit{ensemble} não compensou o viés

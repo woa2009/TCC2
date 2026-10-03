@@ -79,7 +79,7 @@
 \usepackage{pgfplotstable}
 \pgfplotsset{compat=1.18}
 \usepackage{times}%utilizando fonte times new roman
-\usepackage{filecontents}
+%\usepackage{filecontents}% ativando um warnings
 \usepackage{pdfpages}%Inserir arquivos em pdf
 \usepackage[bottom]{footmisc} % Garante que a nota fique sempre no pé da página
 
@@ -109,6 +109,10 @@
 %\usepackage[alf]{abntex2cite} % Citações padrão ABNT (alfa) autor ano
 \usepackage[num, abnt-doi=doi]{abntex2cite} %ou \usepackage[alf, abnt-doi=doi]{abntex2cite}%não funcionou o DOI
 %\usepackage[num, abnt-doi=expand]{abntex2cite}%não funcionou o DOI
+
+\usepackage{silence}%Silenciando todos os warnings
+\WarningsOff
+%\ErrorsOff   % não recomendo
 
 
 
@@ -521,7 +525,7 @@
 \interfootnotelinepenalty=10000 %Isso impede totalmente que qualquer nota de rodapé seja dividida entre duas páginas.
 
 
-
+\newcommand{\testes}{75,25}
 
 % --------------------------------------------------------------------------
 % Início do documento
