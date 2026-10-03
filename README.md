@@ -330,7 +330,7 @@ latexmk -pdf TCC_II_IFG_2025.tex
 ## Pontos de Atenção Identificados nos `.tex`
 
 1. **Rótulo duplicado:** `sec:bagxsuagg` é definido tanto em `2secao.tex` (subseção "Comparação entre *Bagging* e *Subagging*") quanto em `4secao.tex` — gera aviso *multiply defined* e referências ambíguas.
-2. **Erro de digitação em `4secao.tex`:** na Figura `fig:Figura46b`, `mark=nome` deve ser `mark=none`.
+2. **Erro de digitação em `4secao.tex`:** na Figura `fig:Figura46b`, `mark=nome` deve ser `mark=none`. (OK)
 3. **Pendências marcadas:** `% TODO: citar fonte` (autoabsorção do Fe e sobreposição espectral do Cr) em `4secao.tex`.
 4. **Resumo de organização desatualizado:** o último parágrafo de `1secao.tex` descreve só as Seções 2.x; vale listar os 10 capítulos atuais.
 5. **Inconsistências entre texto e código:**
