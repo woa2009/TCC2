@@ -11,9 +11,9 @@
   Analysis}. 5. ed. USA: Brooks Cole, 1997. 960~p.}
 
 \bibitem{HARDLE:2007}
-\abntrefinfo{Hardle e Simar}{HARDLE; SIMAR}{2007}
-{HARDLE, W.; SIMAR, L. \emph{Applied Multivariate Statistical Analysis}. 2. ed.
-  Berlim, Germany: Springer-Verlag, 2007. 455~p.}
+\abntrefinfo{H{\"a}rdle e Simar}{H{\"A}RDLE; SIMAR}{2007}
+{H{\"A}RDLE, W.; SIMAR, L. \emph{Applied Multivariate Statistical Analysis}. 2.
+  ed. Berlim, Germany: Springer-Verlag, 2007. 455~p.}
 
 \bibitem{TIMM:2002}
 \abntrefinfo{Timm}{TIMM}{2002}
@@ -52,7 +52,8 @@ Dispon{\'\i}vel em:
 \emph{Journal of Chemometrics}, v.~31, n.~3, p. e2881, 2017.
 DOI: \url{https://doi.org/10.1002/cem.2881}.
 Dispon{\'\i}vel em:
-  \url{https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/abs/10.1002/cem.2881}.}
+  \url{https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/abs/10.1002/cem.2881}.
+  Acesso em: 3 jan. 2026.}
 
 \bibitem{Filzmoser2013}
 \abntrefinfo{Filzmoser e Nordhausen}{FILZMOSER; NORDHAUSEN}{2013}
@@ -61,7 +62,8 @@ Dispon{\'\i}vel em:
   2013.
 DOI: \url{https://doi.org/10.1016/j.chemolab.2013.10.010}.
 Dispon{\'\i}vel em:
-  \url{https://www.sciencedirect.com/science/article/abs/pii/S0169743913001913}.}
+  \url{https://www.sciencedirect.com/science/article/abs/pii/S0169743913001913}.
+  Acesso em: 3 jan. 2026.}
 
 \bibitem{JOHNSON:2001}
 \abntrefinfo{Johnson e Wichern}{JOHNSON; WICHERN}{2001}
@@ -71,7 +73,7 @@ Dispon{\'\i}vel em:
 \bibitem{CHATTERJEE:2006}
 \abntrefinfo{Chatterjee e Hadi}{CHATTERJEE; HADI}{2006}
 {CHATTERJEE, S.; HADI, A.~S. \emph{Regression Analysis by Example}. 4. ed. USA:
-  John Willey \& Sons, Inc, 2006. 371~p. Dispon{\'\i}vel em:
+  John Wiley \& Sons, Inc, 2006. 371~p. Dispon{\'\i}vel em:
   \url{https://onlinelibrary.wiley.com/doi/book/10.1002/0470055464}. Acesso em:
   29 mar. 2025.}
 
@@ -408,8 +410,8 @@ ISBN 978-8582603659.}
 \bibitem{alibaba2026qwen}
 \abntrefinfo{Cloud}{CLOUD}{2026}
 {CLOUD, A. \emph{{Qwen3.7-Plus}: Modelo de linguagem de inteligência
-  artificial}. Hangzhou, China: [s.n.], 2026. \url{https://chat.qwen.ai/}.
-Acesso em: 16 ago. 2026.}
+  artificial}. Hangzhou, China: Alibaba Cloud, 2026.
+Dispon{\'\i}vel em: \url{https://chat.qwen.ai/}. Acesso em: 16 ago. 2026.}
 
 \bibitem{PIMENTEL:1998}
 \abntrefinfo{PIMENTEL et al.}{PIMENTEL et al.}{1998}
@@ -506,13 +508,7 @@ Dispon{\'\i}vel em: \url{https://scrumguides.org/scrum-guide.html}. Acesso em:
 \abntrefinfo{{Pytest Development Team}}{{Pytest Development Team}}{2024}
 {{Pytest Development Team}. \emph{pytest: helps you write better programs}.
   2024.
-Disponível em: \url{https://docs.pytest.org/en/stable/}.
 Dispon{\'\i}vel em: \url{https://docs.pytest.org/en/stable/}. Acesso em: 20
   jun. 2026.}
-
-\bibitem{jorgensen2014}
-\abntrefinfo{Jorgensen}{JORGENSEN}{2014}
-{JORGENSEN, P.~C. \emph{Software Testing: A Craftsman's Approach}. 4. ed. Boca
-  Raton: CRC Press, 2014.}
 
 \end{thebibliography}

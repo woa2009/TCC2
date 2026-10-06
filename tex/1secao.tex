@@ -2,17 +2,27 @@
 \label{cha:introducao}
 \index{Introdução}
 
-A calibração multivariada desempenha um papel fundamental em diversas áreas da análise química e industrial, permitindo a estimação de concentrações a partir de dados instrumentais multivariados. No contexto específico da análise de aço-ligas, a determinação precisa da composição elementar (Mn, Cr, Mo, Ni, Fe) é crucial para garantir a qualidade e as propriedades desejadas do material. No entanto, a complexidade dos dados multivariados provenientes de métodos instrumentais de análise exige o uso de técnicas de calibração multivariada para obter estimativas com erro de predição quantificável (RMSEP, MAE, R$^2$).
+A calibração multivariada desempenha um papel fundamental em diversas áreas
+da análise química e industrial, permitindo a estimação de concentrações a
+partir de dados instrumentais multivariados. No contexto específico da análise
+de aço-ligas, a determinação precisa da composição elementar (Mn, Cr, Mo, Ni,
+Fe) é crucial para garantir a qualidade e as propriedades desejadas do
+material.
 
-Este estudo investiga, em caráter exploratório, a aplicação de técnicas de reamostragem (\textit{bootstrap}), \textit{bagging} e \textit{subagging} na Regressão Linear Múltipla (RLM) para a calibração multivariada de amostras de aço-ligas. A pesquisa busca preencher a lacuna de conhecimento sobre a aplicação dessas técnicas de \textit{ensemble} nesse contexto específico, fornecendo subsídios empíricos exploratórios para a quimiometria e exemplificando a modernização de sistemas computacionais de apoio à análise de aço-ligas~\cite{SKOOG:1997,HARDLE:2007,TIMM:2002}.
+No entanto, a complexidade dos dados multivariados provenientes de métodos
+instrumentais de análise exige o uso de técnicas de calibração multivariada
+para obter estimativas com erro de predição quantificável, expresso pela
+\gls{RMSEP}, pelo \gls{MAE} e pelo \gls{R²}.
+
+Este estudo investiga, em caráter exploratório, a aplicação de técnicas de reamostragem (\textit{bootstrap}), \textit{bagging} e \textit{subagging} na \gls{RLM} para a calibração multivariada de amostras de aço-ligas. A pesquisa busca preencher a lacuna de conhecimento sobre a aplicação dessas técnicas de \textit{ensemble} nesse contexto específico, fornecendo subsídios empíricos exploratórios para a quimiometria e exemplificando a modernização de sistemas computacionais de apoio à análise de aço-ligas~\cite{SKOOG:1997,HARDLE:2007,TIMM:2002}.
 
 Como otimizar a calibração multivariada de amostras de aço-ligas para obter previsões mais precisas dos elementos Mn, Cr, Mo, Ni e Fe, considerando a complexidade inerente à análise de dados multivariados, a necessidade de alta precisão e a exigência de uma arquitetura de \textit{software} modular e verificável por testes automatizados para sustentar essa análise?
 
-Este estudo contribui em dois eixos: (a) a aplicação de \textit{bagging} e \textit{subagging} à calibração de aço-ligas; (b) a migração de um sistema legado verificada por testes automatizados. Essa estratégia evidencia, de forma reprodutível, como preservar a corretude de um núcleo algorítmico crítico durante a reescrita completa de uma arquitetura de \textit{software}.
+Este estudo contribui em dois eixos: (a) a aplicação de \textit{bagging} e \textit{subagging} à calibração de aço-ligas; (b) a migração de um sistema legado verificada por testes automatizados. Essa estratégia evidencia, de forma reprodutível, como preservar a corretude de uma lógica matemática crítico durante a reescrita completa de uma arquitetura de \textit{software}.
 
 A originalidade da pesquisa é dupla. No eixo quimiométrico, reside na aplicação de técnicas de \textit{bagging} e \textit{subagging}, ainda pouco exploradas na análise de aço-ligas.
 
-No eixo de engenharia de \textit{software}, reside na condução de uma reescrita \textit{black-box} em três estágios (\textit{Desktop} Java, \textit{Web} Vaadin/Spring, Python/Streamlit), com arquitetura final desacoplada em três módulos de responsabilidade única e validação por 92 testes automatizados, que verificam a equivalência numérica do núcleo determinístico (RLM) e a consistência estatística dos métodos estocásticos entre o sistema legado e o sistema reescrito.
+No eixo de engenharia de \textit{software}, reside na condução de uma reescrita caixa preta em três estágios (\textit{Desktop} Java, \textit{Web} Vaadin/Spring, Python/Streamlit), com arquitetura final desacoplada em três módulos de responsabilidade única e validação por 92 testes automatizados, que verificam a equivalência numérica do núcleo determinístico (RLM) e a consistência estatística dos métodos estocásticos entre o sistema legado e o sistema reescrito.
 
 Dado o conjunto amostral reduzido — característica inerente à aquisição dos dados espectrométricos utilizados —, os resultados devem ser interpretados como evidências preliminares do comportamento dessas técnicas nesse domínio, e não como afirmações definitivas de superioridade geral de um método sobre outro.
 
@@ -33,8 +43,6 @@ Esta pesquisa tem como objetivos específicos:
 
 Esse protocolo funciona como validador de equivalência entre o sistema legado e o sistema reescrito em dois níveis: equivalência numérica estrita para a RLM determinística e consistência estatística, dentro de tolerâncias explícitas, para o \textit{bagging} e o \textit{subagging}, cujas sequências pseudoaleatórias diferem entre as duas linguagens.
 
-%Este trabalho está organizado da seguinte forma. A Seção~\ref{cha:tecboot} apresenta a revisão da literatura sobre a Regressão Linear Múltipla (RLM), a técnica de reamostragem \textit{bootstrap} e os conceitos de distribuição empírica e princípio \textit{plug-in}, essenciais à compreensão das abordagens investigadas. A Seção~\ref{sec:teclarea} descreve as técnicas de \textit{bagging} e \textit{subagging}, incluindo fundamentos teóricos e algoritmos.
-
 Este trabalho está organizado em dez seções. A Seção~\ref{cha:introducao}
 apresenta a introdução, o problema de pesquisa e os objetivos. A
 Seção~\ref{cha:tecboot} reúne a revisão da literatura sobre a Regressão
@@ -43,10 +51,10 @@ A Seção~\ref{cha:metresult} descreve os materiais e métodos, incluindo as
 amostras de aço-ligas e o protocolo de validação. A Seção~\ref{sec:result}
 apresenta a análise experimental dos algoritmos quimiométricos.
 
-A Seção~\ref{sec:resultados} discute a avaliação preditiva e a eficiência
-computacional. A Seção~\ref{sec:reqfunc} levanta os requisitos funcionais da
-aplicação. A Seção~\ref{sec:engenhariasoftware} trata da engenharia de
-\textit{software} e da modernização, e a Seção~\ref{sec:uiux}, da interface e da
+A Seção~\ref{sec:reqfunc} levanta os requisitos funcionais da aplicação. A
+Seção~\ref{sec:engenhariasoftware} trata da engenharia de \textit{software} e
+da modernização. A Seção~\ref{sec:resultados} discute a avaliação preditiva e
+a eficiência computacional, e a Seção~\ref{sec:uiux} trata da interface e da
 experiência do usuário.
 
 A Seção~\ref{sec:sprints} aborda o desenvolvimento por \textit{sprints} e a

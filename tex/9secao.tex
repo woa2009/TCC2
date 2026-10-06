@@ -62,31 +62,33 @@ incluindo a recuperação exata de $\boldsymbol{\beta}$ em sistemas determinados
 e a reprodutibilidade do \textit{bagging} sob a mesma semente aleatória.
 
 \subsection{Testes de Caixa-Preta (60 testes)}
-Compararam as métricas agregadas (RMSEP, MAE e $R^2$) calculadas pelo sistema Python com as
-registradas nos arquivos de saída do sistema Java original, sem acesso ao
-código-fonte legado, seguindo a estratégia de \textit{black-box
-testing}~\cite{pressman2016}. Doze testes parametrizados foram aplicados a
+Compararam as métricas agregadas (RMSEP, MAE e $R^2$) calculadas pelo sistema
+Python com as registradas nos arquivos de saída do sistema Java original, sem
+acesso ao código-fonte legado, seguindo a estratégia de teste caixa preta~\cite{pressman2016}. Doze testes parametrizados foram aplicados a
 cada um de cinco analitos (Mn, Mo, Cr, Ni, Fe). Para a RLM, que é
-determinística, adotou-se tolerância de $5\times10^{-4}$. Para o
-\textit{bagging} e o \textit{subagging}, que são estocásticos e utilizam
-geradores pseudoaleatórios distintos em Python e em Java, adotaram-se
-tolerâncias de 0,15 para RMSEP e MAE e de $5\times10^{-3}$ para $R^2$, além
-da verificação de que $m^*$ e $k^*$ pertencem à grade de busca. Esses testes
+determinística, adotou-se tolerância de $5\times10^{-4}$.
+
+Para o \textit{bagging} e o \textit{subagging}, que são estocásticos e
+utilizam geradores pseudoaleatórios distintos em Python e em Java, adotaram-se
+tolerâncias de 0,15 para RMSEP e MAE e de $5\times10^{-3}$ para $R^2$, além da
+verificação de que $m^*$ e $k^*$ pertencem à grade de busca. Esses testes
 atestam, portanto, equivalência numérica estrita para a RLM e consistência
 estatística para os métodos de \textit{ensemble}, sem exigir a identidade das
 reamostragens.
 
 \subsection{Testes de Carga e \textit{Stress} (11 testes)}
-Quantificaram os limites operacionais de tempo de execução e consumo de memória para
-matrizes espectrais de alta dimensionalidade~\cite{jorgensen2014}, empregando
-as \textit{fixtures} \texttt{matriz\_grande}~($5.000\times723$) e
+Quantificaram os limites operacionais de tempo de execução e consumo de
+memória para matrizes espectrais de alta dimensionalidade~\cite{sommerville2011},
+empregando as \textit{fixtures} \texttt{matriz\_grande}~($5.000\times723$) e
 \texttt{matriz\_stress}~($15.000\times723$). O tempo foi medido com
 \texttt{time.perf\_counter()} e o pico de alocação de memória com
-\texttt{tracemalloc}, registrando o tempo do \textit{bagging} para 5, 10, 25 e 50 \textit{bags}
-e o pico de memória da RLM. Esses testes documentam o comportamento
-operacional do sistema; apenas alguns impõem limites (30~s para a RLM em
-$5.000\times723$; 2048~MB de memória), e a relação entre número de
-\textit{bags} e tempo é reportada, mas não confirmada por um teste de validação.
+\texttt{tracemalloc}, registrando o tempo do \textit{bagging} para 5, 10, 25 e
+50 \textit{bags} e o pico de memória da RLM.
+
+Esses testes documentam o comportamento operacional do sistema; apenas alguns
+impõem limites (30~s para a RLM em $5.000\times723$; 2048~MB de memória), e a
+relação entre número de \textit{bags} e tempo é reportada, mas não confirmada
+por um teste de validação.
 
 \subsection{Resultados Consolidados}
 %\def\testes{75,25}

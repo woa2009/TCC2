@@ -229,7 +229,7 @@
 % coorientador. Caso não tenha coorientador, comente a linha a seguir.
 \def\nomcoorient{Eder Silva de}
 \def\sobrenomcoorient{Brito}
-\coorientador{Prof\textsuperscript{o}. \nomcoorient~\sobrenomcoorient, Dr}
+\coorientador{Prof\textsuperscript{o}. \nomcoorient~\sobrenomcoorient, Dr.}
 % FIXME Se for coorientado por uma mulher, comente a linha acima e descomente a linha a seguir.
 % \coorientador[Coorientadora]{XXXXXX, Dra.}
 % FIXME Substituir 'XXXXXX' pelo nome do Coordenador do 
@@ -323,6 +323,8 @@
 \siglalista{RLM}{Regressão Linear Múltipla}
 \siglalista{RMSEP}{\textit{Root-Mean-Square Error of Prediction}}
 \siglalista{RMSEP-CV}{\textit{Root-Mean-Square Error of Prediction in Cross-Validation}}
+\siglalista{R²}{Coeficiente de Determinação}
+
 %----Incluidas
 \siglalista{AWT}{\textit{Abstract Window Toolkit}}
 \siglalista{EJML}{\textit{Efficient Java Matrix Library}}
@@ -578,27 +580,23 @@
 % ---
 % 3 - Seção 3(Desenvolvimento)
 % ---
-\include{tex/3secao}%Materiais de metodos
+\include{tex/3secao}%Materiais e metodos
 % ---
 
-% ---
-% 4 - Resultados e Discussões
-% ---
 %\phantompart
-\include{tex/4secao}%Resultados e discussoes
+\include{tex/4secao}%Análise Experimental dos Algoritmos Quimiométricos
 
-\include{tex/5secao}%Seção 5 - Requisitos Funcionais
 
-\include{tex/6secao}%Seção 6 - Engenharia de Software e Modernização
+\include{tex/5secao}%Seção 6 - Requisitos Funcionais
 
-\include{tex/7secao}%Seção 7 - Ecossistema de Desenvolvimento (Python e Streamlit)
+\include{tex/6secao}%Seção 7 - Engenharia de Software e Modernização
+
+\include{tex/7secao}%Seção 5 - Resultados e Discussões
 
 \include{tex/8secao}%Seção 8 - Interface e Experiência do Usuário (UI/UX) Científica
 
 \include{tex/9secao}%Seção 9 - Desenvolvimento Iterativo por Sprints e Validação por Testes Automatizados
 
-% ---
-% 10 - Conclusão
 \include{tex/10secao}%Seção 10 - Conclusão
 
 

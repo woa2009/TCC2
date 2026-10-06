@@ -20,11 +20,11 @@ A visualização gráfica dos resultados foi realizada pela biblioteca JFreeChar
 %---------------------------------------------------
 Durante o desenvolvimento deste trabalho, o modelo de linguagem de inteligência artificial Qwen3.7-Plus foi utilizado como ferramenta de assistência para: revisão ortográfica, sugestão de estruturação de seções, tradução de resumos, refatoração de trechos de código (Java/Pthyton), correção de erros código \LaTeX~\cite{ alibaba2026qwen}. A validação factual, a análise crítica dos dados espectrométricos e a redação final das conclusões foram realizadas integralmente pelo autor, garantindo a integridade acadêmica e a autoria do trabalho.
 
-\section{Fragmento do Código-Fonte Java --- Núcleo Algorítmico}
+\section{Fragmento do Código-Fonte Java --- Lógica Matemática}
 \label{sec:codigo_java_nucleo}
 
 A classe \texttt{BaggingOptimized} (que estende \texttt{JFrame}) concentra, entre
-os componentes de interface gráfica, o núcleo algorítmico responsável pelos três
+os componentes de interface gráfica, a lógica matemática responsável pelos três
 modelos de regressão avaliados neste trabalho. A Figura~\ref{lst:performrlm}
 apresenta o método \texttt{performRLM}, que implementa a Regressão Linear
 Múltipla simples via pseudoinversa de Moore-Penrose.
@@ -115,11 +115,7 @@ private SimpleMatrix performBagging(SimpleMatrix Xcal, SimpleMatrix Ycal,
 \caption*{Fonte: \oautor}
 \end{figure}
 
-Essa mesma bifurcação --- reamostragem com ou sem reposição controlada por um
-único parâmetro booleano --- é preservada na reimplementação Python
-(Seção~\ref{sec:engenhariasoftware}), constituindo um dos pontos de
-verificação dos testes de caixa-preta descritos na
-Seção~\ref{sec:testescaixapreta}.
+Essa mesma alternativa --- reamostragem com ou sem reposição controlada por um único parâmetro booleano --- é preservada na reimplementação Python (Seção~\ref{sec:engenhariasoftware}), constituindo um dos pontos de verificação dos testes de caixa-preta descritos na Seção~\ref{sec:testescaixapreta}.
 
 
 %----------------------------------------------------------------------------------------------------------
@@ -269,23 +265,21 @@ realizou-se uma busca em grade (\textit{grid search}) sobre os
 conjuntos de valores $m \in \{10, 20, 30, 40, 50\}$ e 
 $k \in \{0{,}50;\ 0{,}60;\ 0{,}70;\ 0{,}80\}$.
 
-A cada iteração, 
-o modelo foi treinado nos quatro \textit{folds} restantes e avaliado 
-no \textit{fold} de validação corrente, repetindo-se o procedimento 
-cinco vezes de modo que cada \textit{fold} atuasse exatamente uma vez 
-como conjunto de validação. O desempenho de cada configuração foi quantificado pelo RMSEP médio entre os cinco \textit{folds} (RMSEP\textsubscript{CV}), dado pela Equação~\ref{eq:rmsecv}:
+%A cada iteração, o modelo foi treinado nos quatro \textit{folds} restantes e avaliado no \textit{fold} de validação corrente, repetindo-se o procedimento cinco vezes de modo que cada \textit{fold} atuasse exatamente uma vez como conjunto de validação. O desempenho de cada configuração foi quantificado pelo RMSEP médio entre os cinco \textit{folds} (RMSEP\textsubscript{CV}), dado pela Equação~\ref{eq:rmsecv}:
 
-\begin{equation}
-\label{eq:rmsecv}
-\text{RMSEP}_{\text{CV}} = \frac{1}{K} \sum_{k=1}^{K}
-\sqrt{\frac{1}{n_k} \sum_{i=1}^{n_k}
-\left(\hat{y}_i^{(k)} - y_i^{(k)}\right)^2}
-\end{equation}
+%\begin{equation}
+%\label{eq:rmsecv}
+%\text{RMSEP}_{\text{CV}} = \frac{1}{K} \sum_{k=1}^{K}
+%\sqrt{\frac{1}{n_k} \sum_{i=1}^{n_k}
+%\left(\hat{y}_i^{(k)} - y_i^{(k)}\right)^2}
+%\end{equation}
 
-\noindent onde $K = 5$ é o número de \textit{folds}, $n_k$ é o número 
-de amostras no \textit{fold} $k$, $y_i^{(k)}$ é o valor de referência 
-e $\hat{y}_i^{(k)}$ é o valor predito para a $i$-ésima amostra do 
-\textit{fold} $k$.
+%\noindent onde $K = 5$ é o número de \textit{folds}, $n_k$ é o número de amostras no \textit{fold} $k$, $y_i^{(k)}$ é o valor de referência e $\hat{y}_i^{(k)}$ é o valor predito para a $i$-ésima amostra do \textit{fold} $k$.
+
+A avaliação do modelo foi realizada por validação cruzada \textit{k-fold} dividida em cinco etapas. A cada iteração, utilizaram-se quatro partições para treinamento e uma para validação, repetindo-se o ciclo até que todos os grupos fossem avaliados.
+
+
+O desempenho foi quantificado pelo $\text{RMSEP}_{\text{CV}}$ médio (Equação~\ref{eq:rmsecv}), onde $K = 5$ representa o total de \textit{folds}, $n_k$ a quantidade de amostras na partição $k$, $y_i^{(k)}$ o valor de referência e $\hat{y}_i^{(k)}$ a predição da $i$-ésima amostra.\begin{equation}\label{eq:rmsecv}\text{RMSEP}{\text{CV}} = \frac{1}{K} \sum{k=1}^{K}\sqrt{\frac{1}{n_k} \sum_{i=1}^{n_k}\left(\hat{y}_i^{(k)} - y_i^{(k)}\right)^2}\end{equation}
 
 Os hiperparâmetros ótimos $m^*$ e $k^*$ foram definidos como a 
 combinação que minimizou o RMSEP\textsubscript{CV}. Após a seleção, 
@@ -298,16 +292,16 @@ e~\ref{eq:r2}, respectivamente.
 
 %-----------------------------------------------------
 
-\section{Medida do Erro Médio Quadrático de Predição}
+\section{Medida da Raiz do Erro Quadrático Médio de Predição}
 \label{sec:mederropre}
-\index{Métodos e Resultados!Medida do Erro Médio Quadrático de Predição}
+\index{Métodos e Resultados!Medida da Raiz do Erro Quadrático Médio de Predição}
 
 
 Para avaliar e comparar a acurácia preditiva dos modelos de regressão 
 linear múltipla (RLM) clássica, RLM com \textit{bagging} 
 (RLM-\textit{bagging}) e RLM com \textit{subagging} 
 (RLM-\textit{subagging}), utilizou-se um conjunto de três métricas 
-complementares: o \gls{RMSEP}\footnote{Erro Médio Quadrático de 
+complementares: o \gls{RMSEP}\footnote{Raiz do Erro Quadrático Médio de Predição de 
 Predição}, o \gls{MAE}\footnote{Erro Médio Absoluto} e o coeficiente 
 de determinação R$^2$. A adoção conjunta dessas métricas proporciona 
 uma caracterização mais abrangente do desempenho preditivo, uma vez 

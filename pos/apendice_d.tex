@@ -1,5 +1,5 @@
 % ----------------------------------------------------------
-\chapter{Testes de Gráficos}
+\chapter{Diagramas de arquitetura e UML}
 \label{cha:testesgraficos}
 \index{Testes de Gráficos}
 % ----------------------------------------------------------
@@ -17,7 +17,7 @@ Complementando os diagramas de classes, atividade e sequência das seções
 seguintes, as Figuras~\ref{fig:arquitetura_java} e~\ref{fig:arquitetura_python}
 apresentam a organização de cada sistema. No sistema legado (Java Desktop),
 monolítico e contido em um único arquivo, as camadas (interface,
-controle e núcleo algorítmico) são apenas lógicas, isto é, coexistem na mesma
+controle e lógica matemática) são apenas lógicas, isto é, coexistem na mesma
 classe. No sistema modernizado (Python/Streamlit), essas responsabilidades são
 separadas fisicamente em três módulos. O par de figuras permite comparar
 as duas organizações.
@@ -32,7 +32,7 @@ as duas organizações.
     ]
         \node[layer=blue!15] (view) {Camada de Apresentação\\\texttt{Swing/AWT} (\texttt{JFrame}, \texttt{JPanel}, \textit{listeners})};
         \node[layer=green!15, below=0.8cm of view] (controller) {Camada de Controle\\Orquestração de eventos (\texttt{ActionListener})};
-        \node[layer=orange!15, below=0.8cm of controller] (model) {Núcleo Algorítmico\\\texttt{BaggingOptimized.java} + EJML (\texttt{SimpleMatrix})};
+        \node[layer=orange!15, below=0.8cm of controller] (model) {lógica matemática\\\texttt{BaggingOptimized.java} + EJML (\texttt{SimpleMatrix})};
 
         \draw[arrow] (view) -- (controller);
         \draw[arrow] (controller) -- (model);
@@ -51,7 +51,7 @@ as duas organizações.
     ]
         \node[layer=blue!15] (apresentacao) {Camada de Apresentação\\\texttt{app.py} --- Streamlit (orquestração de UI e sessão)};
         \node[layer=green!15, below=0.8cm of apresentacao] (visual) {Camada de Visualização\\\texttt{components.py} --- Plotly (fábrica de gráficos)};
-        \node[layer=orange!15, below=0.8cm of visual] (nucleo) {Núcleo Algorítmico\\\texttt{models.py} --- NumPy (\texttt{np.linalg.lstsq})};
+        \node[layer=orange!15, below=0.8cm of visual] (nucleo) {lógica matemática\\\texttt{models.py} --- NumPy (\texttt{np.linalg.lstsq})};
 
         \draw[arrow] (apresentacao) -- (visual);
         \draw[arrow] (visual) -- (nucleo);
@@ -60,10 +60,10 @@ as duas organizações.
     \label{fig:arquitetura_python}
 \end{figure}
 
-Observa-se que, no sistema Java, o núcleo algorítmico coexiste com a interface
+Observa-se que, no sistema Java, a lógica matemática coexiste com a interface
 na mesma classe, ao passo que no sistema Python ele está isolado em
-\texttt{models.py}, sem dependência de interface. Em ambos os sistemas, é no
-núcleo algorítmico que reside a lógica validada pelos testes de paridade
+\texttt{models.py}, sem dependência de interface. Em ambos os sistemas, é na
+lógica matemática que reside a lógica validada pelos testes de paridade
 amostra-a-amostra (Apêndice~\ref{cha:paridadeamostra}) e pelos testes de
 caixa-preta (Seção~\ref{sec:testescaixapreta}).
 
@@ -107,7 +107,7 @@ caixa-preta (Seção~\ref{sec:testescaixapreta}).
 \label{sec:diagatividadejavaplantuml}
 
 \begin{figure}[htbp]
-	\caption{Diagrama de atividade PlantUML.}
+	\caption{Diagrama de atividade Java PlantUML .}
 	\centering
 		\includegraphics[width=0.50\textwidth]{./outros/fig/E_Diagramas/out/diagrama02/Etapa2_GridSearch_CV.png}
 	\caption*{Fonte: \oautor}
@@ -119,7 +119,7 @@ caixa-preta (Seção~\ref{sec:testescaixapreta}).
 \label{sec:diagatividadestreamlit}
 
 \begin{figure}[htbp]
-	\caption{Diagrama de atividade PlantUML.}
+	\caption{Diagrama de atividade Python PlantUML.}
 	\centering
 		\includegraphics[width=0.30\textwidth]{./outros/fig/E_Diagramas/streamlit/diagrama_atividades_streamlit.png}
 	\caption*{Fonte: \oautor}

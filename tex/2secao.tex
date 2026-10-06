@@ -255,9 +255,8 @@ Uma resposta aproximada, porém satisfatória, pode ser encontrada utilizando o 
 
 O parâmetro \gls{Delta} mede o tamanho da distribuição de $\widehat{\theta}^*$: $\Delta$ é zero para a distribuição normal; na prática, $\Delta$ geralmente é maior que 10. O coeficiente de variação na Equação~(\ref{eq:2.19}) incorpora tanto a variabilidade devida à reamostragem \textit{bootstrap} quanto a variabilidade devida à amostragem da população original.
 
-%A estimativa ideal $\widehat{se}_\infty = se_{\widehat{\mathbf{d}}}(\widehat{\theta}^*)$ não é perfeita~\cite{EFRON:1993}. Pode haver variabilidade considerável na estimativa $se_{\mathbf{d}}(\widehat{\theta})$ devido à variabilidade de $\widehat{\mathbf{d}}$ em relação a $\mathbf{d}$. Por exemplo, se $\{x_1, x_2, \ldots, x_n\}$ for uma amostra aleatória de uma distribuição normal e $\widehat{\theta} = \overline{x}$, então $cv(\widehat{se}_\infty) = \frac{1}{\sqrt{2n}}$, resultando em $0,22$ para $n = 10$. A Equação~(\ref{eq:2.19}) tem uma consequência prática importante: dados os valores típicos de $cv(\widehat{se}_\infty)$ e $\Delta$ encontrados na prática, $cv(\widehat{se}_m)$ não será muito maior que $cv(\widehat{se}_\infty)$ quando $m \geq 200$.
 
-A estimativa ideal $\widehat{se}_\infty = se_{\widehat{\mathbf{d}}}(\widehat{\theta}^*)$ não é perfeita~\cite{EFRON:1993}. Pode haver variabilidade considerável na estimativa $se_{\mathbf{d}}(\widehat{\theta})$ devido à variabilidade de $\widehat{\mathbf{d}}$ em relação a $\mathbf{d}$. Por exemplo, se $\{x_1, x_2, \ldots, x_n\}$ for uma amostra aleatória de uma distribuição normal e $\widehat{\theta} = \overline{x}$, então $cv(\widehat{se}_\infty) = \frac{1}{\sqrt{2n}}$, resultando em $0,22$ para $n = 10$.
+A estimativa ideal $\widehat{se}_\infty = se_{\widehat{\mathbf{d}}}(\widehat{\theta}^*)$ não é perfeita~\cite{EFRON:1993}. Pode haver variabilidade estatisticamente significativa na estimativa $se_{\mathbf{d}}(\widehat{\theta})$ devido à variabilidade de $\widehat{\mathbf{d}}$ em relação a $\mathbf{d}$. Por exemplo, se $\{x_1, x_2, \ldots, x_n\}$ for uma amostra aleatória de uma distribuição normal e $\widehat{\theta} = \overline{x}$, então $cv(\widehat{se}_\infty) = \frac{1}{\sqrt{2n}}$, resultando em $0,22$ para $n = 10$.
 
 A Equação~(\ref{eq:2.19}) tem uma consequência prática importante: dados os valores típicos de $cv(\widehat{se}_\infty)$ e $\Delta$ encontrados na prática, $cv(\widehat{se}_m)$ não será muito maior que $cv(\widehat{se}_\infty)$ quando $m \geq 200$.
 
@@ -533,7 +532,14 @@ A distinção fundamental entre \textit{bagging} e \textit{subagging} reside no 
 
 A técnica \textit{bagging} (\textit{Bootstrap Aggregating}) foi proposta por Breiman~\cite{Breiman1996} com o objetivo de gerar múltiplos conjuntos de calibração por meio de reamostragem \textit{bootstrap}, combinando posteriormente os resultados obtidos. Esta abordagem visa reduzir a variância do preditor final através da agregação~\cite{Breiman1996,Shabbir2024,HONG2020,nazhao2018,rathnayake2022}.
 
-Breiman demonstrou que o \textit{bagging} proporciona ganhos significativos de desempenho em problemas de regressão, especialmente quando o modelo é instável -- isto é, quando pequenas alterações no conjunto de calibração resultam em mudanças substanciais nas predições. Na decomposição do erro de predição em regressão, o \textit{bagging} atua principalmente na redução da componente de variância do preditor.
+%Breiman demonstrou que o \textit{bagging} proporciona ganhos significativos de desempenho em problemas de regressão, especialmente quando o modelo é instável -- isto é, quando pequenas alterações no conjunto de calibração resultam em mudanças substanciais nas predições. Na decomposição do erro de predição em regressão, o \textit{bagging} atua principalmente na redução da componente de variância do preditor.
+
+Breiman demonstrou que o \textit{bagging} proporciona ganhos expressivos de 
+desempenho em problemas de regressão, especialmente quando o modelo é instável 
+-- isto é, quando pequenas alterações no conjunto de calibração resultam em 
+mudanças drásticas nas predições. Na decomposição do erro de predição, o 
+\textit{bagging} atua principalmente na redução da componente de variância do 
+preditor.
 
 A técnica também se mostra eficaz em regressões multivariadas, particularmente em problemas de seleção de amostras de calibração em modelos de Regressão Linear Múltipla (RLM)~\cite{kumari2024,HARDLE:2007}. Variações na seleção de variáveis, decorrentes de flutuações nos conjuntos de calibração, são suavizadas pelo cálculo da média dos modelos resultantes~\cite{MARTINS:2006}.
 
@@ -632,7 +638,7 @@ Neste trabalho, a implementação do \textit{subagging} utilizando Regressão Li
 \index{Técnicas Clássicas de Reamostragem!Comparação}
 %----------------------------------------------------------------------------------------------------------
 
-Embora \textit{bagging} e \textit{subagging} compartilhem o princípio de agregação de múltiplos modelos, diferem fundamentalmente no mecanismo de reamostragem empregado. A Quadro~\ref{tab:bag-vs-subag} sintetiza as principais distinções entre estas técnicas, destacando suas características operacionais e implicações para a variância dos estimadores resultantes.
+Embora \textit{bagging} e \textit{subagging} compartilhem o princípio de agregação de múltiplos modelos, diferem fundamentalmente no mecanismo de reamostragem empregado. O Quadro~\ref{tab:bag-vs-subag} sintetiza as principais distinções entre estas técnicas, destacando suas características operacionais e implicações para a variância dos estimadores resultantes.
 %---------------------------------------------------
 
 \begin{quadro}[ht]
@@ -677,13 +683,13 @@ trabalho para decompor as responsabilidades do sistema Java legado em módulos
 independentes, evitando que a reescrita repetisse o acoplamento entre lógica de
 negócio, persistência e interface presente na implementação original.
 
-A estratégia de migração adotada --- reescrita \textit{black-box} --- extrai os
+A estratégia de migração adotada --- reescrita caixa preta --- extrai os
 requisitos do comportamento observável de um sistema legado, sem reaproveitar seu
 código-fonte~\cite{becker2020}. Diferentemente da reescrita \textit{white-box}, que
 preserva estruturas internas do sistema original, essa abordagem trata o legado
 exclusivamente como especificação funcional, permitindo à equipe redesenhar a
-arquitetura livremente, desde que a equivalência comportamental do núcleo
-algorítmico seja formalmente demonstrada em cada etapa da migração.
+arquitetura livremente, desde que a equivalência comportamental da lógica
+matématica seja formalmente demonstrada em cada etapa da migração.
 
 A verificação dessa equivalência comportamental exige um critério de avaliação independente da implementação~\cite{pressman2016}. Testes de caixa-preta comparam entradas e saídas entre o sistema original e o sistema reescrito sem inspecionar o
 código-fonte legado, estratégia adequada quando o objetivo --- como neste trabalho

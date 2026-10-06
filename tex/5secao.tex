@@ -13,7 +13,7 @@ Esta seção apresenta o levantamento estruturado dos requisitos funcionais da a
 \subsubsection{Funções do Sistema}
 \label{ssubsec:funcoes}
 
-A Quadro~\ref{tab:funcoes} resume as funcionalidades identificadas na aplicação, categorizadas por tipo de operação.
+No Quadro~\ref{tab:funcoes} resume as funcionalidades identificadas na aplicação, categorizadas por tipo de operação.
 
 \begin{quadro}[ht]
 \begin{center}
@@ -26,11 +26,11 @@ A Quadro~\ref{tab:funcoes} resume as funcionalidades identificadas na aplicaçã
 \begin{tabularx}{\textwidth}{|l|l|X|} \hline
 \textbf{Categoria} & \textbf{Funcionalidade} & \textbf{Descrição Técnica} \\ \hline
 Cálculos & RLM Simples (Baseline) & Regressão Linear Múltipla padrão sem técnicas de ensemble \\ \hline
-Cálculos & RLM + Bagging & Ensemble com amostragem \textit{com} reposição (bootstrap) \\ \hline
-Cálculos & RLM + Subagging + CV & Ensemble com amostragem \textit{sem} reposição + otimização por validação cruzada 5-Fold \\ \hline
-Configuração & Parâmetro \textit{m} (Bags) & Define número de amostras/ensembles para o método Bagging \\ \hline
+Cálculos & RLM + \textit{Bagging} & \textit{Ensemble} com amostragem \textit{com} reposição (bootstrap) \\ \hline
+Cálculos & RLM + \textit{Subagging} + CV & \textit{Ensemble} com amostragem \textit{sem} reposição + otimização por validação cruzada 5-Fold \\ \hline
+Configuração & Parâmetro \textit{m} (Bags) & Define número de amostras/\textit{ensembles} para o método Bagging \\ \hline
 Configuração & Parâmetro \textit{k} (Subagging) & Define fração ou quantidade para amostragem no Subagging \\ \hline
-Visualização & Métricas de Desempenho & Exibição de R², RMSE, MAE calculados no conjunto de teste \\ \hline
+Visualização & Métricas de Desempenho & Exibição de R², RMSEP, MAE calculados no conjunto de teste \\ \hline
 Visualização & Gráficos Comparativos & \textit{Scatter plots} (previsto $\times$ real), resíduos e comparação entre modelos \\ \hline
 Organização & Abas de Navegação & Separação lógica: ``Arquivos'', ``Resultados'', ``Gráficos'' \\ \hline
 Exportação & Métricas (.csv) e log (.txt) & \texttt{st.download\_button} na aba Resultados \\ \hline
@@ -48,7 +48,7 @@ Exportação & Métricas (.csv) e log (.txt) & \texttt{st.download\_button} na a
 \subsubsection{Entradas Necessárias (Inputs)}
 \label{ssubsec:entradas}
 
-A Quadro~\ref{tab:entradas} detalha os dados e parâmetros exigidos para execução da aplicação.
+No Quadro~\ref{tab:entradas} detalha os dados e parâmetros exigidos para execução da aplicação.
 
 \begin{quadro}[ht]
 \begin{center}
@@ -82,7 +82,7 @@ Config. & Val. Cruzada & Fixo: 5-Fold & Auto. & Parâmetro interno de otimizaç�
 \subsubsection{Saídas Esperadas (Outputs)}
 \label{ssubsec:saidas}
 
-A Quadro~\ref{tab:saidas} apresenta os resultados gerados pelo sistema após processamento.
+No Quadro~\ref{tab:saidas} apresenta os resultados gerados pelo sistema após processamento.
 
 
 \begin{quadro}[ht]
@@ -95,10 +95,10 @@ A Quadro~\ref{tab:saidas} apresenta os resultados gerados pelo sistema após pro
 % O tabularx força a largura para \textwidth e as barras | fecham o quadro
 \begin{tabularx}{\textwidth}{|l|X|l|l|} \hline
 \textbf{Tipo} & \textbf{Conteúdo} & \textbf{Formato de Exibição} & \textbf{Destinatário} \\ \hline
-Numérico & R², RMSE, MAE (conjunto de teste) & Quadro ou \textit{cards} destacados & Usuário analista \\ \hline
+Numérico & R², RMSEP, MAE (conjunto de teste) & Quadro ou \textit{cards} destacados & Usuário analista \\ \hline
 Gráfico & Previsto vs. Real & \textit{Scatter plot} com reta de ajuste & Usuário analista \\ \hline
 Gráfico & Resíduos da Predição & Gráfico de dispersão ou histograma & Usuário analista \\ \hline
-Comparativo & Desempenho: RLM $\times$ Bagging $\times$ Subagging & Quadro comparativa ou gráfico de barras & Usuário analista \\ \hline
+Comparativo & Desempenho: RLM $\times$ \textit{Bagging} $\times$ \textit{Subagging} & Quadro comparativa ou gráfico de barras & Usuário analista \\ \hline
 Feedback & Mensagens de erro/validação & Alertas em destaque & Usuário final \\ \hline
 Status & Indicador de processamento & \textit{Spinner} ou barra de progresso & Usuário final \\ \hline
 \end{tabularx}
@@ -132,9 +132,9 @@ O Quadro~\ref{tab:essenciais} lista os requisitos essenciais, indispensáveis à
 % O tabularx ajusta a largura total para \textwidth (entre as margens 2,5 e 2,0)
 \begin{tabularx}{\textwidth}{|l|X|X|} \hline
 \textbf{ID} & \textbf{Requisito} & \textbf{Justificativa} \\ \hline
-E01 & Upload e validação dos 4 arquivos de entrada & Dados são pré-requisito para qualquer cálculo estatístico \\ \hline
+E01 & \textit{Upload} e validação dos 4 arquivos de entrada & Dados são pré-requisito para qualquer cálculo estatístico \\ \hline
 E02 & Execução da RLM Simples (baseline) & Referência obrigatória para comparação de desempenho dos ensembles \\ \hline
-E03 & Cálculo de métricas básicas (R², RMSE, MAE) & Mínimo necessário para avaliação quantitativa da qualidade do modelo \\ \hline
+E03 & Cálculo de métricas básicas (R², RMSEP, MAE) & Mínimo necessário para avaliação quantitativa da qualidade do modelo \\ \hline
 E04 & Validação de consistência dimensional (X vs Y) & Previne erros de execução e geração de resultados inválidos \\ \hline
 E05 & Exibição clara dos resultados numéricos & Permite decisão técnica fundamentada em evidências quantitativas \\ \hline
 \end{tabularx}
@@ -164,7 +164,7 @@ O Quadro~\ref{tab:desejaveis} lista os requisitos desejáveis, que ampliam usabi
 \textbf{ID} & \textbf{Requisito} & \textbf{Benefício} \\ \hline
 D01 & Gráficos interativos (zoom, \textit{tooltip}, download) & Facilita exploração visual detalhada e apresentação de resultados \\ \hline
 D02 & Exportação em PDF e PNG (CSV e TXT já implementados) & Permite documentação, compartilhamento e reprodutibilidade \\ \hline
-D03 & \textit{Tooltips} explicativos para \textit{m}, \textit{k}, Bagging/Subagging & Reduz curva de aprendizado para usuários não especialistas \\ \hline
+D03 & \textit{Tooltips} explicativos para \textit{m}, \textit{k}, \textit{Bagging}/\textit{Subagging} & Reduz curva de aprendizado para usuários não especialistas \\ \hline
 D04 & Pré-processamento básico (normalização, escalonamento) & Melhora robustez dos modelos com dados espectrais reais \\ \hline
 D05 & Histórico de execuções na sessão & Permite comparar configurações sem reenviar arquivos \\ \hline
 \end{tabularx}
@@ -195,7 +195,7 @@ O Quadro~\ref{tab:extras} apresenta os requisitos extras, destinados a fases fut
 X01 & Autenticação de usuários e projetos privados & Ambientes corporativos ou de pesquisa colaborativa \\ \hline
 X02 & Integração com APIs externas (ex: KNIME, scripts Python) & Pipelines automatizadas de quimiometria \\ \hline
 X03 & Suporte a formatos adicionais (.csv, .xlsx, .mat) & Flexibilidade para ingestão de dados de diferentes fontes \\ \hline
-X04 & Otimização automática de hiperparâmetros & Dispensa o usuário de informar m e k manualmente \\ \hline
+X04 & Otimização automática de hiperparâmetros & Dispensa o usuário de informar \textit{m} e \textit{k} manualmente \\ \hline
 X05 & Dashboard comparativo multi-rodada & Análise estatística de estabilidade dos modelos ensemble \\ \hline
 \end{tabularx}
 \begin{tablenotes}[flushleft]
@@ -220,18 +220,21 @@ fluxo tem início com o \textit{upload} dos quatro arquivos de entrada ---
 as matrizes \texttt{Xcal} e \texttt{Xteste} e os vetores \texttt{Ycal} e
 \texttt{Yteste} ---, seguido pela configuração dos hiperparâmetros $m$
 (número de \textit{bags}) e $k$ (fração de subamostragem) na aba
-\textbf{Configuração}. Uma vez validados os arquivos e os parâmetros
-informados, o usuário aciona o botão de execução, que dispara o
-processamento em \texttt{models.py}: primeiro a otimização por validação
-cruzada 5-\textit{fold} (\texttt{find\_optimal\_parameters()}) e, em
-seguida, a avaliação final dos três modelos --- RLM Simples, RLM~+~\textit{Bagging}
-e RLM~+~\textit{Subagging} --- sobre o conjunto de teste independente
-(\texttt{run\_full\_analysis()}). Ao término do processamento, os
-resultados numéricos (RMSE, MAE, R² e tempo de execução) tornam-se
-disponíveis na aba \textbf{Resultados}, enquanto os gráficos comparativos
-de valores reais \textit{versus} preditos e o gráfico de dispersão são
-renderizados na aba \textbf{Gráficos}, encerrando o ciclo de interação
-representado no fluxograma.
+\textbf{Configuração}.
+
+Uma vez validados os arquivos e os parâmetros informados, o usuário aciona
+o botão de execução, que dispara o processamento em \texttt{models.py}:
+primeiro a otimização por validação cruzada 5-\textit{fold}
+(\texttt{find\_optimal\_parameters()}) e, em seguida, a avaliação final dos
+três modelos --- RLM Simples, RLM~+~\textit{Bagging} e
+RLM~+~\textit{Subagging} --- sobre o conjunto de teste independente
+(\texttt{run\_full\_analysis()}).
+
+Ao término do processamento, os resultados numéricos (RMSEP, MAE, R² e tempo
+de execução) tornam-se disponíveis na aba \textbf{Resultados}, enquanto os
+gráficos comparativos de valores reais \textit{versus} preditos e o gráfico
+de dispersão são renderizados na aba \textbf{Gráficos}, encerrando o ciclo de
+interação representado no fluxograma.
 
 
 % ============================================================
@@ -608,7 +611,7 @@ O Quadro~\ref{tab:escalabilidade} define requisitos de escalabilidade, como usu�
 Usuários simultâneos & $\sim$10--20 (\textit{Streamlit Cloud free}) & 100+ usuários/h & Container com \textit{load balancer} \\ \hline
 Volume de dados & $\sim$500 amostras $\times$ 2k variáveis & 5k+ amostras $\times$ 10k var. & Processamento em \textit{batch} / Dask \\ \hline
 Crescimento funcional & Script único & Módulos \textit{plug-and-play} & Arquitetura de plugins \\ \hline
-Internacionalização & Português & Inglês + Espanhol & Arquivos \textit{i18n} \\ \hline
+Internacionalização & Português + Inglês & Espanhol & Arquivos \textit{i18n} \\ \hline
 \end{tabularx}
 \begin{tablenotes}[flushleft]
 \footnotesize

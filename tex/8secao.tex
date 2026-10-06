@@ -1,4 +1,4 @@
-\chapter{Interface e Experiência do Usuário (UI/UX) Científica}
+\chapter{Interface e Experiência do Usuário Científica}
 \label{sec:uiux}
 
 \section{Design da Interface e Fluxo de Trabalho}
@@ -9,13 +9,11 @@ A aplicação é dividida em três abas sequenciais que espelham o fluxo de trab
 \begin{enumerate}[label=\alph*)]
     \item \textbf{Aba 1 (Configuração e Carga de Dados):} Destinada ao envio dos arquivos de calibração e teste nos formatos \texttt{.txt}, \texttt{.csv} ou \texttt{.xlsx}, e à definição dos hiperparâmetros de entrada (número de replicações \textit{m} e fração de subamostragem \textit{k});
     \item \textbf{Aba 2 (Resultados Numéricos e Logs):} Exibe as métricas de avaliação preditiva (RMSEP, MAE, $R^2$), a indicação dos parâmetros ótimos selecionados pela validação cruzada 5-\textit{fold} e o \textit{log} detalhado de execução;
-    \item \textbf{Aba 3 (Visualização Gráfica):} Apresenta os gráficos interativos
-gerados via Plotly: três gráficos de linha comparando os valores reais e
-preditos por amostra (RLM, RLM-\textit{bagging} e RLM-\textit{subagging}) e um
-gráfico de dispersão Real $\times$ Predito com os três modelos sobrepostos e a
-reta ideal ($y = x$).
+    \item \textbf{Aba 3 (Visualização Gráfica):} Apresenta os gráficos interativos gerados via Plotly: três gráficos de linha comparando os valores reais e preditos por amostra (RLM, RLM-\textit{bagging} e RLM-\textit{subagging}) e um gráfico de dispersão Real $\times$ Predito com os três modelos sobrepostos e a reta ideal ($y = x$).
 \end{enumerate}
 
 Essa estrutura em abas sequenciais organiza o \textit{workflow} analítico segundo as etapas operacionais do usuário, reduzindo a dispersão visual e delimitando os passos de execução.
+
+O diagrama de sequência da Figura~\ref{fig:BaggingOptimized_sequencia2} (Apêndice~\ref{cha:testesgraficos}) detalha a troca de chamadas entre as abas da interface, o módulo \texttt{app.py} e a lógica matemática em \texttt{models.py}.
 
 O ambiente de implantação viabiliza o acesso simultâneo via navegador sem necessidade de instalação local de dependências ou ambientes de execução Java, sujeitando-se aos limites de concorrência e memória da plataforma de hospedagem adotada.
