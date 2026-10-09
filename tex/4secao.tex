@@ -790,68 +790,58 @@ Observa-se que a RLM clássica mantém desempenho superior para Mo e Cr, enquant
 % ============================================================
 \begin{table}[htbp]
 \centering
+\begin{threeparttable} % <-- ADICIONADO AQUI
 \caption{Desempenho comparativo das técnicas de calibração multivariada para elementos químicos em aço-liga.}
 \label{tab:baggingsubba}
 \footnotesize
 \begin{tabular}{clccccll} % Adicionada uma coluna 'l' extra
 \toprule
 \textbf{Elemento} & \textbf{Técnica} & \textbf{RMSEP} & \textbf{MAE} & \textbf{R²} & \textbf{Tempo} (ms) & \multicolumn{2}{c}{\textbf{Parâmetros}} \\ \cline{7-8}
- & & & & & & (2) $k^*$ (\%) & (3) $m^*$ \\
+ & & & & & & $k^*$ (\%)\tnote{b} & $m^*$\tnote{c}\\
 \midrule
 \multirow{3}{*}{Mn} 
   & RLM              & 0,1051 & 0,0887 & 0,9907 &  2,4000  & --- & --- \\
   & RLM-\textit{bagging}      & 0,1072 & 0,0908 & 0,9903 & 68,2000  & --- & 30 \\
-  & RLM-\textit{subagging} (1) & \textbf{0,0966} & \textbf{0,0805} & \textbf{0,9922} & 17,1000  & 80 & 10 \\
+  & RLM-\textit{subagging}\tnote{a} & \textbf{0,0966} & \textbf{0,0805} & \textbf{0,9922} & 17,1000  & 80 & 10 \\
 \midrule
 \multirow{3}{*}{Mo} 
-  & RLM (1)          & \textbf{0,2633} & \textbf{0,1952} & \textbf{0,9882} &  2,4000  & --- & --- \\
+  & RLM\tnote{a}          & \textbf{0,2633} & \textbf{0,1952} & \textbf{0,9882} &  2,4000  & --- & --- \\
   & RLM-\textit{bagging}      & 0,3388 & 0,2722 & 0,9805 & 67,5000  & --- & 30 \\
   & RLM-\textit{subagging}    & 0,2879 & 0,2201 & 0,9859 & 46,8000  & 80 & 30 \\
 \midrule
 \multirow{3}{*}{Cr} 
-  & RLM (1)          & \textbf{1,0798} & \textbf{0,8654} & \textbf{0,9938} &  2,5000  & --- & --- \\
+  & RLM\tnote{a}          & \textbf{1,0798} & \textbf{0,8654} & \textbf{0,9938} &  2,5000  & --- & --- \\
   & RLM-\textit{bagging}      & 1,2089 & 0,9830 & 0,9922 & 44,5000  & --- & 20 \\
   & RLM-\textit{subagging}    & 1,1294 & 0,9010 & 0,9932 & 46,8000  & 80 & 30 \\
 \midrule
 \multirow{3}{*}{Ni} 
   & RLM              & 1,6043 & 1,3256 & 0,9837 &  2,3000  & --- & --- \\
-  & RLM-\textit{subagging} (1) & \textbf{1,6003} & \textbf{1,2409} & \textbf{0,9838} & 10,6000  & 60 & 10 \\
+  & RLM-\textit{subagging}\tnote{a} & \textbf{1,6003} & \textbf{1,2409} & \textbf{0,9838} & 10,6000  & 60 & 10 \\
   & RLM-\textit{bagging}      & 1,7085 & 1,4122 & 0,9815 & 66,6000  & --- & 30 \\
 \midrule
 \multirow{3}{*}{Fe} 
   & RLM              & 2,7513 & 2,1865 & 0,9892 & 13,5000  & --- & --- \\
-  & RLM-\textit{bagging} (1)   & \textbf{2,6406} & \textbf{2,0246} & \textbf{0,9900} & 97,2000  & --- & 30 \\
+  & RLM-\textit{bagging}\tnote{a}   & \textbf{2,6406} & \textbf{2,0246} & \textbf{0,9900} & 97,2000  & --- & 30 \\
   & RLM-\textit{subagging}    & 2,6509 & 2,0578 & 0,9900 & 41,2000  & 80 & 30 \\
 \bottomrule
 \end{tabular}
 
 \begin{tablenotes}[flushleft]
-    \footnotesize
-    \item \footnotesize{Fonte:~\oautor}
+  \footnotesize
+  \item \footnotesize{Fonte:~\oautor}
 	\item Nota: Sinal convencional utilizado:
 	\item --- Não se aplica dado numérico.
-	\item (1) Melhor desempenho em RMSEP. Conjunto de teste único para avaliação final.
-	\item (2) Fração de subamostra $k^*$ em porcentagem otimizados por validação cruzada 5-\textit{fold} aplicada exclusivamente ao conjunto de calibração (\textit{seed} = 42) \textit{bootstrap}).
-	\item (3) Parâmetros $m^*$ número de replicações \textit{bootstrap}.
+	\item[a] Melhor desempenho em RMSEP. Conjunto de teste único para avaliação final.
+	\item[b] Fração de subamostra $k^*$ em porcentagem otimizados por validação cruzada 5-\textit{fold} aplicada exclusivamente ao conjunto de calibração (\textit{seed} = 42) \textit{bootstrap}).
+	\item[c] Parâmetros $m^*$ número de replicações \textit{bootstrap}.
 \end{tablenotes}
+\end{threeparttable} % <-- ADICIONADO AQUI
 \end{table}
 
 
-% ============================================================
-% NOVO TEXTO DE ANÁLISE (substitui o parágrafo original)
-% ============================================================
-
-
-
-
-%--------------------------------------------------------------
-
-Os resultados comparativos entre as três técnicas avaliadas para 
-todos os analitos são apresentados na Tabela~\ref{tab:baggingsubba}. 
-Diferentemente da análise anterior, os parâmetros $m^*$ e $k^*$ de 
-cada método foram determinados por validação cruzada 5-\textit{fold} 
-aplicada exclusivamente ao conjunto de calibração, garantindo que o 
-conjunto de teste não influenciasse a seleção dos hiperparâmetros e 
+Os resultados comparativos entre as três técnicas avaliadas para todos os analitos são apresentados na Tabela~\ref{tab:baggingsubba}. 
+Diferentemente da análise anterior, os parâmetros $m^*$ e $k^*$ de cada método foram determinados por validação cruzada 5-\textit{fold} 
+aplicada exclusivamente ao conjunto de calibração, garantindo que o conjunto de teste não influenciasse a seleção dos hiperparâmetros e 
 assegurando a comparabilidade entre os métodos.
 
 Os resultados revelam que não existe uma técnica universalmente superior para todos os analitos considerados no estudo. Para o Manganês (Mn), o RLM-\textit{subagging} ($k^* = 80\%$, $m^* = 10$) apresentou o menor RMSEP (\num{0,0966}), representando uma redução de 8,1\% no erro em relação à RLM clássica, além de demonstrar alta eficiência computacional ao ser 4,0 vezes mais rápido do que o RLM-\textit{bagging}, constituindo-se na opção mais vantajosa para a calibração desse elemento.

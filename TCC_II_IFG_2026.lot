@@ -6,19 +6,19 @@
 \contentsline {table}{\numberline {4}{\ignorespaces RMSEP por elemento de aço-ligas comparando RLM e RLM-\textit {subagging}.}}{41}{table.caption.33}%
 \contentsline {table}{\numberline {5}{\ignorespaces Comparação do RMSEP por elemento para diferentes técnicas e proporções de calibração.}}{42}{table.caption.35}%
 \contentsline {table}{\numberline {6}{\ignorespaces Configuração de desempenho superior e RMSEP mínimo.}}{43}{table.caption.37}%
-\contentsline {table}{\numberline {7}{\ignorespaces Desempenho comparativo das técnicas de calibração multivariada para elementos químicos em aço-liga.}}{47}{table.caption.40}%
-\contentsline {table}{\numberline {8}{\ignorespaces Paridade \textit {Bagging} -- Cr.}}{65}{table.caption.67}%
-\contentsline {table}{\numberline {9}{\ignorespaces Paridade \textit {Bagging} -- Fe.}}{84}{table.caption.81}%
-\contentsline {table}{\numberline {10}{\ignorespaces Paridade \textit {Bagging} -- Mn.}}{85}{table.caption.83}%
-\contentsline {table}{\numberline {11}{\ignorespaces Paridade \textit {Bagging} -- Ni.}}{86}{table.caption.85}%
-\contentsline {table}{\numberline {12}{\ignorespaces Paridade \textit {Bagging} -- Mo.}}{87}{table.caption.87}%
-\contentsline {table}{\numberline {13}{\ignorespaces Paridade \textit {RLM} -- Cr.}}{88}{table.caption.89}%
-\contentsline {table}{\numberline {14}{\ignorespaces Paridade \textit {RLM} -- Mo.}}{89}{table.caption.91}%
-\contentsline {table}{\numberline {15}{\ignorespaces Paridade \textit {Subagging} -- Cr.}}{90}{table.caption.93}%
-\contentsline {table}{\numberline {16}{\ignorespaces Paridade \textit {RLM} -- Fe.}}{91}{table.caption.95}%
-\contentsline {table}{\numberline {17}{\ignorespaces Paridade \textit {RLM} -- Ni.}}{92}{table.caption.97}%
-\contentsline {table}{\numberline {18}{\ignorespaces Paridade \textit {RLM} -- Mn.}}{93}{table.caption.99}%
-\contentsline {table}{\numberline {19}{\ignorespaces Paridade \textit {Subagging} -- Fe.}}{94}{table.caption.101}%
-\contentsline {table}{\numberline {20}{\ignorespaces Paridade \textit {Subagging} -- Mo.}}{95}{table.caption.103}%
-\contentsline {table}{\numberline {21}{\ignorespaces Paridade \textit {Subagging} -- Mn.}}{96}{table.caption.105}%
-\contentsline {table}{\numberline {22}{\ignorespaces Paridade \textit {Subagging} -- Ni.}}{97}{table.caption.107}%
+\contentsline {table}{\numberline {7}{\ignorespaces Desempenho comparativo das técnicas de calibração multivariada para elementos químicos em aço-liga.}}{47}{table.caption.41}%
+\contentsline {table}{\numberline {8}{\ignorespaces Paridade \textit {Bagging} -- Cr.}}{65}{table.caption.68}%
+\contentsline {table}{\numberline {9}{\ignorespaces Paridade \textit {Bagging} -- Fe.}}{84}{table.caption.82}%
+\contentsline {table}{\numberline {10}{\ignorespaces Paridade \textit {Bagging} -- Mn.}}{85}{table.caption.84}%
+\contentsline {table}{\numberline {11}{\ignorespaces Paridade \textit {Bagging} -- Ni.}}{86}{table.caption.86}%
+\contentsline {table}{\numberline {12}{\ignorespaces Paridade \textit {Bagging} -- Mo.}}{87}{table.caption.88}%
+\contentsline {table}{\numberline {13}{\ignorespaces Paridade \textit {RLM} -- Cr.}}{88}{table.caption.90}%
+\contentsline {table}{\numberline {14}{\ignorespaces Paridade \textit {RLM} -- Mo.}}{89}{table.caption.92}%
+\contentsline {table}{\numberline {15}{\ignorespaces Paridade \textit {Subagging} -- Cr.}}{90}{table.caption.94}%
+\contentsline {table}{\numberline {16}{\ignorespaces Paridade \textit {RLM} -- Fe.}}{91}{table.caption.96}%
+\contentsline {table}{\numberline {17}{\ignorespaces Paridade \textit {RLM} -- Ni.}}{92}{table.caption.98}%
+\contentsline {table}{\numberline {18}{\ignorespaces Paridade \textit {RLM} -- Mn.}}{93}{table.caption.100}%
+\contentsline {table}{\numberline {19}{\ignorespaces Paridade \textit {Subagging} -- Fe.}}{94}{table.caption.102}%
+\contentsline {table}{\numberline {20}{\ignorespaces Paridade \textit {Subagging} -- Mo.}}{95}{table.caption.104}%
+\contentsline {table}{\numberline {21}{\ignorespaces Paridade \textit {Subagging} -- Mn.}}{96}{table.caption.106}%
+\contentsline {table}{\numberline {22}{\ignorespaces Paridade \textit {Subagging} -- Ni.}}{97}{table.caption.108}%

@@ -90,7 +90,7 @@
 \contentsline {section}{\numberline {10.1}Limitações e Trabalhos Futuros}{66}{section.10.1}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{\MakeTextUppercase []{Referências}}{68}{section*.71}%
+\contentsline {chapter}{\MakeTextUppercase []{Referências}}{68}{section*.72}%
 \renewcommand *{\cftappendixname }{AP\^ENDICE \space }
 \setlength {\cftpartindent }{\cftlastnumwidth } \setlength {\cftpartnumwidth }{2em}
 \cftinsert {A}
