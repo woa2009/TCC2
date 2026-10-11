@@ -15,12 +15,13 @@
 \contentsline {figure}{\numberline {13}{\ignorespaces RMSEP para todas as técnicas.}}{46}{figure.caption.39}%
 \contentsline {figure}{\numberline {14}{\ignorespaces Tempo de execução dos algoritmos RLM-\textit {bagging} e RLM-\textit {subagging} com parâmetros otimizados por validação cruzada 5-\textit {fold}.}}{48}{figure.caption.42}%
 \contentsline {figure}{\numberline {15}{\ignorespaces Fluxograma do processo de execução da análise.}}{54}{figure.caption.55}%
-\contentsline {figure}{\numberline {16}{\ignorespaces Organização lógica em camadas dentro de um único arquivo --- Sistema legado monolítico (Java Desktop).}}{76}{figure.caption.73}%
-\contentsline {figure}{\numberline {17}{\ignorespaces Arquitetura em camadas --- Sistema modernizado (Python/Streamlit).}}{76}{figure.caption.74}%
-\contentsline {figure}{\numberline {18}{\ignorespaces Diagrama de classes.}}{77}{figure.caption.75}%
-\contentsline {figure}{\numberline {19}{\ignorespaces Diagrama de atividades.}}{78}{figure.caption.76}%
-\contentsline {figure}{\numberline {20}{\ignorespaces Diagrama de sequência.}}{79}{figure.caption.77}%
-\contentsline {figure}{\numberline {21}{\ignorespaces Diagrama de atividade Java PlantUML .}}{80}{figure.caption.78}%
-\contentsline {figure}{\numberline {22}{\ignorespaces Diagrama de atividade Python PlantUML.}}{81}{figure.caption.79}%
-\contentsline {figure}{\numberline {23}{\ignorespaces Diagrama de classes (módulos) PlantUML.}}{82}{figure.caption.80}%
-\contentsline {figure}{\numberline {24}{\ignorespaces Diagrama de sequência PlantUML.}}{83}{figure.caption.81}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Interface do sistema modernizado: (a) aba Configuração; (b) aba Resultados; (c) aba Gráficos.}}{62}{figure.caption.68}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Organização lógica em camadas dentro de um único arquivo --- Sistema legado monolítico (Java Desktop).}}{78}{figure.caption.72}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Arquitetura em camadas --- Sistema modernizado (Python/Streamlit).}}{78}{figure.caption.73}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Diagrama de classes.}}{79}{figure.caption.74}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Diagrama de atividades.}}{80}{figure.caption.75}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Diagrama de sequência.}}{81}{figure.caption.76}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Diagrama de atividade Java PlantUML .}}{82}{figure.caption.77}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Diagrama de atividade Python PlantUML.}}{83}{figure.caption.78}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Diagrama de classes (módulos) PlantUML.}}{84}{figure.caption.79}%
+\contentsline {figure}{\numberline {25}{\ignorespaces Diagrama de sequência PlantUML.}}{85}{figure.caption.80}%

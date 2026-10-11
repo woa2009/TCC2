@@ -10,7 +10,7 @@ produziu um incremento funcional e testável do sistema, permitindo validação
 contínua da equivalência com o sistema Java legado antes do avanço para a
 etapa seguinte.
 
-\subsection{\textit{Sprint} 1 --- Camada de Leitura e Tratamento de Dados (\textit{Core Backend})}
+\subsection{\textit{Sprint} 1 --- Camada de Leitura e Tratamento de Dados}
 Esta etapa implementou as funções \texttt{parse\_matrix()} e
 \texttt{parse\_vector()}, responsáveis pela leitura unificada de arquivos
 \texttt{.txt}, \texttt{.csv} e \texttt{.xlsx}, com detecção automática de
@@ -20,7 +20,7 @@ utilizando os \textit{datasets} reais \textit{EthanolLevel} e
 \texttt{CGL\_nir}, confirmando as dimensões esperadas das matrizes.
 
 \subsection{\textit{Sprint} 2 --- Algoritmos Científicos}
-O núcleo matemático foi codificado em \texttt{models.py} como funções puras,
+A lógica matemática foi codificada em \texttt{models.py} como funções puras,
 independentes de qualquer biblioteca de interface. Implementaram-se
 \texttt{perform\_rlm()} via \texttt{np.linalg.lstsq}, \texttt{perform\_bagging()}
 para \textit{bagging} e \textit{subagging} parametrizados, \texttt{calc\_metrics()}
@@ -29,12 +29,10 @@ cruzada 5-\textit{fold}, culminando na função \texttt{find\_optimal\_parameter
 de \textit{grid search}.
 
 \subsection{\textit{Sprint} 3 --- Interface Reativa}
-Conectou-se \texttt{models.py} ao orquestrador \texttt{app.py}, implementando os quatro
+Conectou-se \texttt{models.py} ao controlador \texttt{app.py}, implementando os quatro
 componentes \texttt{st.file\_uploader}, a validação de parâmetros por meio de
 \texttt{parse\_int\_list()} e \texttt{parse\_float\_list()}, o \textit{callback}
-de progresso e a persistência do resultado em \texttt{st.session\_state}. Os
-quatro gráficos Plotly foram centralizados em \texttt{components.py}, garantindo
-que nenhuma lógica de negócio residisse na camada de apresentação.
+de progresso e a persistência do resultado em \texttt{st.session\_state}. Os quatro gráficos Plotly foram centralizados em \texttt{components.py}, garantindo que nenhuma lógica de negócio residisse na camada de apresentação.
 
 \subsection{\textit{Sprint} 4 --- Otimização com \textit{Cache}}
 Avaliou-se a arquitetura resultante quanto à sua compatibilidade com os mecanismos de
@@ -67,6 +65,10 @@ Python com as registradas nos arquivos de saída do sistema Java original, sem
 acesso ao código-fonte legado, seguindo a estratégia de teste caixa preta~\cite{pressman2016}. Doze testes parametrizados foram aplicados a
 cada um de cinco analitos (Mn, Mo, Cr, Ni, Fe). Para a RLM, que é
 determinística, adotou-se tolerância de $5\times10^{-4}$.
+
+Embora a RLM seja determinística, Java (pseudoinversa explícita) e Python
+(\texttt{lstsq}) utilizam rotinas numéricas distintas, o que justifica a
+adoção de uma tolerância de $5\times10^{-4}$, e não de igualdade exata.
 
 Para o \textit{bagging} e o \textit{subagging}, que são estocásticos e
 utilizam geradores pseudoaleatórios distintos em Python e em Java, adotaram-se
@@ -104,7 +106,8 @@ completa entre Java e Python para o caso do \textit{Bagging} aplicado ao
 Cromo (Cr); as tabelas equivalentes para os demais catorze pares
 analito$\times$técnica encontram-se no Apêndice~\ref{cha:paridadeamostra}.
 
-
+%---------------------------------------------------
+\begin{comment}
 
 \begin{table}[H]
 \centering
@@ -166,7 +169,7 @@ analito$\times$técnica encontram-se no Apêndice~\ref{cha:paridadeamostra}.
 \item Fonte:~\oautor
 \item[a] Tipo de dado utilizado em Java foi o \textit{double}; no Python,
 o equivalente é o \textit{float64} do NumPy — ambos representações IEEE~754
-de precisão dupla (64 bits), o que garante paridade numérica exata entre as
+de precisão dupla (64 bits), o que garante paridade ao nível da precisão exibida (quatro casas decimais) entre as
 duas implementações.
 \item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
 Todos os valores de $\Delta$ são iguais a zero, indicando paridade
@@ -177,3 +180,87 @@ no analito Cromo (Cr).
 \end{center}
 \end{threeparttable}
 \end{table}
+
+\end{comment}
+%---------------------------------------------------
+%--------------------------------------------------------------
+
+
+%-------------------------------------------------------------------
+
+\begin{longtable}{
+    S[table-format=2.0]
+    S[table-format=2.3]
+    S[table-format=2.4]
+    S[table-format=2.4]
+    S[table-format=1.1]
+}
+\caption{Paridade \textit{Bagging} -- Cr.}
+\label{tab:paridade_bagging_cr} \\
+\toprule
+{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}\textsuperscript{a}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
+\midrule
+\endfirsthead
+
+\multicolumn{5}{c}{{\bfseries \tablename\ \thetable{} -- Continuação}} \\
+\midrule
+{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}\textsuperscript{a}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
+\midrule
+\endhead
+
+\midrule
+\multicolumn{5}{r}{{Continua na próxima página...}} \\
+\endfoot
+
+% --- Esta seção garante que a linha de fechamento ocorra ANTES das notas de rodapé ---
+\bottomrule
+\addlinespace
+\multicolumn{5}{l}{
+  \begin{minipage}{0.65\linewidth}
+    \footnotesize
+    Fonte:~\oautor \\
+    \textsuperscript{a} Tipo de dado utilizado em Java foi o \textit{double}; no Python, o equivalente é o \textit{float64} do NumPy — ambos representações IEEE~754 de precisão dupla (64 bits), o que garante paridade ao nível da precisão exibida (quatro casas decimais) entre as duas implementações. \\
+    \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$. Todos os valores de $\Delta$ são iguais a zero, indicando paridade perfeita entre as implementações Java e Python para a técnica \textit{Bagging} no analito Cromo (Cr).
+  \end{minipage}
+}
+\endlastfoot
+
+% --- Dados da Tabela ---
+ 1  & 30.000  & 30.1484  & 30.1484  & 0.0 \\
+ 2  & 40.000  & 39.9788  & 39.9788  & 0.0 \\
+ 3  & 60.000  & 60.0579  & 60.0579  & 0.0 \\
+ 4  & 35.000  & 34.9336  & 34.9336  & 0.0 \\
+ 5  & 45.000  & 44.7089  & 44.7089  & 0.0 \\
+ 6  & 48.000  & 47.4377  & 47.4377  & 0.0 \\
+ 7  & 65.000  & 64.7815  & 64.7815  & 0.0 \\
+ 8  & 23.000  & 22.7322  & 22.7322  & 0.0 \\
+ 9  & 25.000  & 23.9380  & 23.9380  & 0.0 \\
+10  & 37.000  & 36.0721  & 36.0721  & 0.0 \\
+11  & 23.103  & 22.7884  & 22.7884  & 0.0 \\
+12  & 22.722  & 20.4495  & 20.4495  & 0.0 \\
+13  & 22.713  & 21.5452  & 21.5452  & 0.0 \\
+14  & 60.054  & 60.0535  & 60.0535  & 0.0 \\
+15  & 59.959  & 57.2886  & 57.2886  & 0.0 \\
+16  & 32.250  & 33.6880  & 33.6880  & 0.0 \\
+17  & 32.448  & 31.7185  & 31.7185  & 0.0 \\
+18  & 32.154  & 30.6143  & 30.6143  & 0.0 \\
+19  & 60.996  & 62.9324  & 62.9324  & 0.0 \\
+20  & 60.684  & 60.3428  & 60.3428  & 0.0 \\
+21  & 60.360  & 58.3135  & 58.3135  & 0.0 \\
+22  & 40.636  & 41.4952  & 41.4952  & 0.0 \\
+23  & 40.733  & 39.3944  & 39.3944  & 0.0 \\
+24  & 40.524  & 39.4233  & 39.4233  & 0.0 \\
+25  & 64.597  & 66.6126  & 66.6126  & 0.0 \\
+26  & 65.522  & 65.2090  & 65.2090  & 0.0 \\
+27  & 44.707  & 43.2840  & 43.2840  & 0.0 \\
+28  & 44.716  & 43.3947  & 43.3947  & 0.0 \\
+29  & 30.022  & 30.3226  & 30.3226  & 0.0 \\
+30  & 30.177  & 28.6635  & 28.6635  & 0.0 \\
+31  & 29.926  & 28.1745  & 28.1745  & 0.0 \\
+32  & 44.926  & 46.1783  & 46.1783  & 0.0 \\
+33  & 44.837  & 43.8530  & 43.8530  & 0.0 \\
+34  & 44.837  & 43.7524  & 43.7524  & 0.0 \\
+\end{longtable}
+
+
+

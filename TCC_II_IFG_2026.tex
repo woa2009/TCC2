@@ -39,6 +39,7 @@
 \usepackage{float}
 \usepackage{caption}
 \usepackage{threeparttable} % Adicione ao preâmbulo
+\usepackage{longtable}%para tabelas que ultrapassam uma pagina
 \usepackage{booktabs}
 \usepackage{siunitx}   % Para o comando \num e formatação de números
 \usepackage{blindtext}
@@ -115,10 +116,6 @@
 %\ErrorsOff   % não recomendo
 
 
-
-
-
-
 %\usepackage{abntex2}
 %\usepackage{abntex2-options}
 %-------------------------------------------------------
@@ -186,21 +183,23 @@
 \floatname{codigo}{C\'odigo}
 
 %---Para a folha de aprovação - consulte o arquivo /pre/pre.tex
-\def\avaliadorinterno{Luiz Fernando Loja}
-\def\tituloavaliadorinterno{Dr.}%Dr\textsuperscript{a}
-\def\avalinterno{Avaliador Interno}
-\def\siglainterno{IFG}
-\def\entidadeinterna{Instituto Federal de Goiás}
+\newcommand{\avaliadorinterno}{Luiz Fernando Loja}
+\newcommand{\tituloavaliadorinterno}{Dr.}
+\newcommand{\avalinterno}{Avaliadora Interna}
+\newcommand{\siglainterno}{IFG}
+\newcommand{\entidadeinterna}{Instituto Federal de Goiás}
 
-\def\avaliadorexterno{Maria de Oliveira Vaz dos Santos}%
-\def\tituloavaliadorexterno{Ma.}%Dr\textsuperscript{a}.
-\def\avalexterno{Avaliador Interno}
-\def\siglaexterno{IFG}
-\def\entidadeexterna{Instituto Federal de Goiás}
+\newcommand{\avaliadorexterno}{Maria de Oliveira Vaz dos Santos}
+\newcommand{\tituloavaliadorexterno}{Ma.}
+\newcommand{\avalexterno}{Avaliadora Interna}
+\newcommand{\siglaexterno}{IFG}
+\newcommand{\entidadeexterna}{Instituto Federal de Goiás}
+
 %---Fim para a folha de aprovação
 
 %Para fonte das figuras, tabelas e quadros
-\def\oautor{Wagner Oliveira de Araujo.}
+\newcommand{\oautor}{Wagner Oliveira de Araujo.}
+%\def\oautor{Wagner Oliveira de Araujo.}
 
 \def\tituloprincipal{Migração de sistemas legados de análise química: de Java desktop para python web}
 
@@ -221,7 +220,7 @@
 % orientador.
 \def\nomorient{Alexandre Bellezi}
 \def\sobrenomorient{Jose}
-\orientador{ Prof\textsuperscript{o}. \nomorient~\sobrenomorient, Me.}
+\orientador{ Prof.\textsuperscript{o} \nomorient~\sobrenomorient, Me.}
 %\orientador{Kátia Cilene Costa Fernandes, Prof\textsuperscript{a}. Dr\textsuperscript{a}.}
 % FIXME Se for orientado por uma mulher, comente a linha acima e descomente a linha a seguir.
 % \orientador[Orientadora]{Nome da orientadora, Dra.}
@@ -229,14 +228,14 @@
 % coorientador. Caso não tenha coorientador, comente a linha a seguir.
 \def\nomcoorient{Eder Silva de}
 \def\sobrenomcoorient{Brito}
-\coorientador{Prof\textsuperscript{o}. \nomcoorient~\sobrenomcoorient, Dr.}
+\coorientador{Prof.\textsuperscript{o} \nomcoorient~\sobrenomcoorient, Dr.}
 % FIXME Se for coorientado por uma mulher, comente a linha acima e descomente a linha a seguir.
 % \coorientador[Coorientadora]{XXXXXX, Dra.}
 % FIXME Substituir 'XXXXXX' pelo nome do Coordenador do 
 % programa/curso.
 % \coordenador{Prof. Fulano de Tal, Me.}
 % FIXME Se for coordenadora mulher, comente a linha acima e descomente a linha a seguir.
-\coordenador[Coordenador]{Prof. Hugo Vinicius Leão e Silva, Dr.}
+\coordenador[Coordenador]{Prof.\textsuperscript{o} Hugo Vinicius Leão e Silva, Dr.}
 % FIXME Substituir '[ano da entrega]' pelo ano (ano) em que seu trabalho foi defendido.
 \ano{2026}
 
@@ -291,16 +290,13 @@
 \hypersetup{
     pdftitle={\@title}, 
     pdfauthor={\@author},
+    pdfauthortitle={\@author},
     pdfsubject={\imprimirpreambulo},
     pdfkeywords={\palavrachaveum, \palavrachavedois, \palavrachavetres, \palavrachavequatro, \palavrachavecinco}, 
     pdfcreator={LaTeX with abnTeX2},
     pdfcaptionwriter={\@author},
     pdfcopyright={Copyright (c) \ano, \@author},
     pdflicenseurl={https://repositorio.ifg.edu.br/},
-    %pdfcontactaddress={\endereco},
-    %pdfcontactcity={\cidade},
-    %pdfcontactpostcode={\cep},
-    %pdfcontactphone={\telefone},
     colorlinks=true,       		% false: boxed links; true: colored links
     linkcolor=black,%blue,      % color of internal links
     citecolor=black,%blue,      % color of links to bibliography
@@ -322,7 +318,8 @@
 \siglalista{PLS}{\textit{Partial Least Squares}}
 \siglalista{RLM}{Regressão Linear Múltipla}
 \siglalista{RMSEP}{\textit{Root-Mean-Square Error of Prediction}}
-\siglalista{RMSEP-CV}{\textit{Root-Mean-Square Error of Prediction in Cross-Validation}}
+\newacronym[sort=RMSEPCV]{RMSEPCV}{$\text{RMSEP}_{\text{CV}}$}{\textit{Root-Mean-Square Error of Prediction in Cross-Validation}}
+%\siglalista{$\text{RMSEP}_{\text{CV}}$}{\textit{Root-Mean-Square Error of Prediction in Cross-Validation}}
 \siglalista{R²}{Coeficiente de Determinação}
 
 %----Incluidas
@@ -332,10 +329,15 @@
 \siglalista{MVC}{\textit{Model-View-Controller}}
 \siglalista{MVP}{\textit{Minimum Viable Product}}
 \siglalista{WCAG}{\textit{Web Content Accessibility Guidelines}}
+\siglalista{MQO}{Método dos Mínimos Quadrados Ordinários}
+\siglalista{SQR}{Soma dos Quadrados dos Resíduos}
+\siglalista{UML}{\textit{Unified Modeling Language}}
 
 \siglalista{AJAX}{\textit{Asynchronous JavaScript and XML}}
 \siglalista{IDE}{\textit{Integrated Development Environment}}
 \siglalista{MoSCoW}{\textit{Must, Should, Could, Won't have}}
+\siglalista{JAVA SE}{\textit{Java Platform, Standard Edition}}
+
 
 %----------------------------------------------------------------------------------------------------
 % Declaração dos símbolos % Para aparecer é necessário o comando \gls{chave} no texto % IMPORTANTE: Descrições devem ser simples, evitando fórmulas matemáticas complexas % IMPORTANTE: Use chaves duplas {{...}} quando a descrição contiver vírgulas 

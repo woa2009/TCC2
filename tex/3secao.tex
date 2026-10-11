@@ -14,20 +14,16 @@ e \textit{subagging}.
 
 Para a implementação computacional, utilizou-se a linguagem de programação Java (JavaSE-17) em conjunto com o ambiente de desenvolvimento integrado Eclipse \gls{IDE} (versão 2025-09). As operações matriciais exigidas pelos algoritmos de calibração multivariada, incluindo o cômputo da pseudo-inversa de Moore-Penrose, as reamostragens \textit{bootstrap} e a agregação dos modelos de \textit{ensemble}, foram implementadas com o suporte da biblioteca \textit{Efficient Java Matrix Library}, \texttt{org.ejml.simple.SimpleMatrix} (EJML). Esta é especializada em operações de álgebra linear de alto desempenho para a plataforma Java, garantindo eficiência no processamento.
 
-A visualização gráfica dos resultados foi realizada pela biblioteca JFreeChart\footnote{Versões: EJML 0.43.1; JFreeChart 1.5.4. Código em: \url{https://github.com/woa2009/MigracaoJava}}, que possibilitou a geração dos gráficos de predição e comparação de desempenho deste trabalho. A interface gráfica de usuário, para entrada de parâmetros e exibição de resultados durante os experimentos, foi desenvolvida com os \textit{frameworks} nativos Java Swing e AWT. O gerenciamento dos arquivos de entrada e saída, incluindo leitura das matrizes espectrométricas e exportação dos resultados, foi realizado pelas bibliotecas padrão \texttt{java.io}.
+A visualização gráfica dos resultados foi realizada pela biblioteca JFreeChart\footnote{Versões: EJML 0.43.1; JFreeChart 1.5.4. Código em: \url{https://github.com/woa2009/MigracaoJava}}, que possibilitou a geração dos gráficos de predição e comparação de desempenho deste trabalho. A interface gráfica de usuário, para entrada de parâmetros e exibição de resultados durante os experimentos, foi desenvolvida com os \textit{frameworks} nativos Java Swing e \gls{AWT}. O gerenciamento dos arquivos de entrada e saída, incluindo leitura das matrizes espectrométricas e exportação dos resultados, foi realizado pelas bibliotecas padrão \texttt{java.io}.
 
 
 %---------------------------------------------------
-Durante o desenvolvimento deste trabalho, o modelo de linguagem de inteligência artificial Qwen3.7-Plus foi utilizado como ferramenta de assistência para: revisão ortográfica, sugestão de estruturação de seções, tradução de resumos, refatoração de trechos de código (Java/Pthyton), correção de erros código \LaTeX~\cite{ alibaba2026qwen}. A validação factual, a análise crítica dos dados espectrométricos e a redação final das conclusões foram realizadas integralmente pelo autor, garantindo a integridade acadêmica e a autoria do trabalho.
+Durante o desenvolvimento deste trabalho, o modelo de linguagem de inteligência artificial Qwen3.7-Plus foi utilizado como ferramenta de assistência para: revisão ortográfica, sugestão de estruturação de seções, tradução de resumos, refatoração de trechos de código (Java/Pthyton), correção de erros código \LaTeX~\cite{ alibaba2026qwen,kopka2004guide}. A validação factual, a análise crítica dos dados espectrométricos e a redação final das conclusões foram realizadas integralmente pelo autor, garantindo a integridade acadêmica e a autoria do trabalho.
 
 \section{Fragmento do Código-Fonte Java --- Lógica Matemática}
 \label{sec:codigo_java_nucleo}
 
-A classe \texttt{BaggingOptimized} (que estende \texttt{JFrame}) concentra, entre
-os componentes de interface gráfica, a lógica matemática responsável pelos três
-modelos de regressão avaliados neste trabalho. A Figura~\ref{lst:performrlm}
-apresenta o método \texttt{performRLM}, que implementa a Regressão Linear
-Múltipla simples via pseudoinversa de Moore-Penrose.
+A classe \texttt{BaggingOptimized} (que estende \texttt{JFrame}) concentra, entre os componentes de interface gráfica, a lógica matemática responsável pelos três modelos de regressão avaliados neste trabalho. A Figura~\ref{lst:performrlm} apresenta o método \texttt{performRLM}, que implementa a Regressão Linear Múltipla simples via pseudoinversa de Moore-Penrose.
 
 
 \begin{figure}[H]
@@ -211,7 +207,9 @@ Os espectros obtidos por fontes de plasma contêm centenas a milhares de frequê
 
 As matrizes de respostas instrumentais e concentração das amostras de aço-ligas são organizadas em dois conjuntos de dados: calibração
 (33,3 -- 45,9\%) e teste (54,1 -- 66,7\%), como segue~(Quadro~\ref{tab:conjuntos_subscritos}). % ALTERADO: adicionado parágrafo abaixo
-Cada amostra é representada por 723 variáveis espectrais, resultando em uma razão de aproximadamente 42 preditores por observação no conjunto de calibração. Esse regime de alta dimensionalidade — inerente à natureza dos dados espectrométricos de plasma — é tratado pela pseudo-inversa de Moore-Penrose (Equação~\ref{eq:rlm-pseudo}), que fornece solução única mesmo em sistemas subdeterminados. 
+Cada amostra é representada por 723 variáveis espectrais, resultando em uma razão de aproximadamente 42 preditores por observação no conjunto de calibração. Esse regime de alta dimensionalidade — inerente à natureza dos dados espectrométricos de plasma — é tratado pela pseudo-inversa de Moore-Penrose (Equação~\ref{eq:rlm-pseudo}), que fornece solução única mesmo em sistemas subdeterminados.
+
+Na reimplementação em Python (Seção~\ref{sec:engenhariasoftware}), essa mesma solução é obtida por \texttt{np.linalg.lstsq}, que retorna a solução de mínima norma e é matematicamente equivalente à pseudoinversa, sem calculá-la explicitamente.
 
 Ressalta-se, contudo, que conjuntos de calibração reduzidos são uma característica recorrente em análises de aço-ligas por espectrometria, como documentado na literatura~\cite{PIMENTEL:1998,KRAMER:1998}, e que os resultados obtidos neste estudo devem ser interpretados como evidências exploratórias do comportamento das técnicas investigadas nesse contexto específico, não sendo diretamente generalizáveis a outras composições ou regimes amostrais sem validação adicional.
 
@@ -279,7 +277,7 @@ $k \in \{0{,}50;\ 0{,}60;\ 0{,}70;\ 0{,}80\}$.
 A avaliação do modelo foi realizada por validação cruzada \textit{k-fold} dividida em cinco etapas. A cada iteração, utilizaram-se quatro partições para treinamento e uma para validação, repetindo-se o ciclo até que todos os grupos fossem avaliados.
 
 
-O desempenho foi quantificado pelo $\text{RMSEP}_{\text{CV}}$ médio (Equação~\ref{eq:rmsecv}), onde $K = 5$ representa o total de \textit{folds}, $n_k$ a quantidade de amostras na partição $k$, $y_i^{(k)}$ o valor de referência e $\hat{y}_i^{(k)}$ a predição da $i$-ésima amostra.\begin{equation}\label{eq:rmsecv}\text{RMSEP}{\text{CV}} = \frac{1}{K} \sum{k=1}^{K}\sqrt{\frac{1}{n_k} \sum_{i=1}^{n_k}\left(\hat{y}_i^{(k)} - y_i^{(k)}\right)^2}\end{equation}
+O desempenho foi quantificado pelo \gls{RMSEPCV} médio (Equação~\ref{eq:rmsecv}), onde $K = 5$ representa o total de \textit{folds}, $n_k$ a quantidade de amostras na partição $k$, $y_i^{(k)}$ o valor de referência e $\hat{y}_i^{(k)}$ a predição da $i$-ésima amostra.\begin{equation}\label{eq:rmsecv}\text{RMSEP}_{\text{CV}} = \frac{1}{K} \sum{k=1}^{K}\sqrt{\frac{1}{n_k} \sum_{i=1}^{n_k}\left(\hat{y}_i^{(k)} - y_i^{(k)}\right)^2}\end{equation}%$\text{RMSEP}_{\text{CV}}$ %\text{RMSEP}{\text{CV}}
 
 Os hiperparâmetros ótimos $m^*$ e $k^*$ foram definidos como a 
 combinação que minimizou o RMSEP\textsubscript{CV}. Após a seleção, 

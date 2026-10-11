@@ -1,4 +1,5 @@
 \backcite {SKOOG:1997,HARDLE:2007,TIMM:2002}{{14}{1}{chapter.1}}
+\backcite {streamlit_main_2026,streamlit_docs_2026}{{14}{1}{chapter.1}}
 \backcite {Canty2001,rathnayake2022}{{15}{1}{chapter.1}}
 \backcite {DRAPER:1998,TIMM:2002}{{17}{2.1.1}{subsection.2.1.1}}
 \backcite {Alin2017,Filzmoser2013}{{18}{2.1.2}{subsection.2.1.2}}
@@ -34,7 +35,7 @@
 \backcite {sommerville2011}{{29}{2.8}{section.2.8}}
 \backcite {becker2020}{{29}{2.8}{section.2.8}}
 \backcite {pressman2016}{{29}{2.8}{section.2.8}}
-\backcite { alibaba2026qwen}{{30}{3}{chapter.3}}
+\backcite { alibaba2026qwen,kopka2004guide}{{30}{3}{chapter.3}}
 \backcite {PIMENTEL:1998}{{33}{3.2}{section.3.2}}
 \backcite {SKOOG:1997}{{33}{3.2}{section.3.2}}
 \backcite {KRAMER:1998,MARTENS:1989}{{33}{3.2}{section.3.2}}
@@ -46,9 +47,12 @@
 \backcite {ezenarro2025chemometric}{{36}{3.4}{equation.3.4.28}}
 \backcite {Westad2024,kumari2024,perisdiaz2021}{{36}{3.4}{equation.3.4.28}}
 \backcite {TAKAHASHI201731}{{48}{4.3}{figure.caption.42}}
-\backcite {clegg1994moscow}{{51}{5.1.2}{subsection.5.1.2}}
+\backcite {clegg1994moscow}{{52}{5.1.2}{subsection.5.1.2}}
+\backcite {knime_software_2026}{{53}{\caption@xref {tab:extras}{ on input line 205}}{quadro.caption.54}}
+\backcite {w3c_wcag21_ptbr}{{56}{\caption@xref {tab:usabilidade}{ on input line 558}}{quadro.caption.63}}
+\backcite {w3c_i18n_activity}{{57}{\caption@xref {tab:escalabilidade}{ on input line 622}}{quadro.caption.67}}
 \backcite {sommerville2011}{{58}{6.1}{section.6.1}}
-\backcite {scrum2026}{{62}{9.1}{section.9.1}}
-\backcite {pytest2024}{{63}{9.2}{section.9.2}}
-\backcite {pressman2016}{{63}{9.2.2}{subsection.9.2.2}}
-\backcite {sommerville2011}{{63}{9.2.3}{subsection.9.2.3}}
+\backcite {scrum2026}{{63}{9.1}{section.9.1}}
+\backcite {pytest2024}{{64}{9.2}{section.9.2}}
+\backcite {pressman2016}{{64}{9.2.2}{subsection.9.2.2}}
+\backcite {sommerville2011}{{65}{9.2.3}{subsection.9.2.3}}

@@ -43,9 +43,9 @@
 \contentsline {section}{\numberline {5.1}Levantamento de Requisitos Funcionais}{50}{section.5.1}%
 \contentsline {subsection}{\numberline {5.1.1}Inventário das Funcionalidades Existentes}{50}{subsection.5.1.1}%
 \contentsline {subsubsection}{\numberline {5.1.1.1}Funções do Sistema}{50}{subsubsection.5.1.1.1}%
-\contentsline {subsubsection}{\numberline {5.1.1.2}Entradas Necessárias (Inputs)}{51}{subsubsection.5.1.1.2}%
-\contentsline {subsubsection}{\numberline {5.1.1.3}Saídas Esperadas (Outputs)}{51}{subsubsection.5.1.1.3}%
-\contentsline {subsection}{\numberline {5.1.2}Classificação por Prioridade}{51}{subsection.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.1.2}Entradas Necessárias (\textit {Inputs})}{51}{subsubsection.5.1.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.1.3}Saídas Esperadas (\textit {Outputs})}{51}{subsubsection.5.1.1.3}%
+\contentsline {subsection}{\numberline {5.1.2}Classificação por Prioridade}{52}{subsection.5.1.2}%
 \contentsline {subsubsection}{\numberline {5.1.2.1}Essenciais (\textit {Must Have})}{52}{subsubsection.5.1.2.1}%
 \contentsline {subsubsection}{\numberline {5.1.2.2}Desejáveis (\textit {Should Have})}{52}{subsubsection.5.1.2.2}%
 \contentsline {subsubsection}{\numberline {5.1.2.3}Extras (\textit {Could Have})}{53}{subsubsection.5.1.2.3}%
@@ -57,7 +57,7 @@
 \contentsline {subsubsection}{\numberline {5.1.4.1}Performance}{55}{subsubsection.5.1.4.1}%
 \contentsline {subsubsection}{\numberline {5.1.4.2}Usabilidade}{56}{subsubsection.5.1.4.2}%
 \contentsline {subsubsection}{\numberline {5.1.4.3}Segurança}{56}{subsubsection.5.1.4.3}%
-\contentsline {subsubsection}{\numberline {5.1.4.4}Escalabilidade}{56}{subsubsection.5.1.4.4}%
+\contentsline {subsubsection}{\numberline {5.1.4.4}Escalabilidade}{57}{subsubsection.5.1.4.4}%
 \contentsline {section}{\numberline {5.2}Considerações Finais do Levantamento}{57}{section.5.2}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase []{Engenharia de Software e Modernização}}{58}{chapter.6}%
@@ -74,45 +74,45 @@
 \contentsline {chapter}{\chapternumberline {8}\MakeTextUppercase []{Interface e Experiência do Usuário Científica}}{61}{chapter.8}%
 \contentsline {section}{\numberline {8.1}Design da Interface e Fluxo de Trabalho}{61}{section.8.1}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {9}\MakeTextUppercase []{Desenvolvimento Iterativo por Sprints e Validação por Testes Automatizados}}{62}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Metodologia Ágil: Desenvolvimento por Sprints}{62}{section.9.1}%
-\contentsline {subsection}{\numberline {9.1.1}\textit {Sprint} 1 --- Camada de Leitura e Tratamento de Dados (\textit {Core Backend})}{62}{subsection.9.1.1}%
-\contentsline {subsection}{\numberline {9.1.2}\textit {Sprint} 2 --- Algoritmos Científicos}{62}{subsection.9.1.2}%
-\contentsline {subsection}{\numberline {9.1.3}\textit {Sprint} 3 --- Interface Reativa}{62}{subsection.9.1.3}%
-\contentsline {subsection}{\numberline {9.1.4}\textit {Sprint} 4 --- Otimização com \textit {Cache}}{62}{subsection.9.1.4}%
-\contentsline {section}{\numberline {9.2}Suíte de Testes Automatizados com pytest}{63}{section.9.2}%
-\contentsline {subsection}{\numberline {9.2.1}Testes Unitários (21 testes)}{63}{subsection.9.2.1}%
-\contentsline {subsection}{\numberline {9.2.2}Testes de Caixa-Preta (60 testes)}{63}{subsection.9.2.2}%
-\contentsline {subsection}{\numberline {9.2.3}Testes de Carga e \textit {Stress} (11 testes)}{63}{subsection.9.2.3}%
-\contentsline {subsection}{\numberline {9.2.4}Resultados Consolidados}{64}{subsection.9.2.4}%
+\contentsline {chapter}{\chapternumberline {9}\MakeTextUppercase []{Desenvolvimento Iterativo por Sprints e Validação por Testes Automatizados}}{63}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Metodologia Ágil: Desenvolvimento por Sprints}{63}{section.9.1}%
+\contentsline {subsection}{\numberline {9.1.1}\textit {Sprint} 1 --- Camada de Leitura e Tratamento de Dados}{63}{subsection.9.1.1}%
+\contentsline {subsection}{\numberline {9.1.2}\textit {Sprint} 2 --- Algoritmos Científicos}{63}{subsection.9.1.2}%
+\contentsline {subsection}{\numberline {9.1.3}\textit {Sprint} 3 --- Interface Reativa}{63}{subsection.9.1.3}%
+\contentsline {subsection}{\numberline {9.1.4}\textit {Sprint} 4 --- Otimização com \textit {Cache}}{63}{subsection.9.1.4}%
+\contentsline {section}{\numberline {9.2}Suíte de Testes Automatizados com pytest}{64}{section.9.2}%
+\contentsline {subsection}{\numberline {9.2.1}Testes Unitários (21 testes)}{64}{subsection.9.2.1}%
+\contentsline {subsection}{\numberline {9.2.2}Testes de Caixa-Preta (60 testes)}{64}{subsection.9.2.2}%
+\contentsline {subsection}{\numberline {9.2.3}Testes de Carga e \textit {Stress} (11 testes)}{65}{subsection.9.2.3}%
+\contentsline {subsection}{\numberline {9.2.4}Resultados Consolidados}{65}{subsection.9.2.4}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {10}\MakeTextUppercase []{Conclusão}}{66}{chapter.10}%
-\contentsline {section}{\numberline {10.1}Limitações e Trabalhos Futuros}{66}{section.10.1}%
+\contentsline {chapter}{\chapternumberline {10}\MakeTextUppercase []{Conclusão}}{67}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Limitações e Trabalhos Futuros}{67}{section.10.1}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{\MakeTextUppercase []{Referências}}{68}{section*.72}%
+\contentsline {chapter}{\MakeTextUppercase []{Referências}}{69}{section*.71}%
 \renewcommand *{\cftappendixname }{AP\^ENDICE \space }
 \setlength {\cftpartindent }{\cftlastnumwidth } \setlength {\cftpartnumwidth }{2em}
 \cftinsert {A}
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Diagramas de arquitetura e UML}}{76}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Diagrama de Arquitetura em Camadas --- Java e Python}{76}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Diagrama de Classes --- Java}{77}{section.A.2}%
-\contentsline {section}{\numberline {A.3}Diagrama de Atividade --- Java}{78}{section.A.3}%
-\contentsline {section}{\numberline {A.4}Diagrama de Sequência --- Java}{79}{section.A.4}%
-\contentsline {section}{\numberline {A.5}Diagrama de Atividades --- Java (PlantUML)}{80}{section.A.5}%
-\contentsline {section}{\numberline {A.6}Diagrama de Atividades --- Streamlit}{81}{section.A.6}%
-\contentsline {section}{\numberline {A.7}Diagrama de Classes (Módulos) --- Streamlit}{82}{section.A.7}%
-\contentsline {section}{\numberline {A.8}Diagrama de Sequência --- Streamlit}{83}{section.A.8}%
+\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Diagramas de arquitetura e UML}}{78}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Diagrama de Arquitetura em Camadas --- Java e Python}{78}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Diagrama de Classes --- Java}{79}{section.A.2}%
+\contentsline {section}{\numberline {A.3}Diagrama de Atividade --- Java}{80}{section.A.3}%
+\contentsline {section}{\numberline {A.4}Diagrama de Sequência --- Java}{81}{section.A.4}%
+\contentsline {section}{\numberline {A.5}Diagrama de Atividades --- Java (PlantUML)}{82}{section.A.5}%
+\contentsline {section}{\numberline {A.6}Diagrama de Atividades --- Streamlit}{83}{section.A.6}%
+\contentsline {section}{\numberline {A.7}Diagrama de Classes (Módulos) --- Streamlit}{84}{section.A.7}%
+\contentsline {section}{\numberline {A.8}Diagrama de Sequência --- Streamlit}{85}{section.A.8}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {B}\MakeTextUppercase []{Tabelas de Paridade Amostra-a-Amostra --- Java $\times $ Python}}{84}{appendix.B}%
+\contentsline {appendix}{\chapternumberline {B}\MakeTextUppercase []{Tabelas de Paridade Amostra-a-Amostra --- Java $\times $ Python}}{86}{appendix.B}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {C}\MakeTextUppercase []{Resultado dos Testes}}{98}{appendix.C}%
+\contentsline {appendix}{\chapternumberline {C}\MakeTextUppercase []{Resultado dos Testes}}{100}{appendix.C}%
 \cftinsert {AAA}
 \renewcommand *{\cftappendixname }{ANEXO \space }

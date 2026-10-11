@@ -78,7 +78,7 @@ onde o vetor de resposta $\mathbf{y}$ e a matriz de calibração $\mathbf{X}$ (i
 O vetor de coeficientes populacionais é $\mathbf{\beta} = [\beta_0, \beta_1, \ldots, \beta_n]^{\textbf{T}}$.
 
 \subsection{Estimação dos Coeficientes}
-O procedimento de estimação é conhecido como \textbf{Método dos Mínimos Quadrados Ordinários (MQO)}. O MQO busca o vetor de coeficientes estimados $\widehat{\mathbf{\beta}}$ que minimiza a Soma dos Quadrados dos Resíduos (SQR).
+O procedimento de estimação é conhecido como \gls{MQO}. O MQO busca o vetor de coeficientes estimados $\widehat{\mathbf{\beta}}$ que minimiza a \gls{SQR}.
 
 A melhor estimativa $\widehat{\mathbf{\beta}}$ no sentido de mínimos quadrados é dada pela solução da pseudo-inversa de Moore-Penrose \cite{DRAPER:1998,TIMM:2002}:
 \begin{equation}
@@ -685,7 +685,7 @@ negócio, persistência e interface presente na implementação original.
 
 A estratégia de migração adotada --- reescrita caixa preta --- extrai os
 requisitos do comportamento observável de um sistema legado, sem reaproveitar seu
-código-fonte~\cite{becker2020}. Diferentemente da reescrita \textit{white-box}, que
+código-fonte~\cite{becker2020}. Diferentemente da reescrita caixa-branca, que
 preserva estruturas internas do sistema original, essa abordagem trata o legado
 exclusivamente como especificação funcional, permitindo à equipe redesenhar a
 arquitetura livremente, desde que a equivalência comportamental da lógica

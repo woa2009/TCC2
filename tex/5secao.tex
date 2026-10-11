@@ -25,11 +25,11 @@ No Quadro~\ref{tab:funcoes} resume as funcionalidades identificadas na aplicaç�
 % O tabularx garante que a largura total seja exatamente \textwidth
 \begin{tabularx}{\textwidth}{|l|l|X|} \hline
 \textbf{Categoria} & \textbf{Funcionalidade} & \textbf{Descrição Técnica} \\ \hline
-Cálculos & RLM Simples (Baseline) & Regressão Linear Múltipla padrão sem técnicas de ensemble \\ \hline
-Cálculos & RLM + \textit{Bagging} & \textit{Ensemble} com amostragem \textit{com} reposição (bootstrap) \\ \hline
-Cálculos & RLM + \textit{Subagging} + CV & \textit{Ensemble} com amostragem \textit{sem} reposição + otimização por validação cruzada 5-Fold \\ \hline
-Configuração & Parâmetro \textit{m} (Bags) & Define número de amostras/\textit{ensembles} para o método Bagging \\ \hline
-Configuração & Parâmetro \textit{k} (Subagging) & Define fração ou quantidade para amostragem no Subagging \\ \hline
+Cálculos & RLM Simples (\textit{Baseline}) & Regressão Linear Múltipla padrão sem técnicas de \textit{ensemble} \\ \hline
+Cálculos & RLM + \textit{Bagging} & \textit{Ensemble} com amostragem \textit{com} reposição (\textit{bootstrap}) \\ \hline
+Cálculos & RLM + \textit{Subagging} + CV\tnote{a} & \textit{Ensemble} com amostragem \textit{sem} reposição + otimização por validação cruzada 5-\textit{Fold} \\ \hline
+Configuração & Parâmetro \textit{m} (\textit{Bags}) & Define número de amostras/\textit{ensembles} para o método \textit{Bagging} \\ \hline
+Configuração & Parâmetro \textit{k} (\textit{Subagging}) & Define fração ou quantidade para amostragem no \textit{Subagging} \\ \hline
 Visualização & Métricas de Desempenho & Exibição de R², RMSEP, MAE calculados no conjunto de teste \\ \hline
 Visualização & Gráficos Comparativos & \textit{Scatter plots} (previsto $\times$ real), resíduos e comparação entre modelos \\ \hline
 Organização & Abas de Navegação & Separação lógica: ``Arquivos'', ``Resultados'', ``Gráficos'' \\ \hline
@@ -38,6 +38,7 @@ Exportação & Métricas (.csv) e log (.txt) & \texttt{st.download\_button} na a
 \begin{tablenotes}[flushleft]
 \footnotesize
 \item Fonte:~\oautor
+\item[a] \textit{Cross Validation }- Validação Cruzada.
 \end{tablenotes}
 \end{threeparttable}
 \end{center}
@@ -45,7 +46,7 @@ Exportação & Métricas (.csv) e log (.txt) & \texttt{st.download\_button} na a
 
 
 \newpage
-\subsubsection{Entradas Necessárias (Inputs)}
+\subsubsection{Entradas Necessárias (\textit{Inputs})}
 \label{ssubsec:entradas}
 
 No Quadro~\ref{tab:entradas} detalha os dados e parâmetros exigidos para execução da aplicação.
@@ -66,7 +67,7 @@ Arquivo & \texttt{Xteste} & \texttt{.txt, .csv, .xlsx} & Sim & Matriz de espectr
 Arquivo & \texttt{Yteste} & \texttt{.txt, .csv, .xlsx} & Sim & Vetor de valores reais para validação \\ \hline
 Parâmetro & \textit{m} & Inteiro $\geq 1$ & Condic.\tnote{a} & Usado apenas nos métodos de \textit{ensemble} \\ \hline
 Parâmetro & \textit{k} & Inteiro $\geq 1$ & Condic.\tnote{a} & Usado apenas no método \textit{Subagging} \\ \hline
-Config. & Val. Cruzada & Fixo: 5-Fold & Auto. & Parâmetro interno de otimização \\ \hline
+Configurado & Validação Cruzada & Fixo: 5-\textit{Fold} & Auto & Parâmetro interno de otimização \\ \hline
 \end{tabularx}
 \begin{tablenotes}[flushleft]
 \footnotesize
@@ -79,7 +80,7 @@ Config. & Val. Cruzada & Fixo: 5-Fold & Auto. & Parâmetro interno de otimizaç�
 
 
 %\newpage
-\subsubsection{Saídas Esperadas (Outputs)}
+\subsubsection{Saídas Esperadas (\textit{Outputs})}
 \label{ssubsec:saidas}
 
 No Quadro~\ref{tab:saidas} apresenta os resultados gerados pelo sistema após processamento.
@@ -96,11 +97,11 @@ No Quadro~\ref{tab:saidas} apresenta os resultados gerados pelo sistema após pr
 \begin{tabularx}{\textwidth}{|l|X|l|l|} \hline
 \textbf{Tipo} & \textbf{Conteúdo} & \textbf{Formato de Exibição} & \textbf{Destinatário} \\ \hline
 Numérico & R², RMSEP, MAE (conjunto de teste) & Quadro ou \textit{cards} destacados & Usuário analista \\ \hline
-Gráfico & Previsto vs. Real & \textit{Scatter plot} com reta de ajuste & Usuário analista \\ \hline
+Gráfico & Previsto $\times$ Real & \textit{Scatter plot} com reta de ajuste & Usuário analista \\ \hline
 Gráfico & Resíduos da Predição & Gráfico de dispersão ou histograma & Usuário analista \\ \hline
 Comparativo & Desempenho: RLM $\times$ \textit{Bagging} $\times$ \textit{Subagging} & Quadro comparativa ou gráfico de barras & Usuário analista \\ \hline
-Feedback & Mensagens de erro/validação & Alertas em destaque & Usuário final \\ \hline
-Status & Indicador de processamento & \textit{Spinner} ou barra de progresso & Usuário final \\ \hline
+\textit{Feedback} & Mensagens de erro/validação & Alertas em destaque & Usuário final \\ \hline
+\textit{Status} & Indicador de processamento & \textit{Spinner} ou barra de progresso & Usuário final \\ \hline
 \end{tabularx}
 \begin{tablenotes}[flushleft]
 \footnotesize
@@ -116,7 +117,7 @@ Status & Indicador de processamento & \textit{Spinner} ou barra de progresso & U
 
 Os requisitos foram classificados utilizando a técnica \gls{MoSCoW}\footnote{MoSCoW é uma técnica de priorização de requisitos dividida em quatro categorias: \textit{Must have} (obrigatórios), \textit{Should have} (importantes, mas não críticos), \textit{Could have} (desejáveis) e \textit{Won’t have (this time)} (excluídos desta versão). A letra “o” é adicionada apenas para facilitar a pronúncia.}\cite{clegg1994moscow} adaptada, conforme descrito nas seções seguintes.
 
-\newpage
+
 \subsubsection{Essenciais (\textit{Must Have})}
 \label{ssubsec:essenciais}
 
@@ -133,9 +134,9 @@ O Quadro~\ref{tab:essenciais} lista os requisitos essenciais, indispensáveis à
 \begin{tabularx}{\textwidth}{|l|X|X|} \hline
 \textbf{ID} & \textbf{Requisito} & \textbf{Justificativa} \\ \hline
 E01 & \textit{Upload} e validação dos 4 arquivos de entrada & Dados são pré-requisito para qualquer cálculo estatístico \\ \hline
-E02 & Execução da RLM Simples (baseline) & Referência obrigatória para comparação de desempenho dos ensembles \\ \hline
+E02 & Execução da RLM Simples (\textit{baseline}) & Referência obrigatória para comparação de desempenho dos \textit{ensembles} \\ \hline
 E03 & Cálculo de métricas básicas (R², RMSEP, MAE) & Mínimo necessário para avaliação quantitativa da qualidade do modelo \\ \hline
-E04 & Validação de consistência dimensional (X vs Y) & Previne erros de execução e geração de resultados inválidos \\ \hline
+E04 & Validação de consistência dimensional (X $\times$Y) & Previne erros de execução e geração de resultados inválidos \\ \hline
 E05 & Exibição clara dos resultados numéricos & Permite decisão técnica fundamentada em evidências quantitativas \\ \hline
 \end{tabularx}
 \begin{tablenotes}[flushleft]
@@ -162,7 +163,7 @@ O Quadro~\ref{tab:desejaveis} lista os requisitos desejáveis, que ampliam usabi
 % Tabularx ajustado para a largura total do texto com bordas laterais
 \begin{tabularx}{\textwidth}{|l|X|X|} \hline
 \textbf{ID} & \textbf{Requisito} & \textbf{Benefício} \\ \hline
-D01 & Gráficos interativos (zoom, \textit{tooltip}, download) & Facilita exploração visual detalhada e apresentação de resultados \\ \hline
+D01 & Gráficos interativos (\textit{zoom}, \textit{tooltip}, \textit{download}) & Facilita exploração visual detalhada e apresentação de resultados \\ \hline
 D02 & Exportação em PDF e PNG (CSV e TXT já implementados) & Permite documentação, compartilhamento e reprodutibilidade \\ \hline
 D03 & \textit{Tooltips} explicativos para \textit{m}, \textit{k}, \textit{Bagging}/\textit{Subagging} & Reduz curva de aprendizado para usuários não especialistas \\ \hline
 D04 & Pré-processamento básico (normalização, escalonamento) & Melhora robustez dos modelos com dados espectrais reais \\ \hline
@@ -193,14 +194,15 @@ O Quadro~\ref{tab:extras} apresenta os requisitos extras, destinados a fases fut
 \begin{tabularx}{\textwidth}{|l|X|X|} \hline
 \textbf{ID} & \textbf{Requisito} & \textbf{Cenário de Uso} \\ \hline
 X01 & Autenticação de usuários e projetos privados & Ambientes corporativos ou de pesquisa colaborativa \\ \hline
-X02 & Integração com APIs externas (ex: KNIME, scripts Python) & Pipelines automatizadas de quimiometria \\ \hline
-X03 & Suporte a formatos adicionais (.csv, .xlsx, .mat) & Flexibilidade para ingestão de dados de diferentes fontes \\ \hline
+X02 & Integração com Interface de Programação de Aplicações externas (ex: KNIME\tnote{a}, scripts Python) & Pipelines automatizadas de quimiometria \\ \hline
+X03 & Suporte a formatos adicionais (.mat) & Flexibilidade para ingestão de dados de diferentes fontes \\ \hline
 X04 & Otimização automática de hiperparâmetros & Dispensa o usuário de informar \textit{m} e \textit{k} manualmente \\ \hline
-X05 & Dashboard comparativo multi-rodada & Análise estatística de estabilidade dos modelos ensemble \\ \hline
+X05 & \textit{Dashboard} comparativo multi-rodada & Análise estatística de estabilidade dos modelos \textit{ensemble} \\ \hline
 \end{tabularx}
 \begin{tablenotes}[flushleft]
 \footnotesize
 \item Fonte:~\oautor
+\item[a] \textit{Konstanz Information Miner} (KNIME) \cite{knime_software_2026} é uma plataforma de código aberto voltada para a ciência de dados, análise e automação de processos.
 \end{tablenotes}
 \end{threeparttable}
 \end{center}
@@ -481,9 +483,9 @@ O Quadro~\ref{tab:pontos-criticos} identifica pontos críticos de usabilidade, c
 % O tabularx com \textwidth garante o respeito às margens e o | fecha as laterais
 \begin{tabularx}{\textwidth}{|l|X|X|} \hline
 \textbf{Ponto} & \textbf{Risco} & \textbf{Sugestão de Mitigação} \\ \hline
-Upload múltiplo obrigatório & Esquecer um dos 4 arquivos e travar o fluxo & Checklist visual + botão habilitado apenas quando todos estiverem OK \\ \hline
+Upload múltiplo obrigatório & Esquecer um dos 4 arquivos e travar o fluxo & \textit{Checklist} visual + botão habilitado apenas quando todos estiverem OK \\ \hline
 Parâmetros \textit{m} e \textit{k} abstratos & Inserir valores inadequados e obter resultados ruins & \textit{Sliders} com valores recomendados + \textit{tooltip} prático \\ \hline
-Processamento sem feedback claro & Achar que a aplicação travou & Barra de progresso com etapas descritivas \\ \hline
+Processamento sem \textit{feedback} claro & Achar que a aplicação travou & Barra de progresso com etapas descritivas \\ \hline
 Gráficos sem legenda ou escala & Dificulta interpretação em telas menores & Legendas fixas, eixos nomeados, opção de ampliar \\ \hline
 Resultados não exportáveis & Impede documentação externa & Botão ``Baixar Relatório'' com métricas + gráficos \\ \hline
 \end{tabularx}
@@ -514,11 +516,11 @@ O Quadro~\ref{tab:performance} define requisitos de performance, com limites de 
 % O tabularx com \textwidth garante o respeito às margens e o | fecha as laterais
 \begin{tabularx}{\textwidth}{|X|X|l|} \hline
 \textbf{Requisito} & \textbf{Especificação} & \textbf{Critério de Aceite} \\ \hline
-Tempo de upload & Arquivos $\leq$ 200\,MB & $<$ 30\,s em conexão 10\,Mbps \\ \hline
-Tempo de cálculo (RLM) & Dataset típico ($n \leq 500$, $p \leq 1000$) & $<$ 10\,s \\ \hline
-Tempo de cálculo (Ensemble) & Bagging/Subagging com $m \leq 100$ & $<$ 2\,min com CV 5-Fold \\ \hline
+Tempo de \textit{upload} & Arquivos $\leq$ 200\,MB & $<$ 30\,s em conexão 10\,Mbps \\ \hline
+Tempo de cálculo (RLM) & \textit{Dataset} típico ($n \leq 500$, $p \leq 1000$) & $<$ 10\,s \\ \hline
+Tempo de cálculo (\textit{Ensemble}) & \textit{Bagging}/\textit{Subagging} com $m \leq 100$ & $<$ 2\,min com CV 5-\textit{Fold} \\ \hline
 Renderização de gráficos & Após conclusão do cálculo & $<$ 3\,s \\ \hline
-Responsividade da UI & Interações (mudar aba, ajustar parâmetro) & $<$ 500\,ms de feedback visual \\ \hline
+Responsividade da Interface do Usuário & Interações (mudar aba, ajustar parâmetro) & $<$ 500\,ms de \textit{feedback} visual \\ \hline
 \end{tabularx}
 \begin{tablenotes}[flushleft]
 \footnotesize
@@ -546,14 +548,14 @@ O Quadro~\ref{tab:usabilidade} define requisitos de usabilidade, abrangendo aces
 \begin{tabularx}{\textwidth}{|l|X|X|} \hline
 \textbf{Requisito} & \textbf{Especificação} & \textbf{Critério de Aceite} \\ \hline
 Acessibilidade & Compatível com \gls{WCAG} 2.1 Nível AA\tnote{a} & Contraste adequado, \textit{labels}, navegação por teclado \\ \hline
-Responsividade & Funcional em desktop, tablet e mobile ($\geq$ 768\,px) & Layout adaptativo sem perda de funcionalidade crítica \\ \hline
+Responsividade & Funcional em \textit{desktop}, \textit{tablet} e \textit{mobile} ($\geq$ 768\,px) & \textit{Layout} adaptativo sem perda de funcionalidade crítica \\ \hline
 Clareza textual & Mensagens, rótulos e erros em português claro & Teste com 3 usuários: $\geq$ 90\% de acerto na interpretação \\ \hline
 Consistência & Padrões visuais alinhados ao Streamlit & Botões, cores e ícones seguem guia de estilo \\ \hline
 Recuperação de erro & Mensagens orientam a correção & Ex: ``Ycal.txt tem 99 linhas, mas Xcal.txt tem 100...'' \\ \hline
 \end{tabularx}
 \begin{tablenotes}[flushleft]
 \footnotesize
-\item[a] A \textit{Web Content Accessibility Guidelines} (WCAG) 2.1 Nível AA é um padrão internacional de acessibilidade digital que estabelece critérios de desenvolvimento para garantir que softwares e sites sejam plenamente utilizáveis por pessoas com deficiências visuais, auditivas, motoras ou cognitivas.
+\item[a] A \textit{Web Content Accessibility Guidelines} (WCAG) 2.1 Nível AA é um padrão internacional de acessibilidade digital que estabelece critérios de desenvolvimento para garantir que softwares e sites sejam plenamente utilizáveis por pessoas com deficiências visuais, auditivas, motoras ou cognitivas \cite{w3c_wcag21_ptbr}.
 \item \textit{Nota:} Modificado para atender ao escopo do projeto.
 \item Fonte:~\oautor
 \end{tablenotes}
@@ -580,12 +582,13 @@ O Quadro~\ref{tab:seguranca} define requisitos de segurança, como isolamento de
 Isolamento de sessão & Dados não vazam entre usuários & Aplicação pública; dados podem ser propriedade intelectual \\ \hline
 Sanitização de arquivos & Validar extensão, cabeçalho e conteúdo & Prevenção contra upload malicioso \\ \hline
 Limite de tamanho & Máximo 200\,MB por arquivo & Evita abuso de recursos computacionais \\ \hline
-Logs de auditoria (opc.) & Registrar uploads/execuções (sem dados) & Rastreabilidade para suporte técnico \\ \hline
-HTTPS obrigatório & Todas as comunicações criptografadas & Proteção de integridade e confidencialidade \\ \hline
+Logs de auditoria (opcional) & Registrar uploads/execuções (sem dados) & Rastreabilidade para suporte técnico \\ \hline
+HTTPS\tnote{a} obrigatório & Todas as comunicações criptografadas & Proteção de integridade e confidencialidade \\ \hline
 \end{tabularx}
 \begin{tablenotes}[flushleft]
 \footnotesize
 \item Fonte:~\oautor
+\item[a] \textit{HyperText Transfer Protocol Secure} (HTTPs) (em português, Protocolo de Transferência de Hipertexto Seguro)
 \end{tablenotes}
 \end{threeparttable}
 \end{center}
@@ -609,13 +612,14 @@ O Quadro~\ref{tab:escalabilidade} define requisitos de escalabilidade, como usu�
 \begin{tabularx}{\textwidth}{|l|X|X|X|} \hline
 \textbf{Cenário} & \textbf{Capacidade Atual} & \textbf{Meta} & \textbf{Estratégia} \\ \hline
 Usuários simultâneos & $\sim$10--20 (\textit{Streamlit Cloud free}) & 100+ usuários/h & Container com \textit{load balancer} \\ \hline
-Volume de dados & $\sim$500 amostras $\times$ 2k variáveis & 5k+ amostras $\times$ 10k var. & Processamento em \textit{batch} / Dask \\ \hline
-Crescimento funcional & Script único & Módulos \textit{plug-and-play} & Arquitetura de plugins \\ \hline
-Internacionalização & Português + Inglês & Espanhol & Arquivos \textit{i18n} \\ \hline
+Volume de dados & $\sim$500 amostras $\times$ 2k variáveis & 5k+ amostras $\times$ 10k var. & Processamento em \textit{batch} / \textit{Dask} \\ \hline
+Crescimento funcional & Script único & Módulos \textit{plug-and-play} & Arquitetura de \textit{plugins} \\ \hline
+Internacionalização & Português + Inglês & Espanhol & Arquivos \textit{i18n}\tnote{a} \\ \hline
 \end{tabularx}
 \begin{tablenotes}[flushleft]
 \footnotesize
 \item Fonte:~\oautor
+\item[a] Um arquivo i18n\cite{w3c_i18n_activity} é um arquivo de tradução utilizado para internacionalizar softwares, sites e aplicativos.
 \end{tablenotes}
 \end{threeparttable}
 \end{center}

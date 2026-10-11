@@ -79,7 +79,7 @@ de plataforma não introduziu perdas de acurácia amostra a amostra.
 \item Fonte:~\oautor
 \item[a] Tipo de dado utilizado em Java foi o \textit{double}; no Python,
 o equivalente é o \textit{float64} do NumPy — ambos representações IEEE~754
-de precisão dupla (64 bits), o que garante paridade numérica exata entre as
+de precisão dupla (64 bits), o que garante paridade ao nível da precisão exibida (quatro casas decimais) entre as
 duas implementações.
 \item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
 Todos os valores de $\Delta$ são iguais a zero, indicando paridade
@@ -153,7 +153,7 @@ no analito Ferro (Fe).
 \item Fonte:~\oautor
 \item[a] Tipo de dado utilizado em Java foi o \textit{double}; no Python,
 o equivalente é o \textit{float64} do NumPy — ambos representações IEEE~754
-de precisão dupla (64 bits), o que garante paridade numérica exata entre as
+de precisão dupla (64 bits), o que garante paridade ao nível da precisão exibida (quatro casas decimais) entre as
 duas implementações.
 \item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
 Todos os valores de $\Delta$ são iguais a zero, indicando paridade
@@ -212,7 +212,7 @@ no analito Manganês (Mn).
 \item Fonte:~\oautor
 \item[a] Tipo de dado utilizado em Java foi o \textit{double}; no Python,
 o equivalente é o \textit{float64} do NumPy — ambos representações IEEE~754
-de precisão dupla (64 bits), o que garante paridade numérica exata entre as
+de precisão dupla (64 bits), o que garante paridade ao nível da precisão exibida (quatro casas decimais) entre as
 duas implementações.
 \item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
 Todos os valores de $\Delta$ são iguais a zero, indicando paridade
@@ -224,7 +224,7 @@ no analito Níquel (Ni).
 \end{threeparttable}
 \end{table}
 
-%--------------------------------------------
+
 \begin{table}[H]
 \centering
 \caption{Paridade \textit{Bagging} -- Mo.}
@@ -273,7 +273,7 @@ no analito Níquel (Ni).
 \item Fonte:~\oautor
 \item[a] Tipo de dado utilizado em Java foi o \textit{double}; no Python,
 o equivalente é o \textit{float64} do NumPy — ambos representações IEEE~754
-de precisão dupla (64 bits), o que garante paridade numérica exata entre as
+de precisão dupla (64 bits), o que garante paridade ao nível da precisão exibida (quatro casas decimais) entre as
 duas implementações.
 \item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
 Todos os valores de $\Delta$ são iguais a zero, indicando paridade
@@ -284,6 +284,8 @@ no analito Molibdênio (Mo).
 \end{center}
 \end{threeparttable}
 \end{table}
+
+%---------------RLM INICIO
 
 \begin{table}[H]
 \centering
@@ -346,7 +348,7 @@ no analito Molibdênio (Mo).
 \item Fonte:~\oautor
 \item[a] Tipo de dado utilizado em Java foi o \textit{double}; no Python,
 o equivalente é o \textit{float64} do NumPy — ambos representações IEEE~754
-de precisão dupla (64 bits), o que garante paridade numérica exata entre as
+de precisão dupla (64 bits), o que garante paridade ao nível da precisão exibida (quatro casas decimais) entre as
 duas implementações.
 \item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
 Todos os valores de $\Delta$ são iguais a zero, indicando paridade
@@ -358,7 +360,7 @@ no analito Cromo (Cr).
 \end{threeparttable}
 \end{table}
 
-%----------------------------------------------
+
 \begin{table}[H]
 \centering
 \caption{Paridade \textit{RLM} -- Mo.}
@@ -407,7 +409,7 @@ no analito Cromo (Cr).
 \item Fonte:~\oautor
 \item[a] Tipo de dado utilizado em Java foi o \textit{double}; no Python,
 o equivalente é o \textit{float64} do NumPy — ambos representações IEEE~754
-de precisão dupla (64 bits), o que garante paridade numérica exata entre as
+de precisão dupla (64 bits), o que garante paridade ao nível da precisão exibida (quatro casas decimais) entre as
 duas implementações.
 \item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
 Todos os valores de $\Delta$ são iguais a zero, indicando paridade
@@ -419,80 +421,6 @@ no analito Molibdênio (Mo).
 \end{threeparttable}
 \end{table}
 
-\begin{table}[H]
-\centering
-\caption{Paridade \textit{Subagging} -- Cr.}
-\label{tab:paridade_subagging_cr}
-\begin{threeparttable}
-\resizebox{0.6\textwidth}{!}{%
-\begin{tabular}{
-    S[table-format=2.0]
-    S[table-format=2.3]
-    S[table-format=2.4]
-    S[table-format=2.4]
-    S[table-format=1.1]
-}
-\toprule
-{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}\tnote{a}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
-\midrule
-% ---- Dados das 34 amostras ----
- 1  & 30.000  & 30.1547  & 30.1547  & 0.0 \\
- 2  & 40.000  & 39.9189  & 39.9189  & 0.0 \\
- 3  & 60.000  & 59.9876  & 59.9876  & 0.0 \\
- 4  & 35.000  & 34.8894  & 34.8894  & 0.0 \\
- 5  & 45.000  & 44.6394  & 44.6394  & 0.0 \\
- 6  & 48.000  & 47.3280  & 47.3280  & 0.0 \\
- 7  & 65.000  & 64.7895  & 64.7895  & 0.0 \\
- 8  & 23.000  & 22.7179  & 22.7179  & 0.0 \\
- 9  & 25.000  & 23.9207  & 23.9207  & 0.0 \\
-10  & 37.000  & 36.0523  & 36.0523  & 0.0 \\
-11  & 23.103  & 22.8577  & 22.8577  & 0.0 \\
-12  & 22.722  & 20.5236  & 20.5236  & 0.0 \\
-13  & 22.713  & 21.6248  & 21.6248  & 0.0 \\
-14  & 60.054  & 60.0747  & 60.0747  & 0.0 \\
-15  & 59.959  & 57.2228  & 57.2228  & 0.0 \\
-16  & 32.250  & 33.6311  & 33.6311  & 0.0 \\
-17  & 32.448  & 31.6253  & 31.6253  & 0.0 \\
-18  & 32.154  & 30.5525  & 30.5525  & 0.0 \\
-19  & 60.996  & 62.9301  & 62.9301  & 0.0 \\
-20  & 60.684  & 60.3038  & 60.3038  & 0.0 \\
-21  & 60.360  & 58.2638  & 58.2638  & 0.0 \\
-22  & 40.636  & 41.4631  & 41.4631  & 0.0 \\
-23  & 40.733  & 39.3369  & 39.3369  & 0.0 \\
-24  & 40.524  & 39.3585  & 39.3585  & 0.0 \\
-25  & 64.597  & 66.5127  & 66.5127  & 0.0 \\
-26  & 65.522  & 65.1206  & 65.1206  & 0.0 \\
-27  & 44.707  & 43.1986  & 43.1986  & 0.0 \\
-28  & 44.716  & 43.3023  & 43.3023  & 0.0 \\
-29  & 30.022  & 30.3558  & 30.3558  & 0.0 \\
-30  & 30.177  & 28.6899  & 28.6899  & 0.0 \\
-31  & 29.926  & 28.1980  & 28.1980  & 0.0 \\
-32  & 44.926  & 46.1193  & 46.1193  & 0.0 \\
-33  & 44.837  & 43.7828  & 43.7828  & 0.0 \\
-34  & 44.837  & 43.6620  & 43.6620  & 0.0 \\
-\bottomrule
-\end{tabular}%
-}
-\begin{center}
-\begin{minipage}{0.85\linewidth}
-\begin{tablenotes}
-\footnotesize
-\item Fonte:~\oautor
-\item[a] Tipo de dado utilizado em Java foi o \textit{double}; no Python,
-o equivalente é o \textit{float64} do NumPy — ambos representações IEEE~754
-de precisão dupla (64 bits), o que garante paridade numérica exata entre as
-duas implementações.
-\item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
-Todos os valores de $\Delta$ são iguais a zero, indicando paridade
-perfeita entre as implementações Java e Python para a técnica \textit{Subagging}
-no analito Cromo (Cr).
-\end{tablenotes}
-\end{minipage}
-\end{center}
-\end{threeparttable}
-\end{table}
-
-%-------------------------------------------------------
 \begin{table}[H]
 \centering
 \caption{Paridade \textit{RLM} -- Fe.}
@@ -554,7 +482,7 @@ no analito Cromo (Cr).
 \item Fonte:~\oautor
 \item[a] Tipo de dado utilizado em Java foi o \textit{double}; no Python,
 o equivalente é o \textit{float64} do NumPy — ambos representações IEEE~754
-de precisão dupla (64 bits), o que garante paridade numérica exata entre as
+de precisão dupla (64 bits), o que garante paridade ao nível da precisão exibida (quatro casas decimais) entre as
 duas implementações.
 \item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
 Todos os valores de $\Delta$ são iguais a zero, indicando paridade
@@ -566,7 +494,7 @@ no analito Ferro (Fe).
 \end{threeparttable}
 \end{table}
 
-%---------------------------------------------------
+
 \begin{table}[H]
 \centering
 \caption{Paridade \textit{RLM} -- Ni.}
@@ -614,7 +542,7 @@ no analito Ferro (Fe).
 \item Fonte:~\oautor
 \item[a] Tipo de dado utilizado em Java foi o \textit{double}; no Python,
 o equivalente é o \textit{float64} do NumPy — ambos representações IEEE~754
-de precisão dupla (64 bits), o que garante paridade numérica exata entre as
+de precisão dupla (64 bits), o que garante paridade ao nível da precisão exibida (quatro casas decimais) entre as
 duas implementações.
 \item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
 Todos os valores de $\Delta$ são iguais a zero, indicando paridade
@@ -687,7 +615,7 @@ no analito Níquel (Ni).
 \item Fonte:~\oautor
 \item[a] Tipo de dado utilizado em Java foi o \textit{double}; no Python,
 o equivalente é o \textit{float64} do NumPy — ambos representações IEEE~754
-de precisão dupla (64 bits), o que garante paridade numérica exata entre as
+de precisão dupla (64 bits), o que garante paridade ao nível da precisão exibida (quatro casas decimais) entre as
 duas implementações.
 \item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
 Todos os valores de $\Delta$ são iguais a zero, indicando paridade
@@ -698,6 +626,86 @@ no analito Manganês (Mn).
 \end{center}
 \end{threeparttable}
 \end{table}
+
+%-------------------FIM RLM
+
+%---------INICIO SUBAGGING
+
+\begin{table}[H]
+\centering
+\caption{Paridade \textit{Subagging} -- Cr.}
+\label{tab:paridade_subagging_cr}
+\begin{threeparttable}
+\resizebox{0.6\textwidth}{!}{%
+\begin{tabular}{
+    S[table-format=2.0]
+    S[table-format=2.3]
+    S[table-format=2.4]
+    S[table-format=2.4]
+    S[table-format=1.1]
+}
+\toprule
+{\textbf{Amostra}} & {\textbf{Y real}} & {\textbf{Y predito (Java)}\tnote{a}} & {\textbf{Y predito (Python)}} & {$\boldsymbol{\Delta}$} \\
+\midrule
+% ---- Dados das 34 amostras ----
+ 1  & 30.000  & 30.1547  & 30.1547  & 0.0 \\
+ 2  & 40.000  & 39.9189  & 39.9189  & 0.0 \\
+ 3  & 60.000  & 59.9876  & 59.9876  & 0.0 \\
+ 4  & 35.000  & 34.8894  & 34.8894  & 0.0 \\
+ 5  & 45.000  & 44.6394  & 44.6394  & 0.0 \\
+ 6  & 48.000  & 47.3280  & 47.3280  & 0.0 \\
+ 7  & 65.000  & 64.7895  & 64.7895  & 0.0 \\
+ 8  & 23.000  & 22.7179  & 22.7179  & 0.0 \\
+ 9  & 25.000  & 23.9207  & 23.9207  & 0.0 \\
+10  & 37.000  & 36.0523  & 36.0523  & 0.0 \\
+11  & 23.103  & 22.8577  & 22.8577  & 0.0 \\
+12  & 22.722  & 20.5236  & 20.5236  & 0.0 \\
+13  & 22.713  & 21.6248  & 21.6248  & 0.0 \\
+14  & 60.054  & 60.0747  & 60.0747  & 0.0 \\
+15  & 59.959  & 57.2228  & 57.2228  & 0.0 \\
+16  & 32.250  & 33.6311  & 33.6311  & 0.0 \\
+17  & 32.448  & 31.6253  & 31.6253  & 0.0 \\
+18  & 32.154  & 30.5525  & 30.5525  & 0.0 \\
+19  & 60.996  & 62.9301  & 62.9301  & 0.0 \\
+20  & 60.684  & 60.3038  & 60.3038  & 0.0 \\
+21  & 60.360  & 58.2638  & 58.2638  & 0.0 \\
+22  & 40.636  & 41.4631  & 41.4631  & 0.0 \\
+23  & 40.733  & 39.3369  & 39.3369  & 0.0 \\
+24  & 40.524  & 39.3585  & 39.3585  & 0.0 \\
+25  & 64.597  & 66.5127  & 66.5127  & 0.0 \\
+26  & 65.522  & 65.1206  & 65.1206  & 0.0 \\
+27  & 44.707  & 43.1986  & 43.1986  & 0.0 \\
+28  & 44.716  & 43.3023  & 43.3023  & 0.0 \\
+29  & 30.022  & 30.3558  & 30.3558  & 0.0 \\
+30  & 30.177  & 28.6899  & 28.6899  & 0.0 \\
+31  & 29.926  & 28.1980  & 28.1980  & 0.0 \\
+32  & 44.926  & 46.1193  & 46.1193  & 0.0 \\
+33  & 44.837  & 43.7828  & 43.7828  & 0.0 \\
+34  & 44.837  & 43.6620  & 43.6620  & 0.0 \\
+\bottomrule
+\end{tabular}%
+}
+\begin{center}
+\begin{minipage}{0.85\linewidth}
+\begin{tablenotes}
+\footnotesize
+\item Fonte:~\oautor
+\item[a] Tipo de dado utilizado em Java foi o \textit{double}; no Python,
+o equivalente é o \textit{float64} do NumPy — ambos representações IEEE~754
+de precisão dupla (64 bits), o que garante paridade ao nível da precisão exibida (quatro casas decimais) entre as
+duas implementações.
+\item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
+Todos os valores de $\Delta$ são iguais a zero, indicando paridade
+perfeita entre as implementações Java e Python para a técnica \textit{Subagging}
+no analito Cromo (Cr).
+\end{tablenotes}
+\end{minipage}
+\end{center}
+\end{threeparttable}
+\end{table}
+
+%-------------------------------------------------------
+
 
 %---------------------------------------------------------------------
 \begin{table}[H]
@@ -761,7 +769,7 @@ no analito Manganês (Mn).
 \item Fonte:~\oautor
 \item[a] Tipo de dado utilizado em Java foi o \textit{double}; no Python,
 o equivalente é o \textit{float64} do NumPy — ambos representações IEEE~754
-de precisão dupla (64 bits), o que garante paridade numérica exata entre as
+de precisão dupla (64 bits), o que garante paridade ao nível da precisão exibida (quatro casas decimais) entre as
 duas implementações.
 \item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
 Todos os valores de $\Delta$ são iguais a zero, indicando paridade
@@ -821,7 +829,7 @@ no analito Ferro (Fe).
 \item Fonte:~\oautor
 \item[a] Tipo de dado utilizado em Java foi o \textit{double}; no Python,
 o equivalente é o \textit{float64} do NumPy — ambos representações IEEE~754
-de precisão dupla (64 bits), o que garante paridade numérica exata entre as
+de precisão dupla (64 bits), o que garante paridade ao nível da precisão exibida (quatro casas decimais) entre as
 duas implementações.
 \item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
 Todos os valores de $\Delta$ são iguais a zero, indicando paridade
@@ -895,7 +903,7 @@ no analito Molibdênio (Mo).
 \item Fonte:~\oautor
 \item[a] Tipo de dado utilizado em Java foi o \textit{double}; no Python,
 o equivalente é o \textit{float64} do NumPy — ambos representações IEEE~754
-de precisão dupla (64 bits), o que garante paridade numérica exata entre as
+de precisão dupla (64 bits), o que garante paridade ao nível da precisão exibida (quatro casas decimais) entre as
 duas implementações.
 \item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
 Todos os valores de $\Delta$ são iguais a zero, indicando paridade
@@ -955,7 +963,7 @@ no analito Manganês (Mn).
 \item Fonte:~\oautor
 \item[a] Tipo de dado utilizado em Java foi o \textit{double}; no Python,
 o equivalente é o \textit{float64} do NumPy — ambos representações IEEE~754
-de precisão dupla (64 bits), o que garante paridade numérica exata entre as
+de precisão dupla (64 bits), o que garante paridade ao nível da precisão exibida (quatro casas decimais) entre as
 duas implementações.
 \item \textbf{Nota:} $\Delta = |\text{Y}_{\text{Python}} - \text{Y}_{\text{Java}}|$.
 Todos os valores de $\Delta$ são iguais a zero, indicando paridade

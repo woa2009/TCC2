@@ -20,6 +20,18 @@
 {TIMM, N.~H. \emph{Applied Multivariate Analysis}. Berlim, Germany:
   Springer-Verlag, 2002. 693~p.  (Springer Texts in Statistics).}
 
+\bibitem{streamlit_main_2026}
+\abntrefinfo{{Streamlit Inc.}}{{Streamlit Inc.}}{2026a}
+{{Streamlit Inc.} \emph{Streamlit: A faster way to build and share data apps}.
+  2026. Página oficial.
+Dispon{\'\i}vel em: \url{https://streamlit.io/}. Acesso em: 10 mar. 2026.}
+
+\bibitem{streamlit_docs_2026}
+\abntrefinfo{{Streamlit Inc.}}{{Streamlit Inc.}}{2026b}
+{{Streamlit Inc.} \emph{Streamlit Documentation: Open-source Python Framework
+  for Data Apps}. 2026. Documentação oficial.
+Dispon{\'\i}vel em: \url{https://docs.streamlit.io/}. Acesso em: 10 mar. 2026.}
+
 \bibitem{Canty2001}
 \abntrefinfo{Canty e Davison}{CANTY; DAVISON}{2001}
 {CANTY, A.~J.; DAVISON, A.~C. Resampling-based variance estimation for labour
@@ -413,6 +425,13 @@ ISBN 978-8582603659.}
   artificial}. Hangzhou, China: Alibaba Cloud, 2026.
 Dispon{\'\i}vel em: \url{https://chat.qwen.ai/}. Acesso em: 16 ago. 2026.}
 
+\bibitem{kopka2004guide}
+\abntrefinfo{Kopka e Daly}{KOPKA; DALY}{2004}
+{KOPKA, H.; DALY, P.~W. \emph{Guide to LaTeX}. 4th. ed. Boston, MA:
+  Addison-Wesley Professional, 2004.  (Tools and Techniques for Computer
+  Typesetting).
+ISBN 0-321-17385-6.}
+
 \bibitem{PIMENTEL:1998}
 \abntrefinfo{PIMENTEL et al.}{PIMENTEL et al.}{1998}
 {PIMENTEL, M.~F. et al. Convertion of a sequential inductively coupled plasma
@@ -497,6 +516,29 @@ Subsequently formalized and hosted by the Agile Business Consortium.
 Dispon{\'\i}vel em:
   \url{https://www.agilebusiness.org/resource/what-is-moscow-prioritization/}.
   Acesso em: 2 out. 2026.}
+
+\bibitem{knime_software_2026}
+\abntrefinfo{{KNIME}}{{KNIME}}{2026}
+{{KNIME}. \emph{KNIME: Open for Innovation}. 2026. Página oficial.
+Plataforma de código aberto para fluxos de dados, ETL, análise de dados e IA
+  preditiva. Acessado em: 10 de outubro de 2026.
+Dispon{\'\i}vel em: \url{https://www.knime.com/}. Acesso em: 10 out. 2026.}
+
+\bibitem{w3c_wcag21_ptbr}
+\abntrefinfo{{World Wide Web Consortium (W3C)}}{{World Wide Web Consortium
+  (W3C)}}{2018}
+{{World Wide Web Consortium (W3C)}. \emph{Diretrizes de Acessibilidade para
+  Conteúdo Web (WCAG) 2.1}. 2018. Tradução oficial autorizada.
+Dispon{\'\i}vel em: \url{https://www.w3c.br/traducoes/wcag/wcag21-pt-BR/}.
+  Acesso em: 10 out. 2026.}
+
+\bibitem{w3c_i18n_activity}
+\abntrefinfo{{World Wide Web Consortium (W3C)}}{{World Wide Web Consortium
+  (W3C)}}{2026}
+{{World Wide Web Consortium (W3C)}. \emph{W3C Internationalization (i18n)
+  Activity: Making the World Wide Web worldwide!} 2026. Página oficial.
+Dispon{\'\i}vel em: \url{https://www.w3.org/International/}. Acesso em: 10 out.
+  2026.}
 
 \bibitem{scrum2026}
 \abntrefinfo{Schwaber e Sutherland}{SCHWABER; SUTHERLAND}{2020}

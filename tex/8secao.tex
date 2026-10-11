@@ -12,8 +12,36 @@ A aplicação é dividida em três abas sequenciais que espelham o fluxo de trab
     \item \textbf{Aba 3 (Visualização Gráfica):} Apresenta os gráficos interativos gerados via Plotly: três gráficos de linha comparando os valores reais e preditos por amostra (RLM, RLM-\textit{bagging} e RLM-\textit{subagging}) e um gráfico de dispersão Real $\times$ Predito com os três modelos sobrepostos e a reta ideal ($y = x$).
 \end{enumerate}
 
-Essa estrutura em abas sequenciais organiza o \textit{workflow} analítico segundo as etapas operacionais do usuário, reduzindo a dispersão visual e delimitando os passos de execução.
+Essa estrutura em abas sequenciais Figura~\ref{fig:telas_streamlit} organiza o \textit{workflow} analítico segundo as etapas operacionais do usuário, reduzindo a dispersão visual e delimitando os passos de execução.
 
+\begin{figure}[htbp]
+\centering
+\caption{Interface do sistema modernizado: (a) aba Configuração; (b) aba Resultados; (c) aba Gráficos.}
+\label{fig:telas_streamlit}
+\begin{subfigure}{0.32\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{./outros/fig/TelaPrincipal.pdf}
+  \caption{Configuração.}
+  \label{fig:tela_config}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.32\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{./outros/fig/Resultados2.pdf}
+  \caption{Resultados.}
+  \label{fig:tela_resultados}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.32\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{./outros/fig/Graficos.pdf}
+  \caption{Gráficos.}
+  \label{fig:tela_graficos}
+\end{subfigure}
+\caption*{Fonte: \oautor}
+\end{figure}
+
+\newpage
 O diagrama de sequência da Figura~\ref{fig:BaggingOptimized_sequencia2} (Apêndice~\ref{cha:testesgraficos}) detalha a troca de chamadas entre as abas da interface, o módulo \texttt{app.py} e a lógica matemática em \texttt{models.py}.
 
 O ambiente de implantação viabiliza o acesso simultâneo via navegador sem necessidade de instalação local de dependências ou ambientes de execução Java, sujeitando-se aos limites de concorrência e memória da plataforma de hospedagem adotada.

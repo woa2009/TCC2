@@ -34,8 +34,8 @@
 
   \indexspace
 
-  \item Tabelas de Paridade Amostra-a-Amostra, \hyperpage{84}
-  \item Testes de Gráficos, \hyperpage{76}
+  \item Tabelas de Paridade Amostra-a-Amostra, \hyperpage{86}
+  \item Testes de Gráficos, \hyperpage{78}
   \item Técnicas Clássicas de Reamostragem, \hyperpage{25}
     \subitem \textit{Bagging}, \hyperpage{26}
     \subitem \textit{Subagging}, \hyperpage{27}
