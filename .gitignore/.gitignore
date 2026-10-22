@@ -1,0 +1,50 @@
+*.aux
+*.bbl
+*.blg
+*.dvi
+*.fdb_latexmk
+*.fls
+*.glg
+*.glo
+*.gls
+*.idx
+*.ilg
+*.ind
+*.ist
+*.lof
+*.log
+*.lot
+*.maf
+*.mtc
+*.mtc0
+*.nav
+*.nlo
+*.out
+*.pdfsync
+*.snm
+*.synctex.gz
+*.toc
+*.vrb
+*.glsdefs
+*.acn
+*.acr
+*.alg
+*.sbl
+*.loq
+*.lol
+
+## Pacote Biber / BibLaTeX
+*.bcf
+*.run.xml
+
+## Pacote SageTeX
+*.sagetex.sage
+*.sagetex.py
+*.sagetex.scmd
+
+## Pacote tcolorbox
+*.listing
+
+## Diretórios de build comuns (caso use latexmk ou ferramentas similares)
+build/
+_minted*/
