@@ -10,6 +10,10 @@
 
   \indexspace
 
+  \item Diagramas UML, \hyperpage{79}
+
+  \indexspace
+
   \item Introdução, \hyperpage{14}
 
   \indexspace
@@ -20,7 +24,7 @@
     \subitem \textit{Baggin} $\times$ \textit{Subagging}, 
 		\hyperpage{45}
     \subitem \textit{Subagging}, \hyperpage{40}
-    \subitem Introdução, \hyperpage{33}
+    \subitem Introdução, \hyperpage{32}
     \subitem Medida da Raiz do Erro Quadrático Médio de Predição, 
 		\hyperpage{35}
     \subitem Resultados, \hyperpage{37}
@@ -31,11 +35,11 @@
   \item Revisão da literatura
     \subitem Engenharia de Migração e Qualidade de Software, 
 		\hyperpage{29}
+    \subitem Teste de Software, \hyperpage{29}
 
   \indexspace
 
   \item Tabelas de Paridade Amostra-a-Amostra, \hyperpage{86}
-  \item Testes de Gráficos, \hyperpage{78}
   \item Técnicas Clássicas de Reamostragem, \hyperpage{25}
     \subitem \textit{Bagging}, \hyperpage{26}
     \subitem \textit{Subagging}, \hyperpage{27}

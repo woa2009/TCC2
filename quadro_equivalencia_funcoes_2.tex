@@ -1,0 +1,80 @@
+% ============================================================
+% Quadros de equivalência de funções: Java (legado) x Python
+% Inserir na Seção "Engenharia de Software e Modernização"
+% Requer: tabularx, threeparttable, array, captionsetup
+% ============================================================
+
+O Quadro~\ref{tab:equiv_nucleo} apresenta a correspondência entre as funções do núcleo matemático do sistema Java legado (\texttt{BaggingOptimized.java}) e as do módulo \texttt{models.py}. O Quadro~\ref{tab:equiv_interface} reúne as funções de interface, entrada e saída de dados, que na reescrita em Python/Streamlit se distribuem entre \texttt{models.py}, \texttt{components.py} e \texttt{app.py}.
+
+% ------------------------------------------------------------
+% QUADRO 1 — NÚCLEO MATEMÁTICO
+% ------------------------------------------------------------
+\begin{quadro}[ht]
+\begin{center}
+\footnotesize
+\captionsetup{justification=centering, labelsep=endash, width=0.75\linewidth}
+\caption{Equivalência entre as funções do núcleo matemático: Java e Python.}
+\label{tab:equiv_nucleo}
+\begin{threeparttable}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Função Java (\texttt{BaggingOptimized.java})} & \textbf{Função Python equivalente (\texttt{models.py})} \\ \hline
+\texttt{performRLM(Xcal, Ycal, Xteste)} & \texttt{perform\_rlm(Xcal, Ycal, Xteste)} \\ \hline
+\texttt{performBagging(Xcal, Ycal, Xteste, numBags, withReplacement, sampleFraction)} & \texttt{perform\_bagging(Xcal, Ycal, Xteste, num\_bags, with\_replacement, fraction, seed)} \\ \hline
+\texttt{pseudoInverse(matrix)} & \texttt{np.linalg.lstsq(...)}, invocada em \texttt{perform\_rlm()} e \texttt{perform\_bagging()} \\ \hline
+\texttt{calculateMetrics(actual, predicted, nanoTime)} & \texttt{calc\_metrics(actual, predicted)}; o tempo é medido em \texttt{run\_full\_analysis()} com \texttt{time.perf\_counter()} \\ \hline
+\texttt{calculateRMSE(actual, predicted)} & \texttt{calc\_metrics()} (retorno \texttt{rmse}) e cálculo direto em \texttt{run\_cross\_validation()} \\ \hline
+\texttt{calculateMAE(actual, predicted)} & \texttt{calc\_metrics()} (retorno \texttt{mae}) \\ \hline
+\texttt{calculateR2(actual, predicted)} & \texttt{calc\_metrics()} (retorno \texttt{r2}) \\ \hline
+\texttt{calculateStdDev(values, mean)} & \texttt{np.std()}, invocada em \texttt{run\_cross\_validation()} \\ \hline
+\texttt{optimizeBaggingParameters(Xcal, Ycal, m)} & \texttt{run\_cross\_validation(Xcal, Ycal, m, True, 1.0)} \\ \hline
+\texttt{optimizeSubaggingParameters(Xcal, Ycal, m, k)} & \texttt{run\_cross\_validation(Xcal, Ycal, m, False, k)} \\ \hline
+\texttt{findOptimalParameters(Xcal, Ycal, mValues, kValues, log)} & \texttt{find\_optimal\_parameters(Xcal, Ycal, m\_values, k\_values, progress\_callback, lang)} \\ \hline
+\texttt{executarAnalise()} (Etapas 1 a 3 no \texttt{SwingWorker}) & \texttt{run\_full\_analysis(Xcal, Ycal, Xteste, Yteste, m\_values, k\_values, progress\_cb, lang)} \\ \hline
+\texttt{extractRows(matrix, indices)} & Indexação NumPy (\texttt{Xcal[train\_idx]}, \texttt{Xcal[val\_idx]}) em \texttt{run\_cross\_validation()} \\ \hline
+\texttt{copyRow(src, srcRow, dest, destRow)} & Indexação NumPy (\texttt{Xcal[idx]}) em \texttt{perform\_bagging()} \\ \hline
+\texttt{Collections.shuffle(indices, new Random(42))} & \texttt{np.random.default\_rng(seed).permutation(n)} em \texttt{run\_cross\_validation()} \\ \hline
+Classes \texttt{CVResult}, \texttt{OptimalParams} e \texttt{FinalMetrics} & Tuplas e dicionários (\texttt{optimal}, \texttt{metrics}), sem classes dedicadas \\ \hline
+\end{tabularx}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item Fonte:~\oautor
+\end{tablenotes}
+\end{threeparttable}
+\end{center}
+\end{quadro}
+
+% ------------------------------------------------------------
+% QUADRO 2 — INTERFACE E ENTRADA/SAÍDA
+% ------------------------------------------------------------
+\begin{quadro}[ht]
+\begin{center}
+\footnotesize
+\captionsetup{justification=centering, labelsep=endash, width=0.75\linewidth}
+\caption{Equivalência entre as funções de interface e de entrada e saída: Java e Python.}
+\label{tab:equiv_interface}
+\begin{threeparttable}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Função Java (\texttt{BaggingOptimized.java})} & \textbf{Função Python equivalente} \\ \hline
+\texttt{loadMatrixFromFile(filename, rows, cols)} & \texttt{parse\_matrix(file\_obj)} --- \texttt{models.py} \\ \hline
+\texttt{loadVectorFromFile(filename, rows)} & \texttt{parse\_vector(file\_obj)} --- \texttt{models.py} \\ \hline
+\texttt{detectarDimensoes(file)} e \texttt{contarLinhas(file)} & Atributo \texttt{.shape} do \textit{array} NumPy, registrado no \textit{log} por \texttt{run\_full\_analysis()} --- \texttt{models.py} \\ \hline
+\texttt{parseMValues()} & \texttt{parse\_int\_list(text)} --- \texttt{app.py} \\ \hline
+\texttt{parseKValues()} & \texttt{parse\_float\_list(text)} --- \texttt{app.py} \\ \hline
+\texttt{salvarResultados(conteudo)} & \texttt{st.download\_button(...)} para o \textit{log} (\texttt{relatorio.txt}) e para as métricas (\texttt{metricas.csv}) --- \texttt{app.py} \\ \hline
+\texttt{plotComparison(yteste, ypred, method)} (JFreeChart) & \texttt{build\_chart(y\_real, y\_pred, title, pred\_color, lang)} --- \texttt{components.py} (Plotly) \\ \hline
+\texttt{initComponents()}, \texttt{criarPainelArquivo()} e \texttt{selecionarArquivo()} & \texttt{st.file\_uploader}, \texttt{st.text\_input} e \texttt{st.tabs} --- \texttt{app.py} \\ \hline
+Campos \texttt{fileXcal}, \texttt{fileYcal}, \texttt{fileXteste}, \texttt{fileYteste} & \texttt{st.session\_state} --- \texttt{app.py} \\ \hline
+\multicolumn{1}{|c|}{---} & \texttt{build\_scatter\_chart(preds, lang)} --- gráfico de dispersão Real $\times$ Predito --- \texttt{components.py} \\ \hline
+\end{tabularx}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item Fonte:~\oautor
+\item \textit{Nota:} O sinal convencional --- indica que não há função equivalente no sistema Java.
+\end{tablenotes}
+\end{threeparttable}
+\end{center}
+\end{quadro}

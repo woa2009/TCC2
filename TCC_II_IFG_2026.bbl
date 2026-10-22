@@ -419,6 +419,24 @@ ISBN 978-9349887848. Dispon{\'\i}vel em:
   Profissional}}. 8. ed. Porto Alegre: Artmed, 2016.
 ISBN 978-8582603659.}
 
+\bibitem{jorgensen2014}
+\abntrefinfo{Jorgensen}{JORGENSEN}{2014}
+{JORGENSEN, P.~C. \emph{Software Testing: A Craftsman's Approach}. 4. ed. Boca
+  Raton: CRC Press, 2014.}
+
+\bibitem{pytest2024}
+\abntrefinfo{{Pytest Development Team}}{{Pytest Development Team}}{2024}
+{{Pytest Development Team}. \emph{pytest: helps you write better programs}.
+  2024.
+Dispon{\'\i}vel em: \url{https://docs.pytest.org/en/stable/}. Acesso em: 20
+  jun. 2026.}
+
+\bibitem{ejml}
+\abntrefinfo{Abeles}{ABELES}{2026}
+{ABELES, P. \emph{{EJML}: Efficient Java Matrix Library}. 2026. Página oficial
+  e documentação.
+Dispon{\'\i}vel em: \url{https://ejml.org/}. Acesso em: 21 out. 2026.}
+
 \bibitem{alibaba2026qwen}
 \abntrefinfo{Cloud}{CLOUD}{2026}
 {CLOUD, A. \emph{{Qwen3.7-Plus}: Modelo de linguagem de inteligência
@@ -452,6 +470,24 @@ Dispon{\'\i}vel em:
 \abntrefinfo{Martens e Naes}{MARTENS; NAES}{1989}
 {MARTENS, H.; NAES, T. \emph{Multivariate Calibration}. USA: John Wiley \& Sons
   Ltd, 1989. 399~p.}
+
+\bibitem{harris2020numpy}
+\abntrefinfo{Harris et al.}{HARRIS et al.}{2020}
+{HARRIS, C.~R. et al. Array programming with {NumPy}.
+\emph{Nature}, v.~585, p. 357--362, 2020.}
+
+\bibitem{numpy_lstsq}
+\abntrefinfo{{NumPy Developers}}{{NumPy Developers}}{2026}
+{{NumPy Developers}. \emph{numpy.linalg.lstsq: Return the least-squares
+  solution to a linear matrix equation}. 2026. Documentação oficial.
+Dispon{\'\i}vel em:
+  \url{https://numpy.org/doc/stable/reference/generated/numpy.linalg.lstsq.html}.
+  Acesso em: 21 out. 2026.}
+
+\bibitem{anderson1999lapack}
+\abntrefinfo{Anderson et al.}{ANDERSON et al.}{1999}
+{ANDERSON, E. et al. \emph{{LAPACK} Users' Guide}. 3. ed. Philadelphia, PA:
+  Society for Industrial and Applied Mathematics, 1999.}
 
 \bibitem{Westad2024}
 \abntrefinfo{Westad e FlÅten}{WESTAD; FLÅTEN}{2024}
@@ -545,12 +581,5 @@ Dispon{\'\i}vel em: \url{https://www.w3.org/International/}. Acesso em: 10 out.
 {SCHWABER, K.; SUTHERLAND, J. \emph{O Guia do Scrum}. 2020.
 Dispon{\'\i}vel em: \url{https://scrumguides.org/scrum-guide.html}. Acesso em:
   20 jun. 2026.}
-
-\bibitem{pytest2024}
-\abntrefinfo{{Pytest Development Team}}{{Pytest Development Team}}{2024}
-{{Pytest Development Team}. \emph{pytest: helps you write better programs}.
-  2024.
-Dispon{\'\i}vel em: \url{https://docs.pytest.org/en/stable/}. Acesso em: 20
-  jun. 2026.}
 
 \end{thebibliography}

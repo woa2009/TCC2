@@ -12,7 +12,7 @@ de Manganês (Mn), Molibdênio (Mo), Cromo (Cr), Níquel (Ni) e Ferro
 (Fe) a partir de espectros reamostrados pelos métodos \textit{bagging} 
 e \textit{subagging}.
 
-Para a implementação computacional, utilizou-se a linguagem de programação Java (JavaSE-17) em conjunto com o ambiente de desenvolvimento integrado Eclipse \gls{IDE} (versão 2025-09). As operações matriciais exigidas pelos algoritmos de calibração multivariada, incluindo o cômputo da pseudo-inversa de Moore-Penrose, as reamostragens \textit{bootstrap} e a agregação dos modelos de \textit{ensemble}, foram implementadas com o suporte da biblioteca \textit{Efficient Java Matrix Library}, \texttt{org.ejml.simple.SimpleMatrix} (EJML). Esta é especializada em operações de álgebra linear de alto desempenho para a plataforma Java, garantindo eficiência no processamento.
+Para a implementação computacional, utilizou-se a linguagem de programação Java (JavaSE-17) em conjunto com o ambiente de desenvolvimento integrado Eclipse \gls{IDE} (versão 2025-09). As operações matriciais exigidas pelos algoritmos de calibração multivariada, incluindo o cômputo da pseudo-inversa de Moore-Penrose, as reamostragens \textit{bootstrap} e a agregação dos modelos de \textit{ensemble}, foram implementadas com o suporte da biblioteca \textit{Efficient Java Matrix Library}, \texttt{org.ejml.simple.SimpleMatrix} (EJML). Esta biblioteca fornece as operações de álgebra linear utilizadas no trabalho, como multiplicação matricial e pseudoinversa de Moore-Penrose~\cite{ejml}.
 
 A visualização gráfica dos resultados foi realizada pela biblioteca JFreeChart\footnote{Versões: EJML 0.43.1; JFreeChart 1.5.4. Código em: \url{https://github.com/woa2009/MigracaoJava}}, que possibilitou a geração dos gráficos de predição e comparação de desempenho deste trabalho. A interface gráfica de usuário, para entrada de parâmetros e exibição de resultados durante os experimentos, foi desenvolvida com os \textit{frameworks} nativos Java Swing e \gls{AWT}. O gerenciamento dos arquivos de entrada e saída, incluindo leitura das matrizes espectrométricas e exportação dos resultados, foi realizado pelas bibliotecas padrão \texttt{java.io}.
 
@@ -34,7 +34,9 @@ A classe \texttt{BaggingOptimized} (que estende \texttt{JFrame}) concentra, entr
     language=Java, 
     basicstyle=\ttfamily\footnotesize,
     breaklines=true,
-    breakatwhitespace=true
+    breakatwhitespace=true,
+    breakautoindent=true,
+    frame=single
 ]
 private SimpleMatrix performRLM(SimpleMatrix Xcal, SimpleMatrix Ycal,
                                  SimpleMatrix Xteste) {
@@ -53,15 +55,18 @@ controlados pelo parâmetro booleano \texttt{withReplacement}. Cada um dos
 \texttt{numBags} modelos é ajustado sobre uma reamostra distinta e a predição
 final é obtida pela média aritmética das predições individuais.
 
-\begin{figure}[H]
-\centering
-\caption{Ensemble de Bagging/Subagging (\texttt{BaggingOptimized.java}).}
+\begin{center}
+\captionof{figure}{Ensemble de Bagging/Subagging (\texttt{BaggingOptimized.java}).}
 \label{lst:performbagging}
+\end{center}
+\vspace{-0.5\baselineskip}
 \begin{lstlisting}[
-language=Java,
-basicstyle=\ttfamily\footnotesize,   % ← fonte menor
+    language=Java,
+    basicstyle=\ttfamily\footnotesize,
     breaklines=true,
-    breakatwhitespace=true
+    breakatwhitespace=true,
+    breakautoindent=true,
+    frame=single
 ]
 private SimpleMatrix performBagging(SimpleMatrix Xcal, SimpleMatrix Ycal,
         SimpleMatrix Xteste, int numBags, boolean withReplacement,
@@ -108,8 +113,9 @@ private SimpleMatrix performBagging(SimpleMatrix Xcal, SimpleMatrix Ycal,
     return Ypred;
 }
 \end{lstlisting}
-\caption*{Fonte: \oautor}
-\end{figure}
+\begin{center}
+\footnotesize Fonte: \oautor
+\end{center}
 
 Essa mesma alternativa --- reamostragem com ou sem reposição controlada por um único parâmetro booleano --- é preservada na reimplementação Python (Seção~\ref{sec:engenhariasoftware}), constituindo um dos pontos de verificação dos testes de caixa-preta descritos na Seção~\ref{sec:testescaixapreta}.
 
@@ -209,7 +215,36 @@ As matrizes de respostas instrumentais e concentração das amostras de aço-lig
 (33,3 -- 45,9\%) e teste (54,1 -- 66,7\%), como segue~(Quadro~\ref{tab:conjuntos_subscritos}). % ALTERADO: adicionado parágrafo abaixo
 Cada amostra é representada por 723 variáveis espectrais, resultando em uma razão de aproximadamente 42 preditores por observação no conjunto de calibração. Esse regime de alta dimensionalidade — inerente à natureza dos dados espectrométricos de plasma — é tratado pela pseudo-inversa de Moore-Penrose (Equação~\ref{eq:rlm-pseudo}), que fornece solução única mesmo em sistemas subdeterminados.
 
-Na reimplementação em Python (Seção~\ref{sec:engenhariasoftware}), essa mesma solução é obtida por \texttt{np.linalg.lstsq}, que retorna a solução de mínima norma e é matematicamente equivalente à pseudoinversa, sem calculá-la explicitamente.
+%Na reimplementação em Python (Seção~\ref{sec:engenhariasoftware}), essa mesma solução é obtida por \texttt{np.linalg.lstsq}, que retorna a solução de mínima norma e é matematicamente equivalente à pseudoinversa, sem calculá-la explicitamente.
+%-------------------------------------------------
+Na reimplementação em Python (Seção~\ref{sec:engenhariasoftware}), os coeficientes são obtidos pela função \texttt{np.linalg.lstsq} da biblioteca NumPy~\cite{harris2020numpy,numpy_lstsq}. Essa função resolve o problema de mínimos quadrados, isto é, encontra o vetor $\widehat{\boldsymbol{\beta}}$ que minimiza a norma euclidiana do resíduo:
+\begin{equation}
+    \label{eq:lstsq-min}
+    \widehat{\boldsymbol{\beta}} = \arg\min_{\boldsymbol{\beta}}
+    \left\lVert \mathbf{y} - \mathbf{X}\boldsymbol{\beta} \right\rVert_2^2 .
+\end{equation}
+Internamente, a função utiliza uma rotina da biblioteca LAPACK baseada na
+decomposição em valores singulares \gls{SVD},~\cite{anderson1999lapack,numpy_lstsq}, que fatora a matriz de calibração
+como $\mathbf{X} = \mathbf{U}\boldsymbol{\Sigma}\mathbf{V}^{\mathbf{T}}$. A
+solução é então calculada por
+$\widehat{\boldsymbol{\beta}} = \mathbf{V}\boldsymbol{\Sigma}^{+}\mathbf{U}^{\mathbf{T}}\mathbf{y}$,
+em que $\boldsymbol{\Sigma}^{+}$ inverte os valores singulares não nulos e
+descarta aqueles inferiores a um limiar proporcional ao maior valor singular
+(parâmetro \texttt{rcond}, cujo valor padrão deriva da precisão da máquina).
+
+No presente trabalho, as matrizes de calibração possuem $17$ amostras e $723$
+variáveis, de modo que o sistema é subdeterminado: existem infinitas soluções
+com resíduo nulo. Nesse caso, \texttt{np.linalg.lstsq} retorna, entre todas
+elas, a de menor norma euclidiana $\lVert\boldsymbol{\beta}\rVert_2$, que
+coincide com $\mathbf{X}^{+}\mathbf{y}$, a solução da pseudoinversa de
+Moore-Penrose (Equação~\ref{eq:rlm-pseudo}). Portanto, as duas abordagens são
+matematicamente equivalentes; a diferença é que \texttt{lstsq} obtém o
+resultado diretamente da decomposição, sem formar explicitamente a matriz
+$\mathbf{X}^{+}$, como faz o método \texttt{pseudoInverse()} da biblioteca
+EJML no sistema Java.
+
+
+%-----------------------------------------------------
 
 Ressalta-se, contudo, que conjuntos de calibração reduzidos são uma característica recorrente em análises de aço-ligas por espectrometria, como documentado na literatura~\cite{PIMENTEL:1998,KRAMER:1998}, e que os resultados obtidos neste estudo devem ser interpretados como evidências exploratórias do comportamento das técnicas investigadas nesse contexto específico, não sendo diretamente generalizáveis a outras composições ou regimes amostrais sem validação adicional.
 

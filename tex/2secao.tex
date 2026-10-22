@@ -696,3 +696,20 @@ código-fonte legado, estratégia adequada quando o objetivo --- como neste trab
 --- é substituir integralmente a plataforma de execução preservando o comportamento
 matemático. Essa fundamentação sustenta a suíte de 92 testes automatizados que
 compara Java e Python, apresentada adiante.
+
+%------------------------------------------------------
+\subsection{Teste de Software}
+\label{sec:testesoftware}
+\index{Revisão da literatura!Teste de Software}
+%------------------------------------------------------
+
+O teste de software verifica se um sistema se comporta conforme especificado,
+revelando defeitos antes da operação~\cite{pressman2016}. Neste trabalho,
+empregam-se o teste unitário, que exercita funções isoladas; o teste de
+caixa-preta, que confronta entradas e saídas sem inspecionar o código
+interno~\cite{pressman2016,jorgensen2014}; e o teste de carga e
+\textit{stress}, que mede tempo e memória sob grandes volumes de dados. A
+automação com \textit{frameworks} como o \texttt{pytest}~\cite{pytest2024}
+permite repetir essas verificações a cada alteração. Na migração, o teste de
+caixa-preta serve para verificar a equivalência entre o sistema legado e o
+reescrito, pois compara apenas o comportamento observável.

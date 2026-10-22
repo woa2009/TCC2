@@ -1,0 +1,72 @@
+% ============================================================
+% Quadros de classificação das funções por tipo: Java e Python
+% Inserir na Seção "Engenharia de Software e Modernização"
+% Requer: tabularx, threeparttable, array, captionsetup
+% ============================================================
+
+O Quadro~\ref{tab:tipos_java} classifica por tipo as funções do sistema Java legado, concentradas em um único arquivo (\texttt{BaggingOptimized.java}). O Quadro~\ref{tab:tipos_python} apresenta a mesma classificação para o sistema Python, no qual as funções se distribuem entre os módulos \texttt{models.py}, \texttt{components.py} e \texttt{app.py}.
+
+% ------------------------------------------------------------
+% QUADRO 1 — TIPOS DE FUNÇÕES JAVA
+% ------------------------------------------------------------
+\begin{quadro}[ht]
+\begin{center}
+\footnotesize
+\captionsetup{justification=centering, labelsep=endash, width=0.75\linewidth}
+\caption{Tipos de funções do sistema Java legado.}
+\label{tab:tipos_java}
+\begin{threeparttable}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{3.2cm}|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Tipo} & \textbf{Funções} & \textbf{Responsabilidade} \\ \hline
+Modelagem & \texttt{performRLM}, \texttt{performBagging}, \texttt{pseudoInverse} & Ajuste da RLM e dos \textit{ensembles} de \textit{bagging} e \textit{subagging} \\ \hline
+Métricas de avaliação & \texttt{calculateMetrics}, \texttt{calculateRMSE}, \texttt{calculateMAE}, \texttt{calculateR2}, \texttt{calculateStdDev} & Cálculo de RMSEP, MAE, $R^2$ e desvio padrão \\ \hline
+Validação cruzada e otimização & \texttt{optimizeBaggingParameters}, \texttt{optimizeSubaggingParameters}, \texttt{findOptimalParameters} & Validação cruzada 5-\textit{fold} e \textit{grid search} de $m$ e $k$ \\ \hline
+Manipulação de matrizes & \texttt{extractRows}, \texttt{copyRow} & Extração e cópia de linhas de matrizes \\ \hline
+Entrada e saída de dados & \texttt{loadMatrixFromFile}, \texttt{loadVectorFromFile}, \texttt{detectarDimensoes}, \texttt{contarLinhas}, \texttt{salvarResultados} & Leitura dos arquivos \texttt{.txt}, detecção de dimensões e gravação do relatório \\ \hline
+Validação de parâmetros & \texttt{parseMValues}, \texttt{parseKValues} & Conversão e validação dos valores de $m$ e $k$ digitados \\ \hline
+Interface gráfica & Construtor \texttt{BaggingOptimized}, \texttt{initComponents}, \texttt{criarPainelArquivo}, \texttt{selecionarArquivo}, \texttt{FileConsumer.accept} & Montagem da janela Swing, seleção de arquivos e \textit{callback} de seleção \\ \hline
+Visualização & \texttt{plotComparison} & Gráfico de valores reais e preditos com JFreeChart \\ \hline
+Orquestração e controle & \texttt{executarAnalise}, \texttt{main} & Execução da análise em \texttt{SwingWorker} e ponto de entrada da aplicação \\ \hline
+\end{tabularx}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item Fonte:~\oautor
+\end{tablenotes}
+\end{threeparttable}
+\end{center}
+\end{quadro}
+
+% ------------------------------------------------------------
+% QUADRO 2 — TIPOS DE FUNÇÕES PYTHON
+% ------------------------------------------------------------
+\begin{quadro}[ht]
+\begin{center}
+\footnotesize
+\captionsetup{justification=centering, labelsep=endash, width=0.75\linewidth}
+\caption{Tipos de funções do sistema Python/Streamlit.}
+\label{tab:tipos_python}
+\begin{threeparttable}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{2.8cm}|>{\raggedright\arraybackslash}p{2.4cm}|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Tipo} & \textbf{Módulo} & \textbf{Funções} & \textbf{Responsabilidade} \\ \hline
+Modelagem & \texttt{models.py} & \texttt{perform\_rlm}, \texttt{perform\_bagging} & Ajuste da RLM e dos \textit{ensembles} via \texttt{np.linalg.lstsq} \\ \hline
+Métricas de avaliação & \texttt{models.py} & \texttt{calc\_metrics} & Cálculo de RMSEP, MAE e $R^2$ \\ \hline
+Validação cruzada e otimização & \texttt{models.py} & \texttt{run\_cross\_validation}, \texttt{find\_optimal\_parameters} & Validação cruzada 5-\textit{fold} e \textit{grid search} de $m$ e $k$ \\ \hline
+Leitura de dados & \texttt{models.py} & \texttt{parse\_matrix}, \texttt{parse\_vector}, \texttt{\_file\_ext}, \texttt{\_detect\_csv\_sep} & Leitura de \texttt{.txt}, \texttt{.csv} e \texttt{.xlsx}, com detecção de extensão e de separador \\ \hline
+Orquestração da análise & \texttt{models.py} & \texttt{run\_full\_analysis} & Otimização, avaliação final dos três modelos e geração do \textit{log} \\ \hline
+Internacionalização & \texttt{models.py}, \texttt{components.py}, \texttt{app.py} & \texttt{\_tl}, \texttt{\_t} & Tradução de rótulos, \textit{log} e textos da interface (português e inglês) \\ \hline
+Visualização e componentes & \texttt{components.py} & \texttt{build\_chart}, \texttt{build\_scatter\_chart}, \texttt{metric\_card\_html}, \texttt{get\_header\_html} & Gráficos Plotly, \textit{cards} de métricas e cabeçalho em HTML \\ \hline
+Validação de parâmetros & \texttt{app.py} & \texttt{parse\_int\_list}, \texttt{parse\_float\_list} & Conversão e validação dos valores de $m$ e $k$ \\ \hline
+Controle da interface & \texttt{app.py} & \texttt{update\_progress} & \textit{Callback} da barra de progresso (interface e abas em \textit{script} sequencial) \\ \hline
+\end{tabularx}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item Fonte:~\oautor
+\item \textit{Nota:} O arquivo \texttt{app.py} é executado de forma sequencial pelo Streamlit; o layout, as abas e o estado de sessão são definidos no corpo do \textit{script}, e não em funções.
+\end{tablenotes}
+\end{threeparttable}
+\end{center}
+\end{quadro}

@@ -1,71 +1,27 @@
 % ----------------------------------------------------------
-\chapter{Diagramas de arquitetura e UML}
+\chapter{Diagramas UML}
 \label{cha:testesgraficos}
-\index{Testes de Gráficos}
+\index{Diagramas UML}
 % ----------------------------------------------------------
 
-Este apêndice reúne, para fins de verificação visual, os diagramas UML e PlantUML
-produzidos ao longo da modernização do sistema — desde a base algorítmica em Java
-(Desktop) até a reescrita final em Python/Streamlit. Cada diagrama é apresentado 
-em uma figura individual, identificada por seção e legenda próprias para 
-permitir referência cruzada em seções posteriores.
+Este apêndice reúne os diagramas \gls{UML} elaborados, com o auxílio da
+ferramenta PlantUML, ao longo da modernização do sistema, desde a base
+algorítmica em Java (\textit{Desktop}) até a reescrita final em
+Python/Streamlit. Os diagramas de classes, de atividades e de sequência de cada
+versão complementam a descrição apresentada no corpo do texto. Cada diagrama
+aparece em uma figura individual, com seção e legenda próprias, o que permite
+a referência cruzada nas demais seções do trabalho.
 
-\section{Diagrama de Arquitetura em Camadas --- Java e Python}
-\label{sec:diagarquitetura}
+%\section{Diagrama de Arquitetura em Camadas --- Java e Python}
+%\label{sec:diagarquitetura}
 
-Complementando os diagramas de classes, atividade e sequência das seções
-seguintes, as Figuras~\ref{fig:arquitetura_java} e~\ref{fig:arquitetura_python}
-apresentam a organização de cada sistema. No sistema legado (Java Desktop),
-monolítico e contido em um único arquivo, as camadas (interface,
-controle e lógica matemática) são apenas lógicas, isto é, coexistem na mesma
-classe. No sistema modernizado (Python/Streamlit), essas responsabilidades são
-separadas fisicamente em três módulos. O par de figuras permite comparar
-as duas organizações.
+%Complementando os diagramas de classes, atividade e sequência das seções seguintes, as Figuras~\ref{fig:arquitetura_java} e~\ref{fig:arquitetura_python} apresentam a organização de cada sistema. No sistema legado (Java Desktop), monolítico e contido em um único arquivo, as camadas (interface, controle e lógica matemática) são apenas lógicas, isto é, coexistem na mesma classe. No sistema modernizado (Python/Streamlit), essas responsabilidades são separadas fisicamente em três módulos. O par de figuras permite comparar as duas organizações.
 
-\begin{figure}[H]
-    \caption{Organização lógica em camadas dentro de um único arquivo --- Sistema legado monolítico (Java Desktop).}
-    \centering
-    \begin{tikzpicture}[
-        layer/.style={draw, rounded corners, minimum width=8cm,
-                      minimum height=1.2cm, align=center, fill=#1},
-        arrow/.style={-{Stealth}, thick}
-    ]
-        \node[layer=blue!15] (view) {Camada de Apresentação\\\texttt{Swing/AWT} (\texttt{JFrame}, \texttt{JPanel}, \textit{listeners})};
-        \node[layer=green!15, below=0.8cm of view] (controller) {Camada de Controle\\Orquestração de eventos (\texttt{ActionListener})};
-        \node[layer=orange!15, below=0.8cm of controller] (model) {lógica matemática\\\texttt{BaggingOptimized.java} + EJML (\texttt{SimpleMatrix})};
 
-        \draw[arrow] (view) -- (controller);
-        \draw[arrow] (controller) -- (model);
-    \end{tikzpicture}
-    \caption*{Fonte: \oautor}
-    \label{fig:arquitetura_java}
-\end{figure}
 
-\begin{figure}[H]
-    \caption{Arquitetura em camadas --- Sistema modernizado (Python/Streamlit).}
-    \centering
-    \begin{tikzpicture}[
-        layer/.style={draw, rounded corners, minimum width=8cm,
-                      minimum height=1.2cm, align=center, fill=#1},
-        arrow/.style={-{Stealth}, thick}
-    ]
-        \node[layer=blue!15] (apresentacao) {Camada de Apresentação\\\texttt{app.py} --- Streamlit (orquestração de UI e sessão)};
-        \node[layer=green!15, below=0.8cm of apresentacao] (visual) {Camada de Visualização\\\texttt{components.py} --- Plotly (fábrica de gráficos)};
-        \node[layer=orange!15, below=0.8cm of visual] (nucleo) {lógica matemática\\\texttt{models.py} --- NumPy (\texttt{np.linalg.lstsq})};
 
-        \draw[arrow] (apresentacao) -- (visual);
-        \draw[arrow] (visual) -- (nucleo);
-    \end{tikzpicture}
-    \caption*{Fonte: \oautor}
-    \label{fig:arquitetura_python}
-\end{figure}
 
-Observa-se que, no sistema Java, a lógica matemática coexiste com a interface
-na mesma classe, ao passo que no sistema Python ele está isolado em
-\texttt{models.py}, sem dependência de interface. Em ambos os sistemas, é na
-lógica matemática que reside a lógica validada pelos testes de paridade
-amostra-a-amostra (Apêndice~\ref{cha:paridadeamostra}) e pelos testes de
-caixa-preta (Seção~\ref{sec:testescaixapreta}).
+%Observa-se que, no sistema Java, a lógica matemática coexiste com a interface na mesma classe, ao passo que no sistema Python ele está isolado em \texttt{models.py}, sem dependência de interface. Em ambos os sistemas, é na lógica matemática que reside a lógica validada pelos testes de paridade amostra-a-amostra (Apêndice~\ref{cha:paridadeamostra}) e pelos testes de caixa-preta (Seção~\ref{sec:testescaixapreta}).
 
 \section{Diagrama de Classes --- Java}
 \label{sec:diagclassejava}

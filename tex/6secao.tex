@@ -12,8 +12,8 @@ As entradas críticas do domínio de regressão espectral foram identificadas di
 A análise revelou que a lógica do \texttt{RegressionService.java} podia ser decomposta em responsabilidades distintas: \textit{parse} de arquivos, algoritmos de regressão, métricas de avaliação e otimização por validação cruzada. Essa decomposição originou a estrutura modular adotada, onde \texttt{models.py} concentra toda a inteligência matemática, sem qualquer dependência de interface.
 
 \subsection{Especificação}
-Os contratos de entrada e saída foram formalizados com \textit{type hints} nas
-principais funções do \texttt{models.py}:
+As assinaturas de entrada e saída das principais funções do~\verb|models.py|~foram documentadas com \textit{type hints} \footnote{\textit{Type hints} são anotações opcionais da linguagem Python que declaram os tipos esperados dos parâmetros e do valor de retorno de uma função
+(por exemplo, \texttt{x: np.ndarray} e \texttt{-> float}). Documentam a assinatura da função e permitem verificação estática por ferramentas externas, mas não são impostas pelo interpretador em tempo de execução.} nas principais funções do \texttt{models.py}:
 \texttt{parse\_matrix(file\_obj) -> np.ndarray} e
 \texttt{parse\_vector(file\_obj) -> np.ndarray}, em que \texttt{file\_obj} é um
 objeto de arquivo (\textit{file-like}) que expõe \texttt{.name} e \texttt{.read()},
@@ -23,7 +23,7 @@ escolher o \textit{parser};
 \texttt{calc\_metrics(actual, predicted) -> tuple[float, float, float]}.
 A função \texttt{run\_full\_analysis()} retorna um dicionário (\texttt{dict})
 com as chaves \texttt{log}, \texttt{optimal}, \texttt{metrics} e \texttt{preds},
-constituindo o contrato entre a camada de negócio e a camada de apresentação.
+definindo a interface de comunicação entre a camada de negócio e a camada de apresentação.
 
 \subsection{Validação}
 A validação cruzada 5-\textit{fold} implementada em \texttt{run\_cross\_validation()} opera como mecanismo de validação de equivalência, permitindo comparar o desempenho do sistema Python com os resultados históricos do sistema Java. O \textit{log} estruturado gerado por \texttt{run\_full\_analysis()} documenta cada etapa — dimensões detectadas, $\text{RMSEP}_{\text{CV}}$ por combinação de hiperparâmetros, métricas finais e tempo de execução — possibilitando auditoria científica e rastreabilidade completa. Para assegurar a estabilidade dessa arquitetura, construiu-se uma suíte com 92 testes automatizados, composta por 21 testes unitários, 60 testes de caixa-preta e 11 testes de carga e estresse.
@@ -47,5 +47,49 @@ O módulo \texttt{components.py} responde pela fábrica de componentes visuais e
 
 O módulo \texttt{app.py} funciona como controlador da interface e do estado da sessão (\texttt{st.session\_state}). Ele captura as interações do usuário, invoca as funções puras de \texttt{models.py}, repassa os resultados para \texttt{components.py} e gerencia a exibição sequencial em abas. Essa divisão garante que alterações na camada visual não impactem os algoritmos científicos e vice-versa.
 
-A Figura~\ref{fig:arquitetura_python} apresenta as três camadas do sistema modernizado, em contraste com a organização monolítica do sistema Java original, ilustrada na Figura~\ref{fig:arquitetura_java}. O diagrama de classes dos módulos (Figura~\ref{fig:BaggingOptimized_classe3}) e os demais diagramas de arquitetura e \gls{UML} estão reunidos no Apêndice~\ref{cha:testesgraficos}.
+No Apêndice~\ref{cha:testesgraficos}, a Figura~\ref{fig:arquitetura_python} apresenta as três camadas do sistema
+modernizado, em contraste com a organização monolítica do sistema Java
+original, ilustrada na Figura~\ref{fig:arquitetura_java}. O diagrama de classes
+dos módulos (Figura~\ref{fig:BaggingOptimized_classe3}) e os demais diagramas
+de arquitetura e \gls{UML} estão reunidos nesse mesmo apêndice.
+
+A Figura~\ref{fig:arquitetura_java} mostra a organização lógica em camadas do sistema Java original, contida em um único arquivo, e a Figura~\ref{fig:arquitetura_python} apresenta as três camadas físicas do sistema modernizado. O diagrama de classes dos módulos (Figura~\ref{fig:BaggingOptimized_classe3}) e os demais diagramas \gls{UML} estão no Apêndice~\ref{cha:testesgraficos}.
+
+\begin{figure}[H]
+    \caption{Organização lógica em camadas dentro de um único arquivo --- Sistema legado monolítico (Java Desktop).}
+    \centering
+    \begin{tikzpicture}[
+        layer/.style={draw, rounded corners, minimum width=8cm,
+                      minimum height=1.2cm, align=center, fill=#1},
+        arrow/.style={-{Stealth}, thick}
+    ]
+        \node[layer=blue!15] (view) {Camada de Apresentação\\\texttt{Swing/AWT} (\texttt{JFrame}, \texttt{JPanel}, \textit{listeners})};
+        \node[layer=green!15, below=0.8cm of view] (controller) {Camada de Controle\\Orquestração de eventos (\texttt{ActionListener})};
+        \node[layer=orange!15, below=0.8cm of controller] (model) {lógica matemática\\\texttt{BaggingOptimized.java} + EJML (\texttt{SimpleMatrix})};
+
+        \draw[arrow] (view) -- (controller);
+        \draw[arrow] (controller) -- (model);
+    \end{tikzpicture}
+    \caption*{Fonte: \oautor}
+    \label{fig:arquitetura_java}
+\end{figure}
+
+\begin{figure}[H]
+    \caption{Arquitetura em camadas --- Sistema modernizado (Python/Streamlit).}
+    \centering
+    \begin{tikzpicture}[
+        layer/.style={draw, rounded corners, minimum width=8cm,
+                      minimum height=1.2cm, align=center, fill=#1},
+        arrow/.style={-{Stealth}, thick}
+    ]
+        \node[layer=blue!15] (apresentacao) {Camada de Apresentação\\\texttt{app.py} --- Streamlit (orquestração de UI e sessão)};
+        \node[layer=green!15, below=0.8cm of apresentacao] (visual) {Camada de Visualização\\\texttt{components.py} --- Plotly (fábrica de gráficos)};
+        \node[layer=orange!15, below=0.8cm of visual] (nucleo) {lógica matemática\\\texttt{models.py} --- NumPy (\texttt{np.linalg.lstsq})};
+
+        \draw[arrow] (apresentacao) -- (visual);
+        \draw[arrow] (visual) -- (nucleo);
+    \end{tikzpicture}
+    \caption*{Fonte: \oautor}
+    \label{fig:arquitetura_python}
+\end{figure}
 

@@ -1,0 +1,53 @@
+% ============================================================
+% Quadro de equivalência de tipos de variáveis: Java x Python
+% Inserir na Seção "Engenharia de Software e Modernização"
+% Requer: tabularx, threeparttable, array, captionsetup
+% ============================================================
+
+O Quadro~\ref{tab:tipos_variaveis} apresenta a correspondência entre os tipos de variáveis utilizados no sistema Java legado e os tipos equivalentes adotados na reescrita em Python.
+
+\begin{quadro}[ht]
+\begin{center}
+\footnotesize
+\captionsetup{justification=centering, labelsep=endash, width=0.75\linewidth}
+\caption{Equivalência entre os tipos de variáveis: Java e Python.}
+\label{tab:tipos_variaveis}
+\begin{threeparttable}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Tipo Java} & \textbf{Tipo Python equivalente} \\ \hline
+\texttt{int} (ex.: \texttt{n}, \texttt{nFolds}, \texttt{numBags}) & \texttt{int} \\ \hline
+\texttt{double} (ex.: \texttt{rmse}, \texttt{sampleFraction}) & \texttt{float} (\texttt{float64} do NumPy) \\ \hline
+\texttt{long} (ex.: \texttt{nanoTime}, em nanossegundos) & \texttt{float} (\texttt{time.perf\_counter()}, em segundos) \\ \hline
+\texttt{boolean} (ex.: \texttt{withReplacement}) & \texttt{bool} (ex.: \texttt{with\_replacement}) \\ \hline
+\texttt{String} (ex.: \texttt{rawText}, \texttt{nomeArquivo}) & \texttt{str} \\ \hline
+\texttt{StringBuilder} (ex.: \texttt{resultado}, \texttt{log}) & \texttt{list[str]} concatenada com \texttt{"\textbackslash n".join(...)} \\ \hline
+\texttt{int[]} (ex.: \texttt{mValues}) & \texttt{list[int]} (ex.: \texttt{m\_values}) \\ \hline
+\texttt{double[]} (ex.: \texttt{kValues}, \texttt{rowData}) & \texttt{list[float]} (ex.: \texttt{k\_values}) ou \texttt{np.ndarray} unidimensional \\ \hline
+\texttt{int[]} de dimensões (ex.: \texttt{dimsXcal}) & \texttt{tuple} retornada por \texttt{.shape} \\ \hline
+\texttt{double[][]} (ex.: \texttt{array} em \texttt{loadMatrixFromFile}) & \texttt{np.ndarray} bidimensional \\ \hline
+\texttt{SimpleMatrix} (EJML), matriz de dimensão $n \times p$ & \texttt{np.ndarray} bidimensional (ex.: \texttt{Xcal}, \texttt{Xteste}) \\ \hline
+\texttt{SimpleMatrix} (EJML), vetor coluna $n \times 1$ & \texttt{np.ndarray} unidimensional de forma \texttt{(n,)} (ex.: \texttt{Ycal}, \texttt{Yteste}) \\ \hline
+\texttt{List<Integer>} (ex.: \texttt{indices}, \texttt{trainIndices}) & \texttt{np.ndarray} de inteiros (ex.: \texttt{indices}, \texttt{train\_idx}) \\ \hline
+\texttt{List<Double>} (ex.: \texttt{rmseList}) & \texttt{list[float]} (ex.: \texttt{rmse\_list}) \\ \hline
+\texttt{List<SimpleMatrix>} (ex.: \texttt{models}) & Sem equivalente: a predição é acumulada diretamente em \texttt{Ypred} \\ \hline
+\texttt{Random} (ex.: \texttt{new Random(42)}) & \texttt{np.random.Generator} (\texttt{np.random.default\_rng(42)}) \\ \hline
+\texttt{File} (ex.: \texttt{fileXcal}) & Objeto de arquivo (\textit{file-like}) com \texttt{.name} e \texttt{.read()} (ex.: \texttt{xcal\_file}) \\ \hline
+\texttt{BufferedReader} e \texttt{FileReader} & \texttt{file\_obj.read()} e \texttt{io.BytesIO} \\ \hline
+\texttt{Date} e \texttt{SimpleDateFormat} & \texttt{datetime.datetime} e \texttt{strftime()} \\ \hline
+Classes \texttt{CVResult}, \texttt{OptimalParams} e \texttt{FinalMetrics} & \texttt{tuple} e \texttt{dict} (ex.: \texttt{optimal}, \texttt{metrics}) \\ \hline
+\texttt{JTextField}, \texttt{JTextArea} e \texttt{JButton} (Swing) & \texttt{st.text\_input}, \texttt{st.code} e \texttt{st.button} (Streamlit) \\ \hline
+\texttt{JFreeChart}, \texttt{XYSeries} e \texttt{XYSeriesCollection} & \texttt{go.Figure} e \texttt{go.Scatter} (Plotly) \\ \hline
+Interface funcional \texttt{FileConsumer} & \texttt{Callable} (ex.: \texttt{progress\_callback}) \\ \hline
+\texttt{void} (tipo de retorno) & \texttt{None} \\ \hline
+\texttt{IllegalArgumentException} e \texttt{IOException} & \texttt{ValueError} e \texttt{Exception} \\ \hline
+\end{tabularx}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item Fonte:~\oautor
+\item \textit{Nota:} Os tipos \texttt{double} do Java e \texttt{float64} do NumPy seguem o padrão IEEE~754 de precisão dupla (64 bits).
+\end{tablenotes}
+\end{threeparttable}
+\end{center}
+\end{quadro}

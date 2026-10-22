@@ -35,24 +35,30 @@
 \backcite {sommerville2011}{{29}{2.8}{section.2.8}}
 \backcite {becker2020}{{29}{2.8}{section.2.8}}
 \backcite {pressman2016}{{29}{2.8}{section.2.8}}
+\backcite {pressman2016}{{29}{2.8.1}{subsection.2.8.1}}
+\backcite {pressman2016,jorgensen2014}{{29}{2.8.1}{subsection.2.8.1}}
+\backcite {pytest2024}{{29}{2.8.1}{subsection.2.8.1}}
+\backcite {ejml}{{30}{3}{chapter.3}}
 \backcite { alibaba2026qwen,kopka2004guide}{{30}{3}{chapter.3}}
-\backcite {PIMENTEL:1998}{{33}{3.2}{section.3.2}}
-\backcite {SKOOG:1997}{{33}{3.2}{section.3.2}}
-\backcite {KRAMER:1998,MARTENS:1989}{{33}{3.2}{section.3.2}}
-\backcite {PIMENTEL:1998,KRAMER:1998}{{34}{3.2}{figure.caption.22}}
+\backcite {PIMENTEL:1998}{{32}{3.2}{section.3.2}}
+\backcite {SKOOG:1997}{{32}{3.2}{section.3.2}}
+\backcite {KRAMER:1998,MARTENS:1989}{{32}{3.2}{section.3.2}}
+\backcite {harris2020numpy,numpy_lstsq}{{33}{3.2}{figure.caption.21}}
+\backcite {anderson1999lapack,numpy_lstsq}{{33}{3.2}{equation.3.2.25}}
+\backcite {PIMENTEL:1998,KRAMER:1998}{{34}{3.2}{equation.3.2.25}}
 \backcite {Westad2024,kumari2024}{{35}{3.4}{section.3.4}}
 \backcite {Westad2024,kumari2024}{{35}{3.4}{section.3.4}}
 \backcite {liu2025,perisdiaz2021,jensen2024,Westad2024}{{35}{3.4}{section.3.4}}
-\backcite {hodson2022rmse}{{36}{3.4}{equation.3.4.26}}
-\backcite {ezenarro2025chemometric}{{36}{3.4}{equation.3.4.28}}
-\backcite {Westad2024,kumari2024,perisdiaz2021}{{36}{3.4}{equation.3.4.28}}
-\backcite {TAKAHASHI201731}{{48}{4.3}{figure.caption.42}}
+\backcite {hodson2022rmse}{{35}{3.4}{equation.3.4.27}}
+\backcite {ezenarro2025chemometric}{{36}{3.4}{equation.3.4.29}}
+\backcite {Westad2024,kumari2024,perisdiaz2021}{{36}{3.4}{equation.3.4.29}}
+\backcite {TAKAHASHI201731}{{48}{4.3}{figure.caption.41}}
 \backcite {clegg1994moscow}{{52}{5.1.2}{subsection.5.1.2}}
-\backcite {knime_software_2026}{{53}{\caption@xref {tab:extras}{ on input line 205}}{quadro.caption.54}}
-\backcite {w3c_wcag21_ptbr}{{56}{\caption@xref {tab:usabilidade}{ on input line 558}}{quadro.caption.63}}
-\backcite {w3c_i18n_activity}{{57}{\caption@xref {tab:escalabilidade}{ on input line 622}}{quadro.caption.67}}
+\backcite {knime_software_2026}{{53}{\caption@xref {tab:extras}{ on input line 205}}{quadro.caption.53}}
+\backcite {w3c_wcag21_ptbr}{{56}{\caption@xref {tab:usabilidade}{ on input line 558}}{quadro.caption.62}}
+\backcite {w3c_i18n_activity}{{57}{\caption@xref {tab:escalabilidade}{ on input line 622}}{quadro.caption.66}}
 \backcite {sommerville2011}{{58}{6.1}{section.6.1}}
-\backcite {scrum2026}{{63}{9.1}{section.9.1}}
-\backcite {pytest2024}{{64}{9.2}{section.9.2}}
-\backcite {pressman2016}{{64}{9.2.2}{subsection.9.2.2}}
-\backcite {sommerville2011}{{65}{9.2.3}{subsection.9.2.3}}
+\backcite {scrum2026}{{64}{9.1}{section.9.1}}
+\backcite {pytest2024}{{65}{9.2}{section.9.2}}
+\backcite {pressman2016}{{65}{9.2.2}{subsection.9.2.2}}
+\backcite {sommerville2011}{{66}{9.2.3}{subsection.9.2.3}}
