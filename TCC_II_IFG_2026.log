@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.12) (preloaded format=pdflatex 2026.5.18)  22 OCT 2026 20:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.12) (preloaded format=pdflatex 2026.5.18)  22 OCT 2026 23:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2201,7 +2201,7 @@ Package: ifdraft 2016/05/16 v1.4 Detect class options draft and final (HO)
 x.sty
 Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
 ))
-Package hyperref Info: Option `colorlinks' set `true' on input line 307.
+Package hyperref Info: Option `colorlinks' set `true' on input line 308.
 \TCC_II_IFG_2026@idxfile=\write6
 \openout6 = `TCC_II_IFG_2026.idx'.
 
@@ -2218,7 +2218,7 @@ Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'brazil'.
 LaTeX Font Info:    Trying to load font information for T1+ptm on input line 54
-2.
+3.
 
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
@@ -2227,25 +2227,25 @@ File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 (tex/8secao.aux) (tex/9secao.aux) (tex/10secao.aux))
 \openout1 = `TCC_II_IFG_2026.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 542.
-LaTeX Font Info:    ... okay on input line 542.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 542.
-LaTeX Font Info:    ... okay on input line 542.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 542.
-LaTeX Font Info:    ... okay on input line 542.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 542.
-LaTeX Font Info:    ... okay on input line 542.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 542.
-LaTeX Font Info:    ... okay on input line 542.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 542.
-LaTeX Font Info:    ... okay on input line 542.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 542.
-LaTeX Font Info:    ... okay on input line 542.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 542.
-LaTeX Font Info:    ... okay on input line 542.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 542.
-LaTeX Font Info:    ... okay on input line 542.
-Package hyperref Info: Link coloring ON on input line 542.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 543.
+LaTeX Font Info:    ... okay on input line 543.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 543.
+LaTeX Font Info:    ... okay on input line 543.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 543.
+LaTeX Font Info:    ... okay on input line 543.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 543.
+LaTeX Font Info:    ... okay on input line 543.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 543.
+LaTeX Font Info:    ... okay on input line 543.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 543.
+LaTeX Font Info:    ... okay on input line 543.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 543.
+LaTeX Font Info:    ... okay on input line 543.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 543.
+LaTeX Font Info:    ... okay on input line 543.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 543.
+LaTeX Font Info:    ... okay on input line 543.
+Package hyperref Info: Link coloring ON on input line 543.
 \myptabbox=\box109
 \myptabboxwidth=\skip304
 
@@ -2274,12 +2274,12 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 df-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-LaTeX Info: Redefining \microtypecontext on input line 542.
-Package microtype Info: Applying patch `item' on input line 542.
-Package microtype Info: Applying patch `toc' on input line 542.
-Package microtype Info: Applying patch `eqnum' on input line 542.
-Package microtype Info: Applying patch `footnote' on input line 542.
-Package microtype Info: Applying patch `verbatim' on input line 542.
+LaTeX Info: Redefining \microtypecontext on input line 543.
+Package microtype Info: Applying patch `item' on input line 543.
+Package microtype Info: Applying patch `toc' on input line 543.
+Package microtype Info: Applying patch `eqnum' on input line 543.
+Package microtype Info: Applying patch `footnote' on input line 543.
+Package microtype Info: Applying patch `verbatim' on input line 543.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2),
 (microtype)             factor: 1100.
@@ -2287,7 +2287,7 @@ Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 10, shrink: 10, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 542.
+LaTeX Info: Redefining \showhyphens on input line 543.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -2312,7 +2312,7 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
 LaTeX Font Info:    Trying to load font information for T1+pcr on input line 54
-2.
+3.
 
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
@@ -2322,19 +2322,19 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <12> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 542.
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 543.
 LaTeX Font Info:    Font shape `T1/pcr/b/it' in size <12> not available
-(Font)              Font shape `T1/pcr/b/sl' tried instead on input line 542.
+(Font)              Font shape `T1/pcr/b/sl' tried instead on input line 543.
 LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <12> not available
-(Font)              Font shape `T1/pcr/b/n' tried instead on input line 542.
+(Font)              Font shape `T1/pcr/b/n' tried instead on input line 543.
 LaTeX Font Info:    Font shape `T1/pcr/bx/it' in size <12> not available
-(Font)              Font shape `T1/pcr/b/it' tried instead on input line 542.
+(Font)              Font shape `T1/pcr/b/it' tried instead on input line 543.
 LaTeX Font Info:    Font shape `T1/pcr/b/it' in size <12> not available
-(Font)              Font shape `T1/pcr/b/sl' tried instead on input line 542.
+(Font)              Font shape `T1/pcr/b/sl' tried instead on input line 543.
 LaTeX Font Info:    Font shape `T1/pcr/bx/sl' in size <12> not available
-(Font)              Font shape `T1/pcr/b/sl' tried instead on input line 542.
+(Font)              Font shape `T1/pcr/b/sl' tried instead on input line 543.
 LaTeX Font Info:    Font shape `T1/pcr/bx/sc' in size <12> not available
-(Font)              Font shape `T1/pcr/b/sc' tried instead on input line 542.
+(Font)              Font shape `T1/pcr/b/sc' tried instead on input line 543.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: threeparttable package is loaded.
@@ -2346,7 +2346,7 @@ File: translations-basic-dictionary-brazil.trsl (brazil translation file `trans
 lations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `brazil'. on input line 542.
+or `brazil'. on input line 543.
 
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/latex/translations/di
 cts\translations-basic-dictionary-english.trsl
@@ -2354,7 +2354,7 @@ File: translations-basic-dictionary-english.trsl (english translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `english'. on input line 542.
+or `english'. on input line 543.
 
 Package pgfplots notification 'compat/show suggested version=true': document ha
 s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
@@ -2942,17 +2942,17 @@ bibitemlist
 
 ] [71] [72] [73] [74] [75] [76]) [77]
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 647.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 648.
  [78
 
-] (pos/apendice_d.tex
+] (pos/apendice_a.tex
 <./outros/fig/E_Diagramas/out/diag_classe/BaggingOptimized_Classe.png, id=1577,
  1007.765pt x 953.5625pt>
 File: ./outros/fig/E_Diagramas/out/diag_classe/BaggingOptimized_Classe.png Grap
 hic file (type png)
 <use ./outros/fig/E_Diagramas/out/diag_classe/BaggingOptimized_Classe.png>
 Package pdftex.def Info: ./outros/fig/E_Diagramas/out/diag_classe/BaggingOptimi
-zed_Classe.png  used on input line 32.
+zed_Classe.png  used on input line 21.
 (pdftex.def)             Requested size: 455.0pt x 430.52509pt.
  [79
 
@@ -2965,7 +2965,7 @@ g Graphic file (type png)
 <use ./outros/fig/E_Diagramas/out/diag_sequencia/BaggingOptimized_Atividade.png
 >
 Package pdftex.def Info: ./outros/fig/E_Diagramas/out/diag_sequencia/BaggingOpt
-imized_Atividade.png  used on input line 44.
+imized_Atividade.png  used on input line 33.
 (pdftex.def)             Requested size: 90.99861pt x 561.84935pt.
 
 [80 <./outros/fig/E_Diagramas/out/diag_sequencia/BaggingOptimized_Atividade.png
@@ -2976,7 +2976,7 @@ File: ./outros/fig/E_Diagramas/out/diagrama/BaggingOptimized_FluxoCompleto.png
 Graphic file (type png)
 <use ./outros/fig/E_Diagramas/out/diagrama/BaggingOptimized_FluxoCompleto.png>
 Package pdftex.def Info: ./outros/fig/E_Diagramas/out/diagrama/BaggingOptimized
-_FluxoCompleto.png  used on input line 56.
+_FluxoCompleto.png  used on input line 45.
 (pdftex.def)             Requested size: 341.25pt x 541.55426pt.
  [81 <./outros/fig/E_Diagramas/out/diagrama/BaggingOptimized_FluxoCompleto.png 
 (PNG copy)>]
@@ -2986,7 +2986,7 @@ File: ./outros/fig/E_Diagramas/out/diagrama02/Etapa2_GridSearch_CV.png Graphic
 file (type png)
 <use ./outros/fig/E_Diagramas/out/diagrama02/Etapa2_GridSearch_CV.png>
 Package pdftex.def Info: ./outros/fig/E_Diagramas/out/diagrama02/Etapa2_GridSea
-rch_CV.png  used on input line 68.
+rch_CV.png  used on input line 57.
 (pdftex.def)             Requested size: 227.5pt x 379.59497pt.
  [82 <./outros/fig/E_Diagramas/out/diagrama02/Etapa2_GridSearch_CV.png (PNG cop
 y)>]
@@ -2996,7 +2996,7 @@ File: ./outros/fig/E_Diagramas/streamlit/diagrama_atividades_streamlit.png Grap
 hic file (type png)
 <use ./outros/fig/E_Diagramas/streamlit/diagrama_atividades_streamlit.png>
 Package pdftex.def Info: ./outros/fig/E_Diagramas/streamlit/diagrama_atividades
-_streamlit.png  used on input line 80.
+_streamlit.png  used on input line 69.
 (pdftex.def)             Requested size: 136.50139pt x 564.87608pt.
  [83 <./outros/fig/E_Diagramas/streamlit/diagrama_atividades_streamlit.png (PNG
  copy)>]
@@ -3006,7 +3006,7 @@ File: ./outros/fig/E_Diagramas/streamlit/diagrama_classes_streamlit.png Graphic
  file (type png)
 <use ./outros/fig/E_Diagramas/streamlit/diagrama_classes_streamlit.png>
 Package pdftex.def Info: ./outros/fig/E_Diagramas/streamlit/diagrama_classes_st
-reamlit.png  used on input line 92.
+reamlit.png  used on input line 81.
 (pdftex.def)             Requested size: 386.75278pt x 388.69272pt.
  [84 <./outros/fig/E_Diagramas/streamlit/diagrama_classes_streamlit.png (PNG co
 py)>]
@@ -3016,9 +3016,9 @@ File: ./outros/fig/E_Diagramas/streamlit/diagrama_sequencia_streamlit.png Graph
 ic file (type png)
 <use ./outros/fig/E_Diagramas/streamlit/diagrama_sequencia_streamlit.png>
 Package pdftex.def Info: ./outros/fig/E_Diagramas/streamlit/diagrama_sequencia_
-streamlit.png  used on input line 104.
+streamlit.png  used on input line 93.
 (pdftex.def)             Requested size: 136.50139pt x 521.18117pt.
-) (pos/apendice_c.tex [85 <./outros/fig/E_Diagramas/streamlit/diagrama_sequenci
+) (pos/apendice_b.tex [85 <./outros/fig/E_Diagramas/streamlit/diagrama_sequenci
 a_streamlit.png (PNG copy)>] [86
 
 ]
@@ -3063,7 +3063,7 @@ Package rerunfilecheck Info: File `TCC_II_IFG_2026.brf' has not changed.
 Here is how much of TeX's memory you used:
  69949 strings out of 474485
  1505068 string characters out of 5739958
- 2653566 words of memory out of 5000000
+ 2653575 words of memory out of 5000000
  89954 multiletter control sequences out of 15000+600000
  723960 words of font info for 444 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -3104,7 +3104,7 @@ nts/type1/urw/times/utmb8a.pfb><C:/Users/wagner.araujo/AppData/Local/Programs/M
 iKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/wagner.araujo/AppData/Local/P
 rograms/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/wagner.araujo/AppData
 /Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on TCC_II_IFG_2026.pdf (102 pages, 3402897 bytes).
+Output written on TCC_II_IFG_2026.pdf (102 pages, 3402956 bytes).
 PDF statistics:
  2242 PDF objects out of 2487 (max. 8388607)
  603 named destinations out of 1000 (max. 500000)
