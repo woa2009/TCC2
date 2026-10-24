@@ -53,10 +53,8 @@ TCC2/
 | 8 | `tex/8secao` | Interface e experiência do usuário (UI/UX) científica |
 | 9 | `tex/9secao` | Desenvolvimento iterativo por sprints e validação por testes |
 | 10 | `tex/10secao` | Conclusão, limitações e trabalhos futuros |
-| — | `pos/apendice_d`, `pos/apendice_c` | Diagramas UML; paridade Java × Python e resultado dos testes |
+| — | `pos/apendice_a`, `pos/apendice_b` | Diagramas UML; paridade Java × Python e resultado dos testes |
 | — | `pos/references` | Referências (`abntex2-num`) |
-
-> A numeração dos arquivos não coincide com a ordem das seções (por exemplo, `5secao.tex` é Requisitos Funcionais e `10secao.tex` é a Conclusão). Consultar sempre o arquivo raiz.
 
 ## Como compilar
 
