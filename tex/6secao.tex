@@ -36,22 +36,20 @@ O módulo \texttt{models.py} atua como a lógica matemática do sistema, encapsu
 
 Ressalta-se que o sistema Java legado calcula os coeficientes da RLM pela
 pseudoinversa de Moore-Penrose explícita (\texttt{SimpleMatrix.pseudoInverse()},
-biblioteca EJML), ao passo que a versão Python emprega
-\texttt{np.linalg.lstsq}, que resolve o problema de mínimos quadrados e
-retorna a solução de mínima norma. Para os sistemas subdeterminados deste
-trabalho ($17 \times 723$), ambas as rotinas convergem para a mesma solução
-teórica $\widehat{\boldsymbol{\beta}} = \mathbf{X}^{+}\mathbf{y}$, embora por
-caminhos numéricos distintos.
+biblioteca EJML, implementada em Java puro), ao passo que a versão Python emprega
+\texttt{np.linalg.lstsq}, que delega ao NumPy a rotina \texttt{gelsd} da
+biblioteca LAPACK~\cite{anderson1999lapack}. Essa rotina resolve o problema de mínimos quadrados por
+decomposição em valores singulares (SVD) e retorna a solução de mínima norma.
+Para os sistemas subdeterminados deste trabalho ($17 \times 723$), ambas as
+rotinas convergem para a mesma solução teórica
+$\widehat{\boldsymbol{\beta}} = \mathbf{X}^{+}\mathbf{y}$, embora por caminhos
+numéricos distintos.
 
 O módulo \texttt{components.py} responde pela fábrica de componentes visuais e geração de gráficos interativos utilizando a biblioteca Plotly. Ele transforma as matrizes de resultados e vetores de predição retornados pela camada de modelagem em objetos de figura prontos para renderização, isolando o código de visualização do fluxo principal da aplicação.
 
 O módulo \texttt{app.py} funciona como controlador da interface e do estado da sessão (\texttt{st.session\_state}). Ele captura as interações do usuário, invoca as funções puras de \texttt{models.py}, repassa os resultados para \texttt{components.py} e gerencia a exibição sequencial em abas. Essa divisão garante que alterações na camada visual não impactem os algoritmos científicos e vice-versa.
 
-No Apêndice~\ref{cha:testesgraficos}, a Figura~\ref{fig:arquitetura_python} apresenta as três camadas do sistema
-modernizado, em contraste com a organização monolítica do sistema Java
-original, ilustrada na Figura~\ref{fig:arquitetura_java}. O diagrama de classes
-dos módulos (Figura~\ref{fig:BaggingOptimized_classe3}) e os demais diagramas
-de arquitetura e \gls{UML} estão reunidos nesse mesmo apêndice.
+%A Figura~\ref{fig:arquitetura_python} apresenta as três camadas do sistema modernizado, em contraste com a organização monolítica do sistema Java original, ilustrada na Figura~\ref{fig:arquitetura_java}. O diagrama de classes dos módulos (Figura~\ref{fig:BaggingOptimized_classe3}) e os demais diagramas \gls{UML} estão reunidos no Apêndice~\ref{cha:testesgraficos}.
 
 A Figura~\ref{fig:arquitetura_java} mostra a organização lógica em camadas do sistema Java original, contida em um único arquivo, e a Figura~\ref{fig:arquitetura_python} apresenta as três camadas físicas do sistema modernizado. O diagrama de classes dos módulos (Figura~\ref{fig:BaggingOptimized_classe3}) e os demais diagramas \gls{UML} estão no Apêndice~\ref{cha:testesgraficos}.
 
