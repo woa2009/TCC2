@@ -1,4 +1,4 @@
-# TCC II IFG 2026 — Guia do Projeto no Claude
+# TCC II IFG 2026 — Guia do Projeto
 
 * **Título:** Migração de sistemas legados de análise química: de Java desktop para Python web
 * **Autor:** Wagner Oliveira de Araujo
@@ -21,13 +21,6 @@ Os arquivos do TCC **não são mantidos neste projeto**. A versão oficial e atu
 | `streamlit-app` | Sistema Python/Streamlit (`app.py`, `models.py`, `components.py`) | https://github.com/woa2009/streamlit-app |
 | `MigracaoJava` | Sistema Java Desktop legado (`BaggingOptimized.java`) | https://github.com/woa2009/MigracaoJava |
 
-### Instruções para o Claude
-
-1. **Antes de qualquer revisão, edição ou consulta ao texto do TCC, clonar `woa2009/TCC2`** (`git clone --depth 1`) e ler os arquivos a partir da cópia clonada. Não usar cópias antigas anexadas ao projeto.
-2. Para o código Python, clonar `woa2009/streamlit-app`; para o legado Java, `woa2009/MigracaoJava`.
-3. O Claude **não envia alterações ao GitHub** (sem autenticação). Toda alteração é entregue como arquivo ou trecho para o Wagner aplicar localmente e fazer `git commit` e `git push`.
-4. Se o repositório estiver privado ou inacessível (erro 404), avisar o Wagner e pedir o `.zip` do projeto.
-5. Mudanças feitas só no computador do Wagner, sem `push`, não são visíveis ao Claude.
 
 ---
 
