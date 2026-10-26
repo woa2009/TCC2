@@ -71,13 +71,14 @@ Os arquivos `.csv` da raiz devem estar presentes, pois são lidos diretamente pe
 
 ## Referência neste projeto
 
-ABNT NBR 6023, Informação e documentação - Referências - Elaboração.
-ABNT NBR 6024, Informação e documentação - Numeração progressiva das seções de um documento escrito - Apresentação.
-ABNT NBR 6027, Informação e documentação - Sumário - Apresentação.
-ABNT NBR 6028, Informação e documentação - Resumo - Procedimento.
-ABNT NBR 6034, Informação e documentação - Índice - Apresentação.
-ABNT NBR 10520, Informação e documentação - Citações em documentos - Apresentação.
-ABNT NBR 12225, Informação e documentação - Lombada - Elaboração.
-Código de Catalogração Anglo-Americano. 2 ed. rev.2002. São Paulo: FEBAB, 2004.
-IBGE. Normas de apresentação tabular. 3. ed. Rio de Janeiro, 1993.
+- ABNT NBR 6023, Informação e documentação - Referências - Elaboração.
+- ABNT NBR 6024, Informação e documentação - Numeração progressiva das seções de um documento escrito - Apresentação.
+- ABNT NBR 6027, Informação e documentação - Sumário - Apresentação.
+- ABNT NBR 6028, Informação e documentação - Resumo - Procedimento.
+- ABNT NBR 6034, Informação e documentação - Índice - Apresentação.
+- ABNT NBR 10520, Informação e documentação - Citações em documentos - Apresentação.
+- ABNT NBR 12225, Informação e documentação - Lombada - Elaboração.
+- Código de Catalogração Anglo-Americano. 2 ed. rev.2002. São Paulo: FEBAB, 2004.
+- IBGE. Normas de apresentação tabular. 3. ed. Rio de Janeiro, 1993.
+
 
