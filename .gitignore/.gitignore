@@ -48,3 +48,10 @@
 ## Diretórios de build comuns (caso use latexmk ou ferramentas similares)
 build/
 _minted*/
+
+# Arquivos temporários do Microsoft Excel (gerados ao abrir planilhas)
+~$*
+
+# Arquivos de log e relatórios em formato texto do compilador
+resultados_detalhados.txt
+
