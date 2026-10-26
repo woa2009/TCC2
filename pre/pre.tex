@@ -11,44 +11,35 @@
 \imprimirfolhaderosto
 % ---
 
-% ---
+% ---------------------------------------------------
 % Ficha Catalografica em pdf e código
-% 
-% ---
+% ---------------------------------------------------
 
 %\begin{fichacatalografica}
-%\includepdf{pre/Ficha_Catalografica.pdf}
+%\includepdf{pre/Ficha_Catalografica.pdf}%Ficha catalografica em pdf
 %\end{fichacatalografica}
 
 %Utilize este arquivo de ficha catalografica
-%\include{pre/fichaCatalografica}%Retirando ficha catalografica
-
-%----------------------------------------------
-
-
-% ---
-% Inserir folha de aprovação
-% ---
-%\includepdf[pages={1-2}]{arquivo.pdf}%utilizando duas paginas
-%\includepdf[pages={5}, fitpaper=true]{Flauberth__Duarte_TCC.pdf}.
-%\input{pre/folhaAprovacao}%Retirando 
+%\include{pre/fichaCatalografica}%Retirando fichaCatalografica.tex
+%\begin{fichabibliografica}%o codigo esta em ufscthesisA4-alf.sty
+%\end{fichabibliografica}
 
 
 %---------------------------------------------------
-\begin{folhaaprovacao}
-    % As assinaturas dos avaliadores entram aqui (as outras já são automáticas)
-    \vspace*{\baselineskip}
-    \assinatura{Prof.\masculino~\avaliadorinterno, \tituloavaliadorinterno\\
-    \avalinterno \\
-    \entidadeinterna~(\siglainterno)}
 
-    \vspace*{\baselineskip}
-    \assinatura{Prof.\feminino~\avaliadorexterno, \tituloavaliadorexterno\\
-    \avalexterno \\
-    \entidadeexterna~(\siglaexterno)}
+
+% --------------------------------------------------
+% Inserir folha de aprovação
+% --------------------------------------------------
+%\includepdf[pages={1-2}]{arquivo.pdf}%utilizando duas paginas
+%\includepdf[pages={5}, fitpaper=true]{Flauberth__Duarte_TCC.pdf} %folha de aprovação em pdf
+%\input{pre/folhaAprovacao}%Retirando folha de aprovação em .tex (este arquivo esta separado)
+
+
+%---------------------------------------------------
+
+\begin{folhaaprovacao}%o codigo esta em ufscthesisA4-alf.sty
 \end{folhaaprovacao}
-
-
 %---------------------------------------------------
 
 % ---
@@ -56,6 +47,10 @@
 % ---
 %\includepdf[pages={5}, fitpaper=true]{folhaDeAta.pdf}.
 %\input{pre/ata}%Retirando 
+
+%\begin{atabanca}%o codigo esta em ufscthesisA4-alf.sty
+%\end{atabanca}
+
 
 %---------------------------------------------------
 \begin{comment}%Retire este comentario para aparecer a ata
@@ -98,8 +93,10 @@
 % --------------------------------------------------
 % Inserir folha de autorização para disponibilização
 % --------------------------------------------------
-%\include{pre/termo}%Retirando 
+%\include{pre/termo}%Esta dentro do diretorio pre com termo.tex
 %\includepdf[pages={5}, fitpaper=true]{folhaTermo.pdf}.
+%\begin{folhaautorizacao}% a formatação nao se mantem
+%\end{folhaautorizacao}
 %---------------------------------------------------
 \begin{comment}% Descomente para aparecer O Termo de Autorização da biblioteca
 
