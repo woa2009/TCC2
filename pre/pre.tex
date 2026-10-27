@@ -34,61 +34,18 @@
 %\includepdf[pages={1-2}]{arquivo.pdf}%utilizando duas paginas
 %\includepdf[pages={5}, fitpaper=true]{Flauberth__Duarte_TCC.pdf} %folha de aprovação em pdf
 %\input{pre/folhaAprovacao}%Retirando folha de aprovação em .tex (este arquivo esta separado)
-
-
+%---------------------------------------------------
+%\begin{folhaaprovacao}%o codigo esta em ufscthesisA4-alf.sty
+%\end{folhaaprovacao}
 %---------------------------------------------------
 
-\begin{folhaaprovacao}%o codigo esta em ufscthesisA4-alf.sty
-\end{folhaaprovacao}
-%---------------------------------------------------
-
-% ---
+% --------------------------------------------------
 % Inserir folha de ata da seção pública de tcc
-% ---
+% --------------------------------------------------
 %\includepdf[pages={5}, fitpaper=true]{folhaDeAta.pdf}.
 %\input{pre/ata}%Retirando 
-
 %\begin{atabanca}%o codigo esta em ufscthesisA4-alf.sty
 %\end{atabanca}
-
-
-%---------------------------------------------------
-\begin{comment}%Retire este comentario para aparecer a ata
-%---------------------------------------------------
-\begin{atareuniao}
-\noindent Aos~\diaata~dias do mês de~\mesata~do ano de dois mil e vinte e cinco, às~\hinicial~horas, por meio de webconferência utilizando Google Meet, foi realizada a sessão pública de apresentação do \imprimirtipotrabalho~do Graduando~\textbf{\alunonome~\alunosobre}~(matrícula~\matricula) do~\imprimirprograma. A banca foi composta pelos seguintes membros:~\orientadora,~\avaliadorinterno,~\avaliadorexterno, sob a presidência da primeira. O \imprimirtipotrabalho~tem como título ``\textbf{\titulo}'', sob orientação da Prof\textsuperscript{a}~\orientadora. Após a apresentação do \imprimirtipotrabalho, tendo sido o autor arguido pela Banca Examinadora, a nota obtida foi~\notanumerico~(\notaextenso).
-
-\vspace{0.5cm}
-\noindent Encerra-se a presente sessão às~\hfinal~horas~e~\mfinal~minutos. Eu Prof\textsuperscript{a}.~\orientadora, dato e assino a presente ata que segue assinada por todos os membros da Banca e pelo graduando.
-
-\vspace{0.1cm}
-\vspace{-0.1cm} % Espaço negativo para "puxar" a tabela para cima
-{\footnotesize 
-\begin{center}
-    % Ajusta o respiro global da tabela
-    \renewcommand{\arraystretch}{0.8} 
-    \begin{tabular}{c}
-        \asseletronica \\[0.2cm] % <--- Adiciona 0.2cm de espaço APENAS aqui
-        Prof\textsuperscript{a}~\orientadora \\[0.4cm] % Espaço maior entre pessoas
-        
-        \asseletronica \\[0.2cm]
-        Prof\textsuperscript{a}~\avaliadorinterno \\[0.4cm] 
-        
-        \asseletronica \\[0.2cm]
-        Prof\textsuperscript{a}~\avaliadorexterno \\[0.4cm] 
-        
-        \includegraphics[width=0.20\textwidth]{./outros/fig/minhaAssinatura2.png} \\[0.1cm]
-        \textbf{\alunonome~\alunosobre} \\
-        (Graduando) \\[0.3cm] 
-        
-        \includegraphics[width=0.79\textwidth]{./outros/fig/QR_CODE_V2.pdf}
-    \end{tabular}
-\end{center}
-}
-\end{atareuniao}
-%---------------------------------------------------
-\end{comment}
-%---------------------------------------------------
 
 % --------------------------------------------------
 % Inserir folha de autorização para disponibilização
@@ -98,92 +55,6 @@
 %\begin{folhaautorizacao}% Este comando esta funcional
 %\end{folhaautorizacao}
 %---------------------------------------------------
-\begin{comment}% Descomente para aparecer O Termo de Autorização da biblioteca
-
-\linespread{0.87}\selectfont
-%--------Cabeçalho do documento
-\noindent\begin{minipage}[c][1.5cm][c]{3.5cm}
-\includegraphics[width=1.5 \textwidth]{./outros/fig/IFGAnapolisHor2.png}
-\end{minipage}\quad\quad\quad\qquad
-\begin{minipage}{12cm}%10cm
-\scriptsize\textbf{\ministerio}\\
-\textbf{\secretaria}\\
-\textbf{\instituto}\\
-\textbf{\MakeTextUppercase{\campus}}\\
-\textbf{\biblioteca}\\
-\end{minipage}
-%\vspace{-0.1cm}
-\small{
-\begin{center}
-	\termo
-\end{center}
-
-\termodois
-
-\noindent \textbf{Identifica\c{c}\~ao de Produ\c{c}\~ao T\'ecnico-Cient\'ifica}
-
-\begin{tabular}{lllll}
-\lbrack ~~\rbrack & Tese &  & \lbrack ~~\rbrack & Artigo Cient\'ifico \\ 
-\lbrack ~~\rbrack & Disserta\c{c}\~ao &  & \lbrack ~~\rbrack & Cap\'itulo de Livro \\ 
-\lbrack ~~\rbrack & Monografia -- Especializa\c{c}\~ao &  & \lbrack ~~\rbrack & Livro \\ 
-\lbrack X\rbrack & TCC -- Gradua\c{c}\~ao &  & \lbrack ~~\rbrack & Trabalho Apresentado em Evento \\ 
-\lbrack ~~\rbrack & Produto T\'ecnico e Educacional -- Tipo: & \multicolumn{3}{l}{\hrulefill} \\ 
-\end{tabular}
-
-\quad
-
-\noindent Nome Completo do Autor:~\textbf{\alunonome~\alunosobre}
-
-\noindent Matr\'icula:~\textbf{\matricula}
-
-\noindent T\'ituto do Trabalho:~\textbf{\tituloprincipal}
-
-\noindent \textbf{Autoriza\c{c}\~ao -- Marque uma das op\c{c}\~oes}
-
-\begin{enumerate}
-	\item (X) Autorizo disponibilizar meu trabalho no Reposit\'orio Digital do IFG (acesso aberto);
-	\item (~) Autorizo disponibilizar meu trabalho no Reposit\'orio Digital do IFG somente ap\'os a data 20/10/20 (Embargo);
-	\item (~) N\~ao autorizo disponibilizar meu trabalho no Reposit\'orio Digital do IFG (acesso restrito)
-\end{enumerate}
-
-\noindent Ao indicar a op\c{c}\~ao \textbf{2 ou 3}, marque a justificativa:
-\begin{description}
-	\item[(~~)] O documento est\'a sujeito a registro de patente.
-	\item[(~~)] O documento pode vir a ser publicado como livro, cap\'itulo de livro ou artigo.
-	\item[(~~)] Outra justificativa: \hrulefill
-\end{description}
-
-\begin{center}
-	\textbf{\declaracao}
-\end{center}
-
-\noindent O(A) referido(a) autor(a) declara que:
-
-\textbf{(i)}~o documento \'e seu trabalho original, det\'em os direitos autorais de produ\c{c}\~ao t\'ecnico-cient\'ifica e n\~ao infringe os direitos de qualquer outro pessoa ou entidade;
-
-\textbf{(ii)}~\termotres
-
-\textbf{(iii)}~cumpriu quaisquer obriga\c{c}\~oes exigidas por contrato ou acordo, caso o documento entregue seja baseado em trabalho finaciado ou apoiado por outra institui\c{c}\~ao que n\~ao o \entidade.
-
-%\todaydia
-\begin{flushright}
-An\'apolis, {\diaata~de~\mesata}~de~{\todayano}
-\end{flushright}
-
-\begin{center}
-\begin{tabular}{c}
-\includegraphics[width=0.19 \textwidth]{./outros/fig/minhaAssinatura2.png} \\ 
-\multicolumn{1}{c}{~\alunonome \alunosobre} \\ 
-%\multicolumn{1}{c}{\hrulefill} \\ 
-\end{tabular}
-\end{center}
-}%Fim \small
-
-\linespread{1.3}\selectfont
-
-\end{comment}
-%---------------------------------------------------
-
 
 % ---
 % Dedicatória
@@ -234,9 +105,9 @@ An\'apolis, {\diaata~de~\mesata}~de~{\todayano}
 
 % ---
 
-% ---
-% RESUMOS
-% ---
+% ----------------------------------------
+%                RESUMOS
+% ----------------------------------------
 
 % resumo em português
 \setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo

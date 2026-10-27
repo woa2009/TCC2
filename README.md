@@ -30,9 +30,9 @@ Os arquivos do TCC **não são mantidos neste projeto**. A versão oficial e atu
 TCC2/
 ├── TCC_II_IFG_2026.tex      ← arquivo raiz (classe abntex2, bibliografia numérica)
 ├── setup/                   ← ufscthesisA4-alf.sty, stylodefinicao.tex, algorithm2e.sty
-├── pre/                     ← pre.tex, ata.tex, termo.tex, folhaAprovacao.tex, fichaCatalografica.tex
+├── pre/                     ← pre.tex
 ├── tex/                     ← 1secao.tex ... 10secao.tex e dados das figuras (.txt)
-├── pos/                     ← references.bib, apendice_c.tex, apendice_d.tex, saídas dos testes
+├── pos/                     ← references.bib, apendice_a.tex, apendice_b.tex, saídas dos testes
 ├── outros/                  ← fig/ (figuras) e prog/ (dados espectrais)
 ├── quadro_*.tex, apoio.tex  ← quadros auxiliares (parte comentada no arquivo raiz)
 └── *.csv                    ← r_bagging, r_bagging2, rmsep5080, rmsepsuperior (lidos pelo LaTeX)
@@ -63,22 +63,27 @@ pdflatex TCC_II_IFG_2026.tex
 bibtex TCC_II_IFG_2026
 pdflatex TCC_II_IFG_2026.tex
 pdflatex TCC_II_IFG_2026.tex
-```
 
 Os arquivos `.csv` da raiz devem estar presentes, pois são lidos diretamente pelo LaTeX. O `README.md` do repositório `TCC2` traz o detalhamento completo.
+```
+## Ferramentas utilizadas
+
+Este trabalho foi elaborado com as seguintes ferramentas:
+
+- **Editor:** TeXnicCenter, versão 2.02 Stable (64 bits). Disponível em: <https://www.texniccenter.org/download>
+- **Distribuição LaTeX:** MiKTeX. Disponível em: <https://miktex.org/download>
 
 ---
 
 ## Referência neste projeto
 
-- ABNT NBR 6023, Informação e documentação - Referências - Elaboração.
-- ABNT NBR 6024, Informação e documentação - Numeração progressiva das seções de um documento escrito - Apresentação.
-- ABNT NBR 6027, Informação e documentação - Sumário - Apresentação.
-- ABNT NBR 6028, Informação e documentação - Resumo - Procedimento.
-- ABNT NBR 6034, Informação e documentação - Índice - Apresentação.
-- ABNT NBR 10520, Informação e documentação - Citações em documentos - Apresentação.
-- ABNT NBR 12225, Informação e documentação - Lombada - Elaboração.
-- Código de Catalogração Anglo-Americano. 2 ed. rev.2002. São Paulo: FEBAB, 2004.
-- IBGE. Normas de apresentação tabular. 3. ed. Rio de Janeiro, 1993.
-
+ABNT NBR 6023, Informação e documentação - Referências - Elaboração.
+ABNT NBR 6024, Informação e documentação - Numeração progressiva das seções de um documento escrito - Apresentação.
+ABNT NBR 6027, Informação e documentação - Sumário - Apresentação.
+ABNT NBR 6028, Informação e documentação - Resumo - Procedimento.
+ABNT NBR 6034, Informação e documentação - Índice - Apresentação.
+ABNT NBR 10520, Informação e documentação - Citações em documentos - Apresentação.
+ABNT NBR 12225, Informação e documentação - Lombada - Elaboração.
+Código de Catalogração Anglo-Americano. 2 ed. rev.2002. São Paulo: FEBAB, 2004.
+IBGE. Normas de apresentação tabular. 3. ed. Rio de Janeiro, 1993.
 

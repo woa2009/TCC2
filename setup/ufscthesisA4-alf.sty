@@ -178,7 +178,7 @@ nopostdot  % Não é colocado ponto ao final da entrada
 %---------------------------------------------------
 
 
-%Fim Alterado---------------
+
 
 % Corrige justificação
 \emergencystretch 3em
@@ -404,10 +404,6 @@ nopostdot  % Não é colocado ponto ao final da entrada
 \makeatother
 % ---
 
-% ---
-% FIM DAS CUSTOMIZACOES PARA A UNIVERSIDADE FEDERAL DE SANTA CATARINA
-% ---
-
 %------------------------------------------
 % Folha de aprovação
 %------------------------------------------
@@ -449,9 +445,14 @@ nopostdot  % Não é colocado ponto ao final da entrada
     \end{folhadeaprovacao}
 }
 
-%-----------------------------------------------
+%----------------------------------------
+% Folha da ata de aprovação pela banca
+%----------------------------------------
+\newenvironment{atadabanca}
+  {}  % o que vem no \begin{termo}
+  {\newpage}  
 \newenvironment{atabanca}{
-   \begin{folhadeaprovacao}
+   \begin{atadabanca}
 	\linespread{0.87}\selectfont
 
 %--------Cabeçalho do documento
@@ -471,10 +472,10 @@ nopostdot  % Não é colocado ponto ao final da entrada
 	\textbf{ATA N\textsuperscript{o} 20/\imprimirano}\\
 	\footnotesize{\MakeUppercase{\textbf{Ata da sess\~ao p\'ublica de apresenta\c{c}\~ao do \imprimirtipotrabalho}}}
 \end{center}
-\noindent Aos~\diaata~dias do mês de~\mesata~do ano de dois mil e vinte e cinco, às~\hinicial~horas, por meio de webconferência utilizando Google Meet, foi realizada a sessão pública de apresentação do \imprimirtipotrabalho~do Graduando~\textbf{\alunonome~\alunosobre}~(matrícula~\matricula) do~\imprimirprograma. A banca foi composta pelos seguintes membros:~\orientadora,~\avaliadorinterno,~\avaliadorexterno, sob a presidência da primeira. O \imprimirtipotrabalho~tem como título ``\textbf{\titulo}'', sob orientação da Prof\textsuperscript{a}~\orientadora. Após a apresentação do \imprimirtipotrabalho, tendo sido o autor arguido pela Banca Examinadora, a nota obtida foi~\notanumerico~(\notaextenso).
+\noindent Aos~\diaata~dias do mês de~\mesata~do ano de dois mil e vinte e cinco, às~\hinicial~horas, por meio de webconferência utilizando Google Meet, foi realizada a sessão pública de apresentação do \imprimirtipotrabalho~do Graduando~\textbf{\alunonome~\alunosobre}~(matrícula~\matricula) do~\imprimirprograma. A banca foi composta pelos seguintes membros:~\nomorient~\sobrenomorient,~\avaliadorinterno,~\avaliadorexterno, sob a presidência do(a) primeiro(a). O \imprimirtipotrabalho~tem como título ``\textbf{\titulo}'', sob orientação do(a) \nomorient~\sobrenomorient.~Após a apresentação do \imprimirtipotrabalho, tendo sido o autor arguido pela Banca Examinadora, a nota obtida foi~\notanumerico~(\notaextenso).
 
 \vspace{0.5cm}
-\noindent Encerra-se a presente sessão às~\hfinal~horas~e~\mfinal~minutos. Eu Prof\textsuperscript{a}.~\orientadora, dato e assino a presente ata que segue assinada por todos os membros da Banca e pelo graduando.
+\noindent Encerra-se a presente sessão às~\hfinal~horas~e~\mfinal~minutos. Eu \nomorient~\sobrenomorient, dato e assino a presente ata que segue assinada por todos os membros da Banca e pelo graduando.
 
 \vspace{0.1cm}
 \vspace{-0.1cm} % Espaço negativo para "puxar" a tabela para cima
@@ -484,13 +485,13 @@ nopostdot  % Não é colocado ponto ao final da entrada
     \renewcommand{\arraystretch}{0.8} 
     \begin{tabular}{c}
         \asseletronica \\[0.2cm] % <--- Adiciona 0.2cm de espaço APENAS aqui
-        Prof\textsuperscript{a}~\orientadora \\[0.4cm] % Espaço maior entre pessoas
+        \imprimirorientador \\[0.4cm] % Espaço maior entre pessoas
         
         \asseletronica \\[0.2cm]
-        Prof\textsuperscript{a}~\avaliadorinterno \\[0.4cm] 
+        \cargointerno~\avaliadorinterno,~\tituloavaliadorinterno\\[0.4cm] 
         
         \asseletronica \\[0.2cm]
-        Prof\textsuperscript{a}~\avaliadorexterno \\[0.4cm] 
+        \cargoexterno~\avaliadorexterno,~\tituloavaliadorexterno\\[0.4cm] 
         
         \includegraphics[width=0.20\textwidth]{./outros/fig/minhaAssinatura2.png} \\[0.1cm]
         \textbf{\alunonome~\alunosobre} \\
@@ -501,10 +502,12 @@ nopostdot  % Não é colocado ponto ao final da entrada
 \end{center}
 }
 }{
-     \end{folhadeaprovacao}
+     \end{atadabanca}
 }
 
-%----------------------------------------------------------------
+%--------------------------------------------------
+% Ficha catalografica produzida pelo bibliotecario
+%--------------------------------------------------
 \newenvironment{fichabibliografica}{
 \begin{fichacatalografica}
 \vspace*{12cm} % Posição vertical
@@ -567,9 +570,15 @@ Biblioteca Clarice Lispector
 \end{fichacatalografica}
 }
 
-%--------------------------------
+%----------------------------------------
+% Folha de autorização para a biblioteca
+%----------------------------------------
+\newenvironment{folhadeautorizacao}
+  {}  % o que vem no \begin{termo}
+  {}  
+	
 \newenvironment{folhaautorizacao}{
-\begin{fichacatalografica}
+\begin{folhadeautorizacao}%fichacatalografica
 \linespread{0.87}\selectfont
 %--------Cabeçalho do documento
 \noindent\begin{minipage}[c][1.5cm][c]{3.5cm}
@@ -606,7 +615,7 @@ Biblioteca Clarice Lispector
 
 \noindent Matr\'icula:~\textbf{\matricula}
 
-\noindent T\'ituto do Trabalho:~\textbf{\tituloprincipal}
+\noindent T\'itulo do Trabalho:~\textbf{\tituloprincipal}
 
 \noindent \textbf{Autoriza\c{c}\~ao -- Marque uma das op\c{c}\~oes}
 
@@ -629,11 +638,11 @@ Biblioteca Clarice Lispector
 
 \noindent O(A) referido(a) autor(a) declara que:
 
-\textbf{(i)}~o documento \'e seu trabalho original, det\'em os direitos autorais de produ\c{c}\~ao t\'ecnico-cient\'ifica e n\~ao infringe os direitos de qualquer outro pessoa ou entidade;
+\textbf{(i)}~o documento \'e seu trabalho original, det\'em os direitos autorais de produ\c{c}\~ao t\'ecnico-cient\'ifica e n\~ao infringe os direitos de qualquer outra pessoa ou entidade;
 
 \textbf{(ii)}~\termotres
 
-\textbf{(iii)}~cumpriu quaisquer obriga\c{c}\~oes exigidas por contrato ou acordo, caso o documento entregue seja baseado em trabalho finaciado ou apoiado por outra institui\c{c}\~ao que n\~ao o \entidade.
+\textbf{(iii)}~cumpriu quaisquer obriga\c{c}\~oes exigidas por contrato ou acordo, caso o documento entregue seja baseado em trabalho financiado ou apoiado por outra institui\c{c}\~ao que n\~ao o \entidade.
 
 %\todaydia
 \begin{flushright}
@@ -651,6 +660,6 @@ An\'apolis, {\diaata~de~\mesata}~de~{\todayano}
 \linespread{1.3}\selectfont
 }
 {
-  \end{fichacatalografica}
+  \end{folhadeautorizacao}
 }
 

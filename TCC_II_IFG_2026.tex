@@ -190,12 +190,14 @@
 %   Avaliadores internos e externos
 %--------------------------------------------------------------
 \newcommand{\avaliadorinterno}{Luiz Fernando Loja}
+\newcommand{\cargointerno}{Prof.\textsuperscript{o}}
 \newcommand{\tituloavaliadorinterno}{Dr.}
 \newcommand{\avalinterno}{Avaliadora Interna}
 \newcommand{\siglainterno}{IFG}
 \newcommand{\entidadeinterna}{Instituto Federal de Goiás}
 
 \newcommand{\avaliadorexterno}{Maria de Oliveira Vaz dos Santos}
+\newcommand{\cargoexterno}{Prof.\textsuperscript{a}}
 \newcommand{\tituloavaliadorexterno}{Ma.}
 \newcommand{\avalexterno}{Avaliadora Interna}
 \newcommand{\siglaexterno}{IFG}
@@ -205,10 +207,9 @@
 
 %Para fonte das figuras, tabelas e quadros
 \newcommand{\oautor}{Wagner Oliveira de Araujo.}
-%\def\oautor{Wagner Oliveira de Araujo.}
 
 \newcommand{\tituloprincipal}{Migração de sistemas legados de análise química: de Java desktop para python web}
-%\def\tituloprincipal{Migração de sistemas legados de análise química: de Java desktop para python web}
+
 
 % --------------------------------------------------------------
 % Informações de dados para CAPA e FOLHA DE ROSTO
@@ -252,12 +253,12 @@
 \local{Anápolis}
 \instituicaosigla{IFG}
 \instituicao{Instituto Federal de Educação, Ciência e Tecnologia de Goiás}
-\def\campus{Campus~\local}%Nao foi utilizada na ficha catalografica
+\newcommand{\campus}{Campus~\local}%Nao foi utilizada na ficha catalografica
 % FIXME Substituir 'Dissertação/Tese' pelo tipo de trabalho (Tese, Dissertação). 
-\def\numeroromano{II}%Numero I ou II para TCC
+\newcommand{\numeroromano}{II}%Numero I ou II para TCC
 \tipotrabalho{Trabalho de Conclusão de Curso \numeroromano}
 % FIXME Substituir '[licenciado/bacharel] em [nome do título obtido]' pela grau adequado.
-\def\disciplina{TCC~\numeroromano}
+\newcommand{\disciplina}{TCC~\numeroromano}%Para a ficha catalografica
 \formacao{bacharel}
 % FIXME Substituir '[licenciado/bacharel]' pelo nivel adequado.
 \nivel{bacharel}
@@ -538,7 +539,6 @@
 
 %-------------------------------------------
 \interfootnotelinepenalty=10000 %Isso impede totalmente que qualquer nota de rodapé seja dividida entre duas páginas.
-
 
 \newcommand{\testes}{75,25}
 \newcommand{\feminino}{\textsuperscript{a}}
