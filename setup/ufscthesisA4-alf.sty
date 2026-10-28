@@ -408,10 +408,16 @@ nopostdot  % Não é colocado ponto ao final da entrada
 % Folha de aprovação
 %------------------------------------------
 % Comandos para os avaliadores (caso queira definir fora do ambiente)
-% ---
+% -----------------------------------------
 % AMBIENTE FOLHA DE APROVAÇÃO CUSTOMIZADO
-% ---
-\newenvironment{folhaaprovacao}{
+% -----------------------------------------
+
+% 5. Cria o comando para a Folha de Aprovação preservando 100% da formatação e código original
+\newcommand{\imprimirfolhaaprovacao}{
+\clearpage
+\thispagestyle{empty}
+{ % <--- Inicia grupo de isolamento da formatação para blindar o modelo da UFSC
+
     \begin{folhadeaprovacao}
         \OnehalfSpacing
         \centering
@@ -441,19 +447,31 @@ nopostdot  % Não é colocado ponto ao final da entrada
         \assinatura{Prof.\feminino~\avaliadorexterno, \tituloavaliadorexterno\\
         \avalexterno \\
         \entidadeexterna~(\siglaexterno)}
-}{
     \end{folhadeaprovacao}
+
+\par
+} % <--- Termina grupo de isolamento da formatação
+\clearpage
 }
+
 
 %----------------------------------------
 % Folha da ata de aprovação pela banca
 %----------------------------------------
+% 1. Declara o ambiente base que o código original exige no fechamento
 \newenvironment{atadabanca}
-  {}  % o que vem no \begin{termo}
+  {}  
   {\newpage}  
-\newenvironment{atabanca}{
-   \begin{atadabanca}
+
+% 2. Cria o comando principal da ata limpando o conflito de ambientes
+\newcommand{\imprimiratabanca}{
+\clearpage
+\thispagestyle{empty}
+{ % <--- Inicia grupo de isolamento da formatação
+
+   \begin{atadabanca} % Código original mantido
 	\linespread{0.87}\selectfont
+	\small % <--- INSIRA O COMANDO EXATAMENTE AQUI (Muda o corpo da ata)
 
 %--------Cabeçalho do documento
 \noindent\begin{minipage}[c][1.5cm][c]{3.5cm}
@@ -501,84 +519,93 @@ nopostdot  % Não é colocado ponto ao final da entrada
     \end{tabular}
 \end{center}
 }
-}{
-     \end{atadabanca}
+   \end{atadabanca} % Código original mantido
+
+\par
+} % <--- Termina grupo de isolamento da formatação
+
+\clearpage
 }
 
-%--------------------------------------------------
-% Ficha catalografica produzida pelo bibliotecario
-%--------------------------------------------------
-\newenvironment{fichabibliografica}{
-\begin{fichacatalografica}
-\vspace*{12cm} % Posição vertical
-%\hrule % Linha horizontal
 
-\begin{center} % Minipage Centralizado
-\small{\textbf{\cip}}
-\framebox[120mm]{%Inicio da caixa
-\begin{minipage}{105mm} % Largura [c]{12.5cm}
-\begin{flushleft}
-\codnome
-\end{flushleft}
-\MakeUppercase{\sobrenome},~\nome
-%\tituloprincipal %\imprimirtitulo
 
-\hspace{0.5cm} \tituloprincipal. / \nome~\sobrenome~ --~ %\imprimirautor
-\imprimirlocal:~\sigla,~\imprimirano.\\
+% 3. Definição do comando mapeando o bloco original de forma idêntica
+\newcommand{\imprimirfichacatalografica}{
+    \clearpage
+    \thispagestyle{empty}
+    
+    % --- INÍCIO DO CÓDIGO ORIGINAL PRESERVADO IPSE LITERIS ---
+    \begin{fichacatalografica}
+    \vspace*{12cm} % Posição vertical
+    %\hrule % Linha horizontal
+    
+    \begin{center} % Minipage Centralizado
+    \small{\textbf{\cip}}
+    \framebox[120mm]{%Inicio da caixa
+    \begin{minipage}{105mm} % Largura [c]{12.5cm}
+    \begin{flushleft}
+    \codnome
+    \end{flushleft}
+    \MakeUppercase{\sobrenome},~\nome
+    %\tituloprincipal %\imprimirtitulo
+    
+    \hspace{0.5cm} \tituloprincipal. / \nome~\sobrenome~ --~ %\imprimirautor
+    \imprimirlocal:~\sigla,~\imprimirano.\\
+    
+    \hspace{0.5cm} \pageref{LastPage} p. : il.~color.~;~30 cm.\\
+    
+    \hspace{0.5cm} \imprimirorientadorRotulo:~ \imprimirorientador\\
+    
+    \hspace{0.5cm} \imprimircoorientadorRotulo:~ \imprimircoorientador\\
+    
+    \hspace{0.5cm}
+    \parbox[t]{\textwidth}{\tcc~--~\imprimirinstituicao,~\campus~--~\imprimirprograma,~\imprimirano.}\\
+    
+    \hspace{0.5cm}
+    1. \palavrachaveum.
+    2. \palavrachavedois.
+    3. \palavrachavetres.
+    4. \palavrachavequatro.
+    5. \palavrachavecinco.
+    I. \MakeUppercase{\sobrenomorient},~\nomorient~\sigorient..
+    II. \MakeUppercase{\sobrenomcoorient},~\nomcoorient~\sigcoorient..
+    %II. Universidade xxx.
+    %III. Faculdade de xxx.
+    III. T\'itulo.\\
+    
+    %\hspace{7.75cm} \cdu\\
+    \begin{flushright}
+        						\cdu
+    \end{flushright}%
+    %\hspace{8.75cm}
+    \end{minipage}
+    }%Fim caixa
+    \par
+    \vspace{0.1cm}
+    Ficha catalogr\'afica elaborada pelo bibliotec\'ario~\bibliotecario~\cbr
+    \par
+    Biblioteca Clarice Lispector
+    \par
+    \imprimirinstituicao
+    \par
+    \campus%Campus: An\'apolis
+    
+    \end{center}
+    \end{fichacatalografica}
+    % --- FIM DO CÓDIGO ORIGINAL ---
 
-\hspace{0.5cm} \pageref{LastPage} p. : il.~color.~;~30 cm.\\
-
-\hspace{0.5cm} \imprimirorientadorRotulo:~ \imprimirorientador\\
-
-\hspace{0.5cm} \imprimircoorientadorRotulo:~ \imprimircoorientador\\
-
-\hspace{0.5cm}
-\parbox[t]{\textwidth}{\tcc~--~\imprimirinstituicao,~\campus~--~\imprimirprograma,~\imprimirano.}\\
-
-\hspace{0.5cm}
-1. \palavrachaveum.
-2. \palavrachavedois.
-3. \palavrachavetres.
-4. \palavrachavequatro.
-5. \palavrachavecinco.
-I. \MakeUppercase{\sobrenomorient},~\nomorient~\sigorient..
-II. \MakeUppercase{\sobrenomcoorient},~\nomcoorient~\sigcoorient..
-%II. Universidade xxx.
-%III. Faculdade de xxx.
-III. T\'itulo.\\
-
-%\hspace{7.75cm} \cdu\\
-\begin{flushright}
-    						\cdu
-\end{flushright}%
-%\hspace{8.75cm}
-\end{minipage}
-}%Fim caixa
-\par
-\vspace{0.1cm}
-Ficha catalogr\'afica elaborada pelo bibliotec\'ario~\bibliotecario~\cbr
-\par
-Biblioteca Clarice Lispector
-\par
-\imprimirinstituicao
-\par
-\campus%Campus: An\'apolis
-
-\end{center}
+    \clearpage
 }
-{
-\end{fichacatalografica}
-}
+
 
 %----------------------------------------
 % Folha de autorização para a biblioteca
 %----------------------------------------
-\newenvironment{folhadeautorizacao}
-  {}  % o que vem no \begin{termo}
-  {}  
-	
-\newenvironment{folhaautorizacao}{
-\begin{folhadeautorizacao}%fichacatalografica
+\newcommand{\imprimirfolhaautorizacao}{
+\clearpage
+\thispagestyle{empty}
+{ % <--- Inicia grupo de isolamento da formatação
+
 \linespread{0.87}\selectfont
 %--------Cabeçalho do documento
 \noindent\begin{minipage}[c][1.5cm][c]{3.5cm}
@@ -657,9 +684,11 @@ An\'apolis, {\diaata~de~\mesata}~de~{\todayano}
 \end{tabular}
 \end{center}
 }%Fim \small
+\par
+} % <--- Termina grupo de isolamento da formatação
+
 \linespread{1.3}\selectfont
+\clearpage
 }
-{
-  \end{folhadeautorizacao}
-}
+
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.12) (preloaded format=pdflatex 2026.5.18)  27 OCT 2026 19:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.12) (preloaded format=pdflatex 2026.5.18)  28 OCT 2026 18:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2452,8 +2452,8 @@ l.13
 
 
 ]
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 11
-5.
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 10
+6.
 
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
@@ -2463,7 +2463,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 115.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 106.
  [2
 
 ] [3
@@ -2490,7 +2490,7 @@ Overfull \hbox (0.83951pt too wide) in paragraph at lines 6--6
 ]
 Using TeX to sort glossary entries---this may take a while
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 1
-85.
+76.
 
 (C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.f
 d
@@ -2500,7 +2500,7 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 
 
 ]
-Overfull \hbox (5.20578pt too wide) in alignment at lines 192--192
+Overfull \hbox (5.20578pt too wide) in alignment at lines 183--183
 [] [] 
  []
 
@@ -3017,7 +3017,15 @@ Package hyperref Info: bookmark level for unknown codigo defaults to 0 on input
  line 1041.
  [98
 
-]) [99]
+])
+(C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\se-
+pdfdoc.def
+File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
+)
+(C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\se-
+utf8.def
+File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
+) [99]
 \tf@lof=\write8
 \openout8 = `TCC_II_IFG_2026.lof'.
 
@@ -3030,40 +3038,23 @@ Package hyperref Info: bookmark level for unknown codigo defaults to 0 on input
 \tf@toc=\write11
 \openout11 = `TCC_II_IFG_2026.toc'.
 
-
-
+ 
 enddocument/afterlastpage: lastpage setting LastPage.
-
-(C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\se-
-pdfdoc.def
-File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
-)
-(C:\Users\wagner.araujo\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\se-
-utf8.def
-File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
-) [100] (TCC_II_IFG_2026.aux (tex/1secao.aux) (tex/2secao.aux)
-(tex/3secao.aux) (tex/4secao.aux) (tex/5secao.aux) (tex/6secao.aux)
-(tex/7secao.aux) (tex/8secao.aux) (tex/9secao.aux) (tex/10secao.aux))
+(TCC_II_IFG_2026.aux (tex/1secao.aux) (tex/2secao.aux) (tex/3secao.aux)
+(tex/4secao.aux) (tex/5secao.aux) (tex/6secao.aux) (tex/7secao.aux)
+(tex/8secao.aux) (tex/9secao.aux) (tex/10secao.aux))
  ***********
 LaTeX2e <2023-11-01>
 L3 programming layer <2020/03/25>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-LaTeX Warning: Temporary extra page added at the end. Rerun to get it removed.
-
-Package rerunfilecheck Info: Checksums for `TCC_II_IFG_2026.brf':
-(rerunfilecheck)             Before: DA7DD53B7F11FF3D56816CCDDC42AC83;4051
-(rerunfilecheck)             After:  32E90EBFF7B4EAA4FFB32B61B00271ED;4051.
+Package rerunfilecheck Info: File `TCC_II_IFG_2026.brf' has not changed.
+(rerunfilecheck)             Checksum: 32E90EBFF7B4EAA4FFB32B61B00271ED;4051.
  ) 
 Here is how much of TeX's memory you used:
- 69933 strings out of 474485
- 1504768 string characters out of 5739958
- 2656935 words of memory out of 5000000
- 89948 multiletter control sequences out of 15000+600000
+ 69926 strings out of 474485
+ 1504674 string characters out of 5739958
+ 2656940 words of memory out of 5000000
+ 89941 multiletter control sequences out of 15000+600000
  723735 words of font info for 442 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  109i,23n,117p,2358b,2654s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -3103,9 +3094,9 @@ nts/type1/urw/times/utmb8a.pfb><C:/Users/wagner.araujo/AppData/Local/Programs/M
 iKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/wagner.araujo/AppData/Local/P
 rograms/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/wagner.araujo/AppData
 /Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on TCC_II_IFG_2026.pdf (101 pages, 3399591 bytes).
+Output written on TCC_II_IFG_2026.pdf (100 pages, 3398513 bytes).
 PDF statistics:
- 2219 PDF objects out of 2487 (max. 8388607)
+ 2216 PDF objects out of 2487 (max. 8388607)
  596 named destinations out of 1000 (max. 500000)
  129312 words of extra memory for PDF output out of 154059 (max. 10000000)
 

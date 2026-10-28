@@ -14,19 +14,13 @@
 % ---------------------------------------------------
 % Ficha Catalografica em pdf e código
 % ---------------------------------------------------
-
 %\begin{fichacatalografica}
 %\includepdf{pre/Ficha_Catalografica.pdf}%Ficha catalografica em pdf
 %\end{fichacatalografica}
 
 %Utilize este arquivo de ficha catalografica
 %\include{pre/fichaCatalografica}%Retirando fichaCatalografica.tex
-%\begin{fichabibliografica}%o codigo esta em ufscthesisA4-alf.sty
-%\end{fichabibliografica}
-
-
-%---------------------------------------------------
-
+%\imprimirfichacatalografica % Para visualizar a ficha catalografica retire a (%)
 
 % --------------------------------------------------
 % Inserir folha de aprovação
@@ -34,26 +28,23 @@
 %\includepdf[pages={1-2}]{arquivo.pdf}%utilizando duas paginas
 %\includepdf[pages={5}, fitpaper=true]{Flauberth__Duarte_TCC.pdf} %folha de aprovação em pdf
 %\input{pre/folhaAprovacao}%Retirando folha de aprovação em .tex (este arquivo esta separado)
-%---------------------------------------------------
-%\begin{folhaaprovacao}%o codigo esta em ufscthesisA4-alf.sty
-%\end{folhaaprovacao}
-%---------------------------------------------------
+
+%\imprimirfolhaaprovacao % Para visualizar a folha de aprovacao retire a (%)
 
 % --------------------------------------------------
 % Inserir folha de ata da seção pública de tcc
 % --------------------------------------------------
 %\includepdf[pages={5}, fitpaper=true]{folhaDeAta.pdf}.
-%\input{pre/ata}%Retirando 
-%\begin{atabanca}%o codigo esta em ufscthesisA4-alf.sty
-%\end{atabanca}
+%\input{pre/ata}%Retirando o arquivo .tex
+%\imprimiratabanca % Para visualizar a ata da banca retire a (%)
+
 
 % --------------------------------------------------
 % Inserir folha de autorização para disponibilização
 % --------------------------------------------------
 %\include{pre/termo}%Esta dentro do diretorio pre com termo.tex
 %\includepdf[pages={5}, fitpaper=true]{folhaTermo.pdf}.
-%\begin{folhaautorizacao}% Este comando esta funcional
-%\end{folhaautorizacao}
+%\imprimirfolhaautorizacao % Para visualizar a folha de autorizaçao retire a (%)
 %---------------------------------------------------
 
 % ---
