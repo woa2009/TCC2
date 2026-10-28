@@ -28,7 +28,7 @@ Os arquivos do TCC **não são mantidos neste projeto**. A versão oficial e atu
 ```text
 TCC2/
 ├── TCC_II_IFG_2026.tex      ← arquivo raiz (classe abntex2, bibliografia numérica)
-├── setup/                   ← ufscthesisA4-alf.sty, stylodefinicao.tex, algorithm2e.sty
+├── setup/                   ← ifganapolisthesisA4.sty, stylodefinicao.tex, algorithm2e.sty
 ├── pre/                     ← pre.tex
 ├── tex/                     ← 1secao.tex ... 10secao.tex e dados das figuras (.txt)
 ├── pos/                     ← references.bib, apendice_a.tex, apendice_b.tex, saídas dos testes
